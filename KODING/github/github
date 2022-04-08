@@ -1,31 +1,3 @@
 BELAJAR GITHUB
 
-* buka website -> firebase.com > login > buka console > create project > project name (latihan silmi)
-> tunggu > halaman dashboard kita 
 
-* sampai disini kita akan BELAJAR HOSTING dulu
-jadi kita upload html kita di hosting > lalu hubungkan dengan firebaase > lalu interaksi CRUD
-
-* PERALATAN TEMPUR
-  > instal node js > karena kita butuh npm nya untuk instalasi environmen firebase nya
-      > 
-  > instal vs code 
-  > instal firebase-tools
-    > bikin folder project > buka di terminal > ketik >: npm install -g firebase-tools 
-    > pastikan semua perangkat tadi terinstal yang terbaru > bahkan linuxnya pdate dulu
-    > pengalaman minta update terus dan merepotkan
-    
-* LOGIN DI FIREBASE VIA FIREBASE TOOLS
-  > terminal login > login diredirect ke browser console firebase lagin saja > username password
-* INISIALISASI
-  > buka folder projek kalian di terminal >: firebase init
-  > kita akan diberi pilihan paket firebaase mana yang di pilih > pilih hosting > pakai arrow key
-  > pilih projek yang tadi dibuat di dashboard firebase web (latihan silmi)
-  > nanti di folder kita akan di buatkan dua buah file.json dan file.rc
-  > bikin lagi folder 'sejajar' bernama (cobapertama) dan isikan file index.html 
-  > bikin halaman di index dengan copas dari starter template dari website firebase nya
-* LOCALHOST
-  > kalau mau jalankan di localhost tinggal :> klik ketik > firebase serve > kita akan dikasih 
-  url > http://localhost:5000 > buka URL tersebut di browser
-* DEPLOY
-  > kalau mau langsung di upload tinggal :> firebase deploy 
