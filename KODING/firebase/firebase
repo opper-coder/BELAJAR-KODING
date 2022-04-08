@@ -25,6 +25,10 @@ jadi kita upload html kita di hosting > lalu hubungkan dengan firebaase > lalu i
   > bikin lagi folder 'sejajar' bernama (cobapertama) dan isikan file index.html 
     > pada versi terbaru saya di suruh bikin folder public di CLI(default)
     > sekaligus index html nya
+    > disini seperti htdoc nya PHP boleh bikin file folder dan link hore
+    > tapi hanya file html, js, css saja yang bisa
+    VSCODE
+      >  vs code berperan sebagai editor index.html kita beserta projeknya save lalu deploy
   > bikin halaman di index dengan copas dari starter template dari website firebase nya
 * LOCALHOST
   > kalau mau jalankan di localhost tinggal :> klik ketik > firebase serve > kita akan dikasih 
