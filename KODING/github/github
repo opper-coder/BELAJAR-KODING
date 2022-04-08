@@ -22,3 +22,10 @@ jadi kita upload html kita di hosting > lalu hubungkan dengan firebaase > lalu i
   > kita akan diberi pilihan paket firebaase mana yang di pilih > pilih hosting > pakai arrow key
   > pilih projek yang tadi dibuat di dashboard firebase web (latihan silmi)
   > nanti di folder kita akan di buatkan dua buah file.json dan file.rc
+  > bikin lagi folder 'sejajar' bernama (cobapertama) dan isikan file index.html 
+  > bikin halaman di index dengan copas dari starter template dari website firebase nya
+* LOCALHOST
+  > kalau mau jalankan di localhost tinggal :> klik ketik > firebase serve > kita akan dikasih 
+  url > http://localhost:5000 > buka URL tersebut di browser
+* DEPLOY
+  > kalau mau langsung di upload tinggal :> firebase deploy 
