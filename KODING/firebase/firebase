@@ -35,6 +35,13 @@ jadi kita upload html kita di hosting > lalu hubungkan dengan firebaase > lalu i
   url > http://localhost:5000 > buka URL tersebut di browser
 * DEPLOY
   > kalau mau langsung di upload tinggal :> firebase deploy 
+* VERSION
+  > kalau kita punya beberapa project kita bisa beralih projek1 dan projek 2 misalnya(satu versi publish dua 
+  versi develop misalnya) maka kita bikin prrojek dulu di console
+  > lalu kontrol di CLI nya : tambhkan projek >: firebase use --add > pilih projek >lalau bikin kan aliasnya
+  atau bikin key nya (misalnya kasih nama "second")> atau lihat di file.rc di sana akan terlihat seperti key value
+  > cara panggil atau aksesnya dengan > firebase use (lihat list project)
+  > firebase use second
   
   
   
