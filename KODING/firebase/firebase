@@ -42,6 +42,11 @@ jadi kita upload html kita di hosting > lalu hubungkan dengan firebaase > lalu i
   atau bikin key nya (misalnya kasih nama "second")> atau lihat di file.rc di sana akan terlihat seperti key value
   > cara panggil atau aksesnya dengan > firebase use (lihat list project)
   > firebase use second
-  
+
+=================================
+
+REALTIME DATABASES
+*AKTIFKAN
+  > kembali ke konsol > pilih realtime databases > create 
   
   
