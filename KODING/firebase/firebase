@@ -57,14 +57,43 @@ REALTIME DATABASES
   > tips struktur db kalau bisa se dangkal mungkin > kalau terpaksa ada yang bercabang maka gunakan saja key:value biasa saja
     > kalau ada koneksi ke table lain gunakan true saja dan update saat terjadi perubahan pada salah satu tabel 
     maka terpaksa update kedua-duanya(dua tabel join) aja itu lebih efisien
+      >tabel
+      
+      players{
+        {1:
+          nama:buffon,
+          skill:tangkapan harimau},
+        {2:
+          nama:hansamu,
+          skill:gocekan maut}
+      }
+    
+    
 * CONNECTION DB
   > kita sudah punya halaman index.html
   > buka console > overview project > project setting > disana kita di kasih script koneksi copas aja > paste di index
-  > bikin referensi database > 
-      ::> var conn = firebase.database(); 
-  > bikin ngambil tabel
-      ::> var tabelpemain = conn.ref()
-      
-      >>>>> menit ke 8
-  
-  
+    > cara referensi database > 
+        ::> var conn = firebase.database(); 
+    > cara ngambil tabel
+        ::> var tabelpemain = conn.ref('players');
+    > cara ngambil data > on();
+        ::> tabelpemain.on('jenis','callbackberhasil','callbackerror');
+        ::> tabelpemain.on('value',tampilkanData,tampilkanError);
+            ::> function tampilkanData(data){console.log(data);}
+            ::> function tampilkanError(err){console.log(err);}
+
+
+masih dibaca
+
+
+
+
+
+
+
+
+
+
+
+
+
