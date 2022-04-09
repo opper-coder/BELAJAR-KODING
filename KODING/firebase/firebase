@@ -60,6 +60,11 @@ REALTIME DATABASES
 * CONNECTION DB
   > kita sudah punya halaman index.html
   > buka console > overview project > project setting > disana kita di kasih script koneksi copas aja > paste di index
-  > 
+  > bikin referensi database > 
+      ::> var conn = firebase.database(); 
+  > bikin ngambil tabel
+      ::> var tabelpemain = conn.ref()
+      
+      >>>>> menit ke 8
   
   
