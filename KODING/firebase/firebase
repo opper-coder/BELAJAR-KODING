@@ -51,7 +51,15 @@ jadi kita upload html kita di hosting > lalu hubungkan dengan firebaase > lalu i
 =================================
 
 REALTIME DATABASES
-*AKTIFKAN
+* AKTIFKAN
   > kembali ke konsol > pilih realtime databases > create 
+  > maka kita di kasih dashboard db GUI nya coba aja
+  > tips struktur db kalau bisa se dangkal mungkin > kalau terpaksa ada yang bercabang maka gunakan saja key:value biasa saja
+    > kalau ada koneksi ke table lain gunakan true saja dan update saat terjadi perubahan pada salah satu tabel 
+    maka terpaksa update kedua-duanya(dua tabel join) aja itu lebih efisien
+* CONNECTION DB
+  > kita sudah punya halaman index.html
+  > buka console > overview project > project setting > disana kita di kasih script koneksi copas aja > paste di index
+  > 
   
   
