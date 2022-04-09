@@ -53,40 +53,62 @@ jadi kita upload html kita di hosting > lalu hubungkan dengan firebaase > lalu i
 REALTIME DATABASES
 * AKTIFKAN
   > kembali ke konsol > pilih realtime databases > create 
+  > bikin nama db > pilih lokasi server > pilih lock mode > done
   > maka kita di kasih dashboard db GUI nya coba aja
-  > tips struktur db kalau bisa se dangkal mungkin > kalau terpaksa ada yang bercabang maka gunakan saja key:value biasa saja
-    > kalau ada koneksi ke table lain gunakan true saja dan update saat terjadi perubahan pada salah satu tabel 
-    maka terpaksa update kedua-duanya(dua tabel join) aja itu lebih efisien
-      >tabel
+  > tips struktur db kalau bisa se dangkal mungkin > 
+    > kalau terpaksa ada yang bercabang maka gunakan saja key:value biasa saja
+    > kalau ada koneksi ke table lain gunakan interaksi 'true' dengan table lain 
+    > dan update saat terjadi perubahan pada salah satu tabel 
+      maka terpaksa update kedua-duanya(dua tabel join) aja itu lebih efisien
       
-      players{
-        {1:
-          nama:buffon,
-          skill:tangkapan harimau},
-        {2:
-          nama:hansamu,
-          skill:gocekan maut}
+      * BENTUK TABLE
+        {key:value}
+         //------
+        {
+          K:{
+            K:v,
+            k:V
+          }
+        }
+        //------
+      {
+      players:{
+        1:{
+            nama:buffon,
+            skill:tangkapan harimau
+          },
+        2:{
+            nama:hansamu,
+            skill:gocekan maut
+          }
+        },
+      pelatih:...
       }
-    
+        //------
     
 * CONNECTION DB
-  > kita sudah punya halaman index.html
-  > buka console > overview project > project setting > disana kita di kasih script koneksi copas aja > paste di index
-    > cara referensi database > 
-        ::> var conn = firebase.database(); 
-    > cara ngambil tabel
-        ::> var tabelpemain = conn.ref('players');
-    > cara ngambil data > on();
-        ::> tabelpemain.on('jenis','callbackberhasil','callbackerror');
-        ::> tabelpemain.on('value',tampilkanData,tampilkanError);
-            ::> function tampilkanData(data){console.log(data);}
-            ::> function tampilkanError(err){console.log(err);}
+  > kita sudah punya halaman index.html kosong
+  * TEMPLAT HTML. 
+    vs code : 
+      html,head,body tab atau lengkapnya ! tab 
+  * INITIAL FIREBASE
+    > buka console > project overview > project setting > copy templat ini dari mode npm >
+    > paste di tag script html di head atau di body 
+    > atau include dari halaman lainya index.js <script href="">
+// ------------------------------------------------------
 
-
-masih dibaca
-
-
-
+import { initializeApp } from "firebase/app"; // inisial awal di ambil/diimport dari SDK
+const firebaseConfig = {
+  apiKey: "AIzaSyAOdBTFQ45E5fWkYyB_7sp3gP-KvHUlqQA",
+  authDomain: "latihan-hilman-april-2022.firebaseapp.com",
+  databaseURL: "https://latihan-hilman-april-2022-default-rtdb.asia-southeast1.firebasedatabase.app",
+  projectId: "latihan-hilman-april-2022",
+  storageBucket: "latihan-hilman-april-2022.appspot.com",
+  messagingSenderId: "854536857305",
+  appId: "1:854536857305:web:aed1e0af7815fb155780c8"
+};
+const app = initializeApp(firebaseConfig);  // fungsi yang di import di jadikan variabel untuk digunakan inisialisasi 
+// ------------------------------------------------------
 
 
 
