@@ -1,5 +1,19 @@
-BELAJAR FIREBASE
+BELAJAR FIREBASE WEB
 
+ada dua cara menangani interaksi web dengan firebase, yaitu
+1. NPM
+2. modul bundler
+
+ALAT TEMPUR UNTUK NPM
+- instal Nodejs (NPM include) terbaru > node -v > npm -v
+- instal vscode (atau lainya sublime) terbaru
+- instal firebase-tools > npm install -g firebase-tools
+- instal firebase SDK via NPM > masuk ke folder project kerja > npm install firebase > 
+  > atau opsional pakai firebase SDK via CDN nanti akan di bahas
+- terminal > untuk menjalankan NPM baik milik OS atau bawaan text editor
+
+
+//--------------------
 * FIREBASE.COM -----
 * buka website -> firebase.com > login > buka console > create project > project name (latihan silmi)
 > tunggu > halaman dashboard kita 
