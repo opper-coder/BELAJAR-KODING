@@ -7,45 +7,53 @@ ada dua cara menangani interaksi web dengan firebase, yaitu
 ALAT TEMPUR UNTUK NPM
 - instal Nodejs (NPM include) terbaru > node -v > npm -v
 - instal vscode (atau lainya sublime) terbaru
-- instal firebase-tools > npm install -g firebase-tools
-- instal firebase SDK via NPM > masuk ke folder project kerja > npm install firebase > 
-  > atau opsional pakai firebase SDK via CDN nanti akan di bahas
+- instal firebase-tools :> npm install -g firebase-tools > coba tes dengan :> firebase
+  - maka muncul help center
+- instal firebase SDK via NPM > masuk ke root folder project kerja >
+  :> npm install firebase (tapi saya tidah berhasil g tau kenapa) > 
+  > atau opsional pakai firebase SDK via CDN nanti akan di bahas (tidak usah instal firebase)
 - terminal > untuk menjalankan NPM baik milik OS atau bawaan text editor
 
 FIREBASE REGISTRASI
-
+- login dulu atau bukin akun firebase pakai email google di firebase.com
 PROJECT DAN DATABASE
-
-FIREBASE TERMINAL
-
+- bikin projek baru 
+  - masukan nama
+  - pilih lokasi server pastikan terdekat southeast-1 singapura southeast-2 jakarta
+  - matikan analithyc 
+  - done
+INITIALISASI
+- bikin folder project
+- buka terminal > firebase init > kita di kasih 2 file > bikin folder "public" berisi file "index.html"
+- bikin template HTML standard dulu
+SDK
+- ada 3 cara instal SDK   
+1 pakai npm > npm install firebase 
+  - maka kita akan di kasih paket javascript SDK dll
+  - buka console 
+  - pilih: project overview/project setting
+  - copy sourcecode initialisasi 
+2 atau pakai webpack - rollup
+  - belum belajar ini yang paling di anjurkan karena bisa mengkompress lebih kecil
+3 pakai CDN ini yang paling berhasil tapi hanya untuk latihan tidak boleh untuk produksi
+  - copas versi CDN di halaman HTML index.html
+  - sekaligus link versi CDN (lihat di dokumentasi ada cara nulisnya)
 HOSTING
   - setelah firebase-tools terinstal
   - npm login   // redirect ke akun gmail anda
   - npm init    // jalan kan di folder root project
   - npm deploy  // deploy/upload
-INITIALISASI
-
 BACA TULIS
-
+  - 
+  
+  
+  
+  
+  
 DATA LIST SORT FILTER
 
 //--------------------
-* FIREBASE.COM -----
-* buka website -> firebase.com > login > buka console > create project > project name (latihan silmi)
-> tunggu > halaman dashboard kita 
 
-* HOSTING -----
-> sampai disini kita akan BELAJAR HOSTING dulu
-jadi kita upload html kita di hosting > lalu hubungkan dengan firebaase > lalu interaksi CRUD
-
-* PERALATAN TEMPUR -----
-  > instal node js > karena kita butuh npm nya untuk instalasi environmen firebase nya
-      > firebase SDK, firebase-tools (CLI) 
-  > instal vs code terbaru
-  > instal firebase-tools
-    > bikin folder project > buka di terminal > ketik >: npm install -g firebase-tools 
-    > pastikan semua perangkat tadi terinstal yang terbaru > bahkan linuxnya update dulu
-    > pengalaman minta update terus dan merepotkan jika semua tidak yang terbaru
 
 * FIREBASE CLI -----
   > buka folder projek kalian di local(firebase projekku ) di terminal
