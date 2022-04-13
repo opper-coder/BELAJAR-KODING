@@ -19,6 +19,7 @@ PROJECT DAN DATABASE
 FIREBASE TERMINAL
 
 HOSTING
+  - setelah firebase-tools terinstal
   - npm login   // redirect ke akun gmail anda
   - npm init    // jalan kan di folder root project
   - npm deploy  // deploy/upload
