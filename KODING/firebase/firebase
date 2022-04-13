@@ -51,15 +51,28 @@ HOSTING
 TULIS DATA
   - di index.js
   - nulisnya set();
-  - set(reference,{key:value});
+  - set(referensi,{isi}); // isi {key:value}
   - atau jelasnya
+  --------------------------
     function tulis("namaUniq", "nama", "alamat"){
       const conn : getDatabase();
-      const reff : ref(conn, 'pemain/' + userId);     // kalau nulisnya sambil bikin folder ya pakai slash ''  
-      set(reff,{namaUniq:pertama, nama:aqil, alamat:saiti});
+      const reff : ref(conn, 'pemain/' + namaUniq);           // jika referensi belum ada di db maka akan di buatkan 
+      set(reff,{namaUniq:pertama, nama:aqil, alamat:saiti});  // isi di ambil dari argument
     }
-  
-  
+    tulis("pertama","aqil","saiti")
+  --------------------------
+BACA DATA
+- pakai onValue() tentu import dulu
+- onValue(reff, callback); pakai snapshot.val();
+--------------------------
+const db = getDatabase();
+const reff = ref(db, 'guru/empat' );
+
+onValue(reff, (snapshot) => {
+  const data = snapshot.val();
+  console.log(data);
+});
+--------------------------
   
 DATA LIST SORT FILTER
 
