@@ -16,16 +16,19 @@ ALAT TEMPUR UNTUK NPM
 
 FIREBASE REGISTRASI
 - login dulu atau bukin akun firebase pakai email google di firebase.com
+
 PROJECT DAN DATABASE
 - bikin projek baru 
   - masukan nama
   - pilih lokasi server pastikan terdekat southeast-1 singapura southeast-2 jakarta
   - matikan analithyc 
   - done
+  
 INITIALISASI
 - bikin folder project
 - buka terminal > firebase init > kita di kasih 2 file > bikin folder "public" berisi file "index.html"
 - bikin template HTML standard dulu
+
 SDK
 - ada 3 cara instal SDK   
 1 pakai npm > npm install firebase 
@@ -38,15 +41,23 @@ SDK
 3 pakai CDN ini yang paling berhasil tapi hanya untuk latihan tidak boleh untuk produksi
   - copas versi CDN di halaman HTML index.html
   - sekaligus link versi CDN (lihat di dokumentasi ada cara nulisnya)
+  
 HOSTING
   - setelah firebase-tools terinstal
   - npm login   // redirect ke akun gmail anda
   - npm init    // jalan kan di folder root project
   - npm deploy  // deploy/upload
-BACA TULIS
-  - 
   
-  
+TULIS DATA
+  - di index.js
+  - nulisnya set();
+  - set(reference,{key:value});
+  - atau jelasnya
+    function tulis("namaUniq", "nama", "alamat"){
+      const conn : getDatabase();
+      const reff : ref(conn, 'pemain/' + userId);     // kalau nulisnya sambil bikin folder ya pakai slash ''  
+      set(reff,{namaUniq:pertama, nama:aqil, alamat:saiti});
+    }
   
   
   
@@ -55,23 +66,7 @@ DATA LIST SORT FILTER
 //--------------------
 
 
-* FIREBASE CLI -----
-  > buka folder projek kalian di local(firebase projekku ) di terminal
-  > firebase CLI terminal coba ketik :> firebase > tampil help center
-  > login >: firebase login > login diredirect ke browser console firebase lagin saja > email, password
-* INISIALISASI -----
-  > saat terminal berada di folder projek anda ketik >: firebase init
-  > kita akan diberi pilihan paket firebaase mana yang di pilih > pilih hosting > pakai arrow key > lalu spasi > enter
-  > pilih projek yang tadi dibuat di dashboard firebase web (latihan silmi)
-  > nanti di folder kita akan di buatkan dua buah file.json dan file.rc
-  > bikin lagi folder 'sejajar' bernama (public) dan isikan file index.html 
-    > pada versi terbaru saya di suruh bikin folder public di CLI(default)
-    > sekaligus index html nya
-    > disini seperti htdoc nya PHP boleh bikin file folder dan link hore
-    > tapi hanya file html, js, css saja yang bisa mungkin juga framework boleh
-    * VSCODE -----
-      >  vs code berperan sebagai editor index.html kita beserta projeknya save lalu deploy
-  > bikin halaman di index dengan copas dari starter template dari website firebase nya
+
 * LOCALHOST -----
   > kalau mau jalankan di localhost tinggal :> klik ketik > firebase serve > kita akan dikasih 
   url > http://localhost:5000 > buka URL tersebut di browser
