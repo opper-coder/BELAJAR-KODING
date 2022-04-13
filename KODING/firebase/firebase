@@ -19,7 +19,9 @@ PROJECT DAN DATABASE
 FIREBASE TERMINAL
 
 HOSTING
-
+  - npm login   // redirect ke akun gmail anda
+  - npm init    // jalan kan di folder root project
+  - npm deploy  // deploy/upload
 INITIALISASI
 
 BACA TULIS
