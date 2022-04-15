@@ -48,6 +48,25 @@ HOSTING
   - npm init    // jalan kan di folder root project
   - npm deploy  // deploy/upload
   
+CREATE DATABASE CONSOLE
+  - key:value aja
+  - ada child tapi jangan terlalu dalam
+  - kalau ada koneksi dengan tabel lain maka pakai aja cara daftarkan true pada kedua nya
+    - contact:{
+        nama: andy,
+        umur:9,
+        grup:{
+          sosial: true,
+          jualbeli: true
+        },
+      grup:{
+        nama grup:sosial,
+        alamat grup: saiti
+        anggota:{
+          andy: true,
+          aqil: true
+        }
+        
 TULIS DATA
   - di index.js
   - nulisnya set();
@@ -59,7 +78,7 @@ TULIS DATA
       const reff : ref(conn, 'pemain/' + namaUniq);           // jika referensi belum ada di db maka akan di buatkan 
       set(reff,{namaUniq:pertama, nama:aqil, alamat:saiti});  // isi di ambil dari argument
     }
-    tulis("pertama","aqil","saiti")
+    tulis("pertama","aqil","saiti");
   --------------------------
   
 BACA DATA
