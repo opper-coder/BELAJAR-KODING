@@ -61,9 +61,11 @@ TULIS DATA
     }
     tulis("pertama","aqil","saiti")
   --------------------------
+  
 BACA DATA
 - pakai onValue() tentu import dulu
 - onValue(reff, callback); pakai snapshot.val();
+- val() bisa di ganti dengan exists()
 --------------------------
 const db = getDatabase();
 const reff = ref(db, 'guru/empat' );
@@ -72,9 +74,31 @@ onValue(reff, (snapshot) => {
   const data = snapshot.val();
   console.log(data);
 });
---------------------------
+-------------------------- alias
+onValue(reff, (snapshot) => { console.log(snapshot.val()) });
+
+  BACA DATA SEKALI
+  - untuk data yang tidak sering di update sebagaimana chat (seperti artikel, deskripsi, detil barang dll)
+    dan bisa di simpan di cache gunakan get()
+  - penggunaan get() hanya untuk yang benar2 statis jangan yang dinamis bisa mmakan bandwidth
+  - tambah di akhir {onlyOnce:true}
+  --------------------------
+  onValue(reff, (snapshot) => { console.log(snapshot.val()) }, {onlyOnce: true});
   
+
+
+
+
+
+
+
 DATA LIST SORT FILTER
+
+
+
+
+
+
 
 //--------------------
 
