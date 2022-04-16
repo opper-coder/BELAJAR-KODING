@@ -1,0 +1,3 @@
+- ambil started dari bootstrap dan jqueri dari jquery cdn 
+- lalu ikuti aja contoh yang javascript lalu konversi yang html ke php 
+- selamat lihat yang index html 
