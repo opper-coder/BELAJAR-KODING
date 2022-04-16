@@ -1,0 +1,20 @@
+[
+	{
+		"nama" : "aqil",
+		"alamat" : "saiti",
+		"sekolah" : "MI darunnajah",
+		"kelas" : 4
+	},
+	{
+		"nama" : "izza",
+		"alamat" : "sumbermulya",
+		"sekolah" : "TK damai",
+		"kelas" : 0
+	},
+	{
+		"nama" : "diva",
+		"alamat" : "luwuk",
+		"sekolah" : "SMP saiti",
+		"kelas" : 6
+	}
+]
