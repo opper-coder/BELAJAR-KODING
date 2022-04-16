@@ -1,0 +1,188 @@
+REFER TO RANGE
+------------------------------
+
+Sub coba()
+	Range("a1:b4") = "Tes tulis"
+End Sub
+
+REFER TO CELLS
+------------------------------
+
+Sub coba()
+	Cells(1,2) = "Tes tulis"
+End Sub
+
+REFER TO CELLS, RANGE DAN VARIABEL
+------------------------------
+
+Sub coba()
+	x = 1
+	y = 2
+	Cells(x,y) = "Tes tulis"
+End Sub
+
+Sub coba()
+	x = 1
+	y = 2
+	Range(Cells(x,y), Cells(4,6)) = "Tes tulis"
+End Sub
+
+Sub coba()
+	Dim x As Integer
+	Dim y As Integer
+	x = 1
+	y = 2
+	Range(Cells(x,y), Cells(4,6)) = "Tes tulis"
+End Sub
+
+PERULANGAN
+------------------------------
+
+Sub coba()
+    For i = 1 To 10
+    Cells(i, 1) = "ada"
+    Next i
+End Sub
+
+PENGKONDISIAN
+------------------------------
+
+Sub pengkondisian()
+    If Cells(1, 1) > 5 Then
+       Cells(1, 2) = "bagus"
+    Else
+       Cells(1, 2) = "jelek"
+    End If
+End Sub
+
+PERULANGAN DAN PENGKONDISIAN
+------------------------------
+
+Sub pengkondisian()
+    Dim i As Integer
+    For i = 1 To 10
+        If Cells(i, 1) > 5 Then
+            Cells(i, 2) = "bagus"
+        Else
+            Cells(i, 2) = "jelek"
+        End If
+    Next i
+End Sub
+
+ALERT MESSAGE BOX
+bisa menampilkan sesuatu dari cell juga
+------------------------------
+
+Sub alert()
+    MsgBox "hello world!"
+End Sub
+
+Sub alert2()
+    MsgBox "hello world!" & Cells(1,1)
+End Sub
+
+SPESIFIK SHEET dan WORKBOOK
+(apabila tidak di spesifikasikan sheet nya maka macro bisa di run di sheet mana saja)
+------------------------------
+
+Sub pengkondisian()
+    Dim i As Integer
+    For i = 1 To 10
+        If Sheets("Sheet1").Cells(i, 1) > 5 Then
+           Sheets("Sheet1").Cells(i, 2) = "bagus"
+        Else
+           Sheets("Sheet1").Cells(i, 2) = "jelek"
+        End If
+    Next i
+End Sub
+
+Sub pengkondisian()
+    Dim i As Integer
+    For i = 1 To 10
+        If ThisWorkbook.Sheets("Sheet1").Cells(i, 1) > 5 Then
+           ThisWorkbook.Sheets("Sheet1").Cells(i, 2) = "bagus"
+        Else
+           ThisWorkbook.Sheets("Sheet1").Cells(i, 2) = "jelek"
+        End If
+    Next i
+End Sub
+
+
+MENYEMBUNYIKAN/MENAMPILKAN WORKBOOK
+tinggal ganti true false
+------------------------------
+
+Sub sembunyikanbuku()
+    ThisWorkbook.Sheets("Sheet1").Visible = false
+End Sub
+
+TOOLS DI VBA 
+------------------------------
+
+ada view/immediate = berguna untuk debug dan exsekusi tanpa sub
+ada toolbar edit = berguna untuk buat comen uncomen indentasi dll
+contoh:
+
+debug.print i
+
+REFERENSI KE BARIS TERAKHIR
+------------------------------
+
+Sub baristerakhir()
+    bt = ThisWorkbook.Sheets("sheet1").Cells(Rows.Count, 1).End(xlUp).Row
+    Cells(2, 3) = bt
+End Sub
+
+FUNCTION EXCEL DI VBA
+jika function ini yang di pakai maka di excel tidak akan tampak/ditulis hasilnya saja
+semua fungsi di excel dapat di jalankan menggunakan metode ini
+jika tidak maka tulis saja biasa 
+------------------------------
+Sub tesfungsi()
+    Dim i As Integer
+    i = 3
+    For i = 3 To 12
+    	Cells(i, 5) = Application.WorksheetFunction.Sum(Range(Cells(i, 2), Cells(i, 4)))
+    Next i
+End Sub
+
+FUNCTION VBA DI EXCEL
+kita bisa membuat function untuk excel
+dan dapat di panggil di excel
+
+cara panggilnya cukup tulis function di cell excel: namafunction()
+bisa juga di panggil dalam vba sub yang lain
+------------------------------
+
+Function baristerakhir()
+    baristerakhir = ActiveSheet.Cells(Rows.Count, 1).End(xlUp).Row
+End Function
+
+--- contoh lain jika kolom dipilih dg parameter
+
+Function baristerakhir(pilih As Range)
+    pilihcol = pilih.Column
+    baristerakhir = ActiveSheet.Cells(Rows.Count, pilihcol).End(xlUp).Row
+End Function
+
+--- contoh bikin function sendiri
+
+Function kondisi(pilihan As Range)
+    If pilihan > 5 Then
+    kondisi = "bagus"
+        Else
+        kondisi = "buruk"
+    End If
+End Function
+
+CARA RECORD LANGKAH DAN REKAM DI EXCEL
+------------------------------
+
+buka record lalu start record 
+berikan nama 
+lalu masukan function nya
+lalu lakukan sesuatu di excel
+setelah selesai stop record lalu lihat detil
+
+cara ini bisa di gunakan untuk melihat cara penulisan sebuah tindakan di excel
+untuk di tindak lanjuti di excel nantinya 
