@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   	<title>easy pie chart</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+
+
+</head>
+<body>
+<!-- pie dasar -->
+<!--  -->
+<div class="chart" data-percent="73">73%</div>
+<!--  -->
+
+<script  src="jquery-3.4.0.js"></script>
+<script  src="jquery.easypiechart.js"></script>
+<!--  -->
+<script type="text/javascript">
+	//function chart
+	$(function(){
+		$('.chart').easyPieChart({
+			
+			size:100 ,					// jika banyak akhiri dg koma	
+			barColor:'#42a5f6' ,		// warna utama heksa, pake quot
+			trackColor: '#f2f2f2' ,		// warna track, heksa pake quot (or false, tanpa quot)
+			scaleColor: '#0d47a1' ,		// warna jari2 (or false)
+			scaleLength: 5 ,			// panjang jari jari (angka aja)
+			lineWidth: 20 ,			// tebal lingkaran
+			lineCap: 'butt' ,		// nilai 'butt' 'round' dan 'square'
+			animate: 2000,			// detik animasai
+			// easing:
+
+		});
+	});
+	
+
+
+
+// PETUNJUK PENGGUNAAN
+// di download dari github lalu ambil satu file dari folder: dist/jquery.easypiechart.js
+// struktur dasar dalam folder index, jquery, easypiechart. lalu include kan di halaman index
+// buat div class=chart dan data-percent
+// lalu atur function nya
+
+</script>
+<!--  -->
+
+</body>
+</html>

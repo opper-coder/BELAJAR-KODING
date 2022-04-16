@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   	<title>carousel</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="owl.carousel.min.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="owl.theme.default.min.css" />
+	
+	<style type="text/css">
+
+/* syarat utama ada container widtnya terserah kita */
+.containerCarousel {
+	width: 100%; 
+	height: auto; 
+	overflow: hidden;}	
+
+/*setting kita sendiri*/
+.item {
+	height: 200px;
+	background-color: lavender;
+}
+
+/*tampilkan dots bulatan di bawah*/
+/*.owl-dots{
+	display: none;
+}*/
+
+
+</style>
+
+</head>
+<body>
+
+	<div class="containerCarousel">
+
+	<div class="owl-carousel owl-theme">
+		<div class="item"><h4>1</h4></div> 
+		<div class="item"><h4>2</h4></div> 
+		<div class="item"><h4>3</h4></div> 
+		<div class="item"><h4>4</h4></div> 
+		<div class="item"><h4>5</h4></div> 
+		<div class="item"><h4>6</h4></div> 
+		<div class="item"><h4>7</h4></div> 
+		<div class="item"><h4>8</h4></div> 
+		<div class="item"><h4>9</h4></div> 
+		<div class="item"><h4>10</h4></div> 
+		<div class="item"><h4>11</h4></div> 
+		<div class="item"><h4>12</h4></div> 
+	</div>
+
+	</div>
+
+<script  src="jquery-3.4.0.js"></script>
+<script  src="owl.carousel.min.js"></script>
+
+<script  >
+	
+$('.owl-carousel').owlCarousel({ 
+	loop:true, 
+	margin:10, 
+	nav:true, 
+	responsive:{
+	 	0:{ 
+	 		items:1 
+	 	}, 
+	 	600:{ 
+	 		items:3 
+	 	}, 
+	 	1000:{ 
+	 		items:2 
+	 	} 
+
+
+
+
+
+	 } 
+})
+
+
+// keterangan buat download di owlcarousel2.github.io lalu folder khusus carosel dan extrak disana
+// lalu ambil file 4 spt di dlm praktek ini di folder asset
+// lalu di index html buat div container nya
+// di css panggil setting nya sperti di atas
+// lalu buka situsnya lalu klik demo . lalu kopikan htmlnya dan scrip javascrip nya seperti di atas
+// CARA SETTING
+// script ada nav = true or fals hilangkan/tampilkan tombol nex pref
+// responsif layar 0 berapa buah card layar min 600 berapa card dan min 1000 berapa. kita boleh nambahin 
+// --- juga sendiri ukuran layar minimal berapa dan tampil card berapa
+// kalo mau hilangin bulatan kecil di bawah . panggil class owl-dots beri display none di css 
+
+
+</script>
+
+
+
+
+</body>
+</html>

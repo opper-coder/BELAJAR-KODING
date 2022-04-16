@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   	<title>easy pie chart</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+
+<style type="text/css">
+	
+.container{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding-top: 50px;
+	border:1px solid black;
+	height: 100px;
+}
+
+.boxy{
+	/*border: 1px solid black;*/
+	position: absolute;
+}
+
+
+</style>
+
+
+
+</head>
+<body>
+
+
+
+
+<div class="container">
+
+	<div class="box boxy">
+		<div class="chart" data-percent="80"></div>
+	</div>
+<div class="box2 boxy">
+		<div class="chart2" data-percent="60"></div>
+	</div>
+<div class="box3 boxy">
+		<div class="chart3" data-percent="30"></div>
+	</div>
+
+<!-- <p class="boxy">15%</p> -->
+
+
+
+</div>
+
+
+
+
+
+<script  src="jquery-3.4.0.js"></script>
+<script  src="jquery.easypiechart.js"></script>
+<!--  -->
+<script type="text/javascript">
+	
+	//function chart
+	
+$(function(){
+		$('.chart').easyPieChart({
+			
+			size:50 ,					// jika banyak akhiri dg koma	
+			barColor:'#1de9b6' ,		// warna utama heksa, pake quot
+			trackColor: false ,		// warna track, heksa pake quot (or false, tanpa quot)
+			scaleColor: false ,		// warna jari2 (or false)
+			scaleLength: 5 ,			// panjang jari jari (angka aja)
+			lineWidth: 10 ,			// tebal lingkaran
+			lineCap: 'round' ,		// nilai 'butt' 'round' dan 'square'
+			animate: 2000,			// detik animasai
+			// easing:
+
+		});
+	});
+	
+
+$(function(){
+		$('.chart2').easyPieChart({
+			
+			size:70 ,					// jika banyak akhiri dg koma	
+			barColor:'#ff5722' ,		// warna utama heksa, pake quot
+			trackColor: false ,		// warna track, heksa pake quot (or false, tanpa quot)
+			scaleColor: false ,		// warna jari2 (or false)
+			scaleLength: 5 ,			// panjang jari jari (angka aja)
+			lineWidth: 10 ,			// tebal lingkaran
+			lineCap: 'round' ,		// nilai 'butt' 'round' dan 'square'
+			animate: 2000,			// detik animasai
+			// easing:
+
+		});
+	});
+
+
+
+$(function(){
+		$('.chart3').easyPieChart({
+			
+			size:100 ,					// jika banyak akhiri dg koma	
+			barColor:'#4caf50' ,		// warna utama heksa, pake quot
+			trackColor: false ,		// warna track, heksa pake quot (or false, tanpa quot)
+			scaleColor: '#0d47a1' ,		// warna jari2 (or false)
+			scaleLength: 5 ,			// panjang jari jari (angka aja)
+			lineWidth: 10 ,			// tebal lingkaran
+			lineCap: 'round' ,		// nilai 'butt' 'round' dan 'square'
+			animate: 2000,			// detik animasai
+			// easing:
+
+		});
+	});
+
+
+
+
+
+
+
+
+
+
+
+// petunjuk penggunaan
+// struktur dasar dalam folder index, jquery, easypiechart. lalu include kan di halaman index
+// buat div class=chart dan data-percent
+// lalu atur function nya
+
+</script>
+<!--  -->
+
+</body>
+</html>
