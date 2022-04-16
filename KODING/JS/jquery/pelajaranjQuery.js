@@ -1,6 +1,7 @@
 jQuery hilman ramadlon
 
 // RINGKASAN ==============================================================
+---------------------------------
 // syarat:
 $(document).ready(function(){ semua di lakukan disini})
 // selector:
@@ -13,17 +14,21 @@ $('.pakeClass:eq(2)') 		// pake Class ke sekian(index)
 $('p .pakeClass')		// pake css selection class pada p
 $('li:nth-child(2)')		// pake Child ke (2)
 $(this)				// ini klik yang bersangkutan dan ini terjadi dalam function, (lih bawah)
+---------------------------------
 // add event
 .click(f);
 .mouseenter(f);
 .mouseleave(f);
 .keyup(f);
+---------------------------------
 // manipulasi elemen:
 .css();
+---------------------------------
 // class:
 .addClass();
 .removeClass();
 .toggleClass();
+---------------------------------
 // manipulasi node:
 .append();
 .prepend();
@@ -31,6 +36,7 @@ $(this)				// ini klik yang bersangkutan dan ini terjadi dalam function, (lih ba
 .before();
 .remove();
 .empty();
+---------------------------------
 // get set input text ini masih belum bisa di coba ??????? 
 .html(), text(), val	// tangkap isi html
 .submit() dan .val() 	// baca value input text
@@ -43,18 +49,6 @@ lanjuuuut ada di pelajaran api
 
 
 // RINGKASAN ==============================================================
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
