@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>center vertikal</title>
+	<!-- ----------- -->
+	<style type="text/css">
+
+		
+*{
+	margin: 0;
+	padding: 0;
+}
+
+
+
+.wadah{
+	width: 200px;
+	height: 250px;
+	border: 2px solid black;
+	background-color: lightblue;
+	margin: 10px;
+}
+
+
+
+/*---1 tabel---g bekerja gtau kenapa di ie*/
+.tabel{
+	display: table;
+}
+
+.tabel p{
+	display: table-cell;
+	vertical-align: middle;
+}
+
+
+
+
+/*---2 absolut---g bekerja tidak tahu kenapa di ie*/
+.tabel2{
+	position: relative;
+}
+
+.tabel2 p{
+	position: absolute;
+	top: 50%;
+	width: 100%;
+	transform: translateY(-50%);
+}
+
+
+
+
+/*---3 flexbox---recomended*/
+.tabel3{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+
+
+
+/*---4 grid---g fungsi place itemnya di ie*/
+.tabel4{
+	display: grid;
+	place-items:center;
+}
+
+
+
+
+/*---5 margins---*/
+.tabel5{
+	display: flex;
+}
+
+.tabel5 p{
+	margin: auto;
+}
+
+
+
+
+/*---6 margins---*/
+.tabel6{
+	display: grid;
+}
+
+.tabel6 p{
+	margin: auto;
+}
+
+
+
+
+/*---------------------*/
+p{
+	background-color: salmon;
+}
+
+
+
+	</style>
+	<!-- ----------- -->
+</head>
+<body>
+
+
+<div class="tabel wadah">
+	<p>ke tengahkan1...</p>
+</div>
+<div class="tabel2 wadah">
+	<p>ke tengahkan2...</p>
+</div>
+<div class="tabel3 wadah">
+	<p>ke tengahkan3...</p>
+</div>
+<div class="tabel4 wadah">
+	<p>ke tengahkan4...</p>
+</div>
+<div class="tabel5 wadah">
+	<p>ke tengahkan5...</p>
+</div>
+<div class="tabel6 wadah">
+	<p>ke tengahkan6...</p>
+</div>
+
+
+</body>
+</html>

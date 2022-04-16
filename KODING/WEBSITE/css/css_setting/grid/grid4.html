@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>grid</title>
+    <style>
+ 	
+
+        .gridContainer{
+    		display: grid;
+            grid-template-columns: repeat(1fr 1fr 1fr 1fr);
+            grid-auto-rows: minmax(100px, auto);
+
+            grid-gap: 1em;
+        }
+    	.gridContainer > div{
+    		background-color: tan;
+    		padding: 1em;
+    	}
+    	.gridContainer > div:nth-child(even){
+    		background-color: lavender;
+    	}
+
+
+/*grid line
+* prinsipnya bisa gambar kotak di corel pake show gridlines
+* caranya : pertama deklarasikan kontainer jumlah kolom dan row nya;
+* lalu > lakukan dengan menggambar start dan end pada masing2 kolom dan row nya> 
+  dihitung dari grid line nya
+* cara nulisnya seperti dibawah yaitu grid-column: start/end;
+* bisa tukar tempat coba lihat pada kotak tiga dan empat
+*/
+
+        .satu{
+            grid-column: 1/3;
+            grid-row: 1/3;
+        }
+        .dua{
+            grid-column: 3;
+            grid-row: 1/3;
+        }
+        .tiga{
+            grid-column:2/4;
+            grid-row: 3;
+        }
+        .empat{
+            grid-column:1;
+            grid-row: 2/4;
+        }
+
+
+    </style>
+</head>
+<body>
+    
+    <div class="gridContainer">
+        <div class="kotak satu">satu</div>
+        <div class="kotak dua">dua</div>
+        <div class="kotak tiga">tiga</div>
+        <div class="kotak empat">empat</div>
+    </div>
+  
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	
+	<style type="text/css">
+
+.gambar{
+	width: 600px;
+	height: 1400px;
+	
+	background-color: tan;
+	background-image: url('img/sapi.jpg');		/*defaultnya ngikut ukuran gambar ngikut kepada height, jika kita tidak setting height maka gambar akan mengambil lebar 100%*/
+	background-size: 30%; 						/*property:; px, %, contain, cover. contain akan menampilkan gambar sesuai resolusi bawaan gambar. dan akan repeat jika kecil. sedang cover adalah memenuhi kontainer walau gambar lebih akan terpotong (bagian bawah) */
+	background-repeat: no-repeat; 				/*property: repeat, no-repeat*/
+	background-attachment: local;				/*property: fixed, local.  ada 4 sebenarnya tapi intinya dua itu. bisa ikut scroll jika div nya mememanjang keluar atau fix tidak ikut scrol gambarnya fix*/ 
+	background-position: right top;
+	background-clip: padding-box;				/* property:padding-box, border-box, contain-box; jika ada border tebal (coba praktek dengan 20px) maka akan menempatkan posisi di bawah atau di dalam border */
+	background-origin: border-box;				/* hampir sama dengan clip tapi bagi yang tidak punya border tebal */
+}	
+
+/*shorthand tapi kok g jalan
+.gambar{
+	background: tan url('img/sapi.jpg') cover no-repeat local right top;
+}
+*/
+
+
+
+	</style>
+
+</head>
+<body>
+
+
+<p>hello world!</p>
+
+<div class="gambar"></div>
+
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>grid</title>
+    <style>
+    	
+
+/*
+coba justify-items (seperti justifi-content pada flex)
+coba align-items seperti pada flex properti (start dan end/ bukan flex-start)
+coba juga align-self pada class konten. yaitu kontenya menentukan sendiri justifi dan alignya nya
+*/    	
+
+
+        .gridContainer{
+    		display: grid;
+            grid-template-columns: 1fr 2fr 1fr;
+            grid-auto-rows: minmax(100px, auto);
+            grid-gap: 1em;
+
+            /*justify-items: start;*/
+    		/*justify-items: end;*/
+            justify-items: stretch;
+
+            /*align-items: start;*/
+            /*align-items: end;*/
+            /*align-items: center;*/
+            align-items: stretch;
+
+    	}
+
+
+    	.gridContainer > div{
+    		background-color: tan;
+    		padding: 1em;
+    	}
+
+    	.gridContainer > div:nth-child(even){
+    		background-color: lavender;
+    	}
+
+/*---align-self---*/
+/*
+        .satu{
+            align-self: start;
+        }
+        .dua{
+            align-self: end;
+        }
+        .tiga{
+            justify-self:start;
+        }
+        .empat{
+            justify-self:end
+        }
+
+*/
+
+
+
+    </style>
+</head>
+<body>
+    
+    <div class="gridContainer">
+        <div class="kotak satu">satu</div>
+        <div class="kotak dua">dua</div>
+        <div class="kotak tiga">tiga</div>
+        <div class="kotak empat">empat</div>
+    </div>
+  
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>flex</title>
+
+	<style type="text/css">
+
+				/*konsep*/
+/*semua elemen di html di masukan dalam row dari containernya yang panjangnya 
+	tidak terbatas, kecuali jika di flex-wrap:wrap, maka akan melipat ke bawah*/
+/*cara terapkanya: semua pada containernya, set display: flex; untuk mengatur tata letak konten nya*/
+/*jika kontenya juga di set flex maka dia akan mengatur untuk kontenya lagi (child nya)*/
+/*secara default jika di justyfi-konten : center maka ukuran konten tidak berubah marginyalah yang berubah*/
+/*jika ingin ukuran kontenya yg berubah mengikuti lebar kontainernya dan desakan elemen lain, 
+	maka berikan flex:1; pada kontenya, maka kontenya lagi bisa pake margin auto;*/
+/*urutan bisa di atur melui flex-direktion, order*/
+/*tata letak vertikal menggunakan align-item*/
+/*tata letak horisontal menggunakan justifi-conten*/
+
+
+		
+		*{margin: 0;}
+
+		.container{
+			margin: 10px;
+		}
+
+		.flex_config 	{
+			list-style-type: none;
+			border: 1px solid black;
+			padding: 5px;
+			
+			display: flex;
+			
+			/*flex-direction: column;*/
+			/*flex-direction: row-reverse;*/
+			flex-direction: row;
+			
+			/*flex-wrap: nowrap;*/
+			flex-wrap: wrap;
+			
+			/*justify-content: flex-end;*/
+			/*justify-content: space-between;*/
+			/*justify-content: space-around;*/
+			justify-content: center;
+
+height: 200px;				
+			
+			/*align-items: flex-end;*/
+			/*align-items: stretch;*/
+			align-items: center;
+		}
+
+		li{
+			margin: 1px;
+			padding: 1px;
+			border: 1px solid black;
+		}
+
+		.satu{
+			background-color: red;
+			flex: 1;
+			/*display: flex;*/
+			/*justify-content: center;*/
+			/*order: 1;*/
+		}
+		
+		.dua{
+			background-color: yellow;
+			flex: 1;	
+		}
+		
+		.tiga{
+			background-color: #aaeeff;
+			/*flex: 1;*/
+		}
+		.empat{
+			background-color: #ff80e5;
+			flex: 1;
+		}
+
+		.lima{
+			background-color: #aaaaff;
+			flex: 1;
+			text-align: center;
+		}
+
+
+
+	</style>
+
+
+</head>
+<body>
+
+
+<div class="container">
+	<ul class="flex_config">
+		<li class="satu">satu</li>
+		<li class="dua">dua</li>
+		<li class="tiga">tiga</li>
+		<li class="empat">empat</li>
+		<li class="lima">lima</li>
+	</ul>
+</div>
+
+
+</body>
+</html>

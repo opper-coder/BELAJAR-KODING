@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>font face</title>
+	<!-- ---------- -->
+	<style type="text/css">
+		
+
+		body{
+			width: 80%;
+			text-align: center;
+			margin: 0 auto;
+		}
+
+/*CARA GANTI DG FONT-FACE
+	* pertama deklarasikan> kedua panggil
+	* deklarasikan dengan @font-face>dg dua property: beri nama sembarang tanpa quot> lalu src url() jangan huruf kapital tidak support IE>untuk properti berikutnya optional
+	* kedua tinggal panggil aja
+ CARA GANTI DG google.com/fonts
+ 	* pertama kopi linknya dari www.google.com/fonts di header berupa link
+ 	* kedua panggil biasa
+*/
+
+
+
+@font-face{
+	font-family: aqil;
+	src:url(fonts/BeHodakga.ttf);
+
+	/*font-style: normal;
+	font-weight: 100;*/
+}
+
+@font-face{
+	font-family: iza;
+	src:url(fonts/ProstoOne-Regular.ttf);
+
+	/*font-style: normal;*/
+	/*font-weight: 600;*/
+}
+
+
+p {
+	font-family: aqil;
+	/*font-weight: 100;*/
+}
+
+
+h1 {
+	font-family: iza;
+	/*font-weight: 600;*/
+}
+
+
+
+
+
+	</style>
+	<!-- ---------- -->
+</head>
+<body>
+
+<!-- banyak jenis font tapi ada kompatibilitasnya terhadap browser -->
+<!-- ttf/otf woff adalah jenis font yang kompatibel dengan semua browser -->
+<!-- jenis lain ada woff2 svg eot pilih2 browser -->
+
+
+<h1> coba text dengan ganti font, syaratnya dalam folder kita sudah punya font tesebut</h1>
+<p class = "nomor">1234 567  890</p>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+</p>
+
+
+</body>
+</html>

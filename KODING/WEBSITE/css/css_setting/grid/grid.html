@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>grid</title>
+    <style>
+    	
+    	/*kita di bawah punya beberapa div lalu kita tata dalam grid sistem
+    	*pertama kali kontainernnya deklarasikan ke grid-> lalu lakukan parameter pembagi 
+    	*kolom, coba satu persatu, coba juga gap, coba juga ukuran tinggi per kolom
+		*pada fungtion "minmax" tinggi tetep 100 px untuk yang muat, yang tak muat menyesuaikan / menangani tinggi kotak kalau lebarnya sudah di tangani oleh template-kolom, kecuali kalau di bikin manual juga bisa coba lihat 'align dan justyfi' grid3.html
+    	* 1em = 16px
+        * min max juga bisa di terapkan pada grid-templat-rows: minmax();
+    	*/
+
+
+    	.gridContainer{
+    		display: grid;
+
+    		/*grid-template-columns: 40% 30% 30%;*/
+    		/*grid-template-columns: 2fr 1fr 1fr ;*/
+    		grid-template-columns: 1fr 1fr 1fr 1fr;
+    		/*grid-template-columns: repeat(3, 1fr);*/
+    		/*grid-template-columns: repeat(4, 1fr);*/
+    		/*grid-template-columns: repeat(3, 1fr 2fr);*/
+    		
+    		grid-gap: 1em;
+    		/*grid-column-gap: 1em;*/
+    		/*grid-row-gap: 1em;*/
+
+    		/*grid-auto-rows: 100px;*/
+			grid-auto-rows: minmax(100px, auto);
+    		
+    	}
+
+
+    	.gridContainer > div{
+    		background-color: tan;
+    		padding: 1em;
+    	}
+
+    	.gridContainer > div:nth-child(odd){
+    		background-color: lavender;
+    	}
+    
+    </style>
+</head>
+<body>
+    
+    <div class="gridContainer">
+    	<div>
+    		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+    		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+    		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+    		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+    		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+    		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+    		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    	</div>
+    	<div>
+    		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+    		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+    		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+    		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    	</div>
+    	<div>
+    		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+    		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+    		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+    		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+    		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+    		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+    		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    	</div>
+    	<div>
+    		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+    		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+    		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+    		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    	</div>
+
+    	<div>hello</div>
+
+		<div>satu</div>
+		<div>dua</div>
+		<div>tiga</div>
+		<div>empat</div>
+		<div>lima</div>
+		<div>enam</div>
+		<div>tujuh</div>
+    </div>
+
+</body>
+</html>

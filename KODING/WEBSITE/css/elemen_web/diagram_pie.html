@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>PIE</title>
+<!-- ----------  -->
+	<style type="text/css">
+
+// coba gabungkan dengan posision relatif dan z index
+
+
+*{
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body{
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	margin: 0;
+}
+
+
+h1 {
+	margin: 0;
+	padding: 16px;
+	width: 100%;
+	text-align: center;
+	background-color: grey;
+	margin-bottom: 50px;
+}
+
+.bulatan{
+	/*margin-top: 16px;
+	display: flex;
+	align-items: center;
+	justify-content: center;*/
+	
+	width: 220px;
+	height: 220px;
+	border-radius: 50%;
+	box-shadow: 0 2px 20px grey;
+}
+
+.pie{
+	background: conic-gradient(#ff9000 60%, white 0%);
+} 
+.pie2{
+	background: conic-gradient(salmon 20%, white 0%);
+} 
+.pie3{
+	background: conic-gradient(lightblue 80%, white 0%);
+} 
+
+	</style>
+
+<!-- ----------  -->
+</head>
+<body>
+
+<h1>Diagram pie</h1>
+
+
+<div class="expertise-container">
+	<div class="language">
+		<div class="bulatan pie"></div>
+	</div>
+</div>
+
+<div class="expertise-container">
+	<div class="language">
+		<div class="bulatan pie2"></div>
+	</div>
+</div>
+
+<div class="expertise-container">
+	<div class="language">
+		<div class="bulatan pie3"></div>
+	</div>
+</div>
+
+
+
+
+<!-- script -->
+<script type="text/javascript">
+	
+
+
+
+</script>
+</body>
+</html>

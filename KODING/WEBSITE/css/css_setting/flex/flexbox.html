@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+<!-- style -->
+<style type="text/css">
+/*
+.container{
+	display: flex;			// ini di koment aktifkan yang di bawah jangan lupa yang paling atas (display flex ini selalu ada)
+	justify-content: center;			
+	justify-content: flex-end;		// rata kanan 
+	justify-content: flex-start;	// rata kiri (default)
+	justify-content: inherit;
+	justify-content: space-around;	// beri ruang kanan kiri
+	justify-content: space-between;	// beri ruang tengah
+	justify-content: unset;			// matikan
+}
+*/
+
+/*langkah pertama buat ini lalu debug*/
+
+.container{
+	display: flex;					
+	justify-content: flex-start space-between;
+
+}
+
+/*langkah dua kasih css di bawah yang di nonaktifkan coba sendiri dan berjalan baik kok lalu debug*/
+/*hati2 dengan max-width:30%; dan height nya lebih menang dari width dan height*/
+
+.container > div{
+	flex: 1;
+}
+
+.home{
+	background-color: red;
+	/*width: 20%;*/
+}
+.search{
+	background-color: yellow;
+	/*width: 30%;*/
+	margin-left: auto;
+
+}
+.login{
+	background-color: green;
+	/*width: 30%;*/
+	margin-left: auto;
+}
+
+</style>
+
+
+</head>
+<body>
+
+
+
+
+<!-- flex box -->
+<div class="container">
+	<div class="home">home</div>
+	<div class="search">search</div>
+	<div class="login">login</div>
+</div>
+
+
+
+
+
+</body>
+</html>

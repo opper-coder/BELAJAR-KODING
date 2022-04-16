@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>grid</title>
+    <style>
+ 
+ /*responsif*/
+ /*prinsipnya kita punya dua/lebih layout, dalam satu halaman yaitu layout untuk layar besar dan layout untuk layar kecil atau mungkin juga layar menengah*/
+ /*prinsip kedua buat dulu layout untuk mobile lalu layout untuk di atasnya (tablet laptop pc) 
+   lalu bungkus dg function @media
+  */
+
+/*  * pertama yaitu dengan cara susun sesuai layout mobile dan laptop (contoh )nya pada 	
+	  template-grid-area masing masing 
+    * kedua lalu bungkus pada layar yang lebih besar dengan function @media (pada containernya ya)
+    * ketiga kemudian letakan di bagian bawah pada layout yang yang lebih kecil (mobile)
+    * properti lain seperti gap juga bisa di rubah dalam @media perhatikan perubahan pada gap
+*/
+
+
+
+
+        .gridContainer{
+            display: grid;
+            grid-template-columns: repeat(1fr 1fr 1fr 1fr);
+            grid-auto-rows: minmax(100px, auto);
+
+            grid-gap: 1em;
+
+            grid-template-areas: 
+                "satu satu satu satu"
+                "dua dua dua dua"
+                "empat empat empat empat"
+                "tiga tiga tiga tiga"
+                "lima lima enam enam"
+                "tujuh delapan sembilan sembilan"
+
+        }
+
+
+
+@media screen and (min-width: 760px){
+
+        .gridContainer{
+            display: grid;
+            grid-template-columns: repeat(1fr 1fr 1fr 1fr);
+            grid-auto-rows: minmax(100px, auto);
+
+            grid-gap: 3em;
+
+            grid-template-areas: 
+                "satu satu satu satu"
+                "dua dua tiga tiga"
+                "dua dua empat empat"
+                "lima enam tujuh tujuh"
+                "delapan delapan delapan sembilan"
+        }
+
+}
+
+
+
+/*-----*/
+    	.gridContainer > div{
+    		background-color: tan;
+    		padding: 1em;
+    	}
+    	.gridContainer > div:nth-child(even){
+    		background-color: lavender;
+    	}
+
+/*-----*/
+
+        .satu{
+            grid-area: satu;
+        }
+        .dua{
+            grid-area: dua;
+        }
+        .tiga{
+            grid-area: tiga;
+        }
+        .empat{
+            grid-area: empat;
+        }
+        .lima{
+            grid-area: lima;
+        }
+        .enam{
+            grid-area: enam;
+        }
+        .tujuh{
+            grid-area: tujuh;
+        }
+        .delapan{
+            grid-area: delapan;
+        }
+        .sembilan{
+            grid-area: sembilan;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <div class="gridContainer">
+        <div class="kotak satu">satu</div>
+        <div class="kotak dua">dua</div>
+        <div class="kotak tiga">tiga</div>
+        <div class="kotak empat">empat</div>
+        <div class="kotak lima">lima</div>
+        <div class="kotak enam">enam</div>
+        <div class="kotak tujuh">tujuh</div>
+        <div class="kotak delapan">delapan</div>
+        <div class="kotak sembilan">sembilan</div>
+    </div>
+  
+</body>
+</html>

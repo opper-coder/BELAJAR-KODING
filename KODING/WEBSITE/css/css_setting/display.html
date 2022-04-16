@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>display</title>
+	<!-- ----------- -->
+	<style type="text/css">
+/*
+------------
+ *di css display ada 3: block, inline, inline-block
+ *ketiganya bisa di terapkan pada semua elemen html
+ *tapi semua elemen mempunyai default nya masing2
+ *"block" menempati semua lebar baris browser walaupun width nya dikurangi 
+  sampai muat elemen dibawahnya sekalipun (dg display apapun)ttp tidak bisa jatuh ke atas kanan tapi ada width dan height
+ *"inline" semua elemen di bawahnya akan nempel ke kanan tapi tidak bisa menerima width heigh
+ *"inline-blok" bisa jatuh ke atas dan bisa nempel ke kanan sekaligus harus kedua elemen yaa salah satunya g bisa lo dan bisa nerima W & H
+ *yang default-inline di jadikan blok juga bisa atau lebioh baiknya inline-block
+
+ *INTINYA JATUH KEBAWAH ATAU KANAN, DAN BISA WIDTH ATAU TIDAK
+
+-------------
+*/
+h1{
+ 	background-color: salmon;
+ 	/*width: 30%;*/
+ 	display: inline-block;
+}
+
+p{
+	background-color: salmon;
+	/*width: 30%;*/
+	display: inline-block;
+}
+
+	</style>
+	<!-- ----------- -->
+</head>
+<body>
+
+
+<div>
+	<h1>coba</h1>
+	<p>lagi</p>
+</div>
+
+
+<a href="#">link</a>
+<a href="#">link2</a>
+
+
+
+</body>
+</html>

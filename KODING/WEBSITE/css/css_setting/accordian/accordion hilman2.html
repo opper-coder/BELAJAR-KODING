@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>dasar acordian</title>
+	
+	<style type="text/css">
+
+/*pertama buat <a> yang id link nya mengarah pada isi <p>*/
+/*setelah itu sembunyikan p nya sebelum di klik*/
+
+
+#ada{
+	height: 0;
+	overflow: hidden;
+}	
+#ada2{
+	height: 0;
+	overflow: hidden;
+}		
+#ada3{
+	height: 0;
+	overflow: hidden;
+}
+
+/*lalu tampilkan saat di klick*/
+
+#ada:target{
+	height: auto;
+}
+#ada2:target{
+	height: auto;
+}
+#ada3:target{
+	height: auto;
+}
+	</style>
+
+
+</head>
+<body>
+
+	<a href="#ada">accordian 1</a>
+	<p id="ada">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+	</p>
+
+	<a href="#ada2">accordian 1</a>
+	<p id="ada2">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+	</p>
+
+	<a href="#ada3">accordian 1</a>
+	<p id="ada3">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+	</p>
+
+</body>
+</html>

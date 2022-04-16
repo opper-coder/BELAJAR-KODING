@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>grid</title>
+    <style>
+ 	
+
+        .gridContainer{
+    		display: grid;
+            grid-template-columns: repeat(1fr 1fr 1fr 1fr);
+            grid-auto-rows: minmax(100px, auto);
+
+            grid-gap: 1em;
+
+/*tata grid area setelah di deklarasikan lihat hasilnya sip sekali. "titik juga bisa untuk kosong"*/
+/*penempatan tidak harus urut terserah kita mau menempatkan dimana karena itu lihat responsiv di grid6 mtml*/
+            grid-template-areas: 
+                "satu satu satu satu"
+                "dua dua tiga tiga"
+                "dua dua empat empat"
+                "lima enam . tujuh"
+                "delapan delapan delapan sembilan"
+        }
+
+
+
+    	.gridContainer > div{
+    		background-color: tan;
+    		padding: 1em;
+    	}
+    	.gridContainer > div:nth-child(even){
+    		background-color: lavender;
+    	}
+
+/*grid area adalah alternatif dari grid line grid4.html*/
+/*  pertama deklarasikan dulu areanya pada masing-masing 
+    div konten yang akan di tempatkan spt di bawah ini:
+*   kedua tata grid area di kontainer nya seperti diatas:
+    kalo nbisa overlap pakai grid lines
+
+
+*/
+
+        .satu{
+            grid-area: satu;
+        }
+        .dua{
+            grid-area: dua;
+        }
+        .tiga{
+            grid-area: tiga;
+        }
+        .empat{
+            grid-area: empat;
+        }
+        .lima{
+            grid-area: lima;
+        }
+        .enam{
+            grid-area: enam;
+        }
+        .tujuh{
+            grid-area: tujuh;
+        }
+        .delapan{
+            grid-area: delapan;
+        }
+        .sembilan{
+            grid-area: sembilan;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <div class="gridContainer">
+        <div class="kotak satu">satu</div>
+        <div class="kotak dua">dua</div>
+        <div class="kotak tiga">tiga</div>
+        <div class="kotak empat">empat</div>
+        <div class="kotak lima">lima</div>
+        <div class="kotak enam">enam</div>
+        <div class="kotak tujuh">tujuh</div>
+        <div class="kotak delapan">delapan</div>
+        <div class="kotak sembilan">sembilan</div>
+    </div>
+  
+</body>
+</html>

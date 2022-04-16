@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>box model</title>
+
+<!-- ----------- -->
+	<style type="text/css">
+
+	/*
+	 *agar menghilangkan margin bawaan html coba cara ini margin nol untuk semua
+	 *patokan utama adalah konten itu sendiri>lalu padding akan mekar mendesak border 
+	  (pengatur intra konten)> border juga mekar> margin juga mekar dan mendesak object lain(margin pengatur antar konten)
+	 *apabila yang di jadikan patokan wid dan heig maka gunakan box-sizing:border-box;
+	 *untuk margin urutan: top, right, bottom, left 
+ 	 *margin saja berarti semua
+	 *margin: auto;  artinya margin auto kanan kiri tidak untuk atas
+	 *text-align buat align tengah sama dengan rata tengah horizontal bukan vertikal
+	 *text-align, untuk texnya
+	 *margin auto, untuk kotaknya
+	 *_______________
+	 */
+
+*{
+	margin: 		0px;
+}
+
+.kotak{
+	width: 			300px;
+	height: 		150px;
+	background-color: salmon;
+	
+	border: 		2px solid black;
+	padding: 		10px;
+	text-align: 	center;
+	margin: 		0 auto;
+	/*box-sizing: border-box;*/
+}
+
+
+	</style>
+<!-- ----------- -->
+
+</head>
+<body>
+
+<div class="kotak">
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+	</p>
+
+	<button>coba</button>
+</div>
+
+
+
+</body>
+</html>

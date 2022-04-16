@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>grid2</title>
+	
+	<style type="text/css">
+
+/*grid bersarang masing masing kontainer grid berlaku penuh 
+atas gridnya sendiri sendiri
+atau grid bersarang deperlakukan sama dengan grid biasa*/
+
+
+.gridContainer{
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+}
+
+.gridContainer>div{
+	background-color: teal;
+	padding: 1em;
+}
+
+.gridContainer>div:nth-child(even){
+	background-color: tan;
+}
+
+.gridContainer>div>div{
+	border: 1px solid #000;
+	margin: 4px;
+}
+
+.gridbersarang{
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+}
+
+/*-----grid ke dua-----*/
+
+.gridContainer2{
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+}
+
+.gridContainer2>div{
+	background-color: teal;
+	padding: 1em;
+}
+
+.gridContainer2>div:nth-child(even){
+	background-color: tan;
+}
+
+.gridContainer2>div>div{
+	border: 1px solid #000;
+	margin: 4px;
+}
+
+.gridbersarang{
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+}
+
+
+	</style>
+
+</head>
+<body>
+	<div class="gridContainer">
+		<div>satu</div>
+		<div class="gridbersarang">
+			<div>sebelas</div>
+			<div>duabelas</div>
+			<div>tigabelas</div>
+			<div>empatbelas</div>
+			<div>limabelas</div>
+			<div>enambelas</div>
+		</div>
+		<div>tiga</div>
+		<div>empat</div>
+		<div>lima</div>
+		<div>enam</div>
+	</div>
+
+	<br>
+
+	<div class="gridContainer2">
+		<div>satu</div>
+		<div class="gridbersarang">
+			<div>sebelas</div>
+			<div>duabelas</div>
+			<div>tigabelas</div>
+			<div>empatbelas</div>
+			<div>limabelas</div>
+			<div>enambelas</div>
+		</div>
+		<div>tiga</div>
+		<div>empat</div>
+		<div>lima</div>
+		<div>enam</div>
+	</div>
+
+
+
+
+
+</body>
+</html>
