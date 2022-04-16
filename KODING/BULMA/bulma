@@ -1,0 +1,229 @@
+DOKUMENTASI BULMA
+
+WARNA
+	- text
+		- .has-text-white : (white opt ke 3)
+		- .has-text-white-ter : (ter opt ke 4)
+		- white,black,light,dark
+		- primary,link,info,succes,warning,danger
+		- ter,bis,light,lighter,dark,darker
+	- background
+		- sda, text di ganti background
+	- kotak
+		- .notification 
+			- mendukung tombol close jika diperlukan dan ada js nya ada di documentasi
+		- .box 
+		- dll cari
+SPACING
+	- keyword 		: .m,p,mt,mr,mb,ml,mx,my
+	- rentang angka : 0-4
+	- cara nulis 	: .m-2
+TYPOGRAFY
+	- <code> : nulis code script
+	- is-size-1 - 7
+	- ukuran responsive
+		- .is-size-1-mobile,touch,tablet,desktop,widescreen,fullhd
+	- align: .has-text-centered,justified,left,right
+	- responsive: .has-text-centered-mobile,touch dst
+	- case: .is-capitalized,lowercase,uppercase,italic
+	- weight: .has-text-weight-light,normal,medium,semibold,bold
+	- family: .is-family-sans-serif,code,monospace,primary,secondary
+	- title:
+		- .title is-1,-6		= judul h1-6 warna hitam pekat bold besar
+			- tambahkan .is-spaced =w jika jarak ingin lebih jauh sedikit
+		- .subtitle is-1,-6 	= sub judul h1-6 warna hitam abu2 normal besar
+
+LAYOUT
+	- container:
+		- adalah wadah jika di gunakan konten akan di buat selebar 80% di tengah dari layar default  
+		- jika ingin mengubah ukuran akan berhenti lebar pada ukuran
+			- .is-widescreen, desktop, fullhd, 
+			- .is-max-widescreen dst is-max-width
+		- .is-fluid : full layar + margin 32px (saya tidak gunakan ini karena 
+		tidak usah pakai kontainer dan tambah margin sendiri)
+		- .container punya varian intinya sama sebagai wadah saja 80% :
+		- .navbar,hero,section,footer
+	- hero
+		- sama dengan jumbotron
+		- biasa di buat <section>di dalamnya div<hero-body>
+		- ukuran is-small,medium,large,halfheight,fullheight
+		- dlm fullheight ada 3 seksi
+			- .hero-head = selalu di atas/bisa diisi dengan navbar
+			- .hero-body = selalu
+			- .hero-foot = selalu
+	- level/flex
+		- jika dibuat dalam sebuah <.container> maka menumpuk kebawah 
+			- namun biasanya level di gunakan:
+			untuk kontainer susunan "mendatar" dan "center horizontal"
+				- lalu memiliki .child .level-right, left (float ke kanan/kiri)
+					- lalu di dalamnya nya level-item (container isi)
+						- "isi"nya boleh elemen apa saja seperti <p> <button> dll
+						- center hori pakai ".level-item has-text-centered"
+		- cocok untuk pembuatan navbar
+	- tile/grid
+		- hampir sama dengan grid yaitu grid 2D X dan Y
+		contohnya seperti tile instagram : 
+		kadang 2 kolom horizontal kadang 2 baris vertikal
+		- membuatnya hanya dengan <.tile>
+			contoh:
+			".tile is-ancestor"					// induk tile
+				.tile is-parent is-vertical		// direction default hori
+					.tile is-child is-1			// 1-12 adalah 1 per 12
+						<p>
+		- di dalam child boleh ada parent lagi dan lagi
+		- tentukan berapa kolomnya dulu (.parent)
+		- lalu masing2 kolom bikin child berisi parent lagi (verti)
+FLEX
+	- ini flex asli/alternative
+	- dengan ".is-flex" semua flex css bisa di kendalikan sbg pembantu bulma
+	- .flex-direction, .flex-wrap, .justifi-content, .align-content,
+	.align-items, .align-self, .flex-grow, .flex-shrink
+COLUMN
+	- bikin satu wadah yang di dalamnya terisi kotak berapapun akan di bagi size yang sama
+		- wadah : .columns
+		- isi	: .column
+		- gap 	: pada columns .is-gapless hilangkan gap
+	- mengubah ukuran :
+		- .is-full, .is-half
+		- .full,half,one,two,three,
+		- -third,thirds,quarter,fifts,quarters,fifths
+		- is-one-third
+		- .full,setengah, 1/3, 1/4, 1/5, 2/3, 2/4, 2/5 dst - 4/5
+	- 12 kolom mirip grid sistem
+		- .is-1
+		- 1-12
+	- offset
+		- bikin column kosong lalu beri class offset: <.column .offset dst><>
+			- offset bisa di sisipkan diantara elemen tidak harus di kolom pertama
+		- .is-4
+		- .is-offset-1
+		- 1-12
+		- atau gunakan .is-half sda
+	- fix colomn (narrow)
+		- jika anda ingin membuat satu kolom yang fix 200px 
+		sedang kolom lainya fleksibel mengambil ruang sisanya maka terapkan narrow
+		- <column is-narrow> di dalamnya ada: <div width 200px>
+		- maka column lainya akan mengambil ruang sisanya secara fleksibel
+		- break point:
+			- .is-narrow-mobile, tablet, touch, desktop, widescreen, fullhd
+	- responsibiltas
+		- jika kita setting di atas maka secara default itu berlaku untuk tablet ke atas 
+		- jika setting di atas tetap 'bertahan' sampai ukuran mobile maka gunakan is-mobile di containernya
+		- is-mobile pada .container <.columns>
+		- breakpoint : .is-mobile,tablet,desktop,widescreen,fullhd
+		- bisa menggunakan half dst
+		- cara nulis : is-three-quarter-mobile
+	- kolom bersarang seperti tabel
+		- di dalam <.column> child bisa mewadahi parent lagi <columns> yang berisi tabel lagi 
+		- <.columns>
+			- <.column>
+			- <.column>
+				-<.columns>
+					-<.column>  
+					-<.column> 
+
+   	- align untuk kolom (bukan untuk konten text dll)
+   		containernya <.columns>
+   		- .is-centered 	: hori
+   		- .is-vcentered 	: verti
+   	- 
+HELPER
+	- .is-clearfix
+	- .is-pulled-left, right
+	- .is-unselectable 
+	- .is-clickable 
+	- dll
+	- display/visibilitas
+		- .is-block,flex,inline,inline-blok,flex
+		- .is-hidden
+		- -touch,tablet,desktop,widescreen,fullhad
+		- -only
+		- alternativ:
+			- .is-visible
+			- .is-hidden
+			- .is-sr-only
+ELEMEN
+	- .block : adalah margin-bottom standar di bulma (1.5 rem)
+		- .block terakhir paling bawah 2 kali lipat
+		- elemen html jika tak pakai blok akan mepet semua
+	- .box : kotak, padding, putih, rounded, bayangan
+	- .content :
+		- .content adalah container dari tag berikut agar mudah di kontrol
+		- tag: p,ol,ul,h1,h6,em,strong,table,tr,th,td,b,i,u
+		- .content ada sizenya : is-small,medium,large
+	- button : bisa untuk : a, button, type=submit, type= reset
+		- warna: white,black,light,dark,text,ghost
+		- warna juga: primary,link dst juga -light dan -dark
+		- ukuran: default,.is-small,normal,medium,large
+		- grouping ukuran : bungkus ".button" 
+		dengan "'.buttons' are-small"
+			- grouping ukuran2 : bungkus ".button is-large" dengan ".buttons are-small" 
+			salah satunya masih bisa di ubah ".is-small"
+		- ukuran memenuhi container= is-fullwidth
+		- style: .is-outlined,inverted,rounded
+		- pseudo-class: .is-hovered,focused,active
+		- loading: .is-loading
+		- disable: tulis saja atribut html "disabled"
+		- dengan icon: <.button><span><i class=kodeicon><span>teksbutonlorem
+		- di bawahnya tentang grouping button
+		- lanjutkan ...
+	- ol :
+		- bungkus dengan .content
+		- type="1",a,A,i,I
+	- x delete
+		- button .delete is-small,medium,large
+		- notif : .notification button.delete, textlorem
+		- message : .message > .massage-header lorem button.delete > .massage-body 
+		- tag : span.tag textlorem button.delete
+		- .tag is-delete adalah alternative dari .tag (bisa kotak, rounded)
+	- icon
+		- span.icon > i.codeicon ; warna di icon .has-text-danger
+		- ukuran container icon small,normal, medium,large 
+		sama dengan text karena kita pakainya icon text
+		- ukuran Font Awesome default .fa-lg, .fa-2x bertempat di tag <i .fa-lg>
+		- Font Awesome modifier
+		- fas fa-fw = fixedwidth, fa-bordered, fa-spinner,pulse, 
+		- lihat class icon tersendiri sesuai provider beserta modifiernya
+		- font ini standard harus bisa dipelajari sendiri
+	- icon+text
+		- jika di gabung dengan text maka text dan icon harus terjadi dalam .icon-text
+		- jangan lupa bungkus semua kejadian dengan .content
+		- span.icon-text 
+			> span.icon 
+				> i.codeicon
+			> span textlorem
+	- image
+		- > tag figure.image is-128x128
+			> img dengan ukuran sesuai(opt resolusi lebih tinggi asal rasio sama) 
+		- size : image is-16x16,24,32,48,64,96,128,
+		- rounded: .image 16 > img.is-rounded 
+		- rasio : jika tidak mengetahui resolusi namun tahu rasio maka gunakan rasio berikut
+			- syaratnya container meliki 'lebar' yg di tentukan sbg acuan
+			- jika tidak gunakan .is-fullwidth
+			- rasio:
+			is-square,1by1,5x4,4x3,3x2,16x9,2x1,3x1,4x5,3x4,2x3,3x5,9x16,1x2,1x3,
+		- rasio bebas :
+			- kita juga bisa mengubah rasio pada tag apapun dengan 
+			membubuhkan class .has-ratio pada object (foto video iframe) 
+			dengan parent "tag figure.image is-128x128"
+	- progress
+		- <progress .progress is-primary is-small value="15" max="100">15%</>
+		- jika value tidak di tentukan jadi loading "nunggu" tidak pakai "persen"
+	- table
+		- hanya class pada table selebinya tag biasa
+		- <table .table>
+			<thead>,tfoot,tbody,tr,td
+		- selected pada <tr .is selected>
+		- modifier:
+			- .table is-bordered,striped,narrow,hoverable,fullwidth,inidapat di kombinasi
+			- scroling table: bungkus table dengan .table-container
+	- tag 
+		- .tag
+		- adalah elemen kayak tombol mendukung tombol close(dg js)
+		- bisa di tambah tombol close lihat pada x delete di atas
+		- perlakuan warna dan ukuran mirip .button
+		- containernya : .tags >  span .tag
+		- container button jg bisa : .tags has-addon > .tag > tag is-delete
+	-
+
+	
