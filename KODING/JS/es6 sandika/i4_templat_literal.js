@@ -6,7 +6,7 @@
 3. HTML fragment
 4. expression interpolationn
 5. tagged template
-kita bicarakan yang 5 di atas dulu, namun penggunaan lainya ada di bawah ini:
+   kita bicarakan yang 5 di atas dulu, namun penggunaan lainya ada di bawah ini:
 6. Escaping HTML tag
 7. Translation Internationalization
 8. Styled Components (di vue, react)
@@ -22,10 +22,10 @@ kita bicarakan yang 5 di atas dulu, namun penggunaan lainya ada di bawah ini:
 // HTML fragment
 const judul = `<h1>nama saya ${nama}</h1>`
 // expression interpolation
-`string text ${ 1 + 2 * 3 } strinng text`		// interpolasi /operasi matematik
+`string text ${ 1 + 2 * 3 } strinng text`	// interpolasi /operasi matematik
 `string text ${ alert("haloo") } strinng text`	// function
 const x = 11;
-console.log(`string text ${ ( x % 2 == 0 ) ? "genap" : "ganjil" } strinng text`	)// ternari
+console.log(`string text ${ ( x % 2 == 0 ) ? "genap" : "ganjil" } strinng text`	)	// ternari
 // tagged template
 
 
@@ -94,18 +94,13 @@ const el = `
 `;
 document.body.innerHTML = el
 
-
-
-
 // TAGGED TEMPLATE 
 
 /*
 adalah bentuk yang lebih komplex dari template literal,
 memungkinkan kita untuk membaca template literals
 melalui sebuah function
-*/
 
-/*
  1. kita punya 2 var
  2. buat var str = string literal
  3. conson.log
@@ -125,7 +120,6 @@ melalui sebuah function
  	buat let = ''; buat string kosong dalam function tsb gunakan "let jangan const",
  	lalu buatkan foreach pada argument pertama dan returnya gabungkan argumen awal dan kedua sesuai index
  12 coba jalan kan consolelog sudah jalan namun ada yang janggal kenapa di akhir ada value undefined
-
 */
 
 const nama = "aqil"
