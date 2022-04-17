@@ -100,6 +100,11 @@ TULIS DATA
     }
   tambahData("pertama","aqil","saiti");
   --------------------------
+TULIS DATA SIMULTAN/PARALEL
+- saat kita ingin menulis di dua tempat sekaligus pakai update()
+- biasanya di gunakan untuk menulis db relasional (baca fun out data)
+  - yaitu kalau bisa cabang itu dangkal saja
+  - sehingga saat terjadi deep, maka sebaiknya pakai relational saja
 
 EDIT DATA
  - sama dengan set() data
