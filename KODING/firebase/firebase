@@ -14,19 +14,25 @@ ALAT TEMPUR UNTUK NPM
   > atau opsional pakai firebase SDK via CDN nanti akan di bahas (tidak usah instal firebase)
 - terminal > untuk menjalankan NPM baik milik OS atau bawaan text editor
 
+ALAT TEMPUR UNTUK MODUL BUNDLER
+- masih belum belajar
+  
 FIREBASE REGISTRASI
 - login dulu atau bukin akun firebase pakai email google di firebase.com
+- terminal :> firebase login
 
-PROJECT DAN DATABASE
+PROJECT DAN DATABASE DI CONSOLE
 - bikin projek baru 
   - masukan nama
   - pilih lokasi server pastikan terdekat southeast-1 singapura southeast-2 jakarta
   - matikan analithyc 
   - done
+- lalu bikin realtime database
+  - tab realtime data base > mulai > next2
   
 INITIALISASI
-- bikin folder project
-- buka terminal > firebase init > kita di kasih 2 file > bikin folder "public" berisi file "index.html"
+- bikin folder project di local 
+- buka terminal di root > firebase init > kita di kasih 2 file > bikin folder "public" berisi file "index.html"
 - bikin template HTML standard dulu
 
 SDK
@@ -40,13 +46,13 @@ SDK
   - belum belajar ini yang paling di anjurkan karena bisa mengkompress lebih kecil
 3 pakai CDN ini yang paling berhasil tapi hanya untuk latihan tidak boleh untuk produksi
   - copas versi CDN di halaman HTML index.html
-  - sekaligus link versi CDN (lihat di dokumentasi ada cara nulisnya)
+  - sekaligus link import2 lainya versi CDN (lihat di dokumentasi ada cara nulisnya)
   
 HOSTING
   - setelah firebase-tools terinstal
-  - npm login   // redirect ke akun gmail anda
-  - npm init    // jalan kan di folder root project
-  - npm deploy  // deploy/upload
+  - npm login   // redirect ke akun gmail anda (sudah diatas)
+  - npm init    // jalan kan di folder root project (sudah diatas)
+  - npm deploy  // deploy/upload project kita yang sudah jadi
   
 CREATE DATABASE CONSOLE
   - key:value aja
@@ -130,12 +136,6 @@ BACA DATA
   --------------------------
   onValue(reff, (snapshot) => { console.log(snapshot.val()) }, {onlyOnce: true});
   
-
-
-
-
-
-
 
 DATA LIST SORT FILTER
 
