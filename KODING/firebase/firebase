@@ -73,14 +73,36 @@ TULIS DATA
   - set(referensi,{isi}); // isi {key:value}
   - atau jelasnya
   --------------------------
-    function tulis("namaUniq", "nama", "alamat"){
+  function tambahData(){                  // 2. bikin function
+    const db = getDatabase();             // 3. bikin connection db
+    const reff = ref(db, 'guru/dua/aa');  // 4. bikin referensi lokasi tidak di tutup dengan garis miring
+    
+    set(reff,{ kata:"halo silmi"} )       // 5. jalan kan set(ref, {k:v}).then(callback).catch(callback);
+    .then(() => {
+      console.log("set sukses");
+    })
+    .catch((error) => {
+      console.log("set gagal");
+    });
+  }
+  tambahData();                           // 1. panggil function
+  -------------------------- contoh2
+    function tulis(namaUniq, nama, alamat){
       const conn : getDatabase();
       const reff : ref(conn, 'pemain/' + namaUniq);           // jika referensi belum ada di db maka akan di buatkan 
       set(reff,{namaUniq:pertama, nama:aqil, alamat:saiti});  // isi di ambil dari argument
     }
     tulis("pertama","aqil","saiti");
   --------------------------
-  
+
+HAPUS DATA
+ - sama dengan set() data
+ - 
+
+EDIT DATA
+ - sama dengan set() data
+ - saat set() data pada jalur ref() yang sama maka akan di timpa dengan nilai baru beserta seluruh childnya (belum praktekin sih)
+
 BACA DATA
 - pakai onValue() tentu import dulu
 - onValue(reff, callback); pakai snapshot.val();
