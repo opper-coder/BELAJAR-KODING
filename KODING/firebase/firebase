@@ -12,16 +12,16 @@ ALAT TEMPUR UNTUK NPM
 - instal firebase SDK via NPM > masuk ke root folder project kerja >
   :> npm install firebase (tapi saya tidah berhasil g tau kenapa) > 
   > atau opsional pakai firebase SDK via CDN nanti akan di bahas (tidak usah instal firebase)
+- firebase Console > tempat kelola server dan service firebase
 - terminal > untuk menjalankan NPM baik milik OS atau bawaan text editor
 
 ALAT TEMPUR UNTUK MODUL BUNDLER
 - masih belum belajar
   
-FIREBASE REGISTRASI
+FIREBASE REGISTRASI CONSOLE
 - login dulu atau bukin akun firebase pakai email google di firebase.com
-- terminal :> firebase login
 
-PROJECT DAN DATABASE DI CONSOLE
+PROJECT DAN DATABASE CONSOLE
 - bikin projek baru 
   - masukan nama
   - pilih lokasi server pastikan terdekat southeast-1 singapura southeast-2 jakarta
@@ -30,29 +30,26 @@ PROJECT DAN DATABASE DI CONSOLE
 - lalu bikin realtime database
   - tab realtime data base > mulai > next2
   
-INITIALISASI
-- bikin folder project di local 
-- buka terminal di root > firebase init > kita di kasih 2 file > bikin folder "public" berisi file "index.html"
-- bikin template HTML standard dulu
-
-SDK
+SDK TERMINAL
 - ada 3 cara instal SDK   
 1 pakai npm > npm install firebase 
   - maka kita akan di kasih paket javascript SDK dll
-  - buka console 
-  - pilih: project overview/project setting
-  - copy sourcecode initialisasi 
 2 atau pakai webpack - rollup
   - belum belajar ini yang paling di anjurkan karena bisa mengkompress lebih kecil
 3 pakai CDN ini yang paling berhasil tapi hanya untuk latihan tidak boleh untuk produksi
   - copas versi CDN di halaman HTML index.html
+  - kita di kasih import initializeApp from firebase (ada versi CDN nya)
   - sekaligus link import2 lainya versi CDN (lihat di dokumentasi ada cara nulisnya)
   
 HOSTING
   - setelah firebase-tools terinstal
-  - npm login   // redirect ke akun gmail anda (sudah diatas)
-  - npm init    // jalan kan di folder root project (sudah diatas)
-  - npm deploy  // deploy/upload project kita yang sudah jadi
+  - firebase login   // redirect ke akun gmail anda (sudah diatas)
+  - firebase init    // jalan kan di folder root project (sudah diatas)
+    - kita di kasih 2 file > bikin folder "public" berisi file "index.html"
+    INITIALISASI CONSOLE
+    - buka console: project overview/project setting
+    - copy sourcecode initialisasi di index.html
+  - firebase deploy  // deploy/upload project kita yang sudah jadi
   
 CREATE DATABASE CONSOLE
   - key:value aja
