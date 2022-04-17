@@ -144,13 +144,13 @@ function getSiswa(url, success, error){
 }
 // --- contoh ke2 kok kayak nggak sama coba perhatikan:
 
-	 const xhr = new XMLHttpRequest();					// 1. jalankan object ajax
+	 const xhr = new XMLHttpRequest();				// 1. jalankan object ajax
 	 xhr.onreadystatechange = function(){
-	 	if( xhr.status === 200 ){						// 2. kita kasih pengkondisian berhasil atau tidak
+	 	if( xhr.status === 200 ){				// 2. kita kasih pengkondisian berhasil atau tidak
 	 		if( xhr.readyStatus === 4 ){
 	 			console.log(JSON.parse(xhr.response));	// 4. kalau berhasil di kembalikan sebagai text -> lalu di parsing ke json
 	 		} 
-	 	} else { 										// 3. kalau gagal disini
+	 	} else { 						// 3. kalau gagal disini
 	 			console.log(xhr.responseText); 
 	 		}
 	 	}
@@ -220,7 +220,7 @@ const janji2 = new Promise( (resolve, reject) => {
 console.log('mulai');
 	// console.log(janji2); // kalau langsung jalankan ini maka pending terus, sebab then nya belum di jalankan 
 console.log(janji2.then( () => console.log(janji2)));	// janji2 di console 2 kali agar terlihat pending dan resolve nya
-console.log('selesai'); // 1. mulai 2. janji2 3. than tapi pending 4. skip ke selesai 5. then nya tercapai dan di jalankan
+console.log('selesai'); 				// 1. mulai 2. janji2 3. than tapi pending 4. skip ke selesai 5. then nya tercapai dan di jalankan
 	// --- tapi nulisnya begini pada prakteknya --> :
 let ditepati = false;
 const janji2 = new Promise( (resolve, reject) => {
@@ -242,10 +242,10 @@ console.log('selesai');
 
 // ALL 
 	/*
-		kalau anda memiliki banyak promise kita harus jalan kan satu persatu
-		untuk menghemat baris kita gunakan sintax "all"
-		pada contoh di bawah ini kita punya 2 promise yang memiliki kecepatan berbeda
-		awal nya kita panggil secara normal, lalu kita praktiskan menggunakan all 
+	kalau anda memiliki banyak promise kita harus jalan kan satu persatu
+	untuk menghemat baris kita gunakan sintax "all"
+	pada contoh di bawah ini kita punya 2 promise yang memiliki kecepatan berbeda
+	awal nya kita panggil secara normal, lalu kita praktiskan menggunakan all 
 	*/
 
 
