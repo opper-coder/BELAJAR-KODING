@@ -97,6 +97,7 @@ TULIS DATA
     }
   tambahData("pertama","aqil","saiti");
   --------------------------
+  
 TULIS DATA SIMULTAN/PARALEL
 - saat kita ingin menulis di dua tempat sekaligus pakai update()
 - biasanya di gunakan untuk menulis db relasional (baca fun out data)
@@ -167,69 +168,9 @@ DATA LIST SORT FILTER
 
 =================================
 
-REALTIME DATABASES
-* AKTIFKAN
-  > kembali ke konsol > pilih realtime databases > create 
-  > bikin nama db > pilih lokasi server > pilih lock mode > done
-  > maka kita di kasih dashboard db GUI nya coba aja
-  > tips struktur db kalau bisa se dangkal mungkin > 
-    > kalau terpaksa ada yang bercabang maka gunakan saja key:value biasa saja
-    > kalau ada koneksi ke table lain gunakan interaksi 'true' dengan table lain 
-    > dan update saat terjadi perubahan pada salah satu tabel 
-      maka terpaksa update kedua-duanya(dua tabel join) aja itu lebih efisien
+
       
-      * BENTUK TABLE
-        {key:value}
-         //------
-        {
-          K:{
-            K:v,
-            k:V
-          }
-        }
-        //------
-      {
-      players:{
-        1:{
-            nama:buffon,
-            skill:tangkapan harimau
-          },
-        2:{
-            nama:hansamu,
-            skill:gocekan maut
-          }
-        },
-      pelatih:...
-      }
-        //------
-    
-* CONNECTION DB
-  > kita sudah punya halaman index.html kosong
-  * TEMPLAT HTML. 
-    vs code : 
-      html,head,body tab atau lengkapnya ! tab 
-  * INITIAL FIREBASE
-    > buka console > project overview > project setting > copy templat ini dari mode npm >
-    > paste di tag script html di head atau di body 
-    > atau include dari halaman lainya index.js <script href="">
-// ------------------------------------------------------
-
-import { initializeApp } from "firebase/app"; // inisial awal di ambil/diimport dari SDK
-const firebaseConfig = {
-  apiKey: "AIzaSyAOdBTFQ45E5fWkYyB_7sp3gP-KvHUlqQA",
-  authDomain: "latihan-hilman-april-2022.firebaseapp.com",
-  databaseURL: "https://latihan-hilman-april-2022-default-rtdb.asia-southeast1.firebasedatabase.app",
-  projectId: "latihan-hilman-april-2022",
-  storageBucket: "latihan-hilman-april-2022.appspot.com",
-  messagingSenderId: "854536857305",
-  appId: "1:854536857305:web:aed1e0af7815fb155780c8"
-};
-const app = initializeApp(firebaseConfig);  // fungsi yang di import di jadikan variabel untuk digunakan inisialisasi 
-// ------------------------------------------------------
-
-
-
-
+  
 
 
 
