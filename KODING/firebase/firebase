@@ -48,7 +48,7 @@ HOSTING
     - kita di kasih 2 file > bikin folder "public" berisi file "index.html"
     INITIALISASI CONSOLE
     - buka console: project overview/project setting
-    - copy sourcecode initialisasi di index.html
+    - copy sourcecode initialisasi dan paste di index.html
   - firebase deploy  // deploy/upload project kita yang sudah jadi
   
 CREATE DATABASE CONSOLE
@@ -110,7 +110,7 @@ TULIS DATA SIMULTAN/PARALEL
 
 
 
-
+????????????????
 
 
 
