@@ -198,12 +198,10 @@ CACHE
 
 
 
+=================================
 * LOCALHOST -----
   > kalau mau jalankan di localhost tinggal :> klik ketik > firebase serve > kita akan dikasih 
   url > http://localhost:5000 > buka URL tersebut di browser
-* DEPLOY -----
-  saat kita sudah punya file html aplikasi kita yang di buat di VSCODE dalam folder public maka tinggal deploy aja
-  > kalau mau langsung di upload tinggal :> firebase deploy 
 * VERSION
   > kalau kita punya beberapa project kita bisa beralih projek1 dan projek 2 misalnya(satu versi publish dua 
   versi develop misalnya latihan silmi1 dan latihan silmi2) maka kita bikin projek dulu di console
@@ -212,7 +210,6 @@ CACHE
   > cara panggil atau aksesnya dengan > firebase use (lihat list project)
   > firebase use second
 
-=================================
 
 
       
