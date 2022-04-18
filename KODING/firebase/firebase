@@ -75,7 +75,7 @@ TULIS DATA
   - intinya pakai < set(); >
   - < set(referensi, {isi}); > // isi { key:value }
   - atau jelasnya
-  -------------------------- contoh1
+  -------------------------- contoh1 gunakan .then().catch()
   function tambahData(){                            // 2. bikin function
     const db = getDatabase();                       // 3. bikin connection db
     const reff = ref(db, 'guru/dua/aa');            // 4. bikin referensi lokasi tidak atau tutup dengan garis miring
@@ -89,7 +89,7 @@ TULIS DATA
       });
   }
   tambahData();                                     // 1. panggil function
-  -------------------------- contoh2
+  -------------------------- contoh2 tulis dasar
   function tambahData(namaUniq, nama, alamat){
      const conn : getDatabase();
      const reff : ref(conn, 'pemain/' + namaUniq);  // jika referensi belum ada di db maka akan di buatkan 
@@ -103,6 +103,13 @@ TULIS DATA SIMULTAN/PARALEL
 - biasanya di gunakan untuk menulis db relasional (baca fun out data)
   - yaitu kalau bisa cabang itu dangkal saja
   - sehingga saat terjadi deep, maka sebaiknya pakai relational saja
+
+
+
+
+
+
+
 
 EDIT DATA
  - sama dengan set() data
@@ -120,6 +127,7 @@ BACA DATA
 - pakai onValue() tentu import dulu
 - onValue(reff, callback); pakai snapshot.val();
 - val() bisa di ganti dengan exists()
+- baca data pada key tertentu akan membaca semua childnya ya 
   --------------------------
   const db = getDatabase();
   const reff = ref(db, 'guru/empat' );
@@ -131,14 +139,35 @@ BACA DATA
   -------------------------- alias
   onValue(reff, (snapshot) => { console.log(snapshot.val()) });
 
-  BACA DATA SEKALI
+  BACA DATA SEKALI (TIDAK REALTIME) PAKAI GET
   - untuk data yang tidak sering di update sebagaimana chat (seperti artikel, deskripsi, detil barang dll)
     dan bisa di simpan di cache gunakan get()
-  - penggunaan get() hanya untuk yang benar2 statis jangan yang dinamis bisa mmakan bandwidth
+  - hal ini akan hemat bandwidt dan juga biaya 
+  - kalau mau yang realtime tidak di sarankan pakai get() pakai saja onValue(). karena kontra produktive 
+    malah jadi boros
+  - penggunaan get() hanya untuk yang benar2 statis jangan yang dinamis bisa makan bandwidth
+  --------------------------
+  import { getDatabase, ref, child, get } from "firebase/database";
+
+  const dbRef = ref(getDatabase());
+  get(child(dbRef, 'guru/kelas'))
+    .then((snapshot) => {
+        if (snapshot.exists()) {
+          console.log(snapshot.val());
+        } else {
+          console.log("Data tidak tersedia");
+        }
+      })
+    .catch((error) => {
+        console.error(error);
+      });
+  
+  --------------------------
+  BACA DATA SEKALI PAKAI OBSERVER. onValue()
   - tambah di akhir {onlyOnce:true}
   --------------------------
   onValue(reff, (snapshot) => { console.log(snapshot.val()) }, {onlyOnce: true});
-  
+  --------------------------
 
 DATA LIST SORT FILTER
 
