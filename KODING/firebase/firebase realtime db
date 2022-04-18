@@ -172,11 +172,24 @@ BACA DATA
   --------------------------
   onValue(reff, (snapshot) => { console.log(snapshot.val()) }, {onlyOnce: true});
   --------------------------
+PROMISE
+- promise perlu di berikan agar tahu kapan data terkirim selama proses berlangsung
+- terapan pelajari langsung di JS ES6
+
+DIE off()
+- mematikan koneksi ke db
 
 DATA LIST SORT FILTER
+- coba
 
+MENYIMPAN DATA SEBAGAI TRANSAKSI
+- coba
 
+INCREMEN ID SERVER
+- coba
 
+CACHE
+- coba
 
 
 
