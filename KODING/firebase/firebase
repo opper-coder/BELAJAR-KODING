@@ -69,7 +69,11 @@ CREATE DATABASE CONSOLE
           andy: true,
           aqil: true
         }
-        
+CATATAN DAN TIPS
+- oya semua code di bawah say copas langsung dari standard documentasinya 
+- tapi saya hanya modifikasi root referensi, jalur import CDN, variabel dll saja 
+- saya hanya fokus pada konsep dan praktek nya dan ini sudah di uji berhasil
+
 TULIS DATA
   - di index.js
   - intinya pakai < set(); >
