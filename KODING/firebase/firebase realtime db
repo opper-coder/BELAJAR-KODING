@@ -107,11 +107,35 @@ TULIS DATA SIMULTAN/PARALEL
 - biasanya di gunakan untuk menulis db relasional (baca fun out data)
   - yaitu kalau bisa cabang itu dangkal saja
   - sehingga saat terjadi deep, maka sebaiknya pakai relational saja
+  --------------------------
+  function writeNewPost(nama, alamat, umur, jenisk) {
+    const db = getDatabase();
 
+    // data Posting masing-masing untuk 1 dan 2.
+    const postData = {
+      nama  : nama,
+      alamat : alamat,
+      umur  : umur,
+      jenisKlm : jenisk
+    };
+    const postData2 = {
+      nama  : nama,
+      alamat : alamat,
+    };
 
+    // buatkan key untuk posting baru dg .key() saya masih belum melihat fungsi ref 'guru'
+    const newPostKey = push(child(ref(db), 'guru')).key;
 
-????????????????
+    // nulis bersamaan di siswa dan grup, 
+    const updates = {};
+    updates['/siswa2/' + newPostKey] = postData;                // pos1 data akan di tulis disini
+    updates['/grup2/' + nama + '/' + newPostKey] = postData2;   // sekaligus pos2 di tulis disini
 
+    return update(ref(db), updates);
+  }
+
+  writeNewPost("iza","bela",6,"perempuan");
+  --------------------------
 
 
 
