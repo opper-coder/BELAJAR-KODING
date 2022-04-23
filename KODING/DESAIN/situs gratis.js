@@ -38,3 +38,9 @@ ICON
 DESAIN BERBAYAR DI 
 * envato market / https://themeforest.net/
 * atau key word google dashboard bootstrap free
+
+KODING
+PENGGANTI POSTMAN API
+https://hoppscotch.io/?ref=youtube.com%2Fsekolahkodint
+
+FIGMA.COM
