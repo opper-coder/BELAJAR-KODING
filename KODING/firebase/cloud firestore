@@ -1,0 +1,10 @@
+CLOUD FIRESTORE
+
+
+MEMILIH DATABASE
+- realtime database
+  - latency rendah > cocok syncronisasi realtime > lebih mahal
+  - untuk data kecil, query sederhana, realtime, notifikasi kehadiran online-offline
+- cloud firestore
+  - terbaru > lebih lengkap > queri lebih baik > seach lebih cepat > lebih murah > scalable lebih cepat
+  - untuk data besar, query compleks, tidak relatime
