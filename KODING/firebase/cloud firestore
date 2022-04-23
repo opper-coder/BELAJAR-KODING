@@ -3,8 +3,23 @@ CLOUD FIRESTORE
 
 MEMILIH DATABASE
 - realtime database
-  - latency rendah > cocok syncronisasi realtime > lebih mahal
+  - cocok untuk chat dan notifikasi progress
+  - latency rendah > cocok syncronisasi realtime > lebih mahal 
   - untuk data kecil, query sederhana, realtime, notifikasi kehadiran online-offline
+  - makin banyak data makin lambat
 - cloud firestore
+  - cocok untuk data besar dan scalable
   - terbaru > lebih lengkap > queri lebih baik > seach lebih cepat > lebih murah > scalable lebih cepat
   - untuk data besar, query compleks, tidak relatime
+  - makin banyak data di temukan makin lambat
+- semua data base sebenarnya memiliki perbedaan yang tipis saja sehingga di sarankan
+  memilih cloud firestore karena fitur lebih baru daan lebih lengkap, serta integrasi dengan GCP lebih mudah
+  - semua bisa efisien dengan membaca sekali (tidak realtime)
+  - 
+  
+CREATE DB
+- di console > login > pilih atau buat project > pilih tab cloud firestore > create  started > scurity role mode pengujian
+  (bisa setting waktu 30 hr ke depan dan bisa di edit) > pilih lokasi asia southeast2 > 
+
+
+
