@@ -19,6 +19,11 @@ MEMILIH DATABASE
 CREATE DB
 - di console > login > pilih atau buat project > pilih tab cloud firestore > create  started > scurity role mode pengujian
   (bisa setting waktu 30 hr ke depan dan bisa di edit) > pilih lokasi asia southeast2 > 
-- 
 
+SDK CLOUD FIREBASE WEB
+- npm install firebase@9.6.10 --save
+
+import { initializeApp } from "firebase/app";
+import { getFirestore } from "firebase/firestore";
+import { getFirestore } from "firebase/firestore/lite"; // atau pakai ini untuk CRUD dasar saja
 
