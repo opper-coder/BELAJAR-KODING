@@ -42,5 +42,7 @@ DESAIN BERBAYAR DI
 KODING
 PENGGANTI POSTMAN API
 https://hoppscotch.io/?ref=youtube.com%2Fsekolahkodint
+https://mocki.io/?ref=youtube.com%2Fsekolahkodint
+https://mockapi.io/?ref=youtube.com%2Fsekolahkodint
 
 FIGMA.COM
