@@ -32,8 +32,9 @@ KOLEKSI DOKUMENT FIELD
 - kolom dalam dokument tidak ada aturan harus sama > tapi sama di anjurkan karena memudahkan penyusunan query
 - referensi > seperti akses folder aja sesuai koleksi/id/subKoleksi/id
     doc(db, 'users/id/nama' );
-    doc(db, 'users, id, nama' );
+    doc(db, "users", "id", "nama" );
     collection(db, 'users');
+
     
 ------------------------>
 SDK CLOUD FIREBASE WEB 
