@@ -1,5 +1,10 @@
 BELAJAR FIREBASE WEB
+=============================================
+tips dan trik
+- 
 
+
+=============================================
 ada dua cara menangani interaksi web dengan firebase, yaitu
 1. NPM
 2. modul bundler
@@ -168,12 +173,15 @@ BACA DATA
   onValue(reff, (snapshot) => { console.log(snapshot.val()) });
 
   BACA DATA SEKALI (TIDAK REALTIME) PAKAI GET
+  DAN CALLBACK PENYELESAIAN
   - untuk data yang tidak sering di update sebagaimana chat (seperti artikel, deskripsi, detil barang dll)
     dan bisa di simpan di cache gunakan get()
   - hal ini akan hemat bandwidt dan juga biaya 
   - kalau mau yang realtime tidak di sarankan pakai get() pakai saja onValue(). karena kontra produktive 
     malah jadi boros
   - penggunaan get() hanya untuk yang benar2 statis jangan yang dinamis bisa makan bandwidth
+  - callback penyelesaian untuk mnegetahui apakah data berhasil di commit atau gagal menggunakan .then().catch
+  - sebenarnya hanya di peruntukkan untuk set() dan update() saja get() tidak ini hanya copas aja
   --------------------------
   import { getDatabase, ref, child, get } from "firebase/database";
 
@@ -196,8 +204,11 @@ BACA DATA
   --------------------------
   onValue(reff, (snapshot) => { console.log(snapshot.val()) }, {onlyOnce: true});
   --------------------------
+CALLBACK PENYELESAIAN
+- di gunakan untuk mengetahui berhasil di commit atau gagal
+
 PROMISE
-- promise perlu di berikan agar tahu kapan data terkirim selama proses berlangsung
+- promise perlu di berikan agar tahu "kapan" data terkirim selama proses berlangsung
 - terapan pelajari langsung di JS ES6
 
 DIE off()
@@ -212,7 +223,7 @@ MENYIMPAN DATA SEBAGAI TRANSAKSI
 INCREMEN ID SERVER
 - coba
 
-CACHE
+CACHE OFFLINE
 - coba
 
 
