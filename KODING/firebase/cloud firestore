@@ -1,6 +1,7 @@
 CLOUD FIRESTORE
 
-MEMILIH DATABASE
+------------------------>
+MEMILIH DATABASE 
 - realtime database
   - cocok untuk chat dan notifikasi progress
   - latency rendah > cocok syncronisasi realtime > lebih mahal 
@@ -15,12 +16,27 @@ MEMILIH DATABASE
   memilih cloud firestore karena fitur lebih baru daan lebih lengkap, serta integrasi dengan GCP lebih mudah
   - semua bisa efisien dengan membaca sekali (tidak realtime)
   - 
-  
-CREATE DB
+
+------------------------>
+CREATE DB 
 - di console > login > pilih atau buat project > pilih tab cloud firestore > create  started > scurity role mode pengujian
   (bisa setting waktu 30 hr ke depan dan bisa di edit) > pilih lokasi asia southeast2 > 
 
-SDK CLOUD FIREBASE WEB
+------------------------>
+KOLEKSI DOKUMENT FIELD
+- koleksi mirip tabel > dia hanya berisi dokument.tidak untuk subkoleksi atau K:V > koleksi tidak perlu di buat
+  karena otomotis di buat saat documen di buat dan oto matis di hapus saat semua data tidak ada
+- dokument mirip row > karena row maka harus uniq (memiliki ID)
+- kolom mirip field 
+-----
+- kolom dalam dokument tidak ada aturan harus sama > tapi sama di anjurkan karena memudahkan penyusunan query
+- referensi > seperti akses folder aja sesuai koleksi/id/subKoleksi/id
+    doc(db, 'users/id/nama' );
+    doc(db, 'users, id, nama' );
+    collection(db, 'users');
+    
+------------------------>
+SDK CLOUD FIREBASE WEB 
 - npm install firebase@9.6.10 --save
 
 import { initializeApp } from "firebase/app";
@@ -39,7 +55,8 @@ const db = getFirestore(app);
 
 copas aja dari dokumentasi di index.html
 
-TULIS DATA
+------------------------>
+TULIS DATA 
 copas aja ini:
 
 import { collection, addDoc } from "firebase/firestore";
@@ -55,7 +72,8 @@ try {
   console.error("Error adding document: ", e);
 }
 
-BACA DATA
+------------------------>
+BACA DATA 
 
 import { collection, getDocs } from "firebase/firestore";
 
