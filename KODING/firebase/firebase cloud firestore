@@ -31,6 +31,7 @@ KOLEKSI DOKUMENT FIELD
 -----
 - kolom dalam dokument tidak ada aturan harus sama > tapi sama di anjurkan karena memudahkan penyusunan query
 - referensi > seperti akses folder aja sesuai koleksi/id/subKoleksi/id
+</>
     doc(db, 'users/id/nama' );
     doc(db, "users", "id", "nama" );
     collection(db, 'users');
@@ -38,6 +39,7 @@ KOLEKSI DOKUMENT FIELD
     
 ------------------------>
 SDK CLOUD FIREBASE WEB 
+</>
 - npm install firebase@9.6.10 --save
 
 import { initializeApp } from "firebase/app";
@@ -56,6 +58,47 @@ const db = getFirestore(app);
 
 copas aja dari dokumentasi di index.html
 
+------------------------>
+SDK KLIEN
+ada sdk yang lebih advance yaitu sdk klien 
+meskipun firebase dapat di akses langsung via HTTP atau GRPC namun jika
+ingin ada hak istimewa dan fitur tambahan maka gunakan sdk client
+
+------------------------>
+plus minus struktur data
+- semua struktur data di bungkus pada dokumen > plus ... minus ...
+- satu layanan dalam koleksi 
+- tiap layanan dalam root
+- +/- baca penjelasan di dokumentasi
+
+------------------------>
+TULIS DATA 
+- ini tulis data atau timpa/edit data jika sudah ada dan tanpa id
+</>
+    import { doc, setDoc } from "firebase/firestore";
+
+    await setDoc(doc(db, "cities", "LA"), {                 // tambah data pada collection cities / doc LA
+      name: "Los Angeles",                                  // isi key : value
+      state: "CA",
+      country: "USA"
+    });
+
+- ini sisipkan/input data dokumen baru, pada coll yang sudah ada
+- cara ini sangat baik untuk data yang sudah ada atau belum pertimbangkan harus di gunakan
+  untuk menghindari menimpa data yang sudah ada secara keseluruhan
+</>
+    const cityRef = doc(db, 'cities', 'BJ');                // tulis pada coll 'cities' untuk dokumen baru 'BJ'
+    setDoc(cityRef, { capital: true }, { merge: true });    // {isi},{penggabungan/sisip}
+
+
+
+
+
+
+
+
+
+============================== dari pengenalan awal 
 ------------------------>
 TULIS DATA 
 copas aja ini:
