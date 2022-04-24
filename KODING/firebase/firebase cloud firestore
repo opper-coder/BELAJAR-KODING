@@ -72,7 +72,7 @@ plus minus struktur data
 - +/- baca penjelasan di dokumentasi
 
 ------------------------>
-TULIS DATA 
+TULIS DATA DASAR =====
 - ini tulis data atau timpa/edit data jika sudah ada dan tanpa id
 </>
     import { doc, setDoc } from "firebase/firestore";
@@ -82,15 +82,53 @@ TULIS DATA
       state: "CA",
       country: "USA"
     });
-
-- ini sisipkan/input data dokumen baru, pada coll yang sudah ada
+    
+TULIS DATA INSERT =====
+- ini sisipkan/input data dokumen baru, pada coll yang sudah ada {merge:true}
 - cara ini sangat baik untuk data yang sudah ada atau belum pertimbangkan harus di gunakan
   untuk menghindari menimpa data yang sudah ada secara keseluruhan
 </>
     const cityRef = doc(db, 'cities', 'BJ');                // tulis pada coll 'cities' untuk dokumen baru 'BJ'
     setDoc(cityRef, { capital: true }, { merge: true });    // {isi},{penggabungan/sisip}
 
+TULIS DATA dengan ID otomatis =====
+</>
+await setDoc(doc(db, "cities", "new-city-id"), data);
 
+
+??????????
+
+
+------------------------>
+TYPE DATA
+silahkan coba jenis type data ini
+
+const docData = {
+    stringExample: "Hello world!",
+    booleanExample: true,
+    numberExample: 3.14159265,
+    dateExample: Timestamp.fromDate(new Date("December 10, 1815")),
+    arrayExample: [5, true, "hello"],
+    nullExample: null,
+    objectExample: {
+        a: 5,
+        b: {
+            nested: "foo"
+        }
+    }
+};
+await setDoc(doc(db, "data", "one"), docData);
+
+CLASS 
+kalau memasukkan data menggunakan class, firebase tetap akan mengkonversi ke object. jika di butuhkan, baca dokumentasi
+
+------------------------>
+
+------------------------>
+------------------------>
+------------------------>
+------------------------>
+------------------------>
 
 
 
