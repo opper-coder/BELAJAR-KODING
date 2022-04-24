@@ -72,8 +72,9 @@ plus minus struktur data
 - +/- baca penjelasan di dokumentasi
 
 ------------------------>
-TULIS DATA DASAR =====
+TULIS DATA DASAR 
 - ini tulis data atau timpa/edit data jika sudah ada dan tanpa id
+- .add(...) DAN .doc().set(...) dua ini benar-benar setara, sehingga Anda dapat menggunakan salah satu yang paling Anda sukai.
 </>
     import { doc, setDoc } from "firebase/firestore";
 
@@ -83,20 +84,43 @@ TULIS DATA DASAR =====
       country: "USA"
     });
     
-TULIS DATA INSERT =====
-- ini sisipkan/input data dokumen baru, pada coll yang sudah ada {merge:true}
-- cara ini sangat baik untuk data yang sudah ada atau belum pertimbangkan harus di gunakan
-  untuk menghindari menimpa data yang sudah ada secara keseluruhan
-</>
-    const cityRef = doc(db, 'cities', 'BJ');                // tulis pada coll 'cities' untuk dokumen baru 'BJ'
-    setDoc(cityRef, { capital: true }, { merge: true });    // {isi},{penggabungan/sisip}
+--- TULIS DATA INSERT 
+    - ini sisipkan/input data dokumen baru, pada coll yang sudah ada {merge:true}
+    - cara ini sangat baik untuk data yang sudah ada atau belum pertimbangkan harus di gunakan
+      untuk menghindari menimpa data yang sudah ada secara keseluruhan
+    </>
+        const cityRef = doc(db, 'cities', 'BJ');                // tulis pada coll 'cities' untuk dokumen baru 'BJ'
+        setDoc(cityRef, { capital: true }, { merge: true });    // {isi},{penggabungan/sisip}
 
-TULIS DATA dengan ID otomatis =====
-</>
-await setDoc(doc(db, "cities", "new-city-id"), data);
+--- TULIS DATA dengan ID =====\
+    saat menulis data kita butuh bikin id yang uniq. pakai saja setDoc()
+    </>
+    await setDoc(doc(db, "cities", "new-city-id"), data);       // bikin id "new-city-id" lalu isi data {data} 
 
+--- TULIS DATA dengan ID otomatis
+    saat menulis, bikin id otomatis. pakai saja addDoc()
+    </>
+    await addDoc(collection(db, "cities" ), data);              // tanpa id (otomatis di buatkan oleh addDoc()) ditulis pada collection
+    ---
+    const docRef = await addDoc(collection(db, "cities"), {     // penting pada metode otomatis ini tdk ada pengurutan otomatis 
+      name: "Tokyo",                                            // maka sediakan kolom timestamp kalau mau di urutkan nantinya
+      country: "Japan"
+    });
+    console.log("Document written with ID: ", docRef.id);
+    ---
+--- ???? perlu di praktekin satu lagi 
+????????????????????????????
 
-??????????
+------------------------>
+EDIT DATA 
+untuk memperbarui data yang tidak menimpa keseluruhan kolom document pakai update()
+    </>
+    const washingtonRef = doc(db, "cities", "DC");
+
+    await updateDoc(washingtonRef, {    
+      capital: true                           // edit capital pada doc 'DC', coll "cities" saja kolom yang lain tidak (belum praktek)
+    });
+  
 
 
 ------------------------>
