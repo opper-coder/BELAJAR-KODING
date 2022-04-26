@@ -196,7 +196,7 @@ const docData = {
 await setDoc(doc(db, "data", "one"), docData);
 
 CLASS 
-kalau memasukkan data menggunakan class, firebase tetap akan mengkonversi ke object. jika di butuhkan, baca dokumentasi
+kalau memasukkan data menggunakan class nodejs, firebase tetap akan mengkonversi ke object. jika di butuhkan, baca dokumentasi
 
 ------------------------>
 
