@@ -24,10 +24,11 @@ CREATE DB
 
 ------------------------>
 KOLEKSI DOKUMENT FIELD
-- koleksi mirip tabel > dia hanya berisi dokument.tidak untuk subkoleksi atau K:V > koleksi tidak perlu di buat
-  karena otomotis di buat saat documen di buat dan oto matis di hapus saat semua data tidak ada
+- koleksi mirip tabel > dia hanya berisi dokument Key:Value > tidak boleh koleksi lagi > 
+  > koleksi baru boleh di buat dalam dokumen > koleksi dan dokumen tidak perlu di buat secara explisit
+  karena otomotis di buat saat documen di buat dan otomatis (secara implisit) di hapus saat semua data tidak ada
 - dokument mirip row > karena row maka harus uniq (memiliki ID)
-- kolom mirip field 
+- kolom (key) mirip field 
 -----
 - kolom dalam dokument tidak ada aturan harus sama > tapi sama di anjurkan karena memudahkan penyusunan query
 - referensi > seperti akses folder aja sesuai koleksi/id/subKoleksi/id
@@ -41,20 +42,21 @@ KOLEKSI DOKUMENT FIELD
 SDK CLOUD FIREBASE WEB 
 </>
 - npm install firebase@9.6.10 --save
+setelah terinstal baru import di halaman index:
 
-import { initializeApp } from "firebase/app";
-import { getFirestore } from "firebase/firestore";
-import { getFirestore } from "firebase/firestore/lite"; // atau pakai ini untuk CRUD dasar saja
+  import { initializeApp } from "firebase/app";
+  import { getFirestore } from "firebase/firestore";
+  import { getFirestore } from "firebase/firestore/lite"; // atau pakai ini untuk CRUD dasar saja
 
-import { initializeApp } from "firebase/app";
-import { getFirestore} } from "firebase/firestore";
+  import { initializeApp } from "firebase/app";
+  import { getFirestore} } from "firebase/firestore";
 
-const firebaseConfig = {
-    // ...
-};
+  const firebaseConfig = {
+      // ...
+  };
 
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
 
 copas aja dari dokumentasi di index.html
 
@@ -77,7 +79,7 @@ TULIS DATA DASAR
 - .add(...) DAN .doc().set(...) dua ini benar-benar setara, sehingga Anda dapat menggunakan salah satu yang paling Anda sukai.
 </>
     import { doc, setDoc } from "firebase/firestore";
-
+</>
     await setDoc(doc(db, "cities", "LA"), {                 // tambah data pada collection cities / doc LA
       name: "Los Angeles",                                  // isi key : value
       state: "CA",
