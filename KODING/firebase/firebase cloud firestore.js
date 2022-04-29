@@ -1,7 +1,7 @@
-CLOUD FIRESTORE
+// CLOUD FIRESTORE
 
 ------------------------>
-MEMILIH DATABASE 
+// MEMILIH DATABASE 
 - realtime database
   - cocok untuk chat dan notifikasi progress
   - latency rendah > cocok syncronisasi realtime > lebih mahal 
@@ -18,12 +18,12 @@ MEMILIH DATABASE
   - 
 
 ------------------------>
-CREATE DB 
+// CREATE DB 
 - di console > login > pilih atau buat project > pilih tab cloud firestore > create  started > scurity role mode pengujian
   (bisa setting waktu 30 hr ke depan dan bisa di edit) > pilih lokasi asia southeast2 > 
 
 ------------------------>
-KOLEKSI DOKUMENT FIELD
+// KOLEKSI DOKUMENT FIELD
 - koleksi mirip tabel > dia hanya berisi dokument Key:Value > tidak boleh koleksi lagi > 
   > koleksi baru boleh di buat dalam dokumen > koleksi dan dokumen tidak perlu di buat secara explisit
   karena otomotis di buat saat documen di buat dan otomatis (secara implisit) di hapus saat semua data tidak ada
@@ -39,7 +39,7 @@ KOLEKSI DOKUMENT FIELD
 
     
 ------------------------>
-SDK CLOUD FIREBASE WEB 
+// SDK CLOUD FIREBASE WEB 
 </>
 - npm install firebase@9.6.10 --save
 setelah terinstal baru import di halaman index:
@@ -61,7 +61,7 @@ setelah terinstal baru import di halaman index:
 copas aja dari dokumentasi di index.html
 
 ------------------------>
-SDK KLIEN
+// SDK KLIEN
 ada sdk yang lebih advance yaitu sdk klien 
 meskipun firebase dapat di akses langsung via HTTP atau GRPC namun jika
 ingin ada hak istimewa dan fitur tambahan maka gunakan sdk client
@@ -74,7 +74,7 @@ plus minus struktur data
 - +/- baca penjelasan di dokumentasi
 
 ------------------------>
-TULIS DATA DASAR 
+// TULIS DATA DASAR 
 - ini tulis data atau timpa/edit data jika sudah ada dan tanpa id
 - .add(...) DAN .doc().set(...) dua ini benar-benar setara, sehingga Anda dapat menggunakan salah satu yang paling Anda sukai.
 </>
@@ -114,7 +114,7 @@ TULIS DATA DASAR
 ????????????????????????????
 
 ------------------------>
-EDIT DATA 
+// EDIT DATA 
 untuk memperbarui data yang tidak menimpa keseluruhan kolom document pakai update()
     </>
     const washingtonRef = doc(db, "cities", "DC");
@@ -216,7 +216,7 @@ kalau memasukkan data menggunakan class nodejs, firebase tetap akan mengkonversi
 
 ============================== dari pengenalan awal 
 ------------------------>
-TULIS DATA 
+// TULIS DATA 
 copas aja ini:
 
 import { collection, addDoc } from "firebase/firestore";
@@ -233,7 +233,7 @@ try {
 }
 
 ------------------------>
-BACA DATA 
+// BACA DATA 
 
 import { collection, getDocs } from "firebase/firestore";
 
