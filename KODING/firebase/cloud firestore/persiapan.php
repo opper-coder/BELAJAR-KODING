@@ -1,10 +1,7 @@
-/* --- PERSIAPAN --- */
-// CLOUD FIRESTORE
-
-// ALUR IMPLEMENTASI
-
------------------------->
-// MEMILIH DATABASE 
+CLOUD FIRESTORE
+ALUR IMPLEMENTASI
+------------------------------------------------------------------------------------------------
+MEMILIH DATABASE 
 - realtime database
   - cocok untuk chat dan notifikasi progress
   - latency rendah > cocok syncronisasi realtime > lebih mahal 
@@ -20,13 +17,13 @@
   - semua bisa efisien dengan membaca sekali (tidak realtime)
   - 
 
------------------------->
-// CREATE DB 
+------------------------------------------------------------------------------------------------
+CREATE DB 
 - di console > login > pilih atau buat project > pilih tab cloud firestore > create  started > scurity role mode pengujian
   (bisa setting waktu 30 hr ke depan dan bisa di edit) > pilih lokasi asia southeast2 > 
 
------------------------->
-// KOLEKSI DOKUMENT FIELD
+------------------------------------------------------------------------------------------------
+KOLEKSI DOKUMENT FIELD
 - selang seling > koleksi/dokumen/subkoleksi/subddokumen/sampai seratus anak
 - koleksi mirip tabel > dia hanya berisi dokument Key:Value > tidak boleh koleksi lagi > 
   > koleksi baru boleh di buat dalam dokumen > koleksi dan dokumen tidak perlu di buat secara explisit
@@ -38,15 +35,16 @@
 -----
 - kolom dalam dokument tidak ada aturan harus sama > tapi sama di anjurkan karena memudahkan penyusunan query
 - referensi > seperti akses folder aja sesuai koleksi/id/subKoleksi/id
------------------------->
-// REFERENSI
+
+------------------------------------------------------------------------------------------------
+REFERENSI
 </>
     doc(db, 'users/id/nama' );
     doc(db, "users", "id", "nama" );
     collection(db, 'users');
 
------------------------->
-// SDK CLOUD FIREBASE WEB 
+------------------------------------------------------------------------------------------------
+SDK CLOUD FIREBASE WEB 
 </>
 - npm install firebase@9.6.10 --save
 setelah terinstal baru import di halaman index:
@@ -67,13 +65,13 @@ setelah terinstal baru import di halaman index:
 
 copas aja dari dokumentasi di index.html
 
------------------------->
-// SDK KLIEN
+------------------------------------------------------------------------------------------------
+SDK KLIEN
 ada sdk yang lebih advance yaitu sdk klien 
 meskipun firebase dapat di akses langsung via HTTP atau GRPC namun jika
 ingin ada hak istimewa dan fitur tambahan maka gunakan sdk client
 
------------------------->
+------------------------------------------------------------------------------------------------
 plus minus struktur data
 - semua struktur data di bungkus pada dokumen > plus ... minus ...
 - satu layanan dalam koleksi 
