@@ -27,20 +27,24 @@
 
 ------------------------>
 // KOLEKSI DOKUMENT FIELD
+- selang seling > koleksi/dokumen/subkoleksi/subddokumen/sampai seratus anak
 - koleksi mirip tabel > dia hanya berisi dokument Key:Value > tidak boleh koleksi lagi > 
   > koleksi baru boleh di buat dalam dokumen > koleksi dan dokumen tidak perlu di buat secara explisit
   karena otomotis di buat saat documen di buat dan otomatis (secara implisit) di hapus saat semua data tidak ada
 - dokument mirip row > karena row maka harus uniq (memiliki ID)
-- kolom (key) mirip field 
+- kolom (key) mirip field
+- nama dokumen(id) harus uniq > boleh manual boleh outo id  > tapi kalau auto tidak ada pengurutan > solusi pengurutan
+  - berikan kolom timestamp - 
 -----
 - kolom dalam dokument tidak ada aturan harus sama > tapi sama di anjurkan karena memudahkan penyusunan query
 - referensi > seperti akses folder aja sesuai koleksi/id/subKoleksi/id
+------------------------>
+// REFERENSI
 </>
     doc(db, 'users/id/nama' );
     doc(db, "users", "id", "nama" );
     collection(db, 'users');
 
-    
 ------------------------>
 // SDK CLOUD FIREBASE WEB 
 </>
