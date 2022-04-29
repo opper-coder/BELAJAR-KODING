@@ -1,6 +1,8 @@
 /* --- PERSIAPAN --- */
 // CLOUD FIRESTORE
 
+// ALUR IMPLEMENTASI
+
 ------------------------>
 // MEMILIH DATABASE 
 - realtime database
