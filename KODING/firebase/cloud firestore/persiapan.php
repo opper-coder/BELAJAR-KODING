@@ -47,6 +47,7 @@ plus minus struktur data
 - satu layanan dalam koleksi 
 - tiap layanan dalam root
 - +/- baca penjelasan di dokumentasi
+
 ------------------------------------------------------------------------------------------------
 REFERENSI
 referensi adalah hal yang merujuk ke lokasi data "berakhir" di id dokumen/koleksi. jd bukan kolom
@@ -92,11 +93,19 @@ setelah terinstal baru import di halaman client: index.html:
 copas aja dari dokumentasi di index.html
 
 ------------------------------------------------------------------------------------------------
-SDK KLIEN (LIBRARY CLIENT)
-ada sdk yang lebih advance yaitu sdk klien 
-meskipun firebase dapat di akses langsung via HTTP atau GRPC namun jika
-ingin ada hak istimewa dan fitur tambahan maka gunakan sdk client
+LIBRARY CLIENT SERVER
+- tidak seperti SDK CLIENT yang lebih advance yaitu library klien 
+  meskipun firebase dapat di akses langsung via HTTP atau GRPC namun jika
+  ingin ada hak istimewa dan fitur tambahan maka gunakan FIREBASE ADMIN SDK
+- sepertinya library ini dapat mengakses FIREBASE dan GCP 
+- gunakan librari ini untuk akses istimewa pada dashboard admin
 
 ------------------------------------------------------------------------------------------------
+REFERENSI FUNGSI / method 
 
+- semua fungsi dan perintah ada di dokumentasi
+- setidaknya pernah baca fungsi apa saja yang ada disana untuk memperkaya pilihan eksekusi
+- karena semua fungsi dasar memiliki satu fungsi, tapi baiknya, masing masing fungsi bisa di gabungkan 
 
+FRAMEWORK
+- bisa juga dari pihak ketiga open source, lihat documentasi
