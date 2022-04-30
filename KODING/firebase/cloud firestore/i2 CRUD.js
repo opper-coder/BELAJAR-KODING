@@ -1,5 +1,5 @@
-
-// TULIS DATA DASAR 
+-----------------------------------------------------------------------------------------------------
+TULIS DATA DASAR 
 - ini tulis data atau timpa/edit data jika sudah ada dan tanpa id
 - .add(...) DAN .doc().set(...) dua ini benar-benar setara, sehingga Anda dapat menggunakan salah satu yang paling Anda sukai.
 </>
@@ -38,7 +38,7 @@
 --- ???? perlu di praktekin satu lagi 
 ????????????????????????????
 
------------------------->
+-----------------------------------------------------------------------------------------------------
 // EDIT DATA 
 untuk memperbarui data yang tidak menimpa keseluruhan kolom document pakai update()
     </>
@@ -102,7 +102,7 @@ await updateDoc(washingtonRef, {
 
 coba praktekin
 ?????????????????????????
------------------------->
+-----------------------------------------------------------------------------------------------------
 TYPEDATA
 silahkan coba jenis type data ini
 
