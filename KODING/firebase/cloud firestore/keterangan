@@ -1,0 +1,12 @@
+KETERANGAN
+
+didalam dokumentasi ini di buat du type file :
+1 konsep
+2 kode dan komentar
+
+- pada halaman konsep akan ditulis konsep dan aturan dari sebuah teori,
+  tentu saja setiap konsep ada contoh implementasi dan eksekusinya.
+  maka pada halaman ini di buat referensi contoh 1 sampai seterusnya
+  pada halaman referensi di halaman kode dan komentar
+- pada halaman kode file hanya akan bernama indexnya saja
+- disana ada judul contoh 1 dst sebagai referensi dari halaman indexnya
