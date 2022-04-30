@@ -2,7 +2,8 @@ HALAMAN REFERENSI DARI i3 index sort
 
 --------------------------------------------------------------------------------------------
 CONTOH 1
-cakupan query koleksi default di buat oleh firebase:
+- cakupan query koleksi default di buat oleh firebase
+- kita buat 5 dokumen, masing2 berisi 6 kolom 
 
     var citiesRef = db.collection("kotaDiPalu");
 
@@ -30,11 +31,11 @@ cakupan query koleksi default di buat oleh firebase:
 CONTOH 2
 query pada tabel di atas yaitu index otomatis default:
 
-    const stateQuery = citiesRef.where("state", "==", "CA");
+    const stateQuery = citiesRef.where("state", "==", "provinsi");
     const populationQuery = citiesRef.where("population", "<", 100000);
     const nameQuery = citiesRef.where("name", ">=", "San Francisco");
 --------------------------------------------------------------------------------------------
-CONTOH 2
+CONTOH 3
 Anda juga dapat membuat kueri in dan kueri kesetaraan (==) gabungan:
 
     citiesRef.where('country', 'in', ["USA", "Japan", "China"])
@@ -55,6 +56,7 @@ Indeks array-contains memungkinkan Anda membuat kueri untuk kolom array regions:
     citiesRef.where("regions", "array-contains", "west_coast")
     // array-contains-any and array-contains use the same indexes
     citiesRef.where("regions", "array-contains-any", ["west_coast", "east_coast"])
+
 
 
 
