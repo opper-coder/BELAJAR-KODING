@@ -42,14 +42,22 @@ MODE INDEX
 
 ---------------------------------------------------------------------------------------  
 CAKUPAN QUERY
+- cakupan query ada 2 model
+1. cakupan koleksi
+2. cakupan grup koleksi
+
+- cakupan koleksi meliputi
+  Cloud Firestore membuat indeks dengan cakupan koleksi secara default. 
+  Indeks ini mendukung kueri yang menampilkan hasil dari satu koleksi.
+- cakupan grup koleksi meliputi
+  - semua koleksi dalam satu "id koleksi" yang di dalamnya banyak sub sub koleksi
+  - untuk menjalankanya kita harus bikin index yg sesuai pada cakupan koleksi koleksi tersebut
+
+CONTOH IMPLEMENTASI
+- kita bikin dokumen dulu > contoh1
+- kita query sederhana > contoh2 
+- dengan query satu kolom (kolom tunggal) value dan pembanding, ini yang paling cepat 
 - 
-
-
-
-
-
-
-
 
 
 
