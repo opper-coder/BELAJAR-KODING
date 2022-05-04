@@ -3,7 +3,7 @@ INDEX
 ---------------------------------------------------------------------------------------
 RINGKASAN
 - 
-
+- 
 =======================================================================================
 INDEX
 - Indeks merupakan faktor penting dalam performa database.
@@ -31,17 +31,18 @@ INDEX KOLOM TUNGGAL
 - kolom tunggal > di simpan di koleksi > ada dua: asc dsc
 - kolom map > di cakupan koleksi > asc dsc
 - array > array contains >
-- ????????? belim jelas
+- ????????? belum jelas
 
 ---------------------------------------------------------------------------------------
 INDEX KOMPOSIT
 - index komposit tidak di buat secara otomatis mengingat banyaknya kemungkinan kombinasi query
-  sehingga harus manual
+  sehingga mengharuskan manual
   
 ---------------------------------------------------------------------------------------  
 MODE INDEX
 - asc (menaik)
   - mendukung operasi (clausa) persamaan pada kolom secara menaik : <,>,<=,>=,==,!=,not-in 
+  - operasi ini menghasilkan daftar menaik
 - dsc (menurun)
   - sda [menurun]
 - array-contain
@@ -60,11 +61,14 @@ CAKUPAN QUERY
   - semua koleksi dalam satu "id koleksi" yang di dalamnya banyak sub sub koleksi
   - untuk menjalankanya kita harus bikin index yg sesuai pada cakupan koleksi koleksi tersebut
 
+---------------------------------------------------------------------------------------
 CONTOH IMPLEMENTASI
+query kolom tunggal
 - kita bikin dokumen dulu > contoh1
-- kita query sederhana > contoh2 
-- dengan query satu kolom (kolom tunggal) value dan pembanding, ini yang paling cepat 
-- 
+- query sederhana > contoh2 
+- query in dan query perbandingan > contoh3
+- query array  > contoh4
+query gabungan
 
 
 
@@ -84,3 +88,16 @@ CONTOH IMPLEMENTASI
 
 
 
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
