@@ -30,7 +30,7 @@ CONTOH 1
 --------------------------------------------------------------------------------------------
 CONTOH 2
 query pada tabel di atas yaitu index otomatis default:
-
+    gunakan where("","==","");
     const stateQuery = citiesRef.where("state", "==", "provinsi");
     const populationQuery = citiesRef.where("population", "<", 100000);
     const nameQuery = citiesRef.where("name", ">=", "San Francisco");
