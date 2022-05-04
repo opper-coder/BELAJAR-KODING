@@ -5,28 +5,28 @@ CONTOH 1
 - cakupan query koleksi default di buat oleh firebase
 - kita buat 5 dokumen, masing2 berisi 6 kolom 
 
-    var citiesRef = db.collection("kotaDiPalu");
+    var citiesRef = db.collection("cities");
 
-    citiesRef.doc("i1_Palu").set({
-        name: "kota palu", state: "Provinsi", country: "sulawesi tengah",
+    citiesRef.doc("SF").set({
+        name: "San Francisco", state: "CA", country: "USA",
         capital: false, population: 860000,
         regions: ["west_coast", "norcal"] });
-    citiesRef.doc("i2_Poso").set({
-        name: "Los Angeles", state: "kabupaten", country: "sulawesi tengah",
+    citiesRef.doc("LA").set({
+        name: "Los Angeles", state: "CA", country: "USA",
         capital: false, population: 3900000,
         regions: ["west_coast", "socal"] });
-    citiesRef.doc("i3_Ampana").set({
-        name: "Washington, D.C.", state: null, country: "sulawesi tengah",
+    citiesRef.doc("DC").set({
+        name: "Washington, D.C.", state: null, country: "USA",
         capital: true, population: 680000,
         regions: ["east_coast"] });
-    citiesRef.doc("i4_Luwuk").set({
-        name: "Tokyo", state: null, country: "sultim",
+    citiesRef.doc("TOK").set({
+        name: "Tokyo", state: null, country: "Japan",
         capital: true, population: 9000000,
         regions: ["kanto", "honshu"] });
-    citiesRef.doc("i5_donggala").set({
-        name: "Beijing", state: null, country: "sultim",
+    citiesRef.doc("BJ").set({
+        name: "Beijing", state: null, country: "China",
         capital: true, population: 21500000,
-        regions: ["jingjinji", "hebei"] });    
+        regions: ["jingjinji", "hebei"] });
 --------------------------------------------------------------------------------------------
 CONTOH 2
 query pada tabel di atas yaitu index otomatis default:
