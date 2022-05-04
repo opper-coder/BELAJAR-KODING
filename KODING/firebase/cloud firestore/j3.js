@@ -47,6 +47,7 @@ Anda juga dapat membuat kueri in dan kueri kesetaraan (==) gabungan:
              .where("state", "==", "CA")
              .where("population", "==", 860000)
 --------------------------------------------------------------------------------------------
+CONTOH 4
 Jika perlu menjalankan kueri gabungan yang menggunakan perbandingan rentang (<, <=, >, atau >=) 
 atau jika perlu melakukan pengurutan berdasarkan kolom yang berbeda, 
 Anda harus membuat indeks komposit untuk kueri tersebut.
