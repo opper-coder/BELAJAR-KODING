@@ -64,12 +64,15 @@ CAKUPAN QUERY
 ---------------------------------------------------------------------------------------
 CONTOH IMPLEMENTASI
 query kolom tunggal
-- kita bikin dokumen dulu > contoh1
-- query sederhana > contoh2 
+- kita bikin dokumen dulu > 
+  misalnya kolom 'desa' .where("desa", "==", "saiti") > contoh1
+- query persamaan satu kolom > contoh2 
 - query in dan query perbandingan > contoh3
 - query array  > contoh4
-query gabungan
-
+query gabungan/multi kolom
+- query persamaan multi kolom > contoh kolom 'desa' dan kolom 'dusun'
+  misalnya .where("desa","==","saiti").where("dusun","==","tiga")
+- 
 
 
 
