@@ -20,32 +20,32 @@ RESOURCE
   - hotspot/router
   - OLT
   - HTB
-    - Alat sambung > 
-    - OTDR > 
+  + Alat sambung > 
+  + OTDR > 
     - 
 - Pekerjaan
   - daftar indiehome
-  - sewa tempat mas rokim > masalah belum selesai > alternatif
+  + sewa tempat mas rokim > masalah belum selesai > alternatif
   - sewa tempat server > 
   - pasang kabel FO >
   - ijin PLN
   - ijin TELKOM
-  - titip hotspot
-  - perbaikan kabel > HTB SFP > 
+  + titip hotspot > mematikan semena2 > solusi surat perjanjian (buatkan konsep) 
+  + perbaikan kabel > HTB SFP > 
     
-  
 - Software
   - mikrotik
     - IP alocation (2 jam)
     - Dasar (4 jam)
-    - VLAN (3 jam) 
+    - VLAN (3 jam)
     - Mangle (pemecah bandwidth) (2 jam)
     - mangle private agar dapat di gunakan hanya untuk 1 perangkat (1 jam)
     - security (4 jam)
     - total 15 jam
     - belum belajar 6 jam
   - mikhmon
-  - mikbotam
+  + mikbotam > ada file apl + sql v terbaru > running local > hosting + msql >
+    > koneksi mikrotik > koneksi telegram > /menu /help > 
   - hotspot
   - OLT
 - Pasar
