@@ -48,6 +48,15 @@ RESOURCE
     > koneksi mikrotik > koneksi telegram > /menu /help > 
   - hotspot
   - OLT
+
+- operasi tool kit
+  - tahu cara ukur kekuatan db
+  - kekuatan cahaya SFP 
+  - ukur bandwidth
+  - mengetahui putus kabel
+  - cara kerja alat 
+  - 
+    
 - Pasar
   - pasar 3 desa awal
   - pasar dalam kota
