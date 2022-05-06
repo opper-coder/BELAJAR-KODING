@@ -11,6 +11,7 @@ RESOURCE
 - Pinjaman
   - BRI 30.000.000
   - PAI 10.000.000
+  - ikul 3.650.000
 - Hardware
   - indiehome
   - mikrotik AH 1100
@@ -19,15 +20,19 @@ RESOURCE
   - hotspot/router
   - OLT
   - HTB
-  - ========
+    - Alat sambung > 
+    - OTDR > 
+    - 
 - Pekerjaan
   - daftar indiehome
-  - sewa tempat mas rokim
-  - sewa tempat server
-  - pasang kabel FO
+  - sewa tempat mas rokim > masalah belum selesai > alternatif
+  - sewa tempat server > 
+  - pasang kabel FO >
   - ijin PLN
   - ijin TELKOM
   - titip hotspot
+  - perbaikan kabel > HTB SFP > 
+    
   
 - Software
   - mikrotik
@@ -61,6 +66,7 @@ HAMBATAN
 - sudah 6 bulan berjalan belum menghasilkan
   - kabel putus
   - OLT tidak jalan
+  - HTB melemah 
   - peralatan belum memadai
   - tidak ada kerja teropadu dan terarah
   - belum melakukan semua point
