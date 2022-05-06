@@ -1,1 +1,247 @@
+BELAJAR FIREBASE WEB
+=============================================
+tips dan trik
+- 
+
+
+=============================================
+ada dua cara menangani interaksi web dengan firebase, yaitu
+1. NPM
+2. modul bundler
+
+ALAT TEMPUR UNTUK NPM
+- instal Nodejs (NPM include) terbaru > node -v > npm -v
+- instal vscode (atau lainya sublime) terbaru
+- instal firebase-tools :> npm install -g firebase-tools > coba tes dengan :> firebase
+  - maka muncul help center
+- instal firebase SDK via NPM > masuk ke root folder project kerja >
+  :> npm install firebase (tapi saya tidah berhasil g tau kenapa) > 
+  > atau opsional pakai firebase SDK via CDN nanti akan di bahas (tidak usah instal firebase)
+- firebase Console > tempat kelola server dan service firebase
+- terminal > untuk menjalankan NPM baik milik OS atau bawaan text editor
+
+ALAT TEMPUR UNTUK MODUL BUNDLER
+- masih belum belajar
+  
+FIREBASE REGISTRASI CONSOLE
+- login dulu atau bukin akun firebase pakai email google di firebase.com
+
+PROJECT DAN DATABASE CONSOLE
+- bikin projek baru 
+  - masukan nama
+  - pilih lokasi server pastikan terdekat southeast-1 singapura southeast-2 jakarta
+  - matikan analithyc 
+  - done
+- lalu bikin realtime database
+  - tab realtime data base > mulai > next2
+  
+SDK TERMINAL
+- ada 3 cara instal SDK   
+1 pakai npm > npm install firebase 
+  - maka kita akan di kasih paket javascript SDK dll
+2 atau pakai webpack - rollup
+  - belum belajar ini yang paling di anjurkan karena bisa mengkompress lebih kecil
+3 pakai CDN ini yang paling berhasil tapi hanya untuk latihan tidak boleh untuk produksi
+  - copas versi CDN di halaman HTML index.html
+  - kita di kasih import initializeApp from firebase (ada versi CDN nya)
+  - sekaligus link import2 lainya versi CDN (lihat di dokumentasi ada cara nulisnya)
+  
+HOSTING
+  - setelah firebase-tools terinstal
+  - firebase login   // redirect ke akun gmail anda (sudah diatas)
+  - firebase init    // jalan kan di folder root project (sudah diatas)
+    - kita di kasih 2 file > bikin folder "public" berisi file "index.html"
+    INITIALISASI CONSOLE
+    - buka console: project overview/project setting
+    - copy sourcecode initialisasi dan paste di index.html
+  - firebase deploy  // deploy/upload project kita yang sudah jadi
+  
+CREATE DATABASE CONSOLE
+  - key:value aja
+  - ada child tapi jangan terlalu dalam
+  - kalau ada koneksi dengan tabel lain maka pakai aja cara daftarkan true pada kedua nya
+    - contact:{
+        nama: andy,
+        umur:9,
+        grup:{
+          sosial: true,
+          jualbeli: true
+        },
+      grup:{
+        nama grup:sosial,
+        alamat grup: saiti
+        anggota:{
+          andy: true,
+          aqil: true
+        }
+CATATAN DAN TIPS
+- oya semua code di bawah say copas langsung dari standard documentasinya 
+- tapi saya hanya modifikasi root referensi, jalur import CDN, variabel dll saja 
+- saya hanya fokus pada konsep dan praktek nya dan ini sudah di uji berhasil
+
+TULIS DATA
+  - di index.js
+  - intinya pakai < set(); >
+  - < set(referensi, {isi}); > // isi { key:value }
+  - atau jelasnya
+  -------------------------- contoh1 gunakan .then().catch()
+  function tambahData(){                            // 2. bikin function
+    const db = getDatabase();                       // 3. bikin connection db
+    const reff = ref(db, 'guru/dua/aa');            // 4. bikin referensi lokasi tidak atau tutup dengan garis miring
+    
+    set(reff,{ kata:"halo silmi"} )                 // 5. jalan kan set(ref, {k:v}).then(callback).catch(callback);
+      .then(() => {
+        console.log("set sukses");
+      })
+      .catch((error) => {
+        console.log("set gagal");
+      });
+  }
+  tambahData();                                     // 1. panggil function
+  -------------------------- contoh2 tulis dasar
+  function tambahData(namaUniq, nama, alamat){
+     const conn : getDatabase();
+     const reff : ref(conn, 'pemain/' + namaUniq);  // jika referensi belum ada di db maka akan di buatkan 
+     set(reff,{nama:nama, alamat:alamat});          // isi di ambil dari argument
+    }
+  tambahData("pertama","aqil","saiti");
+  --------------------------
+  
+TULIS DATA SIMULTAN/PARALEL
+- saat kita ingin menulis di dua tempat sekaligus pakai update()
+- biasanya di gunakan untuk menulis db relasional (baca fun out data)
+  - yaitu kalau bisa cabang itu dangkal saja
+  - sehingga saat terjadi deep, maka sebaiknya pakai relational saja
+  --------------------------
+  function writeNewPost(nama, alamat, umur, jenisk) {
+    const db = getDatabase();
+
+    // data Posting masing-masing untuk 1 dan 2.
+    const postData = {
+      nama  : nama,
+      alamat : alamat,
+      umur  : umur,
+      jenisKlm : jenisk
+    };
+    const postData2 = {
+      nama  : nama,
+      alamat : alamat,
+    };
+
+    // buatkan key untuk posting baru dg .key() saya masih belum melihat fungsi ref 'guru'
+    const newPostKey = push(child(ref(db), 'guru')).key;
+
+    // nulis bersamaan di siswa dan grup, 
+    const updates = {};
+    updates['/siswa2/' + newPostKey] = postData;                // pos1 data akan di tulis disini
+    updates['/grup2/' + nama + '/' + newPostKey] = postData2;   // sekaligus pos2 di tulis disini
+
+    return update(ref(db), updates);
+  }
+
+  writeNewPost("iza","bela",6,"perempuan");
+  --------------------------
+
+
+
+EDIT DATA
+ - sama dengan set() data
+ - copas saja set() data pd contoh1
+ - saat set() data pada jalur ref() yang sama maka akan di timpa dengan nilai baru beserta seluruh childnya 
+
+HAPUS DATA
+ - sama dengan set() data
+ - copas saja set() data pd contoh1
+ - hanya saja isinya kosongi aja pada field(key di maksud) 
+ - seperti contoh1 step 5 isian kosongin aja "" 
+ - </> set(reff,{ kata:""} );
+ 
+BACA DATA
+- pakai onValue() tentu import dulu
+- onValue(reff, callback); pakai snapshot.val();
+- val() bisa di ganti dengan exists()
+- baca data pada key tertentu akan membaca semua childnya ya 
+  --------------------------
+  const db = getDatabase();
+  const reff = ref(db, 'guru/empat' );
+
+  onValue(reff, (snapshot) => {
+    const data = snapshot.val();
+    console.log(data);
+  });
+  -------------------------- alias
+  onValue(reff, (snapshot) => { console.log(snapshot.val()) });
+
+  BACA DATA SEKALI (TIDAK REALTIME) PAKAI GET
+  DAN CALLBACK PENYELESAIAN
+  - untuk data yang tidak sering di update sebagaimana chat (seperti artikel, deskripsi, detil barang dll)
+    dan bisa di simpan di cache gunakan get()
+  - hal ini akan hemat bandwidt dan juga biaya 
+  - kalau mau yang realtime tidak di sarankan pakai get() pakai saja onValue(). karena kontra produktive 
+    malah jadi boros
+  - penggunaan get() hanya untuk yang benar2 statis jangan yang dinamis bisa makan bandwidth
+  - callback penyelesaian untuk mnegetahui apakah data berhasil di commit atau gagal menggunakan .then().catch
+  - sebenarnya hanya di peruntukkan untuk set() dan update() saja get() tidak ini hanya copas aja
+  --------------------------
+  import { getDatabase, ref, child, get } from "firebase/database";
+
+  const dbRef = ref(getDatabase());
+  get(child(dbRef, 'guru/kelas'))
+    .then((snapshot) => {
+        if (snapshot.exists()) {
+          console.log(snapshot.val());
+        } else {
+          console.log("Data tidak tersedia");
+        }
+      })
+    .catch((error) => {
+        console.error(error);
+      });
+  
+  --------------------------
+  BACA DATA SEKALI PAKAI OBSERVER. onValue()
+  - tambah di akhir {onlyOnce:true}
+  --------------------------
+  onValue(reff, (snapshot) => { console.log(snapshot.val()) }, {onlyOnce: true});
+  --------------------------
+CALLBACK PENYELESAIAN
+- di gunakan untuk mengetahui berhasil di commit atau gagal
+
+PROMISE
+- promise perlu di berikan agar tahu "kapan" data terkirim selama proses berlangsung
+- terapan pelajari langsung di JS ES6
+
+DIE off()
+- mematikan koneksi ke db
+
+DATA LIST SORT FILTER
+- coba
+
+MENYIMPAN DATA SEBAGAI TRANSAKSI
+- coba
+
+INCREMEN ID SERVER
+- coba
+
+CACHE OFFLINE
+- coba
+
+
+GRUP LIST menagani sort filter
+
+//--------------------
+
+
+
+=================================
+* LOCALHOST -----
+  > kalau mau jalankan di localhost tinggal :> klik ketik > firebase serve > kita akan dikasih 
+  url > http://localhost:5000 > buka URL tersebut di browser
+* VERSION
+  > kalau kita punya beberapa project kita bisa beralih projek1 dan projek 2 misalnya(satu versi publish dua 
+  versi develop misalnya latihan silmi1 dan latihan silmi2) maka kita bikin projek dulu di console
+  > lalu kontrol di CLI nya : tambhkan projek >: firebase use --add > pilih projek >lalu bikin kan aliasnya
+  atau bikin key nya (misalnya kasih nama "second")> atau lihat di file.rc di sana akan terlihat seperti key value
+  > cara panggil atau aksesnya dengan > firebase use (lihat list project)
+  > firebase use second
 
