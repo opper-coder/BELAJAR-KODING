@@ -8,10 +8,10 @@ APLIKASI PROSPEK
 - mbak latif 17-20 juta lebih 
 ---------------------------------------------------------------------------------------------------------
 RESOURCE
-- pinjaman
+- Pinjaman
   - BRI 30.000.000
   - PAI 10.000.000
-- hardware
+- Hardware
   - indiehome
   - mikrotik AH 1100
   - kabel FO
@@ -29,7 +29,7 @@ RESOURCE
   - ijin TELKOM
   - titip hotspot
   
-- software
+- Software
   - mikrotik
     - IP alocation (2 jam)
     - Dasar (4 jam)
@@ -43,12 +43,40 @@ RESOURCE
   - mikbotam
   - hotspot
   - OLT
-- pasar
-  - 
+- Pasar
+  - pasar 3 desa awal
+  - pasar dalam kota
+  - pasar lokotoy
+  - potensi
+- 
 ---------------------------------------------------------------------------------------------------------
 ADMINISTRASI
+- Saham
+- accounting
+- market projection
+- izin grup
+- monitoring
 ---------------------------------------------------------------------------------------------------------
 HAMBATAN
+- sudah 6 bulan berjalan belum menghasilkan
+  - kabel putus
+  - OLT tidak jalan
+  - peralatan belum memadai
+  - tidak ada kerja teropadu dan terarah
+  - belum melakukan semua point
+  - ada kehendak yang ber beda karena tidak satu visi yang sama
+    - om pai: laporan gak jelas, pembagian, transparansi, belum tentu setuju dengan komposisi
+    - ikul: gunakan saja sumberdaya dari luar meski harus di bayar mahal
+    - teguh: saya sudah siap tapi g ada perintah jadi g tahu
+    - mahmud: akan pergi saja ke jawa sebab kurang prospektif(lambat penanganan)
+    - 
+
+
+
+
+
+
+
 ---------------------------------------------------------------------------------------------------------
 NETWORKING
 ---------------------------------------------------------------------------------------------------------
