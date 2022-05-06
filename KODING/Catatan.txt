@@ -37,21 +37,11 @@ BIKIN TARGET
 3. Agent city
 4. Bikin agent region
 5. kurir
-7. Schedule (estiamsi waktu)  
-8
-
-
-
-
-
-
-
-
-
-
-
-
-
+7. konsep profit networking
+8. hirarki korporasi
+9. pedoman pelaksanaan
+10. Schedule (estiamsi waktu)
+11.
 
 
 
