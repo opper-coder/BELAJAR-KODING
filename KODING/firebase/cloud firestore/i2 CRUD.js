@@ -6,9 +6,18 @@ RINGKASAN
     
 ------------------------------------------------------------------------------------------------------------
 MENULIS
-
-
-
+- ada 3 cara menulis data ke db:
+    1. tulis data ke koleksi dengan ID manual
+    2. tulis data ke koleksi dengan ID otomatis
+    3. tulis ID otomatis lalu isi data belakangan
+- setDoc() dan doc()
+    - tambah dokumen ke koleksi dengan id LA
+        import { doc, setDoc } from "firebase/firestore";
+        await setDoc(doc(db, "cities", "LA"), {
+          name: "Los Angeles",
+          state: "CA",
+          country: "USA"
+        });
 
 
 
