@@ -12,14 +12,16 @@ MENULIS
     3. tulis ID otomatis lalu isi data belakangan
 - setDoc() dan doc()
     - tambah dokumen ke koleksi dengan id LA
-        import { doc, setDoc } from "firebase/firestore";
-        await setDoc(doc(db, "cities", "LA"), {
+    - cara ini dapat di gunakan untuk create dan atau replace(edit)
+        
+        import { doc, setDoc } from "firebase/firestore";   // import 2 method tsb
+        await setDoc(doc(db, "cities", "LA"), {             // setDoc(),{} > doc(db,kol,dok)
           name: "Los Angeles",
           state: "CA",
           country: "USA"
         });
 
-
+- 
 
 
 
