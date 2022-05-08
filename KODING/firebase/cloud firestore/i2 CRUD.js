@@ -150,7 +150,8 @@ Memperbarui data
         });
 ----------------------------
 - Notasi titik memungkinkan Anda memperbarui satu kolom bertingkat tanpa menimpa 
-  kolom bertingkat lainnya. Jika Anda memperbarui kolom bertingkat tanpa notasi titik, 
+  kolom bertingkat lainnya. 
+- Jika Anda memperbarui kolom bertingkat tanpa notasi titik, 
   Anda akan menimpa seluruh kolom peta, misalnya:
         // Create our initial doc
         db.collection("users").doc("frank").set({
@@ -189,10 +190,10 @@ Memperbarui data
          */
 ----------------------------
 - Memperbarui elemen dalam array
-  Jika dokumen Anda berisi kolom array, Anda bisa menggunakan arrayUnion() dan arrayRemove() 
-  untuk menambah dan menghapus elemen. arrayUnion() menambahkan elemen ke array, 
-  tetapi hanya elemen yang belum ada. arrayRemove() menghapus semua instance dari setiap elemen 
-  yang diberikan.  
+  - Jika dokumen Anda berisi kolom array, Anda bisa menggunakan arrayUnion() dan arrayRemove() 
+  - untuk menambah dan menghapus elemen. arrayUnion() menambahkan elemen ke array, 
+  - tetapi hanya elemen yang belum ada. arrayRemove() menghapus semua instance dari setiap elemen 
+    yang diberikan.  
           import { doc, updateDoc, arrayUnion, arrayRemove } from "firebase/firestore";
           const washingtonRef = doc(db, "cities", "DC");
           // Atomically add a new region to the "regions" array field.
@@ -205,51 +206,40 @@ Memperbarui data
           });
 ----------------------------
 - Operasi inkremental nilai numerik
-  Anda bisa menambahkan atau mengurangi nilai kolom numerik secara inkremental 
-  seperti yang ditunjukkan pada contoh berikut. Operasi inkremental akan menambahkan 
-  atau mengurangi nilai kolom saat ini dengan jumlah tertentu.
+  - Anda bisa menambahkan atau mengurangi nilai kolom numerik secara inkremental 
+    seperti yang ditunjukkan pada contoh berikut. 
+  - Operasi inkremental akan menambahkan 
+    atau mengurangi nilai kolom saat ini dengan jumlah tertentu.
           import { doc, updateDoc, increment } from "firebase/firestore";
           const washingtonRef = doc(db, "cities", "DC");
           // Atomically increment the population of the city by 50.
           await updateDoc(washingtonRef, {
              population: increment(50)
           });
--   Operasi inkremental berguna untuk implementasi penghitung, tetapi perlu diingat bahwa Anda hanya dapat memperbarui satu dokumen satu kali per detik. Jika perlu memperbarui penghitung Anda di atas frekuensi ini, lihat halaman Penghitung terdistribusi.
+  - Operasi inkremental berguna untuk implementasi penghitung, 
+    tetapi perlu diingat bahwa Anda hanya dapat memperbarui satu dokumen satu kali per detik. 
+    Jika perlu memperbarui penghitung Anda di atas frekuensi ini, 
+    lihat halaman Penghitung terdistribusi.
+   
   
 ------------------------------------------------------------------------------------------------------------
 EDIT
+- edit dapat di lakukan dengan replace seperti keterangan di atas atau
+- menggunakan update() seperti di atas
+- atau jika kolom anda berbentuk kolom array maka penjelasan juga ada di atas
 ------------------------------------------------------------------------------------------------------------
 BACA
+- ada bab tersendiri di halaman lain
 ------------------------------------------------------------------------------------------------------------
 HAPUS
+- hapus sebaiknya tidak dilakukan melainkan tambahkan kolom hapus:true
+- hapus data pada data besar sebaiknya gunakan kursor  agar dapat dilakukan secara bertahap
+  dan tidak membebani RAM
+- hapus tidak dapat dilakukan dengan mudah ada metode yang benar di halaman lainya 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+DIBAWAH INI SEBAIKNYA DI HAPUS SAJA NAMUN SEBELUMNYA TINJAU DULU KARENA INI SUDAH DI PERBAIKI DI ATAS
 -----------------------------------------------------------------------------------------------------
 TULIS DATA DASAR 
 - ini tulis data atau timpa/edit data jika sudah ada dan tanpa id
