@@ -2,7 +2,9 @@ CRUD
 ============================================================================================================
 RINGKASAN
 - referensi
-    doc(db, 'kol', 'doc') collection(db, 'doc')
+    doc(db, 'users/id' );          // referensi ke dokument
+    doc(db, "users", "id" );       // boleh pakai slash atau koma satu atau koma dua
+    collection(db, 'users');       // ref ke koleksi
 - tulis data
 - 
 
