@@ -26,6 +26,7 @@ MEMPERBARUI DATA DENGAN TRANSAKSI
   - operasi baca dulu baru boleh tulis, update, delete
   - Fungsi transaksi seharusnya tidak langsung mengubah status aplikasi.
   - fungsi yang callback atomik bisa di hit berkali2 saat proses baca atomik terganggu
+  - atomik melebihi 10 mb
   - atomik gagal jika di lakukan saat offline
 - Contoh atomik
       import { runTransaction } from "firebase/firestore";
@@ -76,11 +77,14 @@ MENERUSKAN INFORMASI DARI TRANSAKSI
       console.error(e);
     }
 
------------------------------------------------------------------------------------------------------------
-KEGAGALAN TRANSAKSI
-
 -----------------------------------------------------------------------------------------------------------  
 BATCH OPERASI TULIS 
+Jika tidak perlu membaca dokumen apa pun dalam kumpulan operasi, 
+Anda dapat menjalankan beberapa operasi tulis sebagai satu 
+batch yang berisi kombinasi operasi set(), update(), atau delete(). 
+Batch operasi tulis akan selesai secara atomik dan dapat 
+menulis ke beberapa dokumen. Contoh berikut menunjukkan 
+cara mem-build dan meng-commit batch operasi tulis:
 
     import { writeBatch, doc } from "firebase/firestore";
     // Get a new write batch
@@ -97,8 +101,21 @@ BATCH OPERASI TULIS
     // Commit the batch
     await batch.commit();  
 
+Satu batch operasi tulis dapat berisi hingga 500 operasi. 
+Setiap operasi dalam batch dihitung secara terpisah terhadap penggunaan Cloud Firestore Anda.
+Seperti halnya transaksi, batch operasi tulis bersifat atomik. 
+Berbeda dengan transaksi, batch operasi tulis tidak perlu memastikan 
+bahwa dokumen yang dibaca tidak dimodifikasi sehingga dapat mengurangi kegagalan. 
+Batch operasi tulis tidak akan dicoba ulang atau mengalami kegagalan 
+karena terlalu banyak percobaan ulang. Batch operasi tulis tetap dijalankan 
+meskipun perangkat pengguna sedang offline.
+
 -----------------------------------------------------------------------------------------------------------
 VALIDASI DATA UNTUK OPERASI ATOMIK  
+Untuk library klien seluler/web, Anda dapat melakukan validasi data menggunakan Aturan Keamanan Cloud Firestore. Anda dapat memastikan bahwa dokumen yang terkait selalu diperbarui secara atomik dan selalu menjadi bagian dari sebuah transaksi atau batch operasi tulis. Gunakan fungsi aturan keamanan getAfter() untuk mengakses dan memvalidasi status dokumen setelah serangkaian operasi selesai, tetapi sebelum Cloud Firestore meng-commit operasi.
+
+Misalnya, anggaplah database untuk contoh cities juga berisi koleksi countries. Setiap dokumen country menggunakan kolom last_updated untuk melacak kapan terakhir kali kota yang terkait dengan negara itu diperbarui. Aturan keamanan berikut mensyaratkan bahwa perubahan pada dokumen city harus juga mengubah kolom last_updated negara terkait secara atomik:
+
     service cloud.firestore {
       match /databases/{database}/documents {
         // If you update a city doc, you must also
@@ -109,7 +126,6 @@ VALIDASI DATA UNTUK OPERASI ATOMIK
               /databases/$(database)/documents/countries/$(request.resource.data.country)
             ).data.last_updated == request.time;
         }
-
         match /countries/{country} {
           allow write: if request.auth != null;
         }
@@ -118,6 +134,9 @@ VALIDASI DATA UNTUK OPERASI ATOMIK
   
 -----------------------------------------------------------------------------------------------------------  
 BATAS ATURAN KEAMANAN
+Dalam aturan keamanan untuk transaksi atau batch operasi tulis, ada batas 20 panggilan akses dokumen untuk keseluruhan operasi atomik, selain batas normal 10 panggilan untuk setiap operasi dokumen tunggal dalam batch.
+
+Misalnya, pelajari aturan berikut untuk aplikasi chat:
 
     service cloud.firestore {
       match /databases/{db}/documents {
@@ -144,22 +163,17 @@ BATAS ATURAN KEAMANAN
     // 0 document access calls used, because the rules evaluation short-circuits
     // before the exists() call is invoked.
     db.collection('user').doc('myuid').get(...);
-
     // 1 document access call used. The maximum total allowed for this call
     // is 10, because it is a single document request.
     db.collection('chatroom').doc('mygroup').get(...);
-
     // Initializing a write batch...
     var batch = db.batch();
-
     // 2 document access calls used, 10 allowed.
     var group1Ref = db.collection("chatroom").doc("group1");
     batch.set(group1Ref, {msg: "Hello, from Admin!"});
-
     // 1 document access call used, 10 allowed.
     var newUserRef = db.collection("users").doc("newuser");
     batch.update(newUserRef, {"lastSignedIn": new Date()});
-
     // 1 document access call used, 10 allowed.
     var removedAdminRef = db.collection("admin").doc("otheruser");
     batch.delete(removedAdminRef);
