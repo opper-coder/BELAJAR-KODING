@@ -6,10 +6,21 @@ RINGKASAN
     
 ------------------------------------------------------------------------------------------------------------
 MENULIS
+- ada 3 issue
+    - tambah data 
+    - ID
+    - bikin data awal
+    - timpa data (replace)
+    - gabungkan data
+    - bikin dokumen
+    - tambah data dengan class
+    - update (edit)
+----------------------------
 - ada 3 cara menulis data ke db:
     1. tulis data ke koleksi dengan ID manual
     2. tulis data ke koleksi dengan ID otomatis
     3. tulis ID otomatis lalu isi data belakangan
+----------------------------
 - setDoc() dan doc()
     - tambah dokumen ke koleksi dengan id LA
     - cara ini dapat di gunakan untuk create dan atau replace(edit)
@@ -20,14 +31,191 @@ MENULIS
           state: "CA",
           country: "USA"
         });
+----------------------------
+- {merge:true}
+    - gabungkan data ke dlm dokumen yang sudah ada
+    - agar tidak menimpa data keseluruhan
+    - prkatek dan pengertian 2 point (?????)
 
-- 
+        import { doc, setDoc } from "firebase/firestore";
+        const cityRef = doc(db, 'cities', 'BJ');
+        setDoc(cityRef, { capital: true }, { merge: true });
+----------------------------
+- jenis data
+        import { doc, setDoc, Timestamp } from "firebase/firestore";
+        const docData = {
+            stringExample: "Hello world!",
+            booleanExample: true,
+            numberExample: 3.14159265,
+            dateExample: Timestamp.fromDate(new Date("December 10, 1815")),
+            arrayExample: [5, true, "hello"],
+            nullExample: null,
+            objectExample: {
+                a: 5,
+                b: {
+                    nested: "foo"
+                }
+            }
+        };
+        await setDoc(doc(db, "data", "one"), docData);
+----------------------------
+- object custom (class)
+    - ada 3 langkah untuk isi data dengan class untuk mendukung jenis data pada firebase
+        1. bikin class dulu
+        2. lalu konversi data ke firestore
+        3. terakhir set ke firestore
+        
+        class City {
+            constructor (name, state, country ) {
+                this.name = name;
+                this.state = state;
+                this.country = country;
+            }
+            toString() {
+                return this.name + ', ' + this.state + ', ' + this.country;
+            }
+        }
 
+        // Firestore data converter
+        const cityConverter = {
+            toFirestore: (city) => {
+                return {
+                    name: city.name,
+                    state: city.state,
+                    country: city.country
+                    };
+            },
+            fromFirestore: (snapshot, options) => {
+                const data = snapshot.data(options);
+                return new City(data.name, data.state, data.country);
+            }
+        };
+----------------------------
+- Tambah dokumen 
+    1. set() tambah dokumen dengan ID
+        import { doc, setDoc } from "firebase/firestore";
+        await setDoc(doc(db, "cities", "new-city-id"), data);
+    2. add() tambah dokumen tanpa ID (alis di generate oleh firestore)
+        import { collection, addDoc } from "firebase/firestore";
+        // Add a new document with a generated id.
+        const docRef = await addDoc(collection(db, "cities"), {
+          name: "Tokyo",
+          country: "Japan"
+        });
+        console.log("Document written with ID: ", docRef.id);
+    3. karena ID generated tidak punya pengurutan maka gunakan timestamp() pada sebuah kolom
+    4. pengertian dan praktek(?????)                          
+    5. bikin dokumen dulu, kelak akan di isi data
+         import { collection, doc, setDoc } from "firebase/firestore";
+        // Add a new document with a generated id
+        const newCityRef = doc(collection(db, "cities"));
+        // later...
+        await setDoc(newCityRef, data);                     
+----------------------------
+Memperbarui data 
+- Untuk memperbarui beberapa kolom dokumen tanpa menimpa keseluruhan dokumen, gunakan metode update():
+        import { doc, updateDoc } from "firebase/firestore";
+        const washingtonRef = doc(db, "cities", "DC");
+        // Set the "capital" field of the city 'DC'
+        await updateDoc(washingtonRef, {
+          capital: true
+        });
+    - coba praktekan dengan true ganti false(?????)
+----------------------------
+- Stempel Waktu Server
+  Anda dapat menetapkan kolom dalam dokumen ke stempel waktu server yang melacak kapan server menerima update.
+        import { updateDoc, serverTimestamp } from "firebase/firestore";
+        const docRef = doc(db, 'objects', 'some-id');
+        // Update the timestamp field with the value from the server
+        const updateTimestamp = await updateDoc(docRef, {
+            timestamp: serverTimestamp()
+        });
+----------------------------
+- Memperbarui kolom pada objek bertingkat
+  Jika dokumen Anda berisi objek bertingkat, Anda dapat menggunakan "notasi titik" 
+  untuk merujuk ke kolom bertingkat dalam dokumen saat memanggil update():
+        import { doc, setDoc, updateDoc } from "firebase/firestore";
+        // Create an initial document to update.
+        const frankDocRef = doc(db, "users", "frank");
+        await setDoc(frankDocRef, {
+            name: "Frank",
+            favorites: { food: "Pizza", color: "Blue", subject: "recess" },
+            age: 12
+        });
 
+        // To update age and favorite color:
+        await updateDoc(frankDocRef, {
+            "age": 13,
+            "favorites.color": "Red"
+        });
+----------------------------
+- Notasi titik memungkinkan Anda memperbarui satu kolom bertingkat tanpa menimpa 
+  kolom bertingkat lainnya. Jika Anda memperbarui kolom bertingkat tanpa notasi titik, 
+  Anda akan menimpa seluruh kolom peta, misalnya:
+        // Create our initial doc
+        db.collection("users").doc("frank").set({
+          name: "Frank",
+          favorites: {
+            food: "Pizza",
+            color: "Blue",
+            subject: "Recess"
+          },
+          age: 12
+        }).then(function() {
+          console.log("Frank created");
+        });
 
+        // Update the doc without using dot notation.
+        // Notice the map value for favorites.
+        db.collection("users").doc("frank").update({
+          favorites: {
+            food: "Ice Cream"
+          }
+        }).then(function() {
+          console.log("Frank food updated");
+        });
 
-
-
+        /*
+        Ending State, favorite.color and favorite.subject are no longer present:
+        /users
+            /frank
+                {
+                    name: "Frank",
+                    favorites: {
+                        food: "Ice Cream",
+                    },
+                    age: 12
+                }
+         */
+----------------------------
+- Memperbarui elemen dalam array
+  Jika dokumen Anda berisi kolom array, Anda bisa menggunakan arrayUnion() dan arrayRemove() 
+  untuk menambah dan menghapus elemen. arrayUnion() menambahkan elemen ke array, 
+  tetapi hanya elemen yang belum ada. arrayRemove() menghapus semua instance dari setiap elemen 
+  yang diberikan.  
+          import { doc, updateDoc, arrayUnion, arrayRemove } from "firebase/firestore";
+          const washingtonRef = doc(db, "cities", "DC");
+          // Atomically add a new region to the "regions" array field.
+          await updateDoc(washingtonRef, {
+          regions: arrayUnion("greater_virginia")
+          });
+          // Atomically remove a region from the "regions" array field.
+          await updateDoc(washingtonRef, {
+          regions: arrayRemove("east_coast")
+          });
+----------------------------
+- Operasi inkremental nilai numerik
+  Anda bisa menambahkan atau mengurangi nilai kolom numerik secara inkremental 
+  seperti yang ditunjukkan pada contoh berikut. Operasi inkremental akan menambahkan 
+  atau mengurangi nilai kolom saat ini dengan jumlah tertentu.
+          import { doc, updateDoc, increment } from "firebase/firestore";
+          const washingtonRef = doc(db, "cities", "DC");
+          // Atomically increment the population of the city by 50.
+          await updateDoc(washingtonRef, {
+             population: increment(50)
+          });
+-   Operasi inkremental berguna untuk implementasi penghitung, tetapi perlu diingat bahwa Anda hanya dapat memperbarui satu dokumen satu kali per detik. Jika perlu memperbarui penghitung Anda di atas frekuensi ini, lihat halaman Penghitung terdistribusi.
+  
 ------------------------------------------------------------------------------------------------------------
 EDIT
 ------------------------------------------------------------------------------------------------------------
