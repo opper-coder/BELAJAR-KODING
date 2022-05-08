@@ -13,15 +13,36 @@ RINGKASAN
     setDoc(ref, {data}, {merge});
 --------------------------
 - Tambah dokumen (insert)
-    - dengan ID set()
+    - dengan ID gunakan set()
         setDoc(doc(db, ref), {data});
-    - tanpa ID addDoc()
+    - tanpa ID gunakan addDoc()
         addDoc(collection(db, ref), {data});    // jangan lupa timestamp() untuk index
 --------------------------
 - bikin dokumen dulu 
     const siswaRef = doc(collection(db, "siswa"));
 - di isi data kemudian
     await setDoc(siswaRef, data); 
+--------------------------
+Memperbarui data hanya pada kolomnya (bukan replace semua kolom) 
+- gunakan update():
+    updateDoc(ref, {kolom: 'ubahdata'});
+----------------------------
+- Stempel Waktu Server
+    const updateTimestamp = await updateDoc(ref, {timestamp: serverTimestamp()});
+----------------------------
+- Memperbarui kolom pada objek bertingkat (dg chaining)
+    const frankDocRef = doc(db, "users", "frank");
+    await setDoc(frankDocRef, {
+        name: "Frank",
+        favorites: { food: "Pizza", color: "Blue", subject: "recess" },
+        age: 12
+    });
+    ---
+    await updateDoc(frankDocRef, {
+        "age": 13,
+        "favorites.color": "Red"    // dengan chaining
+    });
+- 
 ============================================================================================================
 ------------------------------------------------------------------------------------------------------------
 MENULIS
