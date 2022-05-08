@@ -144,12 +144,12 @@ Misalnya, pelajari aturan berikut untuk aplikasi chat:
           return /databases/{db}/documents;
         }
         match /chatroom/{roomId} {
-          allow read, write: if request.auth != null && roomId in get(/$(prefix())/users/$(request.auth.uid)).data.chats
-                                || exists(/$(prefix())/admins/$(request.auth.uid));
+          allow read, write: if request.auth != null && roomId in get(/$(prefix())/users/$(request.auth.uid))
+            .data.chats || exists(/$(prefix())/admins/$(request.auth.uid));
         }
         match /users/{userId} {
-          allow read, write: if request.auth != null && request.auth.uid == userId
-                                || exists(/$(prefix())/admins/$(request.auth.uid));
+          allow read, write: if request
+            .auth != null && request.auth.uid == userId || exists(/$(prefix())/admins/$(request.auth.uid));
         }
         match /admins/{userId} {
           allow read, write: if request.auth != null && exists(/$(prefix())/admins/$(request.auth.uid));
