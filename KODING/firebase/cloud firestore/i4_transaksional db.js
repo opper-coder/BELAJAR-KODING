@@ -82,27 +82,90 @@ KEGAGALAN TRANSAKSI
 -----------------------------------------------------------------------------------------------------------  
 BATCH OPERASI TULIS 
 
-import { writeBatch, doc } from "firebase/firestore";
-// Get a new write batch
-const batch = writeBatch(db);
-// Set the value of 'NYC'
-const nycRef = doc(db, "cities", "NYC");
-batch.set(nycRef, {name: "New York City"});
-// Update the population of 'SF'
-const sfRef = doc(db, "cities", "SF");
-batch.update(sfRef, {"population": 1000000});
-// Delete the city 'LA'
-const laRef = doc(db, "cities", "LA");
-batch.delete(laRef);
-// Commit the batch
-await batch.commit();  
+    import { writeBatch, doc } from "firebase/firestore";
+    // Get a new write batch
+    const batch = writeBatch(db);
+    // Set the value of 'NYC'
+    const nycRef = doc(db, "cities", "NYC");
+    batch.set(nycRef, {name: "New York City"});
+    // Update the population of 'SF'
+    const sfRef = doc(db, "cities", "SF");
+    batch.update(sfRef, {"population": 1000000});
+    // Delete the city 'LA'
+    const laRef = doc(db, "cities", "LA");
+    batch.delete(laRef);
+    // Commit the batch
+    await batch.commit();  
 
 -----------------------------------------------------------------------------------------------------------
 VALIDASI DATA UNTUK OPERASI ATOMIK  
-  
+    service cloud.firestore {
+      match /databases/{database}/documents {
+        // If you update a city doc, you must also
+        // update the related country's last_updated field.
+        match /cities/{city} {
+          allow write: if request.auth != null &&
+            getAfter(
+              /databases/$(database)/documents/countries/$(request.resource.data.country)
+            ).data.last_updated == request.time;
+        }
+
+        match /countries/{country} {
+          allow write: if request.auth != null;
+        }
+      }
+    }  
   
 -----------------------------------------------------------------------------------------------------------  
 BATAS ATURAN KEAMANAN
 
+    service cloud.firestore {
+      match /databases/{db}/documents {
+        function prefix() {
+          return /databases/{db}/documents;
+        }
+        match /chatroom/{roomId} {
+          allow read, write: if request.auth != null && roomId in get(/$(prefix())/users/$(request.auth.uid)).data.chats
+                                || exists(/$(prefix())/admins/$(request.auth.uid));
+        }
+        match /users/{userId} {
+          allow read, write: if request.auth != null && request.auth.uid == userId
+                                || exists(/$(prefix())/admins/$(request.auth.uid));
+        }
+        match /admins/{userId} {
+          allow read, write: if request.auth != null && exists(/$(prefix())/admins/$(request.auth.uid));
+        }
+      }
+    }
+
+- Cuplikan di bawah ini mengilustrasikan jumlah panggilan akses 
+  dokumen yang digunakan untuk beberapa pola akses data:
+
+    // 0 document access calls used, because the rules evaluation short-circuits
+    // before the exists() call is invoked.
+    db.collection('user').doc('myuid').get(...);
+
+    // 1 document access call used. The maximum total allowed for this call
+    // is 10, because it is a single document request.
+    db.collection('chatroom').doc('mygroup').get(...);
+
+    // Initializing a write batch...
+    var batch = db.batch();
+
+    // 2 document access calls used, 10 allowed.
+    var group1Ref = db.collection("chatroom").doc("group1");
+    batch.set(group1Ref, {msg: "Hello, from Admin!"});
+
+    // 1 document access call used, 10 allowed.
+    var newUserRef = db.collection("users").doc("newuser");
+    batch.update(newUserRef, {"lastSignedIn": new Date()});
+
+    // 1 document access call used, 10 allowed.
+    var removedAdminRef = db.collection("admin").doc("otheruser");
+    batch.delete(removedAdminRef);
+
+    // The batch used a total of 2 + 1 + 1 = 4 document access calls, out of a total
+    // 20 allowed.
+    batch.commit();
 
 -----------------------------------------------------------------------------------------------------------
