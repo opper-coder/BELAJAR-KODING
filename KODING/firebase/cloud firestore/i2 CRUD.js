@@ -1,17 +1,28 @@
 CRUD
 ============================================================================================================
 RINGKASAN
-- referensi
-    doc(db, 'users/id' );          // referensi ke dokument
-    doc(db, "users", "id" );       // boleh pakai slash atau koma satu atau koma dua
-    collection(db, 'users');       // ref ke koleksi
-- tulis data
-- 
-
-
+--------------------------
+- referensi 
+    doc(db, 'users/id');          // referensi ke dokumen
+    doc(db, "users", "id");       // pilih pakai: /, '', ""
+    collection(db, 'users');      // ref ke koleksi
+    'coll/doc/subcoll/subdoc'     // pastikan selang-seling jika bersarang dalam
+--------------------------
+- tulis data (baru) 
+    setDoc(ref, {data});
+    setDoc(ref, {data}, {merge});
+--------------------------
+- Tambah dokumen (insert)
+    - dengan ID set()
+        setDoc(doc(db, ref), {data});
+    - tanpa ID addDoc()
+        addDoc(collection(db, ref), {data});    // jangan lupa timestamp() untuk index
+--------------------------
+- bikin dokumen dulu 
+    const siswaRef = doc(collection(db, "siswa"));
+- di isi data kemudian
+    await setDoc(siswaRef, data); 
 ============================================================================================================
-
-
 ------------------------------------------------------------------------------------------------------------
 MENULIS
 - ada 3 issue
