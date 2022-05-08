@@ -3,10 +3,14 @@
 
 ----------------------------------------------------------------------------------------------------------
 MENGHAPUS DOKUMEN
-
+- menghapus dokumen harus di hapus di console
+- jika menggunakan client maka penghapusan hanya bersifat notasi saja
+  - karena di console akan tetap terlihat meskipun tidak bisa lagi di query
+  - 
 ----------------------------------------------------------------------------------------------------------
 MENGHAPUS KOLOM
-
+- Untuk menghapus kolom tertentu dari dokumen, gunakan metode FieldValue.delete() 
+  saat Anda memperbarui dokumen:
 ----------------------------------------------------------------------------------------------------------
 MENGHAPUS KOLEKSI
 
