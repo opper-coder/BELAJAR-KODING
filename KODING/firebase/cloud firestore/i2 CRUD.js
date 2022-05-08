@@ -42,7 +42,21 @@ Memperbarui data hanya pada kolomnya (bukan replace semua kolom)
         "age": 13,
         "favorites.color": "Red"    // dengan chaining
     });
-- 
+----------------------------
+- Memperbarui (hapus dan tambah) elemen dalam array
+    import { doc, updateDoc, arrayUnion, arrayRemove } from "firebase/firestore";
+    const washingtonRef = doc(db, "cities", "DC");
+    await updateDoc(washingtonRef, { regions: arrayUnion("greater_virginia") });    // tambah elemen array yg blm ada
+    await updateDoc(washingtonRef, { regions: arrayRemove("east_coast") });         // hapus elemen array
+----------------------------
+- Operasi inkremental nilai numerik  
+  - incremen atau decrement (1)/(-1)
+  - hanya untuk kolom numerik
+  - jika bukan numerik akan di timpa dengan numerik yang di berikan
+  - hanya 1 inkremen per detik
+    import { doc, updateDoc, increment } from "firebase/firestore";
+    const washingtonRef = doc(db, "cities", "DC");
+    await updateDoc(washingtonRef, { population: increment(50) });  // dalam updateDoc()
 ============================================================================================================
 ------------------------------------------------------------------------------------------------------------
 MENULIS
