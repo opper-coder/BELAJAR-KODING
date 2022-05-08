@@ -28,17 +28,20 @@ CREATE DB
   (bisa setting waktu 30 hr ke depan dan bisa di edit) > pilih lokasi asia southeast2 > 
 
 ------------------------------------------------------------------------------------------------
-KOLEKSI DOKUMENT FIELD
-- selang seling > koleksi/dokumen/subkoleksi/subddokumen/sampai seratus anak
-- koleksi mirip tabel > dia hanya berisi dokument Key:Value > tidak boleh koleksi lagi > 
+KOLEKSI - DOKUMENT - FIELD
+- selang seling > koleksi/dokumen/subkoleksi/subddokumen/'max 100 anak'
+- koleksi 'mirip tabel' > dia hanya berisi dokument Key:Value > tidak boleh koleksi lagi > 
   > koleksi baru boleh di buat dalam dokumen > koleksi dan dokumen tidak perlu di buat secara explisit
-  karena otomotis di buat saat documen di buat dan otomatis (secara implisit) di hapus saat semua data tidak ada
-- dokument mirip row > karena row maka harus uniq (memiliki ID)
-- kolom (key) mirip field
-- nama dokumen(id) harus uniq > boleh manual boleh outo id  > tapi kalau auto tidak ada pengurutan > solusi pengurutan
-  - berikan kolom timestamp - 
-- kolom dalam dokument tidak ada aturan harus sama > tapi sama di anjurkan karena memudahkan penyusunan query
-- referensi > seperti akses folder aja sesuai koleksi/id/subKoleksi/id
+  karena otomotis di buat saat documen di buat 
+  dan otomatis (secara implisit) di hapus saat semua data tidak ada
+- dokumen 'mirip row' > karena row maka harus 'uniq' (memiliki ID)
+- kolom (key) 'mirip field'
+- nama dokumen(id) harus uniq > boleh manual atau Auto id
+  - tapi kalau auto tidak ada pengurutan 
+  - solusi pengurutan berikan kolom timestamp
+- kolom dalam dokument tidak ada aturan harus sama  
+  tapi sama di anjurkan karena memudahkan penyusunan query
+- referensi > seperti akses folder aja sesuai 'koleksi/id/subKoleksi/id'
 
 ------------------------------------------------------------------------------------------------
 MENYUSUN DATABASE
