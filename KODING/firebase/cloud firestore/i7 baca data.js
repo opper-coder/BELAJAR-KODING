@@ -36,9 +36,20 @@ BACA DATA SEKALI
     // doc.data() will be undefined in this case
     console.log("No such document!");
     }
+- opsi cache
+    getDocFromCache() pada method ini
 
-
-
+    import { doc, getDocFromCache } from "firebase/firestore";
+    const docRef = doc(db, "cities", "SF");
+    // ambil dokumen, SDK memaksa ambil dari cache offline. pada try catch
+    try {
+      const doc = await getDocFromCache(docRef);
+      // dokumen di temukan di cache. jika tidak di temukan
+      // maka error dan akan di tangani oleh catch
+      console.log("Cached document data:", doc.data());
+    } catch (e) {
+      console.log("Error getting cached document:", e);
+    }
 
 
 
