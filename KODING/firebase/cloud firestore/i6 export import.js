@@ -10,5 +10,7 @@ EXPORT IMPORT DB
 PERSIAPAN MULAI
   1. aktifkan penagihan (otomatis paket blaze bukan spark)
   2. bikin bucket cloud storage
-  3. memiliki izin (Cloud Datastore Owner)
-  4. baca lebih detil lagi dokumentasi
+  3. memiliki izin (memerlukan layanan GCP Cloud Datastore Owner, dan izin akun admin)
+  4. dapat di kontrol di GCP Console
+  5. baca lebih detil lagi dokumentasi
+  6. kayaknya baca pada saat di butuhkan saja nanti
