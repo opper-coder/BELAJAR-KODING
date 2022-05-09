@@ -13,4 +13,5 @@ PERSIAPAN MULAI
   3. memiliki izin (memerlukan layanan GCP Cloud Datastore Owner, dan izin akun admin)
   4. dapat di kontrol di GCP Console
   5. baca lebih detil lagi dokumentasi
-  6. kayaknya baca pada saat di butuhkan saja nanti
+  6. ada juga pindahkan data ke projek lain (antar projek)
+  7. kayaknya baca pada saat di butuhkan saja nanti
