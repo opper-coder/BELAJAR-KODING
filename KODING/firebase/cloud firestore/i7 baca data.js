@@ -3,10 +3,10 @@
 ------------------------------------------------------------------------------------------------
 BACA DATA SEKALI
 - ini data nya misalnya:
-    import { collection, doc, setDoc } from "firebase/firestore";
-    const citiesRef = collection(db, "cities");
-    await setDoc(doc(citiesRef, "SF"), {
-        name: "San Francisco", state: "CA", country: "USA",
+    import { collection, doc, setDoc } from "firebase/firestore";           // import
+    const citiesRef = collection(db, "cities");                             // ref coll: collection()
+    await setDoc(doc(citiesRef, "SF"), {                                    // set data: setDoc(doc())
+        name: "San Francisco", state: "CA", country: "USA",                 // isi id "SF" dst
         capital: false, population: 860000,
         regions: ["west_coast", "norcal"] });
     await setDoc(doc(citiesRef, "LA"), {
@@ -27,10 +27,10 @@ BACA DATA SEKALI
         regions: ["jingjinji", "hebei"] });
 ------------------------------------------------------------------------------------------------
 - Contoh berikut menunjukkan cara mengambil konten dari sebuah dokumen menggunakan get():
-    import { doc, getDoc } from "firebase/firestore";
-    const docRef = doc(db, "cities", "SF");
-    const docSnap = await getDoc(docRef);
-    if (docSnap.exists()) {
+    import { doc, getDoc } from "firebase/firestore";       // import
+    const docRef = doc(db, "cities", "SF");                 // ref dok
+    const docSnap = await getDoc(docRef);                   // baca dengan getDok()
+    if (docSnap.exists()) {                                 // 
     console.log("Document data:", docSnap.data());
     } else {
     // doc.data() will be undefined in this case
@@ -38,15 +38,15 @@ BACA DATA SEKALI
     }
 ------------------------------------------------------------------------------------------------
 - OPSI CACHE
-    getDocFromCache() pada method ini
+    getDocFromCache() pada method ini:
 
-    import { doc, getDocFromCache } from "firebase/firestore";
-    const docRef = doc(db, "cities", "SF");
+    import { doc, getDocFromCache } from "firebase/firestore";                  // import
+    const docRef = doc(db, "cities", "SF");                                     // ref doc: doc()
     // ambil dokumen, SDK memaksa ambil dari cache offline. pada try catch
-    try {
-      const doc = await getDocFromCache(docRef);
-      // dokumen di temukan di cache. jika tidak di temukan
-      // maka error dan akan di tangani oleh catch
+    try {                                                        
+      const doc = await getDocFromCache(docRef);                
+                                                            // dokumen di temukan di cache. jika tidak di temukan
+                                                            // maka error dan akan di tangani oleh catch
       console.log("Cached document data:", doc.data());
     } catch (e) {
       console.log("Error getting cached document:", e);
