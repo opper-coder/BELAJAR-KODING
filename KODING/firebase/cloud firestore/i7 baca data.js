@@ -129,21 +129,6 @@ MENAMPILKAN DAFTAR SUBKOLEKSI DOKUMEN
     di lingkungan server yang tepercaya. Jika ternyata Anda memerlukan 
     kemampuan ini pada library klien seluler/web, 
     sebaiknya buat ulang struktur data Anda sehingga nama subkoleksi mudah diprediksi.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
+------------------------------------------------------------------------------------------------
+=======
