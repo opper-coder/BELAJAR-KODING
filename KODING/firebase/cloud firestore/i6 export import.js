@@ -2,7 +2,7 @@
 ==================================================================================================================
 ------------------------------------------------------------------------------------------------------------------
 EXPORT IMPORT DB
-  - export import berfungsi sebagai backup data
+  - export-import berfungsi sebagai backup-restore data
   - baik berupa koleksi atau dokumen tertentu atau keseluruhan
   - dapat di import bukan saja sesama firestore boleh antar project
   - bahkan dapat di import pada bigquery
@@ -13,5 +13,5 @@ PERSIAPAN MULAI
   3. memiliki izin (memerlukan layanan GCP Cloud Datastore Owner, dan izin akun admin)
   4. dapat di kontrol di GCP Console
   5. baca lebih detil lagi dokumentasi
-  6. ada juga pindahkan data ke projek lain (antar projek)
+  6. ada juga pindahkan data firestore ke firestore diprojek lain (antar projek)
   7. kayaknya baca pada saat di butuhkan saja nanti
