@@ -3,6 +3,7 @@
 ----------------------------------------------------------------------------------------------------
 PEMBARUAN REALTIME DENGAN CLOUD FIRESTORE
 - dengan metod onSnapshot(). menggunakan callback yang Anda berikan akan segera membuat snapshot realtime
+- akan di 'notif' saat perubahan data terkini
         import { doc, onSnapshot } from "firebase/firestore";           // import
         const unsub = onSnapshot(doc(db, "cities", "SF"), (doc) => {    // onSnapshot(ref, callback) call back akan --
             console.log("Current data: ", doc.data());                  // -- tampilkan data terkini (itu intinya)
@@ -10,11 +11,16 @@ PEMBARUAN REALTIME DENGAN CLOUD FIRESTORE
 
 -----------------------------------------------------------------------------------------------------
 PERISTIWA UNTUK PERUBAHAN LOKAL
-- 
-        import { doc, onSnapshot } from "firebase/firestore";
-        const unsub = onSnapshot(doc(db, "cities", "SF"), (doc) => {
-          const source = doc.metadata.hasPendingWrites ? "Local" : "Server";
-          console.log(source, " data: ", doc.data());
+- saat data di tulis oleh client sesaat sebelum di kirim ke backend method(fungsi pemroses pd SDK)
+  akan dapat pemberitahuan bahwa ada data baru meskipun belum dikirim ke db
+- jika anda membutuhkan peristiwa ini gunakan properti.hasPendingWrites
+- artinya: "apakah dokumen memiliki perubahan data local sebelum di kirim" karena kalau sudah dikirim 
+  ada method pemberitahuan lain yang berbeda
+  
+        import { doc, onSnapshot } from "firebase/firestore";                   // import
+        const unsub = onSnapshot(doc(db, "cities", "SF"), (doc) => {            // ambil data biasa
+          const source = doc.metadata.hasPendingWrites ? "Local" : "Server";    // di callback nya tambahkan metadata
+          console.log(source, " data: ", doc.data());                           // tampilkan
         });
 
 -----------------------------------------------------------------------------------------------------
