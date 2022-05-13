@@ -4,7 +4,7 @@
 PEMBARUAN REALTIME DENGAN CLOUD FIRESTORE
 - berbeda dengan mengambil data menggunakan method get()
 - dengan metod onSnapshot(). menggunakan callback yang Anda berikan akan segera membuat snapshot realtime
-- akan di 'notif' saat perubahan data terkini
+- akan di 'notif' saat perubahan data terkini (realtime)
         import { doc, onSnapshot } from "firebase/firestore";           // import
         const unsub = onSnapshot(doc(db, "cities", "SF"), (doc) => {    // onSnapshot(ref, callback) call back akan --
             console.log("Current data: ", doc.data());                  // -- tampilkan data terkini (itu intinya)
@@ -45,14 +45,14 @@ PERISTIWA UNTUK PERUBAHAN METADATA
 MEMPROSES BEBERAPA DOKUMEN DALAM KOLEKSI
 - Seperti pada dokumen, Anda dapat menggunakan onSnapshot() dan bukan get() 
   untuk memproses hasil kueri. Dengan cara ini, snapshot kueri akan dibuat. 
-        import { collection, query, where, onSnapshot } from "firebase/firestore";      
-        const q = query(collection(db, "cities"), where("state", "==", "CA"));
-        const unsubscribe = onSnapshot(q, (querySnapshot) => {
-          const cities = [];
-          querySnapshot.forEach((doc) => {
-              cities.push(doc.data().name);
+        import { collection, query, where, onSnapshot } from "firebase/firestore";      // import    
+        const q = query(collection(db, "cities"), where("state", "==", "CA"));          // query coll
+        const unsubscribe = onSnapshot(q, (querySnapshot) => {                          // 
+          const cities = [];                                                    // 
+          querySnapshot.forEach((doc) => {                                      // 
+              cities.push(doc.data().name);                                     // 
           });
-          console.log("Current cities in CA: ", cities.join(", "));
+          console.log("Current cities in CA: ", cities.join(", "));             // 
         });
     
 -----------------------------------------------------------------------------------------------------
