@@ -2,6 +2,7 @@
 ====================================================================================================
 ----------------------------------------------------------------------------------------------------
 PEMBARUAN REALTIME DENGAN CLOUD FIRESTORE
+- berbeda dengan mengambil data menggunakan method get()
 - dengan metod onSnapshot(). menggunakan callback yang Anda berikan akan segera membuat snapshot realtime
 - akan di 'notif' saat perubahan data terkini
         import { doc, onSnapshot } from "firebase/firestore";           // import
@@ -38,9 +39,12 @@ PERISTIWA UNTUK PERUBAHAN METADATA
   Anda dapat memproses callback penyelesaian, tanpa harus menggunakan hasPendingWrites. 
   Pada JavaScript, gunakan Promise yang ditampilkan dari operasi tulis Anda 
   dengan menambahkan callback .then()
+- carikan contoh 
+- ????????
 -----------------------------------------------------------------------------------------------------
 MEMPROSES BEBERAPA DOKUMEN DALAM KOLEKSI
-- 
+- Seperti pada dokumen, Anda dapat menggunakan onSnapshot() dan bukan get() 
+  untuk memproses hasil kueri. Dengan cara ini, snapshot kueri akan dibuat. 
         import { collection, query, where, onSnapshot } from "firebase/firestore";      
         const q = query(collection(db, "cities"), where("state", "==", "CA"));
         const unsubscribe = onSnapshot(q, (querySnapshot) => {
