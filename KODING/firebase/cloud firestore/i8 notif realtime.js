@@ -34,10 +34,14 @@ PERISTIWA UNTUK PERUBAHAN METADATA
           (doc) => {
             // ...
           });
+- Jika hanya ingin mengetahui saat penulisan selesai, 
+  Anda dapat memproses callback penyelesaian, tanpa harus menggunakan hasPendingWrites. 
+  Pada JavaScript, gunakan Promise yang ditampilkan dari operasi tulis Anda 
+  dengan menambahkan callback .then()
 -----------------------------------------------------------------------------------------------------
 MEMPROSES BEBERAPA DOKUMEN DALAM KOLEKSI
 - 
-        import { collection, query, where, onSnapshot } from "firebase/firestore";
+        import { collection, query, where, onSnapshot } from "firebase/firestore";      
         const q = query(collection(db, "cities"), where("state", "==", "CA"));
         const unsubscribe = onSnapshot(q, (querySnapshot) => {
           const cities = [];
