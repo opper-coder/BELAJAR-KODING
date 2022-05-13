@@ -24,11 +24,13 @@ PERISTIWA UNTUK PERUBAHAN LOKAL
 
 -----------------------------------------------------------------------------------------------------
 PERISTIWA UNTUK PERUBAHAN METADATA
-- 
-        import { doc, onSnapshot } from "firebase/firestore";
-        const unsub = onSnapshot(
-          doc(db, "cities", "SF"),
-          { includeMetadataChanges: true },
+- namun peristiwa metadata diatas meski sudah di tangkap oleh properti 'hasPendingWrites' 
+- namun belum di kelola(di tangani untuk di tampilkan)
+- jika di ingikan teruskan ke method 'listen'
+        import { doc, onSnapshot } from "firebase/firestore";   // import
+        const unsub = onSnapshot(                               // ambildata biasa
+          doc(db, "cities", "SF"),                              
+          { includeMetadataChanges: true },                     // pada argumen ini tambahkan listen
           (doc) => {
             // ...
           });
