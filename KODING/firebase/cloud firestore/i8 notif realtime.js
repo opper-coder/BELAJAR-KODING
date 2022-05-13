@@ -15,8 +15,7 @@ PERISTIWA UNTUK PERUBAHAN LOKAL
   akan dapat pemberitahuan bahwa ada data baru meskipun belum dikirim ke db
 - jika anda membutuhkan peristiwa ini gunakan properti.hasPendingWrites
 - artinya: "apakah dokumen memiliki perubahan data local sebelum di kirim" karena kalau sudah dikirim 
-  ada method pemberitahuan lain yang berbeda
-  
+  ada method pemberitahuan lain yang berbeda 
         import { doc, onSnapshot } from "firebase/firestore";                   // import
         const unsub = onSnapshot(doc(db, "cities", "SF"), (doc) => {            // ambil data biasa
           const source = doc.metadata.hasPendingWrites ? "Local" : "Server";    // di callback nya tambahkan metadata
