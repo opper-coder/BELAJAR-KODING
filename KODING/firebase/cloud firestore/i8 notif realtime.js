@@ -48,18 +48,17 @@ MEMPROSES BEBERAPA DOKUMEN DALAM KOLEKSI
         import { collection, query, where, onSnapshot } from "firebase/firestore";      // import    
         const q = query(collection(db, "cities"), where("state", "==", "CA"));          // query coll
         const unsubscribe = onSnapshot(q, (querySnapshot) => {                          // 
-          const cities = [];                                                    // 
-          querySnapshot.forEach((doc) => {                                      // 
-              cities.push(doc.data().name);                                     // 
+          const cities = [];                                            // 
+          querySnapshot.forEach((doc) => {                              // 
+              cities.push(doc.data().name);                             // 
           });
-          console.log("Current cities in CA: ", cities.join(", "));             // 
+          console.log("Current cities in CA: ", cities.join(", "));     // 
         });
     
 -----------------------------------------------------------------------------------------------------
 MELIHAT PERUBAHAN ANTAR-SNAPSHOT
 
         import { collection, query, where, onSnapshot } from "firebase/firestore";
-
         const q = query(collection(db, "cities"), where("state", "==", "CA"));
         const unsubscribe = onSnapshot(q, (querySnapshot) => {
           const cities = [];
@@ -116,7 +115,4 @@ MENANGANI ERROR PEMROSESAN
         });
 
  -----------------------------------------------------------------------------------------------------
-     
-     
-     
-     
+ =====================================================================================================
