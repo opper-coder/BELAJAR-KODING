@@ -44,15 +44,17 @@ PERISTIWA UNTUK PERUBAHAN METADATA
 -----------------------------------------------------------------------------------------------------
 MEMPROSES BEBERAPA DOKUMEN DALAM KOLEKSI
 - Seperti pada dokumen, Anda dapat menggunakan onSnapshot() dan bukan get() 
-  untuk memproses hasil kueri. Dengan cara ini, snapshot kueri akan dibuat. 
+  untuk memproses hasil kueri. Dengan cara ini, snapshot kueri akan dibuat.
+- Pengendali snapshot akan menerima snapshot kueri baru setiap kali hasil kueri berubah 
+  (yakni, jika dokumen ditambahkan, dihapus, atau dimodifikasi).
         import { collection, query, where, onSnapshot } from "firebase/firestore";      // import    
-        const q = query(collection(db, "cities"), where("state", "==", "CA"));          // query coll dg where()
-        const unsubscribe = onSnapshot(q, (querySnapshot) => {                          // proses 
-          const cities = [];                                            // 
-          querySnapshot.forEach((doc) => {                              // 
+        const q = query(collection(db, "cities"), where("state", "==", "CA"));          // query coll dg where(semua doc di kota CA)
+        const unsubscribe = onSnapshot(q, (querySnapshot) => {                          // proses querySnapshot(letak realtime)
+          const cities = [];                                            // variabel kosong (kota)
+          querySnapshot.forEach((doc) => {                              // argunen.loop( kota.push(data dr query))
               cities.push(doc.data().name);                             // 
           });
-          console.log("Current cities in CA: ", cities.join(", "));     // 
+          console.log("Current cities in CA: ", cities.join(", "));     // tampilkan
         });
     
 -----------------------------------------------------------------------------------------------------
