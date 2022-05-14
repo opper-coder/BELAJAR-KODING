@@ -36,8 +36,8 @@ PERISTIWA UNTUK PERUBAHAN METADATA
             // ...
           });
 - Jika hanya ingin mengetahui saat penulisan selesai, 
-  Anda dapat memproses callback penyelesaian, tanpa harus menggunakan hasPendingWrites. 
-  Pada JavaScript, gunakan Promise yang ditampilkan dari operasi tulis Anda 
+  Anda dapat memproses callback penyelesaian, tanpa harus menggunakan 'hasPendingWrites'. 
+  Pada JavaScript, gunakan Promise yang ditampilkan dari operasi tulis Anda
   dengan menambahkan callback .then()
 - carikan contoh 
 - ????????
@@ -46,8 +46,8 @@ MEMPROSES BEBERAPA DOKUMEN DALAM KOLEKSI
 - Seperti pada dokumen, Anda dapat menggunakan onSnapshot() dan bukan get() 
   untuk memproses hasil kueri. Dengan cara ini, snapshot kueri akan dibuat. 
         import { collection, query, where, onSnapshot } from "firebase/firestore";      // import    
-        const q = query(collection(db, "cities"), where("state", "==", "CA"));          // query coll
-        const unsubscribe = onSnapshot(q, (querySnapshot) => {                          // 
+        const q = query(collection(db, "cities"), where("state", "==", "CA"));          // query coll dg where()
+        const unsubscribe = onSnapshot(q, (querySnapshot) => {                          // proses 
           const cities = [];                                            // 
           querySnapshot.forEach((doc) => {                              // 
               cities.push(doc.data().name);                             // 
