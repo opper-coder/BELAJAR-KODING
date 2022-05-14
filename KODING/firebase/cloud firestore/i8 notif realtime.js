@@ -58,27 +58,27 @@ MEMPROSES BEBERAPA DOKUMEN DALAM KOLEKSI
 -----------------------------------------------------------------------------------------------------
 MELIHAT PERUBAHAN ANTAR-SNAPSHOT
 
-        import { collection, query, where, onSnapshot } from "firebase/firestore";
-        const q = query(collection(db, "cities"), where("state", "==", "CA"));
-        const unsubscribe = onSnapshot(q, (querySnapshot) => {
+        import { collection, query, where, onSnapshot } from "firebase/firestore";      //
+        const q = query(collection(db, "cities"), where("state", "==", "CA"));          //
+        const unsubscribe = onSnapshot(q, (querySnapshot) => {                          //
           const cities = [];
-          querySnapshot.forEach((doc) => {
+          querySnapshot.forEach((doc) => {                                              //
               cities.push(doc.data().name);
           });
-          console.log("Current cities in CA: ", cities.join(", "));
+          console.log("Current cities in CA: ", cities.join(", "));                     //
         });
 
 -----------------------------------------------------------------------------------------------------
 MELIHAT PERUBAHAN ANTAR-SNAPSHOT
 - 
-        import { collection, query, where, onSnapshot } from "firebase/firestore";
-        const q = query(collection(db, "cities"), where("state", "==", "CA"));
-        const unsubscribe = onSnapshot(q, (snapshot) => {
-          snapshot.docChanges().forEach((change) => {
-            if (change.type === "added") {
+        import { collection, query, where, onSnapshot } from "firebase/firestore";      //
+        const q = query(collection(db, "cities"), where("state", "==", "CA"));          //
+        const unsubscribe = onSnapshot(q, (snapshot) => {                               //
+          snapshot.docChanges().forEach((change) => {                                   //
+            if (change.type === "added") {                                              //
                 console.log("New city: ", change.doc.data());
             }
-            if (change.type === "modified") {
+            if (change.type === "modified") {                                           //
                 console.log("Modified city: ", change.doc.data());
             }
             if (change.type === "removed") {
@@ -90,8 +90,8 @@ MELIHAT PERUBAHAN ANTAR-SNAPSHOT
 -----------------------------------------------------------------------------------------------------
 MELEPASKAN PEMROSES
 - 
-        import { collection, onSnapshot } from "firebase/firestore";
-        const unsubscribe = onSnapshot(collection(db, "cities"), () => {
+        import { collection, onSnapshot } from "firebase/firestore";            //
+const unsubscribe = onSnapshot(collection(db, "cities"), () => {                //
           // Respond to data
           // ...
         });
@@ -99,18 +99,18 @@ MELEPASKAN PEMROSES
         // Later ...
 
         // Stop listening to changes
-        unsubscribe();
+        unsubscribe();                                                          //
 
 -----------------------------------------------------------------------------------------------------
 MENANGANI ERROR PEMROSESAN
 -     
-        import { collection, onSnapshot } from "firebase/firestore";
-        const unsubscribe = onSnapshot(
-        collection(db, "cities"),
-        (snapshot) => {
+        import { collection, onSnapshot } from "firebase/firestore";    //
+        const unsubscribe = onSnapshot(                                 //
+        collection(db, "cities"),                                       //
+        (snapshot) => {                                                 //
         // ...
         },
-        (error) => {
+        (error) => {                                                    //
         // ...
         });
 
