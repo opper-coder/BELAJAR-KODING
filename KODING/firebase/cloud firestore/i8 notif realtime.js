@@ -47,6 +47,7 @@ MEMPROSES BEBERAPA DOKUMEN DALAM KOLEKSI
   untuk memproses hasil kueri. Dengan cara ini, snapshot kueri akan dibuat.
 - Pengendali snapshot akan menerima snapshot kueri baru setiap kali hasil kueri berubah 
   (yakni, jika dokumen ditambahkan, dihapus, atau dimodifikasi).
+- disini juga dapat menggunakan kolom metadata.hasPendingWrites. seperti di atas
         import { collection, query, where, onSnapshot } from "firebase/firestore";      // import    
         const q = query(collection(db, "cities"), where("state", "==", "CA"));          // query coll dg where(semua doc di kota CA)
         const unsubscribe = onSnapshot(q, (querySnapshot) => {                          // proses querySnapshot(letak realtime)
@@ -59,7 +60,7 @@ MEMPROSES BEBERAPA DOKUMEN DALAM KOLEKSI
     
 -----------------------------------------------------------------------------------------------------
 MELIHAT PERUBAHAN ANTAR-SNAPSHOT
-
+- 
         import { collection, query, where, onSnapshot } from "firebase/firestore";      //
         const q = query(collection(db, "cities"), where("state", "==", "CA"));          //
         const unsubscribe = onSnapshot(q, (querySnapshot) => {                          //
