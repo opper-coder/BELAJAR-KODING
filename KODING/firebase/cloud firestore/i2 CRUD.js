@@ -9,11 +9,11 @@ RINGKASAN
     'coll/doc/subcoll/subdoc'     // pastikan selang-seling jika bersarang dalam
 --------------------------
 - TULIS DATA (baru) 
-    setDoc(ref, {data});
-    setDoc(ref, {data}, {merge});
+    setDoc(ref, {data});           // tulis data baru, atau replace all
+    setDoc(ref, {data}, {merge});  // tulis data baru, atau replace sebagian yang baru
 --------------------------
 - TAMBAH DOKUMEN (insert)
-    - dengan ID gunakan set()
+    - dengan ID gunakan set()   
         setDoc(doc(db, ref), {data});
     - tanpa ID gunakan addDoc()
         addDoc(collection(db, ref), {data});    // jangan lupa timestamp() untuk index
