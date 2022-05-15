@@ -60,32 +60,21 @@ MEMPROSES BEBERAPA DOKUMEN DALAM KOLEKSI
     
 -----------------------------------------------------------------------------------------------------
 MELIHAT PERUBAHAN ANTAR-SNAPSHOT
-- 
-        import { collection, query, where, onSnapshot } from "firebase/firestore";      // 
-        const q = query(collection(db, "cities"), where("state", "==", "CA"));          // 
-        const unsubscribe = onSnapshot(q, (querySnapshot) => {                          // 
-          const cities = [];
-          querySnapshot.forEach((doc) => {                                              // 
-              cities.push(doc.data().name);
-          });
-          console.log("Current cities in CA: ", cities.join(", "));                     // 
-        });
-
------------------------------------------------------------------------------------------------------
-MELIHAT PERUBAHAN ANTAR-SNAPSHOT
-- 
-        import { collection, query, where, onSnapshot } from "firebase/firestore";      //
-        const q = query(collection(db, "cities"), where("state", "==", "CA"));          //
-        const unsubscribe = onSnapshot(q, (snapshot) => {                               //
-          snapshot.docChanges().forEach((change) => {                                   //
-            if (change.type === "added") {                                              //
+- Melihat perubahan aktual pada hasil kueri di antara berbagai snapshot kueri 
+  sering kali berguna dibandingkan menggunakan seluruh snapshot kueri. 
+  Misalnya, Anda dapat mempertahankan cache ketika suatu dokumen ditambahkan, dihapus, dan diubah.
+        import { collection, query, where, onSnapshot } from "firebase/firestore";      // import
+        const q = query(collection(db, "cities"), where("state", "==", "CA"));          // query coll
+        const unsubscribe = onSnapshot(q, (snapshot) => {                               // onSnapshot()
+          snapshot.docChanges().forEach((change) => {                                   // snapshot.docChanges().looping
+            if (change.type === "added") {                                              // jika ada perubahan tambah maka tampilkan terbaru
                 console.log("New city: ", change.doc.data());
             }
-            if (change.type === "modified") {                                           //
+            if (change.type === "modified") {                                           // jika modifing tampilkan perubahan
                 console.log("Modified city: ", change.doc.data());
             }
             if (change.type === "removed") {
-                console.log("Removed city: ", change.doc.data());
+                console.log("Removed city: ", change.doc.data());                       // jika di hapus tampilkan perubahan
             }
           });
         });
