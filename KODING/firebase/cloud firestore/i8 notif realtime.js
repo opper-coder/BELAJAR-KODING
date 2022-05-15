@@ -49,7 +49,7 @@ MEMPROSES BEBERAPA DOKUMEN DALAM KOLEKSI
   (yakni, jika dokumen ditambahkan, dihapus, atau dimodifikasi).
 - disini juga dapat menggunakan kolom metadata.hasPendingWrites. seperti di atas
         import { collection, query, where, onSnapshot } from "firebase/firestore";      // import    
-        const q = query(collection(db, "cities"), where("state", "==", "CA"));          // query coll dg where(semua doc di kota CA)
+        const q = query(collection(db, "cities"), where("state", "==", "CA"));          // query coll (beberapa dokumen) dg where(semua doc di kota CA)
         const unsubscribe = onSnapshot(q, (querySnapshot) => {                          // proses querySnapshot(letak realtime)
           const cities = [];                                            // variabel kosong (kota)
           querySnapshot.forEach((doc) => {                              // argumen.loop( kota.push(data dr query))
@@ -61,14 +61,14 @@ MEMPROSES BEBERAPA DOKUMEN DALAM KOLEKSI
 -----------------------------------------------------------------------------------------------------
 MELIHAT PERUBAHAN ANTAR-SNAPSHOT
 - 
-        import { collection, query, where, onSnapshot } from "firebase/firestore";      //
-        const q = query(collection(db, "cities"), where("state", "==", "CA"));          //
-        const unsubscribe = onSnapshot(q, (querySnapshot) => {                          //
+        import { collection, query, where, onSnapshot } from "firebase/firestore";      // 
+        const q = query(collection(db, "cities"), where("state", "==", "CA"));          // 
+        const unsubscribe = onSnapshot(q, (querySnapshot) => {                          // 
           const cities = [];
-          querySnapshot.forEach((doc) => {                                              //
+          querySnapshot.forEach((doc) => {                                              // 
               cities.push(doc.data().name);
           });
-          console.log("Current cities in CA: ", cities.join(", "));                     //
+          console.log("Current cities in CA: ", cities.join(", "));                     // 
         });
 
 -----------------------------------------------------------------------------------------------------
