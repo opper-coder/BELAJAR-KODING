@@ -81,7 +81,7 @@ MENULIS
         
         import { doc, setDoc } from "firebase/firestore";   // import 2 method tsb
         await setDoc(doc(db, "cities", "LA"), {             // setDoc(),{} > doc(db,kol,dok)
-          name: "Los Angeles",
+          name: "Los Angeles",                              // isi dengan < key : "value" >
           state: "CA",
           country: "USA"
         });
@@ -89,7 +89,9 @@ MENULIS
 - {merge:true}
     - gabungkan data ke dlm dokumen yang sudah ada
     - agar tidak menimpa data keseluruhan
-    - prkatek dan pengertian 2 point (?????)
+    - karena jika tidak merge true maka: jika dokumen ada 5 kolom kemudian di timpa dengan
+      data baru yang hanya memiliki 2 kolom maka yang 5 kolom di ganti dengan yang 2 kolom
+    - jika merge true maka akan mengganti yang kolom dan data baru baru, yang lama akan di biarkan
 
         import { doc, setDoc } from "firebase/firestore";
         const cityRef = doc(db, 'cities', 'BJ');
