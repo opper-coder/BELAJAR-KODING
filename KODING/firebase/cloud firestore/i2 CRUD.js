@@ -2,35 +2,35 @@ CRUD
 ============================================================================================================
 RINGKASAN
 --------------------------
-- referensi 
+- REFERENSI 
     doc(db, 'users/id');          // referensi ke dokumen
     doc(db, "users", "id");       // pilih pakai: /, '', ""
     collection(db, 'users');      // ref ke koleksi
     'coll/doc/subcoll/subdoc'     // pastikan selang-seling jika bersarang dalam
 --------------------------
-- tulis data (baru) 
+- TULIS DATA (baru) 
     setDoc(ref, {data});
     setDoc(ref, {data}, {merge});
 --------------------------
-- Tambah dokumen (insert)
+- TAMBAH DOKUMEN (insert)
     - dengan ID gunakan set()
         setDoc(doc(db, ref), {data});
     - tanpa ID gunakan addDoc()
         addDoc(collection(db, ref), {data});    // jangan lupa timestamp() untuk index
 --------------------------
-- bikin dokumen dulu 
+- BIKIN DOKUMEN DULU 
     const siswaRef = doc(collection(db, "siswa"));
-- di isi data kemudian
+- DI ISI DATA KEMUDIAN
     await setDoc(siswaRef, data); 
 --------------------------
-Memperbarui data hanya pada kolomnya (bukan replace semua kolom) 
+MEMPERBARUI DATA HANYA PADA KOLOMNYA (bukan replace semua kolom) 
 - gunakan update():
     updateDoc(ref, {kolom: 'ubahdata'});
 ----------------------------
-- Stempel Waktu Server
+- STEMPEL WAKTU SERVER
     const updateTimestamp = await updateDoc(ref, {timestamp: serverTimestamp()});
 ----------------------------
-- Memperbarui kolom pada objek bertingkat (dg chaining)
+- MEMPERBARUI KOLOM PADA OBJECT BERTINGKAT(dg chaining)
     const frankDocRef = doc(db, "users", "frank");
     await setDoc(frankDocRef, {
         name: "Frank",
@@ -43,13 +43,13 @@ Memperbarui data hanya pada kolomnya (bukan replace semua kolom)
         "favorites.color": "Red"    // dengan chaining
     });
 ----------------------------
-- Memperbarui (hapus dan tambah) elemen dalam array
+- MEMPERBARUI (hapus dan tambah) ELEMENT DALAM ARRAY
     import { doc, updateDoc, arrayUnion, arrayRemove } from "firebase/firestore";
     const washingtonRef = doc(db, "cities", "DC");
     await updateDoc(washingtonRef, { regions: arrayUnion("greater_virginia") });    // tambah elemen array yg blm ada
     await updateDoc(washingtonRef, { regions: arrayRemove("east_coast") });         // hapus elemen array
 ----------------------------
-- Operasi inkremental nilai numerik  
+- OPERASI INKREMENTAL NILAI NUMERIK  
   - incremen atau decrement (1)/(-1)
   - hanya untuk kolom numerik
   - jika bukan numerik akan di timpa dengan numerik yang di berikan
