@@ -52,7 +52,7 @@ MEMPROSES BEBERAPA DOKUMEN DALAM KOLEKSI
         const q = query(collection(db, "cities"), where("state", "==", "CA"));          // query coll dg where(semua doc di kota CA)
         const unsubscribe = onSnapshot(q, (querySnapshot) => {                          // proses querySnapshot(letak realtime)
           const cities = [];                                            // variabel kosong (kota)
-          querySnapshot.forEach((doc) => {                              // argunen.loop( kota.push(data dr query))
+          querySnapshot.forEach((doc) => {                              // argumen.loop( kota.push(data dr query))
               cities.push(doc.data().name);                             // 
           });
           console.log("Current cities in CA: ", cities.join(", "));     // tampilkan
