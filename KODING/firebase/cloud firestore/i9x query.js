@@ -87,20 +87,21 @@ Anda dapat menggunakan operator array-contains untuk memfilter berdasarkan nilai
     const q = query(citiesRef, where("regions", "array-contains", "west_coast"));   // where("K","operator","V")
 
 ------------------------
-in, not-in, dan array-contains-any
+in
+- operator ini hampir sama dengan OR  
 
-    import { query, where } from "firebase/firestore";
-    const q = query(citiesRef, where('country', 'in', ['USA', 'Japan']));
+    import { query, where } from "firebase/firestore";                      // import
+    const q = query(citiesRef, where('country', 'in', ['USA', 'Japan']));   // where(USA or JAPAN)
 
 ------------------------
 not-in
-  
-    import { query, where } from "firebase/firestore";
-    const q = query(citiesRef, where('country', 'not-in', ['USA', 'Japan']));  
+- operator ini hampir sama dengan OR dan AND
+    import { query, where } from "firebase/firestore";                          // import
+    const q = query(citiesRef, where('country', 'not-in', ['USA', 'Japan']));   // where(bukan USA JAPAN NULL)
 
 ------------------------  
 array-contains-any
-
+- 
     import { query, where } from "firebase/firestore";
     const q = query(citiesRef,
     where('regions', 'array-contains-any', ['west_coast', 'east_coast']));
