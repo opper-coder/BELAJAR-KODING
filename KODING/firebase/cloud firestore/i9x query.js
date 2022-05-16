@@ -46,29 +46,45 @@ KUERI SEDERHANA
 -------------------------------------------------------------------------------------------------------------
 MENJALANKAN KUERI
 -  Setelah membuat objek kueri, gunakan fungsi get() untuk mengambil hasilnya:
-    import { collection, query, where, getDocs } from "firebase/firestore";
-    const q = query(collection(db, "cities"), where("capital", "==", true));
-    const querySnapshot = await getDocs(q);
-    querySnapshot.forEach((doc) => {
+    import { collection, query, where, getDocs } from "firebase/firestore";     // import
+    const q = query(collection(db, "cities"), where("capital", "==", true));    // query(ref,where)
+    const querySnapshot = await getDocs(q);                                     // getDocs(q)
+    querySnapshot.forEach((doc) => {                                            // query.loop(tampilkan)
       // doc.data() is never undefined for query doc snapshots
       console.log(doc.id, " => ", doc.data());
     });
 
 -------------------------------------------------------------------------------------------------------------
 OPERATOR KUERI
-
+Metode where() memerlukan tiga parameter: 
+1. kolom untuk memfilter 
+2. operator perbandingan 
+3. dan nilai. 
+operator perbandingan berikut ini:
+< <= == >= > !=, array-contains, array-contains-any, in, not-in
+kalau di android sama dengan di tulis dengan whereEqualTo("kec", "nuhon") dst
     const stateQuery = query(citiesRef, where("state", "==", "CA"));
     const populationQuery = query(citiesRef, where("population", "<", 100000));
     const nameQuery = query(citiesRef, where("name", ">=", "San Francisco"));
     -----------------------
     Tidak sama dengan (!=)
+    - operator != akan menampilkan kolom yang berisi:
+        - nilai biasa
+        - ""
+        - null
+        - false
+        - NaN
+    - operator != akan mengecualikan pencarian
+        - dokumen yng tidak memiliki kolom dimaksud 
+        - undefined (kayaknya begitu coba praktekan)
+contoh:
     const notCapitalQuery = query(citiesRef, where("capital", "!=", false));
 
 -------------------------------------------------------------------------------------------------------------
 KEANGGOTAAN ARRAY
-
-    import { query, where } from "firebase/firestore";
-    const q = query(citiesRef, where("regions", "array-contains", "west_coast"));
+Anda dapat menggunakan operator array-contains untuk memfilter berdasarkan nilai array.
+    import { query, where } from "firebase/firestore";                              // import
+    const q = query(citiesRef, where("regions", "array-contains", "west_coast"));   // where("K","operator","V")
 
 ------------------------
 in, not-in, dan array-contains-any
