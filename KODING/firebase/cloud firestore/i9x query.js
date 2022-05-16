@@ -1,6 +1,10 @@
 =============================================================================================================
 =============================================================================================================
-
+sebelum mnggunakan query kita harus punya data dulu, contoh:
+1. bikin ref
+2. set doc(5 dokumen)
+3. bikin query()
+4. gunakan query get() atau addSnapShotListener() 
 -------------------------------------------------------------------------------------------------------------
 import { collection, doc, setDoc } from "firebase/firestore";
 const citiesRef = collection(db, "cities");
@@ -26,16 +30,18 @@ await setDoc(doc(citiesRef, "BJ"), {
     regions: ["jingjinji", "hebei"] });
 -------------------------------------------------------------------------------------------------------------
 KUERI SEDERHANA
+- query kan ke semua kota di provinsi 'CA'
 
 // Create a reference to the cities collection
-import { collection, query, where } from "firebase/firestore";
-const citiesRef = collection(db, "cities");
+import { collection, query, where } from "firebase/firestore";  // import
+const citiesRef = collection(db, "cities");                     // ref 
 // Create a query against the collection.
-const q = query(citiesRef, where("state", "==", "CA"));
+const q = query(citiesRef, where("state", "==", "CA"));         // bikin query dg ref yang ada, where(prov = CA)
 -----------------------
-import { collection, query, where } from "firebase/firestore";
-const citiesRef = collection(db, "cities");
-const q = query(citiesRef, where("capital", "==", true));
+- query kan ke semua kota
+import { collection, query, where } from "firebase/firestore";  // import
+const citiesRef = collection(db, "cities");                     // ref ke koleksi kota
+const q = query(citiesRef, where("capital", "==", true));       // bikin query dg ref yang ada, where(capital = ya)
 
 -------------------------------------------------------------------------------------------------------------
 MENJALANKAN KUERI
@@ -158,8 +164,4 @@ querySnapshot.forEach((doc) => {
 -------------------------------------------------------------------------------------------------------------
 BATASAN QUERI
 
-
--------------------------------------------------------------------------------------------------------------
-
-
-  
+=============================================================================================================
