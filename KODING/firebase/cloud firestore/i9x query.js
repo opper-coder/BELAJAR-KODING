@@ -88,14 +88,14 @@ Anda dapat menggunakan operator array-contains untuk memfilter berdasarkan nilai
 
 ------------------------
 in
-- operator ini hampir sama dengan OR  
+- operator ini hampir sama dengan OR hingga 10 
 
     import { query, where } from "firebase/firestore";                      // import
     const q = query(citiesRef, where('country', 'in', ['USA', 'Japan']));   // where(USA or JAPAN)
 
 ------------------------
 not-in
-- operator ini hampir sama dengan OR dan AND
+- operator ini hampir sama dengan != (tidak termasuk dalam) hingga 10 
     import { query, where } from "firebase/firestore";                          // import
     const q = query(citiesRef, where('country', 'not-in', ['USA', 'Japan']));   // where(bukan USA JAPAN NULL)
 
