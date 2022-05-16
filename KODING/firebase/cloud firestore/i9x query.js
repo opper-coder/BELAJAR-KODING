@@ -90,21 +90,21 @@ Anda dapat menggunakan operator array-contains untuk memfilter berdasarkan nilai
 in
 - operator ini hampir sama dengan OR hingga 10 
 
-    import { query, where } from "firebase/firestore";                      // import
-    const q = query(citiesRef, where('country', 'in', ['USA', 'Japan']));   // where(USA or JAPAN)
+    import { query, where } from "firebase/firestore";                              // import
+    const q = query(citiesRef, where('country', 'in', ['USA', 'Japan']));           // where(USA or JAPAN)
 
 ------------------------
 not-in
 - operator ini hampir sama dengan != (tidak termasuk dalam) hingga 10 
-    import { query, where } from "firebase/firestore";                          // import
-    const q = query(citiesRef, where('country', 'not-in', ['USA', 'Japan']));   // where(bukan USA JAPAN NULL)
+    import { query, where } from "firebase/firestore";                              // import
+    const q = query(citiesRef, where('country', 'not-in', ['USA', 'Japan']));       // where(bukan USA JAPAN NULL)
 
 ------------------------  
 array-contains-any
-- 
-    import { query, where } from "firebase/firestore";
-    const q = query(citiesRef,
-    where('regions', 'array-contains-any', ['west_coast', 'east_coast']));
+- mirip DISTINC PHP 
+    import { query, where } from "firebase/firestore";                      // import
+    const q = query(citiesRef,                                              // query
+    where('regions', 'array-contains-any', ['west_coast', 'east_coast']));  // menapilkan 1 data duplikat 
 ------------------------
     import { query, where } from "firebase/firestore";
     const q = query(citiesRef, where('regions', 'in', [['west_coast', 'east_coast']]));
