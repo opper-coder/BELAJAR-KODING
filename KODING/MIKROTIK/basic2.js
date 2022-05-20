@@ -50,8 +50,7 @@ RINGKASAN PRAKTEK
 =========================================================================================================
 REFERENSI
 1. MASUKAN INTERNET KE MIKROTIK
-	1.1 topologi
-	
+	1.1 topologi		
 	1.2 Clien Server / manual-auto IP
 2. MANAGEMEN BANDWIDTH
 	2.1 interface
@@ -64,7 +63,45 @@ REFERENSI
 	3.1 manual IP
 	3.2 auto IP
 =========================================================================================================
-SETTING MIKROTIK DASAR
+KONTEN REFERENSI
+--------------------------------------------------------------------------------------------------------
+	1.1 Topologi
+		- di dalam topologi terkandung 3 unsur penting
+			1. IP address/alamat/seperti nomor HP
+			2. server - client
+			3. wiring/net/network
+		
+		- adalah alamat di tiap simpul/node 
+			- cara penulisan standard 
+				- 192.168.0.0 (untuk jaringan LAN)
+				- 172.168.0.0 (untuk jaringan LAN)
+				- (untuk jaringan dunia/www)
+			- 
+			-
+--------------------------
+		- praktek:
+			1 ISP (boleh dari "indiehome", indosat, telkomsel, TIS)
+			2 MIKROTIK
+			3 LAPTOP
+			  - laptop sendiri
+			  - PPOE ROUTER
+			4 HOTSPOT/ROUTER
+			  - gonggong 7
+					- 10
+			  - mongsongan 10
+					- 11
+--------------------------------------------------------------------------------------------------------
+	1.2 Clien Server / manual-auto IP
+	
+	
+	
+	
+	
+	
+	
+	
+=========================================================================================================
+SETTING MIKROTIK DASAR	
 
 Kalau kita beli mikrotik di awal tidak langsung bisa di koneksikan, kita mesti config terlebih dahulu
 saat kita daftar ISP biasanya kita di kasih IP dari ISP namun IP untuk jaringan lokal kita (LAN)
