@@ -1,9 +1,11 @@
 ==========================================================================================================
 DESKRIPSI
-- fungsi utama vlan adalah : membawa 2 alamat pada 1 interface(port, bridge) 
+- fungsi utama vlan adalah : membawa 2 alamat pada 1 interface(port, bridge)
+- intinya hanya pada 1 langkah ini saja (dalam garis tebal) selebihnya hanya config dasar dibawah 
+- vlan bisa di terapkan pada BRIDGE ya
+    - tinggal pilih BRIDGE pada saat bikin interface VLAN
 ----------------------------------------------------------------------------------------------------------
 CARA BUAT VLAN
-- intinya hanya pada 1 langkah ini saja (dalam garis tebal) selebihnya hanya config dasar dibawah 
 - interface > tab VLAN > add > 
     - isikan tab general:
         - name : "nama" > vlan ID : "number (terserah sbg pengenal boleh ngka 10,11,12 dst )" > 
@@ -13,21 +15,20 @@ CARA BUAT VLAN
     - tab lainya biarkan
     - kalau mau kasih comment
     - apply >  OK
-==========================================================================================================
-----------------------------------------------------------------------------------------------------------
-IP ADDRESS
-- setelah interface vLAN di buat lalu buatkan IP ADDRESS ALOKASI untuknya
-  untuk disebar nantinya ke luar sbg anggotanya 
-- caranya:
-    - IP > Adresses > add > 
-        - address : 'alokasi ke bawah' > interace : 'pilih port, bridge, vlan' 
-        
+==========================================================================================================        
 ----------------------------------------------------------------------------------------------------------
 CONFIG DASAR PADA INTERFACE
 - jika config dasar sudah di lakukan maka skip langkah ini
 ---------------------------
 - ambil internet dari ISP
 - IP > DHCP client > add > interface ether 1 > centang DNS dan NTP > Apply - OK > bound
+---------------------------
+IP ADDRESS VLAN
+- setelah interface vLAN di buat lalu buatkan IP ADDRESS ALOKASI untuknya
+  untuk disebar nantinya ke luar sbg anggotanya 
+- caranya:
+    - IP > Adresses > add > 
+        - address : 'alokasi ke bawah' > interace : 'pilih port, bridge, vlan' 
 ---------------------------
 - agar bisa di bagikan sekaligus bisa akses internet untuk client maka kita kasih config dasar padanya
     - DNS:
@@ -55,8 +56,4 @@ TERIMA VLAN
   atau mikrotik yang memiliki chip switch manajebel
 - sekarang kita gunakan microtik saja:
       - 
-
-
-
-
 
