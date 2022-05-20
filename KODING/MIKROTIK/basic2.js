@@ -221,10 +221,21 @@ Kalau kita sudah punya bridge masing2 typenya kita mau masukan baru atau tukar t
 Usahakan koneksi winbox di awal pakai mac address untuk config awal saja selanjutnya pakai IP adress karena terjamin kesetabilanya
 Update software yang sudah di setting : sistem -> package -> chec for update -> jika ada download install 
    
-   
-
-======================== RINGKASAN ============================
- 
+======================== RINGKASAN1 ============================   
+1. MASUKAN INTERNET KE MIKROTIK
+	- ip
+	- interface
+2. MANAGEMEN BANDWIDTH
+	- sekuriti
+	- pembagian bandwidt
+	- routing/alokasi ether(port)
+	- limitasi 
+	- switch function
+3. KELUARKAN INTERNET/JARINGAN
+	- manual IP
+	- auto IP
+	
+======================== RINGKASAN2 ============================ 
     1.BRIDGE
         - bikin sekurang-kurangnya 3 bridge WAN LAN HOTSPOT
         - masukan port2 yang di tuju
