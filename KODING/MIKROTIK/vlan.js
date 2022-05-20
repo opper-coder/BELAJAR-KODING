@@ -3,6 +3,7 @@
 ----------------------------------------------------------------------------------------------------------
 DESKRIPSI
 - fungsi utama vlan adalah : membawa 2 alamat pada 1 interface(port, bridge) 
+- 
 ----------------------------------------------------------------------------------------------------------
 CARA BUAT VLAN
 - interface > tab VLAN > add > 
@@ -22,3 +23,10 @@ IP ADDRESS
     - IP > Adresses > add > 
         - address : 'alokasi ke bawah' > interace : 'pilih port, bridge, vlan' 
         
+----------------------------------------------------------------------------------------------------------
+DHCP SERVER
+- setiap interface jika mau di bagikan kebawah maka buatkan IP DINAMIC seperti DHCP SERVER
+- caranya:
+    - IP > DHCP Server > add > 
+        DHCP > tombol DHCP Setup > next2
+    - 
