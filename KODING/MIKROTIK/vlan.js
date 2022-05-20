@@ -28,5 +28,29 @@ DHCP SERVER
 - setiap interface jika mau di bagikan kebawah maka buatkan IP DINAMIC seperti DHCP SERVER
 - caranya:
     - IP > DHCP Server > add > 
-        DHCP > tombol DHCP Setup > next2
-    - 
+        DHCP > tombol DHCP Setup > interace : 'pilih port, bridge, vlan' > next2
+    - terpenting perhatikan IP address ya (biasanya sih otomatis)
+----------------------------------------------------------------------------------------------------------
+CONFIG DASAR PADA INTERFACE
+- jika config dasar sudah di lakukan maka skip langkah ini
+---------------------------
+- ambil internet dari ISP
+- IP > DHCP client > add > interface ether 1 > centang DNS dan NTP > Apply - OK > bound
+---------------------------
+- agar bisa di bagikan sekaligus bisa akses internet untuk client maka kita kasih config dasar padanya
+    - DNS:
+        IP > DNS > centang 'allow remote request'
+    - FIREWALL:
+        tab NAT > add
+            tab general > 
+                chain : srcnat
+                out Interface : 'pilih port, bridge, vlan' 
+            tab action >
+                action : masquerade
+----------------------------------------------------------------------------------------------------------
+KALAU VLAN 
+
+
+
+
+
