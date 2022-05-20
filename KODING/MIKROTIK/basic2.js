@@ -242,7 +242,7 @@ Update software yang sudah di setting : sistem -> package -> chec for update -> 
     	- tambahkan NAT pada WAN dan masquerade
     6.DHCP Server LAN
     	- bikin secara wizard jangan add manual - > DHCP Setup -> next2 jadi
-    7.HOTSPOT
+    7.DHCP Server HOTSPOT
     	- sama bikin HOTSPOT secara wizard- Hotspot Setup -> next2 jadi 
     	- settingh 2 parameter hotspot
     		- doubleklik isi adress per mac 1 orang saja
