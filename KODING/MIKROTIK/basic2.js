@@ -223,9 +223,10 @@ Update software yang sudah di setting : sistem -> package -> chec for update -> 
    
 ======================== RINGKASAN1 ============================   
 1. MASUKAN INTERNET KE MIKROTIK
-	- ip
-	- interface
+	- topologi
+	- Clien Server / manual-auto IP
 2. MANAGEMEN BANDWIDTH
+	- interface
 	- sekuriti
 	- pembagian bandwidt
 	- routing/alokasi ether(port)
@@ -234,7 +235,6 @@ Update software yang sudah di setting : sistem -> package -> chec for update -> 
 3. KELUARKAN INTERNET/JARINGAN
 	- manual IP
 	- auto IP
-	
 ======================== RINGKASAN2 ============================ 
     1.BRIDGE
         - bikin sekurang-kurangnya 3 bridge WAN LAN HOTSPOT
