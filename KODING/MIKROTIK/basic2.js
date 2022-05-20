@@ -70,11 +70,16 @@ KONTEN REFERENSI
 			1. IP address/alamat/seperti nomor HP
 			2. server - client
 			3. wiring/net/network
-		
-		- adalah alamat di tiap simpul/node 
-			- cara penulisan standard 
-				- 192.168.0.0 (untuk jaringan LAN)
-				- 172.168.0.0 (untuk jaringan LAN)
+		1. IP adalah alamat di tiap simpul/node 
+			1.1- cara penulisan standard 
+				- pada dasar nya boleh menggunakan angka manapun di bawah ini untuk pengalamatan IP
+				- tapi karena ada standard internasional maka kita ikuti saja Class yang dai tentukan
+				- class meliputi ABCDE
+				- untuk bermain mikrotik selalu gunakan saja 192
+				- 10.0.0.0 (minimal)
+				- 255.255.255.255 (maksimal)
+				- 172.168.0.0 (untuk jaringan WAN) 
+				- 192.168.0.1/22 (untuk jaringan LAN) IPv4 IPv6
 				- (untuk jaringan dunia/www)
 			- 
 			-
