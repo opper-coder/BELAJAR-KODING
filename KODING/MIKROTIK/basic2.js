@@ -1,21 +1,20 @@
 ========================================================================================================
-RINGKASAN1 
+RANGKUMAN 
 1. MASUKAN INTERNET KE MIKROTIK
-	- topologi
-	- Clien Server / manual-auto IP
+	1.1 topologi
+	1.2 Clien Server / manual-auto IP
 2. MANAGEMEN BANDWIDTH
-	- interface
-	- sekuriti
-	- pembagian bandwidt
-	- routing/alokasi ether(port)
-	- limitasi 
-	- switch function
+	2.1 interface
+	2.2 sekuriti
+	2.3 pembagian bandwidt
+	2.4 routing/alokasi ether(port)
+	2.5 limitasi 
+	2.6 switch function
 3. KELUARKAN INTERNET/JARINGAN
-	- manual IP
-	- auto IP
-	
+	3.1 manual IP
+	3.2 auto IP
 ========================================================================================================
-RINGKASAN2 
+RINGKASAN PRAKTEK 
     1.BRIDGE
         - bikin sekurang-kurangnya 3 bridge WAN LAN HOTSPOT
         - masukan port2 yang di tuju
@@ -50,7 +49,20 @@ RINGKASAN2
 
 =========================================================================================================
 REFERENSI
-
+1. MASUKAN INTERNET KE MIKROTIK
+	1.1 topologi
+	
+	1.2 Clien Server / manual-auto IP
+2. MANAGEMEN BANDWIDTH
+	2.1 interface
+	2.2 sekuriti
+	2.3 pembagian bandwidt
+	2.4 routing/alokasi ether(port)
+	2.5 limitasi 
+	2.6 switch function
+3. KELUARKAN INTERNET/JARINGAN
+	3.1 manual IP
+	3.2 auto IP
 =========================================================================================================
 SETTING MIKROTIK DASAR
 
