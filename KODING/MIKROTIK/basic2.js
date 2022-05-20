@@ -1,4 +1,5 @@
-======================== RINGKASAN1 ============================   
+========================================================================================================
+RINGKASAN1 
 1. MASUKAN INTERNET KE MIKROTIK
 	- topologi
 	- Clien Server / manual-auto IP
@@ -12,7 +13,9 @@
 3. KELUARKAN INTERNET/JARINGAN
 	- manual IP
 	- auto IP
-======================== RINGKASAN2 ============================ 
+	
+========================================================================================================
+RINGKASAN2 
     1.BRIDGE
         - bikin sekurang-kurangnya 3 bridge WAN LAN HOTSPOT
         - masukan port2 yang di tuju
@@ -45,7 +48,10 @@
     9.ganti identity
     10.user admin password
 
-================================================================================================================
+=========================================================================================================
+REFERENSI
+
+=========================================================================================================
 SETTING MIKROTIK DASAR
 
 Kalau kita beli mikrotik di awal tidak langsung bisa di koneksikan, kita mesti config terlebih dahulu
