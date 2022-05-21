@@ -81,20 +81,20 @@ KONTEN REFERENSI
 				- 172.168.0.0 (untuk jaringan WAN) 
 				- 192.168.0.1/22 (untuk jaringan LAN) IPv4 IPv6
 				- (untuk jaringan dunia/www)
-			- 
-			-
---------------------------
-		- praktek:
-			1 ISP (boleh dari "indiehome", indosat, telkomsel, TIS)
-			2 MIKROTIK
-			3 LAPTOP
-			  - laptop sendiri
-			  - PPOE ROUTER
-			4 HOTSPOT/ROUTER
-			  - gonggong 7
-					- 10
-			  - mongsongan 10
-					- 11
+		2. kalau clien kita dapat jatah IP dari server, sebaliknya server bikin rentang IP /24 dst
+		3. media transmisi meliputi kabel, radio, gsm, lampu, kabel PLN, satelit, FO, dsb
+		   port meliputi: in, out, ether, vlan, bridge
+		
+--------------------------------------------------------------------------------------------------------
+- praktek:
+	1 ISP (boleh dari "indiehome", indosat, telkomsel, TIS)
+	2 MIKROTIK
+	3 LAPTOP
+	4 ROUTER
+	  - gonggong 7
+			- 10 pengguna
+	  - mongsongan 10
+			- 11 pengguna
 --------------------------------------------------------------------------------------------------------
 	1.2 Clien Server / manual-auto IP
 	
