@@ -35,54 +35,52 @@ RINGKASAN PRAKTEK
 =========================================================================================================
 REFERENSI
 1. MASUKAN INTERNET KE MIKROTIK
-	1.1 topologi		
-	1.2 Clien Server / manual-auto IP
+   1.1 topologi		
+   1.2 Clien Server / manual-auto IP
 2. MANAGEMEN BANDWIDTH
-	2.1 interface
-	2.2 sekuriti
-	2.3 pembagian bandwidt
-	2.4 routing/alokasi ether(port)
-	2.5 limitasi 
-	2.6 switch function
+   2.1 interface
+   2.2 sekuriti
+   2.3 pembagian bandwidt
+   2.4 routing/alokasi ether(port)
+   2.5 limitasi 
+   2.6 switch function
 3. KELUARKAN INTERNET/JARINGAN
-	3.1 manual IP
-	3.2 auto IP
+   3.1 manual IP
+   3.2 auto IP
 =========================================================================================================
 KONTEN REFERENSI
 --------------------------------------------------------------------------------------------------------
-	1.1 Topologi
-		- di dalam topologi terkandung 3 unsur penting
-			1. IP address/alamat/seperti nomor HP
-			2. server - client
-			3. wiring/net/network
-		1. IP adalah alamat di tiap simpul/node 
-			1.1- cara penulisan standard 
-				- pada dasar nya boleh menggunakan angka manapun di bawah ini untuk pengalamatan IP
-				- tapi karena ada standard internasional maka kita ikuti saja Class yang dai tentukan
-				- class meliputi ABCDE
-				- untuk bermain mikrotik selalu gunakan saja 192
-				- 10.0.0.0 (minimal)
-				- 255.255.255.255 (maksimal)
-				- 172.168.0.0 (untuk jaringan WAN) 
-				- 192.168.0.1/22 (untuk jaringan LAN) IPv4 IPv6
-				- (untuk jaringan dunia/www)
-		2. kalau clien kita dapat jatah IP dari server, sebaliknya server bikin rentang IP /24 dst
-		3. media transmisi meliputi kabel, radio, gsm, lampu, kabel PLN, satelit, FO, dsb
-		   port meliputi: in, out, ether, vlan, bridge
+1.1 Topologi
+   - di dalam topologi terkandung 3 unsur penting
+   1. IP address/alamat/seperti nomor HP
+   2. server - client
+   3. wiring/net/network
+   1. IP adalah alamat di tiap simpul/node 
+   1.1- cara penulisan standard 
+      - pada dasar nya boleh menggunakan angka manapun di bawah ini untuk pengalamatan IP
+      - tapi karena ada standard internasional maka kita ikuti saja Class yang dai tentukan
+      - class meliputi ABCDE
+      - untuk bermain mikrotik selalu gunakan saja 192
+      - 10.0.0.0 (minimal)
+      - 255.255.255.255 (maksimal)
+      - 172.168.0.0 (untuk jaringan WAN) 
+      - 192.168.0.1/22 (untuk jaringan LAN) IPv4 IPv6
+      -  (untuk jaringan dunia/www)
+2. kalau clien kita dapat jatah IP dari server, sebaliknya server bikin rentang IP /22 dst
+3. media transmisi meliputi kabel, radio, gsm, lampu, kabel PLN, satelit, FO, dsb
+   port meliputi: in, out, ether, vlan, bridge
 		
 --------------------------------------------------------------------------------------------------------
 - praktek:
-	1 ISP (boleh dari "indiehome", indosat, telkomsel, TIS)
-	2 MIKROTIK
-	3 LAPTOP
-	4 HTB A/B 
-	5 kabel FO
-	6 ODP
-	7 ROUTER
-	  - gonggong 7
-			- 10 pengguna
-	  - mongsongan 10
-			- 11 pengguna
+1 ISP (boleh dari "indiehome", indosat, telkomsel, TIS)
+2 MIKROTIK
+3 LAPTOP
+4 HTB A/B 
+5 kabel FO
+6 ODP
+7 ROUTER
+  - gonggong 7 titik
+  - mongsongan 10 titik
 --------------------------------------------------------------------------------------------------------
 konfigurasi hardware
 	1 pasang ISP di ether1
@@ -92,16 +90,27 @@ konfigurasi hardware
 	5 pasang 2 ROUTER dari HTB dengan ODP (lihat di lapangan)
 --------------------------------------------------------------------------------------------------------
 konfigurasi winbox	
-	1 buka winbox > login dengan MAC > user:admin, pwd: "" >
-	2 lakukan hapus konfig baawaan > tool > remove config 
+	1 buka winbox 
+	2 lakukan hapus konfig bawaan 
 	3 bikin bridge dengan nama WAN, LAN, HOTSPOT, RUMAH
-	4 bikin client
-	5 bikin hotspot
-	6 
-	
-	
-	
-	
+	4 bikin client (dapatkan IP)
+	5 bikin IP LAN
+	6 bikin server
+	7 ambil internet dr atas
+	8 kirim internet ke bawah
+	9 
+--------------------------------------------------------------------------------------------------------	
+1. login dengan MAC > user:admin, pwd: "" > bisa remote, bisa 
+2. buka tool > remove config 
+3. buka bridge > add > nama : sesuai konsep > apply OK
+4. Buka IP > DHCP Client > add > pilih interface > bound > periksa IP 
+   - cek sambungan > terminal ping 8.8.8.8 atau ping gateway di : IP > routesb > gateway 
+   - b
+5. IP > add > address: 'IP beri slash' > interface: 'jalur keluar'
+6. 
+7. 
+8. 
+9. 
 	
 =========================================================================================================
 SETTING MIKROTIK DASAR	
