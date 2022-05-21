@@ -1,19 +1,4 @@
 ========================================================================================================
-RANGKUMAN 
-1. MASUKAN INTERNET KE MIKROTIK
-	1.1 topologi
-	1.2 Clien Server / manual-auto IP
-2. MANAGEMEN BANDWIDTH
-	2.1 interface
-	2.2 sekuriti
-	2.3 pembagian bandwidt
-	2.4 routing/alokasi ether(port)
-	2.5 limitasi 
-	2.6 switch function
-3. KELUARKAN INTERNET/JARINGAN
-	3.1 manual IP
-	3.2 auto IP
-========================================================================================================
 RINGKASAN PRAKTEK 
     1.BRIDGE
         - bikin sekurang-kurangnya 3 bridge WAN LAN HOTSPOT
@@ -109,7 +94,10 @@ konfigurasi hardware
 konfigurasi winbox	
 	1 buka winbox > login dengan MAC > user:admin, pwd: "" >
 	2 lakukan hapus konfig baawaan > tool > remove config 
-	3 
+	3 bikin bridge dengan nama WAN, LAN, HOTSPOT, RUMAH
+	4 bikin client
+	5 bikin hotspot
+	6 
 	
 	
 	
