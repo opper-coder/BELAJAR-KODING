@@ -90,16 +90,26 @@ KONTEN REFERENSI
 	1 ISP (boleh dari "indiehome", indosat, telkomsel, TIS)
 	2 MIKROTIK
 	3 LAPTOP
-	4 ROUTER
+	4 HTB A/B 
+	5 kabel FO
+	6 ODP
+	7 ROUTER
 	  - gonggong 7
 			- 10 pengguna
 	  - mongsongan 10
 			- 11 pengguna
 --------------------------------------------------------------------------------------------------------
-	1.2 Clien Server / manual-auto IP
-	
-	
-	
+konfigurasi hardware
+	1 pasang ISP di ether1
+	2 pasang kabel UTP di ether2 dan sambungkan ke rj45 laptop untuk akses seting
+	3 pasang kabel UTP ke HTB A dan nyalakan HTB dengan power
+	4 pasang kabel FO ke HTB B
+	5 pasang 2 ROUTER dari HTB dengan ODP (lihat di lapangan)
+--------------------------------------------------------------------------------------------------------
+konfigurasi winbox	
+	1 buka winbox > login dengan MAC > user:admin, pwd: "" >
+	2 lakukan hapus konfig baawaan > tool > remove config 
+	3 
 	
 	
 	
