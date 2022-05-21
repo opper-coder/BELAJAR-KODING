@@ -1,10 +1,5 @@
-==========================================================================================================
-DESKRIPSI
-- fungsi utama vlan adalah : membawa 2 alamat pada 1 interface(port, bridge)
-- intinya hanya pada 1 langkah ini saja (dalam garis tebal) selebihnya hanya config dasar dibawah 
-- vlan bisa di terapkan pada BRIDGE ya
-    - tinggal pilih BRIDGE pada saat bikin interface VLAN
-----------------------------------------------------------------------------------------------------------
+RINGAKASAN
+
 CARA BUAT VLAN
 - interface > tab VLAN > add > 
     - isikan tab general:
@@ -15,6 +10,12 @@ CARA BUAT VLAN
     - tab lainya biarkan
     - kalau mau kasih comment
     - apply >  OK
+==========================================================================================================
+DESKRIPSI
+- fungsi utama vlan adalah : membawa 2 alamat pada 1 interface(port, bridge)
+- intinya hanya pada 1 langkah ini saja (dalam garis tebal) selebihnya hanya config dasar dibawah 
+- vlan bisa di terapkan pada BRIDGE ya
+    - tinggal pilih BRIDGE pada saat bikin interface VLAN
 ==========================================================================================================        
 ----------------------------------------------------------------------------------------------------------
 CONFIG DASAR PADA INTERFACE
