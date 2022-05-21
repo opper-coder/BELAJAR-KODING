@@ -98,7 +98,8 @@ konfigurasi winbox
   6. bikin server (LAN)
   7. ambil internet dr atas
   8. kirim internet ke bawah
-  9. 
+  9. limiter
+  10. Sekurity
 --------------------------------------------------------------------------------------------------------	
   1. login dengan MAC > user:admin, pwd: "" > bisa remote, bisa 
   2. buka tool > remove config 
@@ -108,12 +109,24 @@ konfigurasi winbox
      - bisa 
   5. IP > add > address: 'IP beri slash' > interface: 'jalur keluar'
   6. IP > DHCP Server > tab DHCP setup > interface : 'pilih LAN keluar' > next2 > Apply-Ok
-  7. IP -> DNS -> server = 10. 10. 10. 1 (didapat dari ISP) dan tambahkan DNS global 8.8.8.8, 8.8.0.0 
+  7. IP > DNS > server = 10. 10. 10. 1 (didapat dari ISP) dan tambahkan DNS global 8.8.8.8, 8.8.0.0 
      - centang Allow remote request agar bisa di akses dari client
-  8. IP -> firewall -> NAT -> add -> out interface -> bridge-WAN ->  
-     - Pada tab action ->  pilih masquerade -> apply -> OK 
-  9. 
-	
+  8. IP > firewall > NAT > add > out interface > bridge-WAN >  
+     - Pada tab action >  pilih masquerade > apply > OK 
+  9. Tekan queues > pada queue list klik add > nama biarkan > target IP laptop tujuan
+     > 192.168.1.254  (ip laptop tergenerate diatas) isi max dan min limit. Lebih lanjut bab QoS
+  10. - ganti nama: sistem > identity > nama nya ROUTER-Gonggong
+     - ganti password: sistem > user > bikin user baru klik + > nama aqil > group full > password isikan >
+     - IP > services > ada list > disable dan sisakan 'www, winbox, ssh'
+	- tapi berikan akses masuk pada ip iertentu:
+          - dklik > available from isikan ip target 
+	  - Dan tambahkan ip local private nya juga 192. 168. 1. 0/24 jangan di kosongkan nanti malah di perboleh kan semua jadinya
+	- Terus www nya juga edit ke Ip local yang sama > lalu port 80 kita ubah jadi 8080 >
+          Nanti kalau remote tinggal www.ip:8080  
+     - Tips yang ini jangan dilakukan terlalu cepat nanti tidak bisa connect sendiri
+       Langkah amanya tiap perubahan ping dst
+       Dan paling tidak setting port2 yang terbuka untuk ip privatenya supaya kita bisa remote  
+      
 =========================================================================================================
 SETTING MIKROTIK DASAR	
 
