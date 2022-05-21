@@ -1,3 +1,102 @@
+=========================================================================================================
+MATERI
+1. MASUKAN INTERNET KE MIKROTIK
+   1.1 topologi		
+   1.2 Clien Server / manual-auto IP
+2. MANAGEMEN BANDWIDTH
+   2.1 interface
+   2.2 sekuriti
+   2.3 pembagian bandwidt
+   2.4 routing/alokasi ether(port)
+   2.5 limitasi 
+   2.6 switch function
+3. KELUARKAN INTERNET/JARINGAN
+   3.1 manual IP
+   3.2 auto IP
+=========================================================================================================
+REFERENSI
+--------------------------------------------------------------------------------------------------------
+1.1 Topologi
+   - di dalam topologi terkandung 3 unsur penting
+   1. IP address/alamat/seperti nomor HP
+   2. server - client
+   3. wiring/net/network
+   1. IP adalah alamat di tiap simpul/node 
+   1.1- cara penulisan standard 
+      - pada dasar nya boleh menggunakan angka manapun di bawah ini untuk pengalamatan IP
+      - tapi karena ada standard internasional maka kita ikuti saja Class yang dai tentukan
+      - class meliputi ABCDE
+      - untuk bermain mikrotik selalu gunakan saja 192
+      - 10.0.0.0 (minimal)
+      - 255.255.255.255 (maksimal)
+      - 172.168.0.0 (untuk jaringan WAN) 
+      - 192.168.0.1/22 (untuk jaringan LAN) IPv4 IPv6
+      -  (untuk jaringan dunia/www)
+2. kalau clien kita dapat jatah IP dari server, sebaliknya server bikin rentang IP /22 dst
+3. media transmisi meliputi kabel, radio, gsm, lampu, kabel PLN, satelit, FO, dsb
+   port meliputi: in, out, ether, vlan, bridge
+========================================================================================================		
+--------------------------------------------------------------------------------------------------------
+PRAKTEK
+
+PERSIAPAN PERANGKAT
+1 ISP (boleh dari "indiehome", indosat, telkomsel, TIS)
+2 MIKROTIK
+3 LAPTOP
+4 HTB A/B 
+5 kabel FO
+6 ODP
+7 ROUTER
+  - gonggong 7 titik
+  - mongsongan 10 titik
+--------------------------------------------------------------------------------------------------------
+KONFIGURASI HARDWARE
+  1. pasang ISP di ether1
+  2. pasang kabel UTP di ether2 dan sambungkan ke rj45 laptop untuk akses seting
+  3. pasang kabel UTP ke HTB A dan nyalakan HTB dengan power
+  4. pasang kabel FO ke HTB B
+  5. pasang 2 ROUTER dari HTB dengan ODP (lihat di lapangan)
+--------------------------------------------------------------------------------------------------------
+KONFIGURASI WINBOX	
+  1. buka winbox 
+  2. lakukan hapus konfig bawaan 
+  3. bikin bridge dengan nama WAN, LAN, HOTSPOT, RUMAH
+  4. bikin client (dapatkan IP)
+  5. bikin IP LAN
+  6. bikin server (LAN)
+  7. ambil internet dr atas
+  8. kirim internet ke bawah
+  9. limiter
+  10. Sekurity
+========================================================================================================	
+  1. login dengan MAC > user:admin, pwd: "" > bisa remote, bisa 
+  2. buka tool > remove config 
+  3. buka bridge > add > nama : sesuai konsep > apply OK
+  4. Buka IP > DHCP Client > add > pilih interface > bound > periksa IP 
+     - cek sambungan: terminal ping 8.8.8.8 atau ping gateway di : IP > routes > ada routeslist gateway 
+     - bisa 
+  5. IP > add > address: 'IP beri slash' > interface: 'jalur keluar'
+  6. IP > DHCP Server > tab DHCP setup > interface : 'pilih LAN keluar' > next2 > Apply-Ok
+  7. IP > DNS > server = 10. 10. 10. 1 (didapat dari ISP) dan tambahkan DNS global 8.8.8.8, 8.8.0.0 
+     - centang Allow remote request agar bisa di akses dari client
+  8. IP > firewall > NAT > add > out interface > bridge-WAN >  
+     - Pada tab action >  pilih masquerade > apply > OK 
+  9. Tekan queues > pada queue list klik add > nama biarkan > target IP laptop tujuan
+     > 192.168.1.254  (ip laptop tergenerate diatas) isi max dan min limit. Lebih lanjut bab QoS
+  10. - ganti nama: sistem > identity > nama nya ROUTER-Gonggong
+     - ganti password: sistem > user > bikin user baru klik + > nama aqil > group full > password isikan >
+     - IP > services > ada list > disable dan sisakan 'www, winbox, ssh'
+	- tapi berikan akses masuk pada ip iertentu:
+          - dklik > available from isikan ip target 
+	  - Dan tambahkan ip local private nya juga 192. 168. 1. 0/24 jangan di kosongkan nanti malah di perboleh kan semua jadinya
+	- Terus www nya juga edit ke Ip local yang sama > lalu port 80 kita ubah jadi 8080 >
+          Nanti kalau remote tinggal www.ip:8080  
+     - Tips yang ini jangan dilakukan terlalu cepat nanti tidak bisa connect sendiri
+       Langkah amanya tiap perubahan ping dst
+       Dan paling tidak setting port2 yang terbuka untuk ip privatenya supaya kita bisa remote  
+       
+       
+       
 ========================================================================================================
 RINGKASAN PRAKTEK 
 1.BRIDGE
@@ -30,103 +129,7 @@ RINGKASAN PRAKTEK
     
 --------- SECURITY
 9. ganti identity
-10. user admin password
-
-=========================================================================================================
-REFERENSI
-1. MASUKAN INTERNET KE MIKROTIK
-   1.1 topologi		
-   1.2 Clien Server / manual-auto IP
-2. MANAGEMEN BANDWIDTH
-   2.1 interface
-   2.2 sekuriti
-   2.3 pembagian bandwidt
-   2.4 routing/alokasi ether(port)
-   2.5 limitasi 
-   2.6 switch function
-3. KELUARKAN INTERNET/JARINGAN
-   3.1 manual IP
-   3.2 auto IP
-=========================================================================================================
-KONTEN REFERENSI
---------------------------------------------------------------------------------------------------------
-1.1 Topologi
-   - di dalam topologi terkandung 3 unsur penting
-   1. IP address/alamat/seperti nomor HP
-   2. server - client
-   3. wiring/net/network
-   1. IP adalah alamat di tiap simpul/node 
-   1.1- cara penulisan standard 
-      - pada dasar nya boleh menggunakan angka manapun di bawah ini untuk pengalamatan IP
-      - tapi karena ada standard internasional maka kita ikuti saja Class yang dai tentukan
-      - class meliputi ABCDE
-      - untuk bermain mikrotik selalu gunakan saja 192
-      - 10.0.0.0 (minimal)
-      - 255.255.255.255 (maksimal)
-      - 172.168.0.0 (untuk jaringan WAN) 
-      - 192.168.0.1/22 (untuk jaringan LAN) IPv4 IPv6
-      -  (untuk jaringan dunia/www)
-2. kalau clien kita dapat jatah IP dari server, sebaliknya server bikin rentang IP /22 dst
-3. media transmisi meliputi kabel, radio, gsm, lampu, kabel PLN, satelit, FO, dsb
-   port meliputi: in, out, ether, vlan, bridge
-		
---------------------------------------------------------------------------------------------------------
-- praktek:
-1 ISP (boleh dari "indiehome", indosat, telkomsel, TIS)
-2 MIKROTIK
-3 LAPTOP
-4 HTB A/B 
-5 kabel FO
-6 ODP
-7 ROUTER
-  - gonggong 7 titik
-  - mongsongan 10 titik
---------------------------------------------------------------------------------------------------------
-konfigurasi hardware
-  1. pasang ISP di ether1
-  2. pasang kabel UTP di ether2 dan sambungkan ke rj45 laptop untuk akses seting
-  3. pasang kabel UTP ke HTB A dan nyalakan HTB dengan power
-  4. pasang kabel FO ke HTB B
-  5. pasang 2 ROUTER dari HTB dengan ODP (lihat di lapangan)
---------------------------------------------------------------------------------------------------------
-konfigurasi winbox	
-  1. buka winbox 
-  2. lakukan hapus konfig bawaan 
-  3. bikin bridge dengan nama WAN, LAN, HOTSPOT, RUMAH
-  4. bikin client (dapatkan IP)
-  5. bikin IP LAN
-  6. bikin server (LAN)
-  7. ambil internet dr atas
-  8. kirim internet ke bawah
-  9. limiter
-  10. Sekurity
---------------------------------------------------------------------------------------------------------	
-  1. login dengan MAC > user:admin, pwd: "" > bisa remote, bisa 
-  2. buka tool > remove config 
-  3. buka bridge > add > nama : sesuai konsep > apply OK
-  4. Buka IP > DHCP Client > add > pilih interface > bound > periksa IP 
-     - cek sambungan: terminal ping 8.8.8.8 atau ping gateway di : IP > routes > ada routeslist gateway 
-     - bisa 
-  5. IP > add > address: 'IP beri slash' > interface: 'jalur keluar'
-  6. IP > DHCP Server > tab DHCP setup > interface : 'pilih LAN keluar' > next2 > Apply-Ok
-  7. IP > DNS > server = 10. 10. 10. 1 (didapat dari ISP) dan tambahkan DNS global 8.8.8.8, 8.8.0.0 
-     - centang Allow remote request agar bisa di akses dari client
-  8. IP > firewall > NAT > add > out interface > bridge-WAN >  
-     - Pada tab action >  pilih masquerade > apply > OK 
-  9. Tekan queues > pada queue list klik add > nama biarkan > target IP laptop tujuan
-     > 192.168.1.254  (ip laptop tergenerate diatas) isi max dan min limit. Lebih lanjut bab QoS
-  10. - ganti nama: sistem > identity > nama nya ROUTER-Gonggong
-     - ganti password: sistem > user > bikin user baru klik + > nama aqil > group full > password isikan >
-     - IP > services > ada list > disable dan sisakan 'www, winbox, ssh'
-	- tapi berikan akses masuk pada ip iertentu:
-          - dklik > available from isikan ip target 
-	  - Dan tambahkan ip local private nya juga 192. 168. 1. 0/24 jangan di kosongkan nanti malah di perboleh kan semua jadinya
-	- Terus www nya juga edit ke Ip local yang sama > lalu port 80 kita ubah jadi 8080 >
-          Nanti kalau remote tinggal www.ip:8080  
-     - Tips yang ini jangan dilakukan terlalu cepat nanti tidak bisa connect sendiri
-       Langkah amanya tiap perubahan ping dst
-       Dan paling tidak setting port2 yang terbuka untuk ip privatenya supaya kita bisa remote  
-      
+10. user admin password    
 =========================================================================================================
 SETTING MIKROTIK DASAR	
 
