@@ -95,7 +95,7 @@ konfigurasi winbox
   3. bikin bridge dengan nama WAN, LAN, HOTSPOT, RUMAH
   4. bikin client (dapatkan IP)
   5. bikin IP LAN
-  6. bikin server
+  6. bikin server (LAN)
   7. ambil internet dr atas
   8. kirim internet ke bawah
   9. 
@@ -104,12 +104,14 @@ konfigurasi winbox
   2. buka tool > remove config 
   3. buka bridge > add > nama : sesuai konsep > apply OK
   4. Buka IP > DHCP Client > add > pilih interface > bound > periksa IP 
-     - cek sambungan > terminal ping 8.8.8.8 atau ping gateway di : IP > routes > ada routeslist gateway 
-     - b
+     - cek sambungan: terminal ping 8.8.8.8 atau ping gateway di : IP > routes > ada routeslist gateway 
+     - bisa 
   5. IP > add > address: 'IP beri slash' > interface: 'jalur keluar'
-  6. 
-  7. 
-  8. 
+  6. IP > DHCP Server > tab DHCP setup > interface : 'pilih LAN keluar' > next2 > Apply-Ok
+  7. IP -> DNS -> server = 10. 10. 10. 1 (didapat dari ISP) dan tambahkan DNS global 8.8.8.8, 8.8.0.0 
+     - centang Allow remote request agar bisa di akses dari client
+  8. IP -> firewall -> NAT -> add -> out interface -> bridge-WAN ->  
+     - Pada tab action ->  pilih masquerade -> apply -> OK 
   9. 
 	
 =========================================================================================================
@@ -216,7 +218,8 @@ Sekarang kita setting gateway, caranya: IP -> routes -> add -> destination addre
 Oya IP dan gateway bukan karangan, dia harus tanya dari ISP nya 
  nah setelah ada gateway maka sudahg bisa akses web, caranya: 
  :> ping 8.8.8.8 ke google sudah bisa tembus ke google gateway, tapi masih belum bisa browsing
- Sebab belum punya DNS. Maka kita bikin DNS dulu, caranya: IP -> DNS -> server = 10. 10. 10. 1 (didapat dari ISP)
+ Sebab belum punya DNS. 
+->Maka kita bikin DNS dulu, caranya: IP -> DNS -> server = 10. 10. 10. 1 (didapat dari ISP)
  (kok mirip dengan gateway ya itu dalm contoh) kita juka dapat menambahkan server lebih dari satu DNS public seperti 8. 8. 8. 8
  Tapi kalau slot DNS tidak terpakai ya jangan lupa di tutup kembali. 
  Router ini memiliki configurasi DNS untuk melayani LAN jaringan di bawahnya maka aktifkan (centang)
