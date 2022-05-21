@@ -1,36 +1,36 @@
 ========================================================================================================
 RINGKASAN PRAKTEK 
-    1.BRIDGE
-        - bikin sekurang-kurangnya 3 bridge WAN LAN HOTSPOT
-        - masukan port2 yang di tuju
-	2.VLAN
-		- ini optional kalau mau di gunakan
-		- bikin VLAN dengan menggunakan BRIDGE yang ada
-		- selebihnya tinggal baca pada halamanya yang bersangkutan
-    3.IP
-        - bikin alokasi ip untuk wan dari DHCP
-        - LAN misalnya 192. 168. 22. 1/24
-        - HOTSPOT misalnya 192. 168. 33. 1/24
-    4.DHCP Client (Setting WAN)
-        - DHCP Client - > add (tunggu sampai bound)
-        - coba periksa di IP - > addresses                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
-    5.DNS
-        - server tambahkan 8. 8. 8. 8 add 1. 1. 1. 1 add 8. 8. 4. 4  add  1. 0. 0. 1
-        centang allow remote
-    6.NAT
-    	- tambahkan NAT pada WAN dan masquerade
-    7.DHCP Server LAN
-    	- bikin secara wizard jangan add manual - > DHCP Setup -> next2 jadi
-    8.DHCP Server HOTSPOT
-    	- sama bikin HOTSPOT secara wizard- Hotspot Setup -> next2 jadi 
-    	- settingh 2 parameter hotspot
-    		- doubleklik isi adress per mac 1 orang saja
-    		- server profile -> buka 2 profile samakan parameternya ->  tab login hilangkan centang Cookie -> centang pada HTTP chap, PAP, MAC
-    		- pada user profile -> isi rate limit 1M/2M atau 1M/1M
+1.BRIDGE
+   - bikin sekurang-kurangnya 3 bridge WAN LAN HOTSPOT
+   - masukan port2 yang di tuju
+2.VLAN
+   - ini optional kalau mau di gunakan
+   - bikin VLAN dengan menggunakan BRIDGE yang ada
+   - selebihnya tinggal baca pada halamanya yang bersangkutan
+3.IP
+   - bikin alokasi ip untuk wan dari DHCP
+   - LAN misalnya 192. 168. 22. 1/24
+   - HOTSPOT misalnya 192. 168. 33. 1/24
+4.DHCP Client (Setting WAN)
+   - DHCP Client - > add (tunggu sampai bound)
+   - coba periksa di IP - > addresses                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
+5.DNS
+   - server tambahkan 8. 8. 8. 8 add 1. 1. 1. 1 add 8. 8. 4. 4  add  1. 0. 0. 1
+     centang allow remote
+6.NAT
+   - tambahkan NAT pada WAN dan masquerade
+7.DHCP Server LAN
+   - bikin secara wizard jangan add manual - > DHCP Setup -> next2 jadi
+8.DHCP Server HOTSPOT
+   - sama bikin HOTSPOT secara wizard- Hotspot Setup -> next2 jadi 
+   - settingh 2 parameter hotspot
+      - doubleklik isi adress per mac 1 orang saja
+      - server profile -> buka 2 profile samakan parameternya ->  tab login hilangkan centang Cookie -> centang pada HTTP chap, PAP, MAC
+      - pada user profile -> isi rate limit 1M/2M atau 1M/1M
     
 --------- SECURITY
-    9.ganti identity
-    10.user admin password
+9. ganti identity
+10. user admin password
 
 =========================================================================================================
 REFERENSI
@@ -83,34 +83,34 @@ KONTEN REFERENSI
   - mongsongan 10 titik
 --------------------------------------------------------------------------------------------------------
 konfigurasi hardware
-	1 pasang ISP di ether1
-	2 pasang kabel UTP di ether2 dan sambungkan ke rj45 laptop untuk akses seting
-	3 pasang kabel UTP ke HTB A dan nyalakan HTB dengan power
-	4 pasang kabel FO ke HTB B
-	5 pasang 2 ROUTER dari HTB dengan ODP (lihat di lapangan)
+  1. pasang ISP di ether1
+  2. pasang kabel UTP di ether2 dan sambungkan ke rj45 laptop untuk akses seting
+  3. pasang kabel UTP ke HTB A dan nyalakan HTB dengan power
+  4. pasang kabel FO ke HTB B
+  5. pasang 2 ROUTER dari HTB dengan ODP (lihat di lapangan)
 --------------------------------------------------------------------------------------------------------
 konfigurasi winbox	
-	1 buka winbox 
-	2 lakukan hapus konfig bawaan 
-	3 bikin bridge dengan nama WAN, LAN, HOTSPOT, RUMAH
-	4 bikin client (dapatkan IP)
-	5 bikin IP LAN
-	6 bikin server
-	7 ambil internet dr atas
-	8 kirim internet ke bawah
-	9 
+  1. buka winbox 
+  2. lakukan hapus konfig bawaan 
+  3. bikin bridge dengan nama WAN, LAN, HOTSPOT, RUMAH
+  4. bikin client (dapatkan IP)
+  5. bikin IP LAN
+  6. bikin server
+  7. ambil internet dr atas
+  8. kirim internet ke bawah
+  9. 
 --------------------------------------------------------------------------------------------------------	
-1. login dengan MAC > user:admin, pwd: "" > bisa remote, bisa 
-2. buka tool > remove config 
-3. buka bridge > add > nama : sesuai konsep > apply OK
-4. Buka IP > DHCP Client > add > pilih interface > bound > periksa IP 
-   - cek sambungan > terminal ping 8.8.8.8 atau ping gateway di : IP > routesb > gateway 
-   - b
-5. IP > add > address: 'IP beri slash' > interface: 'jalur keluar'
-6. 
-7. 
-8. 
-9. 
+  1. login dengan MAC > user:admin, pwd: "" > bisa remote, bisa 
+  2. buka tool > remove config 
+  3. buka bridge > add > nama : sesuai konsep > apply OK
+  4. Buka IP > DHCP Client > add > pilih interface > bound > periksa IP 
+     - cek sambungan > terminal ping 8.8.8.8 atau ping gateway di : IP > routes > ada routeslist gateway 
+     - b
+  5. IP > add > address: 'IP beri slash' > interface: 'jalur keluar'
+  6. 
+  7. 
+  8. 
+  9. 
 	
 =========================================================================================================
 SETTING MIKROTIK DASAR	
