@@ -71,7 +71,7 @@ KONFIGURASI WINBOX
 ========================================================================================================	
   1. login dengan MAC > user:admin, pwd: "" > bisa remote, bisa 
   2. buka tool > remove config 
-  3. buka bridge > add > nama : sesuai konsep > apply OK
+  3. buka bridge > add > nama : sesuai konsep > apply OK > masukan port nya
   4. Buka IP > DHCP Client > add > pilih interface > bound > periksa IP 
      - cek sambungan: terminal ping 8.8.8.8 atau ping gateway di : IP > routes > ada routeslist gateway 
      - bisa 
