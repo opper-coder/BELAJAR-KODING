@@ -16,5 +16,12 @@ DENGAN IP PUBLIC
 3. cara akses copas DNS name pada connec to. login: admin pass:""
 ----------------------------------------------------------------------------------------
 DENGAN IP PUBLIC
-versi ikul
+kita sewa dulu DNS server di freeddns.com > daftar ddns > deposit > lalu kita konfig freeddns > di layanan vpn
+   kita suruh masukan informasi MIKROTIK spt api port yg di ambil dari mikrotik
+   caranya: IP > services
+- jika remote untuk winbox pilih port "winbox"
+- jika reemote mikmon pilih port "api"
+
+interface > add > ovpn client > tab general ganti nama: 'terserah'
+- tab dial OUT > connect  to : 'DNS server yang kita punya' > isi user dan password
 ___________________________________________________________________________________________________________
