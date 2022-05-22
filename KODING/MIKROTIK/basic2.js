@@ -79,7 +79,7 @@ KONFIGURASI WINBOX
   6. IP > DHCP Server > tab DHCP setup > interface : 'pilih LAN keluar' > next2 > Apply-Ok
   7. IP > DNS > server = 10. 10. 10. 1 (didapat dari ISP) dan tambahkan DNS global 8.8.8.8, 8.8.0.0 
      - centang Allow remote request agar bisa di akses dari client
-  8. IP > firewall > NAT > add > out interface > bridge-WAN >  
+  8. IP > firewall > tab NAT > add > tab general > chain : srcnat > out interface : 'bridge-WAN' >  
      - Pada tab action >  pilih masquerade > apply > OK 
   9. Tekan queues > pada queue list klik add > nama biarkan > target IP laptop tujuan
      > 192.168.1.254  (ip laptop tergenerate diatas) isi max dan min limit. Lebih lanjut bab QoS
@@ -95,8 +95,7 @@ KONFIGURASI WINBOX
        Langkah amanya tiap perubahan ping dst
        Dan paling tidak setting port2 yang terbuka untuk ip privatenya supaya kita bisa remote  
        
-       
-       
+             
 ========================================================================================================
 RINGKASAN PRAKTEK 
 1.BRIDGE
