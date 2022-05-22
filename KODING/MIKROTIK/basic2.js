@@ -73,11 +73,11 @@ KONFIGURASI WINBOX
   2. buka tool > remove config 
   3. buka bridge > add > nama : sesuai konsep > apply OK > masukan port nya
   4. Buka IP > DHCP Client > add > pilih interface > bound > periksa IP 
-     - cek sambungan: terminal ping 8.8.8.8 atau ping gateway di : IP > routes > ada routeslist gateway 
-     - bisa 
-  5. IP > add > address: 'IP beri slash' > interface: 'jalur keluar'
-  6. IP > DHCP Server > tab DHCP setup > interface : 'pilih LAN keluar' > next2 > Apply-Ok
-  7. IP > DNS > server = 10. 10. 10. 1 (didapat dari ISP) dan tambahkan DNS global 8.8.8.8, 8.8.0.0 
+     - cek sambungan: terminal > ping 8.8.8.8 
+     - atau ping gateway di : IP > routes > ada routeslist gateway 
+  5. IP > address > add > address: 'IP beri slash' > interface: 'jalur keluar' (192.168.1.1/24)
+  6. IP > DHCP Server > tombol DHCP setup > interface : 'pilih LAN keluar' > next2 > Apply-Ok
+  7. IP > DNS > server = 10. 10. 10. 1 (didapat dari ISP atau IP Client ISP) dan tambahkan DNS public 8.8.8.8, 8.8.0.0 
      - centang Allow remote request agar bisa di akses dari client
   8. IP > firewall > tab NAT > add > tab general > chain : srcnat > out interface : 'bridge-WAN' >  
      - Pada tab action >  pilih masquerade > apply > OK 
