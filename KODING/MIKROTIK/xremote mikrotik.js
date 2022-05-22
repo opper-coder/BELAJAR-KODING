@@ -15,13 +15,15 @@ DENGAN IP PUBLIC
    - DNS name ini yang kita gunakan untuk login
 3. cara akses copas DNS name pada connec to. login: admin pass:""
 ----------------------------------------------------------------------------------------
-DENGAN IP PUBLIC
-kita sewa dulu DNS server di freeddns.com > daftar ddns > deposit > lalu kita konfig freeddns > di layanan vpn
+TANPA IP PUBLIC MENGGUNAKAN VPN
+MASUK KE PENYEDIA DDNS
+kita sewa dulu DNS server di freeddns.com > daftar ddns > deposit (Rp 2000/bln)> lalu kita konfig freeddns > di layanan vpn
    kita suruh masukan informasi MIKROTIK spt api port yg di ambil dari mikrotik
    caranya: IP > services
 - jika remote untuk winbox pilih port "winbox"
 - jika reemote mikmon pilih port "api"
 
+DI MIKROTIK
 interface > add > ovpn client > tab general ganti nama: 'terserah'
 - tab dial OUT > connect  to : 'DNS server yang kita punya' > isi user dan password
 ___________________________________________________________________________________________________________
