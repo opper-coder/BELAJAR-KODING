@@ -58,8 +58,8 @@ KONFIGURASI HARDWARE
   5. pasang 2 ROUTER dari HTB dengan ODP (lihat di lapangan)
 --------------------------------------------------------------------------------------------------------
 KONFIGURASI WINBOX	
-  1. buka winbox 
-  2. lakukan hapus konfig bawaan 
+  1. login winbox 
+  2. reset mikrotik 
   3. bikin bridge dengan nama WAN, LAN, HOTSPOT, RUMAH
   4. bikin client (dapatkan IP)
   5. bikin IP LAN
