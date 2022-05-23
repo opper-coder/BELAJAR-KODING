@@ -25,5 +25,5 @@ kita sewa dulu DNS server di freeddns.com > daftar ddns > deposit (Rp 2000/bln)>
 
 DI MIKROTIK
 interface > add > ovpn client > tab general ganti nama: 'terserah'
-- tab dial OUT > connect  to : 'DNS server yang kita punya' > isi user dan password
+- tab dial OUT > connect  to : 'DNS server yang di kasih server DNS' > isi user dan password
 ___________________________________________________________________________________________________________
