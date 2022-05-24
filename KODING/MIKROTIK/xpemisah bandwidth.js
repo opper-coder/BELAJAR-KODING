@@ -13,6 +13,9 @@ BUAT BRIDGE
 BIKIN IP MASING2 bridge
 - IP > address > add > address: 192.168.1.1/24 > interface:<pilih bridge>  
 - lakukan ke 3 bridge 192.168.1.1/24, 192.168.2.1/24, 192.168.3.1/24
+-------------------------------------
+jika sudah punya Bridge silahkan skip dan menuju langkah berikut:
+-------------------------------------
 TAMBAHKAN NETWORK PADA IP ADDRESS LIST
 - IP > firewall > tab adress list > add > name: <bikin nama:"LOCAL-IP">  
   > adress: <isi IP bridge yang kita punya td tp start 0 dg slash>
@@ -35,11 +38,12 @@ TAMBAHKAN DAFTAR URL PEMISAHAN BERIKUTNYA (KOPI)
 	> beri keterangan (komentar (berfungsi sbg judul)) > tombol komen > YOUTUBE (kapital)
 	> dibawah ada banyak daftar kontent url silahkan masukkan 1 per 1
 MANGLE 
+- bikin network:
 - IP > firewall > tab mangle > add > tab
 	> general > chain: prerouting
 	> advanced > src addresslist: LOCAL-IP > Dst addresslist: IP-YOUTUBE (pilih conten)
 	> action: mark connection > new conn mark: beri nama 'koneksi-youtube' > "cek passtrough" > ok
-- lakukan lagi
+- Bikin paket:
 	> general > chain: forward > connection mark: 'koneksi-youtube' (tadi di buat)
 	> action > action: mark packet > new paket mark: beri nama 'paket youtube' > "uncek passtrough"
 - di mangle konektion dan paket youtube sudah berhasil di buat (akan terlihat di daftar)
