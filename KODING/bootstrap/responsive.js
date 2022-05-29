@@ -3,14 +3,15 @@ BREAK POINT
   - terdiri dari: sm, md, lg, xl, xxl, fluid
 ----------------------------------------------------------------------------------------------------------
 RESPONSIVE
-  - karena yang di atur responsive nya adalh grid dan 100% maka fahami dulu grid baru responsive
-  - adalah class yang akan bekerja pada point yang di tentukan
+  - karena responsive yang di atur nya adalh 'grid' 
+    maka fahami dulu grid, baru responsive
+  - responsive adalah class yang akan bekerja pada point yang di tentukan
   - misalnya 'grid 4 kolom' hanya akan bekerja di layar besar
   - atau gabungan 'grid 4 kolom' di layar 'besar' dan grid 3 di layar 'tablet' dan grid 2 di layar 'HP'
 contoh 1  
-  .container.row.col-lg-3     // (12/3)
-  .container.row.col-md-4     // (12/4)ini berlaku di medium
-  .container.row.col-sm-6     // (12/6)ini berlaku di hp
+  .container.row.col-lg-3     // (12/3)akan ada col-3 yang akan ada selama display large
+  .container.row.col-md-4     // (12/4)
+  .container.row.col-sm-6     // (12/6)
 contoh 2 
   .container
     .row
