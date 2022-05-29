@@ -35,16 +35,24 @@ contoh2:
 -----------------------------------------------------------------------------------------------------------------------
 ALIGMENT
   - vertikal:
-    .row.align-items-start      // 'start,center,end' semua div dalam row
-    .col.align-self-start       // 'start,center,end' masing-masing col
+      .row.align-items-start      // 'start,center,end' semua div dalam row
+      .col.align-self-start       // 'start,center,end' masing-masing col
   - horizontal
-    .row.justify-content-start  // 'start,center,end,arround(space kanan space kiri space),between(kanan, sisa, kiri),evenly(space sama)' semua dalam row
+      .row.justify-content-start  // 'start,center,end,arround(space kanan space kiri space),between(kanan, sisa, kiri),
+                                    evenly(space sama)' semua dalam row
 ----------------------------------------------------------------------------------------------------------------------- 
 WRAPPING
+saat column kedua jumlahnya melebihi 12 maka akan di tempatkan di bawah col-9, col-4  (col-4 akan di jatuhkan kebawah)
 -----------------------------------------------------------------------------------------------------------------------
 BREAK
+  - .w-100 pada div kosong
+  - hampir sama dg <br> untuk kolom grid. karena di grid <br> tidak bisa di gunakan 
+      <div class="w-100"></div>
+  - trik: pada dasarnya smua layar 'break' tapi tidak break saat display md(tablet)
+      <div class="w-100 d-none d-md-block"></div>
 -----------------------------------------------------------------------------------------------------------------------
 ORDER
+  
 -----------------------------------------------------------------------------------------------------------------------
 OFFSET
 -----------------------------------------------------------------------------------------------------------------------
