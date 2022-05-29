@@ -27,9 +27,29 @@ RESPONSIVE
   - adalah class yang akan bekerja pada point yang di tentukan
   - misalnya 'grid 4 kolom' hanya akan bekerja di layar besar
   - atau gabungan 'grid 4 kolom' di layar 'besar' dan grid 3 di layar 'tablet' dan grid 2 di layar 'HP'
-contoh 1
-  .container.row.col-lg-4
-  .container.row.col-md-3
-  .container.row.col-sm-2
+contoh 1  
+  .container.row.col-lg-4     // ini kolom akan ber jajar 4 di layar besar sampai kecil
+  .container.row.col-md-3     // ini di medium
+  .container.row.col-sm-2     // ini di hp
 contoh 2 
-  .container.row.col-lg-4 col-md-3 col-sm-2
+  .container
+    .row
+      .col-lg-4.col-md-3.col-sm-2 // ini kolom akanresponsive di 3 breakpoint sekaligus
+contoh 3 
+  .mt-3                       // margin top standard                      
+  .mt-md-3                    // berlaku juga untuk margin top responsive
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
