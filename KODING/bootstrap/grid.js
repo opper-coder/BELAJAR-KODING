@@ -23,3 +23,11 @@ NESTED GRID
 - di dalam grid boleh bikin grid lagi sebagaimana diatas(di mulai lagi dari awal)
 RESPONSIVE BREAKPOINT
 - adalah pemberlakuan 
+nilai untuk ketiga poin itu 1-5
+contoh:
+  .container
+      .row
+          .col-6
+          .col-6
+contoh2:
+          .col-4.offset-2.gutter-2.mb-2 
