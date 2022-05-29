@@ -18,7 +18,7 @@ contoh 3
   .mt-3                       // margin top standard                      
   .mt-md-3                    // berlaku juga untuk margin top responsive
 contah 4
-  .m .offset .
+  .m-md-2 .offset-md-3 .
 ----------------------------------------------------------------------------------------------------------
 
 
