@@ -1,17 +1,19 @@
-BREAK POINT 
-  - adalah tempat berlakunya properti tersebut selama di bawah breakpoint
-  - terdiri dari: sm, md, lg, xl, xxl, fluid
 ----------------------------------------------------------------------------------------------------------
 RESPONSIVE
-  - karena responsive yang di atur nya adalh 'grid' 
+  - karena responsive yang di atur nya adalah 'grid' 
     maka fahami dulu grid, baru responsive
   - responsive adalah class yang akan bekerja pada point yang di tentukan
   - misalnya 'grid 4 kolom' hanya akan bekerja di layar besar
   - atau gabungan 'grid 4 kolom' di layar 'besar' dan grid 3 di layar 'tablet' dan grid 2 di layar 'HP'
+----------------------------------------------------------------------------------------------------------
+BREAK POINT 
+  - adalah tempat berlakunya properti tersebut selama di bawah breakpoint
+  - terdiri dari: sm, md, lg, xl, xxl, fluid
 contoh 1  
-  .container.row.col-lg-3     // (12/3)akan ada col-3 yang akan ada selama display large
-  .container.row.col-md-4     // (12/4)
-  .container.row.col-sm-6     // (12/6)
+  .container.row.col-lg-3     // (12/3) akan ada col-3 yang akan ada selama display large
+  .container.row.col-md-4     // (12/4) akan ada col-3 yang akan ada selama display Tablet
+  .container.row.col-sm-6     // (12/6) akan ada col-3 yang akan ada selama display HP
+  - tipsnya karena large terakhir maka biasanya tidak di tulis
 contoh 2 
   .container
     .row
