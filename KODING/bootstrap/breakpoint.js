@@ -22,3 +22,14 @@ CONTAINER
     <div class="container-lg">100% wide until large breakpoint</div>
     <div class="container-xl">100% wide until extra large breakpoint</div>
     <div class="container-xxl">100% wide until extra extra large breakpoint</div>
+----------------------------------------------------------------------------------------------------------
+RESPONSIVE
+  - adalah class yang akan bekerja pada point yang di tentukan
+  - misalnya 'grid 4 kolom' hanya akan bekerja di layar besar
+  - atau gabungan 'grid 4 kolom' di layar 'besar' dan grid 3 di layar 'tablet' dan grid 2 di layar 'HP'
+contoh 1
+  .container.row.col-lg-4
+  .container.row.col-md-3
+  .container.row.col-sm-2
+contoh 2 
+  .container.row.col-lg-4 col-md-3 col-sm-2
