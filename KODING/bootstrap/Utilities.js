@@ -25,9 +25,6 @@ sm, md, lg, xl, dan xxl.
                             // sembunyikan/tampilkan  hanya di <display tentukan> ada tabel kombinasi di dokumentasi
 .d-print-inline             // bahkan hanya tampilkan sembunyikan saat di printer 
 -----------------------------------------------------------------------------------------------------------------------
-FLEX
-
------------------------------------------------------------------------------------------------------------------------
 FLOAT
 -----------------------------------------------------------------------------------------------------------------------
 INTERACTION/RELEASE MOUSE
