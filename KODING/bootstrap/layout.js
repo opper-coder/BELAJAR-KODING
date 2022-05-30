@@ -78,10 +78,13 @@ tips
 jika mau bikin gap pakai saja .g-0-1 dan kombinasikan dengan .mx- .my-
 =======================================================================================================================
 UTILITIES
-
+Untuk seluler responsif, Bootstrap menyertakan class untuk
+menampilkan, hidden, menyelaraskan, dan mengatur jarak konten.
+- mengubah display ada di utilitas display. blok, hidden, termasuk flex, dan break point
+- di utility display juga termasuk spasi gap dan visibilitas
 =======================================================================================================================
 Z-INDEX
-
+tumpukan elemen pakai saja manual z-index:10;
 _______________________________________________________________________________________________________________________
 
 
