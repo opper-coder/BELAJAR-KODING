@@ -3,6 +3,12 @@ UTILITIES
 BACKGROUND DAN COLOR
   - lihat langsung disana ada gradiens
   - bg-primary
+CUSTOMIZE CSS
+  -----------
+  - bisa di lakukan dengan css biasa di header namun propertinya kita isi dengan customize/css variabel 
+  .warnatombol{bacground-color:  var(bs-purple);
+  -----------
+  
 -----------------------------------------------------------------------------------------------------------------------
 BORDER
   - border-top = bottom,start,end
@@ -15,6 +21,7 @@ BORDER
 -----------------------------------------------------------------------------------------------------------------------
 TEXT COLOR
   .text-primary
+  .text-bg-info     // dengan menambah bg maka kita di beri warna kontrasnya antara background dan text nya
 -----------------------------------------------------------------------------------------------------------------------
 DISPLAY
 .d-none                     // cara menambahkan display
