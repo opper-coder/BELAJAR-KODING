@@ -51,10 +51,10 @@ SHADOW
 .shadow : shadow-none, sm,lg, .shadow-sm-inset
 -----------------------------------------------------------------------------------------------------------------------
 SIZING
-.w-25 : 25, 50, 75, 100, auto   // lebar %
-.h-25 : 25, 50, 75, 100, auto   // 
-.mh-100                         // max-height 100
-.wh-100                         // 
+.w-25 : 25, 50, 75, 100, auto       // lebar %
+.h-25 : 25, 50, 75, 100, auto       // 
+.mh-100                             // max-height 100
+.wh-100                             // 
 .vw
 .vh
 -----------------------------------------------------------------------------------------------------------------------
@@ -69,13 +69,17 @@ TEXT
 .text-sm-start                      // responsive
 .text-wrap
 .text-nowrap
-.text-break                         // wrapping di 'tengah' kata ATAU averflow-wrap juga bisa
+.text-break                         // wrapping di 'tengah' kata ATAU afferflow-wrap juga bisa
 .text-lowercase : uppercase, capitalize
-.fs-1 : 1-6                         // efek sama dg h1-6, tapi h1 bisa di beri efek .fs <h1 class="fs-4">coba1</h1>
+.fs-1           : 1-6               // efek sama dg h1-6, tapi h1 bisa di beri efek .fs <h1 class="fs-4">coba1</h1>
 .fw-bold        : bold,bolder,normal,light,lighter, // bold
 .fst-italic     : italic, normal    // italic
+.lh-1           : 1, sm, base, lg   // line-hight, kerapatan jarak baris 
+.font-monospace                     // monospace
+.text-muted     : text-reset        // matikan text button, text-reset (biar sudah di muted link akan biru maka beri 'reset') 
 -----------------------------------------------------------------------------------------------------------------------
 VERTICAL ALIGN
+
 -----------------------------------------------------------------------------------------------------------------------
 VISIBILITY
 -----------------------------------------------------------------------------------------------------------------------
