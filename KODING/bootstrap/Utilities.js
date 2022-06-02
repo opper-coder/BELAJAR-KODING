@@ -77,11 +77,18 @@ TEXT
 .lh-1           : 1, sm, base, lg   // line-hight, kerapatan jarak baris 
 .font-monospace                     // monospace
 .text-muted     : text-reset        // matikan text button, text-reset (biar sudah di muted link akan biru maka beri 'reset') 
+.text-decoration-underline          // underline
+.text-decoration-line-through       // through
+.text-decoration-none               // hapus
 -----------------------------------------------------------------------------------------------------------------------
 VERTICAL ALIGN
-
+Ubah perataan elemen pada flex dan grid sudah ada. nah aligmen ini hanya berlaku pada:
+elemen sebaris, blok sebaris, tabel sebaris, dan sel tabel
+.align-baseline : baseline, top, middle, align-bottom, align-text-bottom, align-text-top
 -----------------------------------------------------------------------------------------------------------------------
 VISIBILITY
+visibility ini tidak mempengaruhi display dan masih menempati ruangan
+.visible : .invisible
 -----------------------------------------------------------------------------------------------------------------------
 gap grid
 .gap-3  : 0-5, auto
