@@ -69,13 +69,16 @@ STAND ALONE
 =======================================================================================================================
 GUTTER
 - adalah gab antara grid nilai 1-5
-- .g-2    // xy sama ukuran
-- .g-0    // tidak ada gap tanpa g-0 masih ada gap rupanya
-- .gx-2   // gx berjalan normal tapi container harus memiliki .overflow-hidden atau px-4
-- .gy-2   // gy tetap ada gap pada x nya sulit untuk di kontrol
-- .row-cols-2.row-cols-lg-5.g-2.g-lg-3">
+.g-2    // xy sama ukuran
+.g-0    // tidak ada gap tanpa g-0 masih ada gap rupanya
+.gx-2   // gx berjalan normal tapi container harus memiliki .overflow-hidden atau px-4
+.gy-2   // gy tetap ada gap pada x nya sulit untuk di kontrol
+.row-cols-2.row-cols-lg-5.g-2.g-lg-3">
 tips
 jika mau bikin gap pakai saja .g-0-1 dan kombinasikan dengan .mx- .my-
+-----------------------------------------------------------------------------------------------------------------------
+gap grid
+.gap-3  : 0-5, auto
 =======================================================================================================================
 UTILITIES
 Untuk seluler responsif, Bootstrap menyertakan class untuk
