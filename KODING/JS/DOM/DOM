@@ -10,16 +10,16 @@ const  coba4	= document.querySelector(#ada)
 const  coba5	= document.querySelectorAll(.asa)
 --------------------------------
 // manipulasi elemen:
-coba.innerHTML  = `<p>${nama}</p>`; 						// mengisi isi html
-coba.style		= coba.style.color = 'red';					// set css
+coba.innerHTML  = `<p>${nama}</p>`; 			// mengisi isi html
+coba.style	= coba.style.color = 'red';		// set css
 --------------------------------
 // baca elemen:
-coba.length													// jumlah coba yang dipilih (jika banyak htmlcollection)
+coba.length						// jumlah coba yang dipilih (jika banyak htmlcollection)
 coba.innerText
 coba.textContent
 --------------------------------
 // --- alternative
-document.getElementById('h1').innerHTML = 'haloo';			// cara ini juga boleh
+document.getElementById('h1').innerHTML = 'haloo';	// cara ini juga boleh
 coba.href = "data/img/gb1.jpg";
 --------------------------------
 // lanjuuuuuut
@@ -116,17 +116,17 @@ dalam contoh di bawah ini menggunakan selection di atas
 // -MANIPULATION NODE
 
 // dalam contoh di bawah ini menggunakan selection di atas
-	-document.createElement();	//const pBaru = document.createElement('p');   					// langkahnya buat dulu 'wadah' di document sebuah <p>
+	-document.createElement();	//const pBaru = document.createElement('p');   						// langkahnya buat dulu 'wadah' di document sebuah <p>
 								//const textPBaru = document.createTextNode('isi paragraf');	// lalu buat lagi di document sebuah tulisan untuk 'isi' <p> nantinya
 								//pBaru.appendChild(textPBaru);									// masukkan isi kedalam wadah
 								//coba1.appendChild(pbaru)										// posisikan ke dalam html(dalam akhir div a umpamanya)
 	-document.createTextNode();	//
 	-node.appendChild();		//
-	-node.insertBefore();		//ul.insertBefore(liBaru,li2)									// kita tangkap dulu masing2 'ul', 'liBaru', 'li2' 
+	-node.insertBefore();		//ul.insertBefore(liBaru,li2)			// kita tangkap dulu masing2 'ul', 'liBaru', 'li2' 
 																								// (ul=parent, liBaru=element baru, li2=li yang sudah ada untuk 
 																								//	diletakaan sebelunya[before])lakukan pakai seleksi;
-	-parentNode.RemoveChild();	//sectionA.removeChild(link)									// "sectionA" dan "link" harus di seleksi dulu pake seleksion
-	-parentNode.replaceChild();	//sectionB.replaceChild(link,pBaru)								// ambil parentnya lalu repacechild(NodeBaru,noodeLama) tentunya 'panggil dan buat' dulu elemen2 nya
+	-parentNode.RemoveChild();	//sectionA.removeChild(link)			// "sectionA" dan "link" harus di seleksi dulu pake seleksion
+	-parentNode.replaceChild();	//sectionB.replaceChild(link,pBaru)		// ambil parentnya lalu repacechild(NodeBaru,noodeLama) tentunya 'panggil dan buat' dulu elemen2 nya
 
 // yang baru hampir mirip fungsinya namun masih alpha
 
@@ -153,11 +153,11 @@ ada keunggulan dan karakter nya masing2
 function ubahWarna (){}																			// buat dulu sebuah function
 
 -event Handler				// 
- 	-inline html attribute 	// <p onclick='ubahwarna()'	>	//  jangan di pakai					// menulis event di 'html' langsung dan menjalan kan function  yang ada di 'js' yg di buat terlebih dahulu
- 	-element methode 		// p2.onclick = ubahwarna;											// p2 nya di pnggil duu pake selection lalu.onclick = lalu function tapi tidak pake kurung ini di 'js'
--addEventListener			// p4.addEventListener('click', function(){							// p4 nya panggil dulu via selection
-															alert(ok);
-															});
+ 	-inline html attribute 	// <p onclick='ubahwarna()'	>	//  jangan di pakai	// menulis event di 'html' langsung dan menjalan kan function  yang ada di 'js' yg di buat terlebih dahulu
+ 	-element methode 		// p2.onclick = ubahwarna;				// p2 nya di pnggil duu pake selection lalu.onclick = lalu function tapi tidak pake kurung ini di 'js'
+-addEventListener			// p4.addEventListener('click', function(){		// p4 nya panggil dulu via selection
+									alert(ok);
+									});
 	
 // ringkasan event : seleksi dulu elemen > masukaan ke method even > jalankan function
 // perbedaan handler vs listener = handler bersifat menimpa sedang listener menambah
