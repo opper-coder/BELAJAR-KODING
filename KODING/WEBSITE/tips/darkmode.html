@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        body{
+            background-color: lightgrey;
+            color: darkblue;
+            transition: .5s;
+        }
+        .dark{
+            background-color: black;
+            color: white;
+        }
+    </style>
+        <input type="checkbox" onclick="ubahMode()">
+        <h3>light</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem necessitatibus officiis, eum?</p>
+    <script>
+    function ubahMode() {
+      const ubah = document.body;
+      ubah.classList.toggle("dark");
+    }
+    </script> 
+</body>
+</html>
