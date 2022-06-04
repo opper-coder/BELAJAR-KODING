@@ -114,11 +114,20 @@ contoh event handler:
 // ada bayak event silahkan lihat di documentasi terkait dg mouse keyboard API dll
 ===============================================================================
 event list
+
+setidaknya ada beberapa kategori:
+- mouse
+- keyboard
+- resource
+- view
+- focus 
+- form
+- CSS animation, transition event
+- drag and drop event
+- dll 
+
 baca di w3s sangat menarik contoh dan trik
 ada banyak di daftar 
-
-
-
 ??????????????????????????????
 
 
