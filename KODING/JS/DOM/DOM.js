@@ -108,7 +108,9 @@ contoh event handler:
 					alert(ok);
 				     });
 	
-// perbedaan handler vs listener = handler bersifat menimpa sedang listener menambah
+// perbedaan handler vs listener = 
+   - handler = saat dua kali hndler di jalan kan akan di eksekusi yang terakhir, tidak memperdulikan sebelumnya
+   - listener = dua dua nya di jalankan
 // ada bayak event silahkan lihat di documentasi terkait dg mouse keyboard API dll
 ===============================================================================
 event list
