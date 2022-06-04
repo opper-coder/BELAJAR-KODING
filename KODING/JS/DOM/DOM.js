@@ -6,11 +6,11 @@ RINGKASAN DOM
 - untuk operasi dom ini bisa langsung di tulis di console halaman bersangkutan
 ===============================================================================
 DOM SELECTOR: dalam kurung wajib pakai '' atau ""
-const coba  = document.getElementById('asa')			// contoh sederhana
+const coba  = document.getElementById('asa')		// contoh sederhana
 const coba2 = document.getElementsByTagName('p')[2]; 	// wajib pakai index, kalau langsung chain			
 const coba3 = document.getElementsClassName('ada')[2];	// wajib pakai index, kalau langsung chain
-const coba4 = document.querySelector('#ada');		   	// no index. bisa untuk id, class, html
-const coba5 = document.querySelectorAll('.asa')[0];		// wajib pakai index, kalau langsung chain
+const coba4 = document.querySelector('#ada');		// no index. bisa untuk id, class, html
+const coba5 = document.querySelectorAll('.asa')[0];	// wajib pakai index, kalau langsung chain
 -------------------------------------------------------------------------------
 // ONCLICK
 saat kita punya function di JS, panggil pada button html tambah attribut <onClick="func()"> 
@@ -20,14 +20,14 @@ saat kita punya function di JS, panggil pada button html tambah attribut <onClic
 - bikin dulu banyak p > buat jalan kan function tombol onclick="jalankan()" 
 	  function jalankan() {
 	        const tulisan = document.getElementsByTagName('p');	// akan diambil length nya 'no index'
-	        for (var i=0; i < tulisan.length ; i++) {			// loop style pada element p
+	        for (var i=0; i < tulisan.length ; i++) {		// loop style pada element p
 	            tulisan[i].style.color = 'blue';
 	        }
 	   }
 -------------------------------------------------------------------------------
 // CSS
-coba.style.color = 'red';								// chain dalam variabel
-document.getElementById('h1').style.color = 'red';		// langsung dan chain
+coba.style.color = 'red';				// chain dalam variabel
+document.getElementById('h1').style.color = 'red';	// langsung dan chain
 -------------------------------------------------------------------------------
 // MENGISI ISI HTML 
 const nama = 'aqil'
@@ -37,7 +37,7 @@ document.getElementById('h1').innerHTML = 'haloo';	// cara ini juga boleh
 coba.href = "data/img/gb1.jpg";		
 -------------------------------------------------------------------------------
 // BACA ISI ELEMEN:
-coba.length			// jumlah 'coba' yang dipilih (jika banyak htmlcollection)(juml elemen html sejenis)
+coba.length		// jumlah 'coba' yang dipilih (jika banyak htmlcollection)(juml elemen html sejenis)
 coba.innerText		// dibaca oleh js
 coba.textContent	// 
 -------------------------------------------------------------------------------
@@ -45,36 +45,37 @@ coba.textContent	//
 MANIPULATION ELEMEN
 menangani class, membaca isi, style CSS, mengani attribut
 	- Tulis HTML		: coba.innerHTML = '<p>sebuh paragraf</p>';	// sifatnya menimpa apapun di dalamnya
-	- baca HTML 		: coba.innerText							// bisa di console
-						  coba.textContent							// kalu perlu simpan di var
-						  coba.length
-	- CSS				: coba2.style.backgrounColor ='red';		// sifatnya menimpa (chammelCase)
+	- baca HTML 		: coba.innerText				// bisa di console
+				  coba.textContent				// kalu perlu simpan di var
+				  coba.length
+	- CSS			: coba2.style.backgrounColor ='red';		// sifatnya menimpa (chammelCase)
 	- Tulis Attribute	: coba3.setAttribute('name','sandhika');	// nambah atribut "name"
-	- Baca Attribute	: coba4.getAttribute('href');				// membaca isi attribut "href"
+	- Baca Attribute	: coba4.getAttribute('href');			// membaca isi attribut "href"
 	- Hapus Attribute	: coba5.removeAttribute('href');    		// menghapus sebuah atribut (href)
 	- classlist	(bisa di lakukan di attribute tapi ini perlakuan khusus class supaya gak menimpa sebelumnya)
-		- add()			: coba6.classlist.add('label');				// tambah class = label
-		- remove()		: coba7.classlist.remove('label'); 			// hapus class = label
-		- toggle()		: coba8.classlist.toggle('label');			// kalau punya kelas dia akan hapus dan sebaliknya
-		- item()		: coba9.classlist.item(2);					// baca class pada index(2). jika punya banyak class
+		- add()		: coba6.classlist.add('label');			// tambah class = label
+		- remove()	: coba7.classlist.remove('label'); 		// hapus class = label
+		- toggle()	: coba8.classlist.toggle('label');		// kalau punya kelas dia akan hapus dan sebaliknya
+		- item()	: coba9.classlist.item(2);			// baca class pada index(2). jika punya banyak class
 		- contains()	: coba10.classlist.contains('label');		// adakah class bernama label ???
-		- replace()		: coba11.classlist.replace('label','tabel');// ganti class 'label' jadi 'tabel'
+		- replace()	: coba11.classlist.replace('label','tabel');	// ganti class 'label' jadi 'tabel'
 -------------------------------------------------------------------------------
 MANIPULATION NODE
 bikin, tambah, hapus, replace, child node, isi konten text 
-	- Bikin node <p>	: const baru = document.createElement('p'); // langkahnya buat dulu 'wadah' di document sebuah <p>
-						  const textBaru = document.createTextNode('isi paragraf');// lalu buat lagi di document 
-						  											   sebuah tulisan untuk 'isi' <p> nantinya
-						  baru.appendChild(textBaru);				// masukkan isi kedalam wadah
-						  coba1.appendChild(baru)					// posisikan ke dalam html(dalam akhir div a umpamanya)
+	- Bikin node <p>	: const baru = document.createElement('p'); 	// langkahnya buat dulu 'wadah' di document sebuah <p>
+				  const textBaru = document.createTextNode('isi paragraf');
+				  						// lalu buat lagi di document 
+				  						   sebuah tulisan untuk 'isi' <p> nantinya
+	  baru.appendChild(textBaru);						// masukkan isi kedalam wadah
+	  coba1.appendChild(baru)						// posisikan ke dalam html(dalam akhir div a umpamanya)
 	- document.createTextNode();
 	- node.appendChild();		//
 	- node.insertBefore();		// ul.insertBefore(liBaru,li2)		// kita tangkap dulu masing2 'ul', 'liBaru', 'li2' 
-																	// (ul=parent, liBaru=element baru, li2=li yang sudah ada untuk 
-																	//	diletakaan sebelunya[before])lakukan pakai seleksi;
+										// (ul=parent, liBaru=element baru, li2=li yang sudah ada untuk 
+										//	diletakaan sebelunya[before])lakukan pakai seleksi;
 	- parentNode.RemoveChild();	// sectionA.removeChild(link)		// "sectionA" dan "link" harus di seleksi dulu pake seleksion
-	- parentNode.replaceChild();// sectionB.replaceChild(link,pBaru)	// ambil parentnya lalu repacechild(NodeBaru,noodeLama) 
-																		tentunya 'panggil dan buat' dulu elemen2 nya
+	- parentNode.replaceChild();	// sectionB.replaceChild(link,pBaru)	// ambil parentnya lalu repacechild(NodeBaru,noodeLama) 
+										   tentunya 'panggil dan buat' dulu elemen2 nya
 
 yang baru hampir mirip fungsinya namun masih alpha
 
@@ -91,8 +92,8 @@ baik terjadi oleh user atau API
 event ada: click, hover, roler, double click, right click disebut 
 di bawah ini ada 3 cara :
 - Event handler 
-	- attribut HTML 	// on<event> onClick, onHover dll
-	- elemen methode	// 
+	- attribut HTML 		// on<event> onClick, onHover dll, lihat sub judul bagian eventlist
+	- elemen methode		// contoh di bawah
 - addEventListener()
 ada keunggulan dan karakter nya masing2
 ----------------------------------------
@@ -100,12 +101,12 @@ contoh event handler:
 - event Handler
  	<p onClick='ubahwarna()'>	// di HTML attribut: onClick="funAksi()" dan di js bikin fungsi aksinya 
  	p2.onclick = ubahwarna;		// di javascript saja: seleksi.onclick = funAksi <tanpa kurung supaya tidak tertrigger>
- 								   sedang funAksi nya buat juga di atas atau di bawahnya terserah
+ 					   sedang funAksi nya buat juga di atas atau di bawahnya terserah
 ----------------------------------------
 - addEventListener()	
-	p4.addEventListener('click', function(){		// select.addEventListener('<event>', callback);
-									alert(ok);
-									});
+	p4.addEventListener('click', function(){ // select.addEventListener('<event>', callback);
+					alert(ok);
+				     });
 	
 // perbedaan handler vs listener = handler bersifat menimpa sedang listener menambah
 // ada bayak event silahkan lihat di documentasi terkait dg mouse keyboard API dll
