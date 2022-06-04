@@ -355,3 +355,63 @@ Usahakan koneksi winbox di awal pakai mac address untuk config awal saja selanju
 Update software yang sudah di setting : sistem -> package -> chec for update -> jika ada download install 
    
 
+==============================================================================
+DNS tercepat di rhea 
+Cloudflare
+1.1.1.1
+1.0.0.1
+– CF Family Anti Malicious Content
+1.1.1.2
+1.0.0.2
+– CF Family Anti Malware and Adult Content
+1.1.1.3
+1.0.0.3
+Google
+8.8.8.8
+8.8.4.4
+OpenDNS
+208.67.222.222
+208.67.220.220
+Quad9
+9.9.9.9
+149.112.112.112
+– Quad Nine Secure
+9.9.9.11
+149.112.112.11
+Secured w/ECS: Malware blocking, DNSSEC Validation, ECS enabled.
+
+– Quad Nine Unsecure
+9.9.9.10
+149.112.112.10
+Unsecured: No Malware blocking, no DNSSEC validation (for experts only!)
+
+Level 3 DNS
+4.2.2.1
+4.2.2.2
+4.2.2.3
+4.2.2.4
+4.2.2.5
+4.2.2.6
+AdGuard
+94.140.14.14
+94.140.15.15
+Neustar UltraDNS
+64.6.64.6
+64.6.65.6
+Yandex DNS
+– Yandex.DNS Basic
+77.88.8.8
+77.88.8.1
+– Yandex.DNS Safe
+77.88.8.88
+77.88.8.2
+Yandex DNS Safe: Protection from infected sites, fraudulent sites, and from bots.
+
+– Yandex.DNS Family
+77.88.8.7
+77.88.8.3
+Yandex DNS Family: Yandex.DNS Safe + blocking adult sites and advertising, with Family Search.
+
+Freenom World DNS
+80.80.80.80
+80.80.81.81
