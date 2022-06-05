@@ -109,7 +109,10 @@ GOOGLE MATERIAL ICON
   1. buka icon material 
   2. pilih salah satu icon > muncul instruksi > copas CDN di head > copas atribut Di CSS nya > copas insert kode icon
 -----------------------------------------------------------------------------------------------------------------------
-FONT FAMILY
-
-
+FONT FAMILY 
+GOOGLE FONTS
+1. buka= https://fonts.google.com/ > pilih font > select this style > 
+   lihat icon pojok kanan atas (view selected families) 
+   > ada petunjuk embed : link atau @import . 
+   > kalau saya pilih import dari css > sudah bisa di gunakan di CSS: copas nama font style
 _______________________________________________________________________________________________________________________
