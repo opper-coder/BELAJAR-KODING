@@ -106,14 +106,14 @@ contoh event handler:
  					   sedang funAksi nya buat juga di atas atau di bawahnya terserah
 ----------------------------------------
 - addEventListener()	
-	p4.addEventListener('click', function(){ // select.addEventListener('<event>', callback);
+	p4.addEventListener('click', function(){ // select.addEventListener('<event>', callback){aksi dengan menipulation dll};
 					alert(ok);
 				     });
 	
 // perbedaan handler vs listener = 
-   - handler = saat dua kali hndler di jalan kan akan di eksekusi yang terakhir, tidak memperdulikan sebelumnya
-   - listener = dua dua nya di jalankan
-// ada bayak event silahkan lihat di documentasi terkait dg mouse keyboard API dll
+   - handler 		= saat dua kali hndler di jalan kan akan di eksekusi yang terakhir, tidak memperdulikan sebelumnya
+   - addEvenListener 	= dua dua nya di jalankan
+// ada banyak event silahkan lihat di documentasi terkait dg trigger mouse, keyboard, API dll
 ===============================================================================
 event list
 
