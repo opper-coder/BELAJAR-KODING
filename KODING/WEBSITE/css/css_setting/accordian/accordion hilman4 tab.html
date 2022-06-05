@@ -3,11 +3,16 @@
 <head>
 	<title>dasar acordian</title>
 	<style type="text/css">
-		/*halaman tab sebelum di klik dari link--------*/
-		.p{
+	/*Accordion
+		- tanpa js
+		- saat di klik link maka halaman target terbuka
+		- bisa di terapkan pada accordion tab menu 
+	*/
+		/* --------- halaman tab sebelum di klik dari link -------- */
+		div{
 			display:none;
 		}
-		/*halaman tab setelah di klik jadi target oleh link--------*/
+		/* --------- halaman tab setelah di klik jadi target oleh link -------- */
 		#ada:target{
 			background-color: yellow;
 			display: block;
@@ -19,17 +24,15 @@
 	</style>
 </head>
 <body>
-<!-- link -->
-	<a href="#ada">Menu1 1</a>
-	<a href="#ada2">Menu2 2</a>
-<!-- halaman -->
-	<p id="ada2">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+<!-- --------- link ---------- -->
+	<a href="#ada">Menu1</a>
+	<a href="#ada2">Menu2</a>
+<!-- --------- dua halaman target ------- -->
+	<div id="ada">Halaman1 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
 	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-	</p>
-	<p id="ada">adada adadaq lklk lakdl kdakda ldkflsk lklsjd kljdfkd jkndkf
-	</p>
-
-
+	</div>
+	<div id="ada2">Halaman2 adada adadaq lklk lakdl kdakda ldkflsk lklsjd kljdfkd jkndkf
+	</div>
 </body>
 </html>
