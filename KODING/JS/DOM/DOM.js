@@ -1,5 +1,7 @@
 RINGKASAN DOM
 -------------------------------------------------------------------------------
+- TAHAPAN 
+	SELEKSI > PERUBAHAN > EVENT (trigger)
 - pengganti console.log di halaman html:
 	document.write("<p>Tutorial Javascript!</p>");
 	document.write("<p style = color:blue; >Tutorial Javascript!</p>");
@@ -9,8 +11,8 @@ DOM SELECTOR: dalam kurung wajib pakai '' atau ""
 const coba  = document.getElementById('asa')		// contoh sederhana
 const coba2 = document.getElementsByTagName('p')[2]; 	// wajib pakai index, kalau langsung chain			
 const coba3 = document.getElementsClassName('ada')[2];	// wajib pakai index, kalau langsung chain
-const coba4 = document.querySelector('#ada');		// no index. bisa untuk id, class, html
-const coba5 = document.querySelectorAll('.asa')[0];	// wajib pakai index, kalau langsung chain
+const coba4 = document.querySelector('#ada');		// no index. bisa untuk id, class, html. (pakai seleksi CSS)
+const coba5 = document.querySelectorAll('.asa')[0];	// wajib pakai index, kalau langsung chain (pakai seleksi CSS)
 -------------------------------------------------------------------------------
 // ONCLICK
 saat kita punya function di JS, panggil pada button html tambah attribut <onClick="func()"> 
