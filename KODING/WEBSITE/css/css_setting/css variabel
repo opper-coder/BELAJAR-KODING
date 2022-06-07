@@ -1,0 +1,16 @@
+CSS VARIABEL
+-----------------------------------------------------------------------------------
+Variabel CSS memiliki akses ke DOM, 
+yang berarti Anda dapat membuat variabel dengan cakupan lokal atau global, 
+mengubah variabel dengan JavaScript, dan mengubah variabel berdasarkan kueri media.
+best practice variabel CSS biasanya dalam hal warna
+-----------------------------------------------------------------------------------
+Caranya:
+:root {
+  --blue: #1e90ff;                                // bikin warna deklarasikan di :root ini
+  --white: #ffffff;                               // perhatikan cara nulisnya
+}
+
+body { background-color: var(--blue); }           // lalu akses nama nya
+h2 { border-bottom: 2px solid var(--blue); }
+-----------------------------------------------------------------------------------
