@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style> 
+/*kondisi awal*/
+div {
+  width: 100px;
+  height: 100px;
+  background: red;
+  transition: width .5s, height 1s;
+}
+/*
+trigger nya boleh pakai apa saja seperti:
+- psudo class: hover, active, target, nth-child dsb
+- trigger DOM : onclick, mouseenter dsb
+- @media, responsive dll 
+*/
+div:hover {
+  width: 200px;
+  height: 200px;
+}
+</style>
+</head>
+<body>
+  <h2>halo contoh dengan div</h2>
+  <div></div>
+</body>
+</html>
