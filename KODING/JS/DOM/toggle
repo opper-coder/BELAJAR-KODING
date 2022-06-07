@@ -15,8 +15,9 @@ bisa di gunakan pada
 ----------------------------------------------------------------------------------------
 Caranya
   1.  persiapkan kondisi hidup/mati dengan satu class="ganti" pada CSS HTML
+      yaitu kondisi "default" dan kondisi "perubahan"
   2.  siapkan tombol trigger onclick="ubahMode() di HTML
-  2.  pada js siapkan fungsi 
+  3.  pada js siapkan fungsi 
       function ubahMode(){
         seleksi.classList.toggle("ganti");
       }
