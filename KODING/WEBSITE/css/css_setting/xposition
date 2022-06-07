@@ -1,0 +1,18 @@
+POSITION CSS:
+-------------------------------------------------------------------------
+ada 4 jenis posision:
+1. position: static;    // default, tdk ditulis boleh, mempengaruhi tempat elemen lain
+2. position: Relatif;   // satu tingkat keatas 3d, tempatnya masih ada di bawah tingkat
+                           tidak mempengaruhi elemen lain jika bergerak,  
+                           bisa akses t,b,l,r untuk bergerak 
+                           tidak untuk perpindahan, biasanya di gunakan untuk wadah absolute saja
+3. position: absolute;  // satu tingkat keatas 3d, tempatnya hilang di bawah tingkat
+                           tidak mempengaruhi elemen lain jika bergerak,  
+                           bisa akses t,b,l,r untuk bergerak 
+                           untuk berpindah bergantung dengan relative
+                           z-index:1; kadang berlaku 
+4. position: fix;       // bergantung pada browser, element lain dianggap tidak ada
+                           tidak mempengaruhi elemen lain jika bergerak,  
+                           bisa akses t,b,l,r untuk bergerak
+                           z-index:1; berlaku disini 
+-------------------------------------------------------------------------
