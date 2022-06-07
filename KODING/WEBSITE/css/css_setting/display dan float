@@ -1,0 +1,19 @@
+DISPLAI DAN FLOAT 
+---------------------------------------------------------------------------------
+display ada 4 jenis
+1. inline
+2. block
+3. inline-block
+4. flex
+5. grid
+6. table
+7. dll
+---------------------------------------------------------------------------------
+masing masing displai memiliki metode yang sama pada
+- aligmen dan justifi
+- termasuk mengelola baris dan kolom 
+- float
+- lebar dan tinggi
+- urutan 
+- space dan gap
+---------------------------------------------------------------------------------
