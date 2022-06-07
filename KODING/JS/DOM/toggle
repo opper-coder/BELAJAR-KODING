@@ -1,0 +1,23 @@
+TOGGLE DOM
+----------------------------------------------------------------------------------------
+classList.toggle ini di gunakan untuk ubah class true false 
+ada banyak mode class list pada DOM silahkan lihat DOM dokumentasi
+
+bisa di gunakan pada 
+- darkmode
+- sidebar
+- mungkin tab 
+- mungkin alert 
+- setting cek
+- mungkin pengganti cek uncheck
+- coba tinjau input cek uncek HTML mungkin ada kesamaan
+- dll
+----------------------------------------------------------------------------------------
+Caranya
+  1.  persiapkan kondisi hidup/mati dengan satu class="ganti" pada CSS HTML
+  2.  siapkan tombol trigger onclick="ubahMode() di HTML
+  2.  pada js siapkan fungsi 
+      function ubahMode(){
+        seleksi.classList.toggle("ganti");
+      }
+________________________________________________________________________________________
