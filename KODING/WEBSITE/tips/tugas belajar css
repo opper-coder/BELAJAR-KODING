@@ -1,5 +1,16 @@
 CATATAN KERJA
+---------------------------------------------------------------------------
+- perbaiki dokumentasi
+- transition
+- animasi
+- flex
+- grid
+- responsive
+- @media
+- pseudo class
 
+---------------------------------------------------------------------------
+DASHBOARD
 + bulma version
 + w3 version
 + hover list menu
@@ -9,12 +20,9 @@ CATATAN KERJA
 + icon
 - layout dashboard
 - responsive sidebar umum
+- sidebar besar
+- accordion
+- top nav
 - @media breakpoint
 - pindah ke halaman CSS
-
-- transition
-- flex
-- grid
-- responsive
-- @media
-- pseudo class
+- 
