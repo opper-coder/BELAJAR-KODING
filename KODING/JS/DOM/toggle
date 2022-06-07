@@ -4,13 +4,13 @@ classList.toggle ini di gunakan untuk ubah class true false
 ada banyak mode class list pada DOM silahkan lihat DOM dokumentasi
 
 bisa di gunakan pada 
-- darkmode
-- sidebar
-- mungkin tab 
-- mungkin alert 
-- setting cek
-- mungkin pengganti cek uncheck
-- coba tinjau input cek uncek HTML mungkin ada kesamaan
+- darkmode                        = terang gelap pada beberapa element
+- sidebar                         = tampilkan sembunyikan
+- accordian multi expand          = tampilkan sembunyikan 
+- mungkin alert                   = munculkan dan close
+- setting cek                     = true false
+- mungkin pengganti cek uncheck   = mungkin ada kesamaan true false
+- coba tinjau input cek uncek HTML mungkin ada kesamaan = mungkin ada kesamaan true false
 - dll
 ----------------------------------------------------------------------------------------
 Caranya
