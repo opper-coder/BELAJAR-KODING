@@ -2,9 +2,9 @@ CENTER VERTICAL HORIZONTAL
 -----------------------------------------------------------------------------------------------------
 VERTIKAL (berdiri)
 - FLEX
-  .box { display: flex; align-items: flex-center; }
+  .box { align-items: flex-center }
 - GRID
-  .box { display: grid; align-items: center }
+  .box { align-items: center }
 - BLOCK
   <!-- .box {} -->
   <!-- .isi {} -->
