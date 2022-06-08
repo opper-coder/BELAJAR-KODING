@@ -1,6 +1,6 @@
 CENTER VERTICAL HORIZONTAL
 -----------------------------------------------------------------------------------------------------
-VERTIKAL
+VERTIKAL (berdiri)
 - FLEX
   .box { display: flex; align-items: flex-center; }
 - GRID
@@ -15,7 +15,7 @@ VERTIKAL
   <!-- .box { display: table-cell } -->
   <!-- .isi { vertical-align: middle } -->
 -----------------------------------------------------------------------------------------------------
-HORIZONTAL
+HORIZONTAL (mendatar)
 - FLEX
   .box { display: flex; justify-content: center; }
 - GRID
