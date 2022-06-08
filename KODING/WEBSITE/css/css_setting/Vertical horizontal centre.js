@@ -63,15 +63,11 @@ GRID
   .isi{ margin: auto }                // atau
   .isi { align-self: center }         // atau
 BLOCK
-  <!-- .container{ display: block } -->
-  <!-- .isi {  } -->
+-
 INLINE-BLOCK
-  <!-- .container{ display: inline-block } -->
-  <!-- .isi {  } -->
+-
 TABLE
-  <!-- .container{ display: table } -->
-  <!-- .isi {  } -->
-
+-
 ---------------------------------------------------------
 TIPS
 ---------------------------------------------------------
