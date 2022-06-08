@@ -2,7 +2,7 @@ CENTER VERTICAL HORIZONTAL
 -----------------------------------------------------------------------------------------------------
 VERTIKAL
 - FLEX
-  .box { display: flex; align-items: center; }
+  .box { display: flex; align-items: flex-center; }
 - GRID
   .box { display: grid; align-items: center }
 - BLOCK
