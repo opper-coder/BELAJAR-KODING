@@ -1,57 +1,81 @@
 CENTER VERTICAL HORIZONTAL
------------------------------------------------------------------------------------------------------
+---------------------------------------------------------
 VERTIKAL (berdiri)
-- FLEX
-  .box { align-items: flex-center }
-- GRID
-  .box { align-items: center }
-- BLOCK
-  <!-- .box {} -->
-  <!-- .isi {} -->
-- INLINE-BLOCK
-  <!-- .box {} -->
-  <!-- .isi {} -->
-- TABLE
-  <!-- .box { display: table-cell } -->
-  <!-- .isi { vertical-align: middle } -->
------------------------------------------------------------------------------------------------------
+---------------------------------------------------------
+FLEX
+  .container{ align-items: flex-center }      // atau
+  .container{ place-items: center }           // center, start, end
+GRID
+  .container{ align-items: center }           // center, start, end // atau
+  .isi{ align-self: center }
+BLOCK
+  .container{ padding: 50px 0 }               // mainkan padding vertical // atau
+  .container {                                // mainkan lineheight wadah dan isi
+    line-height: 500px;
+    height: 500px;
+    background: teal;
+  }
+  .isi {
+    line-height: 1.5;
+    line-height: 1;
+    display: inline-block;
+    vertical-align: middle;
+  }
+INLINE-BLOCK
+  .container{ padding: 50px 0 }               // mainkan padding vertical 
+TABLE
+  td{ vertical-align: bottom; }               // atau
+  .container{ display: table } 
+  .isi { 
+    display: table-cell;
+    vertical-align: middle; }                 // middle,top,bottom
+---------------------------------------------------------
 HORIZONTAL (mendatar)
-- FLEX
-  .box { display: flex; justify-content: center; }
-- GRID
-  .box { display: grid; justify-items: center; }
-- BLOCK
-  <!-- .box { block } -->
+---------------------------------------------------------
+FLEX
+  .container{ justify-content: center; }      // flex-end, flex-start, arround, space-between
+GRID
+  .container{ justify-items: center; }
+  .isi{ justify-self: center; }
+BLOCK
+  .container{ text-align: center }            // atau
+  .isi { margin:0 auto; } / margin: auto
+INLINE-BLOCK
+  .container{ text-align: center }            // atau
+  .isi { margin:0 auto; } / margin: auto
+TABLE
+  td{ text-align: center; }
+UMUM
+.container{ display: relatif }
+.isi{   
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  transform: translateY(-50%); 
+  }
+----------------------------------------------------------
+XY Alignmen (tegak lurus)
+----------------------------------------------------------
+FLEX
+  .isi{ margin: auto  }
+GRID
+  .container{ place-items: center }   // atau
+  .isi{ margin: auto }                // atau
+  .isi { align-self: center }         // atau
+BLOCK
+  <!-- .container{ display: block } -->
   <!-- .isi {  } -->
-- INLINE-BLOCK
-  <!-- .box { inline-block } -->
+INLINE-BLOCK
+  <!-- .container{ display: inline-block } -->
   <!-- .isi {  } -->
-- TABLE
-  <!-- .box { display: table } -->
+TABLE
+  <!-- .container{ display: table } -->
   <!-- .isi {  } -->
------------------------------------------------------------------------------------------------------
-XY Alignmen
-- FLEX
-  .box { display: flex }
-  .isi { margin: auto }
-- GRID
-  .box { display: grid }
-  .isi { margin: auto }
-  atau
-  .isi { place-items: center }
-  atau
-  .isi { align-self: center }
-- BLOCK
-  .box { display: block }
-  .isi {  }
-- INLINE-BLOCK
-  .box { display: inline-block }
-  .isi {  }
-- TABLE
-  .box { display: table }
-  .isi {  }
------------------------------------------------------------------------------------------------------
+
+---------------------------------------------------------
 TIPS
-- untuk bisa membuat tinggi komponen menjadi 100% maka buat 100% dulu pada html, body{ height:100%; }
+---------------------------------------------------------
+- untuk bisa membuat tinggi komponen menjadi 100% maka 
+buat 100% dulu pada html, body{ height:100%; }
 - 
-_____________________________________________________________________________________________________
+________________________________________________________
