@@ -78,5 +78,5 @@ TIPS
 ---------------------------------------------------------
 - untuk bisa membuat tinggi komponen menjadi 100% maka 
 buat 100% dulu pada html, body{ height:100%; }
-- 
+- { height : 100vh; }
 ________________________________________________________
