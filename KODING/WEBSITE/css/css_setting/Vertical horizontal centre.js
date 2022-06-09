@@ -63,7 +63,12 @@ GRID
   .isi{ margin: auto }                // atau
   .isi { align-self: center }         // atau
 BLOCK
--
+  .isi{
+    posision: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%;);
+  }
 INLINE-BLOCK
 -
 TABLE
