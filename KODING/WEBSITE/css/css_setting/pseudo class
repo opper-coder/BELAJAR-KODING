@@ -1,4 +1,5 @@
 KETERANGAN
+- baca 2 x 1 menit saja
 --------------------------------------------------------------------------------------------
 adalah elemen interaktive tanpa bikin class di elemennya langsung
 kita hanya pilih target lalu terapkan { aksinya }
@@ -8,57 +9,81 @@ seleksiCSS:hover { lakukan aksi }
 
 CARA BACA
 --------------------------------------------------------------------------------------------
-:pseudo-class   = style saat <... lalu baca keterangan> 
-ss:             = "style saat" : ...
+:pseudo-class     = style saat <... lalu baca keterangan> 
+ss:               = "style saat" : ...
 baca dulu "ketegori" lalu "pseudo-class" yang tersedia
 
 PSEUDO CLASS
 ============================================================================================
 Umum
-  :hover        = ss: trigger mouseover
-  :active       = ss: selama diklik sebelum di lepas
+  :hover          = ss: trigger mouseover
+  :active         = ss: selama diklik sebelum di lepas
   :
 Link
-  :link         = jadi link pada elemen apapun (belum di kunjungi)
-  :visited      = link saat sudah di kunjungi
+  :link           = jadi link pada elemen apapun (belum di kunjungi)
+  :visited        = link saat sudah di kunjungi
 Input
-  :cheked       = sesuai nama dan kategori(s/n)
-  :disabled     = s/n
-  :enabled      = ss: enable
-  :focus        = ss: input diisi text (beda dg enable ini hanya salah satu, enable semua)
-  :in-range     = ss: validasi input pada range tertentu "min max HTML"
-                  <input type="number" min="5" max="10" value="7">
-  :out-of-range = kebalikan :in-range
-  :invalid      = ss: input tidak sesuai "attribut Type HTML"                
-                  <input type="email" value="supportEmail">
-  :valid        = ss: kebalikan :invalid. saat valid langsung nyala meski belum selesai input
-  :read-only    = ss: read only
-  :read-write   = ss: default. keperluan JS
-  :required     = ss: saat atribut (required HTML)
-                  <p>A required input element:<br><input required></p>
-  :optional     = default kebalikan :required
+  :cheked         = sesuai nama dan kategori(s/n)
+  :disabled       = s/n
+  :enabled        = ss: enable
+  :focus          = ss: input diisi text (beda dg enable ini hanya salah satu, enable semua)
+  :in-range       = ss: validasi input pada range tertentu "min max HTML"
+                    <input type="number" min="5" max="10" value="7">
+  :out-of-range   = kebalikan :in-range
+  :invalid        = ss: input tidak sesuai "attribut Type HTML"                
+                    <input type="email" value="supportEmail">
+  :valid          = ss: kebalikan :invalid. saat valid langsung nyala meski belum selesai input
+  :read-only      = ss: read only
+  :read-write     = ss: default. keperluan JS
+  :required       = ss: saat atribut (required HTML)
+                    <p>A required input element:<br><input required></p>
+  :optional       = default kebalikan :required
 Seleksi
-  :first-child  = ss: elemen pertama
-  :last-child   = terakhir
-  :first-of-type= ss: elemen pertama pada tipe yang sama misalnya ada 'p sebanyak empat' maka 'p pertama'
-  :last-of-type = terakhir
-  :not(selector)= ss: bukan(pilihan) not(h1)
-  :nth-child(2) = ss: elemen ke... nth-child(odd, even)ke ganjil, genap
+  :first-child    = ss: elemen pertama
+  :last-child     = terakhir
+  :first-of-type  = ss: elemen pertama pada tipe yang sama misalnya ada 'p sebanyak empat' maka 'p pertama'
+  :last-of-type   = terakhir
+  :not(selector)  = ss: bukan(pilihan) not(h1)
+  :nth-child(2)   = ss: elemen ke... nth-child(odd, even)ke ganjil, genap
   :nth-last-child(3) =ss: dari belakang
   :nth-of-type(4) =ss: element ke pada type yg sama (mis: li) 
   :nth-last-type(4) =ss: dari belakang sda element(mis: p) yang sama
-  :only-of-type= ss: semua element yang sama tapi yang parent bukan child (harusnya kalau saya :not-child )
-  :root         = semua elemen mirip body, html
-  :target       = ss: target a href= elemen lain(mis: p)"id" : baik untuk accordion carena elemen target
-                  yang di style ini unik bisa untuk if else tanpa JS
+  :only-of-type   = ss: semua element yang sama tapi yang parent bukan child (harusnya kalau saya :not-child )
+  :root           = semua elemen mirip body, html
+  :target         = ss: target a href= elemen lain(mis: p)"id" : baik untuk accordion carena elemen target
+                    yang di style ini unik bisa untuk if else tanpa JS
 ============================================================================================
 PSEUDO ELEMEN
-  ::before      = isi elemen semu "sebelum" elemen > misalnya kita punya li berisi nama2 tanpa "bapak"
-                  p::before { content: "Bapak "; }
-  ::after       = kebalikan :before
+  ::before        = isi elemen semu "sebelum" elemen > misalnya kita punya li berisi nama2 tanpa "bapak"
+                    p::before { content: "Bapak "; }
+  ::after         = kebalikan :before
   ::first-letter  = pada "huruf pertama sebuah" p
-  ::first-line  = pada baris pertama jika wrap
-  ::selection   = CSS untuk seleksi
+  ::first-line    = pada baris pertama jika wrap
+  ::marker        = CSS untuk nomor pada ol ul
+  ::selection     = CSS untuk seleksi style
+============================================================================================
+TRIK PSEUDO-CLASS
+- bikin accordion
+:target {
+  border: 2px solid #D4D4D4;
+  background-color: #e5eecc;
+}
+<p><a href="#news1">klik 1</a></p> // style untuk target "href"
+<p><a href="#news2">klik 2</a></p> 
+
+<p id="news1"><b>tampilkan elemen 1</b></p>
+<p id="news2"><b>tampilkan elemen 2</b></p>
+----------------
+- :hover bikin tooltip sederhana karena yang advance ada di w3css: termasuk menggunakan position dan rounded
+  p {
+    display: none;
+    background-color: yellow;
+    padding: 20px;
+  }
+  div:hover p {
+    display: block;
+  }
+----------------
 ____________________________________________________________________________________________
 
 
