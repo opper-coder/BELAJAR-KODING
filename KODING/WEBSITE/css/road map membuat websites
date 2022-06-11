@@ -1,0 +1,59 @@
+Buat halaman
+---------------------------------------------------------------------------------
+1. index.html
+2. folder javascript > index.js > vanilla js
+3. folder style > skeleton.css > index.css
+
+Base CSS 
+---------------------------------------------------------------------------------
+*{margin:0; padding:0;}
+html {
+  font-size: 62.5%; }
+body {
+  font-size: 1.5em; /* currently ems cause chrome bug misinterpreting rems on body element */
+  line-height: 1.6;
+  font-weight: 400;
+  font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #222; }
+  
+Icon dan Font
+---------------------------------------------------------------------------------
+
+variabel CSS
+---------------------------------------------------------------------------------
+- warna
+
+Utiliti
+---------------------------------------------------------------------------------
+- margin
+- padding
+- float
+- sembunyikan, hilangkan
+
+animasi
+--------------------------------------------------------------------------------
+
+
+Responsive
+---------------------------------------------------------------------------------
+pastikan ada <meta name="viewport" content="width=device-width, initial-scale=1">
+@media
+
+Flex
+---------------------------------------------------------------------------------
+
+
+Grid
+---------------------------------------------------------------------------------
+
+
+Komponen
+---------------------------------------------------------------------------------
+
+Javascript
+---------------------------------------------------------------------------------
+- switch tombol
+- klik sembunyikan
+- 
+
+
