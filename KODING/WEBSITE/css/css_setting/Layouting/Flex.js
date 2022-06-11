@@ -37,19 +37,19 @@ perataan vertikal dalam baris
 
 UKURAN
 ---------------------------------------------------------------------
-	{ flex: 1; }		// properti pada tiap child
+	{ flex: 1; }				// properti pada tiap child
 	{ width: 30%; }
 	{ width: 50px; }
 	{ : ; }
-
+---------------------------------------------------------------------
 	CHILD / di ISI
 		{ flex: 1,2,3 - 12 kalau bisa, tidak ada batasan sebenarnya; }
 		{ order: 1 - tak terbatas; }
----------------------------------------------------------------------
+
 	CHILD ALIGNMEN pada CHILD/ di ISI
 ---------------------------------------------------------------------
 		{ text-align: left, center, right ; }
-		{ justify-self: flex-end  } // dorong kekiri tidak berlaku, gantinya: >
+		{ justify-self: flex-end  } 	// dorong kekiri tidak berlaku, gantinya: >
 		{ margin-left: auto; }		// top, bottom, right. alternatifnya: >
 		{ align-self: flex-end }  	// ini berlaku
 		{ : ; }
