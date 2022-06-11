@@ -2,16 +2,16 @@
 FLEX di PARENT
 =====================================================================
 - Flex itu hanya mengatur satu baris atau satu kolom saja ya
-- jadi pada saat kolom coba justify-content dan align-items
+- kita punya beberapa elemen. lalu penempatanya kita "perangkap" dalam flex
+- sehingga kita bisa mengatur space, float, dalam baris baik vertical maupun horizontal
 - saat 'flex-direction: row' maka justify-content & align-items berlaku 
   normal, tapi pada saat : column maka aturanya akan mengikuti arah 
   sehingga efeknya akan kelihatan terbalik jadi ikuti saja aturan yang 
   berlaku pada row namun mengarah vertikal kebawah 
 - default otomatis memenuhi blok horizontal
 - default tinggi kedorong contain
-- float: right tidak berlaku pada child
+- float: right tidak berlaku pada child gantinya margin-left:auto
 - float: pada parent akan merusak kelebaran auto/dafault
-- margin auto ?????
 - min-width ????? sepertinya ada isyu cari pada latihan pertama
 UTILITY
 ---------------------------------------------------------------------
@@ -45,6 +45,19 @@ perataan vertikal dalam baris
 		{ margin-left: auto; }		// top, bottom, right. alternatifnya: >
 		{ align-self: flex-end }  	// ini berlaku
 _____________________________________________________________________
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 =====================================================================
 GRID di PARENT
