@@ -12,16 +12,13 @@ FLEX di PARENT
 - float: pada parent akan merusak kelebaran auto/dafault
 - margin auto ?????
 - min-width ????? sepertinya ada isyu cari pada latihan pertama
-
 UTILITY
 ---------------------------------------------------------------------
 	{ display: flex; } 
 	{ flex-wrap: wrap, nowrap; }
-
 KOLOM
 ---------------------------------------------------------------------
 	{ flex-direction: column, row; column-reverse; row-reverse }
-
 ALIGNMEN dan FLOAT
 ---------------------------------------------------------------------
 perataan horizontal dalam baris
@@ -35,34 +32,17 @@ perataan vertikal dalam baris
 	{ float: left} berlaku tapi merusak lebar default(memenuhi container)
 	
 	UKURAN CHILD / di ISI
----------------------------------------------------------------------
-	
+---------------------------------------------------------------------	
 		{ flex: 1 - 12 sesuai framework, tidak ada batasan sebenarnya; }
 		{ width: 30%; }
 		{ width: 50px; }
 		{ order: 1 - tak terbatas; } 	// urutan dalam tampil bisa diatur 
-
 	CHILD ALIGNMEN pada CHILD/ di ISI
 ---------------------------------------------------------------------
 		{ text-align: left, center, right ; }
 		{ justify-self: flex-end  } 	// dorong kekiri tidak berlaku, gantinya: >
 		{ margin-left: auto; }		// top, bottom, right. alternatifnya: >
 		{ align-self: flex-end }  	// ini berlaku
-
-=====================================================================
-GRID
-
-
----------------------------------------------------------------------
-
-
-
-
-
-
-
-
-
-
+_____________________________________________________________________
 
 
