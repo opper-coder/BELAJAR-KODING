@@ -1,10 +1,44 @@
+pada dasarnya responsive layout menggunakan 
+- @media(max,min-width), layout besar sesuai desain, layout kecil lebar 100%
 
-
-
-
-
-
-
+@media (max-width: 800px) {
+  .flex-item-right, .flex-item-left {
+    flex: 100%;
+  }
+--------------------------------------------------------------------------------------
+Layouting
+Jalur langkah membuat layout
+	1. kelompokan layout dalam baris (row)
+	2. lalu pecah elemen pada masing masing baris 
+		- bisa mengunakan flex jika memang hanya 1 baris
+		- atau menggunakan grid jika elemen banyak baris
+		- semua masih belum responsive  
+	3. tangani Responsive sesuai media yang di buat
+		- jika hanya soal peletakan saja yang berubah
+		  maka hanya gunakan "width 100%" dan "display" saja
+		- tapi kalau mau berubah total silahkan buat layout 
+		  pada masing masing media menggunakan:
+		  - width-height
+		  - visibility
+		  - pengurutan
+		  - ubah display flex ke Grid 
+		  - position
+		  - warna
+		  - font-size
+		  - dll
+	4. biasanya susunan bentuk seperti ini:
+		- Besar
+			- tampilan maksimal terdiri baris 
+			- terdiri 3-6 kolom
+		- menengah
+			- kolomnya dah berkurang jadi 2-3
+		- mobile
+			- kolom berubah jadi 1 kolom saja
+	5. tapi boleh di desain ulang pada masing masing media
+	   menggunakan figma
+	   
+TEMPLATE @media
+scrip dibawah copas dan isikan CSS operatioanal dalam bracket
 --------------------------------------------------------------------------------------
 /* Larger than mobile */
 @media (min-width: 400px) {}
@@ -21,8 +55,7 @@
 /* Larger than Desktop HD */
 @media (min-width: 1200px) {}
 --------------------------------------------------------------------------------------
-
-
+keterangan tambahan
 
 <!DOCTYPE html>
 <html lang="en">
