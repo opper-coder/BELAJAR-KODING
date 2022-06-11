@@ -21,12 +21,12 @@ lebar kolom
 	: 1fr 1fr 1fr; 			// 3 kolom wrap dengan lebar masing2 1bagian
 	: 2fr 1fr 1fr;			// 3 kolom dg lebar 2:1:1 bagian
 	: repeat(3, 1fr);		// 3 kali 1 bagian
-	: repeat(3, 1fr 2fr); 	// 3 x (1bag + 2bag) 
+	: repeat(3, 1fr 2fr); 		// 3 x (1bag + 2bag) 
  	: 100px, 1fr, 1fr		// fix:1bag:1bag
 Tinggi Kolom/baris
 	{ grid-auto-rows: minmax(100px, auto); } 
-							// minimal 100px, Max sesuai content
-							// grid-auto-column tidak ada karena sudah cukup
+					// minimal 100px, Max sesuai content
+					// grid-auto-column tidak ada karena sudah cukup
 ALIGN dan JUSTIFY PARENT
 ---------------------------------------------------------------------
 berlaku bagi semua item
@@ -47,7 +47,7 @@ berlaku bagi semua item
 		grid-template-columns: repeat(1fr 1fr 1fr 1fr);
 	pada child:
 		.satu{
-            grid-column: 1/3;	// 1 sampai 3 garis gridlines ke kanan (sesuai garis colom repeat)
+            grid-column: 1/3;		// 1 sampai 3 garis gridlines ke kanan (sesuai garis colom repeat)
             grid-row: 1/3;		// 1 sampai 3 ke bawah
         }
         .dua{
@@ -70,13 +70,13 @@ berlaku bagi semua item
     grid-template-columns: repeat(1fr 1fr 1fr 1fr);	// bikin 4 grid
 	grid-template-areas: 
         "satu satu satu satu"				// deklarasi kan tempat pada 4 grid
-        "dua dua tiga tiga"					// mirip matrik / kordinat
+        "dua dua tiga tiga"				// mirip matrik / kordinat
         "dua dua empat empat"
-        "lima enam . tujuh"					// titik untuk kosong
+        "lima enam . tujuh"				// titik untuk kosong
         "delapan delapan delapan sembilan"	
 }
 .satu{
-    grid-area: satu;				// .div satu ambil tempat pada: matrik mana ... 
+    grid-area: satu;					// .div satu ambil tempat pada: matrik mana ... 
 }
 .dua{
     grid-area: dua;
