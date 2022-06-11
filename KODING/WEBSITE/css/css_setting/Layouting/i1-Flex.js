@@ -11,6 +11,7 @@ FLEX di PARENT
 - float: right tidak berlaku pada child
 - float: pada parent akan merusak kelebaran auto/dafault
 - margin auto ?????
+- min-width ????? sepertinya ada isyu cari pada latihan pertama
 
 UTILITY
 ---------------------------------------------------------------------
