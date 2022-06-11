@@ -1,4 +1,5 @@
 FLEX di PARENT
+---------------------------------------------------------------------
 - Flex itu hanya mengatur satu baris atau satu kolom saja ya
 - jadi pada saat kolom coba justify-content dan align-items
 - saat 'flex-direction: row' maka justify-content & align-items berlaku 
@@ -46,6 +47,21 @@ perataan vertikal dalam baris
 		{ justify-self: flex-end  } 	// dorong kekiri tidak berlaku, gantinya: >
 		{ margin-left: auto; }		// top, bottom, right. alternatifnya: >
 		{ align-self: flex-end }  	// ini berlaku
-_____________________________________________________________________
+
+=====================================================================
+GRID
+
+
+---------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
 
 
