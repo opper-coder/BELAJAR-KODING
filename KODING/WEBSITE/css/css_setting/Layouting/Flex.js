@@ -15,12 +15,10 @@ UTILITY
 ---------------------------------------------------------------------
 	{ display: flex; } 
 	{ flex-wrap: wrap, nowrap; }
-	{ : ; }
 
 KOLOM
 ---------------------------------------------------------------------
 	{ flex-direction: column, row; column-reverse; row-reverse }
-	{ : ; }
 
 ALIGNMEN dan FLOAT
 ---------------------------------------------------------------------
@@ -33,18 +31,14 @@ perataan vertikal dalam baris
 	{ text-align: left, center, right ; } 
 	{ margin-left: auto; }
 	{ float: left} berlaku tapi merusak lebar default(memenuhi container)
-	{ : ; }
-
-UKURAN
+	
+	UKURAN CHILD / di ISI
 ---------------------------------------------------------------------
-	{ flex: 1; }				// properti pada tiap child
-	{ width: 30%; }
-	{ width: 50px; }
-	{ : ; }
----------------------------------------------------------------------
-	CHILD / di ISI
-		{ flex: 1,2,3 - 12 kalau bisa, tidak ada batasan sebenarnya; }
-		{ order: 1 - tak terbatas; }
+	
+		{ flex: 1 - 12 sesuai framework, tidak ada batasan sebenarnya; }
+		{ width: 30%; }
+		{ width: 50px; }
+		{ order: 1 - tak terbatas; } 	// urutan dalam tampil bisa diatur 
 
 	CHILD ALIGNMEN pada CHILD/ di ISI
 ---------------------------------------------------------------------
@@ -52,8 +46,6 @@ UKURAN
 		{ justify-self: flex-end  } 	// dorong kekiri tidak berlaku, gantinya: >
 		{ margin-left: auto; }		// top, bottom, right. alternatifnya: >
 		{ align-self: flex-end }  	// ini berlaku
-		{ : ; }
----------------------------------------------------------------------
 _____________________________________________________________________
 
 
