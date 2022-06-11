@@ -43,7 +43,7 @@ Seleksi
   :first-of-type= ss: elemen pertama pada tipe yang sama misalnya ada 'p sebanyak empat' maka 'p pertama'
   :last-of-type = terakhir
   :not(selector)= ss: bukan(pilihan) not(h1)
-  :nth-child(2) = ss: elemen ke...
+  :nth-child(2) = ss: elemen ke... nth-child(odd, even)ke ganjil, genap
   :nth-last-child(3) =ss: dari belakang
   :nth-of-type(4) =ss: element ke pada type yg sama (mis: li) 
   :nth-last-type(4) =ss: dari belakang sda element(mis: p) yang sama
