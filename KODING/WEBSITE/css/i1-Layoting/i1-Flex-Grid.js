@@ -84,7 +84,7 @@ berlaku bagi semua item
 	{ align-items: start; } : start, center, end, stretch = vertical
 
 	GRID CHILD
-	=================================================================
+	-----------------------------------------------------------------
 	berlaku hanya yang bersangkutan bisa kombinasi dg parent
 		{ justify-self : start }  : start, center, end, stretch = horizontal
 		{ align-self : start }  : start, center, end, stretch = vertical
