@@ -1,0 +1,48 @@
+KETERANGAN
+--------------------------------------------------------------------------------------------
+adalah elemen interaktive tanpa bikin class di elemennya langsung
+kita hanya pilih target lalu terapkan { aksinya }
+- catra nulis :tanpa spasi
+seleksiCSS:hover { lakukan aksi }
+- jika belum jelas 
+
+CARA BACA
+--------------------------------------------------------------------------------------------
+:pseudo-class   = style saat <... lalu baca keterangan> 
+ss:             = "style saat" : ...
+baca dulu "ketegori" lalu "pseudo-class" yang tersedia
+
+PSEUDO CLASS
+--------------------------------------------------------------------------------------------
+Umum
+  :hover        = ss: trigger mouseover
+  :active       = ss: selama diklik sebelum di lepas
+  :
+Link
+  :link         = jadi link pada elemen apapun (belum di kunjungi)
+  :visited      = link saat sudah di kunjungi
+Input
+  :cheked       = sesuai nama dan kategori(s/n)
+  :disabled     = s/n
+  :enabled      = ss: enable
+  :focus        = ss: input diisi text (beda dg enable ini hanya salah satu, enable semua)
+  :in-range     = ss: validasi input pada range tertentu "min max HTML"
+                  <input type="number" min="5" max="10" value="7">
+  :invalid      = ss: input tidak sesuai "attribut Type HTML"                
+                  <input type="email" value="supportEmail">
+Seleksi
+  :first-child  = ss: elemen pertama
+  :last-child   = terakhir
+  :first-of-type= ss: elemen pertama pada tipe yang sama misalnya ada 'p sebanyak empat' maka 'p pertama'
+  :last-of-type = terakhir
+  :not(selector)= ss: bukan(pilihan) not(h1)
+  :
+
+PSEUDO ELEMEN
+--------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------
