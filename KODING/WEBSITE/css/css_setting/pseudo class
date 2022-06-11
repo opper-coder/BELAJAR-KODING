@@ -37,7 +37,6 @@ Input
   :required     = ss: saat atribut (required HTML)
                   <p>A required input element:<br><input required></p>
   :optional     = default kebalikan :required
-  
 Seleksi
   :first-child  = ss: elemen pertama
   :last-child   = terakhir
