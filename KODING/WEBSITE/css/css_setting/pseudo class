@@ -54,7 +54,13 @@ Seleksi
                   yang di style ini unik bisa untuk if else tanpa JS
 ============================================================================================
 PSEUDO ELEMEN
-============================================================================================
+  ::before      = isi elemen semu "sebelum" elemen > misalnya kita punya li berisi nama2 tanpa "bapak"
+                  p::before { content: "Bapak "; }
+  ::after       = kebalikan :before
+  ::first-letter  = pada "huruf pertama sebuah" p
+  ::first-line  = pada baris pertama jika wrap
+  ::selection   = CSS untuk seleksi
+
 
 --------------------------------------------------------------------------------------------
 ____________________________________________________________________________________________
