@@ -31,7 +31,7 @@ Input
   :out-of-range = kebalikan :in-range
   :invalid      = ss: input tidak sesuai "attribut Type HTML"                
                   <input type="email" value="supportEmail">
-  :valid        = ss: kebalikan :invalid
+  :valid        = ss: kebalikan :invalid. saat valid langsung nyala meski belum selesai input
   :read-only    = ss: read only
   :read-write   = ss: default. keperluan JS
   :required     = ss: saat atribut (required HTML)
