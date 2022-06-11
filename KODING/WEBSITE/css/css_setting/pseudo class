@@ -13,7 +13,7 @@ ss:             = "style saat" : ...
 baca dulu "ketegori" lalu "pseudo-class" yang tersedia
 
 PSEUDO CLASS
---------------------------------------------------------------------------------------------
+============================================================================================
 Umum
   :hover        = ss: trigger mouseover
   :active       = ss: selama diklik sebelum di lepas
@@ -28,21 +28,33 @@ Input
   :focus        = ss: input diisi text (beda dg enable ini hanya salah satu, enable semua)
   :in-range     = ss: validasi input pada range tertentu "min max HTML"
                   <input type="number" min="5" max="10" value="7">
+  :out-of-range = kebalikan :in-range
   :invalid      = ss: input tidak sesuai "attribut Type HTML"                
                   <input type="email" value="supportEmail">
+  :valid        = ss: kebalikan :invalid
+  :read-only    = ss: read only
+  :read-write   = ss: default. keperluan JS
+  :required     = ss: saat atribut (required HTML)
+                  <p>A required input element:<br><input required></p>
+  :optional     = default kebalikan :required
+  
 Seleksi
   :first-child  = ss: elemen pertama
   :last-child   = terakhir
   :first-of-type= ss: elemen pertama pada tipe yang sama misalnya ada 'p sebanyak empat' maka 'p pertama'
   :last-of-type = terakhir
   :not(selector)= ss: bukan(pilihan) not(h1)
-  :
-
+  :nth-child(2) = ss: elemen ke...
+  :nth-last-child(3) =ss: dari belakang
+  :nth-of-type(4) =ss: element ke pada type yg sama (mis: li) 
+  :nth-last-type(4) =ss: dari belakang sda element(mis: p) yang sama
+  :only-of-type= ss: semua element yang sama tapi yang parent bukan child (harusnya kalau saya :not-child )
+  :root         = semua elemen mirip body, html
+  :target       = ss: target a href= elemen lain(mis: p)"id" : baik untuk accordion carena elemen target
+                  yang di style ini unik bisa untuk if else tanpa JS
+============================================================================================
 PSEUDO ELEMEN
---------------------------------------------------------------------------------------------
+============================================================================================
 
 --------------------------------------------------------------------------------------------
-
---------------------------------------------------------------------------------------------
-
---------------------------------------------------------------------------------------------
+____________________________________________________________________________________________
