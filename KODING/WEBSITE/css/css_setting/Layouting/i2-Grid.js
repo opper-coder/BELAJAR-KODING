@@ -68,7 +68,7 @@ berlaku bagi semua item
     bikin grid pada parent
 .container{
     grid-template-columns: repeat(1fr 1fr 1fr 1fr);	// bikin 4 grid
-	grid-template-areas: 
+    grid-template-areas: 
         "satu satu satu satu"				// deklarasi kan tempat pada 4 grid
         "dua dua tiga tiga"				// mirip matrik / kordinat
         "dua dua empat empat"
