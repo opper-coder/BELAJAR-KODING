@@ -1,7 +1,13 @@
 /* pageMe */
-/* Saya buat berdasarkan gabungan dari 
-bulma, w3, skeleton, bootstap jika perlu, 
-
+/* Di buat pada 6 juni 2022 berdasarkan gabungan dari script
+bulma, w3, skeleton, bootstap jika perlu, karena bisa terus bertambah fitur secara bertahap kemampuan utama:
+- dokumentasi tersedia dalam framework dan dapat dihapus saat di gunakan
+- saat bikin langsung di integrasikan dan langsung di dokumntasikan
+- tanpa/dengan javascrip atau langsung satu halaman disini tinggal copas nantinya 
+- di buat untuk mempercepat "slicing web" dari pada bikin "framework jadi", karena sudah ada bulma, w3, atu bootstrap
+- customisable karena ada variabel CSS untuk theme dan variabel angka lainya
+- ada dark-mode konsep
+- responsive di 3 layar mobile, tablet dan PC bahkan lebih jika mau
 */
 
 /* Bulma Base */
