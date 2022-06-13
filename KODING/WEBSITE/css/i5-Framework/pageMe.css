@@ -1,14 +1,172 @@
-/* pageMe */
-/* Di buat pada 6 juni 2022 berdasarkan gabungan dari script
-bulma, w3, skeleton, bootstap jika perlu, karena bisa terus bertambah fitur secara bertahap kemampuan utama:
-- dokumentasi tersedia dalam framework dan dapat dihapus saat di gunakan
-- saat bikin langsung di integrasikan dan langsung di dokumntasikan
-- tanpa/dengan javascrip atau langsung satu halaman disini tinggal copas nantinya 
-- di buat untuk mempercepat "slicing web" dari pada bikin "framework jadi", karena sudah ada bulma, w3, atu bootstrap
-- customisable karena ada variabel CSS untuk theme dan variabel angka lainya
-- ada dark-mode konsep
-- responsive di 3 layar mobile, tablet dan PC bahkan lebih jika mau
-*/
+/* DOKUMENTASI
+----------------------------------------------------------
+Daftar isi:
+
+_________________________________
+NAMA FITUR          |   BARIS KE
+____________________|____________
+Base 
+  - clearing        :
+  - 
+layout
+  - Flex            :
+  - grid            :
+  - grid system     :
+  - Responsive      :
+  - @media queries  :
+  - Float           :
+Utility
+  - warna
+  - darkmode
+  - bayang
+  - border
+  - typografi
+  - list
+Elemen
+  - Tombol
+  - 
+  - tooltips
+  - input
+Komponen
+  - tabel
+  - card
+Darkmode
+
+
+Flex
+----------------------------------------------------------
+flexBox    : container flex hrizontal
+flexBoxCol : container Flex vertikal
+
+fstart     : 
+fcenter    : flex tengah datar 
+fend       : 
+
+faround    : flex spasi sama
+fbetween   : flex spasi sama tepi
+stretch    : penuhi lebar 100% ??????
+
+fstartv    : align start
+fcenterv   : align center
+fendv      : align end
+stretchv   : stretch
+
+fself1     : flex justify self (H)
+fself2     : flex justify self (H)
+fself3     : flex justify self (H)
+
+fself1v    : flex align self (V)
+fself2v    : flex align self (V)
+fself3v    : flex align self (V)
+
+f-center   : 
+
+Grid 
+----------------------------------------------------------
+gridBox    : 
+gstart     : 
+gcenter    : 
+gend       : 
+stretchv   : 
+
+ggstart    : 
+ggcenter   : 
+ggend      : 
+ggstretch  : 
+
+gself      : 
+ggself     : 
+
+g-center   : 
+
+Grid system 
+----------------------------------------------------------
+karakteristik grid disini adalah:
+1 .row sebagai container grid
+2 .col1 - 12 adalah colom yng disediakan dlm grid
+3 pastikan dalam row total tetap 12 berapapun bagian yang 
+  akan di buat jika lebih maka akan langsung jatuh kebawah
+  jadinya malah bukan row (satu baris) malah jadi multirow
+  gagal dalam membagi row (malah jadi layar mobile)
+4 kalau mau offset tetap pastikan 12 kolom terserah offsetnya 
+  mau di taruh di kolom berapa? 
+5 sudah responsive dengan mobile: ;
+  - jadi saat large semua elemen sesuai porsi dalam grid
+    tapi saat mobile lebar 100%
+  - kalau mau mode tablet 100% maka tinggal tambah .col2tab
+  - contoh: (ada di w3school > w3 grid)
+    3 kolom dalam 3 layar : 
+      - layar desktop :  .col2 .col6tab | .col6 .col6tab | .col4 .col12tab
+    lakukan setting pada masing2 kolom 2 setting sekaligus sesuai 
+    dengan porsi yang di minta untuk layar yang di gunakan
+6 - col1 - 12 = layar desktop responsive pada layar mobile lebar 100%\
+  - col1tab - col12tab = kolom porsi tablet responsive juga dengan mobile 
+    lebar 100% contoh dibawah sudah responsive 3 layar desktop, tablet, mobile
+
+    <div class="row">
+      <div class="col2 col8tab">sidebar</div>
+      <div class="col6 col4tab">contain</div>
+      <div class="col4 col12tab">kanan</div>
+    </div>
+Media Query 
+----------------------------------------------------------
+jika kita akan membuat elemen "yang ada" kita desain ulang
+pada tiap layar kita tinggal masukan saja ketentuanya di media 
+yang sudah di sediakan
+- baik secara layout, tukar tempat, tampilkan sembunyikan
+  bahkan warna dan ukuran silahkan 
+- 
+lanjutkan ke grid dan flex belum sempurna serta base styles
+kemudian lanjutkan ke elemen yang akan siap di custom
+
+perhatikan tabel
+----------------------------------------------------------
+
+
+
+
+
+
+
+
+
+Template Element pageMe
+copas saja pada index.CSS aplikasi
+__________________________________________________________
+input text
+----------------------------------------------------------
+  input .pm {
+    border: none;
+    outline: none; 
+    width: 30px;
+    padding: 10px;
+    background-color: salmon;
+  }
+
+button
+----------------------------------------------------------
+  button{
+    background-color: salmon;
+    color: white;
+    border: none;
+    padding: 8px 40px;
+    border-radius: 4px;
+    box-shadow: 2px 4px 10px -2px darksalmon;
+  }
+  button:hover{
+    background-color: darksalmon;
+    box-shadow: 2px 4px 12px -2px darksalmon;
+  }
+  button:active{
+    background-color: yellowgreen;
+  }
+
+tabel
+----------------------------------------------------------
+
+
+
+========================================================== */
 
 /* Bulma Base */
 /*! minireset.css v0.0.6 | MIT License | github.com/jgthms/minireset.css */
@@ -198,7 +356,6 @@ table th {
 .ffcenter{ align-items: center; }
 .ffend{ align-items: flex-end; }
 
-
 /* grid
 ----------------------------------------------------------*/
 .gridBox{}
@@ -297,98 +454,6 @@ table th {
 /* Larger than Desktop HD */
 @media (min-width: 1200px) {}
 
-/* DOKUMENTASI
-----------------------------------------------------------
-Cara penggunaan silahkan merujuk kesini aja:
 
-Flex
-----------------------------------------------------------
-flexBox    : container flex hrizontal
-flexBoxCol : container Flex vertikal
-
-fstart     : 
-fcenter    : flex tengah datar 
-fend       : 
-
-faround    : flex spasi sama
-fbetween   : flex spasi sama tepi
-stretch    : penuhi lebar 100% ??????
-
-fstartv    : align start
-fcenterv   : align center
-fendv      : align end
-stretchv   : stretch
-
-fself1     : flex justify self (H)
-fself2     : flex justify self (H)
-fself3     : flex justify self (H)
-
-fself1v    : flex align self (V)
-fself2v    : flex align self (V)
-fself3v    : flex align self (V)
-
-f-center   : 
-
-Grid 
-----------------------------------------------------------
-gridBox    : 
-gstart     : 
-gcenter    : 
-gend       : 
-stretchv   : 
-
-ggstart    : 
-ggcenter   : 
-ggend      : 
-ggstretch  : 
-
-gself      : 
-ggself     : 
-
-g-center   : 
-
-Grid system 
-----------------------------------------------------------
-karakteristik grid disini adalah:
-1 .row sebagai container grid
-2 .col1 - 12 adalah colom yng disediakan dlm grid
-3 pastikan dalam row total tetap 12 berapapun bagian yang 
-  akan di buat jika lebih maka akan langsung jatuh kebawah
-  jadinya malah bukan row (satu baris) malah jadi multirow
-  gagal dalam membagi row (malah jadi layar mobile)
-4 kalau mau offset tetap pastikan 12 kolom terserah offsetnya 
-  mau di taruh di kolom berapa? 
-5 sudah responsive dengan mobile: ;
-  - jadi saat large semua elemen sesuai porsi dalam grid
-    tapi saat mobile lebar 100%
-  - kalau mau mode tablet 100% maka tinggal tambah .col2tab
-  - contoh: (ada di w3school > w3 grid)
-    3 kolom dalam 3 layar : 
-      - layar desktop :  .col2 .col6tab | .col6 .col6tab | .col4 .col12tab
-    lakukan setting pada masing2 kolom 2 setting sekaligus sesuai 
-    dengan porsi yang di minta untuk layar yang di gunakan
-6 - col1 - 12 = layar desktop responsive pada layar mobile lebar 100%\
-  - col1tab - col12tab = kolom porsi tablet responsive juga dengan mobile 
-    lebar 100% contoh dibawah sudah responsive 3 layar desktop, tablet, mobile
-
-    <div class="row">
-      <div class="col2 col8tab">sidebar</div>
-      <div class="col6 col4tab">contain</div>
-      <div class="col4 col12tab">kanan</div>
-    </div>
-Media Query 
-----------------------------------------------------------
-jika kita akan membuat elemen "yang ada" kita desain ulang
-pada tiap layar kita tinggal masukan saja ketentuanya di media 
-yang sudah di sediakan
-- baik secara layout, tukar tempat, tampilkan sembunyikan
-  bahkan warna dan ukuran silahkan 
-- 
-lanjutkan ke grid dan flex belum sempurna serta base styles
-kemudian lanjutkan ke elemen yang akan siap di custom
-
-perhatikan tabel
-----------------------------------------------------------
-
-==========================================================*/
-
+/* Selesai
+=========================================================== */
