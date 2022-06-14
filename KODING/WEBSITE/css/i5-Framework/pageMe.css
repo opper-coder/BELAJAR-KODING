@@ -1,7 +1,7 @@
 /* DOKUMENTASI
-----------------------------------------------------------
-Daftar isi:
 
+Daftar Isi:
+----------------------------------------------------------
 _________________________________
 NAMA FITUR          |   BARIS KE
 ____________________|____________
@@ -24,15 +24,23 @@ Utility
   - list
 Elemen
   - Tombol
-  - 
   - tooltips
   - input
 Komponen
   - tabel
   - card
 Darkmode
+   - switch
+Color Themes
+   - contras
+Card Themes
+   - border
+   - border radius
+   - contras
+   - shadow
 
-
+isi dokumentasi
+==========================================================
 Flex
 ----------------------------------------------------------
 flexBox    : container flex hrizontal
@@ -119,14 +127,12 @@ yang sudah di sediakan
 lanjutkan ke grid dan flex belum sempurna serta base styles
 kemudian lanjutkan ke elemen yang akan siap di custom
 
-perhatikan tabel
+perhatikan tabel ???????????
 ----------------------------------------------------------
-
-
-
-
-
-
+- strip
+- border
+- template custom CSS - html
+- padding
 
 
 
