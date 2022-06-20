@@ -1,7 +1,25 @@
 /* DOKUMENTASI
 
-Daftar Isi:
-----------------------------------------------------------
+framework pageMe dibuat pada tanggal 6 juni 2022. 
+Pembuatan ini di tujukan untuk memudahkan dalam 
+pengembangan Web untuk beberapa project pribadi (Saiti mobile dan e-commerce)
+karena saya kesulitan dalam pengembangan dengan menggunakan framework yang ada 
+demi untuk slicing desain dari figma. maka saya mengembangkan sendiri framework yang customable. kekuatan dalam framework ini pada customablenya sedangkan fitur lainya 
+masih nimbrung pada W3school
+Fitur unggulan: ;
+- Base config css
+- Grid system
+- Layouting flex dan grid
+- Responsive
+- Darkmode
+- Themes ready
+- Variabel CSS
+- sebagian elemen
+- sebagian komponen
+- selebihnya silahkan merujuk pada W3School
+__________________________________________________________
+Daftar isi:
+
 _________________________________
 NAMA FITUR          |   BARIS KE
 ____________________|____________
@@ -24,23 +42,15 @@ Utility
   - list
 Elemen
   - Tombol
+  - 
   - tooltips
   - input
 Komponen
   - tabel
   - card
 Darkmode
-   - switch
-Color Themes
-   - contras
-Card Themes
-   - border
-   - border radius
-   - contras
-   - shadow
 
-isi dokumentasi
-==========================================================
+
 Flex
 ----------------------------------------------------------
 flexBox    : container flex hrizontal
@@ -127,51 +137,40 @@ yang sudah di sediakan
 lanjutkan ke grid dan flex belum sempurna serta base styles
 kemudian lanjutkan ke elemen yang akan siap di custom
 
-perhatikan tabel ???????????
+perhatikan tabel ?????
 ----------------------------------------------------------
-- strip
-- border
-- template custom CSS - html
-- padding
+
+ul button, input, select, textarea
+lanjutkan ke 
+- utilities masing2 framework 
+- mode theme
+- darkmode 
 
 
 
-Template Element pageMe
-copas saja pada index.CSS aplikasi
+
+
+
+TEMPLATE ELEMENT pageMe
 __________________________________________________________
-input text
-----------------------------------------------------------
-  input .pm {
-    border: none;
-    outline: none; 
-    width: 30px;
-    padding: 10px;
-    background-color: salmon;
-  }
+Copas Saja elemen bersangkutan di elemen 2 contoh dalam
+pageMe lalu matikan di pageMe gunakan di index.css anda
 
-button
-----------------------------------------------------------
-  button{
-    background-color: salmon;
-    color: white;
-    border: none;
-    padding: 8px 40px;
-    border-radius: 4px;
-    box-shadow: 2px 4px 10px -2px darksalmon;
-  }
-  button:hover{
-    background-color: darksalmon;
-    box-shadow: 2px 4px 12px -2px darksalmon;
-  }
-  button:active{
-    background-color: yellowgreen;
-  }
-
+  - input 
+    - text
+    - check
+    - radio
+    - select
+  - button
+  - 
+  
+TEMPLATE KOMPONEN pageMe
+__________________________________________________________
+tooltip
+accordion
 tabel
-----------------------------------------------------------
 
-
-
+START FRAMEWORK
 ========================================================== */
 
 /* Bulma Base */
@@ -341,8 +340,111 @@ table th {
   }
 }
 
-/* layout grid flex
+/* pageMe
+
+VARIABEL CSS
 ----------------------------------------------------------*/
+
+:root{
+  --abu1: whitesmoke ;
+  --abu2: #ececec;
+  --abu3: #e8e8e8;
+  --abu4: #cacaca;
+  
+  --hitam1: ;
+  --hitam2: ;
+  --hitam3: ;
+  --hitam4: ;
+  
+  --primary1t: ;
+  --primary2g: ;
+
+  --gradien1: ;
+
+  --radius1: ;
+  --shadow1: ;
+  --border1: ;
+  --MarPed1: ;
+  --fontSize1: ;
+  --1: ;
+}
+/* background --------- */
+.abu1b{ background-color: var(--abu1); }
+.abu2b{ background-color: var(--abu2); }
+.abu3b{ background-color: var(--abu3); }
+.abu4b{ background-color: var(--abu4); }
+
+.hitam1b{ background-color: var(--hitam1); }
+.hitam2b{ background-color: var(--hitam2); }
+.hitam3b{ background-color: var(--hitam3); }
+.hitam4b{ background-color: var(--hitam4); }
+
+.primary1bt{ background-color: var(--biru-t1); }
+.primary1bg{ background-color: var(--biru-g1); }
+
+/* warna ---------- */
+.abu1{ color: var(--abu1); }
+.abu2{ color: var(--abu2); }
+.abu3{ color: var(--abu3); }
+.abu4{ color: var(--abu4); }
+
+.hitam1{ color: var(--hitam1); }
+.hitam2{ color: var(--hitam2); }
+.hitam3{ color: var(--hitam3); }
+.hitam4{ color: var(--hitam4); }
+
+.primary-t1{ color: var(--biru-t1); }
+.primary-g1{ color: var(--biru-g1); }
+
+
+/*.abu2{color: darkred;}*/
+
+
+/* ELEMENT
+__________________________________________________________*/
+/* button */
+button.pm{
+  background-color: salmon;
+  color: white;
+  height: 40px;
+  padding: 0 20px  ;
+  border: none;
+  outline: none;
+  border-radius: 4px;
+  box-shadow: 2px 4px 10px -2px darksalmon;
+}
+button.pm:hover{
+  background-color: darksalmon;
+  box-shadow: 2px 4px 12px -2px darksalmon;
+}
+button.pm:active{
+  background-color: yellowgreen;
+}
+/* input text*/
+input.pm {
+  border: none;
+  outline: none; 
+  background-color: whitesmoke;
+  color: blue;
+  width: 200px;
+  height: 40px;
+  padding: 10px;
+  border: 1px solid salmon;
+  border-radius: 4px;
+}
+input.pm:focus{
+  border: 1px solid red;
+  background-color: ghostwhite;
+}
+
+/* KOMPONEN
+__________________________________________________________*/
+/* Tabel */
+
+
+
+/* LAYOUT
+__________________________________________________________*/
 .container:after,.container:before{
 	content:"";
 	display:table;
@@ -426,6 +528,7 @@ table th {
   .off10 {margin-left: 83.33%;}
   .off11 {margin-left: 91.66%;}
   .off12 {margin-left: 100%;}
+
 /* Media query
 ----------------------------------------------------------*/
 /* w3 */
@@ -459,7 +562,6 @@ table th {
 
 /* Larger than Desktop HD */
 @media (min-width: 1200px) {}
-
 
 /* Selesai
 =========================================================== */
