@@ -1,0 +1,20 @@
+BIKIN CHART DASAR versi 3.8.0
+------------------------------------------
+langkah dasarnya adalah ini:
+- ada template bawaan tinggal copas di documentasi, hal yang mendasar adalah
+  kita tinggal mengetahui bagaimana config dan setting dasar serta tweak tiap type chart
+- lima langkah dasar untuk bisa fokus ke config:
+
+1. sambungkan 	: <script src="https://cdnjs. ... //copas
+2. canvas		: <canvas id="myChart" width="200" height="200"></canvas>
+3. select DOM 	: const ctx = document.getElementById('myChart').getContext('2d');
+4. config		: {
+					type: 'bar',
+					data: {...},
+					options: {...}
+				  }
+5. instance		: const myChart = new Chart(ctx, config)
+
+CONFIG
+------------------------------------------
+config akan kita pelajari disini
