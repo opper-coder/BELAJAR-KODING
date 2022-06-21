@@ -23,5 +23,5 @@ config akan kita pelajari disini
 intinya dalam config ada3 kita pelajari 1 per 1
 - type:
 - data:
-- config:
+- option:
 
