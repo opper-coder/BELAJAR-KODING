@@ -24,4 +24,8 @@ intinya dalam config ada3 kita pelajari 1 per 1
 - type:
 - data:
 - option:
-
+GENERAL -----
+- accessible 	: untuk screen reader tidak bisa di akses oleh user 
+- color		: untuk background, color, border. bisa pake nama, HEX, rgba, HSL, gradien dan Pattern
+	- di tulis dalam data:{datasheets: backgroundColor: red} // ada template jangan kuatir
+- font		: 
