@@ -1,0 +1,55 @@
+CHART BELAJAR
+semua tulis dalam bentuk object ya...
+kecuali fonts default
+
+BAR
+------------------------
+- fonts default
+  <> Chart.defaults.font.size = 20; [family,style,size,weight,lineHeight,color]
+  <> Chart.defaults.color = "green";
+  <> Chart.defaults.font.family = "serif";
+- backgroundColor - color - borderColor 
+  <> Chart.defaults.backgroundColor="red" {backgroundColor:"red"}
+- bar Thickness
+  <>  data.datasets[index] (0-1)
+      categoryPercentage: 0.8,
+      barPercentage: 0.4,
+- hilangkan legend
+  <> options.plugins.legend.display:false{}
+- hilangkan grid xy
+  <> options.scales.x.grid.display:false{}
+  <> options.scales.y.grid.display:false{}
+- hilangkan xy ticks
+  <> options.scales.y.ticks:{display:false},grid:{drawTicks: false}
+- dua bar dalam 1 grup
+  <> datasets:[ {data:[]}, {data:[]} ] ada di w3 chart
+- tooltips external (html)
+  <> ada di samples ?????????
+- custom annotation line on hover
+  <> ada di youtube ?????????
+- horizontal bar 
+  - ada di w3s ?????????
+- gradient
+  <> ?????????
+LINE
+-----------------------
+- fill
+
+- curve
+- shadow
+
+PIE
+-----------------------
+- add text tengah 
+- ketebalan
+- rounded
+
+DOUGHNUT
+-----------------------
+- add text tengah 
+
+GENERAL
+-----------------------
+
+- klik pada tanggal interactive
+- klik pilihan tombol interactive
