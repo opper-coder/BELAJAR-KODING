@@ -69,7 +69,13 @@ GRID di PARENT
 - bisa membentuk keduanya kolom dan baris seperti tabel
 - bisa bersarang bisa parent berarti bisa bersarang
 - lalu kita atur sedemikian rupa:
-
+---------------------------------------------------------------------
+ada 3 kegunaan
+sebelum buat ketiganya buat dulu templat jumlah kolom misalnya 4 kolom
+1. dasar ambil porsi dasar dengan : 1fr
+2. porsi dengan peta : 1/3
+3. 
+---------------------------------------------------------------------
 UTILITY
 ---------------------------------------------------------------------
 	{ display: grid; }		// aktifkan grid
@@ -106,10 +112,10 @@ berlaku bagi semua item
 	- tidak harus urut
 	- buat dulu garis kolom hitung mulai 1 bukan 0 di mulai garis pertama dari tepi kiri dan atas
 	- kurang jelas lihat contoh grid4
-	pada parent: 
-		grid-template-columns: repeat(1fr 1fr 1fr 1fr);
-	pada child:
-		.satu{
+	  pada parent: 
+	grid-template-columns: repeat(1fr 1fr 1fr 1fr);	
+	  pada child:
+	.satu{
             grid-column: 1/3;		// 1 sampai 3 garis gridlines ke kanan (sesuai garis colom repeat)
             grid-row: 1/3;		// 1 sampai 3 ke bawah
         }
