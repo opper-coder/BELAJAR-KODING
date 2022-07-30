@@ -45,7 +45,7 @@ perataan vertikal dalam baris
 		{ margin-left: auto; }		// top, bottom, right. alternatifnya: >
 		{ align-self: flex-end }  	// ini berlaku
 _____________________________________________________________________
-
+GRID DI BAWAH -->
 
 
 
@@ -73,8 +73,8 @@ GRID di PARENT
 ada 3 kegunaan
 sebelum buat ketiganya buat dulu templat jumlah kolom misalnya 4 kolom
 1. dasar ambil porsi dasar dengan : 1fr
-2. porsi dengan peta : 1/3
-3. 
+2. porsi dengan peta : 1/3 bisa dibuat saling bertumpuk overflow
+3. matrix : buatkan peta 2d lalu terapkan
 ---------------------------------------------------------------------
 UTILITY
 ---------------------------------------------------------------------
