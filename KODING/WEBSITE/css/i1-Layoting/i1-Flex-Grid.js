@@ -13,6 +13,14 @@ FLEX di PARENT
 - float: right tidak berlaku pada child gantinya margin-left:auto
 - float: pada parent akan merusak kelebaran auto/dafault
 - min-width ????? sepertinya ada isyu cari pada latihan pertama
+---------------------------------------------------------------------
+highlight:
+1. kolom dan baris
+2. wrap nowrap
+3. alignment
+   a. child action
+4. order (mungkin ada karena tidak termasuk di dok ini)
+---------------------------------------------------------------------
 UTILITY
 ---------------------------------------------------------------------
 	{ display: flex; } 
@@ -70,11 +78,16 @@ GRID di PARENT
 - bisa bersarang bisa parent berarti bisa bersarang
 - lalu kita atur sedemikian rupa:
 ---------------------------------------------------------------------
-ada 3 kegunaan
+highlight:
 sebelum buat ketiganya buat dulu templat jumlah kolom misalnya 4 kolom
 1. dasar ambil porsi dasar dengan : 1fr
 2. porsi dengan peta : 1/3 bisa dibuat saling bertumpuk overflow
 3. matrix : buatkan peta 2d lalu terapkan
+4. order(mungkin ada karena tidak termasuk di dok ini)
+---------------------------------------------------------------------
+Responsive:
+bikin dua atau tiga layout dan tempatkan masing2 pada medianya
+pakai dua atau tiga @media 
 ---------------------------------------------------------------------
 UTILITY
 ---------------------------------------------------------------------
