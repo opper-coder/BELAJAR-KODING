@@ -5,3 +5,10 @@ super alt <>      = pindah aplikasi
 super shift <>    = grab ke workspace
 super + E         = filemanager
 ctrl + alt + t    = terminal
+
+XAMPP
+
+sudo /opt/lampp/lampp start
+sudo /opt/lampp/lampp stop
+
+localhost atau 
