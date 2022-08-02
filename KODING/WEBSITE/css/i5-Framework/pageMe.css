@@ -440,7 +440,6 @@ input.pm:focus{
 /* KOMPONEN */
 /* Modal copas HTMLnya di bawah
 __________________________________________________________*/
-
 .modal {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
@@ -463,7 +462,6 @@ __________________________________________________________*/
 .modalShow {
   display: block;
 }
-
 /*  
 <button onclick="document.getElementById('isimodal').classList.toggle('modalShow');">Modal</button>
 <div id="isimodal" class="modal">
@@ -474,8 +472,7 @@ __________________________________________________________*/
 </div>
 */
 __________________________________________________________*/
-/* Tabel class = tabel1*/
-
+/* Tabel class = tabel1 tersedia HTML nya dibawah ini */
 .tabel1 {
     /*font-family: sans-serif;*/
     color: #444;
@@ -502,6 +499,22 @@ __________________________________________________________*/
 .tabel1 tr:nth-child(even) {
     background-color: #f2f2f2;
 }
+/*
+<table class="tabel1">
+   <tr>
+      <th>Quesioner</th>
+      <th>Nilai</th>
+   </tr>
+   <tr>
+      <td>Nama pemohon</td>
+      <td>: aqil</td>
+   </tr>
+   <tr>
+      <td>Layanan</td>
+      <td>: Surat Keterangan Usaha</td>
+   </tr>
+</table>
+*/
 
 /* LAYOUT
 __________________________________________________________*/
