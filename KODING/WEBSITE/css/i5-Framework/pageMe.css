@@ -479,7 +479,7 @@ __________________________________________________________*/
 /*  
 1. bikin kotak modal dg "id='sesuaikan saja'" untuk bisa di trigger
 2. bikin isi modal dengan gaya apapun -> lalu bungkus dalam container class modal-content
-3. tombol bikin trigger untuk "id" = pilih berapapun dengan target id yang di maksud
+3. tombol bikin trigger untuk "id" = pilih berapapun dengan target id yang di maksud (boleh jg pake link <a>)
 ----------------
 <button onclick="document.getElementById('isiModal').classList.toggle('modalShow');">Modal</button>
 <div id="isiModal" class="modal">
