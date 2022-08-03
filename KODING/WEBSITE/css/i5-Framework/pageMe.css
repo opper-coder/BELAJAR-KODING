@@ -462,12 +462,26 @@ __________________________________________________________*/
 .modalShow {
   display: block;
 }
+.xClose{
+  border: none;
+  outline: none;
+  background-color: red;
+  color: white;
+  font-weight: bold;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  top: -10px;
+  right: -10px;
+}
 /*  
-<button onclick="document.getElementById('isimodal').classList.toggle('modalShow');">Modal</button>
-<div id="isimodal" class="modal">
+<button onclick="document.getElementById('isiModal').classList.toggle('modalShow');">Modal</button>
+<div id="isiModal" class="modal">
   <div class="modal-content">
   halo modal
-  <button onclick="document.getElementById('isimodal').classList.toggle('modalShow');">Keluar</button>
+  <button onclick="document.getElementById('isiModal').classList.toggle('modalShow');" class="xClose">X</button>
+  <button onclick="document.getElementById('isiModal').classList.toggle('modalShow');">Keluar</button>
   </div>
 </div>
 */
