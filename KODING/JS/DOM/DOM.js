@@ -102,7 +102,7 @@ ada keunggulan dan karakter nya masing2
 contoh event handler:
 - event Handler
  	<p onClick='ubahwarna()'>	// di HTML attribut: onClick="funAksi()" dan di js bikin fungsi aksinya 
- 	p2.onclick = ubahwarna;		// di javascript saja: seleksi.onclick = funAksi <tanpa kurung supaya tidak tertrigger>
+ 	p2.onclick = ubahwarna;		// di javascript saja: seleksi.onclick = funAksi <tanpa kurung supaya tidak langsung tertrigger sendiri>
  					   sedang funAksi nya buat juga di atas atau di bawahnya terserah
 ----------------------------------------
 - addEventListener()	
