@@ -17,5 +17,21 @@ $pdf->Output();                       //
 ?>
 
 ----------------------------------------------------------------------
+Keterangan singkat
+----------------------------------------------------------------------
+
+fpdf ini memiliki kemampuan text editor sederhana seperti:
+mengatur <p> paragraf, cell, font, footer, header, page setup, link, table, gambar 
+pada tutorial yang lengkap ada di dokumentasinnya disini hayan sebuah contoh sederhana 
+untuk keperkluan surat saja
 
 ----------------------------------------------------------------------
+fitur umum
+----------------------------------------------------------------------
+bikin cell atau tag <p>
+
+Cell(w [, float h [, string txt [, mixed border [, int ln [, string align [, boolean fill [, mixed link]]]]]]]);
+cell(lebar, tinggi, isi text, border, ln, align, fill, link);
+$pdf->Cell(20,10,'Title',1,1,'C');
+
+
