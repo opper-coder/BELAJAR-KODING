@@ -1,0 +1,21 @@
+fpdf adalah librari asli PHP sebenarnya sudah ada tapi ini adalah librari
+yang di susun dengan memiliki keunggulan di antaranya pagebreak ukuran font dll lihat dokumentasi
+yang jelas ini lebih praktis ok silahkan menikmati
+----------------------------------------------------------------------
+lets start
+----------------------------------------------------------------------
+templat halaman awal
+
+<?php
+require('fpdf.php');                  // import url sesuaikan dg alamat librari
+
+$pdf = new FPDF('P','mm','A4');       // panggil fpdf : P/L(portrait,lanscape), satuan(mm,pt,cm,in)A3,A4,A5,Letter,Legal 
+$pdf->AddPage();                      // bikin halaman parameter kosong
+$pdf->SetFont('Arial','B',16);        // (arial sansserrif sesuaikan dg PC), '','B','I','U', 16 point
+$pdf->Cell(40,10,'Hello World!');     // sama dengan tag <p>, start point px, isi,  
+$pdf->Output();                       // 
+?>
+
+----------------------------------------------------------------------
+
+----------------------------------------------------------------------
