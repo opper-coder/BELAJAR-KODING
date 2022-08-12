@@ -73,7 +73,7 @@ bisa pakai salah satu: mac, ip, remote
   1. login via MAC > user:admin, pwd: ""
   2. tool > remove config 
 BIKIN INTERFACE
-  interface ada beberapa type: ether, bridge, vlan, hotspot
+interface ada beberapa type: ether, bridge, vlan, hotspot
   3. buka bridge > add > nama : sesuai konsep > apply OK > 
   4. masukan port pada bridge pada bridge > tab port > pilih port yang akan di gabungkan dlm bridge 
 IP ISP 
@@ -93,19 +93,19 @@ SERVER
   9. IP > DHCP Server > tombol DHCP setup > interface : 'pilih LAN keluar' > next2 > Apply-Ok
 QUEUE
   10. Tekan queues > pada queue list klik add > nama biarkan > target IP laptop tujuan
-     > 192.168.1.254  (ip laptop tergenerate diatas) isi max dan min limit. Lebih lanjut bab QoS
+      > 192.168.1.254  (ip laptop tergenerate diatas) isi max dan min limit. Lebih lanjut bab QoS
 SECURITY
-	  - ganti nama: sistem > identity > nama nya ROUTER-Gonggong 
-	  - ganti password: sistem > user > bikin user baru klik + > nama aqil > group full > password isikan >
-	  - IP > services > ada list > disable dan sisakan 'www, winbox, ssh'
-	  - tapi berikan akses masuk pada ip Tertentu:
-         - dklik > available from isikan ip target 
-	  - Dan tambahkan ip local private nya juga 192. 168. 1. 0/24 jangan di kosongkan nanti malah di perboleh kan semua jadinya
-	  - Terus www nya juga edit ke Ip local yang sama > lalu port 80 kita ubah jadi 8080 >
-        Nanti kalau remote tinggal www.ip:8080  
-      - Tips yang ini jangan dilakukan terlalu cepat nanti tidak bisa connect sendiri
-        Langkah amanya tiap perubahan ping dst
-        Dan paling tidak setting port2 yang terbuka untuk ip privatenya supaya kita bisa remote           
+   - ganti nama: sistem > identity > nama nya ROUTER-Gonggong 
+   - ganti password: sistem > user > bikin user baru klik + > nama aqil > group full > password isikan >
+   - IP > services > ada list > disable dan sisakan 'www, winbox, ssh'
+   - tapi berikan akses masuk pada ip Tertentu:
+   - dklik > available from isikan ip target 
+   - Dan tambahkan ip local private nya juga 192. 168. 1. 0/24 jangan di kosongkan nanti malah di perboleh kan semua jadinya
+   - Terus www nya juga edit ke Ip local yang sama > lalu port 80 kita ubah jadi 8080 >
+     Nanti kalau remote tinggal www.ip:8080  
+   - Tips yang ini jangan dilakukan terlalu cepat nanti tidak bisa connect sendiri
+     Langkah amanya tiap perubahan ping dst
+     Dan paling tidak setting port2 yang terbuka untuk ip privatenya supaya kita bisa remote           
 ========================================================================================================
 RINGKASAN PRAKTEK 
 1.BRIDGE
