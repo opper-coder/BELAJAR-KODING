@@ -4,7 +4,7 @@ CONFIG DASAR PADA INTERFACE
 --------------------------------------------------------------------------------------
 - jika config dasar sudah di lakukan maka skip langkah ini
 ---------
-- ISP ,dapatkan internet dari ISP:
+- ISP, dapatkan internet dari ISP:
 - IP > 
     1. DHCP client > add > interface ether 1 > centang DNS dan NTP > default route: yes > Apply - OK > bound
     2. butikan: terminal ping: 8.8.8.8, DNS, ping google.com
@@ -27,22 +27,15 @@ BUAT VLAN
     1. name : "VLAN-10"                      // nama dan angka sesuaikan ID 
     2. vlan ID : 10                          // 10 samakan dg nama engkja terserah 10,11,12 atau 100 200 300
     3. loop protect : default(opt : on)      // supaya selalu on saja silahkan
-    4. interface : ether2                    // pilih interface "pilih port, bridge" jika banyak bikin vlan tumpuk di ether ini saja
+    4. interface : ether2                    // pilih interface "pilih port, bridge" jika banyak bikin vlan tumpuk di ether/bridge ini saja
     5. apply > Ok
-        - kalau mau kasih comment            // optional
-======================================================================================
-DESKRIPSI
-- fungsi utama vlan adalah : membawa 2> alamat(2ip, 2service) pada 1 interface(port, bridge)
-- intinya hanya pada 1 langkah ini saja (dalam garis tebal) selebihnya hanya config dasar dibawah 
-- vlan bisa di kombinasikan pada BRIDGE kayakknya - tinggal pilih BRIDGE pada saat bikin interface VLAN
-======================================================================================
+        - kalau mau kasih comment silahkan   // optional
+    6. buatkan juga untuk VLAN-20 nya di ether atau bridge yang sama dg interface VLAN-10
+----------
 IP ADDRESS VLAN
-vlan ini dibuat 2 buah yang akan menjadi server yang berbeda ke bawah maka kita harus buatkan IP gateway (pakai slash)
-- tips pakai slash: buat satu IP pada port atau bridge nganggur untuk dihapus lagi nantinya > saat bikin IP pakai slah 22 miasalnya
-- lalu berikutnya buatkan DHCP server pada IP port tersebut > pada saat next2 ada rentang yang di berikan akan terlihat silahkan coba
-pada masing2 vlan 10.10.10.10/22 dan 20.20.20.20/24 misalnya
-    1. IP > Adresses > add > address :10.10.10.10/22  > interace : VLAN-10 // interface dalam kasus ini pilih vlan-10
-    2. bikin IP untuk vlan berikutnya juga
+kasih IP gateway pada kedua vlan 
+    1. IP > Adresses > add > address :10.10.10.10/22  > interace : VLAN-10
+       misalnya : IP VLAN-10 : 10.10.10.10/22 dan IP VLAN-20 : 20.20.20.20/24
 ---------
 DHCP SERVER
 - setiap interface jika mau di bagikan kebawah maka buatkan IP server pada Interface bersangkutan (ETHER BRIDGE VLAN)
@@ -50,45 +43,38 @@ DHCP SERVER
     1. IP > DHCP Server > DHCP > tombol DHCP Setup > interace : VLAN-10 > next2 // dalam kasus ini pilih VLAN10 (port, bridge, vlan)
         - terpenting perhatikan IP address ya (biasanya sih otomatis)
 ______________________________________________________________________________________
+--------------------------------------------------------------------------------------
 TERIMA VLAN
-- cara kirim jaringan 1 port dengan 2 IP sudah di lakukan di atas (kirim VLAN)
-- sekarang bagaimana menerima 1 port dengan 2 IP (terima VLAN)
-- karena yang kita terima 1 port akan di bagi dengan 2 IP maka kita membutuh kan alat SWITCH MANAGEABLE 
-  atau mikrotik yang memiliki chip switch manajebel
-- sekarang kita gunakan microtik saja:
-- pada mikrotik ke 2 ini pastikan sudah di hapus setting defaultnya 
-      - kita hanya mengatur 'bridge' dan 'switch'
-      - karena kita hanya butuhkan sebagai switch maka kita bridge kan dulu 2 port 
-      - BRIDGE : 
-        - interface > BRIDGE > add > interface bridge1 misalnya > port 1 >
-        - buatkan juga untuk bridge 2 dan 3 
-          (karena kita butuhkan 3 port dalam bridge 1 untuk masuk 2 untuk keluar) 
-      - SWITCH:
-        - SWITCH > tab vlan > add
-            - switch : biarkan
-            - VLAN ID : 10 (Sesuaikan dengan VLAN ID pengirim (diatas))
-            - port : ether 1 biarkan sbg trunc lalu tambahkan ether2 dengan klik panah ke bawah (sebagai access)
-                1 port "mode trunc" 2 dan port "mode access"
-            - lalu buatkan juga port access pada port3 seperti port 2 barusan dan vlan ID 20
-        - tab PORT:
-            - setting port1 > double klik pd ether1 
-                - VLAN mode : secure
-                - VLAN header : add missing
-            - setting port2 > double klik pd ether2
-                - VLAN mode : secure
-                - VLAN header : always strip
-                - VLAN ID : 10 (Sesuaikan dengan VLAN ID pengirim (diatas))  
-            - setting port3 > double klik pd ether2
-                - VLAN mode : secure
-                - VLAN header : always strip
-                - VLAN ID : 20 (Sesuaikan dengan VLAN ID pengirim (diatas))  
----------
-- CEK IP
-    - untuk memastikan kita cek IP yang dikirimkan dari server
-    - cara nya
-        - sambungkan LAN laptop pd ether yang ingin kita lihat IP nya 
-        - buka terminal :> ipconfir > baca info yang di berikan 
-        - jika sama dengan IP yang dikirimkan sesuai dg ip port vlan maka berhasil
-            
-______________________________________________________________________________________
+--------------------------------------------------------------------------------------
+pada vlan kita kenal dengan type port:
+port/intervace VLAN TRUNC  = port yang mebawa multi servevice
+port/intervace VLAN ACCESS = port membawa single service 
 
+- pada OS versi 6 kebawah tidak suport hardware-offload oleh karena itu gunakan 6> keatas
+- sebelum melakukan pembuatan vlan kita harus tahu dulu apakah RB kita terdapat CHIP switch
+    - switch > type dan lihat vlan table kemampuanya di www.wiki.mikrotik.com > tiap RB chip nya berbeda2
+    - port > semua port tergabung dalam "switch1" > sehingga bisa di lewatkan access oleh chip ke swith tersebut
+      "switch1" di gunakan untuk setting vlan access nantinya
+    - kalau v6 kebawah ada "master port", v6 keatas di gantikan dengan "hardware ofload"
+-------------------------
+- BIKIN BRIDGE
+    1. bridge > add > name.
+    2. tab port > add > pilih port dari trunc ether-1 untuk masuk 2 dan 3 untuk keluar dan bridge yang di buat > 
+       centang "hardware ofload" (sebagai ganti dari master port di v6 kebawah)
+- BIKIN VLAN ACCESS(memecah vlan keluar)
+    1. Switch > tab VLAN > add 
+       > swich: switch1 > vlan ID: 10 (sesuaikan panggil setingan yg ada di server)
+       > buatkan juga vlan ID: 20 
+       > port trunc: port: ether1 
+       > port access: > tambahkan port lagi (panah kebawah):  port:ether2
+- VLAN MODE
+    TRUNC:
+        switch > tab port > dclick ether1(vlan trunc) > VLAN MODE : secure > vlan Header: "add if missing" 
+    ACCESS:
+        switch > tab port > dclick ether2 dan 3 (vlan access) > VLAN MODE : secure > vlan Header: "always strip" > VLAN ID : 10  
+        buatkan juga pada vlan2
+- UJI
+    - tancapkan laptop di ether 2 atau 3 di mikrotik switch
+    - lihat sambungan ether gunakan otomatic dhcp/obtain > maka kita akan dapatkan IP dari server sesuai range yang di berikan
+    - coba akses internet
+-------------------------
