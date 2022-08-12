@@ -53,20 +53,19 @@ port/intervace VLAN ACCESS = port yg membawa single service
   karena ether 123 akan di pakai vlan - makanya pastikan reset dulu routernya
 - BIKIN BRIDGE
     1. bridge > add > name: bridge1-VLAN (misal)
-    2. tab port > add > pilih port dari trunc ether-1 untuk masuk 2 dan 3 untuk vlan-10 dan vlan-20 sbg vlan access keluar > 
-       centang "hardware ofload" (sebagai ganti dari master port di v6 kebawah)
-- BIKIN VLAN ACCESS(memecah vlan keluar)
+    2. tab port > add > masukan ether-1, 2 dan 3 > centang "hardware ofload" (sebagai ganti dari master port di v6 kebawah)
+- VLAN ACCESS(memecah vlan keluar)
     1. Switch > tab VLAN > add 
        > swich: switch1 > vlan ID: 10 (sesuaikan panggil setingan yg ada di server)
        > port: ether1                                           // sebagai trunc (sumber vlan)
        > tambahkan port lagi (panah kebawah):  port: ether2     // sebagai port access
     2. buatkan juga vlan ID: 20 
-- VLAN MODE
+- SWITCH / vlan mode
     TRUNC:
         switch > tab port > dclick ether1(vlan trunc) > VLAN MODE : secure > vlan Header: "add if missing" 
     ACCESS:
         switch > tab port > dclick ether2 dan 3 (vlan access) > VLAN MODE : secure > vlan Header: "always strip" > VLAN ID : 10  
-        buatkan juga pada vlan2
+        buatkan juga pada ether3
 - UJI
     - tancapkan laptop di ether 2 atau 3 di mikrotik switch
     - lihat sambungan ether gunakan otomatic dhcp/obtain > maka kita akan dapatkan IP dari server sesuai range yang di berikan
