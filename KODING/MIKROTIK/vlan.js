@@ -1,6 +1,11 @@
-RINGAKASAN        
+RINGAKASAN
+vlan adalah port secara virtual yang dapat di kirim sacara banyak dalam satu port fisik(satu kabel)
+kemudian di terima dan di pecah kembali menjadi banyak fisik port
+kita akan config 2 mikrotik
+1 untuk server vlan (mikrotik biasa)
+2 untuk menerima vlan (mikrotik sebagai switch> yaitu yang memiliki chip switch manageable)
 --------------------------------------------------------------------------------------
-CONFIG DASAR PADA INTERFACE
+CONFIG DASAR PADA INTERFACE (mikrotik pertama)
 jika config dasar sudah di lakukan maka skip langkah ini
 ---------
 ISP
@@ -35,7 +40,7 @@ DHCP SERVER
         - terpenting perhatikan IP address ya (biasanya sih otomatis)
         - buatkan juga untuk server lainya (VLAN-20): boleh DHCP server, hotspot, atau manual
 ______________________________________________________________________________________
-TERIMA VLAN
+TERIMA VLAN (mikrotik kedua)
 --------------------------------------------------------------------------------------
 pada vlan kita kenal dengan type port:
 port/intervace VLAN TRUNC  = port yg membawa multi service
