@@ -16,23 +16,22 @@ agar bisa di bagikan sekaligus bisa akses internet untuk client maka kita kasih 
        IP > DNS > centang 'allow remote request'
 --------------------------------------------------------------------------------------
 BUAT VLAN
-akan kita buat distribusi ke bawah dg 2 vlan: vlan-10 dan vlan-20
+akan kita buat distribusi ke bawah dg 2 vlan: VLAN-10 dan VLAN-20
 --------------------------------------------------------------------------------------
 - interface > add > VLAN > 
-    1. name : "VLAN-10"                      // nama dan angka sesuaikan vlan-ID 
-    2. vlan ID : 10                          // 10 samakan dg nama engkja terserah 10,11,12 atau 100 200 300
-    3. interface : ether2                    // INTInya berada disini. interface(ether2 atau bridge misalnya) di gunakan untuk beberapa vlan yang akan di buat
+    1. name: "VLAN-10"                      // nama dan angka sesuaikan vlan-ID 
+    2. vlan ID: 10                          // 10 samakan dg nama engkja terserah 10,11,12 atau 100 200 300
+    3. interface: ether2                    // INTInya berada disini. interface(ether2 atau bridge misalnya) di gunakan untuk beberapa vlan yang akan di buat
     -  apply > Ok
     -  buatkan juga untuk VLAN-20 nya di ether/bridge yang sama(ether2)
-    -  loop protect : default(opt : on)      // supaya selalu on saja silahkan (di penjelasan lain kayaknya tidak usah)
+    -  loop protect: default(opt : on)      // supaya selalu on saja silahkan (di penjelasan lain kayaknya tidak usah)
 ----------
 IP ADDRESS VLAN
-kasih IP gateway pada kedua vlan 
-    1. IP > Adresses > add > address :10.10.10.10/22  > interace : VLAN-10
-       misalnya : IP vlan-10 : 10.10.10.10/22 dan IP vlan-20 : 20.20.20.20/24
+kasih IP gateway pada kedua vlan: 10.10.10.0/22 dan 20.20.20.0/24
+    1. IP > Adresses > add > address :10.10.10.0/22  > interace : VLAN-10        // jangan salah pada interface
 ---------
 DHCP SERVER
-    1. IP > DHCP Server > DHCP > tombol DHCP Setup > interace : VLAN-10 > next2 // dalam kasus ini pilih vlan10 (ether,bridge coba saja)
+    1. IP > DHCP Server > DHCP > tombol DHCP Setup > interface : VLAN-10 > next2 // dalam kasus ini pilih vlan-10
         - terpenting perhatikan IP address ya (biasanya sih otomatis)
         - buatkan juga untuk server lainya: boleh DHCP server, hotspot, atau manual
 ______________________________________________________________________________________
@@ -44,7 +43,7 @@ port/intervace VLAN ACCESS = port yg membawa single service
 
 - pada OS versi 6 kebawah tidak suport hardware-offload oleh karena itu gunakan v6 keatas
 - sebelum melakukan pembuatan vlan kita harus tahu dulu apakah RB kita terdapat CHIP switch nya
-    - switch > type dan lihat vlan list. kemampuanya di www.wiki.mikrotik.com > tiap RB chip nya berbeda2
+    - switch > type dan lihat vlan list. kemampuanya di www.wiki.mikrotik.com. tiap RB chip nya berbeda2, salah satu kemampuanya "table vlan"
     - port > semua port tergabung dalam "switch1" > sehingga bisa di lewatkan access oleh chip ke "switch1" tersebut
       "switch1" di gunakan untuk setting vlan access dan trunc nantinya
     - kalau v6 kebawah ada "master port", v6 keatas di gantikan dengan "hardware offload"
