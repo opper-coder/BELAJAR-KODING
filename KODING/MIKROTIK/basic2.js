@@ -61,13 +61,12 @@ KONFIGURASI WINBOX
   1. login winbox 
   2. reset mikrotik 
   3. bikin bridge dengan nama WAN, LAN, HOTSPOT, RUMAH
-  4. bikin client (dapatkan IP)
-  5. bikin IP LAN
-  6. bikin server (LAN)
-  7. ambil internet dr atas
-  8. kirim internet ke bawah
-  9. limiter
-  10. Sekurity
+  4. ambil internet dr atas bikin client (dapatkan IP)
+  5. kirim internet ke bawah (NAT masquerade)
+  6. bikin IP LAN
+  7. bikin server (LAN)
+  8. limiter
+  9. Sekurity
 ========================================================================================================	
 LOGIN	
 bisa pakai salah satu: mac, ip, remote
