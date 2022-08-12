@@ -139,6 +139,11 @@ RINGKASAN PRAKTEK
 --------- SECURITY
 9. ganti identity
 10. user admin password    
+--------------------------------------------------------------------------------------------------------
+tips IP gateway atau IP range untuk server slash 24, 22, 36 dst cari di internet
+- tips pakai slash: buat satu IP pada port atau bridge nganggur untuk dihapus lagi nantinya > saat bikin IP pakai slah 22 miasalnya
+- lalu berikutnya buatkan DHCP server pada IP port tersebut > pada saat next2 ada rentang yang di berikan akan terlihat silahkan coba
+- kalau sudah di temukan maka hapus kembali settingan tersebut
 =========================================================================================================
 PERBAIKI
   1. login dengan MAC > user:admin, pwd: "" > bisa remote, bisa 
