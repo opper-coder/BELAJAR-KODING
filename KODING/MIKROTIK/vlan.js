@@ -50,7 +50,7 @@ port/intervace VLAN ACCESS = port yg membawa single service
     - hal ini menghaaruskan kita bikin bridge yang ada hardware offloadnya agar bridge bisa di bagi ke hardware ether 
 -------------------------
 - BIKIN BRIDGE
-    1. bridge > add > name: bridge1-VLAN (misal)
+    1. bridge > add > name: bridge1-VLAN-TRUNC (misal)
     2. tab port > add > pilih port dari trunc ether-1 untuk masuk 2 dan 3 untuk vlan-10 dan vlan-20 sbg vlan access keluar > 
        centang "hardware ofload" (sebagai ganti dari master port di v6 kebawah)
 - BIKIN VLAN ACCESS(memecah vlan keluar)
