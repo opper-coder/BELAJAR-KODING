@@ -33,7 +33,7 @@ kasih IP gateway pada kedua vlan: 10.10.10.0/22 dan 20.20.20.0/24
 DHCP SERVER
     1. IP > DHCP Server > DHCP > tombol DHCP Setup > interface : VLAN-10 > next2 // dalam kasus ini pilih vlan-10
         - terpenting perhatikan IP address ya (biasanya sih otomatis)
-        - buatkan juga untuk server lainya: boleh DHCP server, hotspot, atau manual
+        - buatkan juga untuk server lainya (VLAN-20): boleh DHCP server, hotspot, atau manual
 ______________________________________________________________________________________
 TERIMA VLAN
 --------------------------------------------------------------------------------------
@@ -49,8 +49,10 @@ port/intervace VLAN ACCESS = port yg membawa single service
     - kalau v6 kebawah ada "master port", v6 keatas di gantikan dengan "hardware offload"
     - hal ini menghaaruskan kita bikin bridge yang ada hardware offloadnya agar bridge bisa di bagi ke hardware ether 
 -------------------------
+- hubungkan laptop di mikrotik penerima (sbg switch) di ether4 misalnya untuk remote 
+  karena ether 123 akan di pakai vlan - makanya pastikan reset dulu routernya
 - BIKIN BRIDGE
-    1. bridge > add > name: bridge1-VLAN-TRUNC (misal)
+    1. bridge > add > name: bridge1-VLAN (misal)
     2. tab port > add > pilih port dari trunc ether-1 untuk masuk 2 dan 3 untuk vlan-10 dan vlan-20 sbg vlan access keluar > 
        centang "hardware ofload" (sebagai ganti dari master port di v6 kebawah)
 - BIKIN VLAN ACCESS(memecah vlan keluar)
