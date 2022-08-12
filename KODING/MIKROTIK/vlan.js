@@ -20,7 +20,7 @@ BUAT VLAN
 - interface > add > VLAN > 
     1. name : "VLAN-10"                      // nama dan angka sesuaikan vlan-ID 
     2. vlan ID : 10                          // 10 samakan dg nama engkja terserah 10,11,12 atau 100 200 300
-    3. interface : ether2                    // pilih interface "port/bridge" jika banyak bikin vlan nantinya, tumpuk di ether/bridge ini saja
+    3. interface : ether2                    // INTInya berada disini. interface(ether2 atau bridge misalnya) di gunakan untuk beberapa vlan yang akan di buat
     -  apply > Ok
     -  buatkan juga untuk VLAN-20 nya di ether/bridge yang sama dg interface VLAN-10 td
     -  loop protect : default(opt : on)      // supaya selalu on saja silahkan (di penjelasan lain kayaknya tidak usah)
@@ -28,11 +28,12 @@ BUAT VLAN
 IP ADDRESS VLAN
 kasih IP gateway pada kedua vlan 
     1. IP > Adresses > add > address :10.10.10.10/22  > interace : VLAN-10
-       misalnya : IP VLAN-10 : 10.10.10.10/22 dan IP VLAN-20 : 20.20.20.20/24
+       misalnya : IP vlan-10 : 10.10.10.10/22 dan IP vlan-20 : 20.20.20.20/24
 ---------
 DHCP SERVER
-    1. IP > DHCP Server > DHCP > tombol DHCP Setup > interace : VLAN-10 > next2 // dalam kasus ini pilih VLAN10 (port, bridge, vlan)
+    1. IP > DHCP Server > DHCP > tombol DHCP Setup > interace : VLAN-10 > next2 // dalam kasus ini pilih vlan10 (ether,bridge coba saja)
         - terpenting perhatikan IP address ya (biasanya sih otomatis)
+        - buatkan juga untuk server lainya: boleh DHCP server, hotspot, atau manual
 ______________________________________________________________________________________
 TERIMA VLAN
 --------------------------------------------------------------------------------------
