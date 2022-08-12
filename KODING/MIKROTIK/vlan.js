@@ -10,8 +10,8 @@ ISP
 NAT MASQUERADE dan DNS:
 agar bisa di bagikan sekaligus bisa akses internet untuk client maka kita kasih config dasar padanya
     1. NAT:
-       IP > firewall > tab NAT > pilih list mungkin ini port1 > tab general > chain : srcnat > out Interface : 'ether-1(ISP)' 
-            tab action > action : masquerade
+       IP > firewall > tab NAT > pilih list mungkin ini port1 > tab general > chain: srcnat > out Interface: 'ether-1(ISP)' 
+            tab action > action: masquerade
     2. DNS:
        IP > DNS > centang 'allow remote request'
 --------------------------------------------------------------------------------------
@@ -47,17 +47,18 @@ port/intervace VLAN ACCESS = port yg membawa single service
     - port > semua port tergabung dalam "switch1" > sehingga bisa di lewatkan access oleh chip ke "switch1" tersebut
       "switch1" di gunakan untuk setting vlan access dan trunc nantinya
     - kalau v6 kebawah ada "master port", v6 keatas di gantikan dengan "hardware offload"
+    - hal ini menghaaruskan kita bikin bridge yang ada hardware offloadnya agar bridge bisa di bagi ke hardware ether 
 -------------------------
 - BIKIN BRIDGE
     1. bridge > add > name: bridge1-VLAN (misal)
-    2. tab port > add > pilih port dari trunc ether-1 untuk masuk 2 dan 3 untuk keluar dan bridge yang di buat > 
+    2. tab port > add > pilih port dari trunc ether-1 untuk masuk 2 dan 3 untuk vlan-10 dan vlan-20 sbg vlan access keluar > 
        centang "hardware ofload" (sebagai ganti dari master port di v6 kebawah)
 - BIKIN VLAN ACCESS(memecah vlan keluar)
     1. Switch > tab VLAN > add 
        > swich: switch1 > vlan ID: 10 (sesuaikan panggil setingan yg ada di server)
-       > buatkan juga vlan ID: 20 
-       > port trunc: port: ether1 
-       > port access: > tambahkan port lagi (panah kebawah):  port:ether2
+       > port: ether1                                           // sebagai trunc (sumber vlan)
+       > tambahkan port lagi (panah kebawah):  port: ether2     // sebagai port access
+    2. buatkan juga vlan ID: 20 
 - VLAN MODE
     TRUNC:
         switch > tab port > dclick ether1(vlan trunc) > VLAN MODE : secure > vlan Header: "add if missing" 
