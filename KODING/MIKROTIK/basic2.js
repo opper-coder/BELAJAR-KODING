@@ -68,32 +68,39 @@ KONFIGURASI WINBOX
   8. limiter
   9. Sekurity
 ========================================================================================================	
-LOGIN	
+LOGIN
 bisa pakai salah satu: mac, ip, remote
   1. login via MAC > user:admin, pwd: ""
   2. tool > remove config 
+-----------
 BIKIN INTERFACE
 interface ada beberapa type: ether, bridge, vlan, hotspot
   3. buka bridge > add > nama : sesuai konsep > apply OK > 
   4. masukan port pada bridge pada bridge > tab port > pilih port yang akan di gabungkan dlm bridge 
-IP ISP 
+-----------
+IP ISP client
   5. IP > DHCP Client > add > pilih interface > centang DNS dan NTP > default route: yes > Apply - OK > bound > periksa IP 
      - butikan: terminal ping internet: 8.8.8.8, ping DNS: google.com 
      - atau ping gateway di : IP > routes > ada routeslist gateway
   6. IP > DNS > server = 10. 10. 10. 1 (didapat dari ISP atau IP Client ISP) dan tambahkan DNS public 8.8.8.8, 8.8.0.0 
      - centang Allow remote request agar bisa di akses dari client
+-----------
 NAT MASQUERADE
 agar internet dapat dikirim ke bawah maka bikin dulu IP gateway dg nat masquerade berikutnya bikin ip DHCP server
-  7. IP > firewall > tab NAT > add > tab general > chain : srcnat > out interface : 'bridge-WAN' >  
+  7. IP > firewall > tab NAT > add(pilih di list) > tab general > chain : srcnat > out interface : 'bridge-WAN' >  
      - Pada tab action >  pilih masquerade > apply > OK
+-----------
 IP gateway
   8. IP > address > add > address: 'IP beri slash ip gateway namanya' > interface: 'interface keluar' (192.168.1.1/24) atau (192.168.2.1/24),10.10.10.1/24, 10.20.30.1/24 dst
-SERVER
-  kita kan mau bikin service ke client maka kita boleh pilih mode server: DHCP, STATIC, HOTSPOT.
+-----------
+DISTRIBUSI
+  kita kan mau bikin service ke client maka kita boleh pilih mode server: DHCP, STATIC, HOTSPOT, WLAN.
   9. IP > DHCP Server > tombol DHCP setup > interface : 'pilih LAN keluar' > next2 > Apply-Ok
+-----------
 QUEUE
   10. Tekan queues > pada queue list klik add > nama biarkan > target IP laptop tujuan
       > 192.168.1.254  (ip laptop tergenerate diatas) isi max dan min limit. Lebih lanjut bab QoS
+-----------
 SECURITY
    - ganti nama: sistem > identity > nama nya ROUTER-Gonggong 
    - ganti password: sistem > user > bikin user baru klik + > nama aqil > group full > password isikan >
