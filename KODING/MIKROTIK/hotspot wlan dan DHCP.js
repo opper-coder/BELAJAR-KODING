@@ -60,7 +60,8 @@ saat mikrotik memiliki port wlan maka cara hidupkanya adalah:
     - adalah yang login akan menggunakan paket dari user profile
       hotspot > tab user > add > name:tamu, pass:tamu1, user profile:pilih paket tadi
       > pada tab limit kita bisa setting uptime > berapa jam > limit bytes total: bisa limit secara GB MB dll (satuan byte)
-    - saat up time dan limit tercapai user password tersebut berati sudah tidak bisa di gunakan lagi
+    
+- saat up time dan limit tercapai user password tersebut berati sudah tidak bisa di gunakan lagi
     - kalau mau hidupkan kembali tinggal pilih user di tab user dan klik reset counter
     - menit ke 17 vid 3
 	sebenarnya hotspot ini menjadi fitur gabungan dari: ip pool, dhcp server,frewall nat, 
