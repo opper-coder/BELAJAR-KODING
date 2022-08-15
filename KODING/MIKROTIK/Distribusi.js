@@ -6,16 +6,21 @@ topologinya
 ISP : dhcp client
 bride hotspot : 10.10.10.0/24
 
-
+SETTING WLAN
+-----------------------
 saat mikrotik memiliki port wlan maka cara hidupkanya adalah:
 1. tentu semua harus melalui config dasar (lihat dokumentasi)
 2. setting wlan access point
 	interface > pilih wlan1 > enable > dbclk wlan1 > name: rumah > tab wireless > 
 	mode: ap-bridge, band: 2ghz B/G/N, frequensi: 2462 sesuai kondisi lapangan, 
 	ssid: hotspot-rumah > apply, ok
+BRIDGING
+-----------------------
 3. Bridging(kalau mau gabungkan dengan ether2 misalnya kemudian kita setting bridgenya)
 	bridge > add > name: bridge1-HOTSPOT > tab port masukan ether2 dan wlan tadi > apply
 	reconet kalau kita remote dari ether2  
+HOTSPOT
+-----------------------
 4. distribusi hotspot pada "bridge1-HOTSPOT":
 	- pastikan bridge ini memiliki IP pada saat config IP
 	  IP > address > add >  ip: 10.10.10.0/24, interface: bridge1-HOTSPOT
