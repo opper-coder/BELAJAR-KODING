@@ -2,8 +2,8 @@ setting OLT
 ----------------------------------------------------
 HARDWARE:
 skema pengkabelan
-1. MIKROTIK		: ether1 ke ISP > ether2 ke OLT > ether 3 untuk remote
-2. OLT			: Uplink1 dari MIKROTIK > PON1 ke ONT/antena 
+1. MIKROTIK		: ether1 ke ISP > ether2 ke OLT dg vlan > buat vlan100,vlan200 > ether 3 untuk remote
+2. OLT			: Uplink1 dari MIKROTIK ether2 > PON1 ke ONT/antena 
 3. HOTSPOT/antena	: ONU/ONT > pilih mode bridge > setting vlanID ke vlan100
 ----------------------------------------------------
 SETTING MIKROTIK
@@ -30,7 +30,7 @@ SETTING MIKROTIK
     karena tidak ada hubunganya dengan VLAN diatas tadi ini independen
 ----------------------------------------------------
 CATATAAN OLT
-sambungkan dulu OLT dan harus remote dari LAN (laptop)
+sambungkan dulu OLT dan harus bisa di remote dari LAN (laptop)
 - olt sudah punya ip default 	- 192.168.0.88. masukkan olt ke ether yang memiliki pool IP - 192.168.0.1/24
   supaya masuk kesegmen local IP ini
 - coba ping ke OLT - 192.168.0.88 jika replay maka OK sudah bisa mendistribusikan Layanan
