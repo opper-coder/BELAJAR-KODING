@@ -1,5 +1,4 @@
 <?php
-
 // -----
 function register_user( $nama, $pass ){
     global $conn;
@@ -17,7 +16,6 @@ function register_user( $nama, $pass ){
         // echo 'gagal';
         return false;}
     }
-
 // -----
 function register_cek_nama($nama){
     global $conn;
@@ -29,7 +27,6 @@ function register_cek_nama($nama){
         else return false;
     }
 }
-
 // -----
 function cek_pass($nama, $pass){
     global $conn;
@@ -48,7 +45,6 @@ function cek_pass($nama, $pass){
         return false;
     }
 }
-
 // -----
 function login_cek_nama($nama){
     global $conn;
@@ -61,8 +57,4 @@ function login_cek_nama($nama){
         else return false;
     }
 }
-
-
-
-
 ?>
