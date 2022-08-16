@@ -1,25 +1,16 @@
 <?php
 require_once "core/init.php";  
-
+// Halaman ini jika di akses akan cek apa sudah login belum, jika belum redirect ke login.html
 if( !isset($_SESSION['user']) ){
 	// die('anda belum login');
 	header ( 'Location: login.php' );
 }
-
-
+// ---
 require_once "view/header.php";
-
 ?>
 <p>ini halaman Profile setelah login milik <?php echo $_SESSION['user']; ?></p>
 
-
-
-
-
-
-<?php 
-require_once "view/footer.php"; 
-?>
+<?php require_once "view/footer.php"; ?>
 <!-- 
 0. halaman index masih kosong
 1. bikin database xampp dg nama sekolahkoding > tabel 3 field > id, nama, password > id:ai, varchar, 50 (vid 1) dan password jumlah varchar bikin 255 untuk hash (enscrypsi nantinya)
