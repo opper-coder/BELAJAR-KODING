@@ -1,6 +1,6 @@
 <?php
 // -----
-function register_user( $nama, $pass ){                                           // INPUT NAMA, BERSIHKAN KARAKTER, ENCRYPT, QUERY INSERT DB
+function register_user( $nama, $pass ){                                           // INPUT NAMA, BERSIHKAN KARAKTER, ENCRYPT, QUERY INSERT DB. berhasil? bool
     global $conn;                                                                       // $conn global dibuat sekali, agar bisa query
     $nama = mysqli_real_escape_string($conn, $nama);                                    // bersihkan karakter code
     $pass = mysqli_real_escape_string($conn, $pass);
