@@ -1,6 +1,6 @@
 <?php
 $conn = mysqli_connect("localhost","root","","belajardb");  // buat fungsi query dan fetching agar tingal panggil di halaman index
-function query($query){						                // bikin fungsi query
+function query($query){     // bikin fungsi query
     global $conn;						                    // pakai global $conn
     $result = mysqli_query($conn, $query);			        // lakukan queri biasa dg para meter ambi dari  argumen func
     $rows = [];							                    // siapkan var rows arai kosong di  luar while uuntk di isi dalam while
