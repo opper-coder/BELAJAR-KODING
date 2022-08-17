@@ -3,7 +3,6 @@ $host       = "localhost";
 $user       = "root";
 $password   = "";
 $db         = "sekolahkoding";
-
 $conn = mysqli_connect ($host, $user, $password, $db) or DIE ( mysqli_error() );
 ?>
 <!--  
