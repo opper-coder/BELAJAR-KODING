@@ -8,7 +8,6 @@ CATATAN KERJA
 - responsive
 - @media
 - pseudo class
-
 ---------------------------------------------------------------------------
 DASHBOARD
 + bulma version
@@ -25,4 +24,3 @@ DASHBOARD
 - top nav
 - @media breakpoint
 - pindah ke halaman CSS
-- 
