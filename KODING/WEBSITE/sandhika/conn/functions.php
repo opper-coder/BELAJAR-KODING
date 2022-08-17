@@ -1,7 +1,6 @@
 <?php
 // koneksi biasa
-$conn = mysqli_connect("localhost","root","","belajardb");  	// tinggal cut paste 'koneksi' dari halaman 1 di index
-																				// buat fungsi query dan fetching agar tingal panggil di halaman index
+$conn = mysqli_connect("localhost","root","","belajardb");  	// tinggal cut paste 'koneksi' dari halaman 1 di index																			// buat fungsi query dan fetching agar tingal panggil di halaman index
 function query($query){						// bikin fungsi query
     global $conn;						// pakai global $conn
     $result = mysqli_query($conn, $query);			// lakukan queri biasa dg para meter ambi dari  argumen func
@@ -11,5 +10,4 @@ function query($query){						// bikin fungsi query
     }
     return $rows;						// kembalikan rows
 }
-// selesai
 ?>
