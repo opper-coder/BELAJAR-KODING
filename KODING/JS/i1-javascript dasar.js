@@ -93,7 +93,8 @@ Pendahuluan
 	\n:enter, \t:tab, \':petik satu, \":petik 2, \\: back slash, '
 	document.writeln("eko \nkurniawan \nkhanedy");
 - Variable ------------------------------------
-	var, let, const = var sudah usang usahakan buat dengan let atau const
+	- var, let, const = var sudah usang usahakan buat dengan let atau const
+	- var tidak memiliki scoop sehingga bisa ada anomali nantinya 
 	let: isinya bisa di replace, const: tidak bisa (constant)
 	let namadepan;
 	namadepan="aqil"; akses variabel: namadepan
