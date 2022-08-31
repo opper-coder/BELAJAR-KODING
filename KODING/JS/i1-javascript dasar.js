@@ -1,68 +1,66 @@
 Pendahuluan
-- Pengenalan JavaScript 			-> bahasa scripting bukan compiler untuk frontend, backend, json API, web, android, ios, IoT
-- Program Hello World 				-> konsol dan halaman
-- Komentar 					-> keterangan bahasa manusia tidak di compile
-- Tipe Data Number 				-> bisa juga hexa, octal, binary 
-- Tipe Data Boolean 				-> saklar on off
-- Tipe Data String 				-> "8" juga string bisa di conversi parseint()
-- Variable 					-> wadah tunggal, bisa utk: array, object, if ternary, operator math, funct anonimous, trigger function (lihat function dalam var ---> )
-- Operator Matematika 				-> + - * / % **
-- Operator Perbandingan 			-> < > <= >= == === != !==
-- Operator Logika 				-> && || ! = boolean return bool jg. bisa di if, variabel, for, while, do while
-- Console 					-> display konsol : console.log, info, warn, error, table 
-- String Template 				-> pengganti string kombinasi dan concate
-- Konversi String dan Number 			-> ada kemiripan angka dan string maka butuh konversi
-- Tipe Data Array  				-> index
-- Tipe Data Object 				-> property
-- If Expression 				-> percabangan dasar
-- Popup 					-> pop up bawaan browser yang membantu debug sebenarnya
-- Undefined 					-> belum ada wadah dan nilai
-- Null 						-> sudah ada wadah dan nilai hanya saja nilai null
-- Switch Expression  				-> pengganti if pada kondiisi perbandingan == saja
-- Operator typeof 				-> type data apa ya?
-- Operator in 					-> adakah property/field/index? (bukan value)
-- Ternary Operator 				-> if sederhana bisa masuk variabel jg
-- Nullish Coalescing Operator 			-> mirip ternary,bedanya menanyakan apakah null, undefined atau tidak
-- Optional Chaining 				-> mau akses "parameter" di object ada tidak? (null, undefined) atau tidak
-- Falsy dan Truthy 				-> untuk kondisi bagus (if, looping, )
-- Operator Logika di Non Boolean-> if tan if statemen
-- For Loop 					-> looping dasar(initial di dalam bisa)
-- While Loop 					-> looping initial di luar
-- Do While Loop 				-> minimal lakukan dulu sekali pada looping
-- Break dan Continue 				-> skip dan stop loop, switch
-- Label 					-> skip stop looping bersarang
-- For In 					-> looping "properti" object
-- For Of  					-> looping "value" array
-- With Statement 				-> cursor pada hierarchi object (error kayaknya sudah tidak berlaku)
-- Function 					-> pembungkus semua fungsi, hanya jalan saat di panggil, 
-- Function di Variabel 				-> variabel bisa jadi function
-- Function Parameter 				-> umpan dalam block
-- Function Return Value 			-> hasil kalkulasi
-- Optional Parameter 				-> argument tidak wajib di isi. parameter tapi bisa boomerang lo
-- Default Parameter 				-> jika tidak di oper masih punya default nilai jadi tidak sama sekali kosong gitu
-- Rest Parameter 				-> argument untuk tangkap parameter yg banyak tapi bukan array, akan di konvert ke array 
-- spread syntax 				-> oper "parameter array" gak boleh meski di tangkap oleh rest parameter, solusi: spread syntax
-- arguments object 				-> dulunnya ada "arguments object"(sudah tidak disarankan) sekarang di ganti rest parameter
-- callback					-> adalah argument berupa function juga
-- Function Sebagai Value 			-> 
-- Anonymous Function 				-> 
-- Function dalam Function 			-> 
-- Scope 					-> 
-- Recursive Function 				-> 
-- Function GEnerator 				-> 
-- Arrow Function 				-> 
-- Closure 					-> 
-- Object Method 				-> 
-- Kata Kunci this 				-> 
-- Arrow Function di Object 			-> 
-- Getter dan Setter 				-> 
-- Masalah Variable var 				-> 
-- Destructuring 				-> 
-- Strict Mode 					-> 
-- Debugger 					-> 
-- Materi Selanjutnya 				-> 
-
-
+- Pengenalan JavaScript 		-> bahasa scripting bukan compiler untuk frontend, backend, json API, web, android, ios, IoT
+- Program Hello World 			-> konsol dan halaman
+- Komentar 				-> keterangan bahasa manusia tidak di compile
+- Tipe Data Number 			-> bisa juga hexa, octal, binary 
+- Tipe Data Boolean 			-> saklar on off
+- Tipe Data String 			-> "8" juga string bisa di conversi parseint()
+- Variable 				-> wadah tunggal, bisa utk: array, object, if ternary, operator math, funct anonimous, trigger function (lihat function dalam var ---> )
+- Operator Matematika 			-> + - * / % **
+- Operator Perbandingan 		-> < > <= >= == === != !==
+- Operator Logika 			-> && || ! = boolean return bool jg. bisa di if, variabel, for, while, do while
+- Console 				-> display konsol : console.log, info, warn, error, table 
+- String Template 			-> pengganti string kombinasi dan concate
+- Konversi String dan Number 		-> ada kemiripan angka dan string maka butuh konversi
+- Tipe Data Array  			-> index
+- Tipe Data Object 			-> property
+- If Expression 			-> percabangan dasar
+- Popup 				-> pop up bawaan browser yang membantu debug sebenarnya
+- Undefined 				-> belum ada wadah dan nilai
+- Null 					-> sudah ada wadah dan nilai hanya saja nilai null
+- Switch Expression  			-> pengganti if pada kondiisi perbandingan == saja
+- Operator typeof 			-> type data apa ya?
+- Operator in 				-> adakah property/field/index? (bukan value)
+- Ternary Operator 			-> if sederhana bisa masuk variabel jg
+- Nullish Coalescing Operator 		-> mirip ternary,bedanya menanyakan apakah null, undefined atau tidak
+- Optional Chaining 			-> mau akses "parameter" di object ada tidak? (null, undefined) atau tidak
+- Falsy dan Truthy 			-> untuk kondisi bagus (if, looping, )
+- Operator Logika di Non Boolean	-> if tan if statemen
+- For Loop 				-> looping dasar(initial di dalam bisa)
+- While Loop 				-> looping initial di luar
+- Do While Loop 			-> minimal lakukan dulu sekali pada looping
+- Break dan Continue 			-> skip dan stop loop, switch
+- Label 				-> skip stop looping bersarang
+- For In 				-> looping "properti" object
+- For Of  				-> looping "value" array
+- With Statement 			-> cursor pada hierarchi object (error kayaknya sudah tidak berlaku)
+- Function 				-> pembungkus semua fungsi, hanya jalan saat di panggil, 
+- Function di Variabel 			-> variabel bisa jadi function
+- Function Parameter 			-> umpan dalam block
+- Function Return Value 		-> hasil kalkulasi
+- Optional Parameter 			-> argument tidak wajib di isi. parameter tapi bisa boomerang lo
+- Default Parameter 			-> jika tidak di oper masih punya default nilai jadi tidak sama sekali kosong gitu
+- Rest Parameter 			-> argument untuk tangkap parameter yg banyak tapi bukan array, akan di konvert ke array 
+- spread syntax 			-> oper "parameter array" gak boleh meski di tangkap oleh rest parameter, solusi: spread syntax
+- arguments object 			-> dulunnya ada "arguments object"(sudah tidak disarankan) sekarang di ganti rest parameter
+- callback				-> adalah argument berupa function juga
+- Function Sebagai Value 		-> 
+- Anonymous Function 			-> 
+- Function dalam Function 		-> 
+- Scope 				-> 
+- Recursive Function 			-> 
+- Function GEnerator 			-> 
+- Arrow Function 			-> 
+- Closure 				-> 
+- Object Method 			-> 
+- Kata Kunci this 			-> 
+- Arrow Function di Object 		-> 
+- Getter dan Setter 			-> 
+- Masalah Variable var 			-> 
+- Destructuring 			-> 
+- Strict Mode 				-> 
+- Debugger 				-> 
+- Materi Selanjutnya 			-> 
 
 - PENDAHULUAN ---------------------------------
 - Pengenalan JavaScript -----------------------
