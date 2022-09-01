@@ -1,31 +1,24 @@
 // FUNCTION
-
-// basic :
-// f nama(){}
-function tampilPesan(nama){alert("halo " + nama);}
+function tampilPesan(nama){alert("halo " + nama);}     		// basic				-> f nama(){}
 tampilPesan("aqil");
-// function expression / anonimuous:
-// const nama = f(){}
-const tampilPesan = function(nama){alert("halo " + nama);}
+const tampilPesan = function(nama){alert("halo " + nama);}   	// function expression/anonimuous: 	-> const nama = f(){}
 tampilPesan("aqil");
-// arrow function :
-// const nama = (param) => {action}
-const tampilPesan = (nama) => {alert("halo " + nama);}
+const tampilPesan = (nama) => {alert("halo " + nama);}		// arrow function 			-> const nama = (param) => {action}
 tampilPesan("aqil");
 // const nama = param => {action}
-const tampilPesan = nama => {alert("halo " + nama);} // bisa hapus kurung()
+const tampilPesan = nama => {alert("halo " + nama);} 		// bisa hapus kurung()
 tampilPesan("aqil");
 // const nama = param => action
-const tampilPesan = nama => alert("halo " + nama); // bisa hapus () dan {}
+const tampilPesan = nama => alert("halo " + nama); 		// bisa hapus () dan {}
 tampilPesan("aqil");
 // const nama = (param, param2) => {action}
 const tampilPesan = (nama, alamat) => {return "halo " + nama + alamat } // tidak bisa hapus()
 tampilPesan("aqil", "saiti");
 // const nama = param => action
-const tampilPesan = nama => "halo " + nama // hapus {} bahkan return jika hanya saru baris return saja (implisit return)
+const tampilPesan = nama => "halo " + nama 			// hapus {} bahkan return jika hanya saru baris return saja (implisit return)
 tampilPesan("aqil");
 // const nama = () => action
-const tampilPesan = () => "halo "  // wajib pakai kurung saat parameter kosong
+const tampilPesan = () => "halo "  				// wajib pakai kurung saat parameter kosong
 tampilPesan();
 
 contoh:
@@ -37,7 +30,7 @@ console.log(jumlahHuruf);
 let mahasiswa = ["aqil", "izza", "andi"];
 let jumlahHuruf = mahasiswa.map( nama => ({nama: nama, jumlahHuruf: nama.length}) )		// mau return object{} bungkus
 // console.log(jumlahHuruf);
-console.table(jumlahHuruf.nama);		// Pengganti konsole.log untuk array dan object
+console.table(jumlahHuruf.nama);				// Pengganti konsole.log untuk array dan object
 
 // THIS PADA FUNCTION 
 // konsep this berlaku pada function declaration
