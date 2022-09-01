@@ -53,7 +53,7 @@ Pendahuluan
 - Arrow Function 			-> =>
 - Closure 				-> cara keluar dari scoop local ke global
 - Object Method 			-> kumpulan data mengandung property dan method
-- Kata Kunci this 			-> object yang merujuk object root pemilik scoop (biasanya dalam window, object, new instance)
+- Kata Kunci this 			-> object yang merujuk object root pemilik scoop (biasanya dalam window, object, new instance)(fun jadi obj,kec arrow)
 - Arrow Function di Object 		-> method
 - Getter dan Setter 			-> dua func yg di tanam ke obj dan di conversi jadi properti: berfungsi ubah dan ambil
 - Masalah Variable var 			-> tidak punya scoop (rawan jngn gunakan)
