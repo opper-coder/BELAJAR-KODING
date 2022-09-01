@@ -117,13 +117,13 @@ Pendahuluan
 	console.table("array") bagus untuk array dan object
 - String Template -----------------------------
 	intinya sama denga "" tapi bisa akses var dan operator dll
-	let coba= `halo ${variabel}` ; // concate dengan String
-	let coba= `halo ${23 < 100} `; // operasi Matematika ada sama sandika es6
+	let coba= `halo ${variabel}` ; 	// concate dengan String
+	let coba= `halo ${23 < 100} `; 	// operasi Matematika ada sama sandika es6
 - Konversi String dan Number ------------------
-	parseInt("1")		// integer conversi dari str ke numb
-	parseFloat("2")		// pecahan str ke numb
+	parseInt("1")			// integer conversi dari str ke numb
+	parseFloat("2")			// pecahan str ke numb
 	Number("3")			// str ke numb
-	number.toString(5)	// numb ke str
+	number.toString(5)		// numb ke str
 - Tipe Data Array -----------------------------
 	- []							// bentuk dasar
 	- let orang = []					// masuk var
@@ -313,13 +313,13 @@ Pendahuluan
 			alamat: "saiti",
 			umur: 12
 		}
-		for(o in orang){ document.writeln(o + ": halo") }	// bikin var wadah looping o (pake let o jg bisa) dari orang block silahkan isi apa saja bisa
+		for(o in orang){ document.writeln(o + ": halo") } // bikin var wadah looping o (pake let o jg bisa) dari orang block silahkan isi apa saja bisa
 - For Of --------------------------------------
 	- For in untuk looping properti atau index, pada for of looping pada value
 	- tapi tidak bisa melakukan iterasi data di object, karena object bukanlah iterable.
 		for(p of prop){}				// bentuk dasar
 		let siswa=["aqil","iza","silmi"];		// array
-		for(s of siswa){ document.writeln( "halo>" + s ) }	// iterasi value array (pake let s jg bisa)
+		for(s of siswa){ document.writeln( "halo>" + s ) } // iterasi value array (pake let s jg bisa)
 - With Statement ------------------------------
 	- menurunkan scoop properti
 	- katanya tidak di sarankan karena ambigu
