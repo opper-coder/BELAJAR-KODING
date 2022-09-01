@@ -406,12 +406,115 @@ FUNCTION
 		let callbackku = hallo;
 		hallocallback(callbackku);						// panggil "fungsi2" dengan argument "fungsi1"
 - Anonymous Function --------------------------
+	- adalah function tanpa nama. mirip if ternary
+		let halo = function(nama){console.log(nama)}
+		halo("aqil");
+	- function anonimaouse dalam parameter
+		let halo = function(callback){callback("silmi")}
+		halo(function (nama){console.log(`halo ${nama}`)});
 - Function dalam Function ---------------------
+	- Tidak ada batasan dimana kita bisa membuat function
+	- Function yang terdapat di dalam, kita sebut inner function
+	- Inner function hanya bisa diakses di scoop outer function. tidak dari luar
+		function outer(){
+			function inner(){}
+			inner()
+			inner()			// bisa
+		}
+			inner()			// error
 - Scope ---------------------------------------
+	- Ada dua jenis scope, global scope dan local scope.
+	- kayaknya setiap block {} memiliki scoop local, sudah saya test di block if
+	- variabel global bisa di akses dari local, tidak sebaliknya
 - Recursive Function --------------------------
-- Function GEnerator --------------------------
+	- pemanggilan function dalam function iitu sendiri funsi mirip looping
+		function factorialRecursive(value){
+			if (value === 1) {
+				return 1;
+			}else{ return value * factorialRecursive(value -1) }
+		}
+		console.log(factorialRecursive(5));
+- Function Generator --------------------------
+	- bikin data sebanyak array tapi pakai function
+	- iterable tapi nggak bisa di akses dengan index
+	- kelebihanya ada yield yaitu memiliki fungsi bersifat "lazy"
+	- contoh1 dasar function generator assign ke yield 1 per 1
+		function* nama(){ yield }		// bentuk dasar ada tambahan [*, yield]
+		function* generatorku(){		// * -> penanda ini adalah generator jika tidak ada * js di kasih yield error
+			yield "aqil";			// yield -> sbg "return" masing2 nilai yg bersifat lazy
+			yield "iza";
+			yield "silmi";
+		}
+		let hasil = generatorku()		// mirip array, tapi tidak bisa di akses pake index hasil[2]
+		for(h of hasil){			// tapi bisa di loop (for of pada array)
+			console.log(h)
+		}
+	- contoh2 yield pakai loop	
+		// ----------- contoh lazy pada generato	// GENERATOR LAZY:
+		function* ganjil(value){			// function*
+			for (let i = 1; i <= value; i++) {	// for value input
+				if (i % 2 === 1) { 		// if ganjil
+					console.log(`yield ke: ${i}`); // * lihat perbedaan lazy disini
+					yield i;		// return yield (generate data yield lazy)
+				 }
+			}
+		}
+								// AKSES:
+		let buatGanjil = ganjil(20);			// * var() saat generator di call, "tidak langsung" looping block nya
+		for (bg of buatGanjil){				// * for var() saat data di looping yield juga di kasih
+			console.log(bg);			// display
+		}
+		// ------------ contoh eiger pada array biasa
+		function ganjilArray(value){			// BUKTIKAN EIGER ARRAY
+			let result = [];			// generate array biasa
+			for (let i = 1; i <= value; i++) {
+				if (i % 2 === 1) { 
+					console.log(`index push ${i}`); // ** lihat perbedaan eiger disini
+					result.push(i);
+				 }
+			}
+			return result;
+		}
+		let buatGanjilArray = ganjilArray(20);		// ** var() saat fungsi di call, "langsung" looping block nya
+		for (bg of buatGanjilArray){ 			// ** for var() saat data di looping data sudah terlooping sebelumnya
+			console.log(bg);
+		}
+		// ** keterangan lazy vs eager
+		- saat kita generate data lazy dengan function generator maka yang terjadi adalah:
+		- looping yang ada di funtion generator, tidak langsung di running saat fungsi di panggil
+		- barulah data di loop saat kita panggil dalam looping
+		- buktikan saja saat 2 contoh di atas di running
+		// ----------------- akses bawaan sebenaya pakai next()
+		console.log(buatGanjil.next().value);		// jadi panggilnya tidak pakai for seperti di atas melainkan next().value
+		console.log(buatGanjil.next().value);
+		console.log(buatGanjil.next().value);
 - Arrow Function ------------------------------
+	Arrow function adalah alternatif pembuatan function yang lebih sederhana dari function biasanya
+	Namun terdapat limitasi dan juga tidak bisa digunakan di semua situasi
+	tidak memiliki fitur arguments object
+	tidak bisa menggunakan function generator
+	tidak bisa mengakses this (yang nanti akan dibahas di function di object)
+	tidak bisa mengakses super (yang nanti akan dibahas di JavaScript Object Oriented Programming)
+		const halo = () => {}				// dasar
+		const halo = () => 				// tanpa block -> juga tanpa return (jika hanya satu action dan tanpa block boleh tanpa return)
+		const halo =  => 				// tanpa parameter -> (kalau lebh satu maka pakai kurung pisahkan koma, jika hny satu mk tnpa kurung)
+		const halo(()=>{}); 				// function arraw dalam argumen function
+
+		const halo = (nama) => {console.log("halo " + nama)}
+		halo("aqil");					// panggil
 - Closure -------------------------------------
+	- definisi dari eko kurniawan:
+	closure jarang di gunakan kayaknya tapi penting untuk di ketahui
+	Closure adalah kombinasi function dan bundel referensi ke data disekitarnya.
+	Oke agak membingungkan memang, apalagi untuk yang baru pertama belajar
+	Kita sudah tahu bahwa local scope tidak bisa diakses di luar scope nya
+	Dengan kemampuan closure, kita bisa membuat sebuah function di local scope dan referensi ke data di sekitar local scope tersebut, keluar scope nya
+	- definisi dari saya:
+	cara agar scoop local bisa di akses oleh global maka kita perlu membuat data tersebut:
+	baik berupa function, array, objec, dll menjadi sebuah return dari sebuah function
+
+				
+DARI METHODE KEBAWAH INI MASUK KE PEMBAHASAN KE 2 YA SILAHKAN DI BUKA
 - Object Method -------------------------------
 - Kata Kunci this -----------------------------
 - Arrow Function di Object --------------------
