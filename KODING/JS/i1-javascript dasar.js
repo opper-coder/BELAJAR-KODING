@@ -18,19 +18,19 @@ Pendahuluan
 - Popup 				-> pop up bawaan browser yang membantu debug sebenarnya
 - Undefined 				-> belum ada wadah dan nilai
 - Null 					-> sudah ada wadah dan nilai hanya saja nilai null
-- Switch Expression  			-> pengganti if pada kondiisi perbandingan == saja
-- Operator typeof 			-> type data apa ya?
+- Switch Expression  			-> pengganti if pada kondisi perbandingan == saja
+- Operator typeof 			-> type datanya apa ya?
 - Operator in 				-> adakah property/field/index? (bukan value)
-- Ternary Operator 			-> if sederhana bisa masuk variabel jg
+- Ternary Operator 			-> if sederhana, bisa masuk variabel jg
 - Nullish Coalescing Operator 		-> mirip ternary,bedanya menanyakan apakah null, undefined atau tidak
 - Optional Chaining 			-> mau akses "parameter" di object ada tidak? (null, undefined) atau tidak
-- Falsy dan Truthy 			-> untuk kondisi bagus (if, looping, )
-- Operator Logika di Non Boolean	-> if tan if statemen
+- Falsy dan Truthy 			-> untuk kondisi bagus (if, looping, dll)
+- Operator Logika di Non Boolean	-> if tanpa if statemen
 - For Loop 				-> looping dasar(initial di dalam bisa)
-- While Loop 				-> looping initial di luar
-- Do While Loop 			-> minimal lakukan dulu sekali pada looping
-- Break dan Continue 			-> skip dan stop loop, switch
-- Label 				-> skip stop looping bersarang
+- While Loop 				-> looping. dg init di luar
+- Do While Loop 			-> minimal, lakukan dulu sekali (pada looping)
+- Break dan Continue 			-> skip dan stop loop, (switch, for, while, recursive, iterasi)
+- Label 				-> skip stop looping bersarang.(kursor looping)
 - For In 				-> looping "properti" object
 - For Of  				-> looping "value" array
 - With Statement 			-> cursor pada hierarchi object (error kayaknya sudah tidak berlaku)
@@ -43,20 +43,20 @@ Pendahuluan
 - Rest Parameter 			-> argument untuk tangkap parameter yg banyak tapi bukan array, akan di konvert ke array 
 - spread syntax 			-> oper "parameter array" gak boleh meski di tangkap oleh rest parameter, solusi: spread syntax
 - arguments object 			-> dulunnya ada "arguments object"(sudah tidak disarankan) sekarang di ganti rest parameter
-- callback				-> adalah argument berupa function juga
+- callback				-> argument dalam bentuk function
 - Function Sebagai Value 		-> function dalam variabel (sebagai value variabel)
 - Anonymous Function 			-> function tanpa nama, harus bungkus variabel
 - Function dalam Function 		-> bisa
 - Scope 				-> global dan local di semua block {}
-- Recursive Function 			-> kayak looping
+- Recursive Function 			-> kayak looping (factorial)
 - Function Generator 			-> data array lazy [* yield] 
 - Arrow Function 			-> =>
 - Closure 				-> cara keluar dari scoop local ke global
 - Object Method 			-> kumpulan data mengandung property dan method
-- Kata Kunci this 			-> rujuk yang kembali ke nilai root pemilik scoop (biasanya function, object itu sendiri)
+- Kata Kunci this 			-> object yang merujuk object root pemilik scoop (biasanya dalam window, object, new instance)
 - Arrow Function di Object 		-> method
-- Getter dan Setter 			-> dua func yg di tanam ke obj dan di conversi jadi properti
-- Masalah Variable var 			-> tanpa scoop (rawan jngn gunakan)
+- Getter dan Setter 			-> dua func yg di tanam ke obj dan di conversi jadi properti: berfungsi ubah dan ambil
+- Masalah Variable var 			-> tidak punya scoop (rawan jngn gunakan)
 - Destructuring 			-> konversi array ke variabel (explode)
 - Strict Mode 				-> mode debug agar error terdisplay
 - Debugger 				-> debugger browser support
