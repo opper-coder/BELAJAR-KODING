@@ -249,6 +249,7 @@ lihat disini cara bikin class dah happy coding! tanpa mendalami bagaimana terben
 --------------------------------------------------------------------- */
 class coba{}			// dasar CLASS
 let aqil = new coba()		// dasar INSTANCE (OBJECT)
+/* ------------------------------------------------------------------ */ 
 class siswa{ 							// bikin Class pakai keyword class
 	constructor(nama, energi){				// class berisi constructor, dan method2
 		this.nama = nama;
