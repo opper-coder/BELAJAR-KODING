@@ -277,7 +277,7 @@ console.log(aqil.main(4));
 console.log(aqil.tidur(5));	
 
 /* THIS
-- adalah "object" yang merujuk pada scoopnya dimana ia di panggil atau di tulis
+- adalah "object" yang merujuk pada "object scoopnya" dimana ia di panggil atau di tulis
 - jika di panggil dalam constructor maka this berlaku pada instans nya masing2 ("new");
 - kata pendek nya this adalah "object" yang di buat oleh js di background dlm object yang sedang di buat
 --------------------------------------------------------------------- */
