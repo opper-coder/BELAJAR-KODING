@@ -1,6 +1,15 @@
 // TEMPLATE LITERAL / TEMPLATE STRING   dg back tick kita bisa melakukan bebarapa hal:
 
 /*
+----------------------------------------------------------------------------------------
+RINGKASAN
+
+- `string, multiline, \n, ` 	= string, multiline, \karakter enter, karakter \" dll
+- `string ${} string`		= dalam block: var, ternary, opt math, html, attribut, call func
+				  `html, php, string` 
+
+
+----------------------------------------------------------------------------------------
 1. multiline string 
 2. embedded expression
 3. HTML fragment
@@ -12,25 +21,25 @@
 8. Styled Components (di vue, react)
 */
 // string
-`text`
+	`text`
 // multiline string ( ini jjuga tampil sama ketika di consol == println)
-`string satu
- string dua
- string tiga`
-//  embedded expression
-`string text ${value} strinng text`
+	`string satu
+	 string dua
+	 string tiga`
+// embedded expression
+	`string text ${value} strinng text`
 // HTML fragment
-const judul = `<h1>nama saya ${nama}</h1>`
+	const judul = `<h1>nama saya ${nama}</h1>`
 // expression interpolation
-`string text ${ 1 + 2 * 3 } strinng text`	// interpolasi /operasi matematik
-`string text ${ alert("haloo") } strinng text`	// function
-const x = 11;
-console.log(`string text ${ ( x % 2 == 0 ) ? "genap" : "ganjil" } strinng text`	)	// ternari
+	`string text ${ 1 + 2 * 3 } strinng text`	// interpolasi /operasi matematik
+	`string text ${ alert("haloo") } strinng text`	// function
+	const x = 11;
+	console.log(`string text ${ ( x % 2 == 0 ) ? "genap" : "ganjil" } strinng text`	)	// ternari
 // tagged template
 
 
 
-// LATIHAN1 looping ============
+// LATIHAN1 looping ---------------------------------------------------------
 const mhs = [
 	{
 		"nama" : "sandika",
@@ -48,10 +57,9 @@ const mhs = [
 const elemen = `<div class="mahasiswa">
 	${mhs.map( m => `<ul><li>${m.nama}</li>${m.alamat}<li></li></ul>` ).join('')}
 </div>`;
-
 document.body.innerHTML = elemen;
 
-// LATIHAN2 pengkondisian ternary ============
+// LATIHAN2 pengkondisian ternary -------------------------------------------
 const lagu = {
 	judul : "tetap dalam jiwa",
 	penyanyi : "isyana sarasvati",
@@ -66,7 +74,7 @@ const el = `<div class="lagu">
 // kondisi ternary ada di sini 
 document.body.innerHTML = el;
 
-// LATIHAN nested (html fragmen bersarang) ============
+// LATIHAN nested (html fragmen bersarang) ----------------------------------
 const mhs = {
 	nama	: "sandika",
 	semester : 5,
@@ -95,7 +103,6 @@ const el = `
 document.body.innerHTML = el
 
 // TAGGED TEMPLATE 
-
 /*
 adalah bentuk yang lebih komplex dari template literal,
 memungkinkan kita untuk membaca template literals
