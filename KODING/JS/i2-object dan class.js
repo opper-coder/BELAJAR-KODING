@@ -1,33 +1,33 @@
 /*
 OBJECT
 - Pengertian 		-> "kumpulan data yg memiliki properti dan method"
-					   pada akhirnya kita hanya mebuat object itu instance dari class (tidak manual);
-					   1. CLASS:
-					   class coba{
-							constructor,
-							methods
-					   }
-					   2. INSTANCE:
-					   let aqil = new murid(aqil, saiti)
+			    pada akhirnya kita hanya mebuat object itu instance dari class (tidak manual);
+			    1. CLASS:
+			    class coba{
+		    		constructor,
+		    		methods
+			    }
+			    2. INSTANCE:
+			    let aqil = new murid(aqil, saiti)
 - bentuk dasar obj	-> {}
-- panggil			-> obj.param, obj["param"],obj.param() dst
-- isi/ubah			-> obj.param = value
+- panggil		-> obj.param, obj["param"],obj.param() dst
+- isi/ubah		-> obj.param = value
 - generate object:	-> ada 5 tahap pemahaman sehingga sampai ke CLASS lah yang penting
-	1. literal				-> 
-	2. function				-> function declaration	
-	3. constructor			-> function (keyword "this, hilangnya return, new")
-	4. object.create()		-> bawaan untuk construct
-	5. prototype			-> property bawaan yang nempel oleh ulah[object.create()]	
-- CLASS				-> ngerti bikin class dah beres padahal tanpa pemahaman sebelum ini di atas
-					   (kalau dah paham langsung aja nuju ke CLASS)
-- this				-> adalah variabel yang merujuk pada scoopnya dimana ia di panggil atau di tulis
+	1. literal	-> 
+	2. function	-> function declaration	
+	3. constructor	-> function (keyword "this, hilangnya return, new")
+	4. object.create() -> bawaan untuk construct
+	5. prototype	-> property bawaan yang nempel oleh ulah[object.create()]	
+- CLASS			-> ngerti bikin class dah beres padahal tanpa pemahaman sebelum ini di atas
+			   (kalau dah paham langsung aja nuju ke CLASS)
+- this			-> adalah variabel yang merujuk pada scoopnya dimana ia di panggil atau di tulis
 */
 
 /* BENTUK DASAR 
 --------------------------------------------------------------------- */
 	{}
-	let obj = {}					// dasar
-	let obj = {						// contoh
+	let obj = {}				// dasar
+	let obj = {				// contoh
 		nama : "aqil",
 		umur : 12,
 		sapa : function(){
@@ -37,11 +37,11 @@ OBJECT
 
 /* PANGGIL
 --------------------------------------------------------------------- */
-	obj -> enter					// coba di console
-	obj.nama;						// gaya object, prop oleh console dll
-	obj["nama"];					// gaya array pakai ""
-	objecku.kelas[2];				// gaya gabungan
-	obj.sapa();						// gaya method
+	obj -> enter				// coba di console
+	obj.nama;				// gaya object, prop oleh console dll
+	obj["nama"];				// gaya array pakai ""
+	objecku.kelas[2];			// gaya gabungan
+	obj.sapa();				// gaya method
 
 /* ISI/ ASSIGN/ PUSH
 --------------------------------------------------------------------- 
@@ -93,12 +93,12 @@ OBJECT
 		- walau method di panggil berkali2 ternyata di belakang layar methode nya juga di buat berkali2
 		  dengan nilai sesuai instanya setiap kali instance di buat (boros memori)
 	*/ 	
-	function Obj(nama, alamat){						// nama di awali huruf besar (walau boleh kecil)
-		this.nama = nama;							// isi/assign dengan ref this
-		this.alamat = alamat;						// dan return nya di hilangkan
+	function Obj(nama, alamat){			// nama di awali huruf besar (walau boleh kecil)
+		this.nama = nama;			// isi/assign dengan ref this
+		this.alamat = alamat;			// dan return nya di hilangkan
 	}							  
-	let data = new Obj("ikul", "banggai");			// new untuk instant dari constructor 
-													// (wajib kalau tidak dianggap panggil function declaration)(dan undefined)
+	let data = new Obj("ikul", "banggai");		// new untuk instant dari constructor 
+							// (wajib kalau tidak dianggap panggil function declaration)(dan undefined)
 	
 	/*
 	---------------------------
@@ -107,17 +107,17 @@ OBJECT
 		- bungkus templat object dan fungsi instance dalam sebuah object(dataobj)
 	*/ 
 	let siswa = {
-		Obj    : function (nama, alamat){			// f constructor
+		Obj    : function (nama, alamat){		// f constructor
 					this.nama = nama;
 					this.alamat = alamat;
 				  },
-		newObj : function(nama, alamat){			// f instance (new)
+		newObj : function(nama, alamat){		// f instance (new)
 					return new this.Obj(nama, alamat);
 				  }
 	}
-	function genObj(nama, alamat){ 					// untuk memanggil fungsi obj kita pake function lagi
+	function genObj(nama, alamat){ 				// untuk memanggil fungsi obj kita pake function lagi
 		let hasil = siswa.newObj(nama,alamat);		// yang mem panggil "new instance" newObj()
-		return hasil; 								// newObj-> return newObj -> masukan ke return hasil (jadilah instance)
+		return hasil; 					// newObj-> return newObj -> masukan ke return hasil (jadilah instance)
 	}
 	let hasil2 = genObj("furqon","jepara")			// tinggal pake generate genObj() tanpa haus memory
 	let hasil3 = genObj("lazarus","manado")
@@ -132,17 +132,17 @@ OBJECT
 		7. repot mengelola 2 0bject!
 		8. solusi: [Object.create] untuk bisa melakukanya otomatis
 	*/
-	function fSiswa(nama, energi){					// 1. bikin siswa={} dg func
+	function fSiswa(nama, energi){				// 1. bikin siswa={} dg func
 		let siswa        = {};
-			siswa.nama   = nama;					// 2. tiga propery
+			siswa.nama   = nama;			// 2. tiga propery
 			siswa.energi = energi;
-			siswa.makan  = methodSiswa.makan;		// 3. masukan tiga method ke param siswa{} dari obj di luar
-			siswa.main 	 = methodSiswa.main;
+			siswa.makan  = methodSiswa.makan;	// 3. masukan tiga method ke param siswa{} dari obj di luar
+			siswa.main   = methodSiswa.main;
 			siswa.tidur  = methodSiswa.tidur;
 		return siswa;
 	}
-	const methodSiswa = {							// 4. obj berisi 3 method
-		makan: function(porsi){						// 5. method ini berbentuk constructor
+	const methodSiswa = {					// 4. obj berisi 3 method
+		makan: function(porsi){				// 5. method ini berbentuk constructor
 			this.energi += porsi;
 			console.log(`halo ${this.nama}, selamat makan!`)
 		},
@@ -168,13 +168,13 @@ OBJECT
 		- tapi kita tetap bikin 2 method yg berbeda, masih 2 kali kerja
 		- solusi: fungsi fSiswa harus dibuat dg constructor (prototype)
 	*/ 
-	function fSiswa(nama, energi){					// func buat obj
+	function fSiswa(nama, energi){				// func buat obj
 		let siswa = Object.create(methodSiswa);		// obj di buat dg object.create(args obj dr luar berisi method)
-			siswa.nama = nama;						// properti isi manual (nilai dari arg) 
+			siswa.nama = nama;			// properti isi manual (nilai dari arg) 
 			siswa.energi = energi;
 		return siswa;
 	}
-	const methodSiswa = {							// object berisi mehod yang akan di oper jadi method obj class		
+	const methodSiswa = {					// object berisi mehod yang akan di oper jadi method obj class		
 		makan: function(porsi){ 							
 			this.energi += porsi;
 			console.log(`halo ${this.nama}, selamat makan!`)
@@ -188,9 +188,9 @@ OBJECT
 			console.log(`halo ${this.nama}, selamat tidur!`)
 		}
 	}
-	let sandhika = fSiswa("sandhika",10); 			// class sudah bisa di instance
+	let sandhika     = fSiswa("sandhika",10); 		// class sudah bisa di instance
 	let doddy	 = fSiswa("doddy",20);
-	console.log(doddy.energi);						// object dah jadi
+	console.log(doddy.energi);				// object dah jadi
 	/* 
 	----------------------------------------------
 	4. PROTOTYPE ================================= intinya disini (diatas hanya merunut bagaimana terbentuknya prototype)
@@ -203,11 +203,11 @@ OBJECT
 		this.energi = energi;
 	}
 	function siswa(nama, energi){
-		// let this : Object.create(siswa.prototype) // di background (Object.create)
+		// let this : Object.create(siswa.prototype) 	// di background (Object.create)
 		this.nama = nama;
 		this.energi = energi;
-		// this.prototype;							// di backrgound (prototype)
-		// return this;								// di background (return)
+		// this.prototype;				// di backrgound (prototype)
+		// return this;					// di background (return)
 	}
 	/*
 	---------------------------------------------
@@ -215,20 +215,20 @@ OBJECT
 	test menambahkan properti/method baru baru pada object secara otomatis
 	sehingga kita hanya mengurus properti dan method tambahanya saja, constructornya dah bebas dari penambahan	
 	*/
-		function siswa(nama, energi){				// obj constructor
-			this.nama = nama;						// dg dua properti manual
+		function siswa(nama, energi){			// obj constructor
+			this.nama = nama;			// dg dua properti manual
 			this.energi = energi;
 		}
-		siswa.prototype.salam = "halo";				// sekarang tambahkan properti baru ke obj siswa via prototype 
+		siswa.prototype.salam = "halo";			// sekarang tambahkan properti baru ke obj siswa via prototype 
 		siswa.prototype.makan = function(porsi){	// coba jg tambahkan method(makan) 
-			this.energi += porsi; 					// berisi method function biasa (bukan bagian dari constructor)
+			this.energi += porsi; 			// berisi method function biasa (bukan bagian dari constructor)
 			return `halo ${this.nama}, selamat makan!`; 
 		}
-		let aqil = new siswa('aqil', 10)			// instance
-		console.log(aqil);							// saat instanc di akses, properti tambahan tidak ada. gak taunya ada di bawah (dlm proto)
-		console.log(aqil.salam);					// tampilkan prop baru
-		console.log(aqil.energi);					// tampilkan prop lama
-		console.log(aqil.makan(2));					// tampilkan prop method
+		let aqil = new siswa('aqil', 10)		// instance
+		console.log(aqil);				// saat instanc di akses, properti tambahan tidak ada. gak taunya ada di bawah (dlm proto)
+		console.log(aqil.salam);			// tampilkan prop baru
+		console.log(aqil.energi);			// tampilkan prop lama
+		console.log(aqil.makan(2));			// tampilkan prop method
 	
 	/* CONCLUSI:
 		- jadi kalau mau bikin methode tinggal taruh atau panggil disini tidak perlu inheritance prototype
@@ -246,13 +246,13 @@ OBJECT
 /* CLASS
 --------------------------------------------------------------------- */
 class coba{}
-class siswa{ 										// bikin Class pakai keyword class
-	constructor(nama, energi){						// class berisi constructor, dan method2
+class siswa{ 							// bikin Class pakai keyword class
+	constructor(nama, energi){				// class berisi constructor, dan method2
 		this.nama = nama;
 		this.energi = energi;
 	}
 	// mau bikin method tinggal "taruh" disini, tidak perlu bikin diluar(inheritance prototype)(meski bisa)
-	makan(porsi){									// keyword function tak ada
+	makan(porsi){						// keyword function tak ada
 		this.energi += porsi;
 		return `halo ${this.nama}, selamat makan!`;
 	}
@@ -265,8 +265,8 @@ class siswa{ 										// bikin Class pakai keyword class
 		return `halo ${this.nama}, selamat tidur!`;
 	}													
 }									
-let aqil = new siswa("aqil", 10); 					// instance
-console.log(aqil.nama);								// gunakan
+let aqil = new siswa("aqil", 10); 				// instance
+console.log(aqil.nama);						// gunakan
 console.log(aqil.energi);	
 console.log(aqil.makan(3));	
 console.log(aqil.main(4));	
