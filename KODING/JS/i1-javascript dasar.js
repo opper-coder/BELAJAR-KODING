@@ -44,23 +44,23 @@ Pendahuluan
 - spread syntax 			-> oper "parameter array" gak boleh meski di tangkap oleh rest parameter, solusi: spread syntax
 - arguments object 			-> dulunnya ada "arguments object"(sudah tidak disarankan) sekarang di ganti rest parameter
 - callback				-> adalah argument berupa function juga
-- Function Sebagai Value 		-> 
-- Anonymous Function 			-> 
-- Function dalam Function 		-> 
-- Scope 				-> 
-- Recursive Function 			-> 
-- Function GEnerator 			-> 
-- Arrow Function 			-> 
-- Closure 				-> 
-- Object Method 			-> 
-- Kata Kunci this 			-> 
-- Arrow Function di Object 		-> 
-- Getter dan Setter 			-> 
-- Masalah Variable var 			-> 
-- Destructuring 			-> 
-- Strict Mode 				-> 
-- Debugger 				-> 
-- Materi Selanjutnya 			-> 
+- Function Sebagai Value 		-> function dalam variabel (sebagai value variabel)
+- Anonymous Function 			-> function tanpa nama, harus bungkus variabel
+- Function dalam Function 		-> bisa
+- Scope 				-> global dan local di semua block {}
+- Recursive Function 			-> kayak looping
+- Function Generator 			-> data array lazy [* yield] 
+- Arrow Function 			-> =>
+- Closure 				-> cara keluar dari scoop local ke global
+- Object Method 			-> kumpulan data mengandung property dan method
+- Kata Kunci this 			-> rujuk yang kembali ke nilai root pemilik scoop (biasanya function, object itu sendiri)
+- Arrow Function di Object 		-> method
+- Getter dan Setter 			-> untuk object
+- Masalah Variable var 			-> tanpa scoop (rawan jngn gunakan)
+- Destructuring 			-> konversi array ke variabel (explode)
+- Strict Mode 				-> mode debug agar error terdisplay
+- Debugger 				-> debugger browser support
+- Materi Selanjutnya 			-> es6 -> async -> OOP -> nodejs -> express
 
 - PENDAHULUAN ---------------------------------
 - Pengenalan JavaScript -----------------------
