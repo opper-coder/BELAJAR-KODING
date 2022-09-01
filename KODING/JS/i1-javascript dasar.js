@@ -55,7 +55,7 @@ Pendahuluan
 - Object Method 			-> kumpulan data mengandung property dan method
 - Kata Kunci this 			-> rujuk yang kembali ke nilai root pemilik scoop (biasanya function, object itu sendiri)
 - Arrow Function di Object 		-> method
-- Getter dan Setter 			-> untuk object
+- Getter dan Setter 			-> dua func yg di tanam ke obj dan di conversi jadi properti
 - Masalah Variable var 			-> tanpa scoop (rawan jngn gunakan)
 - Destructuring 			-> konversi array ke variabel (explode)
 - Strict Mode 				-> mode debug agar error terdisplay
@@ -436,10 +436,10 @@ FUNCTION
 		console.log(factorialRecursive(5));
 - Function Generator --------------------------
 	- bikin data sebanyak array tapi pakai function
-	- iterable tapi nggak bisa di akses dengan index
+	- iterable (for) tapi nggak bisa di akses dengan index ([3])
 	- kelebihanya ada yield yaitu memiliki fungsi bersifat "lazy"
 	- contoh1 dasar function generator assign ke yield 1 per 1
-		function* nama(){ yield }		// bentuk dasar ada tambahan [*, yield]
+		function* nama(){ yield }		// bentuk dasar, ada tambahan [*, yield]
 		function* generatorku(){		// * -> penanda ini adalah generator jika tidak ada * js di kasih yield error
 			yield "aqil";			// yield -> sbg "return" masing2 nilai yg bersifat lazy
 			yield "iza";
@@ -519,6 +519,12 @@ DARI METHODE KEBAWAH INI MASUK KE PEMBAHASAN KE 2 YA SILAHKAN DI BUKA
 - Kata Kunci this -----------------------------
 - Arrow Function di Object --------------------
 - Getter dan Setter ---------------------------
+	
+	
+	
+	
+	
+	
 - Masalah Variable var ------------------------
 - Destructuring -------------------------------
 - Strict Mode ---------------------------------
