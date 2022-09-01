@@ -244,6 +244,7 @@ OBJECT
 	*/
 
 /* CLASS
+lihat disini cara bikin class dah happy coding! tanpa mendalami bagaimana terbentuknya 
 --------------------------------------------------------------------- */
 class coba{}
 class siswa{ 							// bikin Class pakai keyword class
