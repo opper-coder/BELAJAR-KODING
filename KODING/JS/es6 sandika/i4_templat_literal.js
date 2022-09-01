@@ -7,6 +7,7 @@ RINGKASAN
 - `string, multiline, \n, ` 	= string, multiline, \karakter enter, karakter \" dll
 - `string ${} string`		= dalam block: var, ternary, opt math, html, attribut, call func
 				  `html, php, string` 
+- func `string kobinasi`	= parameter fuction terkait rest, array dan reduce (bisa)
 
 
 ----------------------------------------------------------------------------------------
