@@ -1,4 +1,5 @@
 /*
+trik: UNTUK GAMPANG NYA LANGSUNG LIHAT CARA BIKIN CLASS SAJA DI BAGIAN BAWAH
 OBJECT
 - Pengertian 		-> "kumpulan data yg memiliki properti dan method"
 			    pada akhirnya kita hanya mebuat object itu instance dari class (tidak manual);
