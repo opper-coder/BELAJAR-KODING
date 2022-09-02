@@ -95,12 +95,13 @@ OBJECT
 		  dengan nilai sesuai instanya setiap kali instance di buat (boros memori)
 	*/ 	
 	function Obj(nama, alamat){			// nama di awali huruf besar (walau boleh kecil)
-		this.nama = nama;			// isi/assign dengan ref this
-		this.alamat = alamat;			// dan return nya di hilangkan
+		this.nama = nama;			// isi/assign dengan "this" (dg this otomatis di buatkan "object dg ambil nama func scoopnya" )
+		this.alamat = alamat;			// dan return nya di hilangkan (karena dah jadi obj sekarang)
 	}							  
 	let data = new Obj("ikul", "banggai");		// new untuk instant dari constructor 
 							// (wajib kalau tidak dianggap panggil function declaration)(dan undefined)
-	
+							// PENTING: karena create awal object berawal dari this dalam function ini, bahkan:
+							// 	    sempat mengisi propertinya segala, maka function ini di sebut CONSTRUCTOR (lahirnya obj lah)
 	/*
 	---------------------------
 		- solusi: masukkan object constructor dan instance ke dalam object (siswa)
