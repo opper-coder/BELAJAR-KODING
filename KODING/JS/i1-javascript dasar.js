@@ -54,16 +54,25 @@ Pendahuluan
 - Closure 				-> cara keluar dari scoop local ke global
 - Object Method 			-> kumpulan data mengandung property dan method
 - this 					-> (   ...   belum selesai ) object yang merujuk object root pemilik scoop (biasanya dalam window, object, new instance)(fun jadi obj,kec arrow)
-- Arrow Function di Object 		-> method
-- Getter dan Setter 			-> (   ...   belum selesai )dua func yg di tanam ke obj dan di conversi jadi properti: berfungsi ubah dan ambil
+- Arrow Function di Object 		-> (   ...   belum selesai ) method
+- Getter dan Setter 			-> (   ...   belum selesai ) dua func yg di tanam ke obj dan di conversi jadi properti: berfungsi ubah dan ambil
 - Masalah Variable var 			-> tidak punya scoop (rawan jngn gunakan)
-- Destructuring 			-> konversi array ke variabel (explode)
-- Strict Mode 				-> mode debug agar error terdisplay
-- Debugger 				-> debugger browser support
-- Materi Selanjutnya 			-> es6 -> async -> OOP -> nodejs -> express
+- Destructuring 			-> (   ...   belum selesai ) konversi array ke variabel (explode)
+- Strict Mode 				-> (   ...   belum selesai ) mode debug agar error terdisplay
+- Debugger 				-> (   ...   belum selesai ) debugger browser support
+----------------------------------------------------------------------------------------------------------------
 
 - sandika				-> ringkas disini
 - class					-> 
+	
+----------------------------------------------------------------------------------------------------------------	
+- Materi Selanjutnya 			-> es6 -> async -> OOP -> nodejs -> express
+	- JavaScript Object Oriented Programming	-> OOP
+	- JavaScript Modules				-> Modular
+	- JavaScript Document Object Model		-> DOM
+	- JavaScript Async 				-> ajax
+	- JavaScript Web API 				-> express, indexdb, file system, canvas API 
+----------------------------------------------------------------------------------------------------------------
 
 - PENDAHULUAN ---------------------------------
 - Pengenalan JavaScript -----------------------
