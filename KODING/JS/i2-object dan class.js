@@ -282,9 +282,9 @@ console.log(aqil.tidur(5));
 - jika di panggil dalam constructor maka this berlaku pada instans nya masing2 ("new");
 - kata pendek nya this adalah "object" yang di buat oleh js di background dlm object yang sedang di buat
 --------------------------------------------------------------------- */
-console.log(this);			// hasil: window
+console.log(this);			// hasil: window{}
 function coba(){
-	console.log(this)		// hasil: coba
+	console.log(this)		// hasil: coba{}
 }
 // CLASS SELESAI =======================================================
 
