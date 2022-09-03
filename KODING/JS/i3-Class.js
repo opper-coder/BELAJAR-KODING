@@ -349,7 +349,8 @@ console.log("ini sudah program lainya");
 		error koneksi, error validasi, error input form dll, atau bahkan notifikasi mungkin
 		kelebihanya: adalah selain Error standard ada messagenya, kita juga bisa kirim message lagi (jadi ada2 message: standard dan custom)
 		caranya: 	cukup membuat class turunan dari class Error
-					Dan jangan lupa tambahkan parameter message, 
+					Dan jangan lupa tambahkan parameter message, dan field
+					message adalah pesan default bawaan, field pesan tambahan dari kita
 					agar bisa dikirimkan ke parameter di constructor class Error
 					bentuk dasar nya di bawah ini [class ValidationError extends Error]
  */ 
@@ -359,6 +360,34 @@ class ValidationError extends Error{					// 1. class anak dari error
 		this.field = field; 					// 4. buatan kita untuk custom
 	}
 }
+/* --- */
+class Hitungan{								// 5. misalnya ada aplikasi class yang ada potensi error
+	totalkan(...angka){						// 6. di dalamnya ada method
+		if(angka.length === 0){ 
+			throw new ValidationError("Total Parameter harus lebih dari 110","halo..."); // 7. yag method tersebut ada spot errornya(throw)
+		}
+		let hasil = 0; 
+		for( const a of angka){ hasil += a }
+		return hasil;
+	}
+}
+const pertama = new Hitungan();						// 7. kemudian kita instance
+try{									// 8. kan defaultnya aplikasi akan lewat disini (try)
+	console.log(pertama.totalkan());				// 9. saat pemanggilan error terjadi (kirim data kosong), aplikasi akan berhenti dan switch ke catch
+	console.log("kode try disini akan berhenti jika error, lanjutkan!");	// 9.1 sehinga pas error disini di ignore, kalo g error ya lewat sini menuju finnaly
+} 
+catch (error){								// 10. disinilah(catch) jalan alternatif saat di try terjadi error, tp saat tidak error ini di ignore
+	console.error(`terjadi error: ${error.message} pesan2: ${error.field} `); // 11. perjalanan berlanjut menuju ke finally(finally adalah gerbang keluar. lewat try atau catch ,finally tetaap di eksekusi)
+} 
+finally{ console.log("keluar lewat disini")}
+console.log("ini sudah program lainya");
+
+
+
+
+
+
+
 
 /* - Iterable dan Iterator ------------------------------
 masih terlalu advance jadi skip dulu!
