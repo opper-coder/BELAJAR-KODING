@@ -1,42 +1,42 @@
 /*
 DAFTAR ISI:
 Materi Video :
-- Pendahuluan						-> 
-- Pengenalan OOP					-> 
+- Pendahuluan				-> 
+- Pengenalan OOP			-> 
 - Membuat Constructor Function		-> 
 - Property di Constructor Function	-> 
 - Method di Constructor Function	-> 
 - Parameter di Constructor Function	-> 
-- Constructor Inheritance			-> 
-- Prototype							-> 
-- Prototype Inheritance				-> 
-- Class								-> blueprint. class Siswa{}, new Siswa(), Siswa1.nama, Siswa1.halo()
-- Constructor di Class				-> func generate "properti" obj dalam class
-- Property di Class					-> dua: 1. generate dr dlm class, 2. gen dr luar class
-- Method di Class					-> "fungsi biasa" yg di tanam ke obj "oleh" class
-- Class Inheritance					-> sistem mewarisi "prop" dan "method" parent-child
-- Super Constructor	(properti)		-> akses "properti" parent(jika terjadi generate ulang)
-- Super Method	(method)			-> akses "method" parent(jika terjadi replace)
+- Constructor Inheritance		-> 
+- Prototype				-> 
+- Prototype Inheritance			-> 
+- Class					-> blueprint. class Siswa{}, new Siswa(), Siswa1.nama, Siswa1.halo()
+- Constructor di Class			-> func generate "properti" obj dalam class
+- Property di Class			-> dua: 1. generate dr dlm class, 2. gen dr luar class
+- Method di Class			-> "fungsi biasa" yg di tanam ke obj "oleh" class
+- Class Inheritance			-> sistem mewarisi "prop" dan "method" parent-child
+- Super Constructor	(properti)	-> akses "properti" parent(jika terjadi generate ulang)
+- Super Method	(method)		-> akses "method" parent(jika terjadi replace)
 - Getter dan Setter di Class		-> method khusus pengambil dan pengeset data property
-- Public Class Field				-> property yang dapat di akses dari mana saja
-- Private Class Field				-> property yang dapat di akses dari dlm class saja
-- Private Method					-> method yang dapat di akses dari mana saja
-- Operator instanceof				-> method yang dapat di akses dari dlm class saja
-- Static Field						-> properti khusus untuk class (tidak untuk instance)
-- Static Method						-> method khusus untuk class (tidak untuk instance)
-- Error								-> super class Error
-- Error Handling					-> try, catch, finally
-- Membuat Class Error				-> 
-- Iterable dan Iterator				-> 
-- Materi Selanjutnya				-> 
+- Public Class Field			-> property yang dapat di akses dari mana saja
+- Private Class Field			-> property yang dapat di akses dari dlm class saja
+- Private Method			-> method yang dapat di akses dari mana saja
+- Operator instanceof			-> method yang dapat di akses dari dlm class saja
+- Static Field				-> properti khusus untuk class (tidak untuk instance)
+- Static Method				-> method khusus untuk class (tidak untuk instance)
+- Error					-> super class Error
+- Error Handling			-> try, catch, finally
+- Membuat Class Error			-> 
+- Iterable dan Iterator			-> 
+- Materi Selanjutnya			-> 
 */
 
 
 /* - Pendahuluan ---------------------------------------- 
 		sudut pandang pemrograman: OOP, imperatif, functional, prosedural dll
-		oject 	-> data berisi property dan method
-		class	-> blueprint
-		new		-> instance atau object yang di buat dari class
+		oject 			-> data berisi property dan method
+		class			-> blueprint
+		new			-> instance atau object yang di buat dari class
 */ 		
 /* - Pengenalan OOP ------------------------------------- 
 		adalah pemrograman orientasi object. pengelolaan function dan variabel yang di tanam dalam object 
@@ -60,24 +60,24 @@ Materi Video :
 		AKSES 		: karena ini hanya template dia tidak di akses maleinkan di instance dengan keyword new
 		INSTANCE 	: barulah instance menjadi object yang sudah bisa di akses
  */ 
-		class Siswa{}							// basic class (anjuran pakai huruf besar)
-		let aqil = new Siswa; 					// basic instance
+		class Siswa{}					// basic class (anjuran pakai huruf besar)
+		let aqil = new Siswa; 				// basic instance
 /* - Constructor di Class -------------------------------
 		CONSTRUCTOR : fungsi jika ini di buat maka kita bisa set prop
  */ 
 		class Siswa{
-			constructor(){} 					// basic
+			constructor(){} 			// basic
 		}
 /* - Property di Class ----------------------------------
 		PROPERTI	: adalah properti yang akan di masukkan dalam object instanc nya seperti field tabel lah gitu
  */ 
 		class Siswa{
 			constructor(name){
-				this.nama = name; 				// generate prop dlm constructor(berlaku utk semua instance)
+				this.nama = name; 		// generate prop dlm constructor(berlaku utk semua instance)
 			} 					
 		}
 		let aqil = new Siswa("aqil"); 			// (oper nilai ke constructor yg akan jadi properti)
-		aqil.alamat= "saiti"; 					// prop dibuat di luar contructor via instance (hany berlaku pd instance terkait)
+		aqil.alamat= "saiti"; 				// prop dibuat di luar contructor via instance (hany berlaku pd instance terkait)
 /* - Method di Class ------------------------------------
 		METHOD		: adalah "fungsi biasa" yang akan di tanam dalam objek instace
 		CARA 		: di tulis tanpa keyword "function"
@@ -87,29 +87,29 @@ Materi Video :
 			satu(){console.log(`halo satu`)} 	// bikin method dibwh "constructor" (bisa dalam constr tp boros memori)
 		}
 		let aqil = new Siswa; 			
-		aqil.satu()								// akses
+		aqil.satu()					// akses
 /* - Class Inheritance(mewarisi) ----------------------------------
 		PEWARISAN	: saat class dibuat. kita boleh juga extends class untuk mewarisi prop dan method nya kemudian di 
 					  personalisasi dengan prop dan method baru
  */ 
-		class Siswa{							// 1. bikin class PARENT (Siswa)
+		class Siswa{					// 1. bikin class PARENT (Siswa)
 			halo(){console.log(`halo saya adalah murid bernama aqil`)}
 		}
-		class Guru extends Siswa{				// 2. class CHILD (Guru)
+		class Guru extends Siswa{			// 2. class CHILD (Guru)
 			halo(){console.log(`halo saya adalah Guru bernama subhan`)} // 2.1 bikin method(halo) dg nama yang sama dg induk(replace)
 		}
 		let aqil = new Siswa; 
 		let subhan = new Guru;
-		console.log(aqil.halo()) 				// 3. hasil: halo aqil (class parent)
-		console.log(subhan.halo())				//    hasil: halo subhan (class child)
-												// 4. coba hapus method halo() di class Guru. hasil: class murid akan diakses(mewarisi)				
+		console.log(aqil.halo()) 			// 3. hasil: halo aqil (class parent)
+		console.log(subhan.halo())			//    hasil: halo subhan (class child)
+								// 4. coba hapus method halo() di class Guru. hasil: class murid akan diakses(mewarisi)				
 /* - Super Constructor ----------------------------------
 		CONSTRUCTOR CHILD : saat kita extend kan parent sudah memiliki constructor kita tinggal isi prop dan method personalisasi jika mau
 					: tapi jika maksa membuat constructor sendiri maka konsekwensinya minta izin menggunakan super() 
  */ 
-		class Siswa{							// 1. class PARENT (Siswa)
-			constructor(nama){					// 2. memiliki constructor(diwariskan ke semua child)
-				this.nama = nama;				// 3. generate properti
+		class Siswa{					// 1. class PARENT (Siswa)
+			constructor(nama){			// 2. memiliki constructor(diwariskan ke semua child)
+				this.nama = nama;		// 3. generate properti
 			}
 		}
 		class Guru extends Siswa{				// 4. class CHILD (Guru)
@@ -119,14 +119,14 @@ Materi Video :
 		console.log(subhan.halo());
 		/* super constructor disini: --------------------- */ 
 		class Siswa{							
-			constructor(nama){					// 1. pada class PARENT ada constructor
+			constructor(nama){			// 1. pada class PARENT ada constructor
 				this.nama = nama;				
 			}
 		}
 		class Guru extends Siswa{
-			constructor(nama, alamat){			// 2. dan class CHILD juga bikin constructor
-				super(nama); 					// 3. maka wajib panggil CONSTRUCTOR PARENT dg keword super(prop, prop)(wajib dlm constr,dan sekali)(jika tidak, error)
-				this.alamat = alamat; 			// 4. prop baru(child only)
+			constructor(nama, alamat){		// 2. dan class CHILD juga bikin constructor
+				super(nama); 			// 3. maka wajib panggil CONSTRUCTOR PARENT dg keword super(prop, prop)(wajib dlm constr,dan sekali)(jika tidak, error)
+				this.alamat = alamat; 		// 4. prop baru(child only)
 			}				
 			halo(){ return `halo namaku: ${this.nama}\nalamatku: ${this.alamat}` } 
 		}
@@ -139,13 +139,13 @@ Materi Video :
 			halo(){ console.log("halo Siswa...") } 	// 1. method halo() di class parent
 		}
 		class Guru extends Siswa{
-			halo(){  								// 2. method halo() di class child (replace) 
-				super.halo(); 						// 4. tapi saat mau manggil yg di parent(replaced) dari child, bisa(pakai super.halo())(wajib dalam method)
+			halo(){  				// 2. method halo() di class child (replace) 
+				super.halo(); 			// 4. tapi saat mau manggil yg di parent(replaced) dari child, bisa(pakai super.halo())(wajib dalam method)
 				console.log("halo Guru...")
 			} 
 		}
 		let subhan 	= new Guru();
-		subhan.halo();								// 3. saat di panggil di child maka yng tampil yg child(replacer)
+		subhan.halo();					// 3. saat di panggil di child maka yng tampil yg child(replacer)
 /* - Getter dan Setter di Class -------------------------
 		- adalah fungsi yg berguna membaca dan menulis isi properti yang ada di instance class yang berbentuk fungsi yang memiliki return
 		  tapi kita bisa akses selayaknya variabel. 
@@ -154,8 +154,8 @@ Materi Video :
  */ 
 		class Orang{
 			constructor(){}
-			get namalengkap(){} 					// basic get
-			set namalengkap(){}						// basic set
+			get namalengkap(){} 			// basic get
+			set namalengkap(){}			// basic set
 		}
 		// -------------------
 		class Orang{
@@ -174,8 +174,8 @@ Materi Video :
 		}
 		const aqil = new Orang("zikri", "aqil", "athoillah")	// 1. instance awal 
 		console.log(aqil);
-		console.log(aqil.namalengkap);							// 2. akses get (kayak manggil parameter saja)
-		aqil.namalengkap = "maulidia silmi kafah"				// 3. akses set (kayak set/replace parameter saja)
+		console.log(aqil.namalengkap);				// 2. akses get (kayak manggil parameter saja)
+		aqil.namalengkap = "maulidia silmi kafah"		// 3. akses set (kayak set/replace parameter saja)
 		console.log(aqil);
 /* - Public Class Field ---------------------------------
 		- di javascript class mendukung properti "private" dan "public"
@@ -189,7 +189,7 @@ Materi Video :
 			- private:  aturan untuk private ada di bawah
  */ 
  	class Orang{
-		nama;								// buatlah diluar constructor, tanpa let, dengan atau tanpa value
+		nama;							// buatlah diluar constructor, tanpa let, dengan atau tanpa value
 		alamat;
 		umur=12;
 		construct(){}						// urusan properti public di constructor boleh ngambil dari atas(nggak apa2 bikin 2 kalau mau)
@@ -202,37 +202,37 @@ Materi Video :
 		- #nama; #alamat; yaitu tambahkan pagar pada property di luar constructor tadi, itu aja
  */ 
  	class Orang{
-		#nama;								// private
+		#nama;							// private
 		#alamat;
 		#umur=12;
 		construct(){}						// jadi benar kalau bikin public tetap di constructor aja kalau saya. yg diluar cukup yg private
 		halo(){}
 	}
 	const aqil = new Orang()
-	console.log(aqil.umur);					// saat di akses atau di replace maka itu bukan properti yang bersangkutan(aqil.#umur private)
-											// melainkan aqil.umur public(yg lain)(makanya undefined)(saat di replace)nilainya akan beda nantinya
-	console.log(aqil.#umur);				// kalau di ubah dari luar jg g bisa										
+	console.log(aqil.umur);						// saat di akses atau di replace maka itu bukan properti yang bersangkutan(aqil.#umur private)
+									// melainkan aqil.umur public(yg lain)(makanya undefined)(saat di replace)nilainya akan beda nantinya
+	console.log(aqil.#umur);					// kalau di ubah dari luar jg g bisa										
 /* - Private Method -------------------------------------
 		- sama konsepnya dengan field di atas kalau mau private tingal kasih tanda pagar
 		- nanti access method modifier nya dari dalam secara public
  */ 
 	class Orang{
-		#halo(){console.log("halo...")}			// private method
+		#halo(){console.log("halo...")}				// private method
 	}
 	const aqil = new Orang()
 	console.log(aqil.halo());					// error: gak bisa di akses!
 /* - Operator instanceof --------------------------------
 		fitur untuk cek typedata dan cek instance? dengan "typeof" dan "instanceof"
  */ 
-	class Siswa{}								// class Siswa
+	class Siswa{}							// class Siswa
 	class Guru extends Siswa{}					// class Guru
 	const aqil = new Siswa();					// instance ke Siswa
 	const subhan = new Guru();					// instance ke Guru
 	console.log(typeof aqil);					// hasil: object (menayakan apa type datanya)(boleh pakai kurung ataupun tidak)
-	console.log(typeof (subhan));				// hasil: object (menayakan apa type datanya)
-	console.log(aqil instanceof(Siswa));		// hasil: true (menayakan apakah object ini instance ke: ... : bool)
-	console.log(subhan instanceof Guru);		// hasil: true (menayakan apakah object ini instance ke: ... : bool)
-	console.log(subhan instanceof Siswa);		// hasil: true (menayakan apakah object ini instance yang extends ke: ... : bool)
+	console.log(typeof (subhan));					// hasil: object (menayakan apa type datanya)
+	console.log(aqil instanceof(Siswa));				// hasil: true (menayakan apakah object ini instance ke: ... : bool)
+	console.log(subhan instanceof Guru);				// hasil: true (menayakan apakah object ini instance ke: ... : bool)
+	console.log(subhan instanceof Siswa);				// hasil: true (menayakan apakah object ini instance yang extends ke: ... : bool)
 
 /* - Static Field ---------------------------------------
 	saat kita bikin properti dalam class maka prop tersebut akan di warisi oleh instance
@@ -241,7 +241,7 @@ Materi Video :
 		- static sifatnya global
  */ 
 	class Configuration{
-		static aplication = "trip";					// static field
+		static aplication = "trip";				// static field
 		static version	= 6.2;
 	}
 	const config = new Configuration();
@@ -253,10 +253,10 @@ Materi Video :
 
  */ 
 	class Configuration{
-		static halo(){ console.log("halo static"); } // static method
+		static halo(){ console.log("halo static"); } 		// static method
 	}
 	const config = new Configuration();
-	console.log(config.halo());						// error: tidak bisa di akses sebab memang tidak ikut dalam instance
+	console.log(config.halo());					// error: tidak bisa di akses sebab memang tidak ikut dalam instance
 	console.log(Configuration.halo());				// cara akses langsung ke class.static method
 
 /* - Error ----------------------------------------------
@@ -271,7 +271,7 @@ Materi Video :
 class Hitungan{
 	totalkan(...angka){
 		if(angka.length === 0){ 					// bikin kondisi jika true jalankan error nya
-			throw new Error("Total Parameter harus lebih dari 0"); // cara instancenya: tinggal kasih throw depan new sbg penganti var) 
+			throw new Error("Total Parameter harus lebih dari 0"); 	// cara instancenya: tinggal kasih throw depan new sbg penganti var) 
 		}
 		let hasil = 0;
 		for( const a of angka){ hasil += a }
@@ -279,7 +279,7 @@ class Hitungan{
 	}
 }
 const pertama = new Hitungan()						// coba instance class nya
-console.log(pertama.totalkan(1,1,1));				// hasil:3 > saat ada angka dikirim maka tidak error dan running normal 
+console.log(pertama.totalkan(1,1,1));					// hasil:3 > saat ada angka dikirim maka tidak error dan running normal 
 console.log(pertama.totalkan());					// hasil:error > saat kosong, error. dan pesan nya di tampilkan
 /* - Error Handling -------------------------------------
 	Saat terjadi error di kode program JavaScript, kadang kita tidak ingin program kita berhenti Di JavaScript, 
@@ -293,10 +293,10 @@ console.log(pertama.totalkan());					// hasil:error > saat kosong, error. dan pe
 	- secara default program berjalan melewati try. jika mulus akan keluar melanjutkan program berikutnya.(catch di abaikan)
 	- tapi saat dalam try ada error(yg harusnya berhenti), jalan keluar langsung pindah ke catch utk melanjutkan program berikutnya.
  */ 
-try{}catch(){}										// basic
+try{}catch(){}								// basic
 // -----
-class Hitungan{										// 1. class
-	totalkan(...angka){								// 2. method
+class Hitungan{								// 1. class
+	totalkan(...angka){						// 2. method
 		if(angka.length === 0){ 
 			throw new Error("Total Parameter harus lebih dari 0");	// 3. ada aplikasi error. jika nol, error()
 		}
@@ -306,15 +306,15 @@ class Hitungan{										// 1. class
 	}
 }
 const pertama = new Hitungan();						// 4. instance
-try{ 												// 5. ada try catch
+try{ 									// 5. ada try catch
 	console.log(pertama.totalkan(2));				// 6. saat melewati ini method pertama.totalkan() coba errorkan
 	console.log("kode try disini akan berhenti jika error, lanjutkan!"); // 7. jika error app berhenti, gak sampai kesini
 } 
 catch (error){
-	console.error(`terjadi error: ${error.message}`); // 8. dan akhirnya aplikasi lewat catch ini. error.message adalah properti bawaan JS
-}													// 	    yang menangkap dari instance class error di aplikasi throw di atas
-console.log("kode program tidak akan berhenti");	// 9. sehingga aplikasi nyampai kesini melewati "catch"									
-													// 10. tapi jika langkah 7 tidak error perjalanan tembus ke 9. ini melalui "try"									
+	console.error(`terjadi error: ${error.message}`); 		// 8. dan akhirnya aplikasi lewat catch ini. error.message adalah properti bawaan JS
+}									// 	    yang menangkap dari instance class error di aplikasi throw di atas
+console.log("kode program tidak akan berhenti");			// 9. sehingga aplikasi nyampai kesini melewati "catch"									
+									// 10. tapi jika langkah 7 tidak error perjalanan tembus ke 9. ini melalui "try"									
 /* - finally --------------------------------
 		finally adalah seperti aplikasi diluar try catch finally. yaitu error atau tidak silahkan finally tetap di eksekusi
  		istilahnya "gerbang keluar dari try catch"
@@ -337,7 +337,7 @@ try{
 catch (error){
 	console.error(`terjadi error: ${error.message}`);
 } 
-finally{ console.log("keluar lewat disini")}			// finally. gerbang keluar lewat sini
+finally{ console.log("keluar lewat disini")}				// finally. gerbang keluar lewat sini
 console.log("ini sudah program lainya");
 /* - try finally ------------------------------
 	ada juga try finally tapi jarang di gunakan
@@ -352,10 +352,10 @@ console.log("ini sudah program lainya");
 					agar bisa dikirimkan ke parameter di constructor class Error
 					bentuk dasar nya di bawah ini [class ValidationError extends Error]
  */ 
-class ValidationError extends Error{	// 1. class anak dari error
-	constructor(message, field){		// 2. propertinya bikin 2, pesan dan field
-		super(message); 				// 3. properti ini di ambil dari class Error parent
-		this.field = field; 			// 4. buatan kita
+class ValidationError extends Error{					// 1. class anak dari error
+	constructor(message, field){					// 2. propertinya bikin 2, pesan dan field
+		super(message); 					// 3. properti ini di ambil dari class Error parent
+		this.field = field; 					// 4. buatan kita
 	}
 }
 
