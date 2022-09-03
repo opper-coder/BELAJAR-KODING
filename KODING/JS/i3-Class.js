@@ -1,15 +1,15 @@
 /*
 DAFTAR ISI:
 Materi Video :
-- Pendahuluan				-> 
-- Pengenalan OOP			-> 
-- Membuat Constructor Function		-> 
-- Property di Constructor Function	-> 
-- Method di Constructor Function	-> 
-- Parameter di Constructor Function	-> 
-- Constructor Inheritance		-> 
-- Prototype				-> 
-- Prototype Inheritance			-> 
+- Pendahuluan				-> pembukaan
+- Pengenalan OOP			-> OOP sintem CLASS dan instance
+- Membuat Constructor Function		-> 	-- darisini adalah pengenalan cara kerja CLASS fitur baru ES6
+- Property di Constructor Function	-> 	--
+- Method di Constructor Function	-> 	--
+- Parameter di Constructor Function	-> 	--
+- Constructor Inheritance		-> 	--
+- Prototype				-> 	--
+- Prototype Inheritance			-> 	--
 - Class					-> blueprint. class Siswa{}, new Siswa(), Siswa1.nama, Siswa1.halo()
 - Constructor di Class			-> func generate "properti" obj dalam class
 - Property di Class			-> dua: 1. generate dr dlm class, 2. gen dr luar class
@@ -25,8 +25,8 @@ Materi Video :
 - Static Field				-> properti khusus untuk class (tidak untuk instance)
 - Static Method				-> method khusus untuk class (tidak untuk instance)
 - Error					-> super class Error
-- Error Handling			-> try, catch, finally
-- Membuat Class Error			-> 
+- Error Handling			-> mengani error dg try, catch, finally (pada sistem class, boleh pada apasaj)
+- Membuat Class Error			-> bikin instance class error sendiri. ada kelebihanya
 - Iterable dan Iterator			-> 
 - Materi Selanjutnya			-> 
 */
@@ -40,7 +40,7 @@ Materi Video :
 */ 		
 /* - Pengenalan OOP ------------------------------------- 
 		adalah pemrograman orientasi object. pengelolaan function dan variabel yang di tanam dalam object 
-    sehingga bisa terjadi: instance, inheritance, modifikasi instance, public, private, ...
+    		sehingga bisa terjadi: instance, inheritance, modifikasi instance, public, private, ...
 */ 
 /* - Membuat Constructor Function ----------------------- 
 		saat kita bikin object manual itu ya bebas sekali mengatur properti dan method sehingga uniq
@@ -347,15 +347,16 @@ console.log("ini sudah program lainya");
 		Walaupun JavaScript sudah memiliki standard class Error, 
 		Namun alangkah baiknya, kita membedakan tiap jenis error misalnya:
 		error koneksi, error validasi, error input form dll, atau bahkan notifikasi mungkin
+		kelebihanya: adalah selain Error standard ada messagenya, kita juga bisa kirim message lagi (jadi ada2 message: standard dan custom)
 		caranya: 	cukup membuat class turunan dari class Error
 					Dan jangan lupa tambahkan parameter message, 
 					agar bisa dikirimkan ke parameter di constructor class Error
 					bentuk dasar nya di bawah ini [class ValidationError extends Error]
  */ 
 class ValidationError extends Error{					// 1. class anak dari error
-	constructor(message, field){					// 2. propertinya bikin 2, pesan dan field
-		super(message); 					// 3. properti ini di ambil dari class Error parent
-		this.field = field; 					// 4. buatan kita
+	constructor(message, field){					// 2. propertinya bikin 2, message(bawaan) dan field(custom)
+		super(message); 					// 3. properti ini di ambil dari class Error parent standard
+		this.field = field; 					// 4. buatan kita untuk custom
 	}
 }
 
