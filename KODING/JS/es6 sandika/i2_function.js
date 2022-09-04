@@ -10,8 +10,7 @@ FUNCTION
 	- wajib pakai kurung saat parameter kosong	-> const nama = () => action
 - console.log, info, tabel, warn, error 		-> 
 - method vs functional					-> bedanya: function adalah type data, method adalah properti dalam object (meski berupa function)
-- THIS 							-> adalah "pseudo object" pada "scoop" object parent  
-- callback dan higher order function 			-> callback alasan: simplicity dan abstraction
+- THIS 							-> adalah "pseudo object" pada "scoop" object parent (sebenarnya ini pembahasan object lihatlah!)
 ---------------------------------------------------------------------------------------------- */
 CONTOH KEMUDAHAN FUNCTION:
 /* contoh1: bayangkan saat angka 10 berubah menjadi 20 maka scrip yang ke 2 lebih simpel dan reusable*/
