@@ -140,6 +140,6 @@ FUNCTION
 		pengulangan(20);
 	/* contoh4: atau lebih simpel lagi ini */
 		function pengulangan(n, aksi){ for(var i=0; i<n; i++){ aksi(i); } }  // cara ketiga
-		pengulangan(20, alert);						// pilih alert atau console.log
+		pengulangan(20, alert);						     // pilih alert atau console.log
 
 // cursor pembahasan ------->>>>>> ------->>>>>> ------->>>>>> ------->>>>>> 
