@@ -146,7 +146,8 @@ DAFTAR ISI:
 				}
 				jumlahkan("jeruk", 10,11,14,5,7);					// panggil dengan oper banyak parameter sesuai(di bedakan dg) typedata
 
-		/* ngambil parameter function dari object
+		/* object parameter
+			ngambil object untuk di oper
 		------------------------------- */
 			function salam({nama, alamat}){ return `halo nama saya ${nama} alamat saya ${alamat} jaya...` }
 			const biodata = {nama : "izza", alamat : "banggai"}
