@@ -1,152 +1,146 @@
-// FUNCTION
-function tampilPesan(nama){alert("halo " + nama);}     		// basic				-> f nama(){}
-tampilPesan("aqil");
-const tampilPesan = function(nama){alert("halo " + nama);}   	// function expression/anonimuous: 	-> const nama = f(){}
-tampilPesan("aqil");
-const tampilPesan = (nama) => {alert("halo " + nama);}		// arrow function 			-> const nama = (param) => {action}
-tampilPesan("aqil");
-// const nama = param => {action}
-const tampilPesan = nama => {alert("halo " + nama);} 		// bisa hapus kurung()
-tampilPesan("aqil");
-// const nama = param => action
-const tampilPesan = nama => alert("halo " + nama); 		// bisa hapus () dan {}
-tampilPesan("aqil");
-// const nama = (param, param2) => {action}
-const tampilPesan = (nama, alamat) => {return "halo " + nama + alamat } // tidak bisa hapus()
-tampilPesan("aqil", "saiti");
-// const nama = param => action
-const tampilPesan = nama => "halo " + nama 			// hapus {} bahkan return jika hanya saru baris return saja (implisit return)
-tampilPesan("aqil");
-// const nama = () => action
-const tampilPesan = () => "halo "  				// wajib pakai kurung saat parameter kosong
-tampilPesan();
+/*
+FUNCTION
+- basic 										-> f nama(){}	
+- call/panggil 									-> tampilPesan("aqil");
+- function expression/anonimuous: 				-> const nama = f(){} 
+- arrow function 								-> const nama = (param) => {action}	
+	- bisa hapus kurung() 						-> const nama = param => {action}
+	- implisit return, hapus () dan {}			-> const nama = param => action; hapus {} bahkan return jika hanya saru baris return saja
+	- tidak bisa hapus( dua arg )				-> const nama = (param, param2) => {action}
+	- wajib pakai kurung saat parameter kosong	-> const nama = () => action
+- console.log, info, tabel, warn, error 		-> 
+- method vs functional							-> bedanya: function adalah type data, method adalah properti dalam object (meski berupa function)
+- THIS 											-> adalah "pseudo object" pada "scoop" object parent  
+- callback dan higher order function 			-> callback
+- 
+----------------------------------------------------------------------------------------------
+*/
+/* basic ---------------------------------------------- */
+		function tampilPesan(nama){alert("halo " + nama);}			
+/* call/panggil --------------------------------------- */
+		tampilPesan("aqil");tampilPesan("aqil", "izza");
+/* function expression/anonimuous: -------------------- */
+		const tampilPesan = function(nama){alert("halo " + nama);} 
+/* arrow function ------------------------------------- */
+		const tampilPesan = (nama) => {alert("halo " + nama);}	
+		/* bisa hapus kurung() ------------------------ */
+				const tampilPesan = nama => {alert("halo " + nama);}
+		/* bisa hapus () dan {} (implisit return) ----- */
+				const tampilPesan = nama => alert("halo " + nama);
+		/* tidak bisa hapus( dua arg ) ---------------- */
+				const tampilPesan = (nama, alamat) => {return "halo " + nama + alamat }
+		/* implisit return ---------------------------- */
+				const tampilPesan = nama => "halo " + nama 				
+		/* wajib kurung ------------------------------- */
+				const tampilPesan = () => "halo "  		
+/* method vs function							
+	 	- function adalah type data, 
+	 	- method adalah properti dalam object (yg berupa function juga sih) 
+		- kalau properti adalah variabel dalam object yang berisi value
+	 	*/
+/* this pada function  -------------------------------------
+		- THIS adalah pseudo object yang merujuk pada object scoop pemilik: window, class, object, function decl dlm obj
+		- this dalam function gak ada pengaruh sebenarnya. baik "declaration" atau "arrow"
+		- kecuali saat this masuk kedalam object. maka this berpengaruh terhadap penggunaan function
+		  - function yang menjadi method object:
+		  	kedua function tidak ada masalah karena mengacu pada obj yg sama (pemilik methodnya)
+		  - function di luar method object maka this:
+			  - berlaku pada func declaration
+			  - tidak berlaku pada func arrow 
+			  - singkatnya: this pada metod mengacu pada object ini, coba ganti methode dengan arrow pasti undefined
+ 		*/
+ 		/* this dlm windows ----------------- */
+ 				console.log(this);						// hasil : window{}
+ 		/* this dalam function  g ada pengaruh jg ------------- */
+ 				function coba(){
+					return console.log(this) 			// this pada func declaration
+				}
+				let coba2 = coba2 => console.log(this)	// pada arrow
+				coba()									// hasil : window{}
+				coba2()									// hasil : window{}
+ 		/* this object ---------------------- */
+				let objectku = {				
+					nama : "aqil",
+					umur : 12,
+					sapa : function(){
+						console.log(this)
+					}
+				}
+				objectku.sapa() 						// hasil: objectku{}. mengacu pada object pemiliknya
+		/* this di dlm method: func dec vs arrow  --------- */
+		const Mahasiswa = function(){
+			this.nama = "aqil",
+			this.umur = 33
+			this.salam = function(){
+				console.log(`halo saya ${this.nama}`);	
+			}
+		}
+		const Mahasiswa2 = function(){
+			this.nama = "iza",
+			this.umur = 33
+			this.salam = () => {							
+				console.log(`halo saya ${this.nama}`);
+			}
+		}
+		const data = new Mahasiswa(); data.salam()	 	// hasil: mahasiswa.salam()
+		const data2 = new Mahasiswa2(); data2.salam()	// hasil: mahasiswa2.salam()
 
-contoh:
+		/* this diluar method = func dec vs arrow --------- */
+		const Mahasiswa = function() {
+			this.nama  = "sandika",
+			this.umur  = 33,
+			this.salam =  function() { 									// 1. method dg func dec
+				console.log(`halo ini ${this.nama}`); 					//    this object kebaca aman
+			}
+			setInterval( function(){ console.log(this.umur++)}, 1000 ) 	// 2. tapi FUNCTION DECLARATION this ini tidak kebaca (NaN)(karena bukan method)
+		}																//    karena kena hoisting maka lexical scoop langsung window
+		const data = new Mahasiswa;
+		/* karena arrow tidak punya konsep this maka this akan di cari di lexical scoopnya (mahasiswa2);
+		maka nilainya menjadi ada */
+		const Mahasiswa2 = function() {
+			this.nama  = "sandika",
+			this.umur  = 33,
+			this.salam =  function() { 
+				console.log(`halo ini ${this.nama}`);
+			}
+			setInterval( () => { console.log(this.umur++)}, 1000 ) 		// ARROW punya lexical scoop dalam object dan tidak kena hoisting
+		}
+		const data = new Mahasiswa;
+		const data2 = new Mahasiswa2;
+/* callback dan higher order function ---------------------------------------------------
+		- DALAM JS function adalah first class object. object saja terbuat dari function
+			- alasan pakai higher oreder function:
+			1. abstraksi (penyederhanaan)
+			2. anekdot;
+				"cara membuat program ada dua:"
+				"1. Buat program sesederhana mungkin hingga jelas-jelas tidak ada kekuranganya "
+				"2. Buat program sekomplex mungkin hingga tidak ada kekurangan yang jelas-jelas"
+			3. pendekatan functional programing lebih aman efisien dan mudah
+		- sama dengan type data lainya function dan object, bisa di simpan sebagai argumen dan return function lainya
+		- (func konsumen ) disebut: higher order function. 
+			- termasuk juga (yang memiliki return value callback)
+		- (func akan di oper) disebut: callback */
+	/* contoh: function konsumen */
+		function kerjakanTugas(matakuliah, selesai){					// 1. konsumen
+			console.log(`mulai kerjakan tugas ${matakuliah}`);
+			selesai();													// 4. eksekusi
+		}
+		function selesai(){												// 2. callback
+			alert("selesai mengerjakan tugas")	
+		}
+		kerjakanTugas("matematika",selesai);							// 3. arg: callback
+	/* contoh2: function yang memiliki return value callback*/
+		function salam(waktu){
+			return function(nama){ console.log(`halo ${nama} selamat ${waktu}`); }
+		}
+		let selamat = salam("sore");
+		console.dir(selamat("aqil"));	// pembahasan ada di closure
+	/*contoh: bayangkan saat angka 10 berubah menjadi 20 maka scrip yang ke 2 lebih simpel dan reusable*/
+		for(var i=0; i<10; i++){ console.log(i); } // cara pertama
+		function pengulangan(n){ for(var i=0; i<n; i++){ console.log(i); } } // cara kedua
+		pengulangan(20);
+	/* atau lebih simpel lagi ini: */
+		function pengulangan(n, aksi){ for(var i=0; i<n; i++){ aksi(i); } } // cara kedua
+		pengulangan(20, alert);		// pilih alert atau console.log
 
-let mahasiswa = ["aqil", "izza", "andi"];
-let jumlahHuruf = mahasiswa.map( nama => nama.length )		// mau return array
-console.log(jumlahHuruf);
-
-let mahasiswa = ["aqil", "izza", "andi"];
-let jumlahHuruf = mahasiswa.map( nama => ({nama: nama, jumlahHuruf: nama.length}) )		// mau return object{} bungkus
-// console.log(jumlahHuruf);
-console.table(jumlahHuruf.nama);				// Pengganti konsole.log untuk array dan object
-
-// THIS PADA FUNCTION 
-// konsep this berlaku pada function declaration
-// this tidak ada pada arrow function
-// this basicnya mengacu pada object mahasiswa(function declaration), coba dibawah:
-const Mahasiswa = function(){
-	this.nama = "sandika",
-	this.umur = 33
-	console.log(this)
-}
-const data = new Mahasiswa();
-// this pada metode mengacu pada object ini aman, coba ganti methode dengan arrow pasti undefined
-const Mahasiswa = function(){
-	this.nama = "sandika",
-	this.umur = 33
-	this.salam = function(){
-		console.log(`halo saya ${this.nama}`);
-	}
-}
-const data = new Mahasiswa();
-// fungsi di atas tidak serta merta bisa di ubah ke arrow function, kalau method boleh:
-// basicnya this tidak ada pada arrow function makanya methode boleh pakai this dalam arrow sebab method 
-// - berada di dalam object(function biasa) 
-const Mahasiswa = function(){
-	this.nama = "sandika",
-	this.umur = 33
-	this.salam = () => {
-		console.log(`halo saya ${this.nama}`);
-	}
-}
-const data = new Mahasiswa();
-// makanya this tidak bisa di temukan di object literal oleh arrow function (dia akan mencari 
-// object this diluar tidak ditemukan)
-
-// SATU CONTOH pahami
-const Mahasiswa = function() {
-	this.nama  = "sandika",
-	this.umur  = 33,
-	this.salam =  function() { 
-		console.log(`halo ini ${this.nama}`);
-	}
-	setInterval( function(){ console.log(this.umur++)}, 1000 ) 	// function declaration this tidak kebaca (NaN) 
-}																// karena kena hoisting maka lexical scoop langsung window
-const data = new Mahasiswa;
-// karena arrow tidak punya konsep this maka this akan di cari di lexical scoopnya
-// maka nilainya menjadi ada
-const Mahasiswa = function() {
-	this.nama  = "sandika",
-	this.umur  = 33,
-	this.salam =  function() { 
-		console.log(`halo ini ${this.nama}`);
-	}
-	setInterval( () => { console.log(this.umur++)}, 1000 ) 		// arraw punya lexical scoop dalam object dan tidak kena hoisting
-}
-const data = new Mahasiswa;
-// =========================================================================
-
-
-
-
-
-
-
-
-
-
-
-// =========================================================================
-// HIGHER ORDER FUNCTION
-
-// DALAM JS function adalah first class object
-// object saja terbuat dari function
-// sama dengan type data lainya function dan object 
-// bisa di simpan sebagai argumen dan return function lainya
-
-function kerjakanTugas(matakuliah, selesai){
-	console.log(`mulai kerjakan tugas ${matakuliah}`);
-	selesai();
-}
-function selesai(){
-	alert("selesai mengerjakan tugas")	
-}
-kerjakanTugas("matematika",selesai);
-
-// peristiwa ini ada function yang memiliki argumen berupa function lainya
-// function yang memiliki argumen function di sebut "higher order function" sedang 
-// function yang di panggil sbg argumen disebut "callback"
-// contoh lain: setInterval di atas
-
-// atau 
-
-// function yang memiliki return value berupa function juga disebut "higher order function"
-function salam(waktu){
-	return function(nama){ console.log(`halo ${nama} selamat ${waktu}`); }
-}
-
-let selamat = salam("sore");
-console.dir(selamat("aqil"));	// pembahasan ada di closure
-
-// alasan pakai higher oreder function:
-// 1. abstraksi (penyederhanaan)
-// 2. anekdot;
-	"cara membuat program ada dua:"
-	"1. Buat program sesederhana mungkin hingga jelas-jelas tidak ada kekuranganya "
-	"2. Buat program sekomplex mungkin hingga tidak ada kekurangan yang jelas-jelas"
-// 3. pendekatan functional programing lebih aman efisien dan mudah
-
-// contoh:
-// bayangkan saat angka 10 berubah menjadi 20 maka scrip yang ke 2 lebih simpel dan reusable
-
-for(var i=0; i<10; i++){ console.log(i); } // cara pertama
-
-function pengulangan(n){ for(var i=0; i<n; i++){ console.log(i); } } // cara kedua
-pengulangan(20);
-
-// atau lebih simpel lagi ini:
-
-function pengulangan(n, aksi){ for(var i=0; i<n; i++){ aksi(i); } } // cara kedua
-pengulangan(20, alert);		// pilih alert atau console.log
+// cursor pembahasan ------->>>>>> ------->>>>>> ------->>>>>> ------->>>>>> 
