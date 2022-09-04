@@ -12,6 +12,14 @@ FUNCTION
 - method vs functional					-> bedanya: function adalah type data, method adalah properti dalam object (meski berupa function)
 - THIS 							-> adalah "pseudo object" pada "scoop" object parent  
 - callback dan higher order function 			-> callback alasan: simplicity dan abstraction
+CONTOH KEMUDAHAN FUNCTION:
+/* contoh1: bayangkan saat angka 10 berubah menjadi 20 maka scrip yang ke 2 lebih simpel dan reusable*/
+		for(var i=0; i<10; i++){ console.log(i); } 			     // cara pertama
+		function pengulangan(n){ for(var i=0; i<n; i++){ console.log(i); } } // cara kedua
+		pengulangan(20);
+/* contoh2: atau lebih simpel lagi ini */
+		function pengulangan(n, aksi){ for(var i=0; i<n; i++){ aksi(i); } }  // cara ketiga
+		pengulangan(20, alert);						     // pilih alert atau console.log
 ----------------------------------------------------------------------------------------------
 */
 /* basic ---------------------------------------------- */
@@ -108,7 +116,7 @@ FUNCTION
 		const data2 = new Mahasiswa2;
 /* callback dan higher order function ---------------------------------------------------
 		- DALAM JS function adalah first class object. object saja terbuat dari function
-			- alasan pakai higher oreder function:
+		- alasan pakai higher order function:
 			1. abstraksi (penyederhanaan)
 			2. anekdot;
 				"cara membuat program ada dua:"
@@ -119,6 +127,7 @@ FUNCTION
 		- (func konsumen ) disebut: higher order function. 
 		   termasuk juga (function yang memiliki return value callback)
 		- (func akan di oper) disebut: callback */
+
 	/* contoh: function konsumen */
 		function kerjakanTugas(matakuliah, selesai){			// 1. konsumen
 			console.log(`mulai kerjakan tugas ${matakuliah}`);
@@ -134,12 +143,5 @@ FUNCTION
 		}
 		let selamat = salam("sore");
 		console.dir(selamat("aqil"));					// pembahasan ada di closure
-	/* contoh3: bayangkan saat angka 10 berubah menjadi 20 maka scrip yang ke 2 lebih simpel dan reusable*/
-		for(var i=0; i<10; i++){ console.log(i); } 			     // cara pertama
-		function pengulangan(n){ for(var i=0; i<n; i++){ console.log(i); } } // cara kedua
-		pengulangan(20);
-	/* contoh4: atau lebih simpel lagi ini */
-		function pengulangan(n, aksi){ for(var i=0; i<n; i++){ aksi(i); } }  // cara ketiga
-		pengulangan(20, alert);						     // pilih alert atau console.log
 
 // cursor pembahasan ------->>>>>> ------->>>>>> ------->>>>>> ------->>>>>> 
