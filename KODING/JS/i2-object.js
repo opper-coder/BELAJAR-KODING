@@ -94,6 +94,7 @@ OBJECT
 		- walau method di panggil berkali2 ternyata di belakang layar methode nya juga di buat berkali2
 		  dengan nilai sesuai instanya setiap kali instance di buat (boros memori)
 	*/ 	
+	function Obj(args){this.prop}			// basic: (args opt){ {} dan return hilang di ganti this.prop }
 	function Obj(nama, alamat){			// nama di awali huruf besar (walau boleh kecil)
 		this.nama = nama;			// isi/assign dengan "this" (dg this otomatis di buatkan "object dg ambil nama func scoopnya" )
 		this.alamat = alamat;			// dan return nya di hilangkan (karena dah jadi obj sekarang)
