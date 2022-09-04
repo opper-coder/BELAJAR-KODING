@@ -35,8 +35,14 @@ Materi Video :
 /* - Pendahuluan ---------------------------------------- 
 		sudut pandang pemrograman: OOP, imperatif, functional, prosedural dll
 		oject 			-> data berisi property dan method
+			properti		-> variabel dalam object yang berisi value
+			method			-> properti dalam object yang berupa function
+			function 		-> adalah type data function 
+			method vs function	-> method adalah milik object. function itu mandiri native (misalnya function "dalam" argumen method)
 		class			-> blueprint
 		new			-> instance atau object yang di buat dari class
+		new extends		-> inheritance
+		
 */ 		
 /* - Pengenalan OOP ------------------------------------- 
 		adalah pemrograman orientasi object. pengelolaan function dan variabel yang di tanam dalam object 
