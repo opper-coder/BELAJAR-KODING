@@ -11,8 +11,7 @@ FUNCTION
 - console.log, info, tabel, warn, error 		-> 
 - method vs functional					-> bedanya: function adalah type data, method adalah properti dalam object (meski berupa function)
 - THIS 							-> adalah "pseudo object" pada "scoop" object parent  
-- callback dan higher order function 			-> callback
-- 
+- callback dan higher order function 			-> callback alasan: simplicity dan abstraction
 ----------------------------------------------------------------------------------------------
 */
 /* basic ---------------------------------------------- */
