@@ -40,8 +40,8 @@ Materi Video :
 			function 		-> adalah type data function 
 			method vs function	-> method adalah milik object. function itu mandiri native (misalnya function "dalam" argumen method)
 		class			-> blueprint
+		class extends		-> inheritance
 		new			-> instance atau object yang di buat dari class
-		new extends		-> inheritance
 		
 */ 		
 /* - Pengenalan OOP ------------------------------------- 
