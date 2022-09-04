@@ -20,6 +20,7 @@ DAFTAR ISI:
 		- Default Parameter			-> pengganti (penjaga) args kosong
 		- optional parameter			-> awas, bisa jadi boomerang
 		- Rest Parameter/rest argument		-> variabel khusus penangkap banyak parameter dan konvert ke array
+		- object parameter/args			-> tidak ada masalah
 		- Spread syntax 			-> mau oper array? eit pakai ini saja, jangan salah
 		- pseudo arguments			-> pseudo arguments/arguments global
 	- return					-> hasilnya boleh : bool, string, numb, concate, math, typedata, var, array, obj, callback func lain dll;
@@ -144,6 +145,12 @@ DAFTAR ISI:
 					console.log(`jumlah ${nama} adalah: ${total}`)	// hasil
 				}
 				jumlahkan("jeruk", 10,11,14,5,7);					// panggil dengan oper banyak parameter sesuai(di bedakan dg) typedata
+
+		/* ngambil parameter function dari object
+		------------------------------- */
+			function salam({nama, alamat}){ return `halo nama saya ${nama} alamat saya ${alamat} jaya...` }
+			const biodata = {nama : "izza", alamat : "banggai"}
+			console.log(salam(biodata))
 
 		/* Spread syntax 
 		----------------------------
