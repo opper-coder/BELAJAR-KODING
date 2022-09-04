@@ -17,7 +17,7 @@ Materi Video :
 - Class Inheritance			-> sistem mewarisi "prop" dan "method" parent-child
 - Super Constructor	(properti)	-> akses "properti" parent(jika terjadi generate ulang)
 - Super Method	(method)		-> akses "method" parent(jika terjadi replace)
-- Getter dan Setter di Class		-> method khusus pengambil dan pengeset data property
+- Getter dan Setter di Class		-> function khusus dalam khususnya di OOP pengambil dan pengeset data property
 - Public Class Field			-> property yang dapat di akses dari mana saja
 - Private Class Field			-> property yang dapat di akses dari dlm class saja
 - Private Method			-> method yang dapat di akses dari mana saja
@@ -26,7 +26,7 @@ Materi Video :
 - Static Method				-> method khusus untuk class (tidak untuk instance)
 - Error					-> super class Error
 - Error Handling			-> mengani error dg try, catch, finally (pada sistem class, boleh pada apasaj)
-- Membuat Class Error			-> bikin instance class error sendiri. ada kelebihanya
+- Membuat Class Error sendiri		-> bikin instance class error sendiri. ada kelebihanya
 - Iterable dan Iterator			-> 
 - Materi Selanjutnya			-> 
 */
@@ -153,10 +153,11 @@ Materi Video :
 		let subhan 	= new Guru();
 		subhan.halo();					// 3. saat di panggil di child maka yng tampil yg child(replacer)
 /* - Getter dan Setter di Class -------------------------
-		- adalah fungsi yg berguna membaca dan menulis isi properti yang ada di instance class yang berbentuk fungsi yang memiliki return
+		- adalah fungsi khusus yg berguna membaca dan menulis isi properti yang ada di instance class yang berbentuk fungsi yang memiliki return
 		  tapi kita bisa akses selayaknya variabel. 
-		- cara membuat ini dengan keyword "get" dan "set" tanpa "function"
-		- ini sebenarnya ada di materi dasar javascript
+		- cara membuat ini dengan keyword "get" dan "set" tanpa keyword "function"
+		- kelebihan: panggil kayak variabel saja. dan buat tinggal get dan set saja tanpa function
+		- di materi dasar javascript ada juga
  */ 
 		class Orang{
 			constructor(){}
@@ -349,7 +350,7 @@ console.log("ini sudah program lainya");
 	ada juga try finally tapi jarang di gunakan
  */ 
  	console.log("lanjutkan");
-/* - Membuat Class Error ------------------------------
+/* - Membuat Class Error Sendiri ------------------------------
 		Walaupun JavaScript sudah memiliki standard class Error, 
 		Namun alangkah baiknya, kita membedakan tiap jenis error misalnya:
 		error koneksi, error validasi, error input form dll, atau bahkan notifikasi mungkin
