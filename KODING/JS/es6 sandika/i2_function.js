@@ -12,6 +12,7 @@ FUNCTION
 - method vs functional					-> bedanya: function adalah type data, method adalah properti dalam object (meski berupa function)
 - THIS 							-> adalah "pseudo object" pada "scoop" object parent  
 - callback dan higher order function 			-> callback alasan: simplicity dan abstraction
+---------------------------------------------------------------------------------------------- */
 CONTOH KEMUDAHAN FUNCTION:
 /* contoh1: bayangkan saat angka 10 berubah menjadi 20 maka scrip yang ke 2 lebih simpel dan reusable*/
 		for(var i=0; i<10; i++){ console.log(i); } 			     // cara pertama
@@ -20,8 +21,7 @@ CONTOH KEMUDAHAN FUNCTION:
 /* contoh2: atau lebih simpel lagi ini */
 		function pengulangan(n, aksi){ for(var i=0; i<n; i++){ aksi(i); } }  // cara ketiga
 		pengulangan(20, alert);						     // pilih alert atau console.log
-----------------------------------------------------------------------------------------------
-*/
+/* ---------------------------------------------------------------------------------------------- */
 /* basic ---------------------------------------------- */
 	function tampilPesan(nama){alert("halo " + nama);}			
 /* call/panggil --------------------------------------- */
