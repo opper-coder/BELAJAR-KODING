@@ -114,34 +114,6 @@ CONTOH KEMUDAHAN FUNCTION:
 	}
 	const data = new Mahasiswa;
 		const data2 = new Mahasiswa2;
-/* callback dan higher order function ---------------------------------------------------
-		- DALAM JS function adalah first class object. object saja terbuat dari function
-		- alasan pakai higher order function:
-			1. abstraksi (penyederhanaan)
-			2. anekdot;
-				"cara membuat program ada dua:"
-				"1. Buat program sesederhana mungkin hingga jelas-jelas tidak ada kekuranganya "
-				"2. Buat program sekomplex mungkin hingga tidak ada kekurangan yang jelas-jelas"
-			3. pendekatan functional programing lebih aman efisien dan mudah
-		- sama dengan type data lainya function dan object, bisa di simpan sebagai argumen dan return function lainya
-		- (func konsumen ) disebut: higher order function. 
-		   termasuk juga (function yang memiliki return value callback)
-		- (func akan di oper) disebut: callback */
 
-	/* contoh: function konsumen */
-		function kerjakanTugas(matakuliah, selesai){			// 1. konsumen
-			console.log(`mulai kerjakan tugas ${matakuliah}`);
-			selesai();						// 4. eksekusi
-		}
-		function selesai(){						// 2. callback
-			alert("selesai mengerjakan tugas")	
-		}
-		kerjakanTugas("matematika",selesai);				// 3. arg: callback
-	/* contoh2: function yang memiliki return value callback*/
-		function salam(waktu){
-			return function(nama){ console.log(`halo ${nama} selamat ${waktu}`); }
-		}
-		let selamat = salam("sore");
-		console.dir(selamat("aqil"));					// pembahasan ada di closure
 
-// cursor pembahasan ------->>>>>> ------->>>>>> ------->>>>>> ------->>>>>> 
+// cursor pembahasan ------>>>>>> ------>>>>>> ------>>>>>> ------>>>>>> ------>>>>>> 
