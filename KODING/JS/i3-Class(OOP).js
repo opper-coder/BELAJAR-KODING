@@ -173,8 +173,8 @@ Materi Video :
 			}
 			get namalengkap(){return `${this.namadepan} ${this.namatengah} ${this.namabelakang}` }
 			set namalengkap(nama){
-				const hasil = nama.split(" ");
-				this.namadepan= hasil[0];
+				const hasil = nama.split(" ");		// karena kita terima sbg satu string maka kita pecah jd array
+				this.namadepan= hasil[0];		// lalu asign 1/1
 				this.namatengah= hasil[1];
 				this.namabelakang= hasil[2];
 			}
