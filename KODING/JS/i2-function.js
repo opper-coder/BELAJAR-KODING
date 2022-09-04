@@ -1,5 +1,4 @@
 /* FUNCTION =========================================================
-
 DAFTAR ISI:
 - pengenalan						-> pengertian dan konsep
 - BASIC: ----->								
