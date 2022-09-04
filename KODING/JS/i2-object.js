@@ -21,7 +21,8 @@ OBJECT
 	5. prototype	-> property bawaan yang nempel oleh ulah[object.create()]	
 - CLASS			-> ngerti bikin class dah beres padahal tanpa pemahaman sebelum ini di atas
 			   (kalau dah paham langsung aja nuju ke CLASS)
-- this			-> adalah variabel yang merujuk pada scoopnya dimana ia di panggil atau di tulis
+- this			-> adalah variabel yang merujuk pada scoopnya dimana ia di panggil atau di tulis 
+			(pembahasan this ada di function ES6 sandika lihat! disana jelas)
 */
 
 /* BENTUK DASAR 
