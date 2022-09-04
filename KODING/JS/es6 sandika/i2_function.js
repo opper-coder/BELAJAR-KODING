@@ -117,7 +117,7 @@ FUNCTION
 			3. pendekatan functional programing lebih aman efisien dan mudah
 		- sama dengan type data lainya function dan object, bisa di simpan sebagai argumen dan return function lainya
 		- (func konsumen ) disebut: higher order function. 
-			- termasuk juga (yang memiliki return value callback)
+		   termasuk juga (function yang memiliki return value callback)
 		- (func akan di oper) disebut: callback */
 	/* contoh: function konsumen */
 		function kerjakanTugas(matakuliah, selesai){			// 1. konsumen
@@ -134,11 +134,11 @@ FUNCTION
 		}
 		let selamat = salam("sore");
 		console.dir(selamat("aqil"));					// pembahasan ada di closure
-	/*contoh: bayangkan saat angka 10 berubah menjadi 20 maka scrip yang ke 2 lebih simpel dan reusable*/
+	/* contoh3: bayangkan saat angka 10 berubah menjadi 20 maka scrip yang ke 2 lebih simpel dan reusable*/
 		for(var i=0; i<10; i++){ console.log(i); } 			     // cara pertama
 		function pengulangan(n){ for(var i=0; i<n; i++){ console.log(i); } } // cara kedua
 		pengulangan(20);
-	/* atau lebih simpel lagi ini: */
+	/* contoh4: atau lebih simpel lagi ini */
 		function pengulangan(n, aksi){ for(var i=0; i<n; i++){ aksi(i); } }  // cara ketiga
 		pengulangan(20, alert);						// pilih alert atau console.log
 
