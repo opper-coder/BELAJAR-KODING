@@ -20,9 +20,20 @@ looping array adalah metode iterasi sejumlah length dan dapatkan indexnya
 	/* for in (object) */
 		const biodata = { nama : "aqil", alamat : "saiti", hobi : "bermain sepeda" }
 	/* FOR IN untuk object */
-		for( b in biodata ){ console.log(b); } 			// looping "key", 
+		for( b in biodata ){ console.log(b); } 		// looping "key", 
 		for( b in biodata ){ console.log(biodata[b]); } // looping "value" 
 		for( b in biodata ){ console.log(biodata); } 	// "object"
+
+/* Contoh lain memudahkan saja ------------------------------------------ */
+	let pelanggan = ["andi", "azka", "dodi"];
+	// ringkasan metamorfosa function (sekaligus contoh dalam foreach dan map) :
+	pelanggan.forEach( function(orang){console.log(orang);} )   // fungsi primitive
+	pelanggan.forEach( (orang) => {console.log(orang);} )   // array function
+	pelanggan.forEach( orang => {console.log(orang);} )     // satu param
+	pelanggan.forEach( orang => console.log(orang) )    	// satu baris braket (nihil ;)
+	pelanggan.map( orang => console.log(orang) ) 		// map == foreach
+	pelanggan.map( orang => {return console.log(orang)} ) 	// bedanya bisa pakai return, tapi harus pakai braket
+
 /* sampai disini ada penjelasan ini pada object ------------------------------------------ */
 	// sebagai contoh pada array dan beberapa function array (proto array)
 		const angka = [-1,8,9,1,4,-5,-4,3,2,9];
