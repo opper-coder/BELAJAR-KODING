@@ -1,4 +1,5 @@
 Pendahuluan
+1 oktober 2022
 - Pengenalan JavaScript 		-> bahasa scripting bukan compiler untuk frontend, backend, json API, web, android, ios, IoT
 - Program Hello World 			-> konsol dan halaman
 - Komentar 				-> keterangan bahasa manusia tidak di compile
@@ -105,11 +106,19 @@ Pendahuluan
 	\n:enter, \t:tab, \':petik satu, \":petik 2, \\: back slash, '
 	document.writeln("eko \nkurniawan \nkhanedy");
 - Variable ------------------------------------
-	- var, let, const = var sudah usang usahakan buat dengan let atau const
-	- var tidak memiliki scoop sehingga bisa ada anomali nantinya 
-	let: isinya bisa di replace, const: tidak bisa (constant)
-	let namadepan;
-	namadepan="aqil"; akses variabel: namadepan
+	var 
+	    -sudah usang usahakan buat dengan let atau const
+	    -deklarasi tak peduli scoop(dalam kurawal fungsion looping if dll) sehingga bisa ada anomali nantinya 
+	    -deklarasi lebih sekali, nama sama gak masalah
+	    -bisa di akses di luar braket 
+	let 
+	    -deklarasi lebih sekali nama sama, dalam satu scoop nggak bisa
+	    -isinya boleh di timpa 
+	    -tidak bisa di akses di luar braket 
+	const 
+	    -tidak boleh deklarasi ulang
+	    -isinya juga tak boleh di timpa
+	    -tidak bisa di akses di luar braket
 - Operator Matematika -------------------------
 	+, -, *, **, /, % -> tb, kurang, kali, kuadrat, bagi, modulus 
 	(cont mod: let hasil = 11 % 2)(cont kuadrat: let hasil = 10**2;)
