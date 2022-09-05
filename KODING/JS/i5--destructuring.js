@@ -2,21 +2,21 @@
 	- punya kumpulan data seperti?: array dan obj
 	- lalu kita ingin memecah/mebongkar/unpack menjadi variabel yang terpisah?
 	daftar isi:
-		- array > variabel 									  -> bongkar array jadi variabel variabel		
-		- object > variabel									  -> bongkar object jadi variabel variabel
-		- skip items unpack array							-> skip saat bongkar
-		- swap items unpack									  -> tukar nilai
-		- function array > variabel						-> bongkar array dari func 
-		- assignmen tanpa declaration					-> bikin variabel banyak sekaligus pakai object
-		- assign dengan ...rest object baru		-> bikin variabel banyak sekaligus pakai object dg ...rest
-		- assign dengan ...rest array baru		-> bikin variabel banyak sekaligus pakai array dg ...rest
-		- assign dg nama beda (nama alternatif)				-> bikin variabel banyak sekaligus dan replace nama var
-		- push properti										    -> bikin variabel banyak sekaligus pakai object, dan tambahkan dari luar obj
-		- push properti dan langsung ganti nama				-> bikin variabel banyak sekaligus pakai object, dan tambahkan dari luar obj, langsung replace nama
-		- destructuring return array 				  -> mirip item ke2
-		- destructuring return object				  -> mirip item ke2 jg
-		- destructuring object argument				-> oper parameter pakai object defaultnya di bongkar
-		- destructuring object bersarang			-> oper parameter pakai object bersarang
+		- array > variabel 			-> bongkar array jadi variabel variabel		
+		- object > variabel			-> bongkar object jadi variabel variabel
+		- skip items unpack array		-> skip saat bongkar
+		- swap items unpack			-> tukar nilai
+		- function array > variabel		-> bongkar array dari func 
+		- assignmen tanpa declaration		-> bikin variabel banyak sekaligus pakai object
+		- assign dengan ...rest object baru	-> bikin variabel banyak sekaligus pakai object dg ...rest
+		- assign dengan ...rest array baru	-> bikin variabel banyak sekaligus pakai array dg ...rest
+		- assign dg nama beda (nama alternatif)	-> bikin variabel banyak sekaligus dan replace nama var
+		- push properti				-> bikin variabel banyak sekaligus pakai object, dan tambahkan dari luar obj
+		- push properti dan langsung ganti nama	-> bikin variabel banyak sekaligus pakai object, dan tambahkan dari luar obj, langsung replace nama
+		- destructuring return array 		-> mirip item ke2
+		- destructuring return object		-> mirip item ke2 jg
+		- destructuring object argument		-> oper parameter pakai object defaultnya di bongkar
+		- destructuring object bersarang	-> oper parameter pakai object bersarang
 		*/
 
 /* array >> variabel */
