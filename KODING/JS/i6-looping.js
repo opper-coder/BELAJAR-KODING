@@ -1,8 +1,7 @@
 /*
 Looping dan Method bawaan
 
-*/
-/* looping array 
+looping array 
 looping array adalah metode iterasi sejumlah length dan dapatkan indexnya
 -------------------------------------
 */
