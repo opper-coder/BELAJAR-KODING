@@ -24,7 +24,16 @@ looping array adalah metode iterasi sejumlah length dan dapatkan indexnya
 		for( b in biodata ){ console.log(biodata[b]); } // looping "value" 
 		for( b in biodata ){ console.log(biodata); } 	// "object"
 
-/* Contoh lain memudahkan saja ------------------------------------------ */
+/* Contoh diatas cukup kalau mau di bawah boleh ------------------------------------------ */
+
+
+
+
+
+
+
+
+/* Contoh lain memudahkan saja ----------------------------------------------------------- */
 	let pelanggan = ["andi", "azka", "dodi"];
 	// ringkasan metamorfosa function (sekaligus contoh dalam foreach dan map) :
 	pelanggan.forEach( function(orang){console.log(orang);} )   // fungsi primitive
