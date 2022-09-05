@@ -149,9 +149,14 @@ DAFTAR ISI:
 		/* object parameter
 			ngambil object untuk di oper
 		------------------------------- */
+			/* contoh1: */
 			function salam({nama, alamat}){ return `halo nama saya ${nama} alamat saya ${alamat} jaya...` }
 			const biodata = {nama : "izza", alamat : "banggai"}
 			console.log(salam(biodata))
+			/* contoh2: */			
+			function salam({nama, alamat : {kab, kec}}){ return `halo nama saya ${nama} alamat saya kabupaten ${kab} kecamatan ${kec} raya` }
+			const biodata = {nama : "izza", alamat : { kab : "banggai", kec : "nuhon" }}
+			console.log(salam(biodata));
 
 		/* Spread syntax 
 		----------------------------
