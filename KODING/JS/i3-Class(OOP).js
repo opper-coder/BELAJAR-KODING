@@ -31,6 +31,11 @@ Materi Video :
 - Membuat Class Error sendiri		-> bikin instance class error sendiri. ada kelebihanya
 - Iterable dan Iterator			-> 
 - Materi Selanjutnya			-> 
+	  JavaScript Standard Library
+	  JavaScript Modules
+	  JavaScript Document Object Model
+	  JavaScript Async
+	  JavaScript Web API
 */
 
 
