@@ -101,7 +101,15 @@ promise():
 		.finally
 -------------------------------------------------- */
 
-	new promise( (resolve, reject) => if(true){ resolve() } else { reject() } );
+	new Promise(resolve, reject); 				// basic
+	new Promise((resolve, reject)); 			// penulisan praktek pakai kurung
+	new Promise((resolve, reject) => resolve('selesai')); 	// promise paling sederhana
+	new Promise(resolve => resolve(selesai)); 		// boleh tidak memanggil reject
+	new promise( (resolve, reject) => if(true){ resolve() } else { reject() } ); // versi lengkap
+	/* create dan call */
+	const film = new promise( (resolve, reject) => if(true){ resolve() } else { reject() } );
+	film.then().catch().finally()				// versi pemanggilan
+
 	/* 
 	1. promise dibuat, masuklah ke v8 engine 
 	2. saat true maka resolve() di jalankan, jk false reject() di jalankan
