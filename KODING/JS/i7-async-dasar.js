@@ -252,7 +252,9 @@ fetch()
 	console.log(film); 
 
 	/* contoh real:
-	meski dah bisa di panggil masih membutuh kan .then1(json) .then2(convert ke object) .finally(keluar dr v8)*/ 
+	.then1(true) konversi ke response bool ke json
+	.then2(json text) konversi json text ke data objek
+	.finally(keluar dr v8)*/ 
 	fetch('http://www.omdbapi.com/?apikey=a8dfa1c0&s=Avengers')
 		.then(response => response.json())
 		.then(response => console.log(response));
