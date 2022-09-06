@@ -1,16 +1,16 @@
 /*
 ASYNCHRONOUS
-- callback 						-> function sebagai arguments
+- callback 					-> function sebagai arguments
 - synchronus vs asynchronous	-> serial vs pararalel
 - promise() 					-> 1. states( fullfilled , rejected , pending ). masuk ke proses async
 	- resolve() 				-> 2. ajax terpenuhi akan keluar lewat then lagi
-	- reject() 					-> ?  ajax batal akan keluar lewat catch
-	- then()					-> 3. then 
-	- catch() 					-> ?  catch 
+	- reject() 				-> ?  ajax batal akan keluar lewat catch
+	- then()				-> 3. then 
+	- catch() 				-> ?  catch 
 	- finally() 				-> 4. gerbang keluar dari block asynchronous
-- all()							-> memanggil banyak async sekaligus
-- AJAX 							-> pemanggilan data json/AAPI secara asynchronous
-- fetch() 						-> cara baru ajax
+- all()						-> memanggil banyak async sekaligus
+- AJAX 						-> pemanggilan data json/AAPI secara asynchronous
+- fetch() 					-> cara baru ajax
 
 Callback
 -----------------------------------------------------
@@ -27,7 +27,7 @@ assinchronous callback
 	/* contoh callback:
 	---------------- */
 		function pesan(callback){ const nama = prompt("masukkan nama :"); callback(nama); }	// func konsumen
-		function halo(nama){ alert(`halo nama saya ${nama}`); }								// function biasa
+		function halo(nama){ alert(`halo nama saya ${nama}`); }					// function biasa
 		pesan(halo);
 																							// panggil dengan param f biasa
 	/* atau lebih singkat */
@@ -67,7 +67,7 @@ function dafault asynchronous:
 	---------------- */
 		function halo(){ console.log("halo async") }
 		function jalankan(){
-			halo()								// jalankan pertama (sync)
+			halo()					// jalankan pertama (sync)
 			console.log("program di jalankan")	// jalankan yang kedua (sync)
 		}
 		jalankan()
@@ -76,7 +76,7 @@ function dafault asynchronous:
 	------------------ */
 		function halo(){ console.log("halo async") }
 		function jalankan(){
-			setTimeout( halo, 2000 );			// jalankan di v8 (synchronus)(2 detik kemudian meski pada urutan atas)
+			setTimeout( halo, 2000 );		// jalankan di v8 (synchronus)(2 detik kemudian meski pada urutan atas)
 			console.log("program di jalankan") 	// ga ada yang di tunggu jalankan juga (asynchronous)
 		}
 		jalankan()
@@ -117,7 +117,7 @@ promise():
 	janji
 	.then(response => console.log( 'ok!, ' + response )); 	// 3. then
 	.catch( response => console.log('not!, ' + response ));
-	.finally( console.log("janji selesai")); 				// 4. keluar dari v8 engine
+	.finally( console.log("janji selesai")); 			// 4. keluar dari v8 engine
 	
 	/* 
 	scrip diatas coba simulasikan dengan setTimeout() dan lakukan sync dan async */
@@ -128,12 +128,12 @@ promise():
 			setTimeout(() => { resolve('ditepati 1 detik') }, 1500) }	// disini simulasi ajax dilakukan (di dlm async promise)
 		else { setTimeout( () => { reject('di ingkari 1 detik') }, 1500) }
 		});
-	console.log('mulai');									// sync 'mulai'
-	janji													// async 'janji'
+	console.log('mulai');								// sync 'mulai'
+	janji										// async 'janji'
 		.then( response => console.log('ok!, ' + response ))
 		.catch( response => console.log('no!, ' + response))
 		.finally( () => console.log('final!') )
-	console.log('selesai'); 								// sync 'mulai'
+	console.log('selesai'); 							// sync 'mulai'
 	console.log('----->>> '); 
 
 /*
@@ -179,8 +179,8 @@ all()
 	/* ada 3 function yg kita gunakan untuk melakukan ajax (pemanggilan API) 
 ------------------------------------------------- */
 	let ajax = new XMLHttpRequest()		// 1. instance class XHR
-	ajax.open("METHOD", "url") 			// 2. open(methode get,pos dll, url)
-	ajax.send()							// 3. kirim ke server
+	ajax.open("METHOD", "url") 		// 2. open(methode get,pos dll, url)
+	ajax.send()				// 3. kirim ke server
 
 	/* basic ajax vanilla
 	-------------------- */
@@ -206,7 +206,7 @@ all()
 
 	/* basic ajax jquery
 	-------------------- */
-		$.ajax({url, success, error})			// basic
+		$.ajax({url, success, error})		// basic
 		/* --- */
 		console.log("mulai ...");
 		$.ajax({
