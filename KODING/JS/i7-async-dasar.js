@@ -138,8 +138,8 @@ promise():
 		});
 	console.log('mulai');								// sync 'mulai'
 	janji										// async 'janji'
-		.then( response => console.log('ok!, ' + response ))
-		.catch( response => console.log('no!, ' + response))
+		.then( response => console.log('ok!, ' + response )) 			// response (akan di tempati json kalau untuk ajax)
+		.catch( response => console.log('no!, ' + response))			// bisa di gunakan notif error
 		.finally( () => console.log('final!') )
 	console.log('selesai'); 							// sync 'mulai'
 	console.log('----->>> '); 
