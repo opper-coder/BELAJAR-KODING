@@ -105,9 +105,9 @@ promise():
 	new Promise((resolve, reject)); 			// penulisan praktek pakai kurung
 	new Promise((resolve, reject) => resolve('selesai')); 	// promise paling sederhana
 	new Promise(resolve => resolve(selesai)); 		// boleh tidak memanggil reject
-	new promise( (resolve, reject) => if(true){ resolve() } else { reject() } ); // versi lengkap
+	new promise( (resolve, reject) => if(true){ resolve() } else { reject() } ); 			// versi lengkap
 	/* create dan call */
-	const film = new promise( (resolve, reject) => if(true){ resolve() } else { reject() } );
+	const film = new promise( (resolve, reject) => if(true){ resolve() } else { reject() } );	// assign
 	film.then().catch().finally()				// versi pemanggilan
 
 	/* 
