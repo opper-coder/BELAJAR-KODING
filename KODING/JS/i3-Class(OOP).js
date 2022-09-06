@@ -26,6 +26,8 @@ Materi Video :
 - Static Method				-> method khusus untuk class (tidak untuk instance)
 - Error					-> super class Error
 - Error Handling			-> mengani error dg try, catch, finally (pada sistem class, boleh pada apasaj)
+	try, catch,finally		-> jalan alternatif untuk keluar meski ada hambatan
+	then(), catch(), finally() 	-> ada pada pembahasan asynchronous agak mirip memang
 - Membuat Class Error sendiri		-> bikin instance class error sendiri. ada kelebihanya
 - Iterable dan Iterator			-> 
 - Materi Selanjutnya			-> 
@@ -390,7 +392,12 @@ finally{ console.log("keluar lewat disini")}
 console.log("ini sudah program lainya");
 
 
-
+/* - then() catch() finally() ------------------------------
+	berbeda ini adalah jalan terus dari hasil penagkapan resolve promise()
+	catch penagkapan reject promise() 
+	finally jalan keluar dari promise()
+	pembahasan ada pada asynchronous di bahas disini agar membedakan dengan try{}catch(){}
+ */ 
 
 
 
