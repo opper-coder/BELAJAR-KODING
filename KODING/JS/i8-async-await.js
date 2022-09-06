@@ -19,11 +19,10 @@ new Promise(resolve => resolve(selesai)); // boleh tidak memanggil reject
 
 /* 
 langkah:
-1. bikin promise (lihat contoh sebelum ini di asynchronous)
+1. bikin promise (yaitu library asynchronous bawaan)(lihat contoh sebelum ini di asynchronous)
 2. bikin fungsi biasa 
-3. tambah async await
+3. tambah async await 
 4. masukan promise ke return fungsi
-...
  */
 
 /* instance promise lalu masukkan dalam function biasa */
@@ -45,8 +44,11 @@ const coba = cobaPromise();
     .catch(()=>{console.log(coba)})
 
 /* jalankan dengan asinc() await()
-fungsi async await adalah 
-
+- fungsi async await adalah fungsi biasa yang membungkus method asynchronous(promise)
+- saat promise akan di eksekusi masukkan keyword await sebagai penanda ini adalah method async
+- namun sebelum itu tandai function dengan keyword async. supaya tau kalau ada await di dalam nya
+- try() catch() adalah metode yang di gunakan untuk menangani error(berhasil /tidak)
+- terkhir panggil function seperti biasa
  */
 async function cobaAsync(){
     try{
