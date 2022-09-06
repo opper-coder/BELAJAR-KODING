@@ -123,7 +123,7 @@ promise():
 		});
 	/* console.log(janji); disini akan "pending terus" belum bisa keluar dari v8 engine (lewat .then dulu) */
 	janji
-	.then(response => console.log( 'ok!, ' + response )); 	// 3. then
+	.then(response => console.log( 'ok!, ' + response )); 		// 3. then
 	.catch( response => console.log('not!, ' + response ));
 	.finally( console.log("janji selesai")); 			// 4. keluar dari v8 engine
 	
