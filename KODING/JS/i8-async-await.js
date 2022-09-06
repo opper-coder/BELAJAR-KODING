@@ -19,7 +19,7 @@ new Promise(resolve => resolve(selesai)); // boleh tidak memanggil reject
 
 /* 
 langkah:
-1. bikin promise
+1. bikin promise (lihat contoh sebelum ini di asynchronous)
 2. bikin fungsi biasa 
 3. tambah async await
 4. masukan promise ke return fungsi
