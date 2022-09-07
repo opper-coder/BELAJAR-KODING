@@ -1,4 +1,6 @@
 tambahka -> menu extensi -> cari dan install
+
+
 1. ES7/React/Redux/GraphQl/React-Native snippets-
    jika belum hafal snippets -> ctrl + shift + p -> es7 -> snippets search -> tampil daftar
 2. ESLint
@@ -17,3 +19,16 @@ angga rizki
 1. cara menghapus element
 import yang tidak terpakai
 option + shift + o // o atau nol
+
+
+tambahan:
+    - live server
+    seach install vscode extension > open with liveserver
+    enak saat saat save sudah berubah tanpa refresh
+    - live preview
+    search -> install -> open with live preview 
+    alternative dari microsaoft dia lebih baik karena tanpa buka browser karena sudah include 
+    dengan vs code, dan tanpa save 
+    
+    - theme: mayukai
+    bagus bikinan indonesia
