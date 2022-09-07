@@ -7,7 +7,7 @@ daftar isi:
 	- langkah async dg async await 	-> cara baru dengan async await dengan error handling try{}catch(){}
 	- error handling 		-> perbedaan method dan syntax
 
-
+// pengertian:
 adalah cara penulisan asynchronus alternative selain promise dan fetch, 
 namun sedikit ada perbedaan dan ada kontex masing-masing pendeknya
 " gaya penulisan asynchronous layaknya synchronous"
@@ -18,7 +18,7 @@ yang menghasilkan (implisit) "promise(resolve/reject)" sebagai sebagai return va
 " sebuah async function dapat memeiliki keyword await di dalamnya (akan hidup jika ada await)
 sebagai penanda bahwa inilah program asynchronous(yang di lempar ke v8 engine) "
 ---------------------------------------------------------------- */
-
+/* promise */ 
 new Promise(resolve, reject); // basic
 new Promise((resolve, reject)); // penulisan praktek pakai kurung
 new Promise((resolve, reject) => resolve('selesai')); // promise paling sederhana
