@@ -17,7 +17,7 @@ Pendahuluan
 - Tipe Data Object 			-> property
 - If Expression 			-> percabangan dasar
 - Popup 				-> pop up bawaan browser yang membantu debug sebenarnya
-- Undefined 				-> belum ada wadah dan nilai
+- Undefined 				-> belum ada wadah dan nilai tapi sudah di hoisting
 - Null 					-> sudah ada wadah dan nilai hanya saja nilai null
 - Switch Expression  			-> pengganti if pada kondisi perbandingan == saja
 - Operator typeof 			-> type datanya apa ya?
@@ -48,10 +48,11 @@ Pendahuluan
 - Function Sebagai Value 		-> function dalam variabel (sebagai value variabel)
 - Anonymous Function 			-> function tanpa nama, harus bungkus variabel
 - Function dalam Function 		-> bisa
-- Scope 				-> global dan local di semua block {}
 - Recursive Function 			-> kayak looping (factorial)
 - Function Generator 			-> data array lazy [* yield] 
 - Arrow Function 			-> =>
+- Scope 				-> global dan local di semua block {}							    
+- hoisting 				-> upaya keluar dari scoop local 
 - Closure 				-> cara keluar dari scoop local ke global
 - Object Method 			-> kumpulan data mengandung property dan method
 - this 					-> (   ...   belum selesai ) object yang merujuk object root pemilik scoop (biasanya dalam window, object, new instance)(fun jadi obj,kec arrow)
@@ -443,7 +444,24 @@ FUNCTION
 			inner()			// bisa
 		}
 			inner()			// error
+- hoisting ------------------------------------
+	- function dan var saat di buat dia di kerek dulu ke atas
+	bedanya kalau function langsung bisa di eksekusi sedang var di isi undefined dulu
+	baru kalau di assign bisa di baca secara synchronous
+- Closure -------------------------------------
+	- definisi dari eko kurniawan:
+	closure jarang di gunakan kayaknya tapi penting untuk di ketahui
+	Closure adalah kombinasi function dan bundel referensi ke data disekitarnya.
+	Oke agak membingungkan memang, apalagi untuk yang baru pertama belajar
+	Kita sudah tahu bahwa local scope tidak bisa diakses di luar scope nya
+	Dengan kemampuan closure, kita bisa membuat sebuah function di local scope dan referensi ke data di sekitar local scope tersebut, keluar scope nya
+	- definisi dari saya:
+	cara agar scoop local bisa di akses oleh global maka kita perlu membuat data tersebut:
+	baik berupa function, array, objec, dll menjadi sebuah return dari sebuah function
 - Scope ---------------------------------------
+	- semua aktifitas js berada pada scoop global object bernama window
+	- this adalah pemanggilan scoop object pemiliknya, saat di akses di global dia akan merujuk ke window,
+	  jika di akses dalam objec atau class maka akan merujuk pada object atau class tersebut
 	- Ada dua jenis scope, global scope dan local scope.
 	- kayaknya setiap block {} memiliki scoop local, sudah saya test di block if
 	- variabel global bisa di akses dari local, tidak sebaliknya
@@ -523,16 +541,6 @@ FUNCTION
 
 		const halo = (nama) => {console.log("halo " + nama)}
 		halo("aqil");					// panggil
-- Closure -------------------------------------
-	- definisi dari eko kurniawan:
-	closure jarang di gunakan kayaknya tapi penting untuk di ketahui
-	Closure adalah kombinasi function dan bundel referensi ke data disekitarnya.
-	Oke agak membingungkan memang, apalagi untuk yang baru pertama belajar
-	Kita sudah tahu bahwa local scope tidak bisa diakses di luar scope nya
-	Dengan kemampuan closure, kita bisa membuat sebuah function di local scope dan referensi ke data di sekitar local scope tersebut, keluar scope nya
-	- definisi dari saya:
-	cara agar scoop local bisa di akses oleh global maka kita perlu membuat data tersebut:
-	baik berupa function, array, objec, dll menjadi sebuah return dari sebuah function
 
 				
 DARI METHODE KEBAWAH INI MASUK KE PEMBAHASAN KE 2 YA SILAHKAN DI BUKA
@@ -541,11 +549,7 @@ DARI METHODE KEBAWAH INI MASUK KE PEMBAHASAN KE 2 YA SILAHKAN DI BUKA
 - Arrow Function di Object --------------------
 - Getter dan Setter ---------------------------
 	
-	
-	
-	
-	
-	
+
 - Masalah Variable var ------------------------
 - Destructuring -------------------------------
 - Strict Mode ---------------------------------
