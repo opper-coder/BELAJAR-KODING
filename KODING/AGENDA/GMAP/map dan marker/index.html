@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simple Map</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+<style>
+	/* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+	#map {
+	  height: 100%;
+	}
+
+	/* Optional: Makes the sample page fill the window. */
+	html,
+	body {
+	  height: 100%;
+	  margin: 0;
+	  padding: 0;
+	}
+</style>
+<script src="https://unpkg.com/@googlemaps/markerclustererplus/dist/index.min.js"></script>
+    <script>
+function initMap() {
+  const map = new google.maps.Map(document.getElementById("map"), {
+    zoom: 18,
+    center: { lat: -0.9259136256349427, lng: 122.20857334229197 },
+  });
+  const labels = "CCCCC";
+  const markers = locations.map((location, i) => {
+    return new google.maps.Marker({
+      position: location,
+      label: labels[i % labels.length],
+    });
+  });
+  // Add a marker clusterer to manage the markers.
+  new MarkerClusterer(map, markers, {
+    imagePath:
+      "https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m",
+  });
+}
+
+const locations = [
+  { lat: -0.9236608810308601, lng: 122.20919563481282 },
+  { lat: -0.922781230698211, lng: 122.20745756343443 },
+  { lat: -0.9274923231635913, lng: 122.20779942441754 },
+  { lat: -0.9274548944915929, lng: 122.21100127079323 },
+  { lat: -0.9278519494878028, lng: 122.21107572836252 }, 
+];
+
+
+</script>
+  </head>
+  <body>
+    <div id="map"></div>
+    <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&libraries=&v=weekly" async>
+    </script>
+  </body>
+</html>
+
+<!-- keyKU=AIzaSyBcnL4K4mX2vx7Wd62taS0j8elqib6mEAY -->
