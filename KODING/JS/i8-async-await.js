@@ -1,5 +1,12 @@
  /*
 SYNC AWAIT KONSEP
+daftar isi:
+	- pengertian			-> konsep asyncronous dan beberapa cara eksekusinya
+	- promise 			-> salah satu method async yng ada dlm js
+	- langkah async dg promise	-> urutan cara async dengan methode promise beserta error handling nya dngan .then().catch()
+	- langkah async dg async await 	-> cara baru dengan async await dengan error handling try{}catch(){}
+	- error handling 		-> perbedaan method dan syntax
+
 
 adalah cara penulisan asynchronus alternative selain promise dan fetch, 
 namun sedikit ada perbedaan dan ada kontex masing-masing pendeknya
@@ -72,7 +79,7 @@ hasilnya juga tidak sama saat console
 
 tapi itu kita praktekan dari promise, yang di dalamnya ada resolve() dan reject()
 nah bagaimana kalau kita pakai fetch() ini juga promise tapi yang kita tahu merthod nya 
-resolve saja, sedang rejectnya kita belum tahu langsung saj kita praktek pada kasus
+resolve saja, sedang rejectnya kita belum tahu langsung saja kita praktek pada kasus
 yang nyata saja yaitu menggunakan rest API online beneran 
 
 ada 3 error yang kita akan coba atasi
