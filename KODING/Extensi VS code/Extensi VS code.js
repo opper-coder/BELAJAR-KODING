@@ -23,10 +23,12 @@ option + shift + o // o atau nol
 
 tambahan:
     - live server
-    seach install vscode extension > open with liveserver
-    enak saat saat save sudah berubah tanpa refresh
+    seach install vscode extension > open klik kanan with liveserver > stop live server
+    enak saat saat save sudah berubah tanpa refresh 
+    Plugin Live Server ini bisa digunakan untuk menjalankan local web server, 
+    sehingga kita bisa mengakses kode web JavaScript kita menggunakan domain localhost
     - live preview
-    search -> install -> open with live preview 
+    search -> install -> open klik kanan show preview 
     alternative dari microsaoft dia lebih baik karena tanpa buka browser karena sudah include 
     dengan vs code, dan tanpa save 
     
