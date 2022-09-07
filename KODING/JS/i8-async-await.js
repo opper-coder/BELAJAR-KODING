@@ -7,13 +7,13 @@ daftar isi:
 	- langkah async dg async await 	-> cara baru dengan async await dengan error handling try{}catch(){}
 	- error handling 		-> perbedaan method dan syntax
 
-// pengertian:
+// pengertiann async await:
 adalah cara penulisan asynchronus alternative selain promise dan fetch, 
 namun sedikit ada perbedaan dan ada kontex masing-masing pendeknya
 " gaya penulisan asynchronous layaknya synchronous"
 
 " synchronous adalah sebuah "function" yang bekerja secara asynchronous(melalaui event loop v8 engine)
-yang menghasilkan (implisit) "promise(resolve/reject)" sebagai sebagai return valuenya, dengan gaya synchronous "
+yang menghasilkan (implisit) "promise(resolve/reject):bool dan json" sebagai sebagai return valuenya, dengan gaya synchronous "
 
 " sebuah async function dapat memeiliki keyword await di dalamnya (akan hidup jika ada await)
 sebagai penanda bahwa inilah program asynchronous(yang di lempar ke v8 engine) "
@@ -71,11 +71,11 @@ cobaAsync();
 /*
 ERROR HANDLING
 
-pada contoh diatas kita sudah punya 2 cara menangani error pada promise
-1. new promise().then.catch     // hasil: promise()
-2. async tray{} catch(){}       // hasil: hasil consol dsb
+pada contoh diatas kita sudah punya 2 cara menangani error pada promise: yaitu syntax dan method
+1. new promise().then.catch     // method.hasil: promise()
+2. async tray{} catch(){}       // syntax.hasil: hasil consol dsb
 
-hasilnya juga tidak sama saat console
+hasilnya juga tidak sama saat console. diatas ada contohnya
 
 tapi itu kita praktekan dari promise, yang di dalamnya ada resolve() dan reject()
 nah bagaimana kalau kita pakai fetch() ini juga promise tapi yang kita tahu merthod nya 
