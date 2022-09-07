@@ -14,7 +14,6 @@ DAFTAR ISI:
 	- console.log, info, tabel, warn, error 	-> 
 	- method vs functional				-> bedanya: function adalah type data, method adalah properti dalam object (meski berupa function)
 - SPESIFIKASI: ----->
-	- hoisting					-> ?????
 	- argument:					-> adalah: penerima parameter dlm func
 		- parameter				-> adalah: variabel oper data ke func									
 		- Default Parameter			-> pengganti (penjaga) args kosong
@@ -24,7 +23,8 @@ DAFTAR ISI:
 		- Spread syntax 			-> mau oper array? eit pakai ini saja, jangan salah
 		- pseudo arguments			-> pseudo arguments/arguments global
 	- return					-> hasilnya boleh : bool, string, numb, concate, math, typedata, var, array, obj, callback func lain dll;
-	- scoop						-> lingkaran jangkauan 
+	- scoop						-> ada2 local dan global == window dan block, this adalah scoop obj yang ini
+	- hoisting					-> katrol/kerek keatas scoop terhadap fn() dan var
 - PENEMPATAN: ----->
 	- Function Sebagai Value 			-> sebagai value variabel, beda dg arrow functon ya
 	- callback. Higher Order function(HOF)		-> function parameter callback
@@ -32,7 +32,8 @@ DAFTAR ISI:
 	- Anonymous Function calback parameter 		-> function parameter callback anonimouse
 	- function dalam function			-> bisa
 	- Recursive Function				-> seperti loop
-	- closure 					-> upaya keluar dr scoope ?????									
+	- closure 					-> upaya keluar dr scoope ini agak rumit, karena semua jangkauan terbatas oleh scoop
+							   maka keluarkan dengan function yang memiliki return. lihat sandika galih
 - TAMBAHAN
 	- function lazy. function generator 		-> saat di panggil, baru di buatkan
 	- THIS 						-> adalah "pseudo object" pada "scoop" object parent (sebenarnya ini pembahasan object lihatlah!)
@@ -191,12 +192,24 @@ DAFTAR ISI:
 			- biasanya hasil nilai yang di maksud di kalkulasikan dulu lalu hasilnya di bungkus dalam variabel > kembalikan variabel
 			- hasilnya boleh : bool, string, numb, concate, math, typedata, var, array, obj, callback func lain dll;
 			*/
-
 		/* Scope 
 		-------------------------------
+			- aktifitas d js itu berada dalam global object bernama window
+			- this adalah pemanggilan object scoopnya, saat di panggil di global dia akan merujuk ke window
+			  saat this di panggil dalam object atau class maka akan merujuk object atau class bersangkutan tsb
 			- Ada dua jenis scope, global scope dan local scope.
 			- kayaknya setiap block {} memiliki scoop local, sudah saya test di block if
 			- variabel global bisa di akses dari local, tidak sebaliknya
+			- scoop erat kaitanya dengan hoisting maka lihat hoisting! 
+			*/
+		/* Hoisting 
+		-------------------------------
+			- yg terkait hoisting ada dua: function dan variabel dengan keyword var
+			- saat fn() dan var di mengalami 2 fase pertama fase create kedua fase eksekusi
+			- saat fn() di buat maka langsung di kerek keatas dan akhirnya bisa di eksekusi kapan saja
+			- saat var di panggil jika belum pernah di buat maka error tapi saat di declarasikan
+			  di atas console ternyata undefined meskipun belum di assign. karena di hoisting
+			- hoisting hanya akan di lakukan di dalam scoopnya
 			*/
 
 /* PENEMPATAN: ========================================================= */
