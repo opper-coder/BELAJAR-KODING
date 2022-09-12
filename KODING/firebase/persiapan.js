@@ -1,9 +1,9 @@
 /*
 DASAR DASAR FIREBASE
 - cara baca dokumentasi 		-> langkah cara baca dokumentasi
-- judul besar 					    -> panduan urutan dalam membaca sesuai judul
+- judul besar 				-> panduan urutan dalam membaca sesuai judul
 - dasar dan persiapan 			-> tiga platform, create, daftar, dan SDK
-- memulai 						      -> mulai sampai siap
+- memulai 				-> mulai sampai siap
 ------------------------------------------------------------------
 */
 
