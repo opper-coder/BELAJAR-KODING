@@ -1,7 +1,7 @@
 /* 
 Admin SDK
-- pengertian 				  -> 
-- Prasarat					  -> 
+- pengertian 				-> 
+- Prasarat				-> 
 - menambah SDK				-> 
 - initialisasi				-> 
 */
@@ -67,6 +67,5 @@ Pastikan Anda memiliki aplikasi server
 - Menguji dengan kredensial pengguna akhir gcloud￼
  
  belum selesai
-
-
+ 
 */
