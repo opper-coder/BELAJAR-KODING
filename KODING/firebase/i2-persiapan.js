@@ -12,7 +12,7 @@ DASAR DASAR FIREBASE
 ada 4 cara panduan 
 1. panduan: yaitu dasar berurutan dan lengkap
 2. referensi: sesuai pencarian judul SDK, REST API, 
-3. codelab, belajar dan langsung coding
+3. codelab, belajar konsep > koding > konsep > koding. jangan lewatkan
 4. memulai dan sampel, cth integrasi fitur Firebase di dunia nyata
 */
 /* JUDUL BESAR dan SUB JUDUL
