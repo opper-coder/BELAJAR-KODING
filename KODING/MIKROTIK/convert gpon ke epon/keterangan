@@ -1,0 +1,5 @@
+pada router huawei epon HG8245H5 bisa di ubah dari gepon ke epon caranya
+login dulu > tab maintenance diagnostic > software upgrade > 
+pilih file nama: epon.zip extark dulu jadi epon.bin (disertakan dalam folder ini)
+> klik upgrade. sebenarnya ada juga file yang bisa upgrade lago xpon dan gpon lagi
+tapi cari sendiri
