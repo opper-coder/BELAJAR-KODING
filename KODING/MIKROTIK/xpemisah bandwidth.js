@@ -182,3 +182,112 @@ add address=192.168.2.0/24 list=LOCAL-IP
 /
 	
 -----------------------------------------------------------------------------------------------------------
+
+	
+	
+/*
+PISAH GAME DARI B ILHANET
+-----------------------------------------------------------------------------------------------------------
+dari bilhanet kita di kasih 2 paramater untuk satu koneksi dan lakukan penyetingan 2 langkah:
+- koneksi mobile legend:
+	- tcp : xxxx
+	- udp : xxxx
+1. langkah pertama:
+mangle > add > general
+		chain: prerouting
+		protocol: tcp
+		dst port: copas tcp dari bilhanet
+	action  >
+		action: mark connection
+		new connection mark: kasih nama (misalnya: "game") 
+		pastrought: cek
+		comment: mobile legend
+2. langkah kedua:
+mangle > add > general
+		chain: prerouting
+		protocol: udp
+		dst port: copas udp dari bilhanet
+	action  >
+		action: mark connection
+		new connection mark: kasih nama (ambil dropdown: "game") 
+		pastrought: cek
+		comment: mobile legend
+-------------------------------------------------------
+ https://bilhanet.com/daftar-port-game-online-untuk-mikrotik-firewall/
+
+Beranda » Tutorial » Daftar Port Game Online untuk MikroTik Firewall
+Daftar Port Game Online untuk MikroTik Firewall
+
+Bilhanet.com – MikroTik biasa digunakan sebagai alat untuk managemen bandwidth kepada client. Meski sudah dibagi sesuai keinginan, terkadang untuk urusan game online tidak selalu stabil. Nah, salah satu cara meminimalisir lag saat ngegim, berikut daftar port game online untuk mikrotik firewall guna keperluan pisah trafik.
+
+Konten
+
+Daftar Port Game Online untuk MikroTik Firewall
+Daftar Port Game Online untuk MikroTik Firewall
+Di bawah ini adalah kumpulan port game yang saya gunakan untuk server BILHANET, dan untuk port yang saya tandai warna merah artinya tidak saya pasangkan.
+
+UPDATE 03 Agustus 2022.
+
+MOBILE LEGEND (ML)
+tcp: 5000-5221,5224-5227,5229-5241,5243-5287,5289-5352,5354-5509,5517,5520-5529
+tcp: 5551-5559,5601-5700,8443,9000-9010,9443,10003,30000-30300
+udp: 2702,3702,4001-4009,5000-5221,5224-5241,5243-5287,5289-5352,5354-5509
+udp: 5517-5529,5551-5559,5601-5700,8001,8130
+udp: 8443,9000-9010,9120,9992,10003,30000-30300
+FREE FIRE (FF)
+tcp: 6006,6008,6674,7006-7008,7889,8001-8012,9006,9137,10000-10012,11000-11019
+tcp: 12006,12008,13006,15006,20561,39003,39006,39698,39779,39800
+udp: 6006,6008,6674,7006-7008,7889,8008,8001-8012,8130,8443,9008,9120
+udp: 10000-10015,10100,11000-11019,12008,13008
+PUBG MOBILE
+tcp: 7889,10012,13004,14000,17000,17500,18081,20000-20002,20371
+udp: 8011,9030,10491,10612,12235,13004,13748,17000,17500,20000-20002
+udp: 7086-7995,10039,10096,11455,12070-12460,13894,13972,41182-41192
+CALL OF DUTY (COD MOBILE)
+tcp: 3013,10000-10019,18082,50000,65010,65050
+udp: 7085-7995,8700,9030,10010-10019,17000-20100
+ARENA OF VALOR (AOV)
+tcp: 10001-10094
+udp: 10101-10201,10080-10110,17000-18000
+STUMBLE GUYS
+tcp: – (atau bisa diisi sama dengan UDP)
+udp: 5055-5058 (atau bisa diisi dengan format manual: 5055,5056,5057,5058)
+GENSHIN IMPACT
+tcp: 42472
+udp: 42472,22101-22102
+CLASH OF CLANS (COC) DAN CLASH ROYALE
+tcp: 9330-9340
+udp: 9330-9340
+LEAGUE OF LEGENDS (LOL) MOBILE
+tcp: 2080-2099
+udp: 5100
+DOTA2
+tcp: 9100-9200,8230-8250,8110-8120,27000-28998
+udp: 27000-28998,39000
+FIFA ONLINE
+tcp: 7770-7790
+udp: 16300-16350
+POINT BLANK MOBILE (PB-MOBILE)
+tcp: 44590-44610
+udp: 40000-40010
+LINE LET’S GET RICH
+tcp: 10500-10515
+udp: –
+DREAM LEAGUE SOCCER
+tcp: –
+udp: 60970-60980
+AMONG US
+tcp: 27015-27030,27036-27037
+udp: 4380,27000-27031,27036
+
+Untuk sementara BILHANET hanya kumpulan daftar port game online tersebut di atas. Untuk anda yang punya port TCP dan UDP untuk games lain, silakan share di kolom komentar ya.
+
+Port Umum Mikrotik
+Daftar port umum atau port browsing yang banyak beredar adalah sebagai berikut:
+
+TCP/UDP: 80,81,443,8000-8081,21,22,23,81,88,5050,843,182,53
+Untuk versi admin BILHANET menggunakan port umum di bawah ini:
+
+TCP/UDP: 21,22,23,53,80,81,443,853,5353,8000,8008,8080,8081,8090,8443,8888
+Catatan: untuk anda yang sudah membuat firewall khusus DNS, sebaiknya kecualikan port 53, 853, dan 5353 dari “Port Umum”!
+ */
