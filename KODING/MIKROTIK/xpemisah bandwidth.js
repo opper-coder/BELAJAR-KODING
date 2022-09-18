@@ -7,12 +7,9 @@ di bawah ini adalah yang berjalan :
 -----------------------------------------------------------------------------------------------------------
 - coba terapkan pisah trafik ini ke dalam bridge (bridge-LAN1)
 BUAT BRIDGE
-- bridge-ADMIN
-- bridge-HOTSPOT
-- bridge-PPPoE
-BIKIN IP MASING2 bridge
-- IP > address > add > address: 192.168.1.1/24 > interface:<pilih bridge>  
-- lakukan ke 3 bridge 192.168.1.1/24, 192.168.2.1/24, 192.168.3.1/24
+- bridge-ADMIN 		-> ip:192.168.1.1/24
+- bridge-HOTSPOT 	-> ip:192.168.2.1/24
+- bridge-PPPoE 		-> ip:192.168.3.1/24 
 -------------------------------------
 jika sudah punya Bridge silahkan skip dan menuju langkah berikut:
 -------------------------------------
