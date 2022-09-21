@@ -15,6 +15,7 @@
 
 - cara melihat hubungkan perangkat ke IP atau jalur tersebut lalu speed test maka akan kelihatan hasil limitasinya
 */
+
 /* BURST
 ---------------------------------------------------------------------------------------------------------------
 untuk akses terus terusan di limit 1 mb
@@ -23,16 +24,16 @@ untuk user yang sekali2 maka di limit 1 mb dan di kasih bonus 2 mb beberapa saat
 default burst 0 alias tidak ada bonus
 
 inilah istilah yang akan kita bahas
-	max limit 		: batas tanpa burst dari simple queue
+	max limit 	: batas tanpa burst dari simple queue
 	burst treshold	: batas ukur untuk pemberian burst 
 	burst limit 	: batas bonus yang di berikan
-	time 			: katakanlah detik
+	time 		: katakanlah detik
 Rumus: Burst limit / max limit = <> treshold. contoh:
-	max limit 		: 8M 		// tanpa burst
+	max limit 		: 8M 	// tanpa burst
 	burst treshold	: 10M 		// pada detik ke1 20M/8=2,5 maka dapat burts, detik ke2 20+20=40/8=5, ke3 7,5, 
-								// saat ada di bawah 10M maka ini akan di beri bonus
+					// saat ada di bawah 10M maka ini akan di beri bonus
 	burst limit 	: 20M 		// dapat bonus
-	time 			: 8x 		// detik ke
+	time 			: 8x 	// detik ke
 
 */
 
