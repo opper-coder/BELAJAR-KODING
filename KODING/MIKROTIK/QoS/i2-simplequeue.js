@@ -1,1 +1,48 @@
+/* MIKROTIK SIMPLE QUEUE 
+---------------------------------------------------------------------------------------------------------------
+- Simple que adalah limitasi sederhana karena tidak harus mengerti firewall, paket,. mangle dll
+- simple que dasar hanya menentukan target lalu set max limit tx/rx nya caranya:
+	- queue > tab simple queue > add >
+		tab general >
+			name: beri nama
+			target: IP, beberapa IP, IP slash, ether, wlan dengan add (panah bawah) (bisa di gabung atau satu2)
+			dst: kosongkan
+			max limit: upload 5M  download 5M (aspek clien/user)
+			burst: akan di bahas di bawah nanti
+			time: skeduler untuk limitasi tertentu pada jam dan hari tertentu
+		tab advance >
+			paket mark: di gunakan untuk mangle/gabung dengan queue tree, maka keteranganya ada pada queue tree 	
 
+- cara melihat hubungkan perangkat ke IP atau jalur tersebut lalu speed test maka akan kelihatan hasil limitasinya
+*/
+/* BURST
+---------------------------------------------------------------------------------------------------------------
+untuk akses terus terusan di limit 1 mb
+untuk user yang sekali2 maka di limit 1 mb dan di kasih bonus 2 mb beberapa saat yang dia tinggalkan
+
+default burst 0 alias tidak ada bonus
+
+inilah istilah yang akan kita bahas
+	max limit 		: batas tanpa burst dari simple queue
+	burst treshold	: batas ukur untuk pemberian burst 
+	burst limit 	: batas bonus yang di berikan
+	time 			: katakanlah detik
+Rumus: Burst limit / max limit = <> treshold. contoh:
+	max limit 		: 8M 		// tanpa burst
+	burst treshold	: 10M 		// pada detik ke1 20M/8=2,5 maka dapat burts, detik ke2 20+20=40/8=5, ke3 7,5, 
+								// saat ada di bawah 10M maka ini akan di beri bonus
+	burst limit 	: 20M 		// dapat bonus
+	time 			: 8x 		// detik ke
+
+*/
+
+/* BUCKET
+---------------------------------------------------------------------------------------------------------------
+selain Burts ada juga bucket mirip dengan burst tapi beda cara kalkulasinya aja caranya:
+	seperti langkah di atas tapi di 
+		tab advanced:
+			bucket size: 0.1 (default)
+
+	tapi efek dan dan experiennya sama maka pilih saja burst
+	terus ini hanya akan efektif kalau memamng punya alokasi yang nagnggur kalau tidak punya ya percuma saja
+*/
