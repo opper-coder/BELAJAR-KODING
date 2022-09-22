@@ -47,3 +47,25 @@ selain Burts ada juga bucket mirip dengan burst tapi beda cara kalkulasinya aja 
 	tapi efek dan dan experiennya sama maka pilih saja burst
 	terus ini hanya akan efektif kalau memamng punya alokasi yang nagnggur kalau tidak punya ya percuma saja
 */
+
+/* HTB SIMPLE QUEUE 1
+---------------------------------------------------------------------------------------------------
+HTB penjelasan lebih rinci di queue tree. adalh susunan prioritas parent child 
+HTB bisa juga pada simple queue langkah2 nya
+- bikin child child nya dulu
+	queue > tab simple queue > tab general
+		name: queue1-child 		// nama terserah
+		target: 10.10.10.1 		// client
+		max limit : Ul 5M Dl 5M  
+- bikin parent:
+	queue > tab simple queue > tab general
+		name: queue1-parent 		// nama terserah
+		target: 10.10.10.0/24 		// client harus di masukkan semua di target pada parent (berbeda dg quetree soal child)
+		max limit : Ul 10M Dl 10M  
+- bikin HTB child parent. pilih queue child lalu hubungkan ke parent 
+	queue > tab simple queue > tab advanced
+		parent: queue1-parent 		// pilih parent yang sudah di buat
+	lalu sorting di field sesuai urutan parent
+*/
+
+
