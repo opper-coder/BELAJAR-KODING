@@ -1,13 +1,10 @@
 /* DAFTAR ISI
 ---------------------------------------------------------------------------------------------------
-- konsep 		-> konfig dasar 
+- konsep 		-> konfig dasar (kombinasi paket mark dan HTB)
 - packet mark 		-> disinilah paket di buat
-- HTB simple queue 	-> 
-- HTB queuetree 	->
-- HTB 			->
-
-
-
+- HTB simple queue 	-> HTB pada simple queue juga bisa
+- HTB queue tree 	-> disini 
+- HTB 			-> hirarki prioritas (HTB inilah yang jadi perhatian dalam queue tree)
 
 QUEUE TREE DAN HTB
 ---------------------------------------------------------------------------------------------------
