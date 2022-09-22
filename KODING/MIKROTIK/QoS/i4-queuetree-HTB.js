@@ -1,10 +1,21 @@
-/* QUEUE TREE DAN HTB
+/* DAFTAR ISI
+---------------------------------------------------------------------------------------------------
+- konsep 		-> konfig dasar 
+- packet mark 		-> disinilah paket di buat
+- HTB simple queue 	-> 
+- HTB queuetree 	->
+- HTB 			->
+
+
+
+
+QUEUE TREE DAN HTB
 ---------------------------------------------------------------------------------------------------
 queue tree adalah methode manajemen bandwidth dengan pola hirarchi HTB. issyu umum 
 	- queue independen 	: setiap queue bisa di config secara mandiri
-	- priority 			: jika di kombinasikan akan ada prioritas
+	- priority 		: jika di kombinasikan akan ada prioritas
 	- parent child		: basic hirarki
-	- HTB 				: pola susunan otoritas
+	- HTB 			: pola susunan otoritas
 
 config sederhana parent, queue type, limitasi. tapi yang berpengaruh sebenarnya di paket marknya: 
 	queue > tab queue tree > add 
@@ -50,27 +61,27 @@ HTB adlah implementasi hirarki orang tua, anak, cucu dst untuk mengatur priority
 4. bikin queue tree untuk upload (jadi child nantinya)
 	queue > tab queue tree > add 
 		tab general >
-			name: queue1-upload 				// nama(terserah) 
-			parent: bridge-WAN 					// jalur internet (di ubah ke parent, nantinya)
-			packet mark: packet-cliet1 			// (pilih yg sudah di buat) 
-			queue type: pilih 					// ada pembahasan sendiri
-			max limit: 10M    					// max limit untuk upload
+			name: queue1-upload 			// nama(terserah) 
+			parent: bridge-WAN 			// jalur internet (di ubah ke parent, nantinya)
+			packet mark: packet-cliet1 		// (pilih yg sudah di buat) 
+			queue type: pilih 			// ada pembahasan sendiri
+			max limit: 10M    			// max limit untuk upload
 		apply > OK : akan terlihat ada traffic pada field avg. rate 
 
 5. implementasi HTB. yaitu bikin dulu queue yang jadi parent 
 	queue > tab queue tree > add 
-		tab general >
-			name: queue1-upload-parent 			// nama parent(terserah) 
-			parent: bridge-WAN 					// jalur internet
-			packet mark: 						// kosongkan (yg punya packet adalah childnya)
-			queue type: pilih 					// sesuaikan saja
-			max limit: 20M    					// max limit untuk upload parent
+		tab general 
+			name: queue1-upload-parent 		// nama parent(terserah) 
+			parent: bridge-WAN 			// jalur internet
+			packet mark: 				// kosongkan (yg punya packet adalah childnya)
+			queue type: pilih 			// sesuaikan saja
+			max limit: 20M    			// max limit untuk upload parent
 		apply > OK : akan terlihat ada traffic pada field avg. rate 
 
 6. masukan hirarki parent child
 	pada perent di child ubah jadi queue-uopload-parent
 		parent: queue1-upload-parent			// ubahan dari bridge-WAN (ganti parent)
-		apply > OK 								// akan terlihat hirarkinya
+		apply > OK 					// akan terlihat hirarkinya
 
 */
 
@@ -84,12 +95,12 @@ HTB bisa juga pada simple queue langkah2 nya
 		max limit : Ul 5M Dl 5M  
 - bikin parent:
 	queue > tab simple queue > tab general
-		name: queue1-parent 	// nama terserah
-		target: 10.10.10.0/24 	// client harus di masukkan semua di target pada parent (berbeda dg quetree soal child)
+		name: queue1-parent 		// nama terserah
+		target: 10.10.10.0/24 		// client harus di masukkan semua di target pada parent (berbeda dg quetree soal child)
 		max limit : Ul 10M Dl 10M  
 - bikin HTB child parent. pilih queue child lalu hubungkan ke parent 
 	queue > tab simple queue > tab advanced
-		parent: queue1-parent 	// pilih parent yang sudah di buat
+		parent: queue1-parent 		// pilih parent yang sudah di buat
 	lalu sorting di field sesuai urutan parent
 */
 
@@ -123,21 +134,21 @@ prinsipnya adalah:
 - priority tertinggi di dahulukan (dari 1-8 terendah 8)
 
 skenario 1: menjaga agar child child selalu mengkonsumsi sebanyak di limit parent
-queue-parent-A: 10M 			// total limit at yang di keluarkan parent 10
-	queue-child-B: 10M / 5M 	// limit at / max limit saat bandwid ada sisa akan di pakai sampai max limit (10M)
-	queue-child-C: 10M / 5M		// saat keduanya mengakses maka hanya kebagian B: 5M dan C: 5M 
+queue-parent-A: 10M 				// total limit at yang di keluarkan parent 10
+	queue-child-B: 10M / 5M 		// limit at / max limit saat bandwid ada sisa akan di pakai sampai max limit (10M)
+	queue-child-C: 10M / 5M			// saat keduanya mengakses maka hanya kebagian B: 5M dan C: 5M 
 								   dan tidak ada sisa karena total A 10M
 skenario 2: child tetap mendapatkan limit at penuh meski melampaui limit parent. prioritas limit at pada child
-	A: 5M 						// limit parent lebih kecil dari limit child maka yang di dahulukan limit child
-		B: 5M/10M 				// dapat 5M atau <5 (kalau >5 tidak bisa karena sudah melebihi limit at parent)
-		C: 5M/10M 				// dapat 5M juga total 10M padahal parent cuma 5M
+	A: 5M 					// limit parent lebih kecil dari limit child maka yang di dahulukan limit child
+		B: 5M/10M 			// dapat 5M atau <5 (kalau >5 tidak bisa karena sudah melebihi limit at parent)
+		C: 5M/10M 			// dapat 5M juga total 10M padahal parent cuma 5M
 	kita seakan akan kebocoran 5M (ini sebuah kesalahan settingan) 
 
 skenario 3: di kasih priority limit at dulu, sisanya di bagi sesuai priority sebesar limit at
-	A: 16 						// limit parent 16M
+	A: 16 					// limit parent 16M
 		B: 5M/10M p:8			// dapat limit at 5M 
 		C: 5M/10M p:1			// dapat limit at 5M sisa 6M dimbil sebesar limit at 5M di C dulu karena priority 1 (10M)
-								// sedang B mendapat tambahan 1M karena belakangan jadi 5+1 = 6M
+						// sedang B mendapat tambahan 1M karena belakangan jadi 5+1 = 6M
 skenario 4: jika priority sama (misalnya 8 semua) maka akan di bagi rata sama kayak tidak pakai priority (sekenario 1)
 
 */
