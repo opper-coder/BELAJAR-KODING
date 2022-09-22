@@ -68,4 +68,26 @@ HTB bisa juga pada simple queue langkah2 nya
 	lalu sorting di field sesuai urutan parent
 */
 
-
+/* HTB SIMPLE QUEUE 2
+---------------------------------------------------------------------------------------------------
+- bikin parent:
+	queue > tab simple queue > 
+	- tab general
+		name: queue1-parent 		// nama
+		target: 10.10.10.0/24 		// targetnya subnet
+		max limit : 10M/10M  	// bandwidth total yg akan di bagikan
+	- tab advanced
+		interface: ether2-voucher 	// menuju klien
+		apply-ok
+- bikin child child nya dulu
+	queue > tab simple queue > 
+	- tab general
+		name: queue1-child 			// nama
+		target: 10.10.10.1 			// ip user
+		max limit : 5M/5M
+	- tab advanced
+		interface: ether2-voucher 	// menuju klien
+		limit at: 2M/2M 			// bandwitdh terkecil yang akan di dapatkan saat sibuk 
+		parent: queue1-parent 		// hubungkan ke parent
+		> lalu sorting
+*/
