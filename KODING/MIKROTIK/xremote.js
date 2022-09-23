@@ -127,7 +127,7 @@ kita sewa dulu DNS server di freeddns.com > daftar ddns > deposit (Rp 2000/bln)>
    kita suruh masukan informasi MIKROTIK spt api port yg di ambil dari mikrotik
    caranya: IP > services
 - jika remote untuk winbox pilih port "winbox"
-- jika reemote mikmon pilih port "api"
+- jika remote mikmon pilih port "api"
 
 DI MIKROTIK
 interface > add > ovpn client > tab general ganti nama: 'terserah'
