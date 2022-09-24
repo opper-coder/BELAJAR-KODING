@@ -43,7 +43,7 @@ https://www.aapanel.com/new/index.html
 		- ftpd
 		- php myadmin
 		- ddns manager (cloudflare)
-		- file@band
+		- fail2band
 		- open ligthspeed (web server)
 		- firewall
 		- apache 
