@@ -1,4 +1,8 @@
 1. whatt x jam x harg per kwh           = menghasilkan rupiah
-2. 12volt x 2 amp x jam x hrga per kwh  = menghasilkan rupiah
+2. 12volt x 2amp x jam x hrga per kwh  = menghasilkan rupiah
 
 harga per Kwh tidak sama R1, R2, R3 dst paket 450w, 900w, 1300w
+perkiraan hitungan router per bulan pada meteran 450w r1
+
+12v x 2amp x 24jam  x 30 hari = 17.280 whatt
+17.280  x Rp.495.412844037 = sekitar Rp 8.500
