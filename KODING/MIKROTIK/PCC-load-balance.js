@@ -31,8 +31,8 @@ pada ether 3 nya mengarah ke local
 	- 
 - pengguna local di ether3
 - config IP ethernya seperti ini:
-	ether1 = ISP1 = 		IP: 10.10.1.2/24
-	ether2 = ISP2 = 		IP: 172.16.2.2/24
+	ether1 = ISP1 = 	IP: 10.10.1.2/24
+	ether2 = ISP2 = 	IP: 172.16.2.2/24
 	ether3 = USER local = 	IP: 192.168.3.1/24
 */
 
@@ -80,8 +80,8 @@ pada ether 3 nya mengarah ke local
 		tab advance
 			per connection classifier: disini ada 3 kolom 
 				kolom1(classifier)	: both address 	// ip header bisa dari src. addrs, dst. addrs, port, kombins src & dst
-				kolom2(denominator)	: 2 			// karena kita akan bagi 2 stream yg berbeda, maka isi dg 2
-				kolom3(reminder)	: 0 			// nilai pembanding
+				kolom2(denominator)	: 2 		// karena kita akan bagi 2 stream yg berbeda, maka isi dg 2
+				kolom3(reminder)	: 0 		// nilai pembanding
 		tab action
 			action: mark connection
 			new mark connetion: ISP1-20M 			// ini dilakukan: agar connection yg punya reminder 0 akan di kirim di via ISP1 
@@ -164,22 +164,22 @@ konfig routing
 	- IP > routes > add
 		Dst. address: 0.0.0.0/0
 		Gateway: 10.10.1.1 			// IP dari gateway ISP1 (buatkan juga ISP2 nantinya 172.16.2.1)
-		Check Gateway: ping 		// nyalakan ping 
+		Check Gateway: ping 			// nyalakan ping 
 		Routing mark: ke-ISP1-20M > Apply Ok
 	- tambahkan juga untuk role ke-ISP2  
 ------------------
 keperluan fail over
 	- IP > routes > add
 		Dst. address: 0.0.0.0/0
-		Gateway: 172.16.2.1 		// isikan Ip gateway ISP2 (tidak tau kenapa)
-		Distance:2 					// isi 2 karena role ini akan di gunakan untuk backup
+		Gateway: 172.16.2.1 			// isikan Ip gateway ISP2 (tidak tau kenapa)
+		Distance:2 				// isi 2 karena role ini akan di gunakan untuk backup
 		Routing mark: ke-ISP1-20M > Apply Ok	// disini ke ISP1 ya (tidak tau kenapa)
 ------------------
 buat lagi role routing backup
 	- IP > routes > add
 		Dst. address: 0.0.0.0/0
 		Gateway: 10.10.1.1 			// isikan Ip gateway ISP1 (sekarang)
-		Distance:2 					// isi 2 juga 
+		Distance:2 				// isi 2 juga 
 		Routing mark: ke-ISP2-20M > Apply Ok	// disini ke ISP2 (dibalik)
 
 */
