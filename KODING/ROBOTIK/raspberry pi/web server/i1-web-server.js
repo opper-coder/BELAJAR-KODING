@@ -1,5 +1,10 @@
 /* WEB HOSTING RASPBERRY PI 4 */
 /* daftar isi
+	- download ISO OS
+	- install OS
+	- install AApanel
+	- install paket aapanel
+	- config aapanel
 ---------------------------------------------------------------------------------------------------
  */
 
