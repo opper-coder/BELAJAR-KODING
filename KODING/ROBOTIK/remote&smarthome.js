@@ -65,7 +65,7 @@ tinggal panggil OK google nyalakan TV
 
 SMARTHOME BARDI
 ---------------------------------------------------------------------------------------------------
-- perngertian:adalah product indonesia cek di: https://bardi.co.id/
+- perngertian:adalah product indonesia cek di: bardi.co.id
 - support wifi 2.4GHz a/c dan aplikasi di smarthome, google assistance, siri, alexa
 	download aplikasi untuk semua perangkat bardi di g0ogle play:
 	Bardi Smart Home
@@ -100,7 +100,7 @@ SMARTHOME BARDI
 	- status perangkat lain : hidup matinya sebuah perangkat akan mentrigger perangkat lainya (terhubung)
 	- motion: gerakan
 
-SMARTHOME xiaomi
+SMARTHOME xiaomi 
 ---------------------------------------------------------------------------------------------------
 belum baca sih tapi mungkin mirip2 baca langsung di websitenya harganya masih murah bardi kayaknya
 
