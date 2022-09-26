@@ -5,7 +5,7 @@ sumber video: Bilhanet youtube
 ---------------------------------------------------------------------------------------------------
 Daftar isi:
 	- langganan VPS 					-> langganan VPS
-	- Install winbox cloud (CHR)		-> Install winbox cloud (CHR) di VPS
+	- Install winbox cloud (CHR)				-> Install winbox cloud (CHR) di VPS
 	- config CHR: 						-> konfig CHR ada beberapa type server client: L2TP, SSTP, PPTP
 		- L2TP
 			config L2TP Server
@@ -15,13 +15,13 @@ Daftar isi:
 			akses
 				akses mode L2TP			-> akses
 		- SSTP		
-			sama						-> confignya mirip saja maka hanya saya tulis sekali
+			sama					-> confignya mirip saja maka hanya saya tulis sekali
 		- PPTP
-			sama						-> 
+			sama					-> 
 		- kesimpulan 					-> fungsi remote mikrotik bisa banyak sesuai jumlah yang ada 
 	- Remote Mikrotik 					-> cara akses login session VPN
-	- Remote Mikhmon(mikbotam) 			-> cara config dan login session VPN di mikhmon
-	- Remote Router Client 				-> cara remote client dengan VPN
+	- Remote Mikhmon(mikbotam) 				-> cara config dan login session VPN di mikhmon
+	- Remote Router Client 					-> cara remote client dengan VPN
 	- Remote OLT 						-> cara remote OLT dengan VPN
 ---------------------------------------------------------------------------------------------------
 BIKIN VPN di VPS 
@@ -236,11 +236,11 @@ MIKHMON:
 			Chain: dstnat
 			Dst. Address: 25.25.30.1 			// (IP remote dari secrets)
 			protocol: 6(tcp)
-			dst.port: 1000 						// (ports dari secrets) 
+			dst.port: 1000 					// (ports dari secrets) 
 		tab action
 			action: dstnat
 			to address: xxx.xxx.xxx.xxx			// IP dari perangkat client mikrotik kita (IP router client)
-			to port: 80 						// port dari perangkat client mikrotik kita (port router client)
+			to port: 80 					// port dari perangkat client mikrotik kita (port router client)
 		comment: kasih comment ini adalah remote VPN untuk client Mikrotik gonggong misalnya:
 			sehingga saat kita punya banyak perangkat klien pada mikrotik ini kita bisa remote dengan 
 			hanya mengganti destinasi IP pada action NAT ini beserta portnya 
