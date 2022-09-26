@@ -1,111 +1,48 @@
-=========================================================================================================
-MATERI
-1. MASUKAN INTERNET KE MIKROTIK
-   1.1 topologi		
-   1.2 Clien Server / manual-auto IP
-2. MANAGEMEN BANDWIDTH
-   2.1 interface
-   2.2 sekuriti
-   2.3 pembagian bandwidt
-   2.4 routing/alokasi ether(port)
-   2.5 limitasi 
-   2.6 switch function
-3. KELUARKAN INTERNET/JARINGAN
-   3.1 manual IP
-   3.2 auto IP
-=========================================================================================================
-REFERENSI
---------------------------------------------------------------------------------------------------------
-1.1 Topologi
-   - di dalam topologi terkandung 3 unsur penting
-   1. IP address/alamat/seperti nomor HP
-   2. server - client
-   3. wiring/net/network
-   1. IP adalah alamat di tiap simpul/node 
-   1.1- cara penulisan standard 
-      - pada dasar nya boleh menggunakan angka manapun di bawah ini untuk pengalamatan IP
-      - tapi karena ada standard internasional maka kita ikuti saja Class yang dai tentukan
-      - class meliputi ABCDE
-      - untuk bermain mikrotik selalu gunakan saja 192
-      - 10.0.0.0 (minimal)
-      - 255.255.255.255 (maksimal)
-      - 172.168.0.0 (untuk jaringan WAN) 
-      - 192.168.0.1/22 (untuk jaringan LAN) IPv4 IPv6
-      -  (untuk jaringan dunia/www)
-2. kalau clien kita dapat jatah IP dari server, sebaliknya server bikin rentang IP /22 dst
-3. media transmisi meliputi kabel, radio, gsm, lampu, kabel PLN, satelit, FO, dsb
-   port meliputi: in, out, ether, vlan, bridge
-========================================================================================================		
---------------------------------------------------------------------------------------------------------
-PRAKTEK
 
-PERSIAPAN PERANGKAT
-1 ISP (boleh dari "indiehome", indosat, telkomsel, TIS)
-2 MIKROTIK
-3 LAPTOP
-4 HTB A/B 
-5 kabel FO
-6 ODP
-7 ROUTER
-  - gonggong 7 titik
-  - mongsongan 10 titik
---------------------------------------------------------------------------------------------------------
-KONFIGURASI HARDWARE
-  1. pasang ISP di ether1
-  2. pasang kabel UTP di ether2 dan sambungkan ke rj45 laptop untuk akses seting
-  3. pasang kabel UTP ke HTB A dan nyalakan HTB dengan power
-  4. pasang kabel FO ke HTB B
-  5. pasang 2 ROUTER dari HTB dengan ODP (lihat di lapangan)
---------------------------------------------------------------------------------------------------------
-KONFIGURASI WINBOX	
-  1. login winbox 
-  2. reset mikrotik 
-  3. bikin bridge dengan nama WAN, LAN, HOTSPOT, RUMAH
-  4. ambil internet dr atas bikin client (dapatkan IP)
-  5. kirim internet ke bawah (NAT masquerade)
-  6. bikin IP LAN
-  7. bikin server (LAN)
-  8. limiter
-  9. Sekurity
+Daftar Isi:
+	- Ringkasan1
+	- Ringkasan2
+	- corat coret di bawah untuk bacaan saja
+	- daftar DNS tercepat Rea
 ========================================================================================================
-Ringkasan basic ----------------------------------------------------------------------------------------
-TOPOLOGI
-	ISP	: port: Ether1	IP: 192.10.10.10 (DHCP client)
-	ISP bisa dari load balance beberapa port 
-	winbox	: ether2	IP: tidak ada
-	Client 	: port: Ether3	IP: 10/20/30/1/24 Bridge ke semua port misalnya di 
+RINGKASAN KONFIGURASI BASIC
+0. TOPOLOGI (Petakan penggunaan port untu: Ether, Bridge, Vlan, wlan, LAN, SFP, guna untuk penugasan WAN dan LAN)
+	ISP		: port: Ether1	IP: 192.10.10.10 (DHCP client) 		// ISP bisa dari loadbalance beberapa port 
+	winbox	: ether2											// pakai mac juga bisa
+	Client 	: port: Ether3	IP: 10/20/30/1/24 					// Bridge ke semua port misalnya di 
 -----------------------------
-INTERFACE 
+1. INTERFACE 
 	pilihan interface ada beberapa
 	- beri nama langsung ke Ether
 	- Bikin Folder Ether dengan Bridge
 	- Vlan Satu Ether muat dua Jalur > nanti dipecah Kembali di ujung pakai switch managable (router support vlan)
+	- wlan jika portnya ada
+	- saran selalu gunakan menggunakan bridge meskipun tidak di pakai 
+	  (untuk keperluan mendandak seperti ganti port ke SFP dll, atau ada port yang nganggur mau di pakai akses tinggal masukin bridge)
 -----------------------------
-DHCP CLIENT:
+2. IP
+	- ether3 kalau masukkan ke bridge silahkan tapi ini langsung saja sebagai CLIENt
+	  IP > address > add > IP: 10/20/30/1/24 > interface: Ether3 > apply Ok
+-----------------------------
+3. DHCP CLIENT:
 	IP > DHCP client  > add > name: ether1-ISP1 > interface: ether1 > DNS dan NTP: yes > add default route:yes > Apply Ok > bound
 	dblclk IP client  > tab status > ada data bounding IP, gateway, DHCP server gateway dll 
 -----------------------------
-DNS
-	IP > DNS > server: 8.8.8.8, 8.8.4.4 > allow remote reques: yes > apply Ok
+4. DNS
+	IP > DNS > server: 8.8.8.8, 8.8.4.4, 1.1.1.1 > allow remote reques: yes > apply Ok > (tambah gateway ISP kita juga boleh)
 -----------------------------
-MASQUERADE
-	Ip > firewall > tab NAT > add > tab general > Chain: srcnat Out.interface: ether1 (WAN) > action: masquerade > appl Ok 
+5. MASQUERADE
+	Ip > firewall > tab NAT > add > tab general > Chain: srcnat Out.interface: ether1 (WAN) > action: masquerade > apply Ok 
 -----------------------------
-IP GATEWAY
-	(disini kayaknya nggak wajib: sebab otomatis sudah di beri. lihat di interface dblclk > tab status > gateway)
-  	IP > address > add > address: 192.168.1.1/24 (sesuaikan dengan ?????)		
------------------------------
-TEST INTERNET
+6. TEST INTERNET
 	terminal > ping google.com > time 34 > OK
 ---------------------------------------------------------------------------------------------------------
-Distribusi ada beberapa pilihan DHCP SERVER, PPPoE, Wlan, HOTSPOT. contoh hotspot:
-HOTSPOT
-	- catatan jika menu hotspot atau ppp tidak ada maka enablekan dulu di:
+7. HOTSPOT/DISTRIBUSI
+	IP > Hotspot > server > hotspot setup > interface: ether3(client) > next2 > 
+	- Distribusi ada beberapa pilihan DHCP SERVER, PPPoE, Wlan, HOTSPOT. contoh hotspot:
+	- jangan lupa tentukan pool untuk perangkat dan DNS name (seperti aafiber.net)(hotspot ada user pass) IP per mac: 1
+	- jika menu hotspot atau ppp tidak ada maka enablekan dulu di:
 	  system > package > pilih hotspot > klik tbl enable > reboot winbox
-	- ether3 kalau masukkan ke bridge silahkan tapi ini langsung saja sebagai CLIENt
-	  IP > address > add > IP: 10/20/30/1/24 > interface: Ether3 > apply Ok
-	  IP > Hotspot > server > hotspot setup > interface: ether3 > next2 > 
-	- jangan lupa tentukan pool untuk perangkat dan DNS name (seperti aafiber.net)(hotspot ada user pass) IP per mac1
 ---------------------------------------------------------------------------------------------------------
 Langkah berikut nya:
 	- Queue parent
@@ -113,8 +50,12 @@ Langkah berikut nya:
 	- Security
 	- pisah traffic
 	- load balance
-
-RINGKASAN PRAKTEK 
+---------------------------------------------------------------------------------------------------------
+Catatan
+	- jika kita client dari ISP dengan cara manual (bukan DHCP client) maka IP ether WAN kita harus isi manual
+	- gateway juga harus di i isi manual di > IP > routes > add > Gateway > isi dengan rentang IP index pertama > Dst. address: 0.0.0.0/0
+========================================================================================================
+RINGKASAN PRAKTEK 2
 1.BRIDGE
    - bikin sekurang-kurangnya 3 bridge WAN LAN HOTSPOT
    - masukan port2 yang di tuju
@@ -152,8 +93,39 @@ tips IP gateway atau IP range untuk server slash 24, 22, 36 dst cari di internet
 - lalu berikutnya buatkan DHCP server pada IP port tersebut > pada saat next2 ada rentang yang di berikan akan terlihat silahkan coba
 - kalau sudah di temukan maka hapus kembali settingan tersebut	
 
-/Ringkasan basic ----------------------------------------------------------------------------------------------------------------
-========================================================================================================	  
+========================================================================================================	
+
+PERSIAPAN PERANGKAT
+1 ISP (boleh dari "indiehome", indosat, telkomsel, TIS)
+2 MIKROTIK
+3 LAPTOP
+4 HTB A/B 
+5 kabel FO
+6 ODP
+7 ROUTER
+  - gonggong 7 titik
+  - mongsongan 10 titik
+--------------------------------------------------------------------------------------------------------
+KONFIGURASI HARDWARE
+  1. pasang ISP di ether1
+  2. pasang kabel UTP di ether2 dan sambungkan ke rj45 laptop untuk akses seting
+  3. pasang kabel UTP ke HTB A dan nyalakan HTB dengan power
+  4. pasang kabel FO ke HTB B
+  5. pasang 2 ROUTER dari HTB dengan ODP (lihat di lapangan)
+--------------------------------------------------------------------------------------------------------
+KONFIGURASI WINBOX	
+  1. login winbox 
+  2. reset mikrotik 
+  3. bikin bridge dengan nama WAN, LAN, HOTSPOT, RUMAH
+  4. ambil internet dr atas bikin client (dapatkan IP)
+  5. kirim internet ke bawah (NAT masquerade)
+  6. bikin IP LAN
+  7. bikin server (LAN)
+  8. limiter
+  9. Sekurity
+
+--------------------------------------------------------------------------------------------------------
+
 LOGIN
 bisa pakai salah satu: mac, ip, remote
   1. login via MAC > user:admin, pwd: ""
