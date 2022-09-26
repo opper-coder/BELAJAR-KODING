@@ -4,22 +4,22 @@ daftar isi:
 -------------------
 - remote VPN freeDDNS
 	- config
-	- akses winbox mikrotik URL			-> via vpn ddns URL
-	- akses winbox mikrotik IP			-> via vpn ddns IP
+	- akses winbox mikrotik URL		-> via vpn ddns URL
+	- akses winbox mikrotik IP		-> via vpn ddns IP
 	- akses winbox mikrotik Android		-> via app android
 - remote VPN tunnel.my.id
-	- config 							-> 
-	- akses 							-> 
+	- config 				-> 
+	- akses 				-> 
 - remote mikrotik pakai webfig			-> via browser
 - remote mikrotik pakai teamviewer		-> via teamviewer
 - remote mikrotik dengan putty 			-> berbasis CLI via telnet terminal OS atau SSH terminal bawaan mikrotik
-- remote router client					-> untuk pengaturan saja. kalau restart matikan bisa lewat OLT 
-- remote OLT							-> dalam dan luar jaringan, remote router juga(matikan, restart dll) ???????  
+- remote router client				-> untuk pengaturan saja. kalau restart matikan bisa lewat OLT 
+- remote OLT					-> dalam dan luar jaringan, remote router juga(matikan, restart dll) ???????  
 ---------------------------------------------------------------------------------------------------
 
-- MIKBOTAM online						-> koneksi, hosting, operasional ??????????????
-- Remote Finasial 						-> party, kumpulkan, accouting, deviden, gaji, operasional ????????
-- remote smart plug bardi 				-> kontrol power elektrik perangkat ????????
+- MIKBOTAM online				-> koneksi, hosting, operasional ??????????????
+- Remote Finasial 				-> party, kumpulkan, accouting, deviden, gaji, operasional ????????
+- remote smart plug bardi 			-> kontrol power elektrik perangkat ????????
 ---------------------------------------------------------------------------------------------------
 REMOTE WINBOX MIKROTIK: 
 prosesnya kita sewa dulu VPN dari penyedia 
