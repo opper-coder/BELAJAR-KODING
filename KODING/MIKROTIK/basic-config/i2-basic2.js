@@ -72,25 +72,19 @@ Ringkasan basic-----------------------------------------------------------------
 TOPOLOGI
 	ISP1: IP: 192.10.10.10 (tergantung ISP) port: Ether1
 	Client: 10/20/30/1/24 Bridge ke semua port misalnya di 	: Ether3
-
 -----------------------------
 DHCP CLIENT:
 	IP > DHCP client  > add > name: ether1-ISP1 > interface: ether1 > DNS dan NTP: yes > add default route:yes > Apply Ok > bound
-	(kalau setting dasar basic, DNS NTP default route: yes)
 	dblclk IP client  > tab status > ada data bounding IP, gateway, DHCP server gateway dll 
-
 -----------------------------
 DNS
 	IP > DNS > server: 8.8.8.8, 8.8.4.4 > allow remote reques: yes > apply Ok
-
 -----------------------------
 MASQUERADE
 	Ip > firewall > tab NAT > add > tab general > Chain: srcnat Out.interfc: ether1-ISP1 > action: masquerade > appl Ok 
-
 -----------------------------
 TEST INTERNET
 	terminal > ping google.com > time 34 > OK
-
 -----------------------------
 HOTSPOT
 	catatan jika menu hotspot atau ppp tidak ada maka enablekan dulu di:
