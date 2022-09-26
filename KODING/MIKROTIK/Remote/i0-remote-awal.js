@@ -1,3 +1,18 @@
+/*
+CATATAN
+pada keterangan di bawah ini sudah ada perbaikan pada dokumentasi 01-VPN sehingga hanya untuk referensi saja
+ada yang lebih canggih yaitu pakai VPN pakai VPS sendiri sehingga kita bisa membuat sebanyak mungkin VPN gak ada masalah
+remote bisa lewat WAN hanya dengan satu VPS untuk beberapa perangkat
+semua jalan itu cukup di jawab dengan satu satu VPS saja lihat dokumentasi VPS
+remote meliputi
+	- mikrotik
+	- OLT
+	- Router Client
+	- mikhmon
+	- mikbotam
+		- tidak tau kalau telegram
+*/ 
+
 /* REMOTE MIKROTIK, OLT, ROUTER, CCTV, MIKBOTAM
 ---------------------------------------------------------------------------------------------------
 daftar isi:
