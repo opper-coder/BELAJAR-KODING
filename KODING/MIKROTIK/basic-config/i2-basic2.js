@@ -67,7 +67,40 @@ KONFIGURASI WINBOX
   7. bikin server (LAN)
   8. limiter
   9. Sekurity
-========================================================================================================	
+========================================================================================================
+---------------------------------------------------------------------------------------------------
+TOPOLOGI
+	ISP1: IP: 192.10.10.10 (tergantung ISP) port: Ether1
+	Client: 10/20/30/1/24 Bridge ke semua port misalnya di 	: Ether3
+
+-----------------------------
+DHCP CLIENT:
+	IP > DHCP client  > add > name: ether1-ISP1 > interface: ether1 > DNS dan NTP: yes > add default route:yes > Apply Ok > bound
+	(kalau setting dasar basic, DNS NTP default route: yes)
+	dblclk IP client  > tab status > ada data bounding IP, gateway, DHCP server gateway dll 
+
+-----------------------------
+DNS
+	IP > DNS > server: 8.8.8.8, 8.8.4.4 > allow remote reques: yes > apply Ok
+
+-----------------------------
+MASQUERADE
+	Ip > firewall > tab NAT > add > tab general > Chain: srcnat Out.interfc: ether1-ISP1 > action: masquerade > appl Ok 
+
+-----------------------------
+TEST INTERNET
+	terminal > ping google.com > time 34 > OK
+
+-----------------------------
+HOTSPOT
+	catatan jika menu hotspot atau ppp tidak ada maka enablekan dulu di:
+		system > package > pilih hotspot > klik tbl enable > reboot winbox
+	ether3 kalau masukkan ke bridge silahkan tapi ini langsung saja sebagai CLIENt
+		IP > address > add > IP: 10/20/30/1/24 > interface: Ether3 > apply Ok
+	IP > Hotspot > server > hotspot setup > interface: ether3 > next2 > 
+	jangan lupa tentukan pool untuk perangkat dan DNS name (seperti aafiber.net)(hotspot ada user pass) IP per mac1
+========================================================================================================	  
+	  
 LOGIN
 bisa pakai salah satu: mac, ip, remote
   1. login via MAC > user:admin, pwd: ""
