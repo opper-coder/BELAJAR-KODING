@@ -7,9 +7,9 @@ Daftar Isi:
 ========================================================================================================
 RINGKASAN KONFIGURASI BASIC
 0. TOPOLOGI (Petakan penggunaan port untu: Ether, Bridge, Vlan, wlan, LAN, SFP, guna untuk penugasan WAN dan LAN)
-	ISP		: port: Ether1	IP: 192.10.10.10 (DHCP client) 		// ISP bisa dari loadbalance beberapa port 
-	winbox	: ether2											// pakai mac juga bisa
-	Client 	: port: Ether3	IP: 10/20/30/1/24 					// Bridge ke semua port misalnya di 
+	ISP	: port: Ether1	IP: 192.10.10.10 (DHCP client) 		// ISP bisa dari loadbalance beberapa port 
+	winbox	: ether2						// pakai mac juga bisa
+	Client 	: port: Ether3	IP: 10/20/30/1/24 			// Bridge ke semua port misalnya di 
 -----------------------------
 1. INTERFACE 
 	pilihan interface ada beberapa
