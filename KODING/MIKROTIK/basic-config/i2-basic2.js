@@ -68,7 +68,7 @@ KONFIGURASI WINBOX
   8. limiter
   9. Sekurity
 ========================================================================================================
----------------------------------------------------------------------------------------------------
+Ringkasan basic---------------------------------------------------------------------------------------------------
 TOPOLOGI
 	ISP1: IP: 192.10.10.10 (tergantung ISP) port: Ether1
 	Client: 10/20/30/1/24 Bridge ke semua port misalnya di 	: Ether3
@@ -99,6 +99,7 @@ HOTSPOT
 		IP > address > add > IP: 10/20/30/1/24 > interface: Ether3 > apply Ok
 	IP > Hotspot > server > hotspot setup > interface: ether3 > next2 > 
 	jangan lupa tentukan pool untuk perangkat dan DNS name (seperti aafiber.net)(hotspot ada user pass) IP per mac1
+/Ringkasan basic ----------------------------------------------------------------------------------------------------------------
 ========================================================================================================	  
 	  
 LOGIN
