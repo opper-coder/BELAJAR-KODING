@@ -7,17 +7,17 @@ maka habiskan dulu ISP1 jika tidak mencukupi maka gunakan cadangan sehingga
 habisnya tidak sama dan tidak berbarengan 
 ---------------------------------------------------------------------------------------------------
 Daftar isi
-	- konfig dasar 								-> basicnya sedikit beda jadi harus di desain dari awal jika load balance
-	- konfig failover recursive					-> mode dasar load balance recursive (agak lambat pindahnya)
-	- konfig failover netwatch					-> mode alternative (lebih cepat)
-	- speed test pada salah satu ISP			-> satu jalur saja
+	- konfig dasar 					-> basicnya sedikit beda jadi harus di desain dari awal jika load balance
+	- konfig failover recursive			-> mode dasar load balance recursive (agak lambat pindahnya)
+	- konfig failover netwatch			-> mode alternative (lebih cepat)
+	- speed test pada salah satu ISP		-> satu jalur saja
 	- Pisah jalur Youtub ke ISP cadangan ISP2	-> prioritas
 ---------------------------------------------------------------------------------------------------
 SETTING DASAR KEPERLUAN FAILOVER
 TOPOLOGI
 	ISP1: IP: 192.10.10.10 (tergantung ISP) port: Ether1
 	ISP1: IP: 192.20.20.20 (tergantung ISP) port: Ether2
-	Client: Bridge ke semua port misalnya di 	: Ether3
+	Client: IP: 10/20/30/1/24 // Bridge semua local(opt) port: Ether3
 -----------------------------
 DHCP CLIENT:
 	IP > DHCP client  > add > name: ether1-ISP1 > interface: ether1 > DNS dan NTP: no > add default route:no (kalau setting dasar basic, DNS NTP default route: yes)
@@ -35,15 +35,15 @@ IP ROUTES
 	karena kita tadi route di no maka kita wajib bikin manual untuk keperluan failover (ada di "distance")
 	IP > rotes > add > 
 		dst adress: 0.0.0.0/0
-		gateway: 192.10.10.10 	// gateway ISP1 lihat di DHC CLIENT > pilih ISP > dblclk > tab status
+		gateway: 192.10.10.10 		// gateway ISP1 lihat di DHC CLIENT > pilih ISP > dblclk > tab status
 		check gateway: ping
 		distance: 1 			// karena di buat sebagai bandwidth ISP utama isi 1
 		comment: ISP1-induk > apply OK
 	IP > routes > add > 
 		dst adress: 0.0.0.0/0
-		gateway: 192.20.20.20 	// gateway ISP2
+		gateway: 192.20.20.20 		// gateway ISP2
 		check gateway: ping
-		distance: 2				// isi 1 ISP cadangan
+		distance: 2			// isi 1 ISP cadangan
 		comment: ISP2-cadangan > apply OK
 -----------------------------
 TEST INTERNET
@@ -73,8 +73,8 @@ FAILOVER RECURSIVE GATEWAY
 		gateway: ISP1 biarkan
 		Check gateway: ping
 		Distance: 1 				// 1 sebagai ISP utama
-		scoop: 30 					// default
-		target scoop: 10        	// default
+		scoop: 30 				// default
+		target scoop: 10        		// default
 		comment: Cek ke ISP1 > apply Ok
 	- add > tab general >
 		dst. address : 0.0.0.0/0
@@ -89,8 +89,8 @@ FAILOVER RECURSIVE GATEWAY
 		gateway: ISP2 biarkan
 		Check gateway: ping
 		Distance: 1 				// 1 untuk keperluan cek
-		scoop: 30 					// default
-		target scoop: 10        	// default
+		scoop: 30 				// default
+		target scoop: 10        		// default
 		comment: Cek ke ISP2 > apply Ok
 	- add > tab general >
 		dst. address : 0.0.0.0/0
@@ -116,16 +116,16 @@ FAILOVER NETWATCH
 			Dst. Address: 0.0.0.0/0 
 			Gateway: Gateway ISP1 		// IP > DHCP client > dblclk ISP1 > tab status gataway: copas 
 			Check gateway: ping
-			Distance: 1 				// 1 untuk keperluan cek
-			scoop: 30 					// default
+			Distance: 1 			// 1 untuk keperluan cek
+			scoop: 30 			// default
 			target scoop: 10        	// default
 			comment: ISP 1 (UTAMA) > apply Ok
 		IP > Routes > add > tab general 
 			Dst. Address: 0.0.0.0/0 
 			Gateway: Gateway ISP2 		// ISP2
 			Check gateway: ping
-			Distance: 1 				// 2 
-			scoop: 30 					// default
+			Distance: 1 			// 2 
+			scoop: 30 			// default
 			target scoop: 10        	// default
 			comment: ISP 2 (BACKUP) > apply Ok
 	----------------------------
@@ -134,25 +134,25 @@ FAILOVER NETWATCH
 			Dst. Address: 1.1.1.1 
 			Gateway: Gateway ISP1 		// dari ISP1 
 			Check gateway: kosongkan 	// yg terpenting ini jangan di kasih ping alias kosongkan
-			Distance: 1 				// 
-			scoop: 30 					// default
+			Distance: 1 			// 
+			scoop: 30 			// default
 			target scoop: 10        	// default
 			comment: cek ke ISP1 > apply Ok
 		IP > Routes > add > tab general 
 			Dst. Address: 8.8.8.8 
 			Gateway: Gateway ISP2 		// 
 			Check gateway: kosongkan
-			Distance: 1 				// 
-			scoop: 30 					// default
+			Distance: 1 			// 
+			scoop: 30 			// default
 			target scoop: 10        	// default (beda dengan di atas)
 			comment: cek ke ISP2  > apply Ok
 	----------------------------
 	- agar recursive masuk ke sistem netwach untuk ISP1 dan ISP2
 		TOOLS > netwatch > add > 
 			tab Host >
-				host: 1.1.1.1 				// ke cek ISP1
-				interval: 00.01.50			// tiap 1,5 detik ping ke 1111, delay ini yang menentukan berapa lama interval cek nya 
-				Timeout:1000 				// kalau saya sih 5000
+				host: 1.1.1.1 		// ke cek ISP1
+				interval: 00.01.50	// tiap 1,5 detik ping ke 1111, delay ini yang menentukan berapa lama interval cek nya 
+				Timeout:1000 		// kalau saya sih 5000
 			tab down > tulis script ini:
 				/ip route disable [find comment="ISP 1 (UTAMA)"] 
 			tab Up:
@@ -183,7 +183,7 @@ SPEED TEST KE SATU ISP SAJA
 				^.+(speedtest-+[a-z0-9.]+[a-z]+.net.id|nflxvideo.net|ooklaserver.net|speedtestcustom.com|speedtest.net|fast.com|speedtest.+[a-z]+.id|.speedtest.|openspeedtest.com).*$ 
 
 		tab address list > add > 	
-			IP-LOCAL-CLIENT: 10/20/30/1/24 // nama misalnya itu: masukkan semua IP local
+			IP-LOCAL-CLIENT: 10/20/30/1/24  // nama misalnya itu: masukkan semua IP local
 			IP-LOCAL-CLIENT: 192.10.10.10 	// dengan nama yang sama masukkan juga Ip-Ip isp
 			IP-LOCAL-CLIENT: 192.20.20.20
 		tab mangle > add > 
