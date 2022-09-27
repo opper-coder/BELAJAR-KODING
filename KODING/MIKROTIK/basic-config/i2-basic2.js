@@ -5,6 +5,32 @@ Daftar Isi:
 	- corat coret di bawah untuk bacaan saja
 	- daftar DNS tercepat Rea
 ========================================================================================================
+  SHORTHAND
+  1. login dengan MAC > user:admin, pwd: "" > bisa remote, bisa 
+  2. buka tool > remove config 
+  3. bikin topologi: LAN, WAN, BRIDGE, VLAN(di sarankan pakai bridge)
+  4. buka bridge > add > nama : sesuai Topologi > apply OK > masukan port nya
+  5. IP > address > add > address: 'IP subnet' > interface: 'pilih' > kasih IP (192.168.1.1/24) masing2 interface
+  6. Buka IP > DHCP Client > add > pilih interface > bound > periksa IP 
+  7. IP > DNS > server = 10. 10. 10. 1 (didapat dari ISP atau IP Client ISP) dan tambahkan DNS public 8.8.8.8, 8.8.0.0 
+     - centang Allow remote request agar bisa di akses dari client
+  8. IP > firewall > tab NAT > add > tab general > chain : srcnat > out interface : 'bridge-WAN' >  
+     - Pada tab action >  pilih masquerade > apply > OK 
+  9. cek sambungan: terminal > ping 8.8.8.8 
+     - atau ping gateway di : IP > routes > ada routeslist gateway 
+  10. IP > DHCP Server > tombol DHCP setup > interface : 'pilih LAN' > next2 > Apply-Ok
+  11. IP > HOTSPOT > tombol HOTSPOT setup > interface : 'pilih LAN' > next2 > Apply-Ok
+  12. Tekan queues > pada queue list klik add > nama biarkan > target IP laptop tujuan
+      > 192.168.1.254  (ip laptop tergenerate diatas) isi max dan min limit. Lebih lanjut bab QoS
+  13. - ganti nama: sistem > identity > nama nya ROUTER-Gonggong
+      - ganti password: sistem > user > bikin user baru klik + > nama aqil > group full > password isikan >
+      - IP > services > ada list > disable dan sisakan 'www, winbox, ssh'
+          - dklik u/ config masing2 > available from isikan ip target (misalnya milik laptop petugas) 
+          - tambahkan IP local kita 192. 168. 1. 0/24 (tentu saja karena kalau tidak di isi kita malah gak bisa remote winbox)
+	       - Terus www > edit port 80 kita ubah jadi 8080 > Nanti kalau remote tinggal www.ip:8080
+     - Tips yang ini jangan dilakukan terlalu cepat nanti tidak bisa connect sendiri
+       Langkah amanya tiap perubahan ping dst
+========================================================================================================
 RINGKASAN KONFIGURASI BASIC
 0. TOPOLOGI (Petakan penggunaan port untu: Ether, Bridge, Vlan, wlan, LAN, SFP, guna untuk penugasan WAN dan LAN)
 	ISP	: port: Ether1	IP: 192.10.10.10 (DHCP client) 		// ISP bisa dari loadbalance beberapa port 
@@ -163,42 +189,19 @@ SECURITY
    - ganti nama: sistem > identity > nama nya ROUTER-Gonggong 
    - ganti password: sistem > user > bikin user baru klik + > nama aqil > group full > password isikan >
    - IP > services > ada list > disable dan sisakan 'www, winbox, ssh'
-   - tapi berikan akses masuk pada ip Tertentu:
-   - dklik > available from isikan ip target 
-   - Dan tambahkan ip local private nya juga 192. 168. 1. 0/24 jangan di kosongkan nanti malah di perboleh kan semua jadinya
-   - Terus www nya juga edit ke Ip local yang sama > lalu port 80 kita ubah jadi 8080 >
-     Nanti kalau remote tinggal www.ip:8080  
+   	- dblclck pada masing masing www,winbox,ssh. > isikan IP local kita misalnya 1.1.1.1/24. dan 
+  	- dklik > available from isikan ip target IP perangkat yang diizinkan mis: 11.11.11.11 
+	  (misalnya di akses oleh IP laptop kantor)
+   	- Dan tambahkan ip local private nya juga 192. 168. 1. 0/24 
+     	  jangan di kosongkan nanti malah di perboleh kan semua jadinya
+   	- Terus www nya juga edit ke Ip local yang sama > lalu port 80 kita ubah jadi 8081 >
+     	- Nanti kalau remote tinggal www.ip:8080  
    - Tips yang ini jangan dilakukan terlalu cepat nanti tidak bisa connect sendiri
      Langkah amanya tiap perubahan ping dst
      Dan paling tidak setting port2 yang terbuka untuk ip privatenya supaya kita bisa remote           
 -----------------------------------------------------------------------------------------------------------
 	     
-PERBAIKI
-  1. login dengan MAC > user:admin, pwd: "" > bisa remote, bisa 
-  2. buka tool > remove config 
-  3. buka bridge > add > nama : sesuai konsep > apply OK > masukan port nya
-  4. Buka IP > DHCP Client > add > pilih interface > bound > periksa IP 
-     - cek sambungan: terminal > ping 8.8.8.8 
-     - atau ping gateway di : IP > routes > ada routeslist gateway 
-  5. IP > address > add > address: 'IP beri slash' > interface: 'jalur keluar' (192.168.1.1/24)
-  6. IP > DHCP Server > tombol DHCP setup > interface : 'pilih LAN keluar' > next2 > Apply-Ok
-  7. IP > DNS > server = 10. 10. 10. 1 (didapat dari ISP atau IP Client ISP) dan tambahkan DNS public 8.8.8.8, 8.8.0.0 
-     - centang Allow remote request agar bisa di akses dari client
-  8. IP > firewall > tab NAT > add > tab general > chain : srcnat > out interface : 'bridge-WAN' >  
-     - Pada tab action >  pilih masquerade > apply > OK 
-  9. Tekan queues > pada queue list klik add > nama biarkan > target IP laptop tujuan
-     > 192.168.1.254  (ip laptop tergenerate diatas) isi max dan min limit. Lebih lanjut bab QoS
-  10. - ganti nama: sistem > identity > nama nya ROUTER-Gonggong
-     - ganti password: sistem > user > bikin user baru klik + > nama aqil > group full > password isikan >
-     - IP > services > ada list > disable dan sisakan 'www, winbox, ssh'
-	- tapi berikan akses masuk pada ip iertentu:
-          - dklik > available from isikan ip target 
-	  - Dan tambahkan ip local private nya juga 192. 168. 1. 0/24 jangan di kosongkan nanti malah di perboleh kan semua jadinya
-	- Terus www nya juga edit ke Ip local yang sama > lalu port 80 kita ubah jadi 8080 >
-          Nanti kalau remote tinggal www.ip:8080  
-     - Tips yang ini jangan dilakukan terlalu cepat nanti tidak bisa connect sendiri
-       Langkah amanya tiap perubahan ping dst
-       Dan paling tidak setting port2 yang terbuka untuk ip privatenya supaya kita bisa remote  
+
        
 SETTING MIKROTIK DASAR	
 
