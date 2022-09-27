@@ -27,7 +27,7 @@ Daftar Isi:
       - IP > services > ada list > disable dan sisakan 'www, winbox, ssh'
           - dklik u/ config masing2 > available from isikan ip target (misalnya milik laptop petugas) 
           - tambahkan IP local kita 192. 168. 1. 0/24 (tentu saja karena kalau tidak di isi kita malah gak bisa remote winbox)
-	       - Terus www > edit port 80 kita ubah jadi 8080 > Nanti kalau remote tinggal www.ip:8080
+	  - Terus www > edit port 80 kita ubah jadi 8080 > Nanti kalau remote tinggal www.ip:8080
      - Tips yang ini jangan dilakukan terlalu cepat nanti tidak bisa connect sendiri
        Langkah amanya tiap perubahan ping dst
 ========================================================================================================
@@ -139,19 +139,6 @@ KONFIGURASI HARDWARE
   4. pasang kabel FO ke HTB B
   5. pasang 2 ROUTER dari HTB dengan ODP (lihat di lapangan)
 --------------------------------------------------------------------------------------------------------
-KONFIGURASI WINBOX	
-  1. login winbox 
-  2. reset mikrotik 
-  3. bikin bridge dengan nama WAN, LAN, HOTSPOT, RUMAH
-  4. ambil internet dr atas bikin client (dapatkan IP)
-  5. kirim internet ke bawah (NAT masquerade)
-  6. bikin IP LAN
-  7. bikin server (LAN)
-  8. limiter
-  9. Sekurity
-
---------------------------------------------------------------------------------------------------------
-
 LOGIN
 bisa pakai salah satu: mac, ip, remote
   1. login via MAC > user:admin, pwd: ""
