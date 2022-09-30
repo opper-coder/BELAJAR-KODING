@@ -67,11 +67,11 @@ JSON:
 	- cara konsumsi di beragam bahasa sesuai caranya masing2
 		- PHP: 
 			- $contents = file_get_contents('file.json')	// ambil data json
-			- utf8_encode($contents)						// ubah encode standard jadi string json( biasa di gunakan juga konversi array Ke: json)
-			- json_decode($contents, true)					// ubah json ke array
-		- Javascript
-			- JSON.parse() 									// json > Obj
-			- JSON.stringify() 								// Obj > json
+			- utf8_encode($contents)			// ubah encode standard jadi string json( biasa di gunakan juga konversi array Ke: json)
+			- json_decode($contents, true)			// ubah json ke array
+		- Javascript:
+			- JSON.parse() 					// json > Obj
+			- JSON.stringify() 				// Obj > json
 	- formatnya mirip object java script
 	- di gunakan juga untuk konfigurasi aplikasi (tapi tidak support komentar)
 	- JSON biasanya di buat secara generate dari array atau lainya(jarang dibuat manual)
@@ -109,24 +109,24 @@ akses json
 	 	let xhr = new XHTMLHttpRequest();
 		xhr.onreadystatechange = function(){
 			if (xhr.readyState == 4 && xhr.status == 200){
-				let mahasiswa = this.responseText; 					// akan mengahsilkan json
+				let mahasiswa = this.responseText; 			// akan mengahsilkan json
 				// let mahasiswa = JSON.parse(this.responseText); 	// baru jadi object
 				console.log(mahasiswa);
 			}
 		}
-		xhr.open('GET', 'coba.json', true);							// (mehod, file, sync)(file misalnya kita punya coba.json yang berisi sebuah json)
+		xhr.open('GET', 'coba.json', true);					// (mehod, file, sync)(file misalnya kita punya coba.json yang berisi sebuah json)
 		xhr.send()
 	- contoh3 (jqury):
 		akses json dengan jquery:
-		$.getJSON()													// $.getJSON(file, callback)
-		$.getJSON(coba.json, function(hasil){ console.log(hasil) })	// hasilnya langsung di parsing jadi object
-	- contoh4 ajax jquery											// ada juga method ajax tapi agak panjang (mengandung response dan asynchronous)
+		$.getJSON()								// $.getJSON(file, callback)
+		$.getJSON(coba.json, function(hasil){ console.log(hasil) })		// hasilnya langsung di parsing jadi object
+	- contoh4 ajax jquery								// ada juga method ajax tapi agak panjang (mengandung response dan asynchronous)
 		$.ajax() 													
 	- contoh5 (php):
 		akses via PHP:
 		pada file php sebelum menggunakan data json hal yg pertama kita lakukan adalah, persiapkan dulu datanya 
-			- $contents = file_get_contents('file.json')	// ambil data json
-			- utf8_encode($contents)						// ubah encode standard jadi string json (biasa di gunakan juga konversi array Ke: json)
+			- $contents = file_get_contents('file.json')			// ambil data json
+			- utf8_encode($contents)					// ubah encode standard jadi string json (biasa di gunakan juga konversi array Ke: json)
 			- json_decode($contents, true)					// json > array_assoc
 		lalu gunakan sebagaimana perlunya
 	- contoh6 (POSTMAN):
@@ -157,11 +157,11 @@ PUBLIC API / OPEN API
 				- www.omdbapi.com/?apikey=[YUOR_API]&query pencarian (lihat di parameter yang diberikan di dokumentasi API)
 
 			- postman: 
-				GET: 									// method harus di isi sesuai tujuan
-				url: omdbapi.com 						// urlnya saja nya sampai ke .com 
+				GET: 							// method harus di isi sesuai tujuan
+				url: omdbapi.com 					// urlnya saja nya sampai ke .com 
 				- parameter:
 					apikey: YUOR API_KEY				// ini parameter pertama setelah tanda"?" di url
-					s: harry potter 					// search: harry potter
+					s: harry potter 				// search: harry potter
 				klik SEND
 					- kalau benar kita akan di kasih json nya
 		- pakai ajax() jquery
@@ -172,12 +172,12 @@ PUBLIC API / OPEN API
 					dataType: 'json'
 					data: {
 						"apikey":"dca61bcc"
-						"s": $('#input-form').val() 					// ambil text dari id input text html
+						"s": $('#input-form').val() 			// ambil text dari id input text html
 					},
 					// success: function(hasil){console.log(hasil)} 	// jika berhasil bisa di console akan di berikan response berupa object. tapi best practice ada di bawah 
 					success: function(hasil){
-						if (result.Response == "true" ) { 				// true dari response json pakai string 
-							let film = hasil.Search  					// .Search adalah key dalam "json return" coba lihat di console diatas ini
+						if (result.Response == "true" ) { 		// true dari response json pakai string 
+							let film = hasil.Search  		// .Search adalah key dalam "json return" coba lihat di console diatas ini
 							// tinggal looping saja
 							$.each(film, function(i,data){
 								console.log(i + data.tittle) 				
@@ -203,7 +203,7 @@ REST CLIENT
 		- $.ajax()  	// ajax untuk API public (dari domain di internet)
 	- php:
 		- file_get_contents(file.json)	// kalau public, file tinggal ganti URL nya / method ini jika di isi dengan url apa saja, maka akan menampilkan semua string dalam page tersebut
-		- cURL 							// pemanggil json API
+		- cURL 				// pemanggil json API
 	- framework REST SERVER API gazle
 		- pada php sebenarnya bisa konsumsi API menggunakan ajax tapi sayang hanya bisa GET dan POST saja
 		- cURL juga bisa bahkan bisa GET, POST, UPDATE, DELETE, PUT tapi masih panjang konfigurasinya, untuk mengatasi panjangnya maka ada framework khusus yaitu
@@ -245,17 +245,17 @@ CONTOH: API DATA VIDEO YOUTUBE DAN INSTAGRAM
 			 	$curl = curl_init();
 			 	$curl_setopt($curl, CURLOPT_URL, 'copas url dari postmant saat sudah di send akan berubah jadi panjang');
 			 	$curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);				// true atau 1 sama saja
-				$hasil	= curl_exec($curl);										//
+				$hasil	= curl_exec($curl);							//
 				curl_close(); 
-				$hasil = json_decode($result, true); 							// json > array kalau false atau kosong maka json > object
-				var_dump($hasil);												// siap
+				$hasil = json_decode($result, true); 						// json > array kalau false atau kosong maka json > object
+				var_dump($hasil);								// siap
 			- tinggal kita pecah data $hasil dengan memasukkan satu satu ke variabel atau array, misalnya:
 			- $bannerYoutube = $result['item'][0]['thumbnails']['medium']['url']
 		- php cURL dengan function
 			- saat kita ngambil data api dengan url nya satu begitu cukup tapi kalau kita ngambil 2 atau 3 url 
 			  dari pada kita ngulang scrip yg panjang lebih baik kita bungkus curl nya dalam function
 			- caranya
-				function get_CURL(url){ }										// masukkan script di atas dengan menerima arguments url
-				$hasil1 = get_CURL(isikan url) 									// panggilnya tinggal gini
+				function get_CURL(url){ }							// masukkan script di atas dengan menerima arguments url
+				$hasil1 = get_CURL(isikan url) 							// panggilnya tinggal gini
 ---------------------------------------------------------------------------------------------------
 */
