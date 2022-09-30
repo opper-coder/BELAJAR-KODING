@@ -26,18 +26,18 @@ mungkinlangkah berikutnya:
 jadi skemanya adalah:
 	folder
 		function
-			init.php 				// routing dan session_start
-			auth.php				// khusus autentikasi dan session get
-			db.php 					// koneksi db 
-			data.php 				// fungsi pengambilan data variabel, array, object, pagination
+			init.php 		// routing dan session_start
+			auth.php		// khusus autentikasi dan session get
+			db.php 			// koneksi db 
+			data.php 		// fungsi pengambilan data variabel, array, object, pagination
 		style
-			theme 					// warna dan variabel thema
-			css 					  // css kontrol
-			framework 			// css framework
+			theme 			// warna dan variabel thema
+			css 			// css kontrol
+			framework 		// css framework
 		javascript
-			jquery 					// kontrol ke DOM dan AJAX
+			jquery 			// kontrol ke DOM dan AJAX
 			GUI function		// fungsi interface
-			ajax data 			// fungsi data
+			ajax data 		// fungsi data
 		pages
 
 - buatkan template PHP sendiri OK lah
