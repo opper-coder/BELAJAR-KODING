@@ -18,7 +18,7 @@ definisi konsep:
 		- OS : windows: dll, win32, kernel, ios: CNMutableContact(ambil kontact), AVCaptureDevice(camera)  
 		  android: ContactsContract.RawContacts 
 		- programming: Js: DOM, ajax, mysql: mysqli,PDO
-		- WEB API: REST API, SOAP 
+		- WEB API: REST API, SOAP, gRPC, corba, apache thrift
 --------------------------------
 REST API
 	syarat dan Pengertian REST dan HTTP:
@@ -28,6 +28,31 @@ REST API
 			  semacam standard komunikasi aplikasi bersama )
 			- interface manuasia dengan applikasi disebut GUI
 			- interface aplikasi web dengan applikasi web disebut REST API
+			- syarat prinsip:
+				- Client–server			-> sever menyediakan desain api secara terisolasi
+				- Stateless				-> agar mudah discaling tidak peduli dari mana konsumsinya, data autentikasi dll harus di kirim selalu
+				- Cacheable				-> Untuk menghemat komunikasi, RESTful API bisa mengimplementasikan Cache, tapi ini tidak mudah
+				- Uniform interface		-> antarmuka komunikasi yang seragam untuk semua pihak (client & server teknologi apapun)
+				- Layered system		-> Layered System menjadikan sistem bisa disusun sesuai dengan data nya, dan agar kompleksitas pada RESTful API tidak harus diketahui oleh Client
+				- Code on demand		-> RESTful API juga diperbolehkan mengembalikan script yang bisa dieksekusi oleh client jika diperlukan(tidak wajib) 
+											misalnya response nya mengembalikan Layout XML untuk di render oleh aplikasi Android
+				- resouce naming		->
+				- content negiosiation	->
+				- caching				->
+				- idempotent			->
+				- Security				->
+				- Versioning			->
+				- Stateless				->
+				- Hateoas				->
+				- Documentation			->
+				- Development			->
+				- Maintenance			->
+				- Maturity Model		->
+				- Teknologi lainya		->
+
+?????????????????
+
+
 		HTTP:
 			- protocol (hiper text transfer protocol) adalah type lalu lintas website di internet 
 			- URL: (Uniform Resource Locator) adalah pointer penunjuk/selector sumberdaya di internet cloud
