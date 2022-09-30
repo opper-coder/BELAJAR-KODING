@@ -2,13 +2,13 @@
 API (Aplication Programming Interface)
 ---------------------------------------------------------------------------------------------------
 Daftar isi:
-	- Konsep dan definsi ->
-	- ->
-	- ->
-	- ->
-	- ->
-	- ->
-	- ->
+	- Konsep dan definsi 	-> konsep dasar api dan jenis jenis api
+	- Restfull API		-> API khusus pertukaran data via HTTP / keperluan aplikasi web dan mobile
+	- Json 			-> basik data yang di pertukarkan adalah json
+	- konsumsi Json		-> coba konsumsi data dengan js dan php
+	- OPEN API/PUBLIC API	-> ketersediaan API publik dan cara konsumsi 
+	- Rest server 		-> cara membuat penyedia API
+	- Rest client 		-> cara mengkonsumsi dengan framework
 ---------------------------------------------------------------------------------------------------
 definisi konsep:
 	API sekumpulan fungsi, subroutine, protocol komunikasi, atau kakas/tool utk membuat perangkat lunak
