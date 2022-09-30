@@ -133,6 +133,7 @@ akses json
 		saat kita akses coba.json dari luar domain maka kita akan di blokir dengan CORS yaitu aturan izin akses data 
 		- maka dari itu ada aturan khusus nanti saat menediakan dan menerima json di server client json 
 		- untuk menagani hal tersebut ikuti materi selanjutnya
+		
 ---------------------------------------------------------------------------------------------------
 PUBLIC API / OPEN API 
 	- banyak Open API disediakan untuk publict dengan syarat tertentu, misalnya berbayar dll
@@ -192,15 +193,15 @@ REST SERVER
 	- untuk membuat penyedia rest API pada aplikasi kita sendiri 
 	  ada metode dan cara masing masing pada stiap framework dan bahasa, seperti laravel, codeigniter, expressjs, golang dll
 	- biasanya saat kita bikin rest API itu ada standard OPEN API untuk aturan kemanan dan method2 datanya
-	- juga harus memahami tentang HTTP secara mendalam
+	- juga harus memahami tentang HTTP secara mendalam dan API Spec pelajari di programer zaman now 
 
 ---------------------------------------------------------------------------------------------------
 REST CLIENT
 	untuk konsumsi API public atau pun json local ada beberapa cara pada latihan ini
 	- javascript:
-		- ajax vanilla	// ajax vanilla basic
-		- $.getJSON() 	// ajax untuk JSON localhost (bagus basic dan konsep)
-		- $.ajax()  	// ajax untuk API public (dari domain di internet)
+		- ajax vanilla			// ajax vanilla basic
+		- $.getJSON() 			// ajax untuk JSON localhost (bagus basic dan konsep)
+		- $.ajax()  			// ajax untuk API public (dari domain di internet)
 	- php:
 		- file_get_contents(file.json)	// kalau public, file tinggal ganti URL nya / method ini jika di isi dengan url apa saja, maka akan menampilkan semua string dalam page tersebut
 		- cURL 				// pemanggil json API
@@ -209,7 +210,7 @@ REST CLIENT
 		- cURL juga bisa bahkan bisa GET, POST, UPDATE, DELETE, PUT tapi masih panjang konfigurasinya, untuk mengatasi panjangnya maka ada framework khusus yaitu
 		- guzzle : lihat di guzzlephp.org 
 		- contoh ada di web programing unpas api seri ke 9 
-
+		- 
 ---------------------------------------------------------------------------------------------------
 CONTOH: API DATA VIDEO YOUTUBE DAN INSTAGRAM
 	- kalau nampilin video youtube di web kita gampang tinggal pakai iframe > url
