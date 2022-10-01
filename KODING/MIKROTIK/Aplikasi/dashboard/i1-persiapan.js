@@ -23,4 +23,8 @@ DASHBOARD
 		- voucher profile
 		- 
 	- topUP
+		payment
+		margin
+		member
+		validation
 */
