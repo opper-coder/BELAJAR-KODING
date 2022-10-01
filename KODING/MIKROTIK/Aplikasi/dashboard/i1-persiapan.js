@@ -11,6 +11,11 @@ DASHBOARD
 		- aplikasi di akses terbanyak
 		- bandwidth
 		- vocher di pakai harga terbanyak
+		- OLT 
+			- db
+			- on/off
+			- restart
+			- notif
 	- notikasi 
 	- chat
 		- grup
