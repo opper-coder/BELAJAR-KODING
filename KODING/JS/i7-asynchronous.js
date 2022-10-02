@@ -1,7 +1,7 @@
 /*
 ASYNCHRONOUS
 - callback 					-> function sebagai arguments
-- synchronus vs asynchronous	-> serial vs pararalel
+- synchronus vs asynchronous			-> serial vs pararalel
 - promise() 					-> 1. states( fullfilled , rejected , pending ). masuk ke proses async
 	- resolve() 				-> 2. ajax terpenuhi akan keluar lewat then lagi
 	- reject() 				-> ?  ajax batal akan keluar lewat catch
