@@ -6,8 +6,7 @@ API
 	- ajax jquery, basic		-> bisa GET saja (sebenarnya bisa GET POST, UPDATE, PUT, DELETE PATCH)
 	- ajax fetch() basic		-> Hanya GET
 	- fetch() CRUD 			-> lebih advance melakukan CRUD ke API (UPDATE DELETE NYA BELUM ADA YA)
-	- axios() 			-> kalau mau library third party kita bisa download dengan npm sepertinya lebih ringkas dalam penulisanya
-*/
+	- axios() 			-> kalau mau library third party download: npm, yarn, CDN , bower
 
 
 /* AJAX
