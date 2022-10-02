@@ -2,10 +2,10 @@
 API
 ---------------------------------------------------------------------------------------------------
 	- pengertian asynchronous 	-> pengertian asynchronus dan promise
-	- ajax vanilla				-> ajax basic GET ke API hanya (sebenarnya bisa GET dan POST)
+	- ajax vanilla			-> ajax basic GET ke API hanya (sebenarnya bisa GET dan POST)
 	- ajax jquery, basic		-> bisa GET saja (sebenarnya bisa GET POST, UPDATE, PUT, DELETE PATCH)
 	- ajax fetch() basic		-> Hanya GET
-	- fetch() CRUD 				-> lebih advance melakukan CRUD ke API (UPDATE DELETE NYA BELUM ADA YA)
+	- fetch() CRUD 			-> lebih advance melakukan CRUD ke API (UPDATE DELETE NYA BELUM ADA YA)
 */
 
 
@@ -41,7 +41,7 @@ API
 			siswa.forEach(m => console.log(m.nama));
 		}
 		function error(){ console.log("ini sedang error!")}
-		getSiswa(u,s,e); 						// panggil
+		getSiswa(u,s,e); 			// panggil
 
 	/* basic ajax jquery
 	-------------------- */
