@@ -26,10 +26,10 @@ Daftar Isi:
 	add > T.general > 
 		name: isikan nama paket
 		shared user: 1 			// jumlah pengguna satu voucher
-		rate-limit: 256k/512k 	// auto simple queue
+		rate-limit: 256k/512k 		// auto simple queue
 	T.Queue > insert before: isikan HTB nya (parent child)
 		apply - ok
-    - user: pengguna yang login (berikan username, pass, waktu, quota)
+    - user: pengguna yang login (berikan username, pass, waktu, quota)(saat limit habis maka reset counter, agar bisa di gunakan lg)(u/ FUP)
 	T.users > add > T.general > name: ... > pass: > ... profile: pilih yg dh dibuat td > T.limit: waktu atau kuota atau tanpa limit
   12. Tekan queues > pada queue list klik add > nama biarkan > target IP laptop tujuan
       > 192.168.1.254  (ip laptop tergenerate diatas) isi max dan min limit. Lebih lanjut bab QoS
