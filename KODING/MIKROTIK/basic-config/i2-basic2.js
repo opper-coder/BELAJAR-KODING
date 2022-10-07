@@ -20,6 +20,9 @@ Daftar Isi:
      - atau ping gateway di : IP > routes > ada routeslist gateway 
   10. IP > DHCP Server > tombol DHCP setup > interface : 'pilih LAN' > next2 > Apply-Ok
   11. IP > HOTSPOT > tombol HOTSPOT setup > interface : 'pilih LAN' > next2 > Apply-Ok
+    - profile hotspot:
+	IP > HOTSPOT > hsprof1 > dblclk tab login > sisakan HTTP CHAR, trial juga boleh 
+    - 
   12. Tekan queues > pada queue list klik add > nama biarkan > target IP laptop tujuan
       > 192.168.1.254  (ip laptop tergenerate diatas) isi max dan min limit. Lebih lanjut bab QoS
   13. - ganti nama: sistem > identity > nama nya ROUTER-Gonggong
