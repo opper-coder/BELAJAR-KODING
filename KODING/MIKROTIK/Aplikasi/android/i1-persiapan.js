@@ -14,4 +14,16 @@ Aplikasi android
 	- jam tanggal
 	- monitoring bandwidth bagus tidaknya
   - gratis bandwidth hanya untuk aplikasi MIKRO-ITS, WA, facebook, telegram dll 
+  
+ Aplikasi android AGENCY
+ fitur tambahan
+ 	- recapitulasi 
+	- keuntungan penjualan master voucher
+	- keuntungan penjualan voucher
+	- keuntungan mendapatkan pelanggan
+	- penjualan
+	- topup
+	
+	
+	
 */
