@@ -22,7 +22,15 @@ Daftar Isi:
   11. IP > HOTSPOT > tombol HOTSPOT setup > interface : 'pilih LAN' > next2 > Apply-Ok
     - profile hotspot:
 	IP > HOTSPOT > hsprof1 > dblclk tab login > sisakan HTTP CHAR, trial juga boleh 
-    - 
+    - user profile (template user, nama simple queue):
+	add > T.general > 
+		name: isikan nama paket
+		shared user: 1 			// jumlah pengguna satu voucher
+		rate-limit: 256k/512k 	// auto simple queue
+	T.Queue > insert before: isikan HTB nya (parent child)
+		apply - ok
+    - user: pengguna yang login (berikan username, pass, waktu, quota)
+	T.users > add > T.general > name: ... > pass: > ... profile: pilih yg dh dibuat td > T.limit: waktu atau kuota atau tanpa limit
   12. Tekan queues > pada queue list klik add > nama biarkan > target IP laptop tujuan
       > 192.168.1.254  (ip laptop tergenerate diatas) isi max dan min limit. Lebih lanjut bab QoS
   13. - ganti nama: sistem > identity > nama nya ROUTER-Gonggong
