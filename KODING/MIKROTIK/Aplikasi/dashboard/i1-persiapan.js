@@ -96,7 +96,7 @@ DASHBOARD
 			- kostum
 			- sepatu
 			- parang
-		- kordinator
+		- kordinator (perhitungan dan skema ada di google sheet)
 			- control centre: admin pusat
 				- head manager area: 
 					- internal: pemegang wilayah 
