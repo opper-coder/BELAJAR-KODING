@@ -27,7 +27,12 @@ DASHBOARD
 		- PPPoE
 	- setting
 		- voucher profile
-		- 
+		- user profile
+		- voucher CRUD
+			- tambah user bonus
+			- blokir
+			- create
+			- monitor
 	- topUP
 		payment
 		margin
@@ -41,31 +46,63 @@ DASHBOARD
 	- setting mikrotik
 	- inventaris
 		- toolkit
-			- torch 
+			- torch senter infrared
 			- OPM 
 			- OTDR skycom
 			- Splitcher skycom
 			- splacer harga 1,5 juta
 			- tang potong FO
+			- tang potong kabel UTP
 			- tang crimping RJ45
 			- obeng 
 			- alat 
 			- kabel vlan poe
+			- solder
+			- avo meter
 		- perangkat network
 			- MIKROTIK RB450gx4	/ 100 - 200 user
 			- OLT HIOSO HA7302CS	/ 2 PON 64x2 = 128 
 			- ONU / ONT
+			- kabel FO fig 8
+			- kabel biasa 4 core
 			- kabel rj45
 				- MIKROTIK ke OLT
 				- ISP ke Mikrotik
 				- remote ke laptop
 			- Splitter
-			- HTB
+			- split ratio
+			- tali TIS
+			- tali tiang clamp
+			- xODP
+			- xHTB
+			- 
+		- perangkat lunak
+			- winbox
+			- CHR
+			- aplikasi MIKRO-ITS
+			- aplikasi vocher
+			- dashboard mobile
+			- browser
 		- sarana 
 			- motor
+			- biaya perjalanan/SPPD
 			- tangga
 			- HT
-			- pulsa HP
+			- pulsa HP 
 			- senter
+			- senter kepala
+			- sabuk pengaman
+			- topi
+			- kostum
+			- sepatu
+			- parang
+		- kordinator
+			- control centre: admin pusat
+				- head manager area: 
+					- internal: pemegang wilayah 
+					- kontrak: pemegang wilayah
+						- agent utama : penduduk yang cari agent didesa dan cari pelanggan
+							- agent perdesa: pusat aduan dan outlet
+								- pelanggan: 
 			
 */
