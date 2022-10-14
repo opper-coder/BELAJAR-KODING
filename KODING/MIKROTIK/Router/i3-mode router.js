@@ -27,7 +27,7 @@ MODE:
 - CLIENT		: tangkap dari Wireless. distrib ke kabel LAN(wifi, dhcp: off) tidak semua router support client
 - UNIVERSAL REPEATER	: mode perpanjang saja (SSID ikut sumber, remote g bisa)
 - BRIDGE		: internet masuk di LAN(bukan WAN mirip switch yang memiliki wifi)di sebar lewat LAN(kehilangan WAN dan WWAN)remote bisa
-	- mode bridge bisa di akali: ganti IP satu segmen dengan mikrotik(sumber), DHCP server di matikan
+	- mode bridge bisa di akali(jika tdk support): ganti IP satu segmen dengan mikrotik(sumber), DHCP server di matikan
 tabel perbandingan:
 -----------------------------------------------------------------------------------------------------------------------------------------------------------
 mode			WAN		WWAN		LAN 		WLAN 		DHCP server 	baca MAC (di router dan mikrotik)	remote 		SSID		WINBOX dhcp server > leases
@@ -36,5 +36,5 @@ ACCESS POINT 		true 		- 		true 		true 		-		-					-				router, client
 WISP 			-		true		true 		true		true		true					true		true 		router
 CLIENT			-		true		true 		-		-		-(tp device trkonek ada di mikro)	true		true		client
 UNIVERSAL REPEATER	-		true		true 		true 		- 		- 					-		- 		router, client
-BRIDGE			-		- 		true 		true		-(bisa di ON kan)-					true 		-	
+BRIDGE			-		- 		true 		true		-(bisa di ON kan)-					true 		-		client
 -----------------------------------------------------------------------------------------------------------------------------------------------------------
