@@ -15,15 +15,6 @@ Pengetahuan dasar:
 daftar isi:
 	- 
 ------------------------------------------------------------------------------------------------------
-mode router
-- router
-- bridge
-- ap
-- client
-- wisp
-- repeater
-- dll lihat di ali mustika sari
-------------------------------------------------------------------------------------------------------
 cara konfig totolink cp300 akses point voucher
 
 operation mode
