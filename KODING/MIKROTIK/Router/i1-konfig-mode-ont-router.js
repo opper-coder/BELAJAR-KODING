@@ -1,3 +1,19 @@
+Pengetahuan dasar:
+- router ada yang pakai RJ45 ada yang optik
+- yang optik ada epon ada gpon ada xpon
+- epon lebih mahal dari epon, tapi OLT epon lebih murah dari Gpon
+- mode router ada banyak router, ap, bridge, client, wisp, repeater dll(nanang mrk)
+- ada ptp ada ke hp langsung
+- ada frequensi 2,4 dan 5,8
+- ada channel 1-12 kayak HT
+- ada out door ada indoor
+- ada tembus tembok ada biasa
+- ada merek ada harga
+- ada network pakai kabel UTP, HTB, OLT, radio p2p, dst
+- 
+------------------------------------------------------------------------------------------------------
+daftar isi:
+	- 
 ------------------------------------------------------------------------------------------------------
 mode router
 - router
