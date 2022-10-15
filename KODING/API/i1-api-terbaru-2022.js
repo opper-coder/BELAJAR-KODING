@@ -30,20 +30,20 @@ REST API
 			- interface aplikasi web dengan applikasi web disebut REST API
 			- syarat prinsip:
 				- Client–server			-> sever menyediakan desain api secara terisolasi
-				- Stateless				-> agar mudah discaling tidak peduli dari mana konsumsinya, data autentikasi dll harus di kirim selalu
-				- Cacheable				-> Untuk menghemat komunikasi, RESTful API bisa mengimplementasikan Cache, tapi ini tidak mudah
+				- Stateless			-> agar mudah discaling tidak peduli dari mana konsumsinya, data autentikasi dll harus di kirim selalu
+				- Cacheable			-> Untuk menghemat komunikasi, RESTful API bisa mengimplementasikan Cache, tapi ini tidak mudah
 				- Uniform interface		-> antarmuka komunikasi yang seragam untuk semua pihak (client & server teknologi apapun)
 				- Layered system		-> Layered System menjadikan sistem bisa disusun sesuai dengan data nya, dan agar kompleksitas pada RESTful API tidak harus diketahui oleh Client
 				- Code on demand		-> RESTful API juga diperbolehkan mengembalikan script yang bisa dieksekusi oleh client jika diperlukan(tidak wajib) 
 											misalnya response nya mengembalikan Layout XML untuk di render oleh aplikasi Android
 				- resouce naming		->
 				- content negiosiation	->
-				- caching				->
+				- caching			->
 				- idempotent			->
-				- Security				->
+				- Security			->
 				- Versioning			->
-				- Stateless				->
-				- Hateoas				->
+				- Stateless			->
+				- Hateoas			->
 				- Documentation			->
 				- Development			->
 				- Maintenance			->
@@ -61,17 +61,17 @@ REST API
 			- jika respon GET pada Browser maka response da kasih GUI HTML CSS
 			- jika respon GET pada REST(aplikasi dg aplikasi) maka response da kasih JSON
 		Request method biasa
-			- minta data/request: GET
-			- kirim data/Tambah: POST
+			- minta data/request	: GET
+			- kirim data/Tambah	: POST
 			- Hapus: GET
 			- Edit: POST
 			- Sisip: POST
 		REST API:
 			- minta data/request: GET (browser dan programing)
 			- kirim data/Tambah	: POST (browser dan programing)
-			- Hapus				: DELETE (hanya bisa dilakukan oleh programing)
-			- Edit				: UPDATE (hanya bisa dilakukan oleh programing)
-			- Sisip				: PUT (hanya bisa dilakukan oleh programing)
+			- Hapus			: DELETE (hanya bisa dilakukan oleh programing)
+			- Edit			: UPDATE (hanya bisa dilakukan oleh programing)
+			- Sisip			: PUT (hanya bisa dilakukan oleh programing)
 		tools:
 			- POSTMAN
 			- ada banyak alternative online silahkan browsing
@@ -173,7 +173,7 @@ PUBLIC API / OPEN API
 		- CORS 
 		- biasanya sudah disediakan dokumentasi API nya
 	- demo 
-		- buka POSTMAN
+		- buka POSTMAN atau INSOMNIA atau APlikasi Alternative berbasis web
 		- www.any-api.com > 
 			- ada banyak link > redirect ke official api >
 			- ada api yang serius sampai hanya api hiburan 
