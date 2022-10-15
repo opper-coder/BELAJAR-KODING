@@ -59,7 +59,17 @@ HOTSPOT
 	- atau di sebut paket internet 2jam/1mb, 2jam/2mb, 8jam/1mb, tamu, staff dst
 	  hotspot > tab userprofile > name: nama, user shared: jumlah pengguna (mis: voucher:1, kantor:20), 
 	  rate limit: up/dn per user. 256k/256k (simple queue auto)
-	- bisa dilihat di queue simple queue saat orang akses akan terlihat limiternya 
+	- bisa dilihat di queue simple queue saat orang akses akan terlihat limiternya sama
+	- limiter di user profile ada beberapa dibawah (dikosongin juga boleh yg ini):
+		- address pool: hanya ip ini yang bisa akses
+		- session timeout: sekali login 30 menit, lalu logout automatik, login lagi 30 menit lagi
+		- idle timeout: saat idle timeout akan logout auto, argo juga ikut berhenti
+		- keeplive timeout: saat terhubung meskipun idle maka dianggap ada, saat lepas dari hospot akan logout auto
+		- status refresh: refresh asincronus informasi tiap 1 menit terkini pada hotspot.net/status
+		- shared user: di gunakan berapa pengguna
+		- ratelimit: limit simple queue: format 1m atau 1m/1m atau 1m/1m spasi burst, treshold/ max burst sesuai urutan di simple queue
+		- aadress list: jika diisi address maka pengguna IP ini bisa di perlakukan khusus misalnya dengan mangle
+		- misalnya: drop mangle blokir youtube
   - dan saat di speed test di fast.com limiternya akan sesuai di 3 settingan tersebut
 8.  user
     - adalah yang login akan menggunakan paket dari user profile
