@@ -12,7 +12,8 @@ Daftar Isi:
   4. buka bridge > add > nama : sesuai Topologi > apply OK > masukan port nya
   5. IP > address > add > address: 'IP subnet' > interface: 'pilih' > kasih IP (192.168.1.1/24) masing2 interface
   6. Buka IP > DHCP Client > add > pilih interface > bound > periksa IP 
-  7. IP > DNS > server = 10. 10. 10. 1 (didapat dari ISP atau IP Client ISP) dan tambahkan DNS public 8.8.8.8, 8.8.0.0 
+  7. IP > DNS > server = 10. 10. 10. 1 (didapat dari ISP atau IP Client ISP) dan tambahkan DNS public 8.8.8.8, 8.8.0.0, 
+	  tambah DNS dg gateway kita supaya HP tertentu dapat loginpage dg lancar
      - Allow remote request: true
   8. IP > firewall > tab NAT > add > tab general > chain : srcnat > out interface : 'bridge-WAN' >  
      - Pada tab action >  pilih masquerade > apply > OK 
