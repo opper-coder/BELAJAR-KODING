@@ -1,0 +1,860 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="1280"
+   height="720"
+   viewBox="0 0 338.66667 190.5"
+   version="1.1"
+   id="svg5"
+   inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)"
+   sodipodi:docname="i1-dashboard.svg">
+  <metadata
+     id="metadata137">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#cccccc"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="1"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="1.6819304"
+     inkscape:cx="213.37345"
+     inkscape:cy="322.517"
+     inkscape:window-width="1366"
+     inkscape:window-height="715"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2">
+    <inkscape:path-effect
+       effect="bspline"
+       id="path-effect400"
+       is_visible="true"
+       lpeversion="1"
+       weight="33.333333"
+       steps="2"
+       helper_size="0"
+       apply_no_weight="true"
+       apply_with_weight="true"
+       only_selected="false" />
+    <inkscape:path-effect
+       effect="bspline"
+       id="path-effect10375"
+       is_visible="true"
+       lpeversion="1"
+       weight="33.333333"
+       steps="2"
+       helper_size="0"
+       apply_no_weight="true"
+       apply_with_weight="true"
+       only_selected="false" />
+    <inkscape:path-effect
+       effect="bspline"
+       id="path-effect9726"
+       is_visible="true"
+       lpeversion="1"
+       weight="33.333333"
+       steps="2"
+       helper_size="0"
+       apply_no_weight="true"
+       apply_with_weight="true"
+       only_selected="false" />
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="fill:#3e9ade;stroke-width:0.510947"
+       id="rect7437"
+       width="71.870049"
+       height="176.70694"
+       x="5.6843419e-14"
+       y="13.793077" />
+    <rect
+       style="fill:#0066cc;stroke-width:0.894574"
+       id="rect7491"
+       width="338.66666"
+       height="13.793087"
+       x="5.6843419e-14"
+       y="-1.0490417e-05" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.05556px;line-height:-1.28849e+09%;font-family:'Century Gothic';-inkscape-font-specification:'Century Gothic, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;writing-mode:lr-tb;fill:#003399;stroke-width:0.793999"
+       x="45.034191"
+       y="30.280302"
+       id="text7547"><tspan
+         sodipodi:role="line"
+         id="tspan7545"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.05556px;font-family:'Century Gothic';-inkscape-font-specification:'Century Gothic, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#003399;stroke-width:0.794"
+         x="45.034191"
+         y="30.280302">ADMIN</tspan></text>
+    <ellipse
+       style="fill:#003399;stroke-width:0.973244"
+       id="path7651"
+       cx="18.098619"
+       cy="28.938734"
+       rx="9.3435268"
+       ry="9.0288715" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;line-height:-1.28849e+09%;font-family:'Century Gothic';-inkscape-font-specification:'Century Gothic, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;writing-mode:lr-tb;fill:#003399;stroke:none;stroke-width:0.793999"
+       x="52.429962"
+       y="183.526"
+       id="text9702"><tspan
+         sodipodi:role="line"
+         id="tspan9700"
+         style="font-size:4.23333px;fill:#003399;stroke-width:0.794"
+         x="52.429962"
+         y="183.526">SETTING</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;line-height:-1.28849e+09%;font-family:'Century Gothic';-inkscape-font-specification:'Century Gothic, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;writing-mode:lr-tb;fill:#003399;stroke:none;stroke-width:0.793999"
+       x="51.19474"
+       y="34.58773"
+       id="text9706"><tspan
+         sodipodi:role="line"
+         id="tspan9704"
+         style="font-size:4.23333px;stroke-width:0.794"
+         x="51.19474"
+         y="34.58773">LOGOUT</tspan></text>
+    <rect
+       style="fill:#003399;stroke:none;stroke-width:0.767416"
+       id="rect9728"
+       width="61.099689"
+       height="30.97916"
+       x="78.754013"
+       y="39.231567" />
+    <rect
+       style="fill:#003399;stroke:none;stroke-width:0.767416"
+       id="rect9730"
+       width="61.099689"
+       height="30.97916"
+       x="142.76321"
+       y="39.231567" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:17.3574px;line-height:-1.28849e+09%;font-family:'Century Gothic';-inkscape-font-specification:'Century Gothic, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;writing-mode:lr-tb;fill:#deffff;stroke:none;stroke-width:3.25554"
+       x="147.65317"
+       y="57.012135"
+       id="text9852-0"><tspan
+         sodipodi:role="line"
+         id="tspan9850-6"
+         style="stroke-width:3.25554"
+         x="147.65317"
+         y="57.012135">1200<tspan
+   style="font-size:7.05556px"
+   id="tspan9854-7">/20</tspan></tspan></text>
+    <rect
+       style="fill:#003399;stroke:none;stroke-width:0.767416"
+       id="rect9732"
+       width="61.099689"
+       height="30.97916"
+       x="206.77242"
+       y="39.231567" />
+    <rect
+       style="fill:#003399;stroke:none;stroke-width:1.09813"
+       id="rect9734"
+       width="125.10889"
+       height="30.97916"
+       x="78.754013"
+       y="73.506157" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;line-height:-1.28849e+09%;font-family:'Century Gothic';-inkscape-font-specification:'Century Gothic, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;writing-mode:lr-tb;fill:#deffff;stroke:none;stroke-width:0.793999"
+       x="93.813591"
+       y="67.250412"
+       id="text9742"><tspan
+         sodipodi:role="line"
+         id="tspan9740"
+         style="fill:#deffff;stroke-width:0.794"
+         x="93.813591"
+         y="67.250412">Server Active</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;line-height:-1.28849e+09%;font-family:'Century Gothic';-inkscape-font-specification:'Century Gothic, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;writing-mode:lr-tb;fill:#deffff;stroke:none;stroke-width:0.793999"
+       x="157.06308"
+       y="67.269012"
+       id="text9848"><tspan
+         sodipodi:role="line"
+         id="tspan9846"
+         style="stroke-width:0.794"
+         x="157.06308"
+         y="67.269012"> Voucher Active</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:17.3574px;line-height:-1.28849e+09%;font-family:'Century Gothic';-inkscape-font-specification:'Century Gothic, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;writing-mode:lr-tb;fill:#deffff;stroke:none;stroke-width:3.25554"
+       x="102.77157"
+       y="57.012135"
+       id="text9852"><tspan
+         sodipodi:role="line"
+         id="tspan9850"
+         style="stroke-width:3.25554"
+         x="102.77157"
+         y="57.012135">12<tspan
+   style="font-size:7.05556px"
+   id="tspan9854">/20</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:3.22189px;line-height:-1.28849e+09%;font-family:'Century Gothic';-inkscape-font-specification:'Century Gothic, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;writing-mode:lr-tb;fill:#deffff;stroke:none;stroke-width:0.362577"
+       x="84.293068"
+       y="47.802914"
+       id="text9858"><tspan
+         sodipodi:role="line"
+         id="tspan9856"
+         style="stroke-width:0.362577"
+         x="84.293068"
+         y="47.802914">12 - 3 - 5</tspan></text>
+    <ellipse
+       style="fill:#deffff;stroke:none;stroke-width:0.793999"
+       id="path10132"
+       cx="100.60749"
+       cy="84.757568"
+       rx="6.7091455"
+       ry="6.6771836" />
+    <ellipse
+       style="fill:#deffff;stroke:none;stroke-width:0.793999"
+       id="ellipse10134"
+       cx="125.52402"
+       cy="84.757568"
+       rx="6.7091455"
+       ry="6.6771836" />
+    <ellipse
+       style="fill:#deffff;stroke:none;stroke-width:0.793999"
+       id="ellipse10136"
+       cx="147.54845"
+       cy="84.757568"
+       rx="6.7091455"
+       ry="6.6771836" />
+    <ellipse
+       style="fill:#deffff;stroke:none;stroke-width:0.793999"
+       id="ellipse10138"
+       cx="169.57288"
+       cy="84.757568"
+       rx="6.7091455"
+       ry="6.6771836" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:3.97409px;line-height:-1.28849e+09%;font-family:'Century Gothic';-inkscape-font-specification:'Century Gothic, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;writing-mode:lr-tb;fill:#003399;stroke:none;stroke-width:0.447226"
+       x="96.880814"
+       y="85.454201"
+       id="text10142"><tspan
+         sodipodi:role="line"
+         id="tspan10140"
+         style="fill:#003399;stroke-width:0.447226"
+         x="96.880814"
+         y="85.454201">cpu</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:3.97409px;line-height:-1.28849e+09%;font-family:'Century Gothic';-inkscape-font-specification:'Century Gothic, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;writing-mode:lr-tb;fill:#003399;stroke:none;stroke-width:0.447226"
+       x="120.18842"
+       y="85.813187"
+       id="text10146"><tspan
+         sodipodi:role="line"
+         id="tspan10144"
+         style="fill:#003399;stroke-width:0.447226"
+         x="120.18842"
+         y="85.813187">mem</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:3.97409px;line-height:-1.28849e+09%;font-family:'Century Gothic';-inkscape-font-specification:'Century Gothic, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;writing-mode:lr-tb;fill:#003399;stroke:none;stroke-width:0.447226"
+       x="144.1781"
+       y="86.220688"
+       id="text10154"><tspan
+         sodipodi:role="line"
+         id="tspan10152"
+         style="fill:#003399;stroke-width:0.447226"
+         x="144.1781"
+         y="86.220688">disc</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:3.19943px;line-height:-1.28849e+09%;font-family:'Century Gothic';-inkscape-font-specification:'Century Gothic, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;writing-mode:lr-tb;fill:#003399;stroke:none;stroke-width:0.360049"
+       x="167.36467"
+       y="85.906586"
+       id="text10158"><tspan
+         sodipodi:role="line"
+         id="tspan10156"
+         style="stroke-width:0.360049"
+         x="167.36467"
+         y="85.906586">ISP</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;line-height:-1288490000%;font-family:'Century Gothic';-inkscape-font-specification:'Century Gothic, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;writing-mode:lr-tb;fill:#deffff;stroke:none;stroke-width:0.793999"
+       x="289.96194"
+       y="8.416852"
+       id="text10231"><tspan
+         sodipodi:role="line"
+         id="tspan10229"
+         style="stroke-width:0.794;fill:#deffff"
+         x="289.96194"
+         y="8.416852">JAM dan TANGGAL</tspan></text>
+    <rect
+       style="fill:#99ccff;stroke:none;stroke-width:1.38799"
+       id="rect10233"
+       width="189.11809"
+       height="32.740974"
+       x="78.971237"
+       y="107.78075" />
+    <rect
+       style="fill:#003399;stroke:none;stroke-width:0.767416"
+       id="rect10235"
+       width="61.099689"
+       height="30.97916"
+       x="270.78162"
+       y="39.231567" />
+    <rect
+       style="fill:#003399;stroke:none;stroke-width:1.09752"
+       id="rect10237"
+       width="124.96872"
+       height="30.97916"
+       x="206.91258"
+       y="73.506157" />
+    <rect
+       style="fill:#003399;stroke:none;stroke-width:1.14843"
+       id="rect10239"
+       width="61.099689"
+       height="69.377228"
+       x="270.99884"
+       y="107.78075" />
+    <path
+       style="fill:#99ccff;stroke:#000000;stroke-width:0.763605;stroke-opacity:1"
+       d="m 78.971237,131.57642 c 13.547482,-3.41552 27.094503,-6.83093 39.633753,-5.59201 12.53924,1.23892 24.06959,7.13184 33.50553,4.74667 9.43593,-2.38518 16.77726,-13.04804 26.25277,-14.92439 9.47552,-1.87634 21.08431,5.03362 32.70924,4.25411 11.62494,-0.77952 23.26559,-9.2481 32.76244,-9.24786 9.49686,2.4e-4 16.84921,8.46882 24.20148,16.9373"
+       id="path10373"
+       sodipodi:nodetypes="ccccccc"
+       inkscape:original-d="M 78.971237,131.57642 C 92.518798,128.16121 106.06582,124.7458 119.6131,121.33 c 11.53108,5.89343 23.06143,11.78635 34.59176,17.67914 7.34188,-10.66304 14.68321,-21.3259 22.02441,-31.9892 11.6095,6.91048 23.21829,13.82044 34.82704,20.73029 11.64137,-8.46866 23.28201,-16.93725 34.92263,-25.40624 7.35291,8.46917 14.70527,16.93775 22.05751,25.40625"
+       inkscape:path-effect="#path-effect10375" />
+    <rect
+       style="fill:#99ccff;stroke:#000000;stroke-width:0.503217;stroke-opacity:1"
+       id="rect10429"
+       width="2.6469169"
+       height="15.78036"
+       x="210.99847"
+       y="88.158211" />
+    <rect
+       style="fill:#99ccff;stroke:#000000;stroke-width:0.569715;stroke-opacity:1"
+       id="rect10431"
+       width="2.5804191"
+       height="20.747765"
+       x="215.98254"
+       y="83.157555" />
+    <rect
+       style="fill:#99ccff;stroke:#000000;stroke-width:0.406104;stroke-opacity:1"
+       id="rect10433"
+       width="2.74403"
+       height="9.9136114"
+       x="235.70403"
+       y="94.073517" />
+    <rect
+       style="fill:#99ccff;stroke:#000000;stroke-width:0.503217;stroke-opacity:1"
+       id="rect10435"
+       width="2.6469169"
+       height="15.78036"
+       x="240.7034"
+       y="88.158211" />
+    <rect
+       style="fill:#99ccff;stroke:#000000;stroke-width:0.561352;stroke-opacity:1"
+       id="rect10437"
+       width="2.5887816"
+       height="20.078072"
+       x="245.68329"
+       y="83.831429" />
+    <rect
+       style="fill:#99ccff;stroke:#000000;stroke-width:0.503217;stroke-opacity:1"
+       id="rect10439"
+       width="2.6469169"
+       height="15.78036"
+       x="250.60506"
+       y="88.158211" />
+    <rect
+       style="fill:#99ccff;stroke:#000000;stroke-width:0.530161;stroke-opacity:1"
+       id="rect10441"
+       width="2.6199725"
+       height="17.695629"
+       x="220.91357"
+       y="86.229469" />
+    <rect
+       style="fill:#99ccff;stroke:#000000;stroke-width:0.530161;stroke-opacity:1"
+       id="rect10443"
+       width="2.6199725"
+       height="17.695631"
+       x="225.8644"
+       y="86.229469" />
+    <rect
+       style="fill:#99ccff;stroke:#000000;stroke-width:0.362582;stroke-opacity:1"
+       id="rect10447"
+       width="2.7875521"
+       height="7.7792068"
+       x="230.73145"
+       y="96.229683" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:6.08359px;line-height:-1.28849e+09%;font-family:'Century Gothic';-inkscape-font-specification:'Century Gothic, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;writing-mode:lr-tb;fill:#99ccff;stroke:none;stroke-width:0.684618;stroke-opacity:1"
+       x="277.86057"
+       y="119.47701"
+       id="text10503"><tspan
+         sodipodi:role="line"
+         id="tspan10501"
+         style="stroke:none;stroke-width:0.684619"
+         x="277.86057"
+         y="119.47701">biling Mik teratas</tspan></text>
+    <rect
+       style="fill:#99ccff;stroke:#000000;stroke-width:0.613552;stroke-opacity:1"
+       id="rect362"
+       width="2.5365822"
+       height="24.479351"
+       x="255.61101"
+       y="79.404053" />
+    <rect
+       style="fill:#99ccff;stroke:#000000;stroke-width:0.503217;stroke-opacity:1"
+       id="rect364"
+       width="2.6469169"
+       height="15.78036"
+       x="260.50668"
+       y="88.158211" />
+    <rect
+       style="fill:#99ccff;stroke:#000000;stroke-width:0.503217;stroke-opacity:1"
+       id="rect366"
+       width="2.6469169"
+       height="15.78036"
+       x="280.30997"
+       y="88.158211" />
+    <rect
+       style="fill:#99ccff;stroke:#000000;stroke-width:0.382715;stroke-opacity:1"
+       id="rect368"
+       width="2.7674186"
+       height="8.7301807"
+       x="285.20056"
+       y="95.268639" />
+    <rect
+       style="fill:#99ccff;stroke:#000000;stroke-width:0.603909;stroke-opacity:1"
+       id="rect370"
+       width="2.5462244"
+       height="23.626186"
+       x="290.26193"
+       y="80.262039" />
+    <rect
+       style="fill:#99ccff;stroke:#000000;stroke-width:0.503217;stroke-opacity:1"
+       id="rect372"
+       width="2.6469169"
+       height="15.78036"
+       x="295.16248"
+       y="88.158211" />
+    <rect
+       style="fill:#99ccff;stroke:#000000;stroke-width:0.503217;stroke-opacity:1"
+       id="rect374"
+       width="2.6469169"
+       height="15.78036"
+       x="265.45752"
+       y="88.158211" />
+    <rect
+       style="fill:#99ccff;stroke:#000000;stroke-width:0.561352;stroke-opacity:1"
+       id="rect376"
+       width="2.5887816"
+       height="20.078075"
+       x="270.43738"
+       y="83.831429" />
+    <rect
+       style="fill:#99ccff;stroke:#000000;stroke-width:0.530161;stroke-opacity:1"
+       id="rect378"
+       width="2.6199725"
+       height="17.695629"
+       x="275.37262"
+       y="86.229469" />
+    <rect
+       style="fill:#99ccff;stroke:#000000;stroke-width:0.561352;stroke-opacity:1"
+       id="rect380"
+       width="2.5887816"
+       height="20.078075"
+       x="310.04398"
+       y="83.831429" />
+    <rect
+       style="fill:#99ccff;stroke:#000000;stroke-width:0.503217;stroke-opacity:1"
+       id="rect382"
+       width="2.6469169"
+       height="15.78036"
+       x="314.96576"
+       y="88.158211" />
+    <rect
+       style="fill:#99ccff;stroke:#000000;stroke-width:0.561352;stroke-opacity:1"
+       id="rect384"
+       width="2.5887816"
+       height="20.078075"
+       x="319.94559"
+       y="83.831429" />
+    <rect
+       style="fill:#99ccff;stroke:#000000;stroke-width:0.503217;stroke-opacity:1"
+       id="rect386"
+       width="2.6469169"
+       height="15.78036"
+       x="324.86743"
+       y="88.158211" />
+    <rect
+       style="fill:#99ccff;stroke:#000000;stroke-width:0.503217;stroke-opacity:1"
+       id="rect388"
+       width="2.6469169"
+       height="15.78036"
+       x="295.16248"
+       y="88.158211" />
+    <rect
+       style="fill:#99ccff;stroke:#000000;stroke-width:0.503217;stroke-opacity:1"
+       id="rect390"
+       width="2.6469169"
+       height="15.78036"
+       x="300.11328"
+       y="88.158211" />
+    <rect
+       style="fill:#99ccff;stroke:#000000;stroke-width:0.530161;stroke-opacity:1"
+       id="rect392"
+       width="2.6199725"
+       height="17.695629"
+       x="305.07758"
+       y="86.229469" />
+    <rect
+       style="fill:#99ccff;stroke:none;stroke-width:1.38602"
+       id="rect394"
+       width="189.11809"
+       height="32.647797"
+       x="78.971237"
+       y="144.11229" />
+    <path
+       style="fill:#99ccff;stroke:#000000;stroke-width:0.763296;stroke-opacity:1"
+       d="m 268.13978,172.02197 c -13.82714,-7.65667 -27.65415,-15.31328 -40.20209,-15.07077 -12.54794,0.24251 -23.81613,8.38355 -33.12099,7.12675 -9.30487,-1.2568 -16.64619,-11.911 -26.12173,-13.78583 -9.47553,-1.87482 -21.08433,5.02954 -32.78791,7.67833 -11.70359,2.64879 -23.50055,1.04226 -33.00613,-0.58925 -9.505572,-1.6315 -16.717513,-3.28765 -23.929693,-4.94385"
+       id="path396"
+       sodipodi:nodetypes="ccccccc"
+       inkscape:original-d="m 268.13978,172.02197 c -13.8273,-7.65638 -27.65432,-15.31298 -41.48109,-22.96984 -11.26891,8.14162 -22.5371,16.28266 -33.80526,24.42362 -7.34189,-10.6544 -14.68322,-21.3086 -22.02443,-31.96327 -11.60952,6.90489 -23.21832,13.80924 -34.82709,20.7135 -11.79847,-1.60651 -23.59543,-3.21305 -35.39442,-4.82009 -7.212176,-1.656 -14.424116,-3.31215 -21.636253,-4.96854"
+       inkscape:path-effect="#path-effect400" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;line-height:-1.28849e+09%;font-family:'Century Gothic';-inkscape-font-specification:'Century Gothic, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;writing-mode:lr-tb;fill:#ffff99;stroke:none;stroke-width:0.793999;stroke-opacity:1"
+       x="277.79507"
+       y="127.17773"
+       id="text404"><tspan
+         sodipodi:role="line"
+         id="tspan402"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:'Century Gothic';-inkscape-font-specification:'Century Gothic, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffff99;stroke:none;stroke-width:0.794"
+         x="277.79507"
+         y="127.17773">teratas</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;line-height:-1.28849e+09%;font-family:'Century Gothic';-inkscape-font-specification:'Century Gothic, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;writing-mode:lr-tb;fill:#ffff99;stroke:none;stroke-width:0.793999;stroke-opacity:1"
+       x="277.79507"
+       y="132.73973"
+       id="text510"><tspan
+         sodipodi:role="line"
+         id="tspan508"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:'Century Gothic';-inkscape-font-specification:'Century Gothic, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffff99;stroke:none;stroke-width:0.794"
+         x="277.79507"
+         y="132.73973">teratas</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;line-height:-1.28849e+09%;font-family:'Century Gothic';-inkscape-font-specification:'Century Gothic, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;writing-mode:lr-tb;fill:#ffff99;stroke:none;stroke-width:0.793999;stroke-opacity:1"
+       x="277.79507"
+       y="137.83025"
+       id="text514"><tspan
+         sodipodi:role="line"
+         id="tspan512"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:'Century Gothic';-inkscape-font-specification:'Century Gothic, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffff99;stroke:none;stroke-width:0.794"
+         x="277.79507"
+         y="137.83025">teratas</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;line-height:-1.28849e+09%;font-family:'Century Gothic';-inkscape-font-specification:'Century Gothic, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;writing-mode:lr-tb;fill:#ffff99;stroke:none;stroke-width:0.793999;stroke-opacity:1"
+       x="277.79507"
+       y="142.92076"
+       id="text518"><tspan
+         sodipodi:role="line"
+         id="tspan516"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:'Century Gothic';-inkscape-font-specification:'Century Gothic, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffff99;stroke:none;stroke-width:0.794"
+         x="277.79507"
+         y="142.92076">teratas</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;line-height:-1.28849e+09%;font-family:'Century Gothic';-inkscape-font-specification:'Century Gothic, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;writing-mode:lr-tb;fill:#ffff99;stroke:none;stroke-width:0.793999;stroke-opacity:1"
+       x="277.79507"
+       y="148.48277"
+       id="text522"><tspan
+         sodipodi:role="line"
+         id="tspan520"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:'Century Gothic';-inkscape-font-specification:'Century Gothic, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffff99;stroke:none;stroke-width:0.794"
+         x="277.79507"
+         y="148.48277">teratas</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;line-height:-1.28849e+09%;font-family:'Century Gothic';-inkscape-font-specification:'Century Gothic, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;writing-mode:lr-tb;fill:#ffff99;stroke:none;stroke-width:0.793999;stroke-opacity:1"
+       x="277.79507"
+       y="153.57329"
+       id="text526"><tspan
+         sodipodi:role="line"
+         id="tspan524"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:'Century Gothic';-inkscape-font-specification:'Century Gothic, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffff99;stroke:none;stroke-width:0.794"
+         x="277.79507"
+         y="153.57329">teratas</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;line-height:-1.28849e+09%;font-family:'Century Gothic';-inkscape-font-specification:'Century Gothic, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;writing-mode:lr-tb;fill:#ffff99;stroke:none;stroke-width:0.793999;stroke-opacity:1"
+       x="277.79507"
+       y="158.6638"
+       id="text530"><tspan
+         sodipodi:role="line"
+         id="tspan528"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:'Century Gothic';-inkscape-font-specification:'Century Gothic, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffff99;stroke:none;stroke-width:0.794"
+         x="277.79507"
+         y="158.6638">teratas</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;line-height:-1.28849e+09%;font-family:'Century Gothic';-inkscape-font-specification:'Century Gothic, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;writing-mode:lr-tb;fill:#ffff99;stroke:none;stroke-width:0.793999;stroke-opacity:1"
+       x="277.79507"
+       y="164.22581"
+       id="text534"><tspan
+         sodipodi:role="line"
+         id="tspan532"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:'Century Gothic';-inkscape-font-specification:'Century Gothic, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffff99;stroke:none;stroke-width:0.794"
+         x="277.79507"
+         y="164.22581">teratas</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;line-height:-1.28849e+09%;font-family:'Century Gothic';-inkscape-font-specification:'Century Gothic, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;writing-mode:lr-tb;fill:#ffff99;stroke:none;stroke-width:0.793999;stroke-opacity:1"
+       x="277.79507"
+       y="169.31633"
+       id="text538"><tspan
+         sodipodi:role="line"
+         id="tspan536"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:'Century Gothic';-inkscape-font-specification:'Century Gothic, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffff99;stroke:none;stroke-width:0.794"
+         x="277.79507"
+         y="169.31633">teratas</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:17.3574px;line-height:-1.28849e+09%;font-family:'Century Gothic';-inkscape-font-specification:'Century Gothic, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;writing-mode:lr-tb;fill:#deffff;stroke:none;stroke-width:3.25554"
+       x="211.97708"
+       y="57.012135"
+       id="text646"><tspan
+         sodipodi:role="line"
+         id="tspan644"
+         style="stroke-width:3.25554"
+         x="211.97708"
+         y="57.012135">300<tspan
+   style="font-size:7.05556px"
+   id="tspan642">/1120</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;line-height:-1.28849e+09%;font-family:'Century Gothic';-inkscape-font-specification:'Century Gothic, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;writing-mode:lr-tb;fill:#deffff;stroke:none;stroke-width:0.793999"
+       x="219.77763"
+       y="67.502457"
+       id="text650"><tspan
+         sodipodi:role="line"
+         id="tspan648"
+         style="stroke-width:0.794"
+         x="219.77763"
+         y="67.502457"> Chat  Active</tspan></text>
+    <path
+       style="fill:#003399;stroke-width:0.294;stroke:#0410c0;stroke-opacity:1;stroke-dasharray:none"
+       d="M 4.0044414,44.231393 H 68.075505"
+       id="path874" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;line-height:-1288490000%;font-family:'Century Gothic';-inkscape-font-specification:'Century Gothic, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;writing-mode:lr-tb;fill:#deffff;stroke:#0410c0;stroke-width:0.294;stroke-dasharray:none;stroke-opacity:1;fill-opacity:1"
+       x="212.0731"
+       y="81.442162"
+       id="text1787"><tspan
+         sodipodi:role="line"
+         id="tspan1785"
+         style="stroke-width:0.294;fill:#deffff;fill-opacity:1"
+         x="212.0731"
+         y="81.442162">FUP</tspan></text>
+    <rect
+       style="fill:#66cc33;stroke:#000000;stroke-width:0.633761;stroke-opacity:1"
+       id="rect2203"
+       width="2.5163724"
+       height="26.328327"
+       x="327.57962"
+       y="77.544975" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;line-height:-1.28849e+09%;font-family:'Century Gothic';-inkscape-font-specification:'Century Gothic, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;writing-mode:lr-tb;fill:#deffff;stroke:none;stroke-width:0.793999"
+       x="275.27371"
+       y="53.478405"
+       id="text9738"><tspan
+         sodipodi:role="line"
+         id="tspan9736"
+         style="fill:#deffff;stroke-width:0.794"
+         x="275.27371"
+         y="53.478405">hari: 2000000</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;line-height:-1.28849e+09%;font-family:'Century Gothic';-inkscape-font-specification:'Century Gothic, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;writing-mode:lr-tb;fill:#deffff;stroke:none;stroke-width:0.793999"
+       x="275.27991"
+       y="59.384567"
+       id="text2507"><tspan
+         sodipodi:role="line"
+         id="tspan2505"
+         style="fill:#deffff;stroke-width:0.794"
+         x="275.27991"
+         y="59.384567">minggu ini: 2000000</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;line-height:-1.28849e+09%;font-family:'Century Gothic';-inkscape-font-specification:'Century Gothic, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;writing-mode:lr-tb;fill:#deffff;stroke:none;stroke-width:0.793999"
+       x="275.27579"
+       y="66.09481"
+       id="text2511"><tspan
+         sodipodi:role="line"
+         id="tspan2509"
+         style="fill:#deffff;stroke-width:0.794"
+         x="275.27579"
+         y="66.09481">bulan ini: 2000000</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;line-height:-1.28849e+09%;font-family:'Century Gothic';-inkscape-font-specification:'Century Gothic, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;writing-mode:lr-tb;fill:#001b9b;fill-opacity:1;stroke:none;stroke-width:0.294;stroke-dasharray:none;stroke-opacity:1"
+       x="82.921249"
+       y="113.83958"
+       id="text2650"><tspan
+         sodipodi:role="line"
+         id="tspan2648"
+         style="fill:#001b9b;fill-opacity:1;stroke:none;stroke-width:0.294"
+         x="82.921249"
+         y="113.83958">bandwidth</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;line-height:-1.28849e+09%;font-family:'Century Gothic';-inkscape-font-specification:'Century Gothic, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;writing-mode:lr-tb;fill:#001b9b;fill-opacity:1;stroke:none;stroke-width:0.294;stroke-dasharray:none;stroke-opacity:1"
+       x="82.921249"
+       y="151.17676"
+       id="text2654"><tspan
+         sodipodi:role="line"
+         id="tspan2652"
+         style="fill:#001b9b;fill-opacity:1;stroke:none;stroke-width:0.294"
+         x="82.921249"
+         y="151.17676">bandwidth</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;line-height:-1.28849e+09%;font-family:'Century Gothic';-inkscape-font-specification:'Century Gothic, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;writing-mode:lr-tb;fill:#ffff00;stroke:none;stroke-width:0.793999"
+       x="7.8336215"
+       y="57.838268"
+       id="text9628"><tspan
+         sodipodi:role="line"
+         id="tspan9626"
+         style="font-size:4.23333px;fill:#ffff00;stroke-width:0.794"
+         x="7.8336215"
+         y="57.838268">DASHBOARD</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;line-height:-1.28849e+09%;font-family:'Century Gothic';-inkscape-font-specification:'Century Gothic, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;writing-mode:lr-tb;fill:#003399;stroke:none;stroke-width:0.793999"
+       x="8.0982046"
+       y="65.624672"
+       id="text9682"><tspan
+         sodipodi:role="line"
+         id="tspan9680"
+         style="font-size:4.23333px;fill:#003399;stroke-width:0.794"
+         x="8.0982046"
+         y="65.624672">SERVERS</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;line-height:-1.28849e+09%;font-family:'Century Gothic';-inkscape-font-specification:'Century Gothic, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;writing-mode:lr-tb;fill:#003399;stroke:none;stroke-width:0.793999"
+       x="7.8377557"
+       y="73.411079"
+       id="text9686"><tspan
+         sodipodi:role="line"
+         id="tspan9684"
+         style="font-size:4.23333px;fill:#003399;stroke-width:0.794"
+         x="7.8377557"
+         y="73.411079">PELANGGAN</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;line-height:-1.28849e+09%;font-family:'Century Gothic';-inkscape-font-specification:'Century Gothic, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;writing-mode:lr-tb;fill:#003399;stroke:none;stroke-width:0.793999"
+       x="8.0671988"
+       y="81.197487"
+       id="text9690"><tspan
+         sodipodi:role="line"
+         id="tspan9688"
+         style="font-size:4.23333px;fill:#003399;stroke-width:0.794"
+         x="8.0671988"
+         y="81.197487">VOUCHER</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23332977px;font-family:'Century Gothic';-inkscape-font-specification:'Century Gothic, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;writing-mode:lr-tb;fill:#003399;stroke:none;stroke-width:0.79399902"
+       x="7.7964144"
+       y="99.567223"
+       id="text9694"><tspan
+         sodipodi:role="line"
+         id="tspan9692"
+         style="font-size:4.23332977px;fill:#003399;stroke-width:0.79400003"
+         x="7.7964144"
+         y="99.567223">REPORT</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23332977px;font-family:'Century Gothic';-inkscape-font-specification:'Century Gothic, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;writing-mode:lr-tb;fill:#003399;stroke:none;stroke-width:0.79399902"
+       x="7.9865837"
+       y="107.35364"
+       id="text9698"><tspan
+         sodipodi:role="line"
+         id="tspan9696"
+         style="font-size:4.23332977px;fill:#003399;stroke-width:0.79400003"
+         x="7.9865837"
+         y="107.35364">CHAT</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23332977px;font-family:'Century Gothic';-inkscape-font-specification:'Century Gothic, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;writing-mode:lr-tb;fill:#003399;stroke:none;stroke-width:0.79399902"
+       x="7.9865837"
+       y="115.14004"
+       id="text10162"><tspan
+         sodipodi:role="line"
+         id="tspan10160"
+         style="font-size:4.23332977px;fill:#003399;stroke-width:0.79400003"
+         x="7.9865837"
+         y="115.14004">CONFIG</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23332977px;font-family:'Century Gothic';-inkscape-font-specification:'Century Gothic, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;writing-mode:lr-tb;fill:#003399;stroke:none;stroke-width:0.79399902"
+       x="7.7964144"
+       y="122.92646"
+       id="text10166"><tspan
+         sodipodi:role="line"
+         id="tspan10164"
+         style="font-size:4.23332977px;fill:#003399;stroke-width:0.79400003"
+         x="7.7964144"
+         y="122.92646">REMOTE</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23332977px;font-family:'Century Gothic';-inkscape-font-specification:'Century Gothic, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;writing-mode:lr-tb;fill:#003399;stroke:none;stroke-width:0.79399902"
+       x="7.8770299"
+       y="130.71284"
+       id="text2515"><tspan
+         sodipodi:role="line"
+         id="tspan2513"
+         style="font-size:4.23332977px;fill:#003399;stroke-width:0.79400003"
+         x="7.8770299"
+         y="130.71284">INVENTARIS</tspan></text>
+    <text
+       id="text4649"
+       y="90.193321"
+       x="8.0671988"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23332977px;font-family:'Century Gothic';-inkscape-font-specification:'Century Gothic, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;writing-mode:lr-tb;fill:#003399;stroke:none;stroke-width:0.79399902"
+       xml:space="preserve"><tspan
+         y="90.193321"
+         x="8.0671988"
+         style="font-size:4.23332977px;fill:#003399;stroke-width:0.79400003"
+         id="tspan4647"
+         sodipodi:role="line">PROJECT</tspan></text>
+  </g>
+</svg>
