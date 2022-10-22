@@ -54,7 +54,7 @@ HOTSPOT
 	  hotspot > tab active: melihat user login
 	  hotspot > tab host: melihat user login dengan IP terlihat sebagai static/manual lihat di flag ada tooltips
 	- kalu kita lihat IP > dhcp, ternyata hostspot kita juga aktif sbg dhcp karena ini milik hotspot jg ternyata
-	  saat di dbclk maka akanterlihat IP dan MAC 
+	  saat di dbclk maka akan terlihat IP dan MAC 
 7. user profile
 	- atau di sebut paket internet 2jam/1mb, 2jam/2mb, 8jam/1mb, tamu, staff dst
 	  hotspot > tab userprofile > name: nama, user shared: jumlah pengguna (mis: voucher:1, kantor:20), 
@@ -68,7 +68,7 @@ HOTSPOT
 		- status refresh: refresh asincronus informasi tiap 1 menit terkini pada hotspot.net/status
 		- shared user: di gunakan berapa pengguna
 		- ratelimit: limit simple queue: format 1m atau 1m/1m atau 1m/1m spasi burst, treshold/ max burst sesuai urutan di simple queue
-		- aadress list: jika diisi address maka pengguna IP ini bisa di perlakukan khusus misalnya dengan mangle
+		- aadress list: jika diisi address maka pengguna IP ini bisa di perlakukan khusus misalnya dengan mangle pada IP bersangkutan
 		- misalnya: drop mangle blokir youtube
   - dan saat di speed test di fast.com limiternya akan sesuai di 3 settingan tersebut
 8.  user
