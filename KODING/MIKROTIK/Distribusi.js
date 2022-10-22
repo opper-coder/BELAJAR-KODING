@@ -64,7 +64,7 @@ HOTSPOT
 		- address pool: hanya ip ini yang bisa akses
 		- session timeout: sekali login 30 menit, lalu logout automatik, login lagi 30 menit lagi
 		- idle timeout: saat idle timeout akan logout auto, argo juga ikut berhenti
-		- keeplive timeout: saat terhubung meskipun idle maka dianggap ada, saat lepas dari hospot akan logout auto
+		- keeplive timeout: saat terhubung meskipun idle maka dianggap ada, saat lepas dari hospot akan logout auto, argo mati
 		- status refresh: refresh asincronus informasi tiap 1 menit terkini pada hotspot.net/status
 		- shared user: di gunakan berapa pengguna
 		- ratelimit: limit simple queue: format 1m atau 1m/1m atau 1m/1m spasi burst, treshold/ max burst sesuai urutan di simple queue
@@ -74,7 +74,7 @@ HOTSPOT
 8.  user
     - adalah yang login akan menggunakan paket dari user profile
       hotspot > tab user > add > name:tamu, pass:tamu1, user profile:pilih paket tadi
-      > pada tab limit kita bisa setting uptime > berapa jam > limit bytes total: bisa limit secara GB MB dll (satuan byte)
+      > pada tab limit > kita bisa limit berdasarkan waktu(jam) atau kuota(size)
     
 - saat up time dan limit tercapai user password tersebut berati sudah tidak bisa di gunakan lagi
     - kalau mau hidupkan kembali tinggal pilih user di tab user dan klik reset counter
