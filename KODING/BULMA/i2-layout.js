@@ -3,7 +3,13 @@ BULMA
 
 Daftar isi
 	- tips
-	- KOLOM/GRID SISTEM
+	- LAYOUT
+		- container								-> 
+		- hero										-> 
+		- section									-> 
+		- header									-> 
+		- footer									-> 
+	- KOLOM SISTEM 12 kolom
 		- kolom										-> semacam pembagian halaman secara horizontal
 		- size kolom							-> ukuran masing2 dalam 12 grid dan pecahan
 		- wrapping kolom					-> jika lebih dari 12 kolom di jatuhkan kebawah(default hidden)
@@ -11,12 +17,12 @@ Daftar isi
 		- responsive							-> adaptasi kolom pada breakpoint.ada 4 tingkat
 		- nested									-> bersarang parent child berulang
 		- gap											-> jarak antara komponen
-	- LAYOUT
-		- container								-> 
-		- 
-	- ALIGNMENT
-		- vertical								-> 
-		- horizontal							-> 
+		- vertical								-> untuk kotak kolom
+		- horizontal							-> untuk kotak kolom
+	- FLEX 											
+		- flex 										-> cara aktifkan flex sistem biasa
+	- GRID 
+		- tiles 									-> ada grid sistem vertical horizontal lihat di dokumentasi
 ====================================================================================================
 TIPS biki halaman website:
 
@@ -27,6 +33,18 @@ TIPS biki halaman website:
 4 lalu setting responsive
 5 kalau menemukan kolom statik boleh pakai tile
 6 kemudian layoting mobile 
+untuk kotak kolom
+====================================================================================================
+LAYOUT
+- container: 80% layar pada desktop dan 100% pada tablet dan mobile
+- is-fluid: 32px gap kanan kiri di semua layar
+- navbar: 
+- hero: full width, height contain, padding, center vertikal, (is-info tidak usah has-background)(ada size small medium large)
+- section: full width, height responsive, padding responsive, center vertikal
+- footer: baik untuk footer
+*/
+
+/*
 ----------------------------------------------------------------------------------------------------
 LAYOUTING COLUMN
  */
@@ -115,16 +133,45 @@ pada kotak kolom (bukan contain)
  */
 is-vcentered 					// center vertical
 is-centered						// center horizontal
-
+is-pulled-left
+is-pulled-right
 /*
 ====================================================================================================
-LAYOUT
-- container: 80% layar pada desktop dan 100% pada tablet dan mobile
-- is-fluid: 32px gap kanan kiri di semua layar
-- navbar:
-- hero:
-- section:
-- footer:
-- flexbox:
-- 
-*/
+FLEX
+ */
+is-flex								-> aktifkan flex
+flex-direction				
+	is-flex-direction-row							-> arah baris
+	is-flex-direction-row-reverse			-> arah balik baris
+	is-flex-direction-column					-> arah kolom
+	is-flex-direction-column-reverse	-> arah balik kolom
+flex-wrap							
+	is-flex-wrap-nowrap								-> wrap di hidden
+	is-flex-wrap-wrap									-> wrap default
+	is-flex-wrap-wrap-reverse					-> wrap balik wrap
+justify-content				->
+	is-justify-content-flex-start			-> lurus kiri
+	is-justify-content-flex-end				-> lurus kanan
+	is-justify-content-center					-> lurus tengah
+	is-justify-content-space-between	-> spasi sama
+	is-justify-content-space-around		-> spasi sama pinggir nol
+	is-justify-content-space-evenly		-> 
+	is-justify-content-start					-> 
+	is-justify-content-end						-> 
+	is-justify-content-left						-> 
+	is-justify-content-right					-> 
+align-content
+	is-align-content-flex-start				-> jajar atas
+	is-align-content-flex-end					-> jajar bawah
+	is-align-content-center						-> jajar tengah
+	is-align-content-space-between		-> spasi sama
+	is-align-content-space-around			-> spasi sama pinggir nol
+	is-align-content-space-evenly			-> 
+	is-align-content-stretch					-> tarik penuhi
+	is-align-content-start						-> 
+	is-align-content-end							-> 
+	is-align-content-baseline					-> mungkin lurus font lowercase
+align-items						->
+align-self						->
+flex-grow							->
+flex-shrink						->
