@@ -82,10 +82,18 @@ Pendahuluan
 	di js dlm tag src <script src=>
 - Program Hello World -------------------------
 	document.writeln("helloworld"); // di html 
-	console.log("hello world");		// di console
+	document.write();
+	hasilparentdom.innerHTML = "<p>Aku suka Javascript</p>"; 
+	window.alert("Hello World!");	// atau tanpa window boleh
+	console.log("hello world");	// di console
 	console.info("hello world");	// pengganti log
 	console.warn("hello world");	// berwarna kuning
 	console.error("hello world");	// merah
+
+
+Menggunakan Fungsi alert();
+
+Menggunakan innerHTML.
 - Komentar ------------------------------------
 	// /**/
 - Tipe Data Number ----------------------------
