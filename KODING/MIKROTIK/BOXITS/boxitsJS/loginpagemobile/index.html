@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Login</title>
+	<style>
+		*{ padding: 0; margin: 0; font-family: sans-serif; color: #484848;}
+		html, body { height: 100%; margin: 0; }
+  	.full-height { min-height: 100%; }
+		.mt6{ margin-top: 6px; }
+		.mt10{ margin-top: 10px; }
+		.mt20{ margin-top: 20px; }
+		.baris{ border-bottom: 1px solid lightgrey; }
+		.h100p{ height: 100%;  }
+	</style>
+	<style>
+		.kotak{ background: #f7f7f7; }
+		.navbar{ padding: 10px; border-bottom: 1px solid lightgrey; background: #e3e3e3; }
+		.logoM{ display: inline-block; background: black; color: white; width: 20px; height: 20px; text-align: center; font-weight: bold; border-radius: 50%;}
+		.akun a{ color: #2b5fff; text-decoration: none; float: right; }
+		.saldo{ background-color: #e3e3e3; margin-top: 15px; padding: 6px 14px; float: right; border-radius: 8px; font-size: 12px; font-weight: bold; margin-right: 6px;}
+		.saldoT{ background-color: #e3e3e3; margin-top: 15px; padding: 4px 10px; float: right; border-radius: 8px; font-size: 16px; font-weight: bold; margin-right: 10px; text-decoration: none;}
+		.saldoT:active { background-color: greenyellow; }
+		.voucher{ text-align: center; }
+		.voucher input{ margin-top: 10px; width: 50%; height: 40px; border: 1px solid #2b5fff; padding-left: 10px; box-sizing: border-box;}
+		button.go{ background: black; color: white; width: 50%; height: 40px; margin-top: 4px; border:none ; }
+		button.go:active{ background: greenyellow; color: black;}
+		button.btnModal{ background: black; color: white; padding: 10px 30px; margin: 6px; border: none;}
+		button.btnModal:nth-child(2){ background: none; color: black; padding: 10px 30px; margin: 6px; border: 1px solid black;}
+		.alert{ margin: 14px; padding: 10px;  text-align: center; background: #e3e3e3; }
+		.alert p{ color: green;}
+		.alert a{ color: #2b5fff; text-decoration: none }
+		.cpaket{ margin: 10px }
+		.paket{ display: flex; }
+		.paket button{ background: black; border: none; flex: 1; text-align: center; padding: 10px; margin: 4px; font-size: 14px; }
+		.paket button p{ color: white; }
+		.paket button p:nth-child(2){ font-size: 11px; color: white;}
+		.paket button:active{ background: greenyellow; }
+		.promo{ margin: 14px; padding: 10px; background: #e3e3e3; /*background: greenyellow;*/ }
+		.footer{ text-align: center; position: absolute; bottom: 0; width: 100%; padding-bottom: 20px;}
+		.footer a{ color: #2b5fff; text-decoration: none }
+	</style>
+	<style>
+			/* The Modal (background) */
+			.modal {
+			  display: none; /* Hidden by default */
+			  position: fixed; /* Stay in place */
+			  z-index: 1; /* Sit on top */
+			  padding-top: 100px; /* Location of the box */
+			  left: 0;
+			  top: 0;
+			  width: 100%; /* Full width */
+			  height: 100%; /* Full height */
+			  overflow: auto; /* Enable scroll if needed */
+			  background-color: rgb(0,0,0); /* Fallback color */
+			  background-color: rgba(0,0,0,0.8); /* Black w/ opacity */
+			}
+			/* Modal Content */
+			.modal-content {
+			  background-color: #fefefe;
+			  margin: auto;
+			  padding: 20px;
+			  border: 1px solid #888;
+			  width: 80%;
+			}
+			/* The Close Button */
+			.close {
+			  color: #aaaaaa;
+			  float: right;
+			  font-size: 28px;
+			  font-weight: bold;
+			}
+			.close:hover,
+			.close:focus {
+			  color: #000;
+			  text-decoration: none;
+			  cursor: pointer;
+			}
+		</style>
+</head>
+<body>
+	<div class="kotak full-height">
+		<div class="navbar">
+			<span class="logoM">O</span>
+			<a class="nama" href="akun.html">Lintang Cahyaning Ilmi</a>
+			<span class="akun"><a href="register.html">Login</a></span>
+		</div>
+		<a class="saldoT" href="saldo.html">+</a>
+		<span class="saldo">Saldo: 20.000</span>
+		<br><br><br>
+		<form class="voucher" action="">
+			<input type="text" placeholder="Code Voucher"><br><br>
+			<button class="go">Go!</button>
+			<!-- <button class="go">Refresh!</button> -->
+		</form>
+		<br>
+		<div class="alert">
+			<!-- <p>Silahkan masukan code voucher Atau aktifkan paket Menggunakan Saldo anda</p> -->
+			<!-- <p style="color: blue;">Paket 5000(1 jam) anda telah aktif sampai pukul 12:11:00</p> -->
+			<!-- <p style="color: blue;">Paket 3000(1 jam) anda telah aktif sampai pukul 12:11:00</p> -->
+			<p>Sukses!</p>
+			<p>Paket 2000(1 jam) anda telah aktif sampai pukul 12:11:00 <a href="status.html">Lihat Status</a></p>
+
+		</div>
+		<br>
+		<div class="cpaket mt20">
+			<div class="paket">
+				<button onclick="modalku()" value="2000"><p>Paket 2000</p><p>1 jam/unlimited</p></button>
+				<button onclick="modalku()" value="3000"><p>Paket 3000</p><p>2 jam/unlimited</p></button>
+			</div>
+			<div class="paket">
+				<button onclick="modalku()" value="5000"><p>Paket 5000</p><p>8 jam/unlimited</p></button>
+				<button onclick="modalku()" value="10000"><p>Paket 10000</p><p>24 jam/unlimited</p></button>
+			</div>
+			<div class="paket">
+				<button onclick="modalku()" value="25000"><p>Paket 25000</p><p>7 hari/unlimited</p></button>
+				<button onclick="modalku()" value="65000"><p>Paket 65000</p><p>1 bulan/unlimited</p></button>
+			</div>
+		</div>
+		<br>
+		<div class="promo">
+			<p>Selamat Tahun Baru 2023</p>
+			<b>Nikmati gratis akses 24 jam</b>
+			<p>berlaku sampai 23:59 1 January 2023</p>
+		</div>
+		<div class="footer">
+			<p>Anda dapat TopUp Saldo di <a href="outlet.html">Outlet terdekat</a></p>
+			<p>dan nikmati fitur dan promo menarik lainya</p>
+		</div>
+		<!-- <div class="baris mt6"></div> -->
+		<!-- modal ------------------------------------------------------------- -->
+<!-- Trigger/Open The Modal -->
+<!-- <button id="myBtn">Open Modal</button> -->
+<!-- The Modal -->
+<div id="myModal" class="modal">
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <p>Anda akan mengaktifkan paket2000(senilai 2000) berlaku 1 jam, di ambil dari saldo anda.</p>
+    <p>Apakah anda yakin!</p>
+    <br><br><br>
+    <hr>
+    <div class="mt20"></div>
+    <form action="">
+    	<button class="btnModal">Ok!</button>
+    	<button class="btnModal">Batal</button>
+    </form>
+  </div>
+</div>
+		<!-- /modal ------------------------------------------------------------- -->
+
+	</div>
+	<!-- /kotak -->
+<script>
+
+let alert1 = "Paket 2000(1 jam) anda telah aktif sampai pukul 12:11:00";
+let alert2 = "Silahkan anda masukan kode voucher atau aktifkan paket";
+let alert3 = "saldo anda tidak cukup harap topup saldo terlebih dahulu";
+let alert4 = "anda masih belum memiliki paket apapun untuk dapat terhubung di internet. masukan kode voucher anda atau aktifkan paket vouher anda dari saldo";
+let alert5 = "Untuk topup saldo harap daftar akun terlebih dahulu";
+let alert6 = "Transaksi sukses!";
+let alert7 = "paket anda telah aktif!";
+let alert8 = "Saldo anda sukses di tambahkan!";
+let alert9 = "Transaksi gagal!";
+let alert10 = "Coba lagi nanti, maintenance server";
+let alert11 = "Coba lagi nanti, maintenance server";
+// ----------------
+let modal = document.getElementById("myModal");
+let btn = document.getElementById("myBtn");
+let span = document.getElementsByClassName("close")[0];
+// btn.onclick = function() {
+//   modal.style.display = "block";
+// }
+function modalku() {
+  modal.style.display = "block";
+}
+span.onclick = function() {
+  modal.style.display = "none";
+}
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+// ----------------
+</script>
+</body>
+</html>

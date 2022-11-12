@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Outlet</title>
+	<style>
+		*{ padding: 0; margin: 0; font-family: sans-serif; color: #484848;}
+		html, body { height: 100%; margin: 0; }
+  		.full-height { min-height: 100%; }
+		.mt6{ margin-top: 6px; }
+		.mt10{ margin-top: 10px; }
+		.mt20{ margin-top: 20px; }
+		.ph10{ padding :0px 10px; }
+		.baris{ border-bottom: 1px solid lightgrey; }
+		.h100p{ height: 100%;  }
+		a{text-decoration: none;}
+	</style>
+	<style>
+		.kotak{ background: #f7f7f7; }
+		.navbar{ padding: 10px; border-bottom: 1px solid lightgrey; background: #e3e3e3; }
+		.logoM{ display: inline-block; background: black; color: white; width: 20px; height: 20px; text-align: center; font-weight: bold; border-radius: 50%;}
+		.akun a{ color: #2b5fff; text-decoration: none; float: right; }
+/*		.footer{ text-align: center; position: absolute; bottom: 0; width: 100%; padding-bottom: 20px;}
+		.footer a{ color: #2b5fff; text-decoration: none }*/
+		.ctable a{ color: #2b5fff; text-decoration: none }
+		.ctable{ display: flex; width: 100%; justify-content: center; margin-top: 40px;}
+		table, th, td { border: 1px solid darkgray; border-collapse: collapse; padding: 8px 16px;}
+	</style>
+</head>
+<body>
+	<div class="kotak full-height">
+		<div class="navbar">
+			<a href="index.html"><span class="logoM"><</span></a>
+			<a class="nama" href="index.html">Kembali</a>
+			<span class="akun"><a href="">Logout</a></span>
+		</div>
+		<!-- tabel -->
+		<br><br>
+		<p class="ph10">Outlet tempat pembelian voucher dan topUp saldo internet</p>
+		<div class="ctable">
+			<table>
+				<thead>
+					<th>No.</th>
+					<th>Nama</th>
+					<th>Alamat</th>
+					<th>Peta</th>
+				</thead>
+				<tbody>
+					<tr>
+						<td>1</td>
+						<td>Apet</td>
+						<td>pante 1</td>
+						<td><a href="peta.html">go!</a></td>
+					</tr>
+					<tr>
+						<td>2</td>
+						<td>Aisyah</td>
+						<td>pante 2</td>
+						<td><a href="peta.html">go!</a></td>
+					</tr>
+					<tr>
+						<td>3</td>
+						<td>Yessy</td>
+						<td>petigaan </td>
+						<td><a href="peta.html">go!</a></td>
+					</tr>
+					<tr>
+						<td>4</td>
+						<td>Bidan</td>
+						<td>Samping masjid</td>
+						<td><a href="peta.html">go!</a></td>
+					</tr>
+					<tr>
+						<td>5</td>
+						<td>Bahrin</td>
+						<td>masuk dari adean</td>
+						<td><a href="peta.html">go!</a></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<!-- /tabel -->
+<!-- 		<div class="footer">
+			<p>Anda dapat TopUp Saldo di <a href="">Outlet terdekat</a></p>
+			<p>dan nikmati fitur dan promo menarik lainya</p>
+		</div> -->
+	</div>
+</body>
+</html>

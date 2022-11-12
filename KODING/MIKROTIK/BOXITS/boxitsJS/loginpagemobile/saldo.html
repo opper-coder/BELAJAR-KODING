@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Saldo</title>
+	<style>
+		*{ padding: 0; margin: 0; font-family: sans-serif; color: #484848;}
+		html, body { height: 100%; margin: 0; }
+  		.full-height { min-height: 100%; }
+		.mt6{ margin-top: 6px; }
+		.mt10{ margin-top: 10px; }
+		.mt20{ margin-top: 20px; }
+		.baris{ border-bottom: 1px solid lightgrey; }
+		.h100p{ height: 100%;  }
+		a{ text-decoration: none; }
+		.tcenter{ text-align: center; }
+	</style>
+	<style>
+		.kotak{ background: #f7f7f7; }
+		.navbar{ padding: 10px; border-bottom: 1px solid lightgrey; background: #e3e3e3; }
+		.logoM{ display: inline-block; background: black; color: white; width: 20px; height: 20px; text-align: center; font-weight: bold; border-radius: 50%;}
+		.akun a{ color: #2b5fff; text-decoration: none; float: right; }
+		.saldo{ background-color: #e3e3e3; margin-top: 15px; padding: 6px 14px; float: right; border-radius: 8px; font-size: 12px; font-weight: bold; margin-right: 6px;}
+		.voucher{ text-align: center; }
+		.voucher input{ margin-top: 10px; width: 50%; height: 40px; border: 1px solid #2b5fff; padding-left: 10px; box-sizing: border-box;}
+		button.go{ background: black; color: white; width: 50%; height: 40px; margin-top: 4px; border:none ; }
+		button.go:active{ background: greenyellow; color: black;}
+		button.go2{ background: none; color: black; border: 1px solid black; width: 50%; height: 40px; margin-top: 4px; }
+		button.go2:active{ background: greenyellow; color: black;}
+		.alert{ margin: 14px; padding: 10px;  text-align: center; background: #e3e3e3; }
+		.alert p{ color: green;}
+		.alert a{ color: #2b5fff; text-decoration: none }
+		.ctable{ display: flex; width: 100%; justify-content: center; margin-top: 40px;}
+		table, th, td { border: 1px solid darkgray; border-collapse: collapse; padding: 8px 16px;}
+	</style>
+</head>
+<body>
+	<div class="kotak full-height">
+		<div class="navbar">
+			<a href="index.html"><span class="logoM"><</span></a>
+			<a class="nama" href="index.html">Kembali</a>
+			<span class="akun"><a href="">Logout</a></span>
+		</div>
+		<span class="saldo">Saldo: 20.000</span>
+		<br><br><br>
+		<form class="voucher" action="">
+			<input type="text" placeholder="Code TopUp"><br><br>
+			<button class="go">Go!</button>
+			<br>
+			<br>
+			<button class="go2"><a href="transfer.html">Transfer</a></button>
+		</form>
+		<br>
+
+		<div class="alert">
+			<!-- <p>Silahkan masukan code voucher Atau aktifkan paket Menggunakan Saldo anda</p> -->
+			<!-- <p style="color: blue;">Paket 5000(1 jam) anda telah aktif sampai pukul 12:11:00</p> -->
+			<!-- <p style="color: blue;">Paket 3000(1 jam) anda telah aktif sampai pukul 12:11:00</p> -->
+			<p>Sukses!</p>
+			<p>Paket 2000(1 jam) anda telah aktif sampai pukul 12:11:00 <a href="status.html">Lihat Status</a></p>
+		</div>
+		<br>
+
+		<!-- tabel -->
+		<br>
+		<p class="ph10 tcenter">History transaksi Bulanan</p>
+		<div class="ctable">
+			<table>
+				<thead>
+					<th>Status</th>
+					<th>Nilai</th>
+					<th>Tanggal</th>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Pindahan</td>
+						<td>200000</td>
+						<td>12/11/2022</td>
+					</tr>
+					<tr>
+						<td>Topup</td>
+						<td>200000</td>
+						<td>12/11/2022</td>
+					</tr>
+					<tr>
+						<td>vc2000</td>
+						<td>2000</td>
+						<td>12/11/2022</td>
+					</tr>
+					<tr>
+						<td>vc5000</td>
+						<td>5000</td>
+						<td>12/11/2022</td>
+					</tr>
+					<tr>
+						<td>Transfer</td>
+						<td>15000</td>
+						<td>12/11/2022</td>
+					</tr>
+					<tr>
+						<td>vc3000</td>
+						<td>3000</td>
+						<td>12/11/2022</td>
+					</tr>
+					<tr>
+						<td>vc3000</td>
+						<td>3000</td>
+						<td>12/11/2022</td>
+					</tr>
+					<tr>
+						<td>vc3000</td>
+						<td>3000</td>
+						<td>12/11/2022</td>
+					</tr>
+					<tr>
+						<td>vc3000</td>
+						<td>3000</td>
+						<td>12/11/2022</td>
+					</tr>
+					<tr>
+						<td>vc3000</td>
+						<td>3000</td>
+						<td>12/11/2022</td>
+					</tr>
+					<tr>
+						<td>vc3000</td>
+						<td>3000</td>
+						<td>12/11/2022</td>
+					</tr>
+					<tr>
+						<td>vc3000</td>
+						<td>3000</td>
+						<td>12/11/2022</td>
+					</tr>
+					<tr>
+						<td>vc3000</td>
+						<td>3000</td>
+						<td>12/11/2022</td>
+					</tr>
+					
+				</tbody>
+			</table>
+		</div>
+		<br>
+		<br>
+		<!-- /tabel -->
+	</div>
+</body>
+</html>
