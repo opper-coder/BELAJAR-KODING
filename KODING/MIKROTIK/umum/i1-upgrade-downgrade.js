@@ -1,4 +1,3 @@
-/*
 UPGRADE DAN DOWNGRADE MIKROTIK
 - cek dulu versi sekarang
 - upgrade dan downgrade ada dua cara: manual drag n drop dan cara automatic
