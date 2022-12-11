@@ -1,15 +1,24 @@
-/* RADIUS
+RADIUS
+------------------------------------------------------------------------------------------------
+Daftar isi
+	- langkah download userman
+	- akses userman di browser
+	- konfigurasi RADIUS di winbox
+	- 
+
 ------------------------------------------------------------------------------------------------
 adalah management user bisa untuk hotspot ppoe wlan dhcp dan semua layanan bisa
 terutama pada hotspot bisa di implementasikan  untuk voucher
 - langkah install:
 	1. download
-		- buka mikrotik.com > downloads/atau download archive > pastikan jenis paket dan version sesuai
+		- buka mikrotik.com > downloads/atau download archive > pilih extra packages > 
+		  pastikan jenis paket dan version sesuai
 		  cari versi yang sesuai dengan versi OS yang di gunakan misalnya release 6.36 
 		  (cara lihatnya ada di top bar winbox version) 
-		  (yang di dlm kurung itu (mipsbe) adalah jenis softwarenya > sekarang pilih all packages-mipsbe-6.36.zip   
+		  (yang di dlm kurung itu (mipsbe) adalah jenis softwarenya > (alternative dari extra packages) \
+		  > sekarang pilih all packages-mipsbe-6.36.zip   
 		  (karena user manager ada di allpackage) > pilih download > 
-	2. extract zip nya > pilih user manager > drag n drop di files (buka files copas aja) > tempatkan di root folder
+	2. extract zip nya(all packages) > pilih user manager > drag n drop di files (buka files copas aja) > tempatkan di root folder
 		bersama folder lain di root 
 		- kalau gak bisa drug n drop tinggal di klik tombol upload > pilih file > next2
 	3. reboot
@@ -44,4 +53,3 @@ terutama pada hotspot bisa di implementasikan  untuk voucher
 	- nama: pass: profile: silahkan isi
 	- multi user > add > batch > number: 50 orang; prefix vc5zaa panjang nama dan pass, profile, add
 
-*/
