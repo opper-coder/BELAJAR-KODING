@@ -116,3 +116,46 @@ Extra extra large		xxl			≥1400px
 // ====================================================================================
 */
 </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+TAMBAHAN EVALUASI
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>latihan</title>
+</head>
+<body>
+	<style>
+		/*tips
+		- buat aturan screen media (mobile tablet desktop 500, 1000, 1000+)
+		- buat class perubahan (.hide, .show)
+		- buat algoritma tiap elemen, lalu eja @media yang cocok di bawah ini (min, max)
+		- terapkan class pada elemen bersangkutan
+		*/
+		.satu{background: red; width: 100px;height: 100px;}
+		.dua {background: cyan; width: 100px;height: 100px;}
+		@media (min-width: 500px) {.hideMob-{display: none;}.showMob-{display: block;}} /*(resize dr desk ke mob) aksi(hide) runing sblm masuk mobile*/
+		@media (max-width: 500px) {.hideMob{display: none;}.showMob{display: block;}} 	/*(resize dr desk ke mob) aksi(hide) runing stlh masuk mobile*/
+		@media (min-width: 1000px) {.hideTab-{display: none;}.showTab-{display: block;}}/*(resize dr desk ke mob) aksi(hide) runing sblm masuk tablet*/
+		@media (max-width: 1000px) {.hideTab{display: none;}.showTab{display: block;}}	/*(resize dr desk ke mob) aksi(hide) runing stlh masuk tablet*/
+	</style>
+	<div class="satu hideTab">responsive</div> <!-- coba terapkan class di elemen ini (hide, show, hide-, show-) -->
+	<div class="dua">static</div>
+</body>
+</html>
