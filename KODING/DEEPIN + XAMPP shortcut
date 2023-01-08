@@ -12,3 +12,27 @@ sudo /opt/lampp/lampp start
 sudo /opt/lampp/lampp stop
 
 localhost atau 
+
+
+
+download XAMPP di wesite, berikut cara install nya
+---------------------------------------------------
+chmod 755 xampp-linux-*-installer.run     // ubah hak akses
+sudo ./xampp-linux-*-installer.run        // cara install
+---
+sudo /opt/lampp/lampp start               // cara start
+sudo /opt/lampp/lampp stop                // cara stop
+---
+cd /opt/lampp                             // cara akses gui
+sudo ./manager-linux.run (or manager-linux-x64.run)
+---
+cd /opt/lampp/htdocs                      // cara ubah hak akses di linux agar bisa copas dari folder lain
+sudo su
+pass: anda
+mkdir coba
+ls -i (-i : hak akses, yg biru hak root, untuk mengubah  chmod di bawah)
+chmod 777 -R coba 
+
+CARA UBAH HAK AKSES DI LINUX
+---------------------------------------------------
+chmod dan chown
