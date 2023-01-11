@@ -1,16 +1,20 @@
 GRID dan FLEX
 _____________________________________________________________________
 DAFTAR ISI:
-
-
-
-????????????????????????????????????????????????
-
-
+	1. breakpoint		-> ukuran layar responsive
+	2. container		-> dasar sistem layout
+	3. align container	-> justifi horiz 
+	4. gridsystem		-> 12 grid
+	5. d-grid			-> display grid (opt)
+	6. flex				-> representasi flex css
+	7. stack			-> shorthand flex
+	8. layout sendiri	-> jika mau pakai div biasa manual
+	9. helpers			-> fungsionalitas penting sebelum membaca utilitas
+	10. utilitas		-> represantasi kebanyakan CSS, rekomended!
 
 BREAKPOINT
 ---------------------------------------
-	: xs,sm,md,lg,xl, xxl
+	: xs,sm,md,lg,xl, xxl, 
 WADAH:
 ---------------------------------------
 	ada tiga, untuk wadah centering,sebaiknya di gunakan untuk layout saja, 
@@ -117,6 +121,20 @@ jika manual maka perhatikan
 	- sizing
 	- overflow 
 
+HELPERS
+---------------------------------------
+Clearfix		-> container float agar tidak merusak tatanan, lihat:: float
+Color & background	-> test-bg-primary. gabungan background dan color (alternatif)
+Colored links	-> link-primary. warna pada <a> kombinasikan dengan :: text
+Position		-> instant position -> fixed-top, fixed-bottom, sticky-top, sticky-bottom, responsive
+Ratio			-> kotak foto dan video 4:3, 16:9 dll (wajib) kombi dengan :: object-fit
+Stacks			-> penanganan flex lebih instance. adapembahasan tersendiri :: stack (instance flex)
+Stretched link	-> link untuk satu block card atau satu organisme jadi link. tapi ada persayaratan :: cekidoc
+Text truncation	-> ellipsis ... (kepanjangan kata di potong dengan "...")
+Vertical rule	-> karaketer pipe | : warna inherit, dan setel ketinggian, mirip <hr> jadi: <hr>,<vr>,<br> mirip tapi pake class ya
+Visually hidden	-> untuk keperluan screen-reader bagi tuna netra
+
+
 UTILITAS (representasi css)
 - kadang satu class hanya satu properti
 kalau mau bikin elemen silahkan gunakan utilitas dulu kalau tidak ada barulah dikin css sendiri
@@ -168,19 +186,4 @@ visibility		-> .visible, .invisible
 z-index			-> ini bukan bootstap elemen tapi coba gunakan jika diperlukan
 					- z-0 - 5
 					- z-n0 -n5
-
-
-HELPERS
----------------------------------------
-Clearfix		-> container float agar tidak merusak tatanan, lihat:: float
-Color & background	-> test-bg-primary. gabungan background dan color (alternatif)
-Colored links	-> link-primary. warna pada <a> kombinasikan dengan :: text
-Position		-> instant position -> fixed-top, fixed-bottom, sticky-top, sticky-bottom, responsive
-Ratio			-> kotak foto dan video 4:3, 16:9 dll (wajib) kombi dengan :: object-fit
-Stacks			-> penanganan flex lebih instance. adapembahasan tersendiri :: stack (instance flex)
-Stretched link	-> link untuk satu block card atau satu organisme jadi link. tapi ada persayaratan :: cekidoc
-Text truncation	-> ellipsis ... (kepanjangan kata di potong dengan "...")
-Vertical rule	-> karaketer pipe | : warna inherit, dan setel ketinggian, mirip <hr> jadi: <hr>,<vr>,<br> mirip tapi pake class ya
-Visually hidden	-> untuk keperluan screen-reader bagi tuna netra
-
 ======================================================================
