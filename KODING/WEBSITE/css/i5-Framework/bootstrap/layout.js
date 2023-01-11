@@ -99,15 +99,12 @@ FLEX
 
 STACK (INSTANCE FLEX)
 ---------------------------------------
-
-
-
-???????????????????????????????????????????????????????????
-
-
-
-
-
+flex versi lebih singkat tapi kalau blm biasa pakai saja flex 
+	- vstack 						: = flex-column, width 100%
+	- gap-3 						: = margin verti
+	- hstack  						: = flex-row, kasih gap seperti margin horiz
+		- ms-auto 					: = margin right auto
+	- vstack gap-2 col-md-5 mx-auto : contoh vertical kombi dg col dan margin auto
 
 TANPA SISTEM GRID DAN ROW COL
 ---------------------------------------
@@ -119,7 +116,7 @@ jika manual maka perhatikan
 	- text align
 	- sizing
 	- overflow 
-	- 
+
 UTILITAS (representasi css)
 - kadang satu class hanya satu properti
 kalau mau bikin elemen silahkan gunakan utilitas dulu kalau tidak ada barulah dikin css sendiri
@@ -183,7 +180,7 @@ Ratio			-> kotak foto dan video 4:3, 16:9 dll (wajib) kombi dengan :: object-fit
 Stacks			-> penanganan flex lebih instance. adapembahasan tersendiri :: stack (instance flex)
 Stretched link	-> link untuk satu block card atau satu organisme jadi link. tapi ada persayaratan :: cekidoc
 Text truncation	-> ellipsis ... (kepanjangan kata di potong dengan "...")
-Vertical rule	-> karaketer pipe | : warna inherit, dan setel ketinggian, mirip <hr> 
+Vertical rule	-> karaketer pipe | : warna inherit, dan setel ketinggian, mirip <hr> jadi: <hr>,<vr>,<br> mirip tapi pake class ya
 Visually hidden	-> untuk keperluan screen-reader bagi tuna netra
 
 ======================================================================
