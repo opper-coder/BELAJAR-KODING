@@ -11,6 +11,14 @@ DAFTAR ISI:
 	8. layout sendiri	-> jika mau pakai div biasa manual
 	9. helpers			-> fungsionalitas penting sebelum membaca utilitas
 	10. utilitas		-> represantasi kebanyakan CSS, rekomended!
+		
+tips:
+---------------------------------------
+- dalam mebuat layout usahakan gunakan grid, flex, stack, manual bootsrap
+- sebelum css, gunakan utilitas dan helpers, supaya tidak banyak css
+- barulah gunakan komponen
+- untuk js gunakan dulu bootstrap
+- jika tak ada baru gunakan w3
 
 BREAKPOINT
 ---------------------------------------
