@@ -61,6 +61,12 @@ $(document).ready(function(){
 	// di wadahi semua disini agar load mudah dan dapat di load di head
 });
 
+THIS
+------------------------------------------------------------------------------------------------
+$('h1').click(function({ 
+	$('this').css("color","yellow")		// ini bisa berguna saat memilih semua <h1> hanya akan berpengaruh pada yang bersangkutaan saja saat event
+});
+
 // EVENT
 ------------------------------------------------------------------------------------------------
 sejumlah event: ngerti tentang .click saja berarti sudah beres klik kanan mungkin ada 
