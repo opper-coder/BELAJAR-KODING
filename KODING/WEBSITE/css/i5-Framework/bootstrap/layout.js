@@ -84,8 +84,8 @@ FLEX
 	- d-flex flex-sm-row 			: dengan responsive
 	-----
 	- d-flex justify-content-start 	: horiz  start, center, end, arround, between, evenly
-	- d-flex align-items-start		: verti start, center, end, baseline, stretch
-	- d-flex align-items-sm-start	: kedua v H bisa responsive 
+	- d-flex align-content-start		: verti start, center, end, baseline, stretch
+	- d-flex align-content-sm-start	: kedua v H bisa responsive 
 	Child 
 	---------------
 	- align-self-start 				: pada child horiz  start, center, end, arround, between, evenly
