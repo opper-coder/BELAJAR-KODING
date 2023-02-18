@@ -3,19 +3,18 @@
 IMPLEMENTASI REST API
 ---------------------------------------------------------------------------------------------------
 di mikrotik: contoh kali ini kita akan mengkonsumsi API untuk management user VPN 
-
 -----------------------------
 prasarat
 1. ROS v7.1 beta4 keatas  			-> jika belum lakukan update. tutorial ada
 2. aktifkan service www-ssl 		-> generate dulu ssl-nya lalu aktifkan www-ssl. tutorial ada
-3. generate ssl-sertificate 		-> di Lets Encrypt dan pasang di mikrotik 
-4. PHP 7.4.27 (xampp) 				-> konfig environtmen variabel agar dapat di akses di terminal
-5. guzzle  								-> menggunakan composer dan inisialisi guzzle
-6. siap di gunakan 					-> buatkan halaman template guzzle php lalu lakukan request GET, POST, dll 
+3. port 80 ke 443 					-> lakukan port forwarding dari 80 ke 443 yang nantinya akan di butuhkan request ssl-certificate
+4. generate ssl-sertificate 		-> di Lets Encrypt dan pasang di mikrotik 
+5. PHP 7.4.27 (xampp) 				-> konfig environtmen variabel agar dapat di akses di terminal
+6. guzzle  								-> menggunakan composer dan inisialisi guzzle
+7. siap di gunakan 					-> buatkan halaman template guzzle php lalu lakukan request GET, POST, dll 
 -----------------------------
 -----------------------------
 -----------------------------
-
 -----------------------------
 GUZZLE
 cara instal:
