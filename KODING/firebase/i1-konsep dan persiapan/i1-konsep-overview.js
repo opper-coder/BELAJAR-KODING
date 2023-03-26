@@ -62,6 +62,7 @@ team dev: pemilik, editor, viewer, user defined
 	  lalu deploy versi baru konten yang dihosting di Firebase atau versi baru fungsi.
 
 - FIREBASE MANAGEMENT REST API
+	- management di remote via HTTP
 	- Dengan Firebase Management REST API, Anda dapat mengelola project Firebase secara terprogram. 
 	  Misalnya, Anda dapat mendaftarkan aplikasi secara terprogram ke project 
 	  atau mencantumkan aplikasi yang sudah terdaftar (iOS+ | Android | web).
