@@ -30,6 +30,10 @@ pada dasarnya responsive layout menggunakan
   .flex-item-right, .flex-item-left {
     flex: 100%;
   }
+---------------------------------------------------------------------
+sebaiknya gunakan framework untuk responsive daripada bikin sendiri
+w3.css, bulma, bootstrap, tailwind, PrimeReact, dll 
+
 --------------------------------------------------------------------------------------
 Layouting
 Jalur langkah membuat layout
