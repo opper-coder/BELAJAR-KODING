@@ -1,3 +1,28 @@
+RESPONSIVE
+---------------------------------------------------------------------
+responsive vs adaptive
+- responsive: adalah semua tampilan di mobile otomatis mengatur width:100% pada element responsive saat mobile 
+- adaptive: adalah kita memiliki desain sendiri saat mobile menggunakan (dibuat ulang total, bukan hanya width element) 
+- keduanya menggunakan @media(breakpoint){css}
+
+---------------------------------------------------------------------
+pada HTML wajib ada metatag ini
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+---------------------------------------------------------------------
+ada dua tahap saat membuat website responsive:
+1. saat mendesain 
+2. saat membuat
+
+- saat mendesain maka mobile first, yaitu dahulukan desain untuk mobile, setelah optimal maka lanjutkan ke desktop
+- saat membuat kebalikanya yaitu buat dulu desktop lalu sesuaikan pada desain mobile dg 5 steps berikut:
+	1. buat semua element di desktop
+	2. .w-full, width 100% semua di mobile
+	3. .hidden, responsive
+	4. .state, .toggle, .action
+	5. .jika adaptive juga silahkan terapkan pada step:5
+
+---------------------------------------------------------------------
 pada dasarnya responsive layout menggunakan 
 - @media(max,min-width), layout besar sesuai desain, layout kecil lebar 100%
 
@@ -97,13 +122,6 @@ keterangan tambahan
 <script>
 /*
 ======================================================================================
-KETERANGAN
---------------------------------------------------------------------------------------
-Media Query adalah melakukan perubahan pada @media tertentu yang di targetkan saja
-- disini bacground berubah pada setiap @media
-- warna tulisan dan ukuran tidak berubah
-- perubahan akan di rasakan pada batas @media "dan semua di bawah nya"
-- bisa di gunakan untuk responsive dan tata letak layout
 --------------------------------------------------------------------------------------
 BOOTSTRAP Tingkatan media 
 X-Small				None		<576px
