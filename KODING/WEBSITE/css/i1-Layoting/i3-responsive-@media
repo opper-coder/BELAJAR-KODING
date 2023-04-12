@@ -16,6 +16,7 @@ ada dua tahap saat membuat website responsive:
 
 - saat mendesain maka mobile first, yaitu dahulukan desain untuk mobile, setelah optimal maka lanjutkan ke desktop
 - saat membuat kebalikanya yaitu buat dulu desktop lalu sesuaikan pada desain mobile dg 5 steps berikut:
+	0. desain kelompok informasi yang dapat dimpailkan w-full
 	1. buat semua element di desktop
 	2. .w-full, width 100% semua di mobile
 	3. .hidden, responsive
