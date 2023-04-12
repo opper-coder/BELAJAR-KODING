@@ -32,7 +32,7 @@ pada dasarnya responsive layout menggunakan
   }
 ---------------------------------------------------------------------
 sebaiknya gunakan framework untuk responsive daripada bikin sendiri
-w3.css, bulma, bootstrap, tailwind, PrimeReact, dll 
+w3.css, skeleton, bulma, bootstrap, tailwind, PrimeReact, dll 
 
 --------------------------------------------------------------------------------------
 Layouting
