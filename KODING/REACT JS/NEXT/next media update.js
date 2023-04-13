@@ -1,4 +1,4 @@
-NEXTJS 13 mei 2023 CODER MEDIA
+NEXTJS 13 mei 2023 CODER MEDIA sublime text tab 2 spacy
 ------------------------------------------------------
 
     "paths": {
