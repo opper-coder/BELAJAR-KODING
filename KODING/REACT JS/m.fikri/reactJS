@@ -60,6 +60,7 @@ install node dan npm di linux
 :> sudo apt-get install npm 			// 3. maka install juga npm
 :> node -v 												// 4. cek versi terinstall
 :> npm -v 												// 5. cek npm juga
+terminal update > restart OS lalu update
 :> sudo npm install -g n  				// 6. install version manager praktis (sumber: https://nodejs.org/en/download/package-manager#debian-and-ubuntu-based-linux-distributions)
 :> sudo n lts  										// 7. update node with npm LTS terbaru
 :> node -v 												// 8. coba cek maka versi sudah terbaru (LTS)
