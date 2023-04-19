@@ -5,7 +5,7 @@ tambahka -> menu extensi -> cari dan install
    jika belum hafal snippets -> ctrl + shift + p -> es7 -> snippets search -> tampil daftar
 2. ESLint
     -menstandarkan "" / '' outo, titik koma, otomatis ada maka di setting sebelumnya
-3. Prettier - merapikan otomatis
+3. Prettier - merapikan otomatis - config: setting > search: format on save > on  
 4. Bracket Pair Colorizer-
    mewarnai kurawal, kurung kotak, bulat sesuai warna
 5. Color Hightlight- preview warna di text editor
@@ -36,3 +36,21 @@ tambahan:
     
     - theme: mayukai
     bagus bikinan indonesia
+    
+    
+shortcut
+   - buka folder project ke vscode via terminal
+      buka terminal > super + t / ctrl + alt + t :> cd folder tujuan > ls > .code
+   - ctrl+,    : setting vscode, misalnya aktifkan formatter on save
+   - ctrl+k+s  : daftar shortcut, 
+   - ctrl+k+b  : daftar folder
+   - ctrl+k    : uppercase
+   -           : lowercase
+   - duplicate
+   - tambah cursor
+   - pindah baris
+   - 
+- : hapus satu kata
+- : hapus satu baris
+- : home, end
+- : 
