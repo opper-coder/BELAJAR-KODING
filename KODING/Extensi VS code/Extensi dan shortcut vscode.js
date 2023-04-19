@@ -38,19 +38,34 @@ tambahan:
     bagus bikinan indonesia
     
     
-shortcut
+shortcut vs code
+tools
    - buka folder project ke vscode via terminal
       buka terminal > super + t / ctrl + alt + t :> cd folder tujuan > ls > .code
-   - ctrl+,    : setting vscode, misalnya aktifkan formatter on save
-   - ctrl+k+s  : daftar shortcut, 
-   - ctrl+k+b  : daftar folder
-   - ctrl+k    : uppercase
-   -           : lowercase
-   - duplicate
-   - tambah cursor
-   - pindah baris
+   - ctrl+` atau bisa ctrl+j   : terminal. `
+   - ctrl+,             : setting vscode, misalnya aktifkan formatter on save
+   - ctrl+k+s           : daftar shortcut
+text
+   - ctrl+k             : uppercase
+   -                    : lowercase
+cursor
+   - alt+shift+arrow    : tambah cursor keyboard
+   - alt+klik           : tambah cursor mouse
+   - ctrl+enter         : enter cursor tanpa jatuhkan baris 
+   - ctrl+shift+enter   : cursor naik diatasnya dan bikin baris kosong
+   - : home, end 
+pindah baris
+   - alt+arrow          : pindah baris
+   - ctrl+alt+shift     : duplicate
+   - ctrl+x             : di manapun cursor akan di cut tanpa selection
+   - ctrl+delete        : hapus satu kata
+   - ctrl+shift+k       : hapus satu baris
+selection
+   - ctrl+d             : seleksi satu kata di cursor > kalau berulang seleksi kata yang sama
+   - ctrl+l             : selecsi satu baris di cursor > kalau berulang seleksi baris berikutnya
+Navigasi folder
+   - ctrl+shift+e       : membuka file sidebar
+   - ctrl+p > nama file : mencari file dari folder2 kita di sidebar
+   - ctrl+p > @nama     : mancari method, variabel, array, obj dll dalam halaman bersangkutan saja
+   - ctrl+p > #nama     : mancari method, variabel, array, obj dll dalam semua halaman dalam project 
    - 
-- : hapus satu kata
-- : hapus satu baris
-- : home, end
-- : 
