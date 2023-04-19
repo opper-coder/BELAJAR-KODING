@@ -57,7 +57,8 @@ cursor
 pindah baris
    - alt+arrow          : pindah baris
    - ctrl+alt+shift     : duplicate
-   - ctrl+x             : di manapun cursor akan di cut tanpa selection
+   - ctrl+x             : cut line(empty selection)
+   - ctrl+c             : copy line(empty selection)
    - ctrl+delete        : hapus satu kata
    - ctrl+shift+k       : hapus satu baris
 selection
@@ -66,6 +67,7 @@ selection
 Navigasi folder
    - ctrl+shift+e       : membuka file sidebar
    - ctrl+p > nama file : mencari file dari folder2 kita di sidebar
-   - ctrl+p > @nama     : mancari method, variabel, array, obj dll dalam halaman bersangkutan saja
-   - ctrl+p > #nama     : mancari method, variabel, array, obj dll dalam semua halaman dalam project 
+   - ctrl+p > ctrl+shift+o > @nama     : mancari method, variabel, array, obj dll dalam halaman bersangkutan saja
+   - ctrl+p+t > #nama     : mancari method, variabel, array, obj dll dalam semua halaman dalam project bahkan dalam framework
    - 
+butuh riset lagi dengan vscode> help > keyboard shortcut reference
