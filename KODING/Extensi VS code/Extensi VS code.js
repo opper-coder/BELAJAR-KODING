@@ -1,7 +1,7 @@
 tambahka -> menu extensi -> cari dan install
 
 
-1. ES7/React/Redux/GraphQl/React-Native snippets-
+1. ES7/React/Redux/GraphQl/React-Native snippets- by: dsznajder
    jika belum hafal snippets -> ctrl + shift + p -> es7 -> snippets search -> tampil daftar
 2. ESLint
     -menstandarkan "" / '' outo, titik koma, otomatis ada maka di setting sebelumnya
