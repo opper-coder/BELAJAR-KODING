@@ -14,7 +14,9 @@ tambahka -> menu extensi -> cari dan install
 8. code time-caranya ctrl + shift + p: > code time - > dashboard
 angga rizki
 9. js css html formater dari lonefi = Prettier
-10. live server dari ritwich dey = html server hot reload
+10. live-server dari ritwich dey = html server hot reload
+11. Rest CLIENT = pengganti postman, yaitu request HTTP API bahkan di backend halaman local. 
+    contoh penggunaanya ada di 
 
 1. cara menghapus element
 import yang tidak terpakai
