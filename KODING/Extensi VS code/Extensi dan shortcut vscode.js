@@ -68,6 +68,7 @@ Navigasi folder
    - ctrl+shift+e       : membuka file sidebar
    - ctrl+p > nama file : mencari file dari folder2 kita di sidebar
    - ctrl+p > ctrl+shift+o > @nama     : mancari method, variabel, array, obj dll dalam halaman bersangkutan saja
-   - ctrl+p+t > #nama     : mancari method, variabel, array, obj dll dalam semua halaman dalam project bahkan dalam framework
-   - 
+   - ctrl+p+t > #nama   : mancari method, variabel, array, obj dll dalam semua halaman dalam project bahkan dalam framework
+   - ctrl+p > :15       : menuju kebaris 15
+   - ctrl+tab           : pindah tab
 butuh riset lagi dengan vscode> help > keyboard shortcut reference
