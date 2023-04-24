@@ -23,11 +23,10 @@ bentuk dalam contoh (running) */
 import { useState } from "react";
 
 export default function Users() {
-const[toggle, setToggle] = useState(1);
-
-function tabToggle(urut){
-  setToggle(urut)
-}
+  const[toggle, setToggle] = useState(1);
+  function tabToggle(urut){
+    setToggle(urut)
+  }
   return (
     <>
       <div>
@@ -43,20 +42,16 @@ function tabToggle(urut){
 }
 
 /* -----------------------------------------------
-bentuk di sedrhanakan hilangkan function (running) */
+bentuk disederhanakan hilangkan function (running) */
 
 import { useState } from "react";
-
 export default function Users() {
-const[toggle, setToggle] = useState(1);
-
+  const[toggle, setToggle] = useState(1);
   return (
     <>
-      <div>
-        <button onClick={()=>setToggle(1)}>tab - 1</button>
-        <button onClick={()=>setToggle(2)}>tab - 2</button>
-        <button onClick={()=>setToggle(3)}>tab - 3</button>
-      </div>
+      <button onClick={()=>setToggle(1)}>tab - 1</button>
+      <button onClick={()=>setToggle(2)}>tab - 2</button>
+      <button onClick={()=>setToggle(3)}>tab - 3</button>
       <article className={toggle==1 ? "block" : "hidden" }>Tulisan ku satu</article>
       <article className={toggle==2 ? "block" : "hidden" }>Tulisan ku duaa</article>
       <article className={toggle==3 ? "block" : "hidden" }>Tulisan ku tiga</article>
