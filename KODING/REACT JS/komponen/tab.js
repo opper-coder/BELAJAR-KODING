@@ -18,6 +18,8 @@ REACTION:
   contoh di bawah sudah running dengan class block hidden disediakan oleh framework PrimeReact > tinggal copas
 */ 
 
+/* -------------------
+bentuk dalam contoh (running) */
 import { useState } from "react";
 
 export default function Users() {
@@ -32,6 +34,28 @@ function tabToggle(urut){
         <button onClick={()=>tabToggle(1)}>tab - 1</button>
         <button onClick={()=>tabToggle(2)}>tab - 2</button>
         <button onClick={()=>tabToggle(3)}>tab - 3</button>
+      </div>
+      <article className={toggle==1 ? "block" : "hidden" }>Tulisan ku satu</article>
+      <article className={toggle==2 ? "block" : "hidden" }>Tulisan ku duaa</article>
+      <article className={toggle==3 ? "block" : "hidden" }>Tulisan ku tiga</article>
+    </>
+  )
+}
+
+/* -------------------
+bentuk di sedrhanakan hilangkan function (running) */
+
+import { useState } from "react";
+
+export default function Users() {
+const[toggle, setToggle] = useState(1);
+
+  return (
+    <>
+      <div>
+        <button onClick={()=>setToggle(1)}>tab - 1</button>
+        <button onClick={()=>setToggle(2)}>tab - 2</button>
+        <button onClick={()=>setToggle(3)}>tab - 3</button>
       </div>
       <article className={toggle==1 ? "block" : "hidden" }>Tulisan ku satu</article>
       <article className={toggle==2 ? "block" : "hidden" }>Tulisan ku duaa</article>
