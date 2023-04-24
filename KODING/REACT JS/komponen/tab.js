@@ -18,7 +18,7 @@ REACTION:
   contoh di bawah sudah running dengan class block hidden disediakan oleh framework PrimeReact > tinggal copas
 */ 
 
-/* -------------------
+/* -----------------------------------------------
 bentuk dalam contoh (running) */
 import { useState } from "react";
 
@@ -42,7 +42,7 @@ function tabToggle(urut){
   )
 }
 
-/* -------------------
+/* -----------------------------------------------
 bentuk di sedrhanakan hilangkan function (running) */
 
 import { useState } from "react";
