@@ -200,10 +200,6 @@ untuk tau perbedaan server client component, lihat di dokumentasinya tapi setida
 - tips: gunakan server dulu, jika terpaksa gunakan client(misal: jika perlu menggunakan HOOK)
 - semua komponen di app default server component kecuali kalau di tentukan sebagai client componen
 
-COMPONENT LAIN DI PAGES VERSI LAMA
-------------------------------------------------------
-
-
 CRUD API
 ------------------------------------------------------
 sekenario
