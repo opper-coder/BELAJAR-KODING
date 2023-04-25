@@ -47,7 +47,7 @@ export default function Users() {
   const[toggle, setToggle] = useState(1);
   return (
     <>
-      <button className={toggle==1 ? "bg-blue-200" : "bg-blue-50" } onClick={()=>setToggle(1)}> tab-1 </button>       // jika hanya panggil tanpa kirim param bisa tanpa(), ()bisa infinit loop
+      <button className={toggle==1 ? "bg-blue-200" : "bg-blue-50" } onClick={()=>setToggle(1)}> tab-1 </button>       // jika hanya panggil tanpa kirim param bisa tanpa(), dg() bisa infinit loop
       <button className={toggle==2 ? "bg-blue-200" : "bg-blue-50" } onClick={()=>setToggle(2)}> tab-2 </button>       // lebih aman panggil function harus dalam callback saja
       <button className={toggle==3 ? "bg-blue-200" : "bg-blue-50" } onClick={()=>setToggle(3)}> tab-3 </button>
       <article className={toggle==1 ? "block" : "hidden" }>Tulisan ku satu</article>
