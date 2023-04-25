@@ -72,12 +72,17 @@ ROUTING
 	- berisi componen print: "halo about" (copas componen Home saja barusan lalu edit ) 
 	- coba akses URL localhost:3000/about > maka akan tampil halaman about tanpa script routing seperti di reactJS
 - menggunakan dan import component 
-	- akses component di folder: about/page.tsx > localhost:3000/about > page tidak perlu ditulis
+	- akses component di folder: about/page.tsx > localhost:3000/about > page.tsx tidak perlu ditulis
 	- komponen yang halamanya tidak di tulis dg nama page.tsx akan di akses menggunakan import/include > tidak bisa jadi router path
 	- include componen dalam folder about: import Halo from "./halo"; ini file sejajar
 	- include componen dalam folder lain: import Halo2 from "../folder/halo2"; ini folder sibling
 	- include componen dalam folder lain: import {Komponen1, Komponen2} from "../folder/filecomponen"; ini folder sibling komponen lain
 	- intinya importnya path nya benar > maka komponen dapat di gunakan di halaman lain 
+- menggunakan dan import component pada versi lama (yg masih folder pages)
+	- berbeda dengan "versi app", di "versi pages" cara import dan letak komponen lebih ketat
+	- component harus di buat diluar pages, misal root
+	- component harus dalam folder dan file harus bernama index.js, kemudian di export
+	- cara import tidak boleh pakai {}, import Coba from 'url'; (jk gagal coba pakai {})
 - dinamic parameter -----> 
 	(bisa di gunakan untuk routing kayaknya ini nanti)(mungkin nested URL)
 	- kalau kita akan akses halaman dan mengirim url dinamic seperti ID pada db atau nested URL > contoh:
@@ -194,6 +199,10 @@ untuk tau perbedaan server client component, lihat di dokumentasinya tapi setida
 - client component: rendernya di client, keuntunganya bisa menggunakan HOOK yg interactive 
 - tips: gunakan server dulu, jika terpaksa gunakan client(misal: jika perlu menggunakan HOOK)
 - semua komponen di app default server component kecuali kalau di tentukan sebagai client componen
+
+COMPONENT LAIN DI PAGES VERSI LAMA
+------------------------------------------------------
+
 
 CRUD API
 ------------------------------------------------------
