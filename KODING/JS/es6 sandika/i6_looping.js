@@ -2,7 +2,8 @@
 // ----- ada ARRAY:
 const mhs = ["aqil", "izza", "silmi"];
 // ----- MAP
-mhs.map( a => console.log(a) );
+mhs.map( a => console.log(a) ); 		// value
+mhs.map( (a,b) => console.log(a+b) ); 		// value, index
 // ----- FOR for()()
 for(var i = 0; i < mhs.length; i++) { console.log(mhs[i]); }
 // ----- FOREACH mhs.forEach( m => m ) 
