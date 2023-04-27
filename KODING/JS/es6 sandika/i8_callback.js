@@ -82,7 +82,7 @@ console.log("selesai ...");
 selanjutnya kita lakukan latihan pada promise latihan i_9 di foldaer json .....
 
 // ============================= RINGKASAN =============================
-/* adalah sebuah function yang di jalankan dengan parameter menggunakan function lainya */
+/* Pemahaman callback: adalah sebuah function yang di jalankan dengan parameter menggunakan function lainya */
 
 function halo(nama){ alert(`halo nama saya ${nama}`); }					// 5. jalankan call back
 function pesan(callback){ const nama = prompt("masukkan nama :"); callback(nama); }	// 2. terima param callback => 3 runing promp nama => 4 panggil callback dan kirim nama dari promp  
@@ -90,8 +90,14 @@ pesan(halo);										// 1. sebuah function di panggil dg param function lain
 // atau lebih singkat
 function pesan(callback){ const nama = prompt("masukkan nama :"); callback(nama); }	
 pesan( nama => { alert(`halo nama saya ${nama}`); } );
-// tapi focusnya memahami asynchronous callback 
+// pengertian lain
+function satu(){console.log('halo satu')}		// 1. func biasa
+function dua(){satu()} 					// 2. func biasa bisa di panggil langsung dalam fungsi lainya
+function tiga(arg){arg()} 				// 4. di jalankan via args
+tiga(dua); 						// 3. fungsi biasa bisa di call dalam fungsi lain lewat param
 
+// tapi focusnya memahami asynchronous callback 
+// ----------------------------------------------------
 // ----- JALANKAN FUNCTION DENGAN ARGUMEN FUNCTION JUGA
 function pesan(callback){ const nama = prompt("masukkan nama :"); callback(nama); }	
 pesan( nama => { alert(`halo nama saya ${nama}`); } );
