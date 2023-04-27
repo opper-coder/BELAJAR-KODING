@@ -83,9 +83,9 @@ selanjutnya kita lakukan latihan pada promise latihan i_9 di foldaer json .....
 
 // ============================= RINGKASAN =============================
 // ----- JALANKAN FUNCTION DENGAN ARGUMEN FUNCTION JUGA
-pesan( nama => { alert(`halo nama saya ${nama}`); } );
 function pesan(callback){ const nama = prompt("masukkan nama :"); callback(nama); }	
-	// contoh lain:
+pesan( nama => { alert(`halo nama saya ${nama}`); } );
+// contoh lain:
 	map( => )
 	fiter( => )
 	reduce( (a,b) => )
