@@ -197,11 +197,12 @@ PROP
 
 PROP contra
 -----------------------------
-- kalau prop kirim data dari parent ke child
-- bagaimana cara kalau child mau kirim ke parent?
+- kalau prop kirim data dari parent ke child (di sebut one way passing hanya dari atas ke bawah)
+- bagaimana cara kalau child mau kirim ke parent (dari bawah ke atas)?
 	- kita harus kirim props ke child berupa function	 		// <coba nama:{(ambilNilai) => setStateKu(ambilNilai)}>
 	- nanti di konsumsi props.function oleh child sambil kirim parameter 	// props.nama(aqil);
 	- parameter bisa di gunakan oleh props.function parent untuk ubah state misalnya
+- contoh event di bawah bisa di gunakan untuk kirim data child ke parant(ke atas)
 	
 CLICK EVENT (onclick)
 -----------------------------
