@@ -10,7 +10,8 @@ Struktur Folder 		-> mengenal menyusun folder yang rapi
 cleanUp  						-> membersihkan file tidak terpakai
 Componen 						-> membuat fungsi dari functional componen
 Dinamic Value 			-> penggunaan variabel dalam JSX
-Prop 								-> oper data antar komponen 
+Props 								-> oper data dari parent ke child
+props contra 					-> oper data dari child ke parent 
 Event 							-> event handler seperti onclick
 useState Hook 			-> gunakan nilai variabel dinamis beserta DOM nya sekalian (mode data pengganti variabel biasa, karena variabel biasa tidak bisa runing saat berubah)
 useEffect Hook 			-> lifecycle, onMount, onUpdate, onDestroy
@@ -194,6 +195,14 @@ PROP
 - adalah salah satu cara oper data dari parent ke child komponen
 - dan oper data dari child ke parent menggunakan event(mis: onclick)
 
+PROP contra
+-----------------------------
+- kalau prop kirim data dari parent ke child
+- bagaimana cara kalau child mau kirim ke parent?
+	- kita harus kirim props ke child berupa function	 		// <coba nama:{(ambilNilai) => setStateKu(ambilNilai)}>
+	- nanti di konsumsi props.function oleh child sambil kirim parameter 	// props.nama(aqil);
+	- parameter bisa di gunakan oleh props.function parent untuk ubah state misalnya
+	
 CLICK EVENT (onclick)
 -----------------------------
 - onclick pada JSX memilik behavior yang sama dg attribut HTML hanya saja untuk akses function nya tinggal pakai dinamic value {} tanpa()
@@ -264,7 +273,7 @@ HOOKS useEffect
 - karena sebelumnya life cycle ada pada class component: componentDidMount,componentDidUpdate,componentDidUnmount
 - artinya komponen di muat saat komponen di muat(hanya sekali), di update(berkali2 selama ada update), hapus effec
 - useEffect adalah lifecycle pada functional: saat komponen di muat, saat di update, saat di close. pengganti lifecycle di class componen lah
-- ringkas kata. komponenen akan menmjalankan function useState(berisi aktifitas apasaja), yang di runing sekali saat mount, atau tiap saat update state tertentu
+- ringkas kata. komponen akan menmjalankan function useState(berisi aktifitas apasaja), yang di runing sekali saat mount, atau tiap saat update state tertentu
 - contoh1 
 	const app = () => {
 		const [counter, setCounter] = useState(0);
