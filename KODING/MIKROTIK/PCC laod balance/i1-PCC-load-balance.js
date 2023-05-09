@@ -48,7 +48,7 @@ pada ether 3 nya mengarah ke local
 			apply > ok
 	- buat kan juga untuk ether2
 ------------------
-2. role2 mangle action:accept pada semua ether(keluar masuk) yang memakai network load balance ini (ether1,2,3)
+2. role2 mangle action:accept pada semua ether(keluar masuk) yang memakai network load balance ini (ether1,2,3) untuk membuat lingkungan PCC ini
 	- IP > firewall > mangle > add
 		tab general
 			chain: prerouting
@@ -58,7 +58,7 @@ pada ether 3 nya mengarah ke local
 	- tujuan role ini di buat agar: 
 	  network2 DAC yg mengarah ke router kita tidak dikirimkan dg methode PCC
 ------------------
-3. role3 menandai connection dari ISP (WAN) yaitu ether1 dan ether2
+3. role3 menandai connection dari ISP (WAN) yaitu ether1 dan ether2, sebagai bahan untuk di loadbalance
 	- IP > firewall > mangle > add >
 		tab general
 			chain: prerouting
@@ -112,7 +112,7 @@ pada ether 3 nya mengarah ke local
 			ada 2 isp dengan bandwidth yang sama besar
 			- ISP1-20M, ISP2-20M. 
 			- total: 40Mb
-			- rasio 1:2 
+			- rasio 1:2 (1 User, 2 ISP)
 			- maka dua bikin 2 stream: pada kolom denominator:2 
 				(1 stream lewat ISP1, 1 stream lewat ISP2)
 			- reminder: 0 dan 1
@@ -120,15 +120,15 @@ pada ether 3 nya mengarah ke local
 			ada 3 isp dengan bandwidth yang sama besar
 			- ISP1-10M, ISP2-10M, ISP3-10M. 
 			- total: 30Mb
-			- rasio : 1:3 
-			- maka 3 stream: pada kolom denominator:3
+			- rasio : 1:3 (1 user : 3 ISP)
+			- maka 3 stream: pada kolom denominator: 3
 				(1 stream lewat ISP1, 1 stream lewat ISP2,1 stream lewat ISP3)
 			- reminder: 0,1 dan 2
 		- kasus 3
 			ada 2 isp dengan bandwidth yang tidak sama besar
 			- ISP1-10M, ISP2-20M
 			- total: 30Mb
-			- rasio : 1:2 
+			- rasio : 1:3 
 			- maka 3 stream: pada kolom denominator:3
 				(1 stream lewat ISP1, 1 stream lewat ISP2,1 stream lewat ISP2 juga)
 			- reminder: 0,1 dan 2
@@ -197,6 +197,6 @@ buat lagi role routing backup
 		- PCC lebih optimal dari metode lainya
 		- secure connection lebih baik
 		- merupkan metode propietary mikrotik performa lebih baik
-		- latency lebih rendah
+		- latency lebih rendah 
 		 
 */
