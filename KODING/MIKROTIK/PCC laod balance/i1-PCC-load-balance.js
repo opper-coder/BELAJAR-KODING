@@ -52,7 +52,7 @@ pada ether 3 nya mengarah ke local
 	- IP > firewall > mangle > add
 		tab general
 			chain: prerouting
-			dst address: 10.10.1.0/24 (bikin masing2 ether123/24 bertahap) // tidak tahu kenapa belakangnya pakai nol semua
+			dst address: 10.10.1.0/24 (bikin masing2 ether123/24 bertahap) // tidak tahu kenapa belakangnya pakai nol semua (mungkin di satu segmen)
 		tab action 
 			action: accept
 	- tujuan role ini di buat agar: 
