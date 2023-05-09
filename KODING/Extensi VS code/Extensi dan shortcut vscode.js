@@ -4,9 +4,10 @@ tambahka -> menu extensi -> cari dan install
 1. ES7/React/Redux/GraphQl/React-Native snippets- by: dsznajder
    jika belum hafal snippets -> ctrl + shift + p -> es7 -> snippets search -> tampil daftar
 2. ESLint
-    -menstandarkan "" / '' outo, titik koma, otomatis ada maka di setting sebelumnya
-3. Prettier - merapikan otomatis - config: setting > search: format on save > on  
-   buat ile di root project: .vscode > settings.json > buka > copas script ini (di ambil dari halamn prettier extentions > Default Formatter)
+   - menstandarkan "" / '' outo, titik koma, otomatis ada maka di setting sebelumnya
+3. Prettier - merapikan otomatis 
+   - config: setting > search: format on save > true (ctrl+, > user > texteditor > formatting > format on save > true)  
+   - buat file di root project: .vscode/settings.json (pakai dot) > buka > copas script ini (di ambil dari halamn prettier extentions > Default Formatter)
    lalu save. maka sudah bisa di gunakan saat save merapikan auto
    {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
