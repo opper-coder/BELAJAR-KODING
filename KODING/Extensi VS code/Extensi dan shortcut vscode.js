@@ -6,6 +6,15 @@ tambahka -> menu extensi -> cari dan install
 2. ESLint
     -menstandarkan "" / '' outo, titik koma, otomatis ada maka di setting sebelumnya
 3. Prettier - merapikan otomatis - config: setting > search: format on save > on  
+   buat ile di root project: .vscode > settings.json > buka > copas script ini (di ambil dari halamn prettier extentions > Default Formatter)
+   lalu save. maka sudah bisa di gunakan saat save merapikan auto
+   {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "[javascript]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    }
+   }
+
 4. Bracket Pair Colorizer-
    mewarnai kurawal, kurung kotak, bulat sesuai warna
 5. Color Hightlight- preview warna di text editor
