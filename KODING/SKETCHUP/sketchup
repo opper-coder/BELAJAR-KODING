@@ -3,8 +3,8 @@ GUIDES SHORTCUT
 delete 		x
 delete guide  	^x
 hide 		h
-unhide		f3
-viewhide	f2
+unhide selected		l
+viewhide	j
 edge 		k
 xray		^k
 
