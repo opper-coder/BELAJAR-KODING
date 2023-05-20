@@ -44,7 +44,7 @@ plane		p
 TIPS 
 __________
 kalau bikin kotak lakukan juga dimensinya
-- contoh: 4;5
+- contoh: 400,500
 __________
 cara kopi array
 - kopas objek pada posisi terakhir
