@@ -3,7 +3,7 @@ GUIDES SHORTCUT
 delete 		x
 delete guide  	^x
 hide 		h
-unhide selected		l
+unhide selected	l
 viewhide	j
 edge 		k
 xray		^k
