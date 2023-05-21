@@ -1,0 +1,11 @@
+.container{
+	width: 60%;
+	background-color: pink;
+	margin: 0 auto;
+}
+.header{
+	background-color: teal;
+}
+.footer{
+	background-color: tan;
+}
