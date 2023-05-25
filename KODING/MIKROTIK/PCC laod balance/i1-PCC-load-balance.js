@@ -36,6 +36,16 @@ pada ether 3 nya mengarah ke local
 	ether3 = USER local = 	IP: 192.168.3.1/24
 */
 
+/* =============================
+Pembagian loadbalance Ether dengan gateway DHCP client yang sama 
+	1. hapus gateway default kemudian arahkan ether dengan cara manual
+	2. 
+
+
+*/ =============================
+
+
+
 /* ROLE MANGLE
 ---------------------------------------------------------------------------------------------------
 1. role1 NAT masquerade pada ether1 dan ether2
