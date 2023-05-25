@@ -38,10 +38,37 @@ pada ether 3 nya mengarah ke local
 
 /* =============================
 Pembagian loadbalance Ether dengan gateway DHCP client yang sama 
-	1. hapus gateway default kemudian arahkan ether dengan cara manual
-	2. 
+2 modem memberikan IP yang sama, dan kita tidak mungkin mengubahnya, tidak ada akses, atau modem LTE, maka cara mengatasi seperti langkah berikut
 
+topologi
+	- ISP1 : ether1 
+	- ISP2 : ether2
+	- CLIENT : Bridge > ether 3,4  
 
+- cari tahu dulu IP yang di berikan oleh Profider
+	- DHCP Client > Add > ether1 > ISP1
+	- lakukan juga untuk ISP2 
+	- maka kita akan melihat kita di kasih IP Adress satu segment meski berbeda > problemnya ada di IP > routes > di sana terlihat Gateway yang aktif hanya salah satu ether (keduanya ether2 semua yang aktif) dan DAS nya 0.0.0.0/0
+	- dengan kondisi ini kita tidak bisa lakukan loadbalance, karena routenya di anggap satu
+	- solusinya adalah kita akan ubah gatewaynya (IP Route) ke arah mana secara statik manual
+	- ini di lakukan saat membuat gateway kita akan memberikan spesifik ethernnya 
+
+- langkah
+ada dua langkah yang bisa dilakukan yaitu: 1. IP kita buat scara statik 2. kita edit DHCP client
+
+- DHCP client > dblclk di ether1 > tab status > gateway misal: 192.168.100.1 (nanti kita akan gunakan sebagai gateway ke arah intenet)
+- kembali ke tab DHCP > add Default Route: no > apply ok
+- lakukan untuk ether2 > DHCP > add Default Route: no > apply ok
+- kenapa default route:no, hal ini agar bisa memungkinkan IP route di buat secara manual, 
+- cek ke IP > routes > sekarang tidak muncul DAS 0.0.0.0/0
+- kita arahkan ether secara manual 
+	IP > routes > add > dst address:0000/0 
+	gateway: 192.168.100.1 (diambil dari status dhcp client tadi ) tap problemnya gatewaynya sama maka tambahkan routing ke arah ether mana caranya
+	gateway: 192.168.100.1%ether1 > apply OK > (disinilah intinya)
+- untuk ether 2 lakukan hal yang sama yaitu 
+	IP > routes > add > dst address:0000/0 > gateway:192.168.100.1%ether2 
+- maka kita sudah memiliki 2 port dan langsung berfungsi jadi failover sederhana
+- kalau mau load balance PCC tinggal lakukan seperti biasa
 */ =============================
 
 
