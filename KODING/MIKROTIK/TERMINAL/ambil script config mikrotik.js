@@ -6,7 +6,7 @@ AMBIL SCRIPT DALAM CONFIGURASI MIKROTIK
 	- new Terminal :> ip firewall export file=mangle 	> enter	// contoh1
 	- new Terminal :> ip firewall export file=raw   	> enter 	// contoh2
 	artinya= ( ip:kemenu ip > firewall:kemenu firewall > tab mangle:ke tab mangle > export:backup semua baris row > file:berbentuk file   ) 
-4. cara ambil hasilnya : pergi ke mikrotik > file > file teratas > bernama mangle.rsc (nama sesuai tab yang di pilih)
+4. cara ambil hasilnya : pergi ke mikrotik > file > file teratas > bernama mangle.rsc (nama sesuai tab yang di pilih)(extention .src , penting!)
 	saat di buka biasanya di dalam file menyertakan beberapa config sampingan lainya. kita hanya mengambil file yang kita perlukan saja sesuai 
 	dengan configurasi yang kita punya saja untuk kita jalankan di terminal kita yang baru 
 5. copas file yang terbuat tadi ke notepad lalu baca sesuai config sesuai langkah kita sebelumnya > lalu running di terminal
