@@ -1,0 +1,27 @@
+citraweb MENANAM CUSTOM DEFAULT CONFIG
+
+default config custom
+tujuanya adalah saat kita hard/soft reset maka router OS akan kembali ke default config punya kita
+
+1. karena meng inject config dasar pada RouterOS itu ya bersamaan saat install ulang ROS maka kita perlu download ROS kita
+2. atau alternatif lain bisa kita ubah default confignya saja juga bisa
+
+langkahnya:
+
+- backup dulu setting dasar yang akan kita buat default config dalam namafile.rsc
+- lalu download juga firmware OS router 
+- install net-install mikrotik di windows  
+- hubungkan ether 1, atau ether yang ada tulisan ether but, tergantung product type Yang kompatibel dengan netinstall
+- matikan power > buka net-install di windows > tekan dan tahan tombol reset di mikrotik > colokan power listrik > tunggu +-10 detik
+- sampai muncul RB kita di net install (abaikan lampu berkedip) 
+- select RB kita > packages browse firmware ROS > centang config script > browse custom config kita > klik install > tunggu selesai
+
+cek dan uji:
+- cara menjalankan mengkatifkan reset configuration custom kita
+- soft reset system > resetconfiguration > tekan reset configuration 
+- hard reset > seperti biasa tapi jangan sampai telat lebih dari 10 detik nanti malah masuk ke mode netinstall
+- oleh karena itu setting tombol reset kira 3-5 detik saja tanpa tunggu lampu dengan cara 
+	- system > routerboard > klik tombol reset button > centang enable > isi 0-10 detik > masuk kan script /system reset no-def=no skip=yes > apply Ok
+
+
+cara ini akan secara permanent menjadi default config > kalau mau hapus ya silahkan install ulang Firmware biasa
