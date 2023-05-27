@@ -1,6 +1,7 @@
 // scripting
 - disini adalah cara yang biasa di pakai, pada dasarnya di dokumentasi ada
 - kita bisa cek if, function, event, dll ada
+- sublime tab4
 
 COMMAND ROUTE
 ----------------------
