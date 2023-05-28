@@ -37,6 +37,17 @@ pada ether 3 nya mengarah ke local
 */
 
 /* =============================
+ringkasan
+--------------------------------
+0. Interface > rename ether1-ISP1, ether2-ISP2
+1. IP > dhcp client > add > ether1-ISP1 > apply ok. (lakukan ISP2 sama)
+2. cek IP > DHCP client > dblclk ether1 > tab status > gateway (cek jg ether2 gatewaynya sama dengan ISP1 dan ISP2)
+3. kembali ke tab DHCP > ISP1 > add default route:no (lakukan ISP2 sama)
+4. IP > routes > add > 
+	dst address:0000/0 
+	gateway: 192.168.100.1%ether1-ISP1 > apply OK > (gateway dari status dhcpclient) 
+	- lakukan hal yang sm pd ether2
+---------------------------------
 Pembagian loadbalance Ether dengan gateway DHCP client yang sama 
 2 modem memberikan IP yang sama, dan kita tidak mungkin mengubahnya, tidak ada akses, atau modem LTE, maka cara mengatasi seperti langkah berikut
 
@@ -69,16 +80,6 @@ ada dua langkah yang bisa dilakukan yaitu: 1. IP kita buat scara statik 2. kita 
 	IP > routes > add > dst address:0000/0 > gateway:192.168.100.1%ether2 
 - maka kita sudah memiliki 2 port dan langsung berfungsi jadi failover sederhana
 - kalau mau load balance PCC tinggal lakukan seperti biasa
-
-ringkasan
-0. Interface > rename ether1-ISP1, ether2-ISP2
-1. 	- IP > dhcp client > add > ether1-ISP1 > apply ok.
-	- IP > dhcp client > add > ether2-ISP2 > apply ok.
-2. cek IP > DHCP client > dblclk ether1 > tab status > gateway (gatewaynya sama dengan ISP2)
-3. kembali ke tab DHCP > ISP1 > add default route:no (lakukan ISP2 sama)
-
-
-
 
 */ =============================
 
