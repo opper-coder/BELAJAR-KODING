@@ -202,7 +202,7 @@ ada dua langkah yang bisa dilakukan yaitu: 1. IP kita buat scara statik 2. kita 
 			connection mark: ISP1-20M
 		tab action
 			action: mark routing
-			new connection Mark: ke-ISP2-20M
+			new connection Mark: ke-ISP1-20M
 			pass trought: yes
 			apply OK
 	- buatkan juga mark routing di chain output : ke-ISP2 untuk traffic ke ISP2 (langkah sama)
