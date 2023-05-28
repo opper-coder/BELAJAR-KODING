@@ -69,6 +69,17 @@ ada dua langkah yang bisa dilakukan yaitu: 1. IP kita buat scara statik 2. kita 
 	IP > routes > add > dst address:0000/0 > gateway:192.168.100.1%ether2 
 - maka kita sudah memiliki 2 port dan langsung berfungsi jadi failover sederhana
 - kalau mau load balance PCC tinggal lakukan seperti biasa
+
+ringkasan
+0. Interface > rename ether1-ISP1, ether2-ISP2
+1. 	- IP > dhcp client > add > ether1-ISP1 > apply ok.
+	- IP > dhcp client > add > ether2-ISP2 > apply ok.
+2. cek IP > DHCP client > dblclk ether1 > tab status > gateway (gatewaynya sama dengan ISP2)
+3. kembali ke tab DHCP > ISP1 > add default route:no (lakukan ISP2 sama)
+
+
+
+
 */ =============================
 
 
