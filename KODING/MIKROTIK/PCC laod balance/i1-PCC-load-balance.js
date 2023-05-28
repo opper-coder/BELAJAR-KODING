@@ -89,8 +89,8 @@ ada dua langkah yang bisa dilakukan yaitu: 1. IP kita buat scara statik 2. kita 
 ---------------------------------------------------------------------------------------------------
 1. role1 NAT masquerade pada ether1 dan ether2
 	- IP > firewall > NAT > add
-		tab advanced
-			src: srcnat
+		tab general
+			chain: srcnat
 			out. interface: ether1
 		tab action
 			action: masquerade 
