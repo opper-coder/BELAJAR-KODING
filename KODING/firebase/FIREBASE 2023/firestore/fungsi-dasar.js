@@ -22,7 +22,7 @@ Aktifkan SERVICE di firebase console
 	1. buat project Firebase: Di Firebase console, klik Add project,
 	2. aktifkan firestore di console cekidoc
 Menyiapkan lingkungan Project
-	1. npm install firebase@9.21.0 --save // SDK firebase 
+	1. npm install firebase@9.21.0 --save 				// SDK firebase 
 	2. new /root/firebase/firebase.js
 		import { initializeApp } from "firebase/app"; 		// import firebase wajib 
 		import { getFirestore } from "firebase/firestore"; 	// import firestor sesuai layanan
@@ -35,11 +35,11 @@ Menyiapkan lingkungan Project
 		import { getFirestore } from "firebase/firestore";
 
 		const firebaseConfig = {
-			... 											// object-config yg di kasih firebase project-setting
+			... 						// object-config yg di kasih firebase project-setting
 		};
 
-		const app = initializeApp(firebaseConfig);			// Initialize Firebase
-		const db = getFirestore(app);						// Initialize firestore sekaligus get 
+		const app = initializeApp(firebaseConfig);		// Initialize Firebase
+		const db = getFirestore(app);				// Initialize firestore sekaligus get 
 	5. sekarang tinggal pakai (kalau mau mengkatifkan offkline ada caranya tapi sy skip dulu cekidoc di step ini)
 		sepertinya gampang hanya ada 6 method saja kayaknya
 - TAMBAH DATA 
@@ -51,7 +51,7 @@ Menyiapkan lingkungan Project
 		// implementasikan pakai try catch await 
 		try { 		
 		  const docRef = await addDoc(collection(db, "users"), {	// collection "users" jika belum pernah ditulis maka sekaligus dibuatkan collection "users"
-		    first: "Ada", 											// rownya seperti ini 
+		    first: "Ada", 						// rownya seperti ini 
 		    last: "Lovelace",
 		    born: 1815
 		  });
@@ -64,7 +64,7 @@ Menyiapkan lingkungan Project
 		try {
 		  const docRef = await addDoc(collection(db, "users"), { 	// jika collection "users" sudah pernah dibikin maka dokumen akan di tambahkan disana
 		    first: "Alan", 											
-		    middle: "Mathison", 									// data dan strukturnya boleh beda "middle" tidak seperti tabular struktur harus sama
+		    middle: "Mathison", 					// data dan strukturnya boleh beda "middle" tidak seperti tabular struktur harus sama
 		    last: "Turing",
 		    born: 1912
 		  });
@@ -79,7 +79,7 @@ Menyiapkan lingkungan Project
 	// data juga bisa di lihat di firebase console
 	import { collection, getDocs } from "firebase/firestore"; 		// import getDoc()
 
-	const querySnapshot = await getDocs(collection(db, "users")); 	// ambil semua data di colection "users", tanpa filter
+	const querySnapshot = await getDocs(collection(db, "users")); 		// ambil semua data di colection "users", tanpa filter
 	querySnapshot.forEach((doc) => {
 	  console.log(`${doc.id} => ${doc.data()}`);
 	});
