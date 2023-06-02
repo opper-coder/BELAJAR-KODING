@@ -1,7 +1,8 @@
 alternatif firebase youtube singkat 
 PENGANTAR SINGKAT FIREBASE WEB 
+firebase bisa di gunakan di beberapa platform: seperti, web, android, ios, server:nodejs, java, go dll
+disini contoh sederhana di web client (dibrowser)cukup 4 langkah saja 
 ------------------------------------------------------------------------------
-/// 4 langkah saja
 1. /root :> npm init -y  						// install node, npm dan lakukan init pada project
 2. /root :> npm i firebase 						// install firebase di project 
 3. new /root/src/index.js 						// bikin root/src/index.js 
