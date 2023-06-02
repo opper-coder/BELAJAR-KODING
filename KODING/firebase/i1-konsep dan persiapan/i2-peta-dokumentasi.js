@@ -112,14 +112,15 @@ a. membuat dan mendaftarkan app
 	6. SIAP
 		sampai disini siap di gunakan untuk trigger dan driver layanan yang di gunakan 
 */
-
-divideo firebase 
-MEMULAI FIREBASE DENGAN WEB 
-ada banyak cara sebenarnya seperti npm, webpack, reactjs, vite, nextjs dll
+------------------------------------------------------------------------------
+firebase youtube singkat 
+PENGANTAR SINGKAT FIREBASE WEB 
+------------------------------------------------------------------------------
+ada banyak cara integrasi sebenarnya seperti npm, webpack, reactjs, vite, nextjs dll
 disini firebase dasar di web browser ada 4 langkah saja:
-1. terminal :> npm init -y
-2. :> npm i firebase
-3. new /src/index.js
+1. /root :> npm init -y  	// install node, npm dan lakukan init
+2. /root :> npm i firebase 	// install firebase di project 
+3. new /src/index.js 		// bikin folder dan filejs
 // copas dari firebase projec config
 	import { initializeApp } from 'firebase/app' 			// import inisilaisasi koneksi awal ke firebase 
 	firebaseApp = initializeApp({ 					// parameter koneksi aplikasi yang di kasih oleh firebase console
@@ -128,20 +129,23 @@ disini firebase dasar di web browser ada 4 langkah saja:
 		...
 	});
 
-4. cara ini sudah dapat di gunakan tinggal import layanan disini
+3.1 cara ini sudah dapat di gunakan tinggal import layanan disini
 		
 	import { initializeApp } from 'firebase/app' 	
-	import { getAuth, onAuthStateChange } from 'firebase/auth' 	// import getAuth
-	import { getFirestore } from 'firebase/firestore' 		// import getFirestore
+	import { getAuth, onAuthStateChange } from 'firebase/auth' 	// import service getAuth untuk autentikasi
+	import { getFirestore, collection } from 'firebase/firestore' 	// import service getFirestore untuk database
+
 	firebaseApp = initializeApp({ 					
 		...
 	});
-		
-	// init disini:
-	const auth = (firebaseApp);
-	const db = getFirestore(firebaseApp)
+	// ----- init service disini:
+	const auth = getAuth(firebaseApp); 			// auth
+	const db = getFirestore(firebaseApp);			// db connection
+	db.collection(todos).getDocs(); 			// 
+	const todosCol = collection(db, 'todos')		// 
+	const snapshot = await getDocs(todosCol)		// 
 	
-	// silahkan di gunakan dengan mengambil method2 yang tersedia di firebase sendiri, contoh:
+	// ----- silahkan di gunakan dengan mengambil method2 yang tersedia di firebase sendiri, contoh:
 	// detect auth 
 	onAuthStateChange(auth, (user) => {
 	if(user !== null ){
@@ -150,5 +154,6 @@ disini firebase dasar di web browser ada 4 langkah saja:
 		console.log("No User");
 	}
 	});
+	// ----- ambil data 
+	;
 
-menit ke 4
