@@ -113,3 +113,12 @@ a. membuat dan mendaftarkan app
 		sampai disini siap di gunakan untuk trigger dan driver layanan yang di gunakan 
 */
 
+divideo firebase 
+MEMULAI FIREBASE DENGAN WEB 
+ada banyak cara sebenarnya seperti npm, webpack, reactjs, vite, nextjs dll
+disini firebase dasar di web browser ada 4 langkah saja:
+1. terminal :> npm init -y
+2. :> npm i firebase
+3. new /src/index.js
+
+
