@@ -139,11 +139,11 @@ disini firebase dasar di web browser ada 4 langkah saja:
 		...
 	});
 	// ----- init service disini:
-	const auth = getAuth(firebaseApp); 			// auth
-	const db = getFirestore(firebaseApp);			// db connection
+	const auth = getAuth(firebaseApp); 			// 1. auth (dengan parameter obj koneksi, semua butuh ini)
+	const db = getFirestore(firebaseApp);			// 2. db connection
 	db.collection(todos).getDocs(); 			// 
-	const todosCol = collection(db, 'todos')		// 
-	const snapshot = await getDocs(todosCol)		// 
+	const todosCol = collection(db, 'todos')		// 3. conneksi tabel( collection 'todos') dalam db
+	const snapshot = await getDocs(todosCol)		// 4. ambil data dalam tabel
 	
 	// ----- silahkan di gunakan dengan mengambil method2 yang tersedia di firebase sendiri, contoh:
 	// detect auth 
@@ -157,3 +157,10 @@ disini firebase dasar di web browser ada 4 langkah saja:
 	// ----- ambil data 
 	;
 
+4. buat halaman html
+	new /src/index.html 					// bikin folder dan file html di folder yang sama
+	<script type="module" src="/index.js"></script> 	// diimport dg type="module" agar bisa di baca di browser
+	karena import di browser tidak bisa dilakukan di browser maka dg type module firebase sudah mempersiapkan script dapat di import dari browser
+	
+5. ini sudah bisa di gunakan
+	tinggal memahamai bagaimana penggunaan fungtion/method yang di sediakan oleh layanan
