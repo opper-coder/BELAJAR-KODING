@@ -120,7 +120,7 @@ disini firebase dasar di web browser ada 4 langkah saja:
 1. terminal :> npm init -y
 2. :> npm i firebase
 3. new /src/index.js
-	// copas dari firebase projec config
+// copas dari firebase projec config
 	import { initializeApp } from 'firebase/app' 			// import inisilaisasi koneksi awal ke firebase 
 	firebaseApp = initializeApp({ 					// parameter koneksi aplikasi yang di kasih oleh firebase console
 		apiKey: xxx, 						
@@ -128,4 +128,27 @@ disini firebase dasar di web browser ada 4 langkah saja:
 		...
 	});
 
+4. cara ini sudah dapat di gunakan tinggal import layanan disini
+		
+	import { initializeApp } from 'firebase/app' 	
+	import { getAuth, onAuthStateChange } from 'firebase/auth' 	// import getAuth
+	import { getFirestore } from 'firebase/firestore' 		// import getFirestore
+	firebaseApp = initializeApp({ 					
+		...
+	});
+		
+	// init disini:
+	const auth = (firebaseApp);
+	const db = getFirestore(firebaseApp)
+	
+	// silahkan di gunakan dengan mengambil method2 yang tersedia di firebase sendiri, contoh:
+	// detect auth 
+	onAuthStateChange(auth, (user) => {
+	if(user !== null ){
+		console.log("Logged in!");
+	}else{
+		console.log("No User");
+	}
+	});
 
+menit ke 4
