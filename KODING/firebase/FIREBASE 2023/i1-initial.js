@@ -10,7 +10,7 @@ disini contoh sederhana di web client (dibrowser)cukup 4 langkah saja
 	// tinggal copas dari firebase console > project overview > project setting
 	// berisi initial firebase awal 
 	import { initializeApp } from 'firebase/app'; 			
-	import { getAuth, onAuthStateChange } from 'firebase/auth'; 	// import service yang di perlukan spt: auth, firestore, realtimedb, dll
+	import { getAuth, onAuthStateChange } from 'firebase/auth'; 	// import service dan method yang di perlukan spt: auth, firestore, realtimedb, dll
 	----- 								
 	firebaseApp = initializeApp({ 					// object credential bawaan dari config
 		apiKey: xxx, 						
@@ -18,14 +18,14 @@ disini contoh sederhana di web client (dibrowser)cukup 4 langkah saja
 		...
 	});
 	-----  
-	onAuthStateChange(auth, (user) => { 				// penggunaan method dari layanan auth
+	onAuthStateChange(auth, (user) => { 				// penggunaan method dari layanan auth, silahkan cekidok method lainya 
 	if(user !== null ){
 		console.log("Logged in!");
 	}else{
 		console.log("No User");
 	}
 	});
-4. new /src/index.html 						// tinggal di gunakan di halaman web kita, menggunakan dom atau jquery silahkan
+4. new /src/index.html 							// tinggal di gunakan di halaman web kita, menggunakan dom atau jquery silahkan
 	<script type="module" src="/index.js"></script> /	        // diimport dg type="module" agar bisa di baca di browser
 ------------------------------------------------------------------------------
 
