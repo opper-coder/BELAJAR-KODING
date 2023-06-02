@@ -120,5 +120,12 @@ disini firebase dasar di web browser ada 4 langkah saja:
 1. terminal :> npm init -y
 2. :> npm i firebase
 3. new /src/index.js
+	// copas dari firebase projec config
+	import { initializeApp } from 'firebase/app' 			// import inisilaisasi koneksi awal ke firebase 
+	firebaseApp = initializeApp({ 					// parameter koneksi aplikasi yang di kasih oleh firebase console
+		apiKey: xxx, 						
+		authDomain: "",
+		...
+	});
 
 
