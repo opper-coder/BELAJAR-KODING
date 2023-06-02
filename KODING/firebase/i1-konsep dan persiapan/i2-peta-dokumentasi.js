@@ -113,7 +113,7 @@ a. membuat dan mendaftarkan app
 		sampai disini siap di gunakan untuk trigger dan driver layanan yang di gunakan 
 */
 ------------------------------------------------------------------------------
-firebase youtube singkat 
+alternatif firebase youtube singkat 
 PENGANTAR SINGKAT FIREBASE WEB 
 ------------------------------------------------------------------------------
 ada banyak cara integrasi sebenarnya seperti npm, webpack, reactjs, vite, nextjs dll
