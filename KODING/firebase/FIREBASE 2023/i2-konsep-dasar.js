@@ -60,6 +60,12 @@ Firebase mendukung SDK seluler/web dan library klien server.
 	5. Integrasi library pihak ketiga
 		ada pilihan lain, support reactnative, ios, angular dll
 	6. dalam aplikasi kita dengan next js menggunakan SDK client, logic menggunakan, firebase function.
+- lokasi
+-------------------------------------------
+	- pilih lokasi sebelum bikin paket service, selanjutnya tidak bisa di ubah, kecuali beberapa service khusus (seperti firebase)
+	- untuk mengurangi latensi, dan ketersediaan, dan berlaku untuk semua service GCP, kecuali service khusus
+	- saat bikin project lokasi kita di minta, ini untuk menjalankan resource GCP kita, kecuali beberapa service bisa pilih lokasi lagi
+	- memilih lokasi adalah memilih harga dan memilih latensi dan ketersediaan	
 - paket data:
 -------------------------------------------
 	sistem cache ,adalah snapshot data dari firestore yang dapat di simpan pada cache backend, atau CDN anda. dengan tujuan
