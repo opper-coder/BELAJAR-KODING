@@ -1,3 +1,4 @@
+sumber propietary, space4 sublime
 Daftar isi:
 	- struktur data							-> skema penyusunan hirarki
 	- initialize							-> langkah awal firebase
