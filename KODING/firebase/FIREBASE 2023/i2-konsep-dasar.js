@@ -32,6 +32,7 @@ adalah bentuk penyimpanan juga, berbayar, faktor penting untuk performa query, d
 - jenis data
 -------------------------------------------
 jenis data yang di dukung firestore, urutan di bawah yang diperlukan untuk indexing, baca indexing
+oya kalau bisa setiap document memiliki kolom tanggal yang bisa di urutkan
 	Nilai null
 	Nilai boolean
 	Bilangan bulat dan nilai floating-point, diurutkan sesuai urutan numerik
