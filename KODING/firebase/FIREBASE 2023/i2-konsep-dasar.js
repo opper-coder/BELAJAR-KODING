@@ -71,19 +71,19 @@ Firebase mendukung SDK seluler/web dan library klien server.
 - referensi
 -------------------------------------------
 - referensi dokumen (mirip url db menuju ke row data)
-	import { doc, collection } from "firebase/firestore";				// doc() sebagai penunjuk
-	const siswa1 = doc(db, 'siswa', 'andy'); 							// bentuknya ke row data andi
-	const siswa1 = doc(db, 'siswa/andy'); 								// atau pakai slash
+	import { doc, collection } from "firebase/firestore";			// doc() sebagai penunjuk
+	const siswa1 = doc(db, 'siswa', 'andy'); 				// bentuknya ke row data andi
+	const siswa1 = doc(db, 'siswa/andy'); 					// atau pakai slash
 	const siswa1 = doc(db, "siswa", "kelas", "jurusan", "fisika"); 		// bersarang
-	const siswa1 = doc(db, "siswa/kelas/jurusan/fisika"); 				// bersarang pakai slash (tidak ada dlm dokumentasi)
+	const siswa1 = doc(db, "siswa/kelas/jurusan/fisika"); 			// bersarang pakai slash (tidak ada dlm dokumentasi)
 	-----
-	const siswa1 = db.collection('siswa').doc('fisika'); 				// nodejs
-	const siswa1 = db.doc('siswa/andy'); 								// atau pakai slash
+	const siswa1 = db.collection('siswa').doc('fisika'); 			// nodejs
+	const siswa1 = db.doc('siswa/andy'); 					// atau pakai slash
 	const messageRef = db.collection('siswa').doc('kelas')
-  		.collection('jurusan').doc('fisika') 							// bersarang
-  	const messageRef = db.doc('siswa/kelas/jurusan/fisika') 			// bersarang pakai slash (tidak ada dlm dokumentasi)
+  		.collection('jurusan').doc('fisika') 				// bersarang
+  	const messageRef = db.doc('siswa/kelas/jurusan/fisika') 		// bersarang pakai slash (tidak ada dlm dokumentasi)
 
 - referensi ke collection (url menuju ke tabel)
 	const tabelSiswa = collection(db, 'siswa'); 
 	-----
-	const tabelSiswa = db.collection('siswa'); 							// nodejs
+	const tabelSiswa = db.collection('siswa'); 				// nodejs
