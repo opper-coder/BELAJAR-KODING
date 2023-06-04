@@ -1,3 +1,22 @@
+
+MENGHAPUS DOKUMEN delete()
+---------------------------------------
+Peringatan: Menghapus suatu dokumen tidak otomatis menghapus subkoleksinya.
+Jika ingin menghapus satu dokumen dan semua dokumen dalam subkoleksinya, Anda harus melakukannya secara manual.
+
+import { doc, deleteDoc } from "firebase/firestore";    // import 
+await deleteDoc(doc(db, "cities", "DC"));               // pakai await
+
+MENGHAPUS FIELD FieldValue.delete()
+---------------------------------------
+Untuk menghapus kolom tertentu dari dokumen, gunakan metode FieldValue.delete()
+
+import { doc, updateDoc, deleteField } from "firebase/firestore";   // import update dan delete jg doc
+const cityRef = doc(db, 'cities', 'BJ');                            // bikin ref
+await updateDoc(cityRef, {                                          // pakai update() untuk hapus field karena dokument masih ada
+    capital: deleteField()                                          // field: deleteField() 
+});
+
 MENGHAPUS KOLEKSI
 ---------------------------------------
 Untuk menghapus seluruh koleksi atau subkoleksi di Cloud Firestore, 
