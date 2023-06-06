@@ -82,7 +82,8 @@ ada dua langkah yang bisa dilakukan yaitu: 1. IP kita buat scara statik 2. kita 
 - kalau mau load balance PCC tinggal lakukan seperti biasa
 
 */ =============================
-	
+TIPS: lakukan PCC yang ad di bawah kemudian setting IP SAMA di atasnya PCC ini
+-----------------------------------
 ringkasan LOADBALANCE IP SAMA
 --------------------------------
 0. Interface > rename ether1-ISP1, ether2-ISP2
