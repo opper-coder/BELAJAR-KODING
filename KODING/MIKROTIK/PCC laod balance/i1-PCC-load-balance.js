@@ -137,6 +137,8 @@ LAN
 	IP > routes > add
 		Dst. address: 0.0.0.0/0 | Gateway: 10.10.1.1(pakai%ether1) | Check Gateway: ping | distance:1(di kedua ISP) | Routing mark: ke-ISP1-20M > Apply Ok
 		ISP2 juga: sesuai ISP 
+6.2 routing manual (untuk ISP gateway sama )
+	IP > dhcp client > dblclk ether1 > tab DHCP > ISP1 > add default route:no (lakukan ISP2 sama)
 7. keperluan failover
 	- IP > routes > add
 		1. Dst. address: 0.0.0.0/0 | Gateway: gateway ISP2 | Distance:2 | Routing mark: ke-ISP1-20M > Apply Ok
