@@ -7,7 +7,7 @@ WAN
 6. IP > firewall NAT > masquerade Kedua ISP
 LAN
 4. IP LAN isi 192.168.50.1/24
-5. DHCP server > LAN > DNS 2 gateway ISP1-2
+5. DHCP server > bridge-LAN > DNS ada 2 gateway (dari ISP1-2)
 
 LOAD BALLANCE
 
