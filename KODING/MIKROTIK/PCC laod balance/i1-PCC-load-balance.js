@@ -83,8 +83,6 @@ ada dua langkah yang bisa dilakukan yaitu: 1. IP kita buat scara statik 2. kita 
 
 */ =============================
 
-
-
 /* ROLE MANGLE
 ---------------------------------------------------------------------------------------------------
 1. role1 NAT masquerade pada ether1 dan ether2
