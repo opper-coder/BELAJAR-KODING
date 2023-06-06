@@ -144,7 +144,7 @@ LAN
 		1. Dst. address: 0.0.0.0/0 | Gateway: gateway ISP2 | Distance:2 | Routing mark: ke-ISP1-20M > Apply Ok
 		2. Dst. address: 0.0.0.0/0 | Gateway: gateway ISP1 | Distance:2 | Routing mark: ke-ISP2-20M > Apply Ok
 		lihat ISP dan gateway tukar-menukar ikuti saja ini 
-
+8. pengujian: coba download sesuatu dari website yang berbeda > lalu awasi apakah traffic ada di kedua ISP
 */ -----------------------------------
 
 /* ROLE MANGLE (ringkasan ada di atas ini)
