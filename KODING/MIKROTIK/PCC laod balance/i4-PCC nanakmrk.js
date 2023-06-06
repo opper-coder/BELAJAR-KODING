@@ -2,9 +2,9 @@ periksa loadbalance tplink tlr470t+
 
 WAN
 1. namai port dan bridge
-2. DHCP client
+2. DHCP client Kedua ISP
 3. IP DNS 8.8.8.8 8.8.4.4 allow remote
-6. IP > firewall NAT > masquerade ISP1-2
+6. IP > firewall NAT > masquerade Kedua ISP
 LAN
 4. IP LAN isi 192.168.50.1/24
 5. DHCP server > LAN > DNS 2 gateway ISP1-2
