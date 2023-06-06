@@ -29,6 +29,7 @@ sumber: https://www.tembolok.id/cara-speedtest-di-mikrotik/
 Prinsipnya kita download file dari mikrotik menggunakan terminal menggunakan perintah fetch.
 ketikan saja kata kunci di google “test file download” atau “test file download indonesia”
 misalnya kita punya file ini (kalau tidak ada silahkan cari lainya):
+https://www.dewaweb.com/blog/knowledge-base/test-latency-dan-download-speed-ke-server-dewaweb/
 	/tool fetch url="https://dci-speedtest.dewaweb.com/50mb-testfile.zip" output=none
 	/tool fetch url="https://sg-speedtest.dewaweb.com/50mb-testfile.zip" output=none	    
 Buka tiga sampai empat terminal agar hasilnya lebih pasti
