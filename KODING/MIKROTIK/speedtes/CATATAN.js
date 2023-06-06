@@ -1,5 +1,5 @@
 bandwidth test
-
+--------------------------------------------------
 berguna untuk test bandwidth untuk port apakah fast ethernet, gigabit ethernet, wireless 
 karena belum tentu kemampuan fast ethernet 100MBps terus bisa memberikan bandwidth yg sama, 
 hal ini tergantung resource CPU dan MEM nya 
@@ -8,6 +8,7 @@ maka kita perlu lakukan testing bandwidth ini
 ada kemungkinan signal bagus tapi data nggak lewat. 
 meski trougput 100mbps apakah benar data yang bisa di lewatkan 100mbps
 coba test 50mbps sampai maximal berapa (tergantung ISP) 
+
 
 
 1. download dulu bandwidth test.exe di mikrotik.com > jalankan di windows
@@ -21,3 +22,15 @@ coba test 50mbps sampai maximal berapa (tergantung ISP)
 APLIKASI WIFI 
 1. moho di https://moho.ruijienetworks.com/static/homepager/en/index.htm
 sangant bagus testing wifi
+			    
+SPEED TEST VIA TERMINAL
+--------------------------------------------------
+Prinsipnya kita download file dari mikrotik menggunakan terminal menggunakan perintah fetch.
+ketikan saja kata kunci di google “test file download” atau “test file download indonesia”
+misalnya kita punya file ini (kalau tidak ada silahkan cari lainya):
+	/tool fetch url="https://dci-speedtest.dewaweb.com/50mb-testfile.zip" output=none
+	/tool fetch url="https://sg-speedtest.dewaweb.com/50mb-testfile.zip" output=none	    
+Buka tiga sampai empat terminal agar hasilnya lebih pasti
+Hasil speedtest download bisa dilihat pada interface WAN di bagian RX.
+
+
