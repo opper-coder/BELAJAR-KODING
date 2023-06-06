@@ -17,3 +17,7 @@ coba test 50mbps sampai maximal berapa (tergantung ISP)
 	-- local tx:1M | remote tx:1M (1M - 100M atau maximal bw isp kita)| user pass: dari router atau mikrotik | start
 5. antara resourch CPU MEM (4%) dan Btest sama stabilnya 1M 
 6. saat local tx:1M | remote tx:1M di naikan ke 30M maka CPU naik Bandwidth juga naik
+			    
+APLIKASI WIFI 
+1. moho di https://moho.ruijienetworks.com/static/homepager/en/index.htm
+sangant bagus testing wifi
