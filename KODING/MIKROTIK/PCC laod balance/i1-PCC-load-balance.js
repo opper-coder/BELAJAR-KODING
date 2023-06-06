@@ -82,8 +82,65 @@ ada dua langkah yang bisa dilakukan yaitu: 1. IP kita buat scara statik 2. kita 
 - kalau mau load balance PCC tinggal lakukan seperti biasa
 
 */ =============================
+	
+ringkasan LOADBALANCE IP SAMA
+--------------------------------
+0. Interface > rename ether1-ISP1, ether2-ISP2
+1. IP > dhcp client > add > ether1-ISP1 > apply ok. (lakukan ISP2 sama)
+2. cek IP > DHCP client > dblclk ether1 > tab status > gateway (cek jg ether2 gatewaynya sama dengan ISP1 dan ISP2)
+3. kembali ke tab DHCP > ISP1 > add default route:no (lakukan ISP2 sama)
+4. IP > routes > add > 
+	dst address:0000/0 
+	gateway: 192.168.100.1%ether1-ISP1 > apply OK > (gateway dari status dhcpclient) 
+	- lakukan hal yang sm pd ether2
+	
+	
+ringkasan PCC MIKROTIK ID
+--------------------------------
+WAN
+1. namai port dan bridge
+2. DHCP client kedua ISP
+3. IP DNS 8.8.8.8, 8.8.4.4 allow remote
+6. IP > firewall NAT > srcnat, outinterface:ether1-WAN masquerade kedua ISP
+LAN
+4. IP LAN isi 192.168.50.1/24
+5. DHCP server > LAN > DNS ada 2 (dari gateway ISP1-2)
 
-/* ROLE MANGLE
+1. mark accept semua ether
+	mangle
+		general > chain: prerouting | dst adress: 10.10.1.0/24 (nol semua gimana???) | action: accept
+ 		(bikin masing2 ether123/24 bertahap)
+2. mark connection WAN
+	mangle
+		general> chain: prerouting | in. interface: ether1 action> action: mark connection | connection mark: new ISP1-20M | apply OK
+		ISP2 jg
+3. PCC LAN 
+	mangle
+		general> chain: prerouting | in. interface: bridge-LAN(mengarah ke local) advanced> PCC: both address | 2 | 0 --
+		-- action> action: mark conn | mark connetion: ISP1-20M | passtrhough: yes | apply ok
+		ISP2 juga: advanced> PCC: both address | 2 | 1 
+4. mark routing
+	mangle
+		general> chain: prerouting | in. interface: bridge-LAN(mengarah ke local) connection mark: ISP1 
+		-- action> action: mark routing | mark connetion: new ke-ISP1-20M | passtrhough: yes 
+		ISP2 juga: sesuai ISP
+5. output
+	mangle
+		general> chain: output | connection mark: ISP1-20M action> action: mark routing | new connection Mark: ke-ISP1-20M | pass trought: yes | apply OK
+		ISP2 juga: sesuai ISP
+6. config routing
+	IP > routes > add
+		Dst. address: 0.0.0.0/0 | Gateway: 10.10.1.1(mungkin pakai% disini kalauip sama, ikuti ini dulu, lalu cekidoc) | Check Gateway: ping | Routing mark: ke-ISP1-20M > Apply Ok
+		ISP2 juga: sesuai ISP
+7. keperluan fail over
+	- IP > routes > add
+		1. Dst. address: 0.0.0.0/0 | Gateway: gateway ISP2 | Distance:2 | Routing mark: ke-ISP1-20M > Apply Ok
+		2. Dst. address: 0.0.0.0/0 | Gateway: gateway ISP1 | Distance:2 | Routing mark: ke-ISP2-20M > Apply Ok
+		lihat ISP dan gateway tukar-menukar ikuti saja ini 
+
+*/ -----------------------------------
+
+/* ROLE MANGLE (ringkasan ada di atas ini)
 ---------------------------------------------------------------------------------------------------
 1. role1 NAT masquerade pada ether1 dan ether2
 	- IP > firewall > NAT > add
