@@ -24,6 +24,7 @@ APLIKASI WIFI
 sangant bagus testing wifi
 			    
 SPEED TEST VIA TERMINAL
+sumber: https://www.tembolok.id/cara-speedtest-di-mikrotik/
 --------------------------------------------------
 Prinsipnya kita download file dari mikrotik menggunakan terminal menggunakan perintah fetch.
 ketikan saja kata kunci di google “test file download” atau “test file download indonesia”
