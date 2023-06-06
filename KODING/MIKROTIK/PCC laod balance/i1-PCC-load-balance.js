@@ -131,13 +131,13 @@ LAN
 		ISP2 juga: sesuai ISP
 6. config routing
 	IP > routes > add
-		Dst. address: 0.0.0.0/0 | Gateway: 10.10.1.1 | Check Gateway: ping | Routing mark: ke-ISP1-20M > Apply Ok
+		Dst. address: 0.0.0.0/0 | ISP1 Gateway: 10.10.1.1 | Check Gateway: ping | Routing mark: ke-ISP1-20M > Apply Ok
 		ISP2 juga: sesuai ISP
-6.1 config routing(keperluan IP gateway sama)
+6.1 config routing (untuk ISP gateway sama )
 	IP > routes > add
-		Dst. address: 0.0.0.0/0 | Gateway: 10.10.1.1(pakai%ether1-ISP1) | Check Gateway: ping | distance:1 | Routing mark: ke-ISP1-20M > Apply Ok
-		ISP2 juga: sesuai ISP
-7. keperluan fail over
+		Dst. address: 0.0.0.0/0 | Gateway: 10.10.1.1(pakai%ether1) | Check Gateway: ping | distance:1(di kedua ISP) | Routing mark: ke-ISP1-20M > Apply Ok
+		ISP2 juga: sesuai ISP 
+7. keperluan failover
 	- IP > routes > add
 		1. Dst. address: 0.0.0.0/0 | Gateway: gateway ISP2 | Distance:2 | Routing mark: ke-ISP1-20M > Apply Ok
 		2. Dst. address: 0.0.0.0/0 | Gateway: gateway ISP1 | Distance:2 | Routing mark: ke-ISP2-20M > Apply Ok
