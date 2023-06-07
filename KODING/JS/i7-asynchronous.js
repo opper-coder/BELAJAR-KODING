@@ -26,9 +26,9 @@ assinchronous callback
 */
 	/* contoh callback:
 	---------------- */
-		function pesan(callback){ const nama = prompt("masukkan nama :"); callback(nama); }	// func konsumen
-		function halo(nama){ alert(`halo nama saya ${nama}`); }					// function biasa
-		pesan(halo);
+		function pesan(callback){ const nama = prompt("masukkan nama :"); callback(nama); }	// 3. function pesan menerima args callback, aksi , "callback dijalankan dari args" bukan dari luar
+		function halo(nama){ alert(`halo nama saya ${nama}`); }					// 2. function biasa yang dijadikan params (jadi callback)
+		pesan(halo); 										// 1. pesan di panggil dengan params callbachalo
 																							// panggil dengan param f biasa
 	/* atau lebih singkat */
 		function pesan(callback){ const nama = prompt("masukkan nama :"); callback(nama); }	
