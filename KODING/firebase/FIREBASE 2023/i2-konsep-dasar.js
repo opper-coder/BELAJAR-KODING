@@ -78,7 +78,7 @@ Firebase mendukung SDK seluler/web dan library klien server.
 - referensi
 -------------------------------------------
 - referensi dokumen (mirip url db menuju ke row data)
-	import { doc, collection } from "firebase/firestore";			// doc() sebagai penunjuk
+	import { doc, collection } from "firebase/firestore";			// doc() sebagai penunjuk ref(url) ke document (row), collection, ke koleksi (tabel)
 	const siswa1 = doc(db, 'siswa', 'andy'); 				// bentuknya ke row data andi
 	const siswa1 = doc(db, 'siswa/andy'); 					// atau pakai slash
 	const siswa1 = doc(db, "siswa", "kelas", "jurusan", "fisika"); 		// bersarang
