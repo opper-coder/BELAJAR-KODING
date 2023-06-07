@@ -13,16 +13,14 @@ PERISTIWA UNTUK PERUBAHAN LOKAL (cache)
 ---------------------------------------
 - cache di buat agar cepat, update data yang berubah saja, murah, hemat batery, CPU, MEM, dan tetap realtime
 - jika anda memerlukan cache maka lihat proses berikut:
-saat anda meminta data di firestore: pertama kali yang merespon adalah "pemroses data", 
-pemroses ini yang menulis data untuk di tampilkan
-namun di dalam menyediakan data yang di tulis data diambil dari cache terlebih dahulu jika ada, sbg kondisi awal, 
-lalu pemroses ini melakukan request ke db dan melakukan ceking ada data baru atau tidak jika ada ambil, jika tidak biarkan.
-nah saat data di tampilkan, kita bisa tahu data itu bersumber dari cache atau db. 
-menggunakan properti metadata.hasPendingWrites. (bernilai true, false, data di cache berubah atau tidak)
-Anda dapat menggunakan properti ini untuk menentukan sumber peristiwa yang diterima oleh pemroses snapshot:
-jika kalian membutuhkan properti tsb, jika tidak ya biarkan saja,  properti ini tidak usah di pakai. 
-kecuali pada query data yang benar2 diperlukan data yng valid dari db
-
+    - saat anda meminta data di firestore: pertama kali yang merespon adalah "pemroses data", 
+    - pemroses ini yang menulis dan membaca data di mem cache, jadi tidak langsung mengambil data dari db kalau pake cache
+    - saat menyediakan data untuk di tampilkan, pemroses ngambil dulu dari cache jika ada, lalu di tampilkan sbg kondisi awal, 
+    - lalu pemroses ini melakukan sync ke db dan melakukan ceking ada data baru atau tidak jika ada ambil, jika tidak biarkan.
+    - nah saat data di tampilkan, kita bisa tahu status data itu bersumber dari cache atau sudah sync db. 
+        menggunakan properti metadata.hasPendingWrites. (bernilai true, false)
+        true artinya: ada perubahan dan menunggu sync, false artinya: data cache == db dan tidak menunggu perubahan
+        
 import { doc, onSnapshot } from "firebase/firestore"; 
 const unsub = onSnapshot(doc(db, "cities", "SF"), (doc) => {            // on snapshot() di panggil maka di dalamnya ada proses: tampilkan data dari cache, untuk di konsumsi local 
   const source = doc.metadata.hasPendingWrites ? "Local" : "Server";    // saat di "tulis"(dapatkan data) di cache local data akan di periksa oleh sebuah "pemroses" ini dari local atau sudah synchrone db, sambil membandingkan data ke db
