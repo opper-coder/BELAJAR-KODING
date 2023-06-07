@@ -31,8 +31,8 @@ assinchronous callback
 		pesan(halo); 										// 1. pesan di panggil dengan params callbachalo
 
 	/* atau lebih singkat */
-		function pesan(callback){ const nama = prompt("masukkan nama :"); callback(nama); }	
-		pesan( nama => { alert(`halo nama saya ${nama}`); } );
+		function pesan(callback){ const nama = prompt("masukkan nama :"); callback(nama); } 	// 2. fungsi penerima memproses callback	
+		pesan( nama => { alert(`halo nama saya ${nama}`); } ); 					// 1. panggil fungsi dengan callback
 
 /*
 Synchronous: 
