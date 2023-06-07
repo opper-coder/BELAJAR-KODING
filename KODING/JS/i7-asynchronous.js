@@ -80,7 +80,14 @@ function dafault asynchronous:
 			console.log("program di jalankan") 	// ga ada yang di tunggu jalankan juga (asynchronous)
 		}
 		jalankan()
-
+	/* contoh penulisan "Asyncrhonous"
+	------------------ */
+		function jalankan(){
+			console.log("start") 
+			setTimeout(() => console.log("halo async"), 3000);
+			console.log("end") 	
+		}
+		jalankan()
 /* 
 promise():
 	adalah :
