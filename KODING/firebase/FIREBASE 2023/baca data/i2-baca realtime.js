@@ -11,6 +11,8 @@ const unsub = onSnapshot(doc(db, "cities", "SF"), (doc) => {    // panggil onSna
 
 PERISTIWA UNTUK PERUBAHAN LOKAL (cache)
 ---------------------------------------
+- cache di buat agar cepat, update data yang berubah saja, murah, hemat batery, CPU, MEM, dan tetap realtime
+- jika anda memerlukan cache maka lihat proses berikut:
 saat anda meminta data di firestore: pertama kali yang merespon adalah "pemroses data", 
 pemroses ini yang menulis data untuk di tampilkan
 namun di dalam menyediakan data yang di tulis data diambil dari cache terlebih dahulu jika ada, sbg kondisi awal, 
