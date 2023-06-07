@@ -32,7 +32,7 @@ assinchronous callback
 
 	/* atau lebih singkat */
 		function pesan(callback){ const nama = prompt("masukkan nama :"); callback(nama); } 	// 2. fungsi pemroses callback di proses, termasuk mengisi parameter	
-		pesan( nama => { alert(`halo nama saya ${nama}`); } ); 					// 1. panggil fungsi dengan callback
+		pesan( nama => { alert(`halo nama saya ${nama}`); } ); 					// 1. panggil fungsi dengan argument callback
 
 /*
 Synchronous: 
