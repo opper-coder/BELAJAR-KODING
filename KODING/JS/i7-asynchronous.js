@@ -84,7 +84,7 @@ function dafault asynchronous:
 	------------------ */
 		function jalankan(){
 			console.log("start") 
-			setTimeout(() => console.log("halo async"), 3000);
+			setTimeout(() => console.log("halo async"), 3000);	// callback bertempat di async
 			console.log("end") 	
 		}
 		jalankan()
