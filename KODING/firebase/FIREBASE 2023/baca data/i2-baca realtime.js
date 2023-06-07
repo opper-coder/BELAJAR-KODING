@@ -36,15 +36,6 @@ const unsub = onSnapshot(doc(db, "cities", "SF"), (doc) => {            // 1. pa
 
 PERISTIWA UNTUK PERUBAHAN METADATA (status cache dan db)
 ---------------------------------------
-Saat memproses perubahan pada sebuah dokumen, koleksi, atau kueri, 
-Anda dapat meneruskan opsi untuk mengontrol tingkat perincian peristiwa yang akan diterima pemroses.
-Secara default, pemroses tidak akan diberi tahu mengenai perubahan yang hanya memengaruhi metadata. 
-Pertimbangkan apa yang terjadi saat aplikasi Anda menulis sebuah dokumen baru:
-Peristiwa perubahan segera dipicu dengan data baru. 
-Dokumen belum ditulis ke backend sehingga flag "pending writes" bernilai true.
-Dokumen ditulis ke backend. Backend memberi tahu klien bahwa penulisan berhasil. 
-Tidak ada perubahan pada data dokumen, tetapi ada perubahan metadata karena flag "pending writes" sekarang memiliki nilai false.
-Jika Anda ingin menerima peristiwa snapshot saat metadata kueri atau dokumen berubah, teruskan objek opsi pemrosesan saat menambahkan pemroses:
 - saat anda melakukan perubahan CRUD dokumen atau koleksi, anda dapat meneruskan(callback) terhadap rincian perubahan metadata,
 - dafaultnya pemroses tidak di beritahu tentang metadata, tapi jika anda menginginkan hal2 berikut
     - saat ada data baru, tulis data ke backend ketika status hasPendingWrites:true (saat menunggu sync), saat tidak sync data tidak usah ditulis, efisient
