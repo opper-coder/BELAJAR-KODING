@@ -35,6 +35,9 @@ assinchronous callback
 		pesan( nama => { alert(`halo nama saya ${nama}`); } ); 					// 1. panggil fungsi dengan argument callback
 
 /*
+kesimpulan 
+	- jika function di panggil dalam bracket sebuah function maka disebut synchronous
+	- jika function di panggil dalam argument tanpa kurung() maka disebut asynchronous (biasanya pakai arrow)
 Synchronous: 
 	Program dalam JavaScript secara default akan dieksekusi baris per baris
 	Secara default, proses di JavaScript akan dieksekusi secara Synchronous, 
@@ -88,10 +91,10 @@ function dafault asynchronous:
 			console.log("end") 	
 		}
 		jalankan()
-	/* kesimpulan
-        ------------------ */
+/* kesimpulan 
 	- jika function di panggil dalam bracket sebuah function maka disebut synchronous
-	- jika function di panggil dalam argument tanpa kurung() maka disebut asynchronous (biasanya pakai arrow)
+	- jika function di panggil dalam argument tanpa kurung() maka disebut asynchronous (biasanya pakai arrow) 
+	*/
 /* 
 promise():
 	adalah :
