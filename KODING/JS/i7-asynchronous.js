@@ -88,6 +88,10 @@ function dafault asynchronous:
 			console.log("end") 	
 		}
 		jalankan()
+	/* kesimpulan
+        ------------------ */
+	- jika function di panggil dalam bracket sebuah function maka disebut synchronous
+	- jika function di panggil dalam argument tanpa kurung() maka disebut asynchronous (biasanya pakai arrow)
 /* 
 promise():
 	adalah :
