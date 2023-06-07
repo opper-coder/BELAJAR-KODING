@@ -36,8 +36,8 @@ assinchronous callback
 
 /*
 kesimpulan 
-	- jika function di panggil dalam bracket sebuah function maka disebut synchronous
-	- jika function di panggil dalam argument tanpa kurung() maka disebut asynchronous (biasanya pakai arrow)
+	- jika function di panggil dalam bracket sebuah function maka disebut synchronous (blocking)
+	- jika function di panggil dalam argument tanpa kurung() maka disebut asynchronous (biasanya pakai arrow)(non-blocking)
 Synchronous: 
 	Program dalam JavaScript secara default akan dieksekusi baris per baris
 	Secara default, proses di JavaScript akan dieksekusi secara Synchronous, 
@@ -53,10 +53,11 @@ Asynchronous:
 kenapa bisa:
 	ya di browser modern mesin ada dua: 1 mesin sync, 2 mesin async. 
 	jadi bisa berjalan bersamaan tanpa mengganggu
+	ada gaya penulisan asyncronous dengan gaya synchronous yaitu tidak dalam callback melainkan async await
 	hanya saja tentukan mana "bagian yang async", karena defaultnya "sync"
 function dafault asynchronous: 
 	ada banyak function/method async bawaan java scrip contoh
-	setTimeOut(), setInterval(), promise(),XMLHttpRequest(), dll
+	setTimeOut(), setInterval(), promise(), XMLHttpRequest(), fetch() dll
 */
 
 	/* contoh function dafault asynchronous
