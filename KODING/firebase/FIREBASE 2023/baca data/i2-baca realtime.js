@@ -1,8 +1,8 @@
 BACA DATA REALTIME (realtime basic)
 ---------------------------------------
 onSnapshot() itu ada mekasnisme realtime di dalamnya
-dengan metode onSnapshot(). callback memberikan snapshot isi dokumen tunggal saat ini. (dokumen jamak dalam collection nanti)
-Kemudian, setiap berubah, panggilan lain akan memperbarui snapshot.
+dengan metode onSnapshot(). callback memberikan snapshot isi dokumen tunggal saat ini. (dokumen jamak dalam collection, nanti)
+Kemudian, setiap berubah, panggilan lain (pemroses) akan memperbarui snapshot.
 
 import { doc, onSnapshot } from "firebase/firestore";           // import
 const unsub = onSnapshot(doc(db, "cities", "SF"), (doc) => {    // panggil onSnapshot(()=> hasil) ini sudah realtime (basic)
