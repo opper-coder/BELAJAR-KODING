@@ -11,12 +11,12 @@ const unsub = onSnapshot(doc(db, "cities", "SF"), (doc) => {    // panggil onSna
 
 PERISTIWA UNTUK PERUBAHAN LOKAL (cache)
 ---------------------------------------
-- cache di buat agar cepat, update data yang berubah saja, murah, hemat batery, CPU, MEM, dan tetap realtime
-- jika anda memerlukan cache maka lihat proses berikut:
+- cache di buat agar: cepat, update data yang berubah saja, murah, hemat batery, CPU, MEM, dan tetap realtime
+- jika anda memerlukan cache pada onSnapshot, maka lihat proses berikut:
     - saat anda meminta data di firestore: pertama kali yang merespon adalah "pemroses data", 
-    - pemroses ini yang menulis dan membaca data di mem cache, jadi tidak langsung mengambil data dari db kalau pake cache
+    - pemroses ini yang menulis dan membaca data di mem cache, jadi tidak langsung mengambil data dari db
     - saat menyediakan data untuk di tampilkan, pemroses ngambil dulu dari cache jika ada, lalu di tampilkan sbg kondisi awal, 
-    - lalu pemroses ini melakukan sync ke db dan melakukan ceking ada data baru atau tidak jika ada ambil, jika tidak biarkan.
+    - lalu pemroses ini melakukan sync ke db dan melakukan ceking ada data baru atau tidak jika ada ambil, jika tidak, biarkan cache saja.
     - nah saat data di tampilkan, kita bisa tahu status data itu bersumber dari cache atau sudah sync db. 
         menggunakan properti metadata.hasPendingWrites. (bernilai true, false)
         true artinya: ada perubahan dan menunggu sync, false artinya: data cache == db dan tidak menunggu perubahan
