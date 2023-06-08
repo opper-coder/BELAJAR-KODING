@@ -60,13 +60,13 @@ const unsub = onSnapshot(doc(db, "cities", "SF"), (doc) => {            // 1.
   console.log(source, " data: ", doc.data());                           // 2. 
 });  
 
-
+============
 Catatan: Jika hanya ingin mengetahui kapan penulisan selesai, 
 Anda dapat memproses callback penyelesaian, tanpa harus menggunakan hasPendingWrites. 
 Pada JavaScript, gunakan Promise yang ditampilkan dari operasi tulis Anda dengan menambahkan callback .then(). 
 Pada Swift, teruskan callback penyelesaian ke fungsi penulisan Anda. mirip async js cekidoc
-
 .then(response => console.log(response))
+============
 
 MEMPROSES BEBERAPA DOKUMEN DALAM KOLEKSI (query menggunakan where)
 ---------------------------------------
