@@ -29,11 +29,11 @@ FirebaseUI Auth:
 
 FIREBASE SDK AUTHENTICATION:
 -------------------------------------------------
-- email, sandi							: management user, pengiriman email, reset sandi.
-- identitas gabungan					: id user dg penyedia identitas gabungan. memungkinkan pengguna untuk login dengan akun Google, Facebook, Twitter, dan GitHub mereka.
-- nomor telepon							: mengirim SMS ke pengguna
-- integrasi sistem autentikasi khusus	: dg firestore, storage, function dll.
-- Autentikasi anonim					: Menggunakan fitur yang memerlukan autentikasi tanpa mewajibkan pengguna untuk login terlebih dahulu dengan membuat akun anonim sementara
+	- email, sandi				: management user, pengiriman email, reset sandi.
+	- identitas gabungan			: id user dg penyedia identitas gabungan. memungkinkan pengguna untuk login dengan akun Google, Facebook, Twitter, dan GitHub mereka.
+	- nomor telepon				: mengirim SMS ke pengguna
+	- integrasi sistem autentikasi khusus	: dg firestore, storage, function dll.
+	- Autentikasi anonim			: Menggunakan fitur yang memerlukan autentikasi tanpa mewajibkan pengguna untuk login terlebih dahulu dengan membuat akun anonim sementara
 
 FIREBASE AUTHENTICATION DG IDENTITY PLATFORM
 -------------------------------------------------
