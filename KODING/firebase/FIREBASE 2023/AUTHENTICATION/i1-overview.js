@@ -2,9 +2,9 @@ FIREBASE AUTHENTICATION
 -------------------------------------------------
 - Identitas pengguna diperlukan setiap aplikasi
 - firebase menyediakan backend autentikasi:
-	email, pass 
-	HP, pass
-	Google, Facebook, 
+	- email, pass 
+	- HP, pass
+	- Google, Facebook, dll
 - bisa pakai SDK, atau
 - bisa pilih Library UI
 - bisa di kolaborasikan dengan kemanan layanan: misal rules firestore
