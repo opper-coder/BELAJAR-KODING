@@ -1,4 +1,0 @@
-- Mengelola Cloud Firestore dengan Firebase Console       -> navigasi dashboard
-- Mengekspor dan mengimpor data                           -> untuk keperluan backup, migrasi, caching, semua atau sebagian data
-- Memindahkan data antar-project                          -> export project asal, simpan di cloud storage, import ke project tujuan
-- 
