@@ -42,7 +42,7 @@ FIREBASE AUTHENTICATION DG IDENTITY PLATFORM
 - Anda akan mendapatkan akses langsung ke berbagai fitur seperti logging
 - Dengan beberapa kode tambahan, Anda dapat menambahkan autentikasi multi-faktor, 
 	fungsi pemblokiran, serta dukungan untuk penyedia SAML dan OpenID Connect.
-- saat upgrade akan mengubah skema biaya spark 3000 UA 
+- saat upgrade akan mengubah skema biaya spark 3000 UA, cekidoc
 
 FITUR
 ------------------------------------------------- 
