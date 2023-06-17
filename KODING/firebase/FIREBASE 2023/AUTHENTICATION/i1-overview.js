@@ -91,3 +91,23 @@ ALUR IMPLEMENTASI
 	- Menyiapkan metode login	: sda
 	- alur UI untuk metode login: Untuk login alamat email dan sandi, implementasikan alur yang meminta pengguna menulis alamat email dan sandinya. dst 
 	- dan lakukan penerusan ke Authentication 
+=================================================
+INTEGRASI
+-------------------------------------------------
+SAYA SUDAH MEMILIKI SISTEM AUTENTIKASI
+-------------------------------------------------
+gunakan "Autentikasi Kustom", 
+anda membuat token Firebase untuk pengguna di backend, lalu menggunakan token dari klien untuk melakukan autentikasi dengan Firebase
+
+SAYA INGIN MEM-BUILD SISTEM AUTENTIKASI DENGAN FIREBASE
+-------------------------------------------------￼
+anda bisa memilih gunakan "firebaseUI" dan "firebase SDK"
+
+SAYA INGIN MENGHADIRKAN PENGALAMAN PENGGUNA YANG BERAGAM SEBELUM LOGIN
+-------------------------------------------------￼
+Dengan "login" anonim, Anda membuat akun sesi tunggal sementara, yang dapat digunakan seperti akun sebenarnya, lalu teruskan
+
+SAYA INGIN MENGAKSES LAYANAN FIREBASE DARI BACKEND SAYA￼
+-------------------------------------------------￼
+Anda tidak perlu menggunakan Firebase Authentication. Sebagai gantinya, gunakan Admin SDK. karena untuk keperluan administrator backend saja
+
