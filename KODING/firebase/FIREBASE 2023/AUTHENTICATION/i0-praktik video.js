@@ -13,12 +13,11 @@ FIREBASE BASIC VIDEO
 	const app = initializeApp(firebaseConfig); 									// init app
 	const auth = getAuth(app); 													// init auth
 
-
 LOGIN
 -------------------------------------------------
-untuk sementara kita buatkan akun email dan pass, di fbase console
+untuk sementara kita buatkan (register) akun email dan pass, di fbase console,
 selanjutnya nanti buatkan form UI untuk register.
-dan juga buatkan alur email menggunakan verifikasi email supaya email benar2 ada 
+dan juga buatkan alur email menggunakan verifikasi email supaya email benar2 ada dengan verify
 
 	import { getAuth, signInWithEmailAndPassword } from "firebase/auth"; 		// import login juga
 
