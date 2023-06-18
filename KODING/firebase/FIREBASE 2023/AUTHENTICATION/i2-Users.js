@@ -5,9 +5,9 @@ dalam sebuah aplikasi ada yang disebut user, yaitu seseorang yang melakukan regi
 	 				  secara independen di simpan dalam db, yg dapat di edit lagi, (editable)
 	- user account 	: adalah user teregistrasi melalui autentication, yang nanti user object akan di afiliasikan ke user account ini(uneditable, bisa tapi perlakuan khusus)  
 prosesnya
-	1. registrasi account: misalnya input email dan password (tergantung metode)
-	2. account akan di simpan sbg user account di AUTENTICATION, dan tidak dapat menambah properti lain
-	3. jika anda akan menambahkan properti tambahan, anda bisa menyimpanya di firestore sbg user object (user profile) yang di hubungkan dg account
+	1. registrasi account: misalnya input kredensial email dan password (tergantung metode)
+	2. kredensial akan di simpan sbg user account di AUTENTICATION, dan tidak dapat menambah properti lain
+	3. jika anda akan menambahkan properti tambahan, anda bisa menyimpanya di firestore sbg user object (user profile) yang di hubungkan dg kredensial account
 
 METODE MASUK
 -------------------------------------------------
