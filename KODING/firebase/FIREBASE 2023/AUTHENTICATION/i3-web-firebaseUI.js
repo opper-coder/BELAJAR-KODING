@@ -9,7 +9,6 @@ INITIALIZE
 -------------------------------------------------
 lakukan instalasi daasar firebase lalu inisialisasi 
 
-
 import { initializeApp } from "firebase/app";                   //  - import firebase 
 import { getAuth } from "firebase/auth";                        // 1. import auth
 
