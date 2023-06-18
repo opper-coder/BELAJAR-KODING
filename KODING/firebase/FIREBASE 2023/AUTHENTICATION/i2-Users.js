@@ -12,12 +12,13 @@ prosesnya
 METODE MASUK
 -------------------------------------------------
 - dalam satu account: bisa dikaitkan pintu masuk dengan beberapa metode mis: "emeil pass", "HP" juga "google" dll
-- "Instance users" melacak setiap penyedia yang ditautkan ke pengguna. Ini memungkinkan Anda memperbarui properti profil kosong menggunakan informasi yang diberikan oleh penyedia.
+- "Instance users" melacak setiap penyedia yang ditautkan ke pengguna. 
+	Ini memungkinkan Anda memperbarui properti profil yg masih kosong menggunakan informasi yang diberikan oleh penyedia.
 
 PENGGUNA SAAT INI (SESSION USER AKTIF)
 -------------------------------------------------
-- Saat user register atau login, user tersebut menjadi user instance Auth "saat ini"(current user). 
-- Instance mempertahankan status user, bahkan saat di browser di refresh atau di restart(karena terjadi di backend)
+- Saat user register atau login, user tersebut menjadi user instance Auth "saat ini"(current user)(ini terjadi di backend)
+- Instance mempertahankan status user, bahkan saat di browser di refresh atau di restart
 - Saat pengguna logout, instance Auth berhenti mempertahankan(di hapus dari session); 
 - perhatikan:
 - saat tidak ada pengguna saat ini. Namun, instance pengguna tetap berfungsi sepenuhnya: 
