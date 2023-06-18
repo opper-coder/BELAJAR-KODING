@@ -88,8 +88,8 @@ ALUR IMPLEMENTASI
 	- Menyesuaikan UI login 	: custom FirebaseUI, fork kode di GitHub untuk menyesuaikan pengalaman login lebih jauh.
 	- Menggunakan FirebaseUI	: untuk menjalankan alur login,	Impor library FirebaseUI, tentukan metode login yang ingin Anda dukung, lalu inisialisasi alur login FirebaseUI.
 - Menggunakan Firebase Authentication SDK
-	- Menyiapkan metode login	: sda
-	- alur UI untuk metode login: Untuk login alamat email dan sandi, implementasikan alur yang meminta pengguna menulis alamat email dan sandinya. dst 
+	- Menyiapkan metode login	: buat form email, pass dll
+	- alur UI untuk metode login	: Untuk login alamat email dan sandi, implementasikan alur yang meminta pengguna menulis alamat email dan sandinya. dst 
 	- dan lakukan penerusan ke Authentication 
 =================================================
 INTEGRASI
