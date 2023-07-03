@@ -7,17 +7,17 @@ muilai dulu dari
     5. kalau di butuh kan gunakan dashboard diagram, sbg langkah terakhir
 
 Navigasi
-1. session
+1. session (berupa UI praktis dan nenyeluruh)
     - admin account
     - location
     - periode/tanggal
     - paket kategori
     - list content
-2. Navigasi otorization (hidden/show,enable/disable)
+2. Navigasi otorization (berupa hidden/show, enable/disable, halaman dedicated)
     - root
     - superadmin
     - admin
     - seller
     - enduser
-3. navigasi halaman:
+3. navigasi halaman (berupa UI tabel, tree, modal, button dll)
     - Navigasi Items
