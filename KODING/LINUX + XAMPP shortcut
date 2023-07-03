@@ -5,7 +5,6 @@ mengatasi initrams gagal booting di linux ikuti 2 langkah berikut
 2. (initramfs) :> fsck /dev/sda7 -y     // lakukan filesystem check, dan yes2
 3. tunggu sampai selesai
 
-
 DEEPIN SHORTCUT
 ---------------------------------------------------
 
@@ -16,13 +15,11 @@ super + E         = filemanager
 ctrl + alt + t    = terminal
 
 XAMPP
-
+---------------------------------------------------
 sudo /opt/lampp/lampp start
 sudo /opt/lampp/lampp stop
 
 localhost atau 
-
-
 
 download XAMPP di wesite, berikut cara install nya
 ---------------------------------------------------
