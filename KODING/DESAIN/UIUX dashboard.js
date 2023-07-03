@@ -1,10 +1,11 @@
+khusus untuk 
+
 Navigasi
 1. session
     - admin account
-    - root location
-    - tanggal
+    - location
+    - periode/tanggal
     - paket kategori
-    - kategori
     - list content
 2. navigasi session:
     - Navigasi Items root
