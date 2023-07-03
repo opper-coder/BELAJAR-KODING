@@ -1,4 +1,13 @@
+INITRAMS
+---------------------------------------------------
+mengatasi initrams gagal booting di linux ikuti 2 langkah berikut 
+1. (initramfs) :> blkid                 // cari tahu di mana root system : lihat di situ terlihat partisi seperti sap ext4 dll
+2. (initramfs) :> fsck /dev/sda7 -y     // lakukan filesystem check, dan yes2
+3. tunggu sampai selesai
+
+
 DEEPIN SHORTCUT
+---------------------------------------------------
 
 super <>          = pindah workspace
 super alt <>      = pindah aplikasi
