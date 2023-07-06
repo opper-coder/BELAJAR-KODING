@@ -62,6 +62,7 @@ DAFTAR ISI:
 	panggil sekali atau berkali2 silahkan
 	--------------------------------------------------------- */
 		tampilPesan("aqil");	tampilPesan("aqil", "izza");	
+		tampilpesan();  kalau tidak mengirim param kurung tetap di buat "invoke"
 
 	/* function expression/anonimuous: 
 	---------------------------------------------------------
