@@ -3,7 +3,7 @@ DAFTAR ISI:
 - pengenalan						-> pengertian dan konsep
 - BASIC: ----->								
 	- basic						-> function nama(){}	
-	- call/panggil 					-> tampilPesan("aqil");
+	- call/panggil 					-> tampilPesan("aqil"); yaitu pakai invoke()
 	- function expression/anonimuous: 		-> const nama = function(){} 
 	- arrow function
 		- basic 				-> const nama = (param) => {action}	
