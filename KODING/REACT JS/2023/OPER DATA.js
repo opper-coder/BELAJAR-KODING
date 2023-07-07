@@ -45,6 +45,7 @@ const Child = (props) => {                       // 2. child
 }
 
 Ubah data di state 
+kasus1 
 ------------------------------------------
 Ubah data di state hanya berlaku sekali, jika lebih sekali 
 sebaiknya pakai callback agar efektif
@@ -58,7 +59,8 @@ export default function App() {
   };
   return <>gunakan datanya disini!</>;
 }
-
+kasus2
+-------------------------------------------
 import { useState } from "react";
 
 export default function App() {
@@ -78,8 +80,21 @@ export default function App() {
 
   return <>gunakan datanya disini!</>;
 }
-
-
+kasus2 yg benar
+-----------------------------------------
+import { useState } from "react"; 
+export default function App() {
+  const [isNotif, setIsNotif] = useState(false);   // 1. state awal: false    
+  const notif2 = () => { 
+    setIsNotif(!isNotif);                          // 2. ubah state pertama langsung state: true
+    setTimeout(() => {                            
+      setIsNotif((state) => {                      // 3. ubah state kedua dalam args callback 
+        !isNotif;                                        hasilnya bisa: false kalau tidak dalam callback hasilnya tetap true
+      });
+    }, 2000);
+  };
+  return <>gunakan datanya disini!</>;
+}
 
 
 
