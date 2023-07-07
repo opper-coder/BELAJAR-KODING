@@ -1,3 +1,68 @@
+Ringkasan
+--------------------------------------------------------------------------------------------------
+kirim data dari parent ke child
+-------------------------------
+const Parent = () => {                           // 1. komponen parent
+ return
+    <>
+        <Child name="aqil">                      // 3. panggil komponen (oper props ke child)
+    </>  
+ }
+ -----
+const Child = (props) => {                       // 2. komponen child (tangkap data dengan props)
+ return
+ <>
+  <div>"Halo nama saya "{props.name}</div>       // 4. gunakan props
+ </>
+}
+kirim data dari child ke parent
+-------------------------------
+ const Parent = () => {                          // 1. parent 
+  const operAlamat = (terimaData) => {           // 3. bikin fungsi penerima data dari child (pada args)
+    return
+      <>
+        "alamat saya" {terimaData}               // 6. args di terima dari child bisa di gunakan di parent ini 
+      </>
+    }
+  return
+  <>
+        <Child name="aqil" alamat={operAlamat}>  // 4. kirim props dari parent ke child berupa fungsi tanpa invoke()
+  </>  
+ }
+ -----
+const Child = (props) => {                       // 2. child
+ return
+ <>
+  <div>Halo nama saya {props.name} dan {props.operAlamat("saiti")}</div>  // 5. ambil props dari parent berupa function(sambil kirim arg), 
+ </>                                                                            
+}
+ubah state tunggal
+-------------------------------
+import { useState } from "react";
+export default function App() {
+  const [isNotif, setIsNotif] = useState(false);      // 1. jika kita punya state
+  const notif = () => {
+    setIsNotif(!isNotif);                             // 2. kita bisa ubah dengan fungsi pengubah
+  };
+  return <div onClick={notif}>gunakan datanya disini!{isNotif}</div>;
+}
+ubah state berkali2
+-------------------------------
+import { useState } from "react"; 
+export default function App() {
+  const [isNotif2, setIsNotif2] = useState(false);   // 1. state nilaiawal: false    
+  const notif2 = () => { 
+    setIsNotif2(!isNotif2);                          // 2. ubah state pertama langsung ke state: true
+    setTimeout(() => {                            
+      setIsNotif2(state => !isNotif2);               // 3. ubah state kedua dalam args callback 
+    }, 2000);                                            hasilnya bisa: false kalau tidak dalam callback hasilnya tetap true
+  };
+  return <div onClick={notif2}>gunakan datanya disini!{isNotif2}</div>;
+}
+
+ 
+--------------------------------------------------------------------------------------------------
+
 sumber youtube: 
 1. Semmi Verian > [NGE-React] #17 Mengirimkan data dari child ke parent component
 2. dea afrizal > Code Yang Harus React JS Developer Ketahui
