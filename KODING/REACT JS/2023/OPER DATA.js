@@ -4,30 +4,34 @@ sumber youtube:
 
 kirimdata dari parent ke child
 ------------------------------------------
- const Parent = () => {                   // komponen parent nya
+ const Parent = () => {                   // 1. komponen parent nya
   return
   <>
-   <Child name="aqil">                    // panggil komponen dengan oper data ke child
+   <Child name="aqil">                    // 3. panggil komponen dengan oper data ke child
   </>  
  }
  -----
-const Child = (props) => {                // komponen child tangkap data dengan props
+const Child = (props) => {                // 2. komponen child tangkap data dengan props
  return
  <>
-  <div>Halo nama saya {props.name}</div>  // gunakan props
+  <div>"Halo nama saya "{props.name}</div>  // 4. gunakan props
  </>
 }
 
 kirimdata dari Child ke Parent
 ------------------------------------------
- const Parent = () => {
+ const Parent = () => {                   // 1. parent 
   return
   <>
    <Child name="aqil"> 
   </>  
  }
  -----
-const Child = (props) => {
+const Child = (props) => {                // 2. child
+    const operData = () => {
+        "halo yang ini nama saya"
+    }
+    
  return
  <>
   <div>Halo nama saya {props.name}</div>
