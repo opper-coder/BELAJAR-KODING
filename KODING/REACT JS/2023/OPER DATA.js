@@ -72,9 +72,7 @@ export default function App() {
     }, 2000);                                             padahal sudah di ubah ppertama, ubahan kedua menganggap ubahan pertama tidak terjadi
     ---
     setTimeout(() => {                              // hal itu terjadi karena ubahan kedua mengambial dari state awal bukan dari state terakhir
-      setIsNotif((state) => {                       // supaya dapat mengambil dari state terbaru, ubah state dalam params callback
-        !isNotif;
-      });
+      setIsNotif((state) => !isNotif;    // supaya dapat mengambil dari state terbaru, ubah state dalam params callbac
     }, 2000);
   };
 
@@ -88,16 +86,11 @@ export default function App() {
   const notif2 = () => { 
     setIsNotif(!isNotif);                          // 2. ubah state pertama langsung state: true
     setTimeout(() => {                            
-      setIsNotif((state) => {                      // 3. ubah state kedua dalam args callback 
-        !isNotif;                                        hasilnya bisa: false kalau tidak dalam callback hasilnya tetap true
-      });
-    }, 2000);
+      setIsNotif(state => !isNotif);              // 3. ubah state kedua dalam args callback 
+    }, 2000);                                            hasilnya bisa: false kalau tidak dalam callback hasilnya tetap true
   };
   return <>gunakan datanya disini!</>;
 }
-
-
-
 
 
 
