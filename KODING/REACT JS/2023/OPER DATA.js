@@ -18,13 +18,13 @@ const Child = (props) => {                       // 2. komponen child tangkap da
  </>
 }
 
-kirimdata dari Child ke Parent
+kirim data dari Child ke Parent
 ------------------------------------------
  const Parent = () => {                          // 1. parent 
   const operAlamat = (terimaData) => {
     return
       <>
-        "halo yang ini nama saya" {terimaData} 
+        "alamat saya" {terimaData} 
       </>
     }
   return
@@ -36,7 +36,7 @@ kirimdata dari Child ke Parent
 const Child = (props) => {                       // 2. child
  return
  <>
-  <div>Halo nama saya {props.name} {props.operAlamat("saiti")}</div>
+  <div>Halo nama saya {props.name} dan {props.operAlamat("saiti")}</div>
  </>
 }
 
