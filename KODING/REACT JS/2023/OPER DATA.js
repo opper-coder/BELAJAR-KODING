@@ -2,6 +2,10 @@ sumber youtube:
 1. Semmi Verian > [NGE-React] #17 Mengirimkan data dari child ke parent component
 2. dea afrizal > Code Yang Harus React JS Developer Ketahui
 
+- kirim data parent ke child dengan props
+- kirim data dari child ke parent dengan props function argument
+- ubah data dengan langsung atau dengan callback
+
 kirimdata dari parent ke child
 ------------------------------------------
  const Parent = () => {                          // 1. komponen parent nya
@@ -40,5 +44,6 @@ const Child = (props) => {                       // 2. child
  </>                                                                      //    karena function kita bisa kirim via argument "saiti"
 }
 
-
+kirim data dari Child ke Parent
+------------------------------------------
  
