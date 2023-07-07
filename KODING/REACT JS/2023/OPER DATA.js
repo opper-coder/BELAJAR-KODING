@@ -2,9 +2,10 @@ sumber youtube:
 1. Semmi Verian > [NGE-React] #17 Mengirimkan data dari child ke parent component
 2. dea afrizal > Code Yang Harus React JS Developer Ketahui
 
-- kirim data parent ke child dengan props
-- kirim data dari child ke parent dengan props function argument
-- ubah data dengan langsung atau dengan callback
+- kirim data parent ke child                     -> dengan props data biasa
+- kirim data dari child ke parent                -> dengan props function argument
+- ubah state tunggal                             -> langsung ubah
+- ubah state berkali2                            -> harus pakai callback
 
 kirimdata dari parent ke child
 ------------------------------------------
@@ -25,23 +26,23 @@ const Child = (props) => {                       // 2. komponen child tangkap da
 kirim data dari Child ke Parent
 ------------------------------------------
  const Parent = () => {                          // 1. parent 
-  const operAlamat = (terimaData) => {           // 4. sebelumnya sudah kita persiapkan ada function penerima data
+  const operAlamat = (terimaData) => {           // 3. bikin fungsi penerima data dari child (pada args)
     return
       <>
-        "alamat saya" {terimaData}               // 5. data yang di terima dari child bisa di gunakan di parent ini 
+        "alamat saya" {terimaData}               // 6. args di terima dari child bisa di gunakan di parent ini 
       </>
     }
   return
   <>
-        <Child name="aqil" alamat={operdata()}>  // 6. function di invoke dan data oper sudah bisa di tampilkan
+        <Child name="aqil" alamat={operAlamat}>  // 4. kirim props dari parent ke child berupa fungsi tanpa invoke()
   </>  
  }
  -----
 const Child = (props) => {                       // 2. child
  return
  <>
-  <div>Halo nama saya {props.name} dan {props.operAlamat("saiti")}</div>  // 3. kirim data dari child: dg cara menerima props berisi function
- </>                                                                      //    karena function kita bisa kirim via argument "saiti"
+  <div>Halo nama saya {props.name} dan {props.operAlamat("saiti")}</div>  // 5. ambil props dari parent berupa function, 
+ </>                                                                            karena berupa function maka kita bisa invoke sekaligus kirim argumen
 }
 
 Ubah data di state 
