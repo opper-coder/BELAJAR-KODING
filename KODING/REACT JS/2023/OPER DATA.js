@@ -78,6 +78,34 @@ export default function App() {
 
   return <>gunakan datanya disini!</>;
 }
+--- keterangan lain
+import { useState } from "react";
+
+export default function App() {
+  const [isNotif, setIsNotif] = useState(false);
+  // ubahstate tunggal valid
+  const notif = () => {
+    setIsNotif(!isNotif);                   // ubah tunggal valid (tidak dalam callback)
+  };
+  // ubahstate pertama valid, kedua tidak valid
+  const notif2 = () => {
+    setIsNotif(!isNotif);                  // ubah pertama valid
+    setTimeout(() => {
+      setIsNotif(!isNotif);                // ubah kedua tidak valid (tidak dalam callback)
+    }, 2000);
+  };
+  // ubahstate pertama valid, kedua valid (dalam callback)
+  const notif3 = () => {
+    setIsNotif(!isNotif);                 // ubah pertama valid
+    setTimeout(() => {
+      setIsNotif((state) => !isNotif);    // ubah kedua valid (dalam callback)
+    }, 2000);
+  };
+
+  return <>gunakan datanya dengan even onclick disini!</>;
+}
+
+
 kasus2 yg benar
 -----------------------------------------
 import { useState } from "react"; 
