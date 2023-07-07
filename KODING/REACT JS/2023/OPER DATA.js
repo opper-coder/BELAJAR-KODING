@@ -29,7 +29,7 @@ kirim data dari Child ke Parent
     }
   return
   <>
-        <Child name="aqil" alamat={operdata()}>  // 6. function di invite sudah bisa di tampilkan
+        <Child name="aqil" alamat={operdata()}>  // 6. function di invoke dan data oper sudah bisa di tampilkan
   </>  
  }
  -----
