@@ -62,21 +62,15 @@ export default function App() {
 import { useState } from "react";
 
 export default function App() {
-  const [isNotif, setIsNotif] = useState(false);
-
-  const notif = () => {
-    setIsNotif(!isNotif);
-  };
-
-  const notif2 = () => {
-    setIsNotif(!isNotif);
-
+  const [isNotif, setIsNotif] = useState(false);    // 1. kita punya state tapi kita akan ubah lebih sekali
+  const notif2 = () => { 
+    setIsNotif(!isNotif);                           // 2. kita ubah pertama , masih bisa jalan 
     setTimeout(() => {
-      setIsNotif(!isNotif);
-    }, 2000);
-    
-    setTimeout(() => {
-      setIsNotif((state) => {
+      setIsNotif(!isNotif);                         // 3. kita ubah untuk kedua kali sudah tidak running alias state di anggap belum berubah masih di state awal
+    }, 2000);                                             padahal sudah di ubah ppertama, ubahan kedua menganggap ubahan pertama tidak terjadi
+    ---
+    setTimeout(() => {                              // hal itu terjadi karena ubahan kedua mengambial dari state awal bukan dari state terakhir
+      setIsNotif((state) => {                       // supaya dapat mengambil dari state terbaru, ubah state dalam params callback
         !isNotif;
       });
     }, 2000);
