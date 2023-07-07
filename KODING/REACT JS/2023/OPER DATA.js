@@ -21,23 +21,23 @@ const Child = (props) => {                       // 2. komponen child tangkap da
 kirim data dari Child ke Parent
 ------------------------------------------
  const Parent = () => {                          // 1. parent 
-  const operAlamat = (terimaData) => {
+  const operAlamat = (terimaData) => {           // 4. sebelumnya sudah kita persiapkan ada function penerima data
     return
       <>
-        "alamat saya" {terimaData} 
+        "alamat saya" {terimaData}               // 5. data yang di terima dari child bisa di gunakan di parent ini 
       </>
     }
   return
   <>
-        <Child name="aqil" alamat={operdata()}> 
+        <Child name="aqil" alamat={operdata()}>  // 6. function di invite sudah bisa di tampilkan
   </>  
  }
  -----
 const Child = (props) => {                       // 2. child
  return
  <>
-  <div>Halo nama saya {props.name} dan {props.operAlamat("saiti")}</div>
- </>
+  <div>Halo nama saya {props.name} dan {props.operAlamat("saiti")}</div>  // 3. kirim data dari child: dg cara menerima props berisi function
+ </>                                                                      //    karena function kita bisa kirim via argument "saiti"
 }
 
 
