@@ -5,5 +5,7 @@ cara meletakkan adalah dengan cara:
   2. init nextjs > install node module yg di perlukan
   3. node module > primereact
   4. download sakai dan integrasikan
-  5. kopas folder boxitsComp di   :/root/boxitsComp
-  6. kopas folder boxits di       :/root/pages/boxits
+  5. pastikan nextjs dan sakai sudah running
+  6. kopas folder boxitsComp di   :/root/boxitsComp
+  7. kopas folder boxits di       :/root/pages/boxits
+  8. lalu arahkan semua url href pada sidebar menu sakai di: /layout/Appmenu.js
