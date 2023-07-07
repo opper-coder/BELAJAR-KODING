@@ -9,3 +9,4 @@ cara meletakkan adalah dengan cara:
   6. kopas folder boxitsComp di   :/root/boxitsComp
   7. kopas folder boxits di       :/root/pages/boxits
   8. lalu arahkan semua url href pada sidebar menu sakai di: /layout/Appmenu.js
+  9. jangan lupa copas favicon.ico di : public/favicon.ico
