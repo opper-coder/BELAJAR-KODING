@@ -86,7 +86,7 @@ export default function App() {
   const notif2 = () => { 
     setIsNotif(!isNotif);                          // 2. ubah state pertama langsung state: true
     setTimeout(() => {                            
-      setIsNotif(state => !isNotif);              // 3. ubah state kedua dalam args callback 
+      setIsNotif(state => !isNotif);               // 3. ubah state kedua dalam args callback 
     }, 2000);                                            hasilnya bisa: false kalau tidak dalam callback hasilnya tetap true
   };
   return <>gunakan datanya disini!</>;
