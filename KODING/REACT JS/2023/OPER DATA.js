@@ -44,6 +44,53 @@ const Child = (props) => {                       // 2. child
  </>                                                                      //    karena function kita bisa kirim via argument "saiti"
 }
 
-kirim data dari Child ke Parent
+Ubah data di state 
 ------------------------------------------
- 
+Ubah data di state hanya berlaku sekali, jika lebih sekali 
+sebaiknya pakai callback agar efektif
+
+import { useState } from "react";
+
+export default function App() {
+  const [isNotif, setIsNotif] = useState(false);      // 1. jika kita punya state
+  const notif = () => {
+    setIsNotif(!isNotif);                             // 2. kita bisa ubah dengan fungsi pengubah
+  };
+  return <>gunakan datanya disini!</>;
+}
+
+import { useState } from "react";
+
+export default function App() {
+  const [isNotif, setIsNotif] = useState(false);
+
+  const notif = () => {
+    setIsNotif(!isNotif);
+  };
+
+  const notif2 = () => {
+    setIsNotif(!isNotif);
+
+    setTimeout(() => {
+      setIsNotif(!isNotif);
+    }, 2000);
+    
+    setTimeout(() => {
+      setIsNotif((state) => {
+        !isNotif;
+      });
+    }, 2000);
+  };
+
+  return <>gunakan datanya disini!</>;
+}
+
+
+
+
+
+
+
+
+
+
