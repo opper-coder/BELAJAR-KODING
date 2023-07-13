@@ -26,3 +26,6 @@ function Coba() {
     </div>
   );
 }
+// panggil
+<Coba />
+
