@@ -82,3 +82,22 @@ Navigasi folder
    - ctrl+p > :15       : menuju kebaris 15
    - ctrl+tab           : pindah tab
 butuh riset lagi dengan vscode> help > keyboard shortcut reference
+
+
+TIPS EMMET
+----------------------------
+- cara bikin child
+		section>row
+- bikin perkalian
+		section>row*3
+- bikin gruping
+		(section>row*3)*2
+- bikin table ada: child, kali gruping, sibling
+		table>(thead>tr>th*4)+(tbody>tr>td*4)
+- bikin form 
+		form:post.box>input:text.input*3+button
+
+extension
+- bulma snippet > ada banyak trigger misal hero, nav bar, dll menginspirasi
+- prettier -> merapikan cepat bisa di matikan
+- ES7/react/Redux/GraphQL/RN snippets
