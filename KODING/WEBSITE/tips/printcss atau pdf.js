@@ -7,8 +7,8 @@ isi index.HTML
     <link rel="stylesheet" href="style.css" media="all">          // pada CSS yang media all menampilkan layout ke semua screen ataupun print
     <link rel="stylesheet" href="style.css" media="screen">       // pada CSS yang media screen menampilkan layout screen saja
     <link rel="stylesheet" href="print.css" media="print">        // pada CSS yang media print menampilkan hanya ke layout print/PDF saja 
+                                                                  // lalu save pdf > file.pdf ( layout css langsung jadi pdf, tanpa library mpdf atau fpdf di php)
       
-
 isi pada style.CSS
 1. atur .container misal width:80%
 2. ada .header dan .footer display:block
