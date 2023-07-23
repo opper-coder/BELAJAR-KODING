@@ -1,3 +1,72 @@
 BELAJAR GITHUB
+-------------------------------------------------
+- Pengenalan
+- github
+- tool
+- bekerja dalam github
+- branch github
+- merge github
+- 
 
+
+-------------------------------------------------
+VCS 	: Version Control System adalah sistem yang merekam perubahan dan mengelola code kita
+git 	: adalah aplikasi yang bisa melakukan VCS
+github 	: adalah salah satu git online 
+
+control version: local(git), sentralize(git, mercurial),  Distributed(github, gitlab, bitbucket)
+
+git
+-------------------------------------------------
+git adalah version control local
+- download install git local di ttps://code.visualstudio.com/ sesuai OS (linux, ada pilihan GUI ada BASH) 
+- >: git -v atau git --version 
+- karena nanti git bash akan membuka file menggunakan vs code maka setup code supaya bisa di call via terminal: 
+- 
+
+istilah/tool
+-------------------------------------------------
+repo 	: (repository) folder yang sudah dilakukan git init 
+commit	: (save perubahan) snapshot perubahan repo
+hash	: penanda unik pada commit(di gunakan untuk tracking)
+checkout: pindah ke commit yang mana(misalnya mundur ke commit yg mana)
+branch	: (cabang) melakukan pengambilan hanya pada file/code tertentu untuk kita ubah, tanpa mempengaruhi sumbernya, atau bikin folder cabang sendiri bebas
+merge	: (gabung/integrasi cabang) menggabungkan file/code dari branch ke sumber
+remote	: operasikan git online dari git local (web git)
+clone	: copy sumber dari online ke local (untuk git local)
+push	: (save) unggah commit local ke commit online 
+pull	: ambil commit repo dari git online (dari remote)
+
+
+bekerja dg github
+-------------------------------------------------
+1. daftar > login > bikin repo > nama > descrip > private/public > readme.md > create | readme penting karena akan di tampilkan sbg overview dan bisa di susun secara sistemastis
+2. buka repo > add file/folder (atau Upload file)(folder tinggal nambah namafolder/namafile) > edit > isi > "commit"(save)  
+3. maka di simpan di jalur utama (bukan branch), disebut main, main repository, main branch, master branch
+4. jika akan di edit > klik edit > pilih main(bukan branch) > commit 
+5. maka file tetap satu perubahan pun terjadi > 
+6. lihat perubahan di file ini > "history" > list perubahan beserta detail (termasuk ada hash) > lihat detil baris perubahan > klik salah satu > lihat - / +  
+7. jika lihat pada repo juga bisa 
+8. jika lihat secara visual > "insight" > network 
+
+branch github
+-------------------------------------------------
+di gunakan saat:
+- ingin mengedit experimental
+- ada banyak orang yang mengerjakan
+- tidak ingin mengganggu main repo 
+- nanti akan mengumpulkan hasir kerjasama, evaluasi dan menggabung (merge)
+
+cara melakukan branch
+- buka file yang akan di branch > edit > saat akan commit pilih "branch" lalu commit  
+- atau klik tombol branch di atas repo (ada icon branch dan tulisan main) > klik cari dan pilih jika sudah ada branch atau tulis namafilebranch di new branch 
+	> create in namafilebranch > ubah isinya > saat akan commit sudah auto pilih file branch ini, optional mau bikin branch lagi atau tetap yng ini
+- saat di save(commit maka halamanya ada yng beda, ada tombol compare, pull request 
+- yang terpenting pada tyombol branch jk di klik terlihat 2 file, main dan branch, jika di lihat masing2 mungkin beda tapi tidak saling mempengaruhi   
+
+Merge github
+- saat sudah memiliki branch, masuk ke file branchnya > lakukan request dg click compare pull request > dan masuk ke halaman requeat
+- di halaman request ada nama main, nama branch, dan notif able/conflict, tulis pesan, lalu create pull request
+- able adalh bisa di merge, conflic adalah ada baris yang berisi code yang sama tapi sudah di ubah atau hilang (ket di bawah)
+-   
 
