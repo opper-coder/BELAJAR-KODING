@@ -34,6 +34,7 @@ setelah melakukan install di linux > buka terminal (saat latihan) atau pakai ter
 - :> git config name --global user.email "opperofficial@gmail.com" 
 - :> git commit -m "halo ini commit pertama" : -m artinya message. semua file yag ada di stagging akan di commit > 
 	dan akan di arahkan ke vim atau code oditor default yang sudah di setting sebelumnya (cara settingnya cari tutorial sendiri) 
+- :> git commit (tanpa -m) 	: maka akan di buatkan ke message default > dan di redirect ke vim atau nano > jika iya tinggal save dan exit > lanjutkan
 - :> git status 		: setelah commit lihat status hasilnya: stagging kosong
 - :> git add style.css 	: saat kita menambah file baru style.css dan di link ke html, saat lakukan "git status" maka ada terlihat perubahan
 - :> git add . 			: (add spasi titik) kita akan add semua file sekaligus atau
