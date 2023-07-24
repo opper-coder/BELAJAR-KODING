@@ -1,0 +1,100 @@
+-------------------------------------------------
+Pengenalan Version Control
+Pengenalan Git
+Repository
+The Three Tree
+Working Directory
+Staging Index
+Commit
+Reset Commit
+Dan lain-lain
+
+-------------------------------------------------
+VCS 	: Version Control System adalah sistem yang merekam perubahan dan mengelola code kita
+git 	: adalah aplikasi yang bisa melakukan VCS
+github 	: adalah salah satu git online 
+
+control version: local(git), sentralize(git, mercurial),  Distributed(github, gitlab, bitbucket)
+
+git
+-------------------------------------------------
+git adalah version control local
+- download install git local di ttps://code.visualstudio.com/ sesuai OS (linux, ada pilihan GUI ada BASH) 
+- install di linux: buka web > add PPA > update > install (sesuai di web aja)
+- >: git -v atau git --version 
+- karena nanti git bash akan membuka file menggunakan vs code maka setup code supaya bisa di call via terminal: 
+
+istilah/tool
+-------------------------------------------------
+repo 	: (repository) folder yang sudah dilakukan git init 
+commit	: (save perubahan) snapshot perubahan repo
+hash	: penanda unik pada commit(di gunakan untuk tracking)
+checkout: pindah ke commit yang mana(misalnya mundur ke commit yg mana)
+branch	: (cabang) melakukan pengambilan hanya pada file/code tertentu untuk kita ubah, tanpa mempengaruhi sumbernya, atau bikin folder cabang sendiri bebas
+merge	: (gabung/integrasi cabang) menggabungkan file/code dari branch ke sumber
+remote	: operasikan git online dari git local (web git)
+clone	: copy sumber dari online ke local (untuk git local)
+push	: (save) unggah commit local ke commit online 
+pull	: ambil commit repo dari git online (dari remote)
+
+
+bekerja dg github
+-------------------------------------------------
+1. daftar > login > bikin repo > nama > descrip > private/public > readme.md > create | readme penting karena akan di tampilkan sbg overview dan bisa di susun secara sistemastis
+2. buka repo > add file/folder (atau Upload file)(folder tinggal nambah namafolder/namafile) > edit > isi > "commit"(save)  
+3. maka di simpan di jalur utama (bukan branch), disebut main, main repository, main branch, master branch
+4. jika akan di edit > klik edit > pilih main(bukan branch) > commit 
+5. maka file tetap satu perubahan pun terjadi > 
+6. lihat perubahan di file ini > "history" > list perubahan beserta detail (termasuk ada hash) > lihat detil baris perubahan > klik salah satu > lihat - / +  
+7. jika lihat pada repo juga bisa 
+8. jika lihat secara visual > "insight" > network 
+
+branch github
+-------------------------------------------------
+di gunakan saat:
+- ingin mengedit experimental
+- ada banyak orang yang mengerjakan
+- tidak ingin mengganggu main repo 
+- nanti akan mengumpulkan hasir kerjasama, evaluasi dan menggabung (merge)
+
+branch github
+- buka file yang akan di branch > edit > isi comment > saat akan commit pilih "branch" lalu commit  
+- atau klik tombol branch di atas repo (ada icon branch dan tulisan main) > klik cari dan pilih jika sudah ada branch atau tulis namafilebranch di new branch 
+	> create in namafilebranch > ubah isinya > saat akan commit sudah auto pilih file branch ini, optional mau bikin branch lagi atau tetap yg ini
+- saat di save(commit maka halamanya ada yg beda, ada tombol compare, pull request 
+- yang terpenting pada tombol branch jk di klik terlihat 2 file, main dan branch, jika di lihat masing2 mungkin beda 
+	silahkan di edit pada branch, di main tidak terpengaruhi
+- oya saat mau commit, isi comment sbg pesan perubahan, ini sangat penting agar terlihat di list perubahan 
+
+Merge github
+- saat sudah memiliki branch, masuk ke file branchnya > click compare pull & request > dan masuk ke halaman requeat
+- di halaman request ada nama main, nama branch, dan notif able/conflict, tulis pesan, > create pull request
+- able adalh bisa di merge, conflic adalah ada baris yang berisi code yang sama tapi sudah di ubah atau hilang
+- notifikasi ada di tab pull&request di main > ada tombol "confirm" dan kolom comment balasan silahkan isi > 
+- cek insight > network > ada diagram commit branch commit
+- branch sudah di merge di main > sekarang tinggal hapus di > tab code > tab branches > silahkan pilih branch yg mau di hapus 
+
+merge conflict github
+- saat ada 2 branch dan melakukan edit > lalu ingin merge > caranya:
+- merge satu persatu > branch 1 dulu lakukan request dan confirm untuk merge
+- saat merge branch ke 2 jika ada baris yang sama tapi beda isi maka akan terjadi conflict 
+	(sandika: baris yg sama di ubah oleh 2 branch yang berbeda)
+	conflict akan di cek berdasarkan baris dan isi
+	- apakah baris ke 10 berisi konten yg sama antara main dan branch 
+	- apakah variabel asa berisi kontent yg sama dengan antara main dan branch
+- jika conflick > klik tombol resolve lalu akan ada halaman perbandingan dan lakukan edit manual aja > lalu confirm 
+
+fork github
+- copy repository(beserta history) ke account lain di github 
+- bisa pull request dan interaksi lainya
+- kerjasama beda account, kalau branch kan terjadi interaksi "request confirm" dalam satu account, kalau fork beda account 
+- bedanya dg clone: clone copy repo ke git local, fork copy repo ke beda account di github yg sama
+- caranya:
+	- cara 1 : login github > home > search repo orang lain > buka repo klik edit > oto mastis kita akan di copikan ke repo di account kita
+	- cara 2 : login github > home > search repo orang lain > klik tombol fork > create new fork 
+	- saat sudah di edit maka repository akan ada info: forked from ... (kalau clone kita cuma download bebas dan tidak bisa interaksi lagi)
+
+	- setelah ropo kita dapatkan silahkan edit dan branch dan merge ke main fork kita, saat sudah jadi kita bisa lakukan request ke main aslinya
+	- caranya buka repo bersangkutan > new pull request > next2 (sda)
+
+-------------------
