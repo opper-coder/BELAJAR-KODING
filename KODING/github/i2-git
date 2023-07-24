@@ -101,7 +101,6 @@ tree-way merge 			: jika tidak memiliki direct path maka merge akan berlangsung 
 				  jika di sublim save dan close. jika di vim > ketik escape > :wq! enter 
 - graph 			: cek lagi bentuk path nya
 -------------------------------------------------
--------------------------------------------------
 GIT MERGE CONFLICT
 
 - saat kita memiliki sebuah folder berisi file code kita, 
@@ -113,6 +112,7 @@ GIT MERGE CONFLICT
 	- :> git status : hasilnya kita akan lihat adanya merge kita masih setengah jalan status: both modified
 	- :> git add . dulu, lalu 
 	- :> git commit -m "gabungkan branch" 
+-------------------------------------------------
 
 
 
