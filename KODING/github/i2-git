@@ -86,7 +86,7 @@ saat commit maka di setiap node nya mengandung 4 komponen:
 - git log --all --decorate --oneline --graph : melihat history versi lengkap
 - alias graph="git log --all --decorate --oneline --graph" : cara bikin alias: agar perintah lebih pendek
 - graph 			: panggilnya tanpa git
-- git checkout admin 		: kita pindah cursor dari branch master ke branch admin > cek dengan :> git branch
+- git checkout admin 		: kita pindah cursor dari branch master ke branch admin > cek dengan :> git branch (atau cek di vs code di bawah kiri)
 - git commit -am "..." 		: saat kita lakukan perubahan dan commit maka itu semua akan terjadi di branch admin (tidak di master lagi)
 - git branch master 		: untuk merge kita harus kembali ke master lalu lakukan merge > jangan lupa cek dengan :> git branch
 - git merge admin 		: dari master lakukan penggabungan ke branch admin
