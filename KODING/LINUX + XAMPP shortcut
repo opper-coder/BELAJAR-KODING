@@ -3,10 +3,7 @@ daftra isi:
 intramfs           -> perbaiki initrmfs
 deepin shortcut    -> shorthand productivity
 XAMPP              -> instalasi via terminal start stop terminal 
-terminal linux     -> 
-
-
-
+terminal linux     -> perintah dasar terminal linux 
 
 INITRAMS
 ---------------------------------------------------
@@ -55,6 +52,8 @@ chmod dan chown
 
 TERMINAL
 ---------------------------------------------------
+adalah salah satu cara menjalankan perintah umum di linux tanpa gui, penggantinya pakai text di terminal
+
 UMUM
 :> ls             : lihat isi file explorer
 :> cd Documents   : masuk ke folder Documents
