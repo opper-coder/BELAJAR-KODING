@@ -55,9 +55,8 @@ chmod dan chown
 
 TERMINAL
 ---------------------------------------------------
+UMUM
 :> ls             : lihat isi file explorer
-:> exit           : tutup terminal
-:> clear          : bersihkan layar terminal
 :> cd Documents   : masuk ke folder Documents
 :> cd Documents/coba : masuk folder
 :> cd ..          : naik satu langkah
@@ -69,11 +68,22 @@ TERMINAL
 :> sudo 			    : super user
 :> code 			    : vscode tapi setting dulu vscode ?????
 :> code . 			  : (code spasi titik)
-:> pwd 			      : Melihat direktori kerja yang pada saat itu aktif.
+:> pwd 			      : Melihat "url" direktori saat ini.
 :> vim 			      : code editor basis terminal
 :> mkdir nama		  : bikin folder
 :> rmdir nama 		: hapus folder kosong
 :> rm nama.ext		: hapus folder isi atau file.ext  
 :> mv 				    : pindah folder file, 
+
+UTILITY
+:> exit           : tutup terminal
+:> clear          : bersihkan layar terminal
 :> ctrl + c 		  : keluar dari progress terminal running 
+:> cp 						: copy paste
+:> mv 						: move
+:> locate -i nama : cari file global (-i: case insensitive)
+:> find nama			: cari file dalam folder ini
+
+
+
 
