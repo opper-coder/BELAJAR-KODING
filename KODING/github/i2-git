@@ -101,7 +101,19 @@ tree-way merge 			: jika tidak memiliki direct path maka merge akan berlangsung 
 				  jika di sublim save dan close. jika di vim > ketik escape > :wq! enter 
 - graph 			: cek lagi bentuk path nya
 -------------------------------------------------
-Merge conflict
+-------------------------------------------------
+GIT MERGE CONFLICT
+
+- saat kita memiliki sebuah folder berisi file code kita, 
+- lalu kita branch menjadi "master" dan "dev"
+- kedua branch tersebut melakukan ubahan pada baris yang sama dg ubahan yg berbeda, di vscode
+- saat kita merge akan ada pesan CONFLICT di terminal
+- dan di vscode memperlihatkan code conflictnya >>>> branch ini ==== branch 2 <<<<
+- tugas kita benahi sesuai kebutuhan dan save 
+	- :> git status : hasilnya kita akan lihat adanya merge kita masih setengah jalan status: both modified
+	- :> git add . dulu, lalu 
+	- :> git commit -m "gabungkan branch" 
+
 
 
 
