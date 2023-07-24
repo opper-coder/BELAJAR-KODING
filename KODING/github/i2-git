@@ -70,7 +70,7 @@ operasi dasar buka folder kerja kita di vscode
 - git add index.html 		: add lagi ke stagging 
 - git commit -m "commit ke2 " 	: lalu commit lagi ke 2, supaya singkat pakai shorthand berikut
 - git commit -a -m "..." 	: add sekaligus commit. atau lebih pendek lagi
-- git commit -am "..." 		: add dan commit message lebih pendek
+- git commit -am "..." 		: add dan commit message lebih pendek (hanya berlaku saat status modified, kalau status add atau deleting tidak bisa)
 -------------------------------------------------
 Operasi branch
 saat commit maka di setiap node nya mengandung 4 komponen: 
