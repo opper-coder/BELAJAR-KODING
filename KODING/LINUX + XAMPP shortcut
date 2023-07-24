@@ -61,10 +61,19 @@ TERMINAL
 :> cd Documents   : masuk ke folder Documents
 :> cd Documents/coba : masuk folder
 :> cd ..          : naik satu langkah
-:> cd /           : naik ke root
+:> cd /           : naik ke root (root teratas)
+:> cd home/aqil   : kembali ke user default
+:> cd /home/aqil  : masuk ke folder mana saja bisa (di mulai dengan /home/aqil/dst)
 :> mkdir coba     : bikin folder "coba"
 :> touch ada.html : bikin file html 
-:> 
-
-
+:> sudo 			    : super user
+:> code 			    : vscode tapi setting dulu vscode ?????
+:> code . 			  : (code spasi titik)
+:> pwd 			      : Melihat direktori kerja yang pada saat itu aktif.
+:> vim 			      : code editor basis terminal
+:> mkdir nama		  : bikin folder
+:> rmdir nama 		: hapus folder kosong
+:> rm nama.ext		: hapus folder isi atau file.ext  
+:> mv 				    : pindah folder file, 
+:> ctrl + c 		  : keluar dari progress terminal running 
 
