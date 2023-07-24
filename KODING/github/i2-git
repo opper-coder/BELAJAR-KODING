@@ -56,7 +56,7 @@ operasi dasar buka folder kerja kita di vscode
 - :> git init 			: initialisasi
 - :> touch index.html 		: new file index.html > buka di vscode > isi html standard template 
 - ctrl ` 			: ctrl spasi backtick buka terminal terminal vscode di folder ini 
-	di sidefolder terlihat folder project kita dan terdapat file dengan flag tertentu berwarna warni itu artinya:
+	di sidefolder vscode otomatis terlihat folder project kita dan terdapat file dengan flag tertentu berwarna warni itu artinya:
 - U 				: untrack hijau, perlu di pindah di stagging git add bisa di jalankan di terminal vscode
 - M 				: modified orange, 
 - tidak ada flag      		: berarti sudah synchrone root dan git 
