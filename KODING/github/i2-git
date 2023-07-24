@@ -5,7 +5,7 @@ work space
 di git mengenal 3 area: 
 	1. working tree 	: folder tempat bekerja (yang kita buat tadi dan dilakukan init di dalamnya)
 	2. Stagging area 	: folder perubahan
-	3. History 			: folder yang sudah di commit 
+	3. History 		: folder yang sudah di commit 
 folder stagging area dan history akan di tempatkan di folder .git yang di generate scr hidden oleh git init yg berisi perangkat git
 implementasinya seperti ini:
 	- saat masuk folder working area maka git akan memonitoring ada perubahan tidak 
@@ -17,15 +17,15 @@ praktek
 setelah melakukan install di linux > buka terminal (saat latihan) atau pakai terminal vscode (disarankan saat kerja)
 - :> git pwd 			: melihat git sedang aktif di folder mana, tetntu setelah instalasi dan init 
 - :> git --version 		: cek instalasi dan version
-- :> ls 				: melihat folder yang ada
+- :> ls 			: melihat folder yang ada
 - :> cd Document 		: pindah ke folder document
-- :> mkdir latihanGit 	: bikin folder
+- :> mkdir latihanGit 		: bikin folder
 - :> cd latihanGit > git init : masuk dan inisialisasi > maka repo akan berubah jadi : initialize ... (master)  
 	untuk mengoperasikan git nantinya tinggal masuk ke folder git yg sudah di init di terminal > siap jalankan Git
-- :> touch index.html 	: create file index.html di terminal linux
+- :> touch index.html 		: create file index.html di terminal linux
 - :> git status 		: hasilnya akan di beritahukan bahwa sudah ada file baru yang belum bisa di tracking, 
 	(perlu di add dan commit atau tidak supaya masuk ke stage git nya)
-- :> git add index.html	: kalau mau banyak file sekaligus tinggal spasi namafile. 
+- :> git add index.html		: kalau mau banyak file sekaligus tinggal spasi namafile. 
 	file yang sudah di add akan masuk ke stagging, dan siap di commit, tapi jika mau menghapus dari stagging (bukan di file):
 - :> git rm --cache namafile.html 
 - saat melakukan git commit maka kita akan di tanya ini siapa, lakukan config dulu, baru commit
@@ -50,15 +50,15 @@ setelah melakukan install di linux > buka terminal (saat latihan) atau pakai ter
 -------------------------------------------------
 git branch
 operasi dasar buka folder kerja kita di vscode 
-- :> mkdir latihanGitBranch : bikin folder
-- :> cd latihanGitBranch : masuk
+- :> mkdir latihanGitBranch 	: bikin folder
+- :> cd latihanGitBranch 	: masuk
 - :> git init 			: initialisasi
-- :> touch index.html 	: new file index.html > buka di vscode > isi html standard template 
-- ctrl ` 				: ctrl spasi backtick buka terminal terminal vscode di folder ini 
+- :> touch index.html 		: new file index.html > buka di vscode > isi html standard template 
+- ctrl ` 			: ctrl spasi backtick buka terminal terminal vscode di folder ini 
 	di sidefolder terlihat folder project kita dan terdapat file dengan flag tertentu berwarna warni itu artinya:
-- U 					: untrack hijau, perlu di pindah di stagging git add bisa di jalankan di terminal vscode
-- M 					: modified orange, 
-- tidak ada flag      	: berarti sudah synchrone root dan git 
+- U 				: untrack hijau, perlu di pindah di stagging git add bisa di jalankan di terminal vscode
+- M 				: modified orange, 
+- tidak ada flag      		: berarti sudah synchrone root dan git 
 - git status 			: cek file yang ada dan status perubahanya: merah artinya masih di root, hijau di stagging, clean berarti sudah synchron
 - git add . 			: masukan smeua file ke stagging kedua file  : hijau sudah masuk stagging. cek pakai git status  
 - git commit -m "tambahkan file index" : commit jika belum bisa lakukan config
@@ -66,10 +66,10 @@ operasi dasar buka folder kerja kita di vscode
 - git config --global user.email "opperofficial@gmail.com" 
 - git commit -m "tambahkan file index" : dari sini berhasil di commit 
 - git status 			: terlihat status clean artinya berhasil > sekarang coba ubah file dan lihat sttus 
-- git add index.html 	: add lagi ke stagging 
-- git commit -m "commit ke2 " : lalu commit lagi ke 2, supaya singkat pakai shorthand berikut
+- git add index.html 		: add lagi ke stagging 
+- git commit -m "commit ke2 " 	: lalu commit lagi ke 2, supaya singkat pakai shorthand berikut
 - git commit -a -m "..." 	: add sekaligus commit. atau lebih pendek lagi
-- git commit -am "..." 	: add dan commit message lebih pendek
+- git commit -am "..." 		: add dan commit message lebih pendek
 Operasi branch
 saat commit maka di setiap node nya mengandung 4 komponen: 
 	1. commit hash, message, cursor
@@ -80,20 +80,20 @@ saat commit maka di setiap node nya mengandung 4 komponen:
 - git branch admin 		: bikin branch pada branch master dan di cursor ini
 - git branch staff 		: bikin branch pada branch master lagi di cursor ini jg
 - git branch 			: saat kita cek maka akan ada tiga branch 
-- git log 				: kita bisa melihat history semua commit. 
+- git log 			: kita bisa melihat history semua commit. 
 - git log --all --decorate --oneline --graph : melihat history versi lengkap
 - alias graph="git log --all --decorate --oneline --graph" : cara bikin alias: agar perintah lebih pendek
-- graph 				: panggilnya tanpa git
-- git checkout admin 	: kita pindah cursor dari branch master ke branch admin > cek dengan :> git branch
-- git commit -am "..." 	: saat kita lakukan perubahan dan commit maka itu semua akan terjadi di branch admin (tidak di master lagi)
-- git branch master 	: untuk merge kita harus kembali ke master lalu lakukan merge > jangan lupa cek dengan :> git branch
+- graph 			: panggilnya tanpa git
+- git checkout admin 		: kita pindah cursor dari branch master ke branch admin > cek dengan :> git branch
+- git commit -am "..." 		: saat kita lakukan perubahan dan commit maka itu semua akan terjadi di branch admin (tidak di master lagi)
+- git branch master 		: untuk merge kita harus kembali ke master lalu lakukan merge > jangan lupa cek dengan :> git branch
 - git merge admin 		: dari master lakukan penggabungan ke branch admin
-- git branch --merged   : pastikan dg cek merged mana saja branch yg sudah di merge. untuk di lakukan penghapusan yang tidak di butuhkan
-- git branch -d admin 	: menghapus branch admin karena sudah di merge dan sudah tidak di butuhkan lagi 
-- git branch -D staff 	: penghapusan branch hanya yng sudah dilakukan merging, yg belum tidak bisa. tapi kalau mau force delete pakai D besar
+- git branch --merged   	: pastikan dg cek merged mana saja branch yg sudah di merge. untuk di lakukan penghapusan yang tidak di butuhkan
+- git branch -d admin 		: menghapus branch admin karena sudah di merge dan sudah tidak di butuhkan lagi 
+- git branch -D staff 		: penghapusan branch hanya yng sudah dilakukan merging, yg belum tidak bisa. tapi kalau mau force delete pakai D besar
 fast forward 			: proses merge diatas terjadi secara sederhana alasanya karena merge terjadi antara branch yang memiliki direct path: proses ini disebut "fast forward"
 tree-way merge 			: jika tidak memiliki direct path maka merge akan berlangsung secara merge commit: sambil merge sambil commit, yang terjadi saat perintah:
-- graph 				: cek dulu bagaimana bentuk direct pathnya   
+- graph 			: cek dulu bagaimana bentuk direct pathnya   
 - git merge staff 		: yg terjadi kita akan di suruh menulis message: akan di redirect ke vim atau sublime sesuai config. tindakan yang dilakukan save saja message
-						  jika di sublim save dan close. jika di vim > ketik escape > :wq! enter 
-- graph 				: cek lagi bentuk path nya
+				  jika di sublim save dan close. jika di vim > ketik escape > :wq! enter 
+- graph 			: cek lagi bentuk path nya
