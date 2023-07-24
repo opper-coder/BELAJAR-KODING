@@ -1,8 +1,18 @@
+daftra isi:
+---------------------------------------------------
+intramfs           -> perbaiki initrmfs
+deepin shortcut    -> shorthand productivity
+XAMPP              -> instalasi via terminal start stop terminal 
+terminal linux     -> 
+
+
+
+
 INITRAMS
 ---------------------------------------------------
 mengatasi initrams gagal booting di linux ikuti 2 langkah berikut 
-1. (initramfs) :> blkid                 // cari tahu di mana root system : lihat di situ terlihat partisi seperti sap ext4 dll
-2. (initramfs) :> fsck /dev/sda7 -y     // lakukan filesystem check, dan yes2
+1. (initramfs) :> blkid                 // cari tahu di mana root system : lihat di situ terlihat partisi seperti swap, ext4, ntfs dll
+2. (initramfs) :> fsck /dev/sda7 -y     // lakukan filesystem check, dan yes2 (biasanya di bootsystem ext4 sda7 dst)
 3. tunggu sampai selesai
 
 DEEPIN SHORTCUT
@@ -42,3 +52,19 @@ chmod 777 -R coba
 CARA UBAH HAK AKSES DI LINUX
 ---------------------------------------------------
 chmod dan chown
+
+TERMINAL
+---------------------------------------------------
+:> ls             : lihat isi file explorer
+:> exit           : tutup terminal
+:> clear          : bersihkan layar terminal
+:> cd Documents   : masuk ke folder Documents
+:> cd Documents/coba : masuk folder
+:> cd ..          : naik satu langkah
+:> cd /           : naik ke root
+:> mkdir coba     : bikin folder "coba"
+:> touch ada.html : bikin file html 
+:> 
+
+
+
