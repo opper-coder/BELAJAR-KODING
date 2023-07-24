@@ -71,6 +71,7 @@ operasi dasar buka folder kerja kita di vscode
 - git commit -m "commit ke2 " 	: lalu commit lagi ke 2, supaya singkat pakai shorthand berikut
 - git commit -a -m "..." 	: add sekaligus commit. atau lebih pendek lagi
 - git commit -am "..." 		: add dan commit message lebih pendek
+-------------------------------------------------
 Operasi branch
 saat commit maka di setiap node nya mengandung 4 komponen: 
 	1. commit hash, message, cursor
@@ -98,3 +99,13 @@ tree-way merge 			: jika tidak memiliki direct path maka merge akan berlangsung 
 - git merge staff 		: yg terjadi kita akan di suruh menulis message: akan di redirect ke vim atau sublime sesuai config. tindakan yang dilakukan save saja message
 				  jika di sublim save dan close. jika di vim > ketik escape > :wq! enter 
 - graph 			: cek lagi bentuk path nya
+-------------------------------------------------
+Merge conflict
+
+
+
+
+
+
+
+
