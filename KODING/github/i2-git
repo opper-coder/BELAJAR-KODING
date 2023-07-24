@@ -1,1 +1,99 @@
-
+-------------------------------------------------
+Git
+-------------------------------------------------
+work space
+di git mengenal 3 area: 
+	1. working tree 	: folder tempat bekerja (yang kita buat tadi dan dilakukan init di dalamnya)
+	2. Stagging area 	: folder perubahan
+	3. History 			: folder yang sudah di commit 
+folder stagging area dan history akan di tempatkan di folder .git yang di generate scr hidden oleh git init yg berisi perangkat git
+implementasinya seperti ini:
+	- saat masuk folder working area maka git akan memonitoring ada perubahan tidak 
+		(tetapi segala perubahan ini tidak ada hubunganya dengan git, seperti folder biasa saja, sampai kita git add)
+	- saat kita melakukan perubahan dengan git add maka akan di taruh di stagging
+	- saat di commit barulah masuk ke history (di simpan di folder main)
+-------------------------------------------------
+praktek
+setelah melakukan install di linux > buka terminal (saat latihan) atau pakai terminal vscode (disarankan saat kerja)
+- :> git pwd 			: melihat git sedang aktif di folder mana, tetntu setelah instalasi dan init 
+- :> git --version 		: cek instalasi dan version
+- :> ls 				: melihat folder yang ada
+- :> cd Document 		: pindah ke folder document
+- :> mkdir latihanGit 	: bikin folder
+- :> cd latihanGit > git init : masuk dan inisialisasi > maka repo akan berubah jadi : initialize ... (master)  
+	untuk mengoperasikan git nantinya tinggal masuk ke folder git yg sudah di init di terminal > siap jalankan Git
+- :> touch index.html 	: create file index.html di terminal linux
+- :> git status 		: hasilnya akan di beritahukan bahwa sudah ada file baru yang belum bisa di tracking, 
+	(perlu di add dan commit atau tidak supaya masuk ke stage git nya)
+- :> git add index.html	: kalau mau banyak file sekaligus tinggal spasi namafile. 
+	file yang sudah di add akan masuk ke stagging, dan siap di commit, tapi jika mau menghapus dari stagging (bukan di file):
+- :> git rm --cache namafile.html 
+- saat melakukan git commit maka kita akan di tanya ini siapa, lakukan config dulu, baru commit
+	- config name dan email ini usahakan sam dengan saat kita kerja di github online, meskipun ini masih local 
+- :> git config name --global user.name "opper-coder" 
+- :> git config name --global user.email "opperofficial@gmail.com" 
+- :> git commit -m "halo ini commit pertama" : -m artinya message. semua file yag ada di stagging akan di commit > 
+	dan akan di arahkan ke vim atau code oditor default yang sudah di setting sebelumnya (cara settingnya cari tutorial sendiri) 
+- :> git status 		: setelah commit lihat status hasilnya: stagging kosong
+- :> git add style.css 	: saat kita menambah file baru style.css dan di link ke html, saat lakukan "git status" maka ada terlihat perubahan
+- :> git add . 			: (add spasi titik) kita akan add semua file sekaligus atau
+- :> git style.css 		: add satu persatu (lihat nama file satu persatu di git status)
+	- sama saat terjadi perubahan file, hapus file, dan tambah file baru, kita cek via git status, lalu git add, lalu git commit 
+- :> git log 			: memperlihatkan history log apa yang sudah pernah commit apa saja yg kita lakukan
+- :> git log -- style.css : lihat log khusus satu file (style.css)
+- :> git checkout 7667b -- style.css : saat kita sudah pernah menghapus style.css dan hendak ingin mengembalikan file tersebut 
+	sementara dalam repo kita sudah hilang. maka kita bisa melakukan undo hapus dengan ceking log di file bersangkutan 
+	lalu lakukan checkout pada node commit tertentu copy 5 huruf hash pertama -- nama file bersangkutan saja  
+	maka file akan di kembalikan ke stagging > kalau mau di kembalikan ke main > selanjutnya lakukan coomit lagi  
+- git cekout itu bisa di gunakan untuk mundur ke satu atau beberapa node commit pada semua commit atau pada file tertentu saja
+	bukan hanya undo file yg di hapus
+-------------------------------------------------
+git branch
+operasi dasar buka folder kerja kita di vscode 
+- :> mkdir latihanGitBranch : bikin folder
+- :> cd latihanGitBranch : masuk
+- :> git init 			: initialisasi
+- :> touch index.html 	: new file index.html > buka di vscode > isi html standard template 
+- ctrl ` 				: ctrl spasi backtick buka terminal terminal vscode di folder ini 
+	di sidefolder terlihat folder project kita dan terdapat file dengan flag tertentu berwarna warni itu artinya:
+- U 					: untrack hijau, perlu di pindah di stagging git add bisa di jalankan di terminal vscode
+- M 					: modified orange, 
+- tidak ada flag      	: berarti sudah synchrone root dan git 
+- git status 			: cek file yang ada dan status perubahanya: merah artinya masih di root, hijau di stagging, clean berarti sudah synchron
+- git add . 			: masukan smeua file ke stagging kedua file  : hijau sudah masuk stagging. cek pakai git status  
+- git commit -m "tambahkan file index" : commit jika belum bisa lakukan config
+- git config --global user.name "opper-coder" 
+- git config --global user.email "opperofficial@gmail.com" 
+- git commit -m "tambahkan file index" : dari sini berhasil di commit 
+- git status 			: terlihat status clean artinya berhasil > sekarang coba ubah file dan lihat sttus 
+- git add index.html 	: add lagi ke stagging 
+- git commit -m "commit ke2 " : lalu commit lagi ke 2, supaya singkat pakai shorthand berikut
+- git commit -a -m "..." 	: add sekaligus commit. atau lebih pendek lagi
+- git commit -am "..." 	: add dan commit message lebih pendek
+Operasi branch
+saat commit maka di setiap node nya mengandung 4 komponen: 
+	1. commit hash, message, cursor
+	2. author
+	3. date timestamp 
+	4. branch 
+- git branch 			: cek ada berapa branch disini, hijau di sertai tanda bintang artinya cursor yg branch aktif, (dalam kasus kita ini belum meiliki branch)
+- git branch admin 		: bikin branch pada branch master dan di cursor ini
+- git branch staff 		: bikin branch pada branch master lagi di cursor ini jg
+- git branch 			: saat kita cek maka akan ada tiga branch 
+- git log 				: kita bisa melihat history semua commit. 
+- git log --all --decorate --oneline --graph : melihat history versi lengkap
+- alias graph="git log --all --decorate --oneline --graph" : cara bikin alias: agar perintah lebih pendek
+- graph 				: panggilnya tanpa git
+- git checkout admin 	: kita pindah cursor dari branch master ke branch admin > cek dengan :> git branch
+- git commit -am "..." 	: saat kita lakukan perubahan dan commit maka itu semua akan terjadi di branch admin (tidak di master lagi)
+- git branch master 	: untuk merge kita harus kembali ke master lalu lakukan merge > jangan lupa cek dengan :> git branch
+- git merge admin 		: dari master lakukan penggabungan ke branch admin
+- git branch --merged   : pastikan dg cek merged mana saja branch yg sudah di merge. untuk di lakukan penghapusan yang tidak di butuhkan
+- git branch -d admin 	: menghapus branch admin karena sudah di merge dan sudah tidak di butuhkan lagi 
+- git branch -D staff 	: penghapusan branch hanya yng sudah dilakukan merging, yg belum tidak bisa. tapi kalau mau force delete pakai D besar
+fast forward 			: proses merge diatas terjadi secara sederhana alasanya karena merge terjadi antara branch yang memiliki direct path: proses ini disebut "fast forward"
+tree-way merge 			: jika tidak memiliki direct path maka merge akan berlangsung secara merge commit: sambil merge sambil commit, yang terjadi saat perintah:
+- graph 				: cek dulu bagaimana bentuk direct pathnya   
+- git merge staff 		: yg terjadi kita akan di suruh menulis message: akan di redirect ke vim atau sublime sesuai config. tindakan yang dilakukan save saja message
+						  jika di sublim save dan close. jika di vim > ketik escape > :wq! enter 
+- graph 				: cek lagi bentuk path nya
