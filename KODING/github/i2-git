@@ -40,7 +40,7 @@ setelah melakukan install di linux > buka terminal (saat latihan) atau pakai ter
 - :> git style.css 		: add satu persatu (lihat nama file satu persatu di git status)
 	- sama saat terjadi perubahan file, hapus file, dan tambah file baru, kita cek via git status, lalu git add, lalu git commit 
 - :> git log 			: memperlihatkan history log apa yang sudah pernah commit apa saja yg kita lakukan
-- :> git log 3 			: history 3 commit baris terakhir. karena commit itu bisa banyak sekali 
+- :> git log -3 			: history 3 commit baris terakhir. karena commit itu bisa banyak sekali 
 - :> git log -- style.css 	: lihat log khusus satu file (style.css)
 - :> git checkout 7667b -- style.css : saat kita sudah pernah menghapus style.css dan hendak ingin mengembalikan file tersebut 
 	sementara dalam repo kita sudah hilang. maka kita bisa melakukan undo hapus dengan ceking log di file bersangkutan 
