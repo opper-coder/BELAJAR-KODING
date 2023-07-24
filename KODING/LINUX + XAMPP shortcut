@@ -82,7 +82,13 @@ UTILITY
 :> cp 						: copy paste
 :> mv 						: move
 :> locate -i nama : cari file global (-i: case insensitive)
-:> find nama			: cari file dalam folder ini
+:> find nama			: cari file dalam folder ini\
+:> nautilus 			: buka file comander di ubuntu, elementary, zorin, deepin
+:> locate -i jagoan*hosting			: cari file bernama jagoan dan hosting -i: uncasesensitive
+:> zip, unzip 		: archieve, unzip
+:> df 						: melihat properti kapasitas dalam folder ini
+:> history 				: melihat semua riwayat perintah yang pernah dilakukan 
+:> top 						: melihat system yang berjalan 
 
 
 
