@@ -1,9 +1,10 @@
 GIT MULTI REMOTE
 ada 3 repo yang harus di singkronkan
-1. kita memiliki repo di github sebagai repo Project-Utama
+1. di github ada sebuah repository sebagai repo Project-Utama yang akan di jadikan patokan singkronisasi
 2. lalu kontributor melakukan fork ke akun remote gihubnya nya
 3. lalu kontributor clone ke localnya
-
+4. remote ini di lihat dari sisi kontributor
+5. kontributor melakukan remote ke 2 repo online, dan melakukan sync ke 3 reponya 
 	- masuk github anda sbg kontributor 
 	- dari sana cari repo utama yang anda tuju dan buka Project-Utama/Coba
 	- klik fork, kita di kasih repo beserta parameternya 
