@@ -1,5 +1,5 @@
 -------------------------------------------------
-Git
+GIT
 -------------------------------------------------
 work space
 di git mengenal 3 area: 
@@ -13,7 +13,7 @@ implementasinya seperti ini:
 	- saat kita melakukan perubahan dengan git add maka akan di taruh di stagging
 	- saat di commit barulah masuk ke history (di simpan di folder main)
 -------------------------------------------------
-praktek
+PRAKTEK
 setelah melakukan install di linux > buka terminal (saat latihan) atau pakai terminal vscode (disarankan saat kerja)
 - :> git pwd 			: melihat git sedang aktif di folder mana, tetntu setelah instalasi dan init 
 - :> git --version 		: cek instalasi dan version
@@ -50,7 +50,7 @@ setelah melakukan install di linux > buka terminal (saat latihan) atau pakai ter
 - git cekout itu bisa di gunakan untuk mundur ke satu atau beberapa node commit pada semua commit atau pada file tertentu saja
 	bukan hanya undo file yg di hapus
 -------------------------------------------------
-git branch
+GIT BRANCH
 operasi dasar buka folder kerja kita di vscode 
 - :> mkdir latihanGitBranch 	: bikin folder
 - :> cd latihanGitBranch 	: masuk
@@ -73,7 +73,7 @@ operasi dasar buka folder kerja kita di vscode
 - git commit -a -m "..." 	: add sekaligus commit. atau lebih pendek lagi
 - git commit -am "..." 		: add dan commit message lebih pendek (hanya berlaku saat status modified, kalau status add atau deleting tidak bisa)
 -------------------------------------------------
-Operasi branch
+OPERASI BRANCH
 saat commit maka di setiap node nya mengandung 4 komponen: 
 	1. commit hash, message, cursor
 	2. author
@@ -101,7 +101,7 @@ tree-way merge 			: jika tidak memiliki direct path maka merge akan berlangsung 
 				  jika di sublim save dan close. jika di vim > ketik escape > :wq! enter 
 - graph 			: cek lagi bentuk path nya
 -------------------------------------------------
-tambahan
+TAMBAHAN
 - git branch coba 		: adalah bikin branch
 - git checakout coba 		: adalah pindah ke branch
 - git checkout -b coba 		: jika belum punya branch kita bisa pindah sekaligus bikin branch
