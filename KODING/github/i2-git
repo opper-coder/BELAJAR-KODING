@@ -101,6 +101,11 @@ tree-way merge 			: jika tidak memiliki direct path maka merge akan berlangsung 
 				  jika di sublim save dan close. jika di vim > ketik escape > :wq! enter 
 - graph 			: cek lagi bentuk path nya
 -------------------------------------------------
+tambahan
+- git branch coba 		: adalah bikin branch
+- git checakout coba 		: adalah pindah ke branch
+- git checkout -b coba 		: jika belum punya branch kita bisa pindah sekaligus bikin branch
+-------------------------------------------------
 GIT MERGE CONFLICT
 
 - saat kita memiliki sebuah folder berisi file code kita, 
