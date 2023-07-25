@@ -113,10 +113,24 @@ GIT MERGE CONFLICT
 	- :> git add . dulu, lalu 
 	- :> git commit -m "gabungkan branch" 
 -------------------------------------------------
+CHECKOUT COMMIT
+- pada kasus sebelumnya kita pindah kursor (checkout) pada branch, sekarang
+- checkout pada commit:
+	- :> git log 				: cek history commit, ada list, kita akan kembali ke commit tertentu yaitu copas 7 digit awal hash commit
+	- :> q 						: quit
+	- :> git checkout 1b139c3 	: enter maka DETACH HEAD (cursor terlepas). biasanya HEAD nempel ke branch karena di gunakan untuk posisi branch
+				sekarang HEAD tidak merujuk kepada branch lagi melainkan commit dan belum tahu commit ini milik branch mana
+	- :> graph 					: saat di graph HEAD akan mundur bukan di Branch melaikan di commit, 
+				saat di cek di vscode status di kiri bawah kita juga tidak sedang di branch
+	- :> git checkout master 	: kita masih bisa kembali ke branch master
+	- :> git checkout 1b139c3 	: kembali ke commit ini dan lakukan branch lagi disini juga bisa
+	- :> git branch test 		: saat bikin branch test juga bisa
+	- :> graph 					: saat di graph akan ada branch baru test tapi head masih nempel di commit yang tadi
+	- :> git checkout test 		: kita harus ke checkout test baru normal (HEAD pindah ke branch test)
+	- :> graph 					: terlihat normal. dan branch yang atas tidak terjadi perubahan. kita boleh checkout dan merge keatas kapan saja kita suka
+	-   
 
-
-
-
+-------------------------------------------------
 
 
 
