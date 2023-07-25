@@ -1,3 +1,4 @@
+
 GIT MULTI REMOTE
 ---------------------------------------------
 ada 3 repo yang harus di singkronkan
@@ -38,4 +39,53 @@ ada 3 repo yang harus di singkronkan
 	- :> graph 					: saat di graph yang ketinggalan satu langkah tinggal repo remote kontributor
 	- :> git push -u origin master 			: untuk menyingkronkan tinggal push saja. 
 	- :> (git push) 				: kalau sudah pernah -u push mk selanjutnya tinggal push saja tanpa -u (kayaknya)
+---------------------------------------------
+GIT REMOTE BRANCH
+1. sekarang bagaimana kalau perubahan yang terjadi di local kontributor 
+2. dan ingin mengirimkan perubahan pada repo sumber
+	-----
+	pull request
+	- :> code . 				: buka repo local di code editor > dan lakukan beberapa perubahan, oya usahakan selalu bikin branch saat melkukan perubahan
+	- :> git branch fitur 		: bikin branch di local (sebenarnya bisa di master kontributor jg boleh)
+	- :> git checkout fitur 	: pindah ke branch fitur. cek di pojok kiri bawah vscode juga
+	- lakukan ubahan di index.html beberapa baris di local branch "fitur"
+	- :> git commit -am "ubah paragraf" 	: lalu add commit perubahan 
+	- :> git status 			: sukses
+	- :> graph 					: saat di graph yang memiliki kemajuan satu langkah hanya di branch "fitur" local sisanya 3 lainya di belakang 
+	- :> git push origin fitur 	: push ke origin langsung (master github contributor), jangan ke master local dulu, sekaligus bikin branch fitur
+	- :> graph 					: saat di graph terlihat singkron (fitur local <> fitur github remote)
+	tinggal sekarang melakukan pull request di github kontrib ke github sumber. karena pull itu featur milik github (tidak bisa dilakukan di local)
+	- buka repo kita di github 	
+	- klik compare & pull request 	: tombol ini ada karena sebelumnya kita sebagai fork dari repo sumber 
+	- dan selesaikan di halaman pull nya : disana terlihat denah perubahan nya, ada messages dll 
+	- selesai : dari kontributor tugas pull sudah selesai 
+	-----
+	approve di repo sumber
+	- buka repo github sumber 
+	- buka tab PR (pull request)
+	- disana tab conversation, commit, check, files changed. periksa semua parameter perubahan, messages perbandingan dll
+	- untuk melakukan approve silahkan ke tab conversation > klik tombol merge > atau 
+	- tombol "Review Changes" di kanan sejajar tab2 tadi, saat di klik ada beberapa opsi:
+		- bisa diskusi "comment"
+		- Approve : sama dengan merge
+		- Request changes : mengembalikan ke kontributor agar dilakukan ubahan lagi
+	- atau kita bisa tutup/tolak pull nya di tab conversation > tombol close pull request  
+	- setelah di approve di pull pada repo contrib akan ada notif close (approved)     
+	-----
+	sync di local
+	:> git fetch sumber 	: kita minta status HEAD ke sumber masih ada ketimpangan (tidak sync)
+	:> graph 				: cek status sync 3 repo
+	:> git branch 			: kita harus ke branch master di local
+	:> git checkout master 	: karena kita masih di branch "fitur" kita harus pindah ke "master"
+	:> git merge sumber/master : kita merge branch master sumber ke master local
+	:> graph 				: sync sumber <> local, tapi origin branch master di remote github belum sync
+	:> git push origin master 	: tinggal samakan saja dengan push 
+	:> graph 				: ke 3 nya sudah sama
+	-----
+	hapus branch fitur (tugas sudah selesai)
+	:> git branch -d fitur 	: hapus branch fitur di local
+	:> graph 				: saat di graph ternyata branch fitur di github masih ada
+	:> git push origin --delete fitur : hapus branch fitur di github kontributor
+	:> graph 				: cek terhapus belum
+	cek juga branch terhapus di githubnya langsung jika perlu
 ---------------------------------------------
