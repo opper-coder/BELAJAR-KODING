@@ -61,7 +61,7 @@ GIT REMOTE
 				:> git remote -v 		: verbose atau cek alamat lebih lengkap
 				// :> git branch -M main 	: posisikan cursor berada di main (yg ini pada tutorial tidak ada)
 				:> git push -u origin main 	: initialisasi upstream agar nanti tinggal "git push" saja uploadnya 
-				:> login  					: anda akan diminta login jika belum login
+				:> login  			: anda akan diminta login jika belum login
 				:> git status 			: harusnya up to date (synchron)
 				modifikasi halaman 		: coba ubah halaman
 				:> git commit -am "satu": coba commit 
