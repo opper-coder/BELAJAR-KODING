@@ -128,8 +128,6 @@ CHECKOUT COMMIT
 	- :> graph 			: saat di graph akan ada branch baru test tapi head masih nempel di commit yang tadi
 	- :> git checkout test 		: kita harus ke checkout test baru normal (HEAD pindah ke branch test)
 	- :> graph 			: terlihat normal. dan branch yang atas tidak terjadi perubahan. kita boleh checkout dan merge keatas kapan saja kita suka
-	-   
-
 -------------------------------------------------
 
 
