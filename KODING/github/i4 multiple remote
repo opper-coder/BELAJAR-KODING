@@ -39,7 +39,9 @@ ada 3 repo yang harus di singkronkan
 	- :> graph 					: saat di graph yang ketinggalan satu langkah tinggal repo remote kontributor
 	- :> git push -u origin master 			: untuk menyingkronkan tinggal push saja. 
 	- :> (git push) 				: kalau sudah pernah -u push mk selanjutnya tinggal push saja tanpa -u (kayaknya)
----------------------------------------------
+
+
+--------------------------------------------------------------------------------------------------------------------------
 GIT REMOTE BRANCH
 1. sekarang bagaimana kalau perubahan yang terjadi di local kontributor 
 2. dan ingin mengirimkan perubahan pada repo sumber
