@@ -39,7 +39,7 @@ GIT REMOTE
 		- :> git commit -am "modif nama" 		: bikin dan commit perubahan
 		- :> git push 					: sinkronkan dengan online
 		- :> git status 				: cek keberhasilan
-		- :> graph 						: apakah sudah singkron 
+		- :> graph 					: apakah sudah singkron 
 	---
 	PROJECT DULU REMOTE BELAKANGAN
 	- bikin komit sampai jadi di local dan kita akan menyimpan dan remot di online
