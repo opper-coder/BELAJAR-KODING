@@ -1,4 +1,5 @@
 GIT MULTI REMOTE
+---------------------------------------------
 ada 3 repo yang harus di singkronkan
 1. di github ada sebuah repository sebagai repo Project-Utama yang akan di jadikan patokan singkronisasi
 2. lalu kontributor melakukan fork ke akun remote gihubnya nya
@@ -7,33 +8,34 @@ ada 3 repo yang harus di singkronkan
 5. kontributor melakukan remote ke 2 repo online, dan melakukan sync ke 3 reponya 
 	- masuk github anda sbg kontributor 
 	- dari sana cari repo utama yang anda tuju dan buka Project-Utama/Coba
-	- klik fork, kita di kasih repo beserta parameternya 
-	- berikutnya clone ke local:
+	- klik fork, maka kita di kasih repo beserta parameternya, di repo kontributor 
+	- berikutnya clone repo kontributor ini ke local:
 	- klik clone, pilih HTTPs URL
 	- local terminal :>
 	KONEKSI
 	- :> cd Documents/Project 			: tempatkan clone nya, terserah 
-	- :> git clone <url> 				: tanpa ""
-	- :> cd Coba 					: masuk ke clone
+	- :> git clone <url> 				: tanpa "", url dari hasil clone tadi, maka kita akan download clone di local
+	- :> cd Coba 					: masuk ke repo clone local
 	- :> git remote 				: saat di cek hasilnya origin
-	- :> git remote -v 				: dicek lebih dalam ternyata connect ke remote ke remote kontributor sendiri
+	- :> git remote -v 				: dicek lebih dalam ternyata connect ke URL ke remote kontributor sendiri
 	- :> git remote add sumber <url>		: supaya connect jg ke remote sumber project utama tambahkan remote sekali lagi
-							  nama harus beda <url remote copas dari clone HTTPs Url Sumber>
+							  nama harus beda (kita kasih nama sumber) <url remote copas dari clone HTTPs Url Sumber>
 	- :> git remote 				: cek maka muncul 2 remote sekarang
-	- :> git remote -v 				: cek lebih dalam 2 remote dan arah jg connec URL nya ke masing2 repo sumbernya  
+	- :> git remote -v 				: cek lebih dalam 2 remote, terlihat URL masing2 
 	- :> alias graph="git log --all --decorate --aneline --graph" 	: bikin graph
-	- :> graph 					: saat di graph maka akan terlihat yang singkron hanya ada 2 yaitu local dan repo kita(kontributor)
-	- :> git fetch sumber 				: supaya terjadi 3 singkron, kita ambil dulu posisi HEAD dari repo sumber dengan "git fetch"
+	- :> graph 					: saat di graph maka akan terlihat yg singkron hanya ada 2. yaitu local dan repo kita(kontributor)
+	- :> git fetch sumber 				: supaya terjadi 3 singkron, kita ambil dulu posisi HEAD dari repo sumber dengan "git fetch", setelah berhasil
 	- :> graph 					: graph lagi, sekarang sudah 3 singkron: 
-							  artinya kontributor bekerja di repo lokal dan meremote 2 repo di online, dan melakukan singkron di ke 3 repository 
+							  artinya kontributor bekerja di repo lokal dan meremote 2 repo di online, dan berhasil melakukan singkron ke 3 repository 
 	MODIFIKASI DI SUMBER
 	katakanlah di sumber ada perubahan satu baris dari pemilik,
-	kontributor lakukan singkronisasi ke repo sumber, melakukan cek, dan merging local, 
-	setelah singkron sumber dan local, lalu push ke remote kontributor, untuk singkron lagi repo remote kontributor
+	kontributor lakukan singkronisasi ke repo sumber, 
+	melakukan cek, dan merging local, setelah singkron sumber dan local berhasil, 
+	lalu push ke remote kontributor, untuk singkron lagi repo remote kontributor
 	- :> git fetch sumber				: ambil data HEAD di sumber ke local
 	- :> graph 					: terlihat sumber maju satu langkah, local dan remote masih singkron
 	- :> git merge sumber/master 			: merging local dan sumber slash branch master 
 	- :> graph 					: saat di graph yang ketinggalan satu langkah tinggal repo remote kontributor
 	- :> git push -u origin master 			: untuk menyingkronkan tinggal push saja. 
 	- :> (git push) 				: kalau sudah pernah -u push mk selanjutnya tinggal push saja tanpa -u (kayaknya)
-	- 
+---------------------------------------------
