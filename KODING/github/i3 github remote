@@ -1,1 +1,86 @@
-
+-------------------------------------------------
+GIT REMOTE
+- kita akan bikin repository di github 
+- lalu kita cloning di local 
+- kemudian dari local kita modifikasi dan kita remote commit dll ke github 
+- caranya: 
+	---
+	REMOT DULU BARU PROJECT
+	- clone
+		- buka akun github anda
+		- bikin repo baru bernama "belajar remote" sampai selesai
+		- klik tombol <>code > clone > https > copas alamat url (ada beberapa pilihan: clone, HTTPS, SSH, github CLI, download) 
+		- git init, berbde dengan git init kalau di local, kalu github pakai git clone "URL"
+		- buka terminal linux di folder mana kita akan remote repo kita lalu clone disini: 
+		- :> git clone "paste HTTPS" 	: repo di github akan clone repo dari github dan sudah init github sekaligus
+		- klik kanan repo yg kita dapatkan > open with vscode > open teminal vscode (tutup saja terminal linux)
+		- :> git remote 				: hasilnya "origin" berarti kita sudah terhubung 
+		- :> git remote -v 				: lihat conneksi yang sudah terhubung (bukan hanya origin tapi lengkap denga URL)
+		- :> git status 				: saat kita lihat status ada keterangan sudah synchron (up to date)
+		- :> alias graph="git log --all --decorate --oneline --graph" 	: bikin graph
+		- :> graph 						: log nya akan kelihatan secara graph 
+	---
+	- kita akan tambahkan index.html di local dan synchronkan di online
+		- tambah file di vscode 		: new index.html berisi halaman sederhana
+		- :> git status 				: ada file tambahan belum masuk stagging berada di origin atau local
+		- :> graph 						: trlihat ada satu commit yang belum synchron dg remote
+		- :> git push 					: upload ke remote supaya synchron, saat kita enter maka akan di redirect ke login github masukkan pass
+		- :> git status 				: up to date (synchron)
+		- graph 						: cursor sudah ke commit terbaru di origin dan local
+		- buka github refresh 			: filenya sudah sama dengan yang di local
+	---
+	- ganti user email kontributor 
+		- :> git config --list 			: cek nama dan email sekarang, terdapat user.name dan user.email, kalau mau edit dan sesuaikan dengan akun sbb:
+		- :> :q atau :q! 				: cara keluar dari process perintah di atas
+		- :> git config --global user.name="sesuaikan" : --global boleh di ghanti --local
+		- :> git config --global user.email="sesuaikan"
+		- :> git config --list 			: cek maka terlihat kontributor sudah berubah
+		- tambahkan atau modif file 	:
+		- :> git commit -am "modif nama" 	: bikin dan commit perubahan
+		- :> git push 					: sinkronkan dengan online
+		- :> git status 				: cek keberhasilan
+		- :> graph 						: apakah sudah singkron 
+	---
+	PROJECT DULU REMOTE BELAKANGAN
+	- bikin komit sampai jadi di local dan kita akan menyimpan dan remot di online
+	- sedang kita belum memiliki repo di github sama sekali 
+		- desktop > new terminal
+		- :> mkdir coba-komit 			: bikin folder baru di desktop local 
+		- :> git init 					: initialisasi git
+		- :> open folder with vscode 	: buka di code editor 
+		- :> new index.html 			: bikin halaman 
+		- :> git add. git commit -m "" 	: lakukan commit di local
+		- buka github bikin dan repo baru berinama yg sama dengan repo di local
+		- tapi ingat readme jangan di centang, lalu create > hasilnya akan di arahkan ke quick setup
+			- di sana ada pilihan: 
+			1. jika kita belum punya repo: baik di local atau di github
+			2. jika kita sudah punya existing repo di local(pilih yang existing ini) 
+				:> git remote 			: belum ada remote
+				:> git remote add origin https://github.com/opper-coder/belajar-remote2.git 	: copas dari halaman redirect saat bikin repo baru tanpa readme 
+				:> git remote 			: saat di remote akan hasilkan origin (nama origin adalah default boleh diganti)
+				:> git remote -v 		: verbose atau cek alamat lebih lengkap
+				// :> git branch -M main 	: posisikan cursor berada di main (yg ini pada tutorial tidak ada)
+				:> git push -u origin main 	: initialisasi upstream agar nanti tinggal "git push" saja uploadnya 
+				:> login  					: anda akan diminta login jika belum login
+				:> git status 			: harusnya up to date (synchron)
+				modifikasi halaman 		: coba ubah halaman
+				:> git commit -am "satu": coba commit 
+				:> git push 			: upload 
+				:> git status 			: cek sudah up to date
+				:> graph 				: cek deg graph sudah synchron
+			menangani conflict
+				- jika di github ada yang mengubah
+				- di local juga ada yang mengubah dengan perubahan yang berbeda pada baris yang sama
+				- maka terjadi conflict 
+				- saat kita add dan commit di local maka masih normal namun pada saat push
+				- :> git push 			: maka rejected, karena conflict, maka perlu di resolve dulu dengan cara di pull ke local dan resolve, add, commit, push
+				- :> git status 		: tapi sebelumnya kita cek dulu, disana terlihat belum singkron
+				- :> git fetch 			: pengecekan berlanjut sudah sampai mana commit yang ada di online
+				- :> git status 		: stelah di cek maka, git statsu kali ini akan memperlihatkan bahwa commit kita diverged alias conflict 
+				- :> git graph 			: kalau pakai graph terlihat cabang nya, setelah selesai ceking, saatnya kita pull
+				- :> git pull 			: kita ambil commit dari online ke cursor local, hasilnya ada CONFLICT 
+				- di vscode 			: tinggal resolve <<<< dari pull ==== di local >>>> 
+				- git -am "tiga" 		: tinggal commit lagi
+				- git push 				: dan push, harusnya sukses
+				- git status 			: cek
+				- graph 				: cek 
