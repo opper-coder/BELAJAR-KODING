@@ -1,0 +1,36 @@
+GIT KOLABORASI dan REBASE
+---------------------------------------------
+
+Kolaborasi
+---------------------------------------------
+- sebelumnya jika kita mau mengerjakan bersama menggunakan account yang berbeda kita bisa lakukan "FORK"
+- tapi kelemahanya adalah kita harus "pull request" dan "approve" saat ada perubahan dari kontributiornya
+- agar tidak perlu lakukan "request approve" dalam kerjasama antar account (mirip mengerjakan master branch dalam account sendiri)
+- maka kita harus menggunakan "COLLABORATOR". caranya:
+	- pemilik repo masuk tab settings > tab collaborators > masukkan password github confirmation
+	- search accout github lain sbg kolaboratornya > keyword: usernama, full name, email  
+	- pilih account > klik add collaborator 
+	- colaborator akan di kirim URL invite email dan klik terima disana, atau
+	- URL link invitation (copas di halaman tadi) bisa dikirim ke WA 
+	- login github collaborator > setelah masuk pastekan saja URL invitation > ada halaman invitasi klik tombol "accept"   
+---------------------------------------------
+Rebase
+- github "sumber" memiliki sebuah repository project
+- sumber mengundang "collaborator" untuk melakukan editing pada repo sumber
+- setelah invite di accept collaborator, maka yang di lakukan collaborator adalah
+	:> git clone 			: kloning ke local 
+	:> git branch ubah 		: singkatnya di local bikin branch "ubah" untuk melakukan editing, setelah ubah comit, dan merge dengan master local, tetapi ... lanjut
+	:> git pull 			: biasakan sebelum melakukan merging ke master local pull dulu master local dengan sumber (mirip git fertch pada fork) 
+							  agar update dulu, apalagi memang benar benar ada perubahan di master remote nya. coba ubah dulu master remote nya, baru pull
+	:> graph 				: saat di graph sekarang terjadi tree way commit, 
+	sekarang tujuan kita tidak di merging seperti biasa melainkan kita rebase, yaitu memajukan commit branch ubah berada di commit terakhir pada branch master
+	:> git checkout ubah 	: untuk melakukan rebase maka HEAD harus berada di branch bersangkutan (branch ubah) 
+	:> git rebase master 	: barulah lakukan rebase , kalau ada conflict silahkan resolve saja tidak masalah
+	:> graph 				: sekarang semua jadi sejajar, tapi branch ubah mendahului 1 langkah dari branch master, "master: harus mengejar ketertinggalan "ubah"
+	:> git checkout master 	: pindah ke master dulu, untuk mengejar ubah dengan melakukan rebase juga ke branch ubah agar sama
+	:> git rebase ubah 		: setelah itu rebase ke ubah
+	:> graph 				: maka sekarang sudah sama antara branch master local dan branch ubah local, 
+							  tinggal singkronkan dengan master di remote tinggal push, tanpa pull lagi karena sudah menjadi kolaborator
+	:> git push -u origin master : push, untuk pertama kali harus pakai upstream dulu, jika sudah pernah maka tinggal git push saja
+- selesai
+---------------------------------------------
