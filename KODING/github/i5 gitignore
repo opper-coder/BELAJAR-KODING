@@ -1,0 +1,23 @@
+GIT IGNORE
+---------------------------------------------
+
+- saat kita :> git add . maka semua file yang ada di repo akan di kirim ke stagging area
+- agar kita bisa pilih file maka kita lakukan pengecualian menggunakan git ignore caranya:
+	- buka folder yang sudah git init
+	- new file .gitignore
+	- di dalamnya bisa kita daftarkan file mana saja seperti berikut
+	cara nulis sbb
+	
+	keterangan.txt 			: file
+	keterangan2.txt 		: file2
+	*.exe 					    : extensi
+	folder1/ 				    : folder dan isinya
+
+	- :> git add . 			:  
+	- :> git status 		:
+
+- file apa saja yang sering di masukan kedalam git ignore? 
+- di github ada bantuan di github.com/github/gitignore
+	kita di kasih daftar file di framwork apa dsb
+- gitignore.io 				:
+	isi partameter misal: macos, vscode, laravel, create maka kita akan di generatekan file gitignore nya
