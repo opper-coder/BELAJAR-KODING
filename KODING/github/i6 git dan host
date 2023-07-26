@@ -1,0 +1,48 @@
+GIT DAN HOSTING
+---------------------------------------------
+HOSTING BIASA
+---------------------------------------------
+biasanya kita menghosting secara manual dengan cara:
+	1. bikin projek kita di local 
+	2. kompres
+	3. kunjungi web hosting dan login 
+	4. pilih paket hosting, dapatkan domain, pilih platform  
+	5. sambungkan domain,
+	6. dapatkan cPanel > file manager dan dbms 
+	7. upload file app compres kita secara direct, atau pakai ftp, filezilla dll
+	8. import databasenya
+	9. sambungkan juga databasenya ke app
+	10. online
+---------------------------------------------
+GIT dan Hosting
+- kita kerjakan project tetap di local dan remote ke Git seperti biasa
+- nanti di hosting kita lakukan pull request ke git, jadi selalu bisa di edit masternya, dan selalu update, selalu sync
+- jadi ada tiga node sekarang. 
+	1. editor 		: sebagai editor local untuk melakukan perubahan editing secara remote ke github, dan syncronisasi dengan master
+	2. master 		: github tempat menyimpan file master nya
+	3. hosting 		: tempat menjalankan aplikasi dan melakukan syncronisasi dengan master
+- caranya:
+	- katakan kita sudah mengerjakan aplikasi secara local dan remote git, tinggal urusan upload ke Hosting
+	- login ke hosting config domain, dll sampai mendapatkan cPanel
+	- di cPanel buka menu All Feature, 
+	- di kategory files pilih "git version control"
+		- tapi masuk dulu files manager lihat root folder kita yg di berikan
+		- dapatkan url public atau htdoc nya (public_html)
+	- di menu "Git Version Control" hosting 
+		- create link  			: klik
+		- clone a repository 	: centang
+		- clone URL 			: paste URL clone HTTPS repo aplikasi remote kita (ambil di github repository app kita) 
+		- repository path 		: saat di klik auto muncul. atau kita arahkan ke public_html(recomended)(lihat path root di file manager nya tadi)
+		- repository name 		: biarkan samakan dg repository github master nya
+		- create 				: klik create > tunggu sampai clone(download app) is complete 
+		- online 				: siap di akses
+		-----
+		- saat sudah complete kita di kasih list aplikasi kita > kita juga di kasih tombol manage pada list tersebut
+		- di menu manage kita di kasih tab: "basic" dan "pull" or "deploy". 
+		- ada pilih pindah branch mana, hosting kita terhubung dan lain lain
+		-----
+	- singkronisasi hosting dan github
+		- saat ada perubahan di github kita perlu melakukan singkronisasi pada hosting caranya
+		- pilih tab "pull" > klik tombol "update from remote" > tunggu sampai success > kita akan dapatkan pesan update
+		- selesai
+---------------------------------------------	
