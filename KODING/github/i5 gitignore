@@ -10,8 +10,8 @@ GIT IGNORE
 	
 	keterangan.txt 			: file
 	keterangan2.txt 		: file2
-	*.exe 					    : extensi
-	folder1/ 				    : folder dan isinya
+	*.exe				: extensi
+	folder1/			: folder dan isinya
 
 	- :> git add . 			:  
 	- :> git status 		:
@@ -19,5 +19,5 @@ GIT IGNORE
 - file apa saja yang sering di masukan kedalam git ignore? 
 - di github ada bantuan di github.com/github/gitignore
 	kita di kasih daftar file di framwork apa dsb
-- gitignore.io 				:
+- gitignore.io 	:
 	isi partameter misal: macos, vscode, laravel, create maka kita akan di generatekan file gitignore nya
