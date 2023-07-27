@@ -18,6 +18,7 @@ sekeduller
 - 1d atau 1w (week) start-time dapat di ganti  00:00:00 (default), name= bisa di ganti
 - cek status 
 Untuk memastikan scheduler telah dibuat dengan benar, Anda dapat memeriksa daftar scheduler yang aktif dengan menjalankan perintah berikut di terminal:
+atau cek langsung di system table skeduler row
 
 /system scheduler print
 
