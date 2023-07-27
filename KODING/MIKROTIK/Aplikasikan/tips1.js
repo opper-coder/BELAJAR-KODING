@@ -63,7 +63,37 @@ name= bisa di ganti:
 	
 /system scheduler add name=scheduler_check_avg_traffic_hotspot interval=1m on-event=script_name
 
+cara memberi nama script pada mikrotik
+ChatGPT
+Untuk memberi nama pada script di perangkat MikroTik, 
+	Anda dapat menggunakan menu "System Scripts" di Winbox atau menggunakan perintah di terminal. 
+	Berikut adalah langkah-langkahnya:
 
+Menggunakan Winbox (GUI):
+
+Buka aplikasi Winbox dan akses perangkat MikroTik dengan hak akses administratif (admin).
+Klik pada menu "System" di sisi kiri jendela Winbox.
+Pilih "Scripts" di bawah menu "System" untuk membuka jendela "System Scripts".
+Klik tombol "+" untuk menambahkan script baru.
+Di jendela "New Script", beri script Anda nama pada kolom "Name".
+Masukkan kode script yang ingin Anda tambahkan pada kolom "Source".
+Klik "OK" untuk menyimpan script.
+Menggunakan Terminal (CLI):
+
+Akses perangkat MikroTik melalui terminal dengan hak akses administratif (admin).
+Untuk membuat script baru, gunakan perintah berikut:
+bash
+Copy code
+/system script add name=nama_script source="kode_script"
+Gantilah "nama_script" dengan nama yang Anda inginkan untuk script, dan "kode_script" dengan kode script yang ingin Anda tambahkan.
+Contoh untuk membuat script sederhana dengan nama "contoh_script" di terminal:
+
+sql
+Copy code
+/system script add name=contoh_script source=":log info \"Ini adalah contoh script.\""
+Dengan langkah-langkah di atas, Anda telah berhasil memberi nama pada script di perangkat MikroTik. 
+	Nama script ini akan memudahkan Anda dalam mengelola dan mengidentifikasi script yang telah dibuat. 
+	Pastikan untuk menggunakan nama yang deskriptif dan mudah diingat agar mudah dikenali nantinya.
 -----------------------------------------------------------------------------
 
 -----------------------------------------------------------------------------
