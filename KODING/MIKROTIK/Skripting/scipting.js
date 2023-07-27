@@ -6,7 +6,7 @@
 COMMAND ROUTE
 ----------------------
 
-add, remove, get, set, enable, disable 					// CRUD row data rules
+add, remove, get, set, enable, disable 				// CRUD row data rules
 /ip address								// akses route root pakai slash/: root > ip > address > command isi parameter. masuk menu berikutnya pakai spasi
 									// sepasi = selanjutnya v6 untuk v7 pakai slash/ meskipun pakai spasi masih bisa, kedepan mungkin pakai slash semua
 									// semicolon ";" atau baris baru(newline), adalah di anggap penutup perintah  
