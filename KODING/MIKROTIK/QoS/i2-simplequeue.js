@@ -46,6 +46,17 @@ Rumus: Burst limit / max limit = <> treshold. contoh:
 	time 		: 8x 		// detik ke
 */
 
+----------------------
+burst voucher
+	max limit 	: 1,3 M
+	burst treshold  : 2 M
+	burst limit 	: 3 M
+	time 		: 10 	
+
+
+
+
+
 /* BUCKET
 ---------------------------------------------------------------------------------------------------------------
 selain Burts ada juga bucket mirip dengan burst tapi beda cara kalkulasinya aja caranya:
