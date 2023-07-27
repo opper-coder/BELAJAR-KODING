@@ -45,7 +45,7 @@ lakukan kalkulasi yang tepat penggunaan 1 menit per pengguna ideal dalam MB down
     :put ("User " . $user_ip . " menggunakan rata-rata lalu lintas " . $avg_traffic . " bytes per menit.");
     # Ganti "bytes" dengan "bits" jika Anda ingin melihat dalam bentuk bit.
     
-    :local limit_threshold 100M; # Atur ambang batas lalu lintas, misalnya 100 MB per menit.
+    :local limit_threshold 100M; # Atur ambang batas lalu lintas, misalnya 100 MB per menit. seperinya 4,5M (750kb * 60 detik = 45000 kb)
     
     :if ($avg_traffic > $limit_threshold) do={
         /queue simple set [find target-addresses=$user_ip] max-limit=1M/1M;
