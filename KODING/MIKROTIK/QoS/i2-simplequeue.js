@@ -30,11 +30,21 @@ inilah istilah yang akan kita bahas
 	time 		: detik(berapa lama)
 Rumus: Burst limit / max limit = <> treshold. contoh:
 	max limit 	: 8M 		// tanpa burst
-	burst treshold	: 10M 		// pada detik ke1 20M/8=2,5 maka dapat burts, detik ke2 20+20=40/8=5, ke3 7,5, 
+	burst treshold	: 11M 		// pada detik 
+ 					      ke:1 20M/8  = 2,5 	: dapat burts, 
+					      ke:2 40M/8  = 5 		: dapat burts,
+					      ke:3 60M/8  = 7,5 	: dapat burts,
+					      ke:4 80M/8  = 10 		: dapat burts,
+					      ke:5 90M/8  = 11,5	: tidak dapat burts,
+	   				      ke:5 100M/8 = 12,5	: tidak dapat burts,
+					      ke:6 90M/8  = 		: tidak dapat burts,
+					      ke:7 80M/8  =  		: tidak dapat burts,
+	   				      ke:8 70M/8  =  		: dapat burts, 
+      
+      					detik ke2 20+20=40/8=5, ke3 7,5, 
 					// saat ada di bawah 10M maka ini akan di beri bonus
 	burst limit 	: 20M 		// dapat bonus
 	time 		: 8x 		// detik ke
-
 */
 
 /* BUCKET
