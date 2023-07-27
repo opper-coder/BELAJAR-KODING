@@ -51,8 +51,18 @@ lakukan kalkulasi yang tepat penggunaan 1 menit per pengguna ideal dalam MB down
         :put ("User " . $user_ip . " telah mencapai batas rata-rata lalu lintas.");
     }
 }
-
-
-
+	    
+Dalam skrip di atas, kita memeriksa setiap pengguna hotspot aktif dan menghitung rata-rata lalu lintas (rx dan tx) 
+dalam interval waktu tertentu (1 menit). 
+Jika rata-rata lalu lintas pengguna melebihi ambang batas yang telah ditentukan (misalnya 100 MB per menit), 
+maka skrip akan mengatur batas limit Simple Queue menjadi 1M/1M (1 Mbps) untuk pengguna tersebut.
+-----
+Buat scheduler untuk menjalankan skrip secara berkala untuk memeriksa rata-rata lalu lintas pengguna hotspot. 
+name= bisa di ganti:
+	
 /system scheduler add name=scheduler_check_avg_traffic_hotspot interval=1m on-event=script_name
 
+
+-----------------------------------------------------------------------------
+
+-----------------------------------------------------------------------------
