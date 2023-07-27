@@ -51,7 +51,7 @@ burst voucher
 	max limit 	: 1,3 M
 	burst treshold  : 2 M
 	burst limit 	: 3 M
-	time 		: 10 	
+	time 		: 10 		// 8 - 12 (coba atur disini penyesuaian)
 ----------------------
 
 /* BUCKET
