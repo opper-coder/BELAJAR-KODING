@@ -41,7 +41,6 @@ Rumus: Burst limit / max limit = <> treshold. contoh:
 					      ke:7 80M/8  =  		: tidak dapat burts,
 	   				      ke:8 70M/8  =  		: dapat burts, 
       
-      					detik ke2 20+20=40/8=5, ke3 7,5, 
 					// saat ada di bawah 10M maka ini akan di beri bonus
 	burst limit 	: 20M 		// dapat bonus
 	time 		: 8x 		// detik ke
