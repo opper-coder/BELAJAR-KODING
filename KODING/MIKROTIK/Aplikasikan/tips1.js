@@ -97,10 +97,11 @@ Dengan langkah-langkah di atas, Anda telah berhasil memberi nama pada script di 
 	Pastikan untuk menggunakan nama yang deskriptif dan mudah diingat agar mudah dikenali nantinya.
 -----------------------------------------------------------------------------
 yang sudah jadi siap di inject:
-pastikan limit yang sudah di berikan sebelumnya adalah 2M/2M
+- pastikan user profil limit yang sudah di berikan sebelumnya adalah 2M/2M
+- bikin user profil pengganti bernama "profil-normal" saat bandwidth padat dg parameter 1M/1M
 -----------------------------------------------------------------------------
 
-/system script add name=nama_script source="
+/system script add name=bandwidth-otomatis source="
 :local hotspot_users [/ip hotspot active find]
 :foreach user in=$hotspot_users do={
     :local user_ip [/ip hotspot active get $user address];
@@ -119,12 +120,31 @@ pastikan limit yang sudah di berikan sebelumnya adalah 2M/2M
         :put ("User " . $user_ip . " telah mencapai batas rata-rata lalu lintas.");
     }
 }
-
-
-
-
 "
+---
+prtimbangkan menggunakan ini:
+:local hotspot_users [/ip hotspot active where profile="nama_user_profile" find] 
+	
+---
+/system script add name=bandwidth-otomatis source=":local hotspot_users [/ip hotspot active find]
+:foreach user in=$hotspot_users do={
+    :local user_ip [/ip hotspot active get $user address];
+    :local user_rx [/ip hotspot active get $user bytes-in];
+    :local user_tx [/ip hotspot active get $user bytes-out];
+    :local total_traffic ($user_rx + $user_tx);
+    :local threshold_traffic 4500kb; # Atur ambang batas lalu lintas, misalnya 100 MB.
+    
+    :if ($total_traffic > $threshold_traffic) do={
+        :local profile_name "profile_normal"; # Ganti dengan nama profil hotspot yang diinginkan.
+        /ip hotspot user set [find address=$user_ip] profile=$profile_name;
+        :put ("User " . $user_ip . " telah mencapai batas lalu lintas. Mengubah profil ke " . $profile_name);
+    }
+}"
 
+---
+yg kedua script ini
+
+/system scheduler add name=scheduler_check_avg_traffic_hotspot interval=1m on-event=bandwidth-otomatis
 
 
 	
