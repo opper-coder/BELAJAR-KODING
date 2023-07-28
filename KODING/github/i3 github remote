@@ -1,3 +1,31 @@
+---
+:> mkdir coba-commit 
+:> cd coba-commit
+:> git init
+:> git config --global user.name="sesuaikan" 	: 
+:> git config --global user.email="sesuaikan" 	:
+:> git config --list 				: cek kontributor berubah
+:> :q atau :q! 				: 
+:> code . 				: 
+ - new index.html
+:> git add. 
+:> git commit -m "" 
+:> git status  				: 
+:> alias graph="git log --all --decorate --oneline --graph"
+:> graph 				: 
+---
+:> git remote 				: return origin
+:> git remote -v 			: origi, url
+---
+ada 2 cara remote 
+1. :> git clone "paste HTTPS" 		: 
+2. :> git remote add origin https://github.com/opper-coder/belajar-remote2.git
+---
+:> git push 				: 
+github refresh  			: 
+:> git status  	
+:> graph 
+--- 
 -------------------------------------------------
 GIT REMOTE
 - kita akan bikin repository di github 
@@ -32,7 +60,7 @@ GIT REMOTE
 	- ganti user email kontributor 
 		- :> git config --list 				: cek nama dan email sekarang, terdapat user.name dan user.email, kalau mau edit dan sesuaikan dengan akun sbb:
 		- :> :q atau :q! 				: cara keluar dari process perintah di atas
-		- :> git config --global user.name="sesuaikan" 	: --global boleh di ghanti --local
+		- :> git config --global user.name="sesuaikan" 	: --global boleh di ganti --local
 		- :> git config --global user.email="sesuaikan"
 		- :> git config --list 				: cek maka terlihat kontributor sudah berubah
 		- tambahkan atau modif file 	:
