@@ -71,28 +71,60 @@ Untuk memberi nama pada script di perangkat MikroTik,
 Menggunakan Winbox (GUI):
 
 Buka aplikasi Winbox dan akses perangkat MikroTik dengan hak akses administratif (admin).
-Klik pada menu "System" di sisi kiri jendela Winbox.
-Pilih "Scripts" di bawah menu "System" untuk membuka jendela "System Scripts".
-Klik tombol "+" untuk menambahkan script baru.
-Di jendela "New Script", beri script Anda nama pada kolom "Name".
-Masukkan kode script yang ingin Anda tambahkan pada kolom "Source".
-Klik "OK" untuk menyimpan script.
+	Klik pada menu "System" di sisi kiri jendela Winbox.
+	Pilih "Scripts" di bawah menu "System" untuk membuka jendela "System Scripts".
+	Klik tombol "+" untuk menambahkan script baru.
+	Di jendela "New Script", beri script Anda nama pada kolom "Name".
+	Masukkan kode script yang ingin Anda tambahkan pada kolom "Source".
+	Klik "OK" untuk menyimpan script.
+
 Menggunakan Terminal (CLI):
 
 Akses perangkat MikroTik melalui terminal dengan hak akses administratif (admin).
 Untuk membuat script baru, gunakan perintah berikut:
-bash
+
 Copy code
-/system script add name=nama_script source="kode_script"
+	/system script add name=nama_script source="kode_script"
 Gantilah "nama_script" dengan nama yang Anda inginkan untuk script, dan "kode_script" dengan kode script yang ingin Anda tambahkan.
 Contoh untuk membuat script sederhana dengan nama "contoh_script" di terminal:
 
 sql
-Copy code
-/system script add name=contoh_script source=":log info \"Ini adalah contoh script.\""
+
+	/system script add name=contoh_script source=":log info \"Ini adalah contoh script.\""
+
 Dengan langkah-langkah di atas, Anda telah berhasil memberi nama pada script di perangkat MikroTik. 
 	Nama script ini akan memudahkan Anda dalam mengelola dan mengidentifikasi script yang telah dibuat. 
 	Pastikan untuk menggunakan nama yang deskriptif dan mudah diingat agar mudah dikenali nantinya.
 -----------------------------------------------------------------------------
-
+yang sudah jadi siap di inject:
+pastikan limit yang sudah di berikan sebelumnya adalah 2M/2M
 -----------------------------------------------------------------------------
+
+/system script add name=nama_script source="
+:local hotspot_users [/ip hotspot active find]
+:foreach user in=$hotspot_users do={
+    :local user_ip [/ip hotspot active get $user address];
+    :local user_rx [/ip hotspot active get $user bytes-in];
+    :local user_tx [/ip hotspot active get $user bytes-out];
+    :local total_traffic ($user_rx + $user_tx);
+    :local interval 1m; # Interval pengukuran, misalnya 1 menit.
+    :local avg_traffic ($total_traffic / ($interval / 60));
+    
+    :put ("User " . $user_ip . " menggunakan rata-rata lalu lintas " . $avg_traffic . " bytes per menit.");
+    
+    :local limit_threshold 4500kb; # Atur ambang batas lalu lintas, misalnya 100 MB per menit.
+    
+    :if ($avg_traffic > $limit_threshold) do={
+        /queue simple set [find target-addresses=$user_ip] max-limit=1M/1M;
+        :put ("User " . $user_ip . " telah mencapai batas rata-rata lalu lintas.");
+    }
+}
+
+
+
+
+"
+
+
+
+	
