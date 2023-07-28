@@ -142,7 +142,7 @@ prtimbangkan menggunakan ini:
 }"
 
 ---
-yg kedua script ini
+yg kedua script ini harus di jalankan untuk menjalankan penggantian tiap satu menit
 
 /system scheduler add name=scheduler_check_avg_traffic_hotspot interval=1m on-event=bandwidth-otomatis
 
