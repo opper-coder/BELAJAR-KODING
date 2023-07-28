@@ -18,8 +18,8 @@
 :> git remote -v 			: origi, url
 ---
 ada 2 cara remote 
-1. :> git clone "paste HTTPS" 		: 
-2. :> git remote add origin https://github.com/opper-coder/belajar-remote2.git
+1. :> git clone "paste HTTPS" 		: new directory local, dan ada direktory di github dan project sudah terisi
+2. :> git remote add origin https://github.com/opper-coder/belajar-remote2.git : eksisting direktori di local yg sudah berisi, dan ada direktory di github tapi kosong 
 ---
 :> git push 				: 
 github refresh  			: 
