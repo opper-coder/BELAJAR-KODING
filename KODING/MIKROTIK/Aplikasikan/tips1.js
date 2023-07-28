@@ -138,7 +138,8 @@ prtimbangkan menggunakan ini:
         :local profile_name "profile_normal"; # Ganti dengan nama profil hotspot yang diinginkan.
         /ip hotspot user set [find address=$user_ip] profile=$profile_name;
         :put ("User " . $user_ip . " telah mencapai batas lalu lintas. Mengubah profil ke " . $profile_name);
-    } else={
+    } 
+	else={ # else sya bikin sendiri. pertimbangkan dipakai atau tidak
 	:local profile_name2 "voucher"; # Ganti dengan nama profil hotspot yang diinginkan.
         /ip hotspot user set [find address=$user_ip] profile=$profile_name2;
     }
