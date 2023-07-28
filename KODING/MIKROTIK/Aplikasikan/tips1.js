@@ -122,7 +122,7 @@ yang sudah jadi siap di inject:
 }
 "
 ---
-prtimbangkan menggunakan ini:
+prtimbangkan menggunakan ini (replace):
 :local hotspot_users [/ip hotspot active where profile="nama_user_profile" find] 
 	
 ---
