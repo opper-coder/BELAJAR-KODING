@@ -4,7 +4,7 @@ jika mau menyimpan folder project ke git:
 3. git remote add origin URL 	: tanpa kutip
 4. git commit -am ""
 5. git push
----
+-------------------------------------------------
 :> mkdir coba-commit 
 :> cd coba-commit
 :> git init
