@@ -29,13 +29,13 @@ GIT dan Hosting
 		- tapi masuk dulu files manager lihat root folder kita yg di berikan
 		- dapatkan url public atau htdoc nya (public_html)
 	- di menu "Git Version Control" hosting 
-		- create link  			: klik
+		- create link  		: klik
 		- clone a repository 	: centang
-		- clone URL 			: paste URL clone HTTPS repo aplikasi remote kita (ambil di github repository app kita) 
-		- repository path 		: saat di klik auto muncul. atau kita arahkan ke public_html(recomended)(lihat path root di file manager nya tadi)
-		- repository name 		: biarkan samakan dg repository github master nya
-		- create 				: klik create > tunggu sampai clone(download app) is complete 
-		- online 				: siap di akses
+		- clone URL 		: paste URL clone HTTPS repo aplikasi remote kita (ambil di github repository app kita) 
+		- repository path 	: saat di klik auto muncul. atau kita arahkan ke public_html(recomended)(lihat path root di file manager nya tadi)
+		- repository name 	: biarkan samakan dg repository github master nya
+		- create 		: klik create > tunggu sampai clone(download app) is complete 
+		- online 		: siap di akses
 		-----
 		- saat sudah complete kita di kasih list aplikasi kita > kita juga di kasih tombol manage pada list tersebut
 		- di menu manage kita di kasih tab: "basic" dan "pull" or "deploy". 
