@@ -97,7 +97,7 @@ Dengan langkah-langkah di atas, Anda telah berhasil memberi nama pada script di 
 	Pastikan untuk menggunakan nama yang deskriptif dan mudah diingat agar mudah dikenali nantinya.
 -----------------------------------------------------------------------------
 yang sudah jadi siap di inject:
-- pastikan user profil limit yang sudah di berikan sebelumnya adalah 2M/2M
+- bikin kecepatan umum bernama "voucher" 2M/2M default
 - bikin user profil pengganti bernama "profil-normal" saat bandwidth padat dg parameter 1M/1M
 -----------------------------------------------------------------------------
 
@@ -138,6 +138,9 @@ prtimbangkan menggunakan ini:
         :local profile_name "profile_normal"; # Ganti dengan nama profil hotspot yang diinginkan.
         /ip hotspot user set [find address=$user_ip] profile=$profile_name;
         :put ("User " . $user_ip . " telah mencapai batas lalu lintas. Mengubah profil ke " . $profile_name);
+    } else={
+	:local profile_name2 "voucher"; # Ganti dengan nama profil hotspot yang diinginkan.
+        /ip hotspot user set [find address=$user_ip] profile=$profile_name2;
     }
 }"
 
