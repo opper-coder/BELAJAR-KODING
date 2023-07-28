@@ -16,7 +16,26 @@ coba test 50mbps sampai maximal berapa (tergantung ISP)
 	-- local tx:1M | remote tx:1M (1M - 100M atau maximal bw isp kita)| user pass: dari router atau mikrotik | start
 5. antara resourch CPU MEM (4%) dan Btest sama stabilnya 1M 
 6. saat local tx:1M | remote tx:1M di naikan ke 30M maka CPU naik Bandwidth juga naik
-			    
+
+bandwidth test local
+--------------------------------------------------
+tools > bandwidth > ether2-LAN > 
+	protol: udp (biasa) / ganti juga ke protol: ftp (upload file besar) 
+	direction: both
+	tb start: klik 
+	rx/tx : lihat rx tx average nya
+
+oya buat ether khusus untuk jalur pengujian
+	bridge2-speed: ether5 ip 192.168.5.1/24 ]
+	( ether umum: 192.168.50.1/24 ) 
+	 
+untuk jalur bridge1-LAN buatkan voucher-speed
+	user: speedtest123
+	pass: speedtest123
+	profile: speedtest
+	limit: 1gb
+	time: no limit
+
 APLIKASI WIFI 
 --------------------------------------------------
 1. moho di https://moho.ruijienetworks.com/static/homepager/en/index.htm
