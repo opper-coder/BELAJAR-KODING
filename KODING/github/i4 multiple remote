@@ -1,3 +1,46 @@
+RINGKASAN
+---------------------------------------------
+1. preject-utama/Coba(sumber)	: oleh orang di github
+2. project-utama/Coba(remote) 	: fork di github (remote)
+3. project utama/Coba(local) 	: clone local
+--- sync 3 repo
+cd Documents/Project 		: 
+:> git clone <url>  		: (local)with new folder
+:> cd Coba 			: masuk
+:> git remote 			: 
+:> git remote -v		: 
+:> git remote add sumber <url> 	: branch di local
+:> alias graph="git log --all --decorate --aneline --graph" : 
+:> graph 			: 
+:> git fetch sumber 		: sync fetch info sumber
+:> git merge sumber/master 	: local <> sumber
+:> git push -u origin master 	: local <> remote
+--- modified sumber
+:> git fetch sumber
+:> graph
+:> git merge sumber/master
+:> git push
+--- local modified
+:> code . 			: local modified
+:> git branch fitur 		: 
+:> git checkout fitur 		: 
+edit local branch "fitur" 	: 
+:> git commit -am "ubah paragraf" :
+:> git status 			: 
+:> graph 			: 
+:> git merge sumber/master 	: edit selesai
+--- sync remotez
+:> git push -u origin master 	: sync ke remote
+--- pull
+	- buka repo kita di github, refresh	
+	- klik compare & pull request
+--- approve
+	- buka repo github sumber 
+	- buka tab PR (pull request)
+--- sync local
+:> git fetch sumber
+:> git merge sumber/master
+:> git push origin master
 
 GIT MULTI REMOTE
 ---------------------------------------------
@@ -8,14 +51,14 @@ ada 3 repo yang harus di singkronkan
 4. remote ini di lihat dari sisi kontributor
 5. kontributor melakukan remote ke 2 repo online, dan melakukan sync ke 3 reponya 
 	- masuk github anda sbg kontributor 
-	- dari sana cari repo utama yang anda tuju dan buka Project-Utama/Coba
-	- klik fork, maka kita di kasih repo beserta parameternya, di repo kontributor 
+	- dari halaman kontrib cari repo utama yang anda tuju, dan buka Project-Utama/Coba
+	- klik fork, tunggu, download selesai forked from..., di repo kontributor 
 	- berikutnya clone repo kontributor ini ke local:
-	- klik clone, pilih HTTPs URL
+	- klik clone, pilih HTTPs URL, copy
 	- local terminal :>
 	KONEKSI
 	- :> cd Documents/Project 			: tempatkan clone nya, terserah 
-	- :> git clone <url> 				: tanpa "", url dari hasil clone tadi, maka kita akan download clone di local
+	- :> git clone <paste url> 				: tanpa "", url dari hasil clone tadi, maka kita akan download clone di local
 	- :> cd Coba 					: masuk ke repo clone local
 	- :> git remote 				: saat di cek hasilnya origin
 	- :> git remote -v 				: dicek lebih dalam ternyata connect ke URL ke remote kontributor sendiri
@@ -23,7 +66,7 @@ ada 3 repo yang harus di singkronkan
 							  nama harus beda (kita kasih nama sumber) <url remote copas dari clone HTTPs Url Sumber>
 	- :> git remote 				: cek maka muncul 2 remote sekarang
 	- :> git remote -v 				: cek lebih dalam 2 remote, terlihat URL masing2 
-	- :> alias graph="git log --all --decorate --aneline --graph" 	: bikin graph
+	- :> alias graph="git log --all --decorate --oneline --graph" 	: bikin graph
 	- :> graph 					: saat di graph maka akan terlihat yg singkron hanya ada 2. yaitu local dan repo kita(kontributor)
 	- :> git fetch sumber 				: supaya terjadi 3 singkron, kita ambil dulu posisi HEAD dari repo sumber dengan "git fetch", setelah berhasil
 	- :> graph 					: graph lagi, sekarang sudah 3 singkron: 
