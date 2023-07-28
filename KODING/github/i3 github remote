@@ -7,19 +7,19 @@
 :> git config --list 				: cek kontributor berubah
 :> :q atau :q! 				: 
 :> code . 				: 
- - new index.html
-:> git add. 
-:> git commit -m "" 
+ - new index.html 
+:> git add. 				:
+:> git commit -m "" 			:
 :> git status  				: 
 :> alias graph="git log --all --decorate --oneline --graph"
 :> graph 				: 
 ---
-:> git remote 				: return origin
-:> git remote -v 			: origi, url
----
 ada 2 cara remote 
 1. :> git clone "paste HTTPS" 		: new directory local, dan ada direktory di github dan project sudah terisi
 2. :> git remote add origin https://github.com/opper-coder/belajar-remote2.git : eksisting direktori di local yg sudah berisi, dan ada direktory di github tapi kosong 
+---
+:> git remote 				: return origin jk berhasil,
+:> git remote -v 			: origi, url
 ---
 :> git push 				: 
 github refresh  			: 
