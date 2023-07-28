@@ -1,3 +1,9 @@
+jika mau menyimpan folder project ke git:
+1. git init 
+2. .gitignore 
+3. git remote add origin URL 	: tanpa kutip
+4. git commit -am ""
+5. git push
 ---
 :> mkdir coba-commit 
 :> cd coba-commit
@@ -19,7 +25,7 @@ ada 2 cara remote
 2. :> git remote add origin https://github.com/opper-coder/belajar-remote2.git : eksisting direktori di local yg sudah berisi, dan ada direktory di github tapi kosong 
 ---
 :> git remote 				: return origin jk berhasil,
-:> git remote -v 			: origi, url
+:> git remote -v 			: origin, url
 ---
 :> git push 				: 
 github refresh  			: 
