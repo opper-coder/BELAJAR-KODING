@@ -1,7 +1,7 @@
 jika mau menyimpan folder project ke git:
 1. git init 
 2. .gitignore 
-3. git remote add origin URL 	: tanpa kutip
+3. git remote add origin URL 		: tanpa kutip
 4. git commit -am ""
 5. git push
 -------------------------------------------------
