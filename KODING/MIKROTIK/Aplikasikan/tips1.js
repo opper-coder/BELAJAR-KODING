@@ -122,9 +122,13 @@ yang sudah jadi siap di inject:
 }
 "
 ---
+buatkan 
+	1. profile_normal	: max-limit: 1M/1M
+	2. profile_padat 	: max-limit: 2M/2M
+	3. profil 2000dst	: hanya ngatur waktu saja (2jam, 3jam, dst)
+
 prtimbangkan menggunakan ini (replace):
 :local hotspot_users [/ip hotspot active where profile="nama_user_profile" find] 
-	
 ---
 /system script add name=bandwidth-otomatis source=":local hotspot_users [/ip hotspot active find]
 :foreach user in=$hotspot_users do={
@@ -140,7 +144,7 @@ prtimbangkan menggunakan ini (replace):
         :put ("User " . $user_ip . " telah mencapai batas lalu lintas. Mengubah profil ke " . $profile_name);
     } 
 	else={ # else sya bikin sendiri. pertimbangkan dipakai atau tidak
-	:local profile_name2 "voucher"; # Ganti dengan nama profil hotspot yang diinginkan.
+	:local profile_name2 "profile_padat"; # Ganti dengan nama profil hotspot yang diinginkan.
         /ip hotspot user set [find address=$user_ip] profile=$profile_name2;
 	:put ("User " . $user_ip . " telah mencapai batas lalu lintas. Mengubah profil ke " . $profile_name2);
     }
