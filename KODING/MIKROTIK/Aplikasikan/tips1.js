@@ -47,7 +47,7 @@ lakukan kalkulasi yang tepat penggunaan 1 menit per pengguna ideal dalam MB down
     :local limit_threshold 100M; # Atur ambang batas lalu lintas, misalnya 100 MB per menit. seperinya 4,5M (750kb * 60 detik = 45000 kb)
     
     :if ($avg_traffic > $limit_threshold) do={
-        /queue simple set [find target-addresses=$user_ip] max-limit=1M/1M;
+        /queue simple set [find target-addresses=$user_ip] max-limit=1256k/1256k;
         :put ("User " . $user_ip . " telah mencapai batas rata-rata lalu lintas.");
     }
 }
@@ -100,7 +100,6 @@ yang sudah jadi siap di inject:
 - bikin kecepatan umum bernama "voucher" 2M/2M default
 - bikin user profil pengganti bernama "profil-normal" saat bandwidth padat dg parameter 1M/1M
 -----------------------------------------------------------------------------
-
 /system script add name=bandwidth-otomatis source="
 :local hotspot_users [/ip hotspot active find]
 :foreach user in=$hotspot_users do={
@@ -112,15 +111,16 @@ yang sudah jadi siap di inject:
     :local avg_traffic ($total_traffic / ($interval / 60));
     
     :put ("User " . $user_ip . " menggunakan rata-rata lalu lintas " . $avg_traffic . " bytes per menit.");
-    
     :local limit_threshold 4500kb; # Atur ambang batas lalu lintas, misalnya 100 MB per menit.
     
     :if ($avg_traffic > $limit_threshold) do={
         /queue simple set [find target-addresses=$user_ip] max-limit=1M/1M;
         :put ("User " . $user_ip . " telah mencapai batas rata-rata lalu lintas.");
+    } else={
+	/queue simple set [find target-addresses=$user_ip] max-limit=2M/2M;
+        :put ("User " . $user_ip . " telah mencapai batas rata-rata lalu lintas.");  
     }
-}
-"
+}"
 ---
 buatkan 
 	1. profile_normal	: max-limit: 1M/1M
@@ -136,7 +136,11 @@ prtimbangkan menggunakan ini (replace):
     :local user_rx [/ip hotspot active get $user bytes-in];
     :local user_tx [/ip hotspot active get $user bytes-out];
     :local total_traffic ($user_rx + $user_tx);
-    :local threshold_traffic 4500kb; # Atur ambang batas lalu lintas, misalnya 100 MB.
+	    
+    :local interval 1m; # Interval pengukuran, misalnya 1 menit.
+    :local avg_traffic ($total_traffic / ($interval / 60));
+	
+    :local threshold_traffic 750kb; # Atur ambang batas lalu lintas, misalnya 100 MB.
     
     :if ($total_traffic > $threshold_traffic) do={
         :local profile_name "profile_normal"; # Ganti dengan nama profil hotspot yang diinginkan.
