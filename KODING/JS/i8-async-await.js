@@ -17,6 +17,9 @@ yang menghasilkan (implisit) "promise(resolve/reject):bool dan json" sebagai seb
 
 " sebuah async function dapat memiliki keyword await di dalamnya (akan hidup jika ada await)
 sebagai penanda bahwa inilah program asynchronous(yang di lempar ke v8 engine) "
+
+" silahkan tempatkan dimanapun fungsi await, (fokus saja ke pemanggilan function yg await)
+tinggal nanti async nya di urus belakangan, tentunya di dalam function ya async itu"
 ---------------------------------------------------------------- */
 /* promise */ 
 new Promise(resolve, reject); // basic
@@ -78,7 +81,7 @@ pada contoh diatas kita sudah punya 2 cara menangani error pada promise: yaitu s
 hasilnya juga tidak sama saat console. diatas ada contohnya
 
 tapi itu kita praktekan dari promise, yang di dalamnya ada resolve() dan reject()
-nah bagaimana kalau kita pakai fetch() ini juga promise tapi yang kita tahu merthod nya 
+nah bagaimana kalau kita pakai fetch() ini juga promise tapi yang kita tahu method nya 
 resolve saja, sedang rejectnya kita belum tahu langsung saja kita praktek pada kasus
 yang nyata saja yaitu menggunakan rest API online beneran 
 
