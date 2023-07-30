@@ -9,32 +9,24 @@ INSTALLATION
 - MongoDB adalah dtabase berbasis object di install di nodejs sebagai server > nanti akan di akses oleh backend > backend akan buat API
 - mongodb.com > download community server > linux > install 
 	terminal :> mongo > enter > version 
-
 - bikin inisialisasi project/bikin package.json di nodejs > selanjutnya install semua dependency yg di butuhkan disini
 - vscode > new folder "RESFULL" > :terminal :> npm init -y 
 	- ada file package.json  
-
 - express > :> npm install express > tunggu selesai
 	- periksa di package.json
-
 - mongoos :> npm install mongoose (package memudahkan berinteraksi dengan mongodb)
 	- periksa di package.json > dependencies :{ada}
-
 - nodemon > :> npm install --save-dev nodemon (package ) > restart server // berguna untuk tool developer agar tidak restart saat ada perubahan pada koding, praktis!
 	- periksa di package.json > dev dependencies: {ada}
-
 - pada entri point di package.json bernama index.js, oleh karena itu kita buat filenya di bawah > "main": "index.js"
 CODING 
-
 
 config express, port, route endpoint
 ---------------------------------------------------------------------
 - add new file /index.js > 
 	- goto package.json > add "type": "module" di root 		// 1. agar bisa menggunakan es6 beritahu di object root, di atas "main":"" boleh
-	
 	// const express = require('express'); 				// 0. pada node v lama import nya pakai ini, ini bisa di conversi ke es6. dan ini tidak di pakai  
 	import express from "express";  				// 2. di file index.js import express
-
 	const app = express(); 						// 3. init express() dg nama app yang akan kita gunakan nanti
 
 	app.get('/', (req, res) => { 					// 6. buatkan endpoint URL, untuk trigger callback, misal welcome
@@ -43,10 +35,8 @@ config express, port, route endpoint
 
 	app.listen('3000',() => console.log('Server Running at port:3000'));// 4. coba running di terminal :> nodemon index > running server
 									// 5. di chrome: localhost:3000 > akan tampil cannot GET/   
-
 config mongoose
 ---------------------------------------------------------------------
-	
 	import express from "express";  									
 	import mongoose from "mongoose";  				// 1. import mongoose
 
@@ -95,7 +85,6 @@ Pengujian dan GET
 POST
 ---------------------------------------------------------------------
 di halaman :root/routes/index kita buat endpoint get
-	
 	import express from "express"; 										
 	const router = express.Router(); 									
 
@@ -106,12 +95,9 @@ di halaman :root/routes/index kita buat endpoint get
 	router.post('/', (req,res) => { 				// 1. disini post 
 		res.send('Hello World! POST'); 											
 	})
-
 	export default router; 
-	
 -----
 di halaman request.test 
-
 	GET http:localhost:3000/product 				// 2. klik send request > output POST > sukses
 
 MODELS
