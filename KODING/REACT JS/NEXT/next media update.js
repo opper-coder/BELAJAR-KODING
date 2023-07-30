@@ -6,28 +6,28 @@ NEXTJS 13 mei 2023 CODER MEDIA sublime text tab 2 spacy
     }
 
 
-installation 							-> node, npm, next, package, run localhost, vscode, terminal
-cleanUp 									-> bersih bersih untuk project kita
+installation 			-> node, npm, next, package, run localhost, vscode, terminal
+cleanUp 			-> bersih bersih untuk project kita
 LAYOUT, METADATA, PAGES 	-> mengenal, 
-Routing 									-> konsep dan cara akses URL component
-useRouter 								->  
-JSON server  							-> bikin fake API, demonstrasi API
-CSS, Bulma, Bootstrap     -> integrasi style
-react-icons 							-> install dan penggunaan
+Routing 			-> konsep dan cara akses URL component
+useRouter 			->  
+JSON server  			-> bikin fake API, demonstrasi API
+CSS, Bulma, Bootstrap     	-> integrasi style
+react-icons 			-> install dan penggunaan
 tailwind & daisyUI       	-> ini yang kita pakai
-CRUD API       						-> best practice CRUD API di mulai dari sini
-SERVER N CLIENT COMPONENTS  -> mengenal 
+CRUD API       			-> best practice CRUD API di mulai dari sini
+SERVER N CLIENT COMPONENTS  	-> mengenal 
 SERVER COMPONENT       		-> fetch API dari server 
 CLIENT COMPONENT       		-> fetch API dari client
-DeleteProduct       			-> method DELETE
-UpdateProduct       			-> method PATCH
+DeleteProduct       		-> method DELETE
+UpdateProduct       		-> method PATCH
 
 sumber: Fahrezi Adha 
 
-Link & Navigation 				-> tambahan dari fahrezi tentang routing 
-Loading Skeleton 					-> asynchronous display
-.Error handling 					-> menangani error estimate or unestimete
-fetching data	 						-> disini ada patern fetch sebenarnya: parallel, seri, periodic kayaknya
+Link & Navigation 		-> tambahan dari fahrezi tentang routing 
+Loading Skeleton 		-> asynchronous display
+.Error handling 		-> menangani error estimate or unestimete
+fetching data	 		-> disini ada patern fetch sebenarnya: parallel, seri, periodic kayaknya
 
 
 INSTALLATION 	
