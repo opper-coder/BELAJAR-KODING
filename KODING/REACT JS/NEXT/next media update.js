@@ -5,7 +5,6 @@ NEXTJS 13 mei 2023 CODER MEDIA sublime text tab 2 spacy
       "@/*": ["./src/*"]
     }
 
-
 installation 			-> node, npm, next, package, run localhost, vscode, terminal
 cleanUp 			-> bersih bersih untuk project kita
 LAYOUT, METADATA, PAGES 	-> mengenal, 
@@ -28,7 +27,6 @@ Link & Navigation 		-> tambahan dari fahrezi tentang routing
 Loading Skeleton 		-> asynchronous display
 .Error handling 		-> menangani error estimate or unestimete
 fetching data	 		-> disini ada patern fetch sebenarnya: parallel, seri, periodic kayaknya
-
 
 INSTALLATION 	
 ------------------------------------------------------
