@@ -28,10 +28,10 @@ GET (prisma)
 
 POST (axios > prisma)
 -------------------	
-	axios.post("/api/products", { body }); 						// body dikirim via	: axios.post(url, body) 	
+	axios.post("/api/products", { body }); 					// body dikirim via	: axios.post(url, body) 	
 	---
 	/api/product: 
-	const POST = (request) => { 		 						// url tujuan		:  
+	const POST = (request) => { 		 				// url tujuan		:  
 	    prisma.product.create({ data:{} });
 	}
 
@@ -56,7 +56,7 @@ nextjs 13, postgresql, tailwind, daisyui,
 
 :> mkdir fullstack
 :> cd fullstack 
-:> npx create-next-app@latest --experimental-app . 		: ada titik
+:> npx create-next-app@latest --experimental-app . 	: ada titik
 	- typescript :yes
 	- eslint : yes
 	- tailwind: yes
@@ -64,8 +64,8 @@ nextjs 13, postgresql, tailwind, daisyui,
 	- enter 
 :> npm i daisyui axios
 - go package.json			: cek di 	
-- go tailwind.config.js 	: tambahkan & save di root{ plugins: [require("daisyui")],} 
-- go app/#globals.css 		: hapus, sisakan @tailwind base, @tailwind components, @tailwind utilities
+- go tailwind.config.js 		: tambahkan & save di root{ plugins: [require("daisyui")],} 
+- go app/#globals.css 			: hapus, sisakan @tailwind base, @tailwind components, @tailwind utilities
 ---------------------------------------
 INDEX
 - go page.tsx 				: hapus semua dan bikin component baru
@@ -77,22 +77,22 @@ INDEX
 ---------------------------------------
 INSTALL PRISMA
 :> npm i -D prisma 			: install dari sisi Developmen, karena nanti di server hosting sudah di sediakan kayaknya 
-:> npm i @prisma/client 	: untuk client
+:> npm i @prisma/client 		: untuk client
 :> npx prisma init 			: lalu init folder
-- go prisma/schema.prisma 	: cek, ada tambahan file
-- go .env 					: cek, ada tambahan file
+- go prisma/schema.prisma 		: cek, ada tambahan file
+- go .env 				: cek, ada tambahan file
 - go postgresql.org > download sesuai platform dan install > nanti akan di minta password > passwor ini di gunakan untuk koneksi database
 - setelah terinstal nanti di kasih pg admin(seperti php myadmin) > buka > default dikasih db bernama posgresql
 ---------------------------------------
 KONEKSI DB
-- go .env 					: DATABASE_URL="postgresql://johndoe:randompassword@localhost:5432/mydb?schema=public"
+- go .env 				: DATABASE_URL="postgresql://johndoe:randompassword@localhost:5432/mydb?schema=public"
 - ganti dengan 				: DATABASE_URL="postgresql://postgres:123456@localhost:5432/next_db?schema=public" (name (ganti postgres), password tadi yg di minta, db next_db)
 ---------------------------------------
 MODEL DB
 - go schema_prisma 			: bikin model database brand dan product (cek file)
 
-	model Brand {														// 1. nama tabel capital
-	  id       Int       @id @default(autoincrement()) 					// 2. field
+	model Brand {							// 1. nama tabel capital
+	  id       Int       @id @default(autoincrement()) 		// 2. field
 	  name     String
 	  products Product[]
 	}
@@ -104,7 +104,7 @@ MODEL DB
 	  createdAt DateTime @default(now())
 	  updatedAt DateTime @updatedAt
 	  brand     Brand    @relation(fields: [brandId], references: [id]) // 4. relasi tabel Brand (B capital) syntax relasi dg "Brand id" 
-	  brandId   Int 													// 3. bikin primary key
+	  brandId   Int 						// 3. bikin primary key
 	}
 ---------------------------------------
 MIGRATE
@@ -125,22 +125,22 @@ add new app/product/page.tsx
 - bikin table crud (lihat halaman)
 - gunakan class dari daisyui 
 - tabel action text-center
-:> npm run dev 							: jalankan
-- browser: localhost:3000/product 		: maka akan terlihat tabel product 
+:> npm run dev 						: jalankan
+- browser: localhost:3000/product 			: maka akan terlihat tabel product 
 go app/new layout.tsx 					: atur title dan children 
 goto app/product/page.tsx
 ---------------------------------------
 GET PRISMA
 	- import prismaClient  				: karena get di "page product" adalah "server component" maka kita tidak harus pakai api melainkan langsung fetch data 
-										  disini pakai prismaClint, kecuali fetch data di client component, harus pakai API axios dan prismaCient (nanti)
-										  di add, update, delete page component
+							  disini pakai prismaClint, kecuali fetch data di client component, harus pakai API axios dan prismaCient (nanti)
+							  di add, update, delete page component
 	
 	- const prisma = new PrismaClient();
 
 	- bikin function 
 	
 		getProduct(){
-			prisma.product.findMany()					: prisma di gunakan untuk get data pakai findMany (penulisan lengkapnya ada di code)
+			prisma.product.findMany()	: prisma di gunakan untuk get data pakai findMany (penulisan lengkapnya ada di code)
 		}
 
 		getBrands(){
@@ -155,7 +155,7 @@ GET PRISMA
 		}
 
 	- setelah di panggil gunakan datanya di sini
-		<div>{product.title}</div> 						: data siap di gunakan
+		<div>{product.title}</div> 		: data siap di gunakan
 
 	- juga bisa dilakukan loop tabel 
 		{product.map((product, index) => { tr>td })} 	: looping
@@ -165,7 +165,7 @@ pemanggilan table apabila tidak ingin menampilkan semua fieldnya maka pilih yang
 
 const getProducts = async () => {
   const res = await prisma.product.findMany({
-    select: { 										  // pilih field yg di tampilkan saja(adafield yg tidak ditampilkan)
+    select: { 						// pilih field yg di tampilkan saja(adafield yg tidak ditampilkan)
       id: true,
       title: true,
       price: true,
@@ -188,28 +188,28 @@ yg terpenting karena ini client component maka data tidak bisa di kirim langsung
 melainkan pakai axios, jadi handleSubmit belum pakai prisma disini, 
 nanti prisma di pakai di  API(routes) POST, DELETE, UPDATE  
   
-  const router = useRouter(); 								// untuk (steps: 7)  
+  const router = useRouter(); 				// untuk (steps: 7)  
 
   const handleSubmit = async (e: SyntheticEvent) => {
-    e.preventDefault();										// 1. cegah saat submit tidak refresh
-    setIsLoading(true); 									// 2. set state, nyalakan class loading
-    await axios.post("/api/products", { 					// 3. POST API pakai axios (await) yg mengarah ke folder /api/products 
-      title: title, 											  (arah url ini mungkin di tangani oleh next atau router (cari tahu)) 
-      price: Number(price), 								// Number konversi ts agar type data sesuai 
+    e.preventDefault();					// 1. cegah saat submit tidak refresh
+    setIsLoading(true); 				// 2. set state, nyalakan class loading
+    await axios.post("/api/products", { 		// 3. POST API pakai axios (await) yg mengarah ke folder /api/products 
+      title: title, 					      (arah url ini mungkin di tangani oleh next atau router (cari tahu)) 
+      price: Number(price), 				// Number konversi ts agar type data sesuai 
       brandId: Number(brand),
-    }); 													// 4. POST berhasil
-    setIsLoading(false); 									// 5. set stete, matikan class loading
-    setTitle(""); 											// 6. kosongkan state, agar bisa di gunakan kembali nanti
+    }); 						// 4. POST berhasil
+    setIsLoading(false); 				// 5. set stete, matikan class loading
+    setTitle(""); 					// 6. kosongkan state, agar bisa di gunakan kembali nanti
     setPrice("");
     setBrand("");
-    router.refresh(); 										// 7. refresh halaman ini agar bisa melihat perubahan data
-    setIsOpen(false); 										// 8. state, tutup modal
+    router.refresh(); 					// 7. refresh halaman ini agar bisa melihat perubahan data
+    setIsOpen(false); 					// 8. state, tutup modal
   };
 
 --------------------------------------- 
 API SET TO DB
-	- create /api/products/route.ts 						// create folder nama folder bebas (tp akan mempengaruhi pemanggilan), 
-															   kalau nama file wajib "route.ts"
+	- create /api/products/route.ts 				// create folder nama folder bebas (tp akan mempengaruhi pemanggilan), 
+									   kalau nama file wajib "route.ts"
 
 	import { NextResponse } from "next/server";  			// import (yg diperlukan) 
 	import { PrismaClient } from "@prisma/client";
@@ -219,13 +219,13 @@ API SET TO DB
 	export const POST = async (request: Request) =>{ 		// 1. nama wajib POST, args menangkap "request body"
 	    const body: Product = await request.json(); 		// 2. ambil "request body", lalu konversi ke json. 7. anotation product
 	    const product = await prisma.product.create({ 		// 3. untuk menyimpan ke db pakai prisma
-	        data:{ 											// 4. data body di simpan ke db
+	        data:{ 							// 4. data body di simpan ke db
 	            title: body.title,
 	            price: body.price,
 	            brandId: body.brandId
 	        }
 	    });
-	    return NextResponse.json(product, {status: 201}); 	// 5. response hasil penyimpanan pakai next response 
+	    return NextResponse.json(product, {status: 201}); 		// 5. response hasil penyimpanan pakai next response 
 	}
 
 - jika udah jadi import di product/page.tsx. tempatkan komponen ini
