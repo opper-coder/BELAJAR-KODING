@@ -64,16 +64,16 @@ install node dan npm di linux
 terminal update > restart OS lalu update
 :> sudo npm install -g n  			// 6. install version manager praktis (sumber: https://nodejs.org/en/download/package-manager#debian-and-ubuntu-based-linux-distributions)
 :> sudo n lts  					// 7. update node with npm LTS terbaru
-:> node -v 										// 8. coba cek maka versi sudah terbaru (LTS)
-:> npm -v 										// 9. otomatis NPM juga ikut di update
+:> node -v 					// 8. coba cek maka versi sudah terbaru (LTS)
+:> npm -v 					// 9. otomatis NPM juga ikut di update
 :> sudo npm install -g npm@9.6.2  		// 10. kalau perlu update npmnya saja ke version tertentu
 
 CARA MEMBUAT FOLDER REACTAPP
 -----------------------------
 	- masuk ke folder root misalnya document
 	- :> npx create-react-app boxits// buatkan folder app boxits, agak lama
-	- :> cd boxits 									// masuk ke app
-	- :> npm start 									// start, akan tampil default, dan localhost:3000
+	- :> cd boxits 				// masuk ke app
+	- :> npm start 				// start, akan tampil default, dan localhost:3000
 syarat:
 	- koneksi internet untuk installasi reactJs
 	- instal dulu nodeJS v10.16 keatas dan npm v 5.6 keatas. cek :> node -v   dan :> npm -v
@@ -104,10 +104,10 @@ PRAKTEK DAN CLEANUP
 -----------------------------
 sebelum di praktekan hapus file default agar bersih dan kosong siap untuk di isi dengan aplikasi kita sendiri
 
-	Boxits 							// biarkan folder dan file lainya kecuali:			
-		> src 						// pada sourch sisakan dua file ini saja			
-			App.js 					// pada sisakan seperti ini saja function app(){ return(<div> <p> haloo coba </p> </div>); } (oya hapus semua import juga di atas app())
-			index.js 				// buka halaman ini hapus juga import2 pada halaman yang tadi di hapus sisakan yang penting
+	Boxits 					// biarkan folder dan file lainya kecuali:			
+		> src 				// pada sourch sisakan dua file ini saja			
+			App.js 			// pada sisakan seperti ini saja function app(){ return(<div> <p> haloo coba </p> </div>); } (oya hapus semua import juga di atas app())
+			index.js 		// buka halaman ini hapus juga import2 pada halaman yang tadi di hapus sisakan yang penting
 
 	function App(){
 		return(
@@ -129,21 +129,21 @@ maka fokus saja pada functional
 - buat komponen Dasar:
 	- nama File.js harus di awali huruf kapital dan nama funtion component harus di samakan dengan dengan nama filenya. JSX tidak case sensitiv (coba huruf kecil tidak jalan)
 	- di vscode > ketik rafc (reactArrowFuncComp); maka kita di buatkan template yang namanya di samakan dengan nama filenya
-	- return(<div> disini </div>); 				/// harusnya semua dalam div atau hanya bisa return satu saja selebihnya bungkus dalam div 
+	- return(<div> disini </div>); 			/// harusnya semua dalam div atau hanya bisa return satu saja selebihnya bungkus dalam div 
 
-	const Coba = () => { 					// cara buatnya baik dalam page app atau dalam file yang berbeda sama saja, ini pakai arrow function
+	const Coba = () => { 				// cara buatnya baik dalam page app atau dalam file yang berbeda sama saja, ini pakai arrow function
 		return(
 			<div>
 				<p>Halo aqil</p>
 			</div>
 		);
 	}
-	export default Coba 					// jika akan di gunakan pada halaman lain export dulu
+	export default Coba 				// jika akan di gunakan pada halaman lain export dulu
 
 - panggil biasa, panggil import, lakukan export
-	import Coba from "./component/Coba"  			// tidak perlu extension .js Coba akan di akses secara default
-	< Coba />  						// panggil tinggal pakai self close seperti ini 
-								// (tentu panggilnya dalam komponen lainya, misalnya dalam app(){ return 	< Coba /> }) return pakai (); boleh tidak juga boleh
+	import Coba from "./component/Coba"  		// tidak perlu extension .js Coba akan di akses secara default
+	< Coba />  					// panggil tinggal pakai self close seperti ini 
+							// (tentu panggilnya dalam komponen lainya, misalnya dalam app(){ return 	< Coba /> }) return pakai (); boleh tidak juga boleh
 
 	const app = () => {
 		return(
@@ -320,7 +320,7 @@ LOOPING DATA
 
 	import {useState} from "react"; 									
 	function app(){
-		const [products, setProduct] = useState([  						// simpan object data dalam useState misalnya ini (misalnya di ambil dari DB)
+		const [products, setProduct] = useState([  							// simpan object data dalam useState misalnya ini (misalnya di ambil dari DB)
 			{id: 1, title: "product 1", price: 1000 },
 			{id: 2, title: "product 2", price: 2000 },
 			{id: 3, title: "product 3", price: 3000 },
@@ -331,10 +331,10 @@ LOOPING DATA
 		return(
 			<div>
 				<ul>
-					{ products.map( (product) => (  							// untuk object products nya kita looping ke dalam <li> dengan map dengan oper argumen
-						<li key={ product.id } > { product.title } - { product.price } </li>  		// atribut key di gunakan untuk index pengurutan. output item data kita ambil dari argumen.key
-					) ) } 											// oya pada anonimouse function ini tidak menggunakan bracket melainkan () kurung bulat,
-				</ul> 												// hal ini di maksudkan karena functyion ini akan mereturn JSX tanpa keyword return juga
+					{ products.map( (product) => (  						// untuk object products nya kita looping ke dalam <li> dengan map dengan oper argumen
+						<li key={ product.id } > { product.title } - { product.price } </li>  	// atribut key di gunakan untuk index pengurutan. output item data kita ambil dari argumen.key
+					) ) } 										// oya pada anonimouse function ini tidak menggunakan bracket melainkan () kurung bulat,
+				</ul> 											// hal ini di maksudkan karena functyion ini akan mereturn JSX tanpa keyword return juga
 			</div>
 		);
 	} 				///
