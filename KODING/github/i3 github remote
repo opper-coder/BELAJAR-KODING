@@ -1,6 +1,6 @@
 Ringkasan
--------------------------------------------------
 jika mau menyimpan folder project git ke github:
+-------------------------------------------------
 1. git init  				: local
 2. .gitignore  				: pilih
 3. git remote add origin URL 		: tanpa kutip
@@ -25,7 +25,7 @@ git di local
 ---
 ada 2 cara remote :
 -------------------------------------------------
-1. existing repository github
+1. git remote "existing" repository github
 new directory local, dan ada direktory di github dan project sudah terisi
 :> git clone "paste HTTPS" 		:
 ---
@@ -38,7 +38,7 @@ github refresh  			:
 :> graph 
 
 -------------------------------------------------
-2. new repository github
+2.git remote "new" repository github
 eksisting direktori di local yg sudah berisi, dan ada direktory di github tapi kosong 
 :> git remote add origin https://github.com/opper-coder/belajar-remote2.git 
 
