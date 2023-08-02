@@ -36,7 +36,7 @@ Installasi
 :> mkdir fullstack
 :> cd fullstack 
 :> npx create-next-app@latest --experimental-app . 	: ada titik pakai experimental
-:> npx create-next-app@latest belajar 			        : biasa
+:> npx create-next-app@latest belajar 			: biasa
    - name app: my-app
    - typescript: ya  
    - eslint: ya
@@ -49,7 +49,7 @@ Installasi
 
 ---------------------------------------
 Routing
-- next < 13 file system routing 			    : semua file di folder pages jadi routing, routing utama index.js 
+- next < 13 file system routing 			: semua file di folder pages jadi routing, routing utama index.js 
 - next > 13 directory system routing 			: karena server component base, maka dibungkus dalam folder/page.js 
 
 ---------------------------------------
