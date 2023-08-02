@@ -39,7 +39,6 @@ clone	: copy sumber dari online ke local (untuk git local)
 push	: (save) unggah commit local ke commit online 
 pull	: ambil commit repo dari git online (dari remote)
 
-
 bekerja dg github
 -------------------------------------------------
 1. daftar > login > bikin repo > nama > descrip > private/public > readme.md > create | readme penting karena akan di tampilkan sbg overview dan bisa di susun secara sistemastis
@@ -98,5 +97,4 @@ fork github
 
 	- setelah ropo kita dapatkan silahkan edit dan branch dan merge ke main fork kita, saat sudah jadi kita bisa lakukan request ke main aslinya
 	- caranya buka repo bersangkutan > new pull request > next2 (sda)
-
 -------------------
