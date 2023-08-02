@@ -63,15 +63,15 @@ UNIT TEST
 - caranya: new file test/request.test.js > copas script sebelumnya lalu tambahkan test().
 
 import express from "express"
-import request from "supertest" 								// 1. import request() test
+import request from "supertest" 					// 1. import request() test
 
 const app = express();
 
 app.get('/', (req, res) => { res.send('hello world!') }); 		// 4. saat fungsi yg di test di ubah: misalnya "halo eko", maka unit test meng expect kan berbeda/error
-																      catatan: request adalah representasi dari HTTP request, penjelasanya nanti
-test("test express", async (){  								// 2. bikin test() tidak butuh listen port disini
+										catatan: request adalah representasi dari HTTP request, penjelasanya nanti
+test("test express", async (){  					// 2. bikin test() tidak butuh listen port disini
 	const response = await request(app).get("/"); 
-	expect(response.text).toBe("hello world");  				// 3. saat di running di segitiga di samping kiri dari function test ini menghasilkan "hello world"
+	expect(response.text).toBe("hello world");  			// 3. saat di running di segitiga di samping kiri dari function test ini menghasilkan "hello world"
 }) 
 
 - dengan cara ini kita tidak perlu test nya menggunakan browser maka lebih produktif
@@ -89,13 +89,13 @@ import request from "supertest"
 
 const app = express();
 
-app.get('/', (req, res) => { res.send(`hello world! namaku: ${req.query.name}`) }); 		// 1. contohnya kita akan ambil data dari request
+app.get('/', (req, res) => { res.send(`hello world! namaku: ${req.query.name}`) }); 	// 1. contohnya kita akan ambil data dari request
 
 test("test express", async (){  								 
-	const response = await request(app).get("/").query({name: "aqil"}); 					// 2. kita kirim name .query({name: "world"});
-	expect(response.text).toBe("hello world");  											// 3. expectasi tesnya maka akan menampilkan helloworld 
-})  																						// - kalau di kirim nama dan text lain maka error expectasinya berbeda 
-																							// - tapi setidaknya jalan query.nama nya bisa di kirim dan diterima 
+	const response = await request(app).get("/").query({name: "aqil"}); 		// 2. kita kirim name .query({name: "world"});
+	expect(response.text).toBe("hello world");  					// 3. expectasi tesnya maka akan menampilkan helloworld 
+})  											// - kalau di kirim nama dan text lain maka error expectasinya berbeda 
+											// - tapi setidaknya jalan query.nama nya bisa di kirim dan diterima 
 
 
 
