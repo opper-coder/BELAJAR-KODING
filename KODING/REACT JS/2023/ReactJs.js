@@ -3,27 +3,27 @@ sumber: youtube M fikri > tutorial lengkap ReactJS untuk pemula(react hooks);
 REACTJS
 ---------------------------------------------------------------------------------------------------
 apa itu Rect   			-> pengertian dan Plus minus
-pola atomic 				-> mengenal pola yang rapi
+pola atomic 			-> mengenal pola yang rapi
 instal nodejs 			-> node dan npm di linux relatif susah
 create reactJs 			-> inisialisi
 Struktur Folder 		-> mengenal menyusun folder yang rapi
-cleanUp  						-> membersihkan file tidak terpakai
-Componen 						-> membuat fungsi dari functional componen
+cleanUp  			-> membersihkan file tidak terpakai
+Componen 			-> membuat fungsi dari functional componen
 Dinamic Value 			-> penggunaan variabel dalam JSX
-Prop 								-> oper data antar komponen 
-Event 							-> event handler seperti onclick
+Prop 				-> oper data antar komponen 
+Event 				-> event handler seperti onclick
 useState Hook 			-> gunakan nilai variabel dinamis beserta DOM nya sekalian (mode data pengganti variabel biasa, karena variabel biasa tidak bisa runing saat berubah)
 useEffect Hook 			-> lifecycle, onMount, onUpdate, onDestroy
-Looping List 				-> menggunakan map();
-ReactRouter 				-> metode pindah halaman ala reactjs tanpa reload pastinya
-BulmaCSS 						-> cara integrasi CSS atau Framework
-JSON Server 				-> bikin API fake demo RESTAPI
-Fetch Data 					-> ambil data dari REST via HTTP
-Post Data 					-> kirim
-Update Data 				-> Edit
-Delete Data 				-> Delete
-Build to Production -> file production
-tips emmet  				-> tambahan
+Looping List 			-> menggunakan map();
+ReactRouter 			-> metode pindah halaman ala reactjs tanpa reload pastinya
+BulmaCSS 			-> cara integrasi CSS atau Framework
+JSON Server 			-> bikin API fake demo RESTAPI
+Fetch Data 			-> ambil data dari REST via HTTP
+Post Data 			-> kirim
+Update Data			-> Edit
+Delete Data 			-> Delete
+Build to Production 		-> file production
+tips emmet  			-> tambahan
 ---------------------------------------------------------------------------------------------------
 
 APA KELEBIHAN DANG KEKURANGAN
