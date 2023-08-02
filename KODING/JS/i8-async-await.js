@@ -10,6 +10,7 @@ daftar isi:
 // pengertiann async await:
 adalah cara penulisan asynchronus alternative selain promise dan fetch, 
 namun sedikit ada perbedaan dan ada kontex masing-masing pendeknya
+
 " gaya penulisan asynchronous layaknya synchronous "
 
 " async adalah sebuah "function" yang bekerja secara asynchronous(melalaui event loop v8 engine)
@@ -19,7 +20,9 @@ yang menghasilkan (implisit) "promise(resolve/reject):bool dan json" sebagai seb
 sebagai penanda bahwa inilah program asynchronous(yang di lempar ke v8 engine) "
 
 " silahkan tempatkan dimanapun fungsi await, (fokus saja ke pemanggilan function yg await)
-tinggal nanti async nya di urus belakangan, tentunya di dalam function ya async itu"
+tinggal nanti async nya di urus belakangan, tentunya di dalam function ya async itu "
+
+" saat kita panggil function async lalu di panggil oleh function lain, maka pemanggil pakai async juga ya "
 ---------------------------------------------------------------- */
 /* promise */ 
 new Promise(resolve, reject); // basic
