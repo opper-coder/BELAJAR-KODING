@@ -30,4 +30,4 @@ CARA MENDAPATKAN API KEY GRATIS:
 - 	select a project -> new -> nama project "google API KEY pertama" -> create -> lihat notif selesai atas kanan ->
   	apis & services di sidebar -> dashboard -> pilih project yang sudah di buat tadi -> tunggu terbuka -> credential ->
   	create credential -> api key -> dapatkan key api -> AIzaSyACcyWduhvKyytJC_ncywYHzFpYzobpeEk
-
+ 
