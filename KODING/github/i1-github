@@ -11,10 +11,12 @@ Dan lain-lain
 
 -------------------------------------------------
 VCS 	: Version Control System adalah sistem yang merekam perubahan dan mengelola code kita
-git 	: adalah aplikasi yang bisa melakukan VCS
-github 	: adalah salah satu git online 
+git 	: adalah aplikasi yang bisa melakukan VCS di local
+github 	: adalah salah satu git di online 
 
-control version: local(git), sentralize(git, mercurial),  Distributed(github, gitlab, bitbucket)
+control version	: local standalone (git), 
+sentralize	: local network (git, mercurial),  
+Distributed	: online (github, gitlab, bitbucket)
 
 git
 -------------------------------------------------
