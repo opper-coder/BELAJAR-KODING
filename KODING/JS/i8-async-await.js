@@ -1,4 +1,6 @@
- /*
+PR
+	promise.all() ?????
+/*
 SYNC AWAIT KONSEP
 daftar isi:
 	- pengertian			-> konsep asyncronous dan beberapa cara eksekusinya
