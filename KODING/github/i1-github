@@ -1,3 +1,13 @@
+Ringkasan
+-------------------------------------------------
+- create repo, file, sub: repo itu di create di root, sub di dalam repo, file dalam repo atau sub, bisa create atau upload  
+- branch 		: saat simpan, atau saat create, memiliki nama. tidak terlalu di pakai jika langsung, biasanya berguna saat remote
+- merge 		: 
+- merge-conflict 	: 
+- fork 			: 
+- clone 		: 
+- close 		: 
+
 -------------------------------------------------
 Pengenalan Version Control
 Pengenalan Git
