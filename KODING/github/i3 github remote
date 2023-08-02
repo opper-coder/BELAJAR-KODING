@@ -1,12 +1,13 @@
 Ringkasan
 -------------------------------------------------
-jika mau menyimpan folder project ke git:
-1. git init 
-2. .gitignore 
+jika mau menyimpan folder project git ke github:
+1. git init  				: local
+2. .gitignore  				: pilih
 3. git remote add origin URL 		: tanpa kutip
-4. git commit -am ""
-5. git push
+4. git commit -am "" 			: simpan perubahan di local
+5. git push 				: upload ke remote
 -------------------------------------------------
+git di local
 :> mkdir coba-commit 
 :> cd coba-commit
 :> git init
@@ -22,9 +23,11 @@ jika mau menyimpan folder project ke git:
 :> alias graph="git log --all --decorate --oneline --graph"
 :> graph 				: 
 ---
-ada 2 cara remote 
-1. :> git clone "paste HTTPS" 		: new directory local, dan ada direktory di github dan project sudah terisi
-2. :> git remote add origin https://github.com/opper-coder/belajar-remote2.git : eksisting direktori di local yg sudah berisi, dan ada direktory di github tapi kosong 
+ada 2 cara remote :
+-------------------------------------------------
+1. existing repository github
+new directory local, dan ada direktory di github dan project sudah terisi
+:> git clone "paste HTTPS" 		:
 ---
 :> git remote 				: return origin jk berhasil,
 :> git remote -v 			: origin, url
@@ -33,7 +36,15 @@ ada 2 cara remote
 github refresh  			: 
 :> git status  	
 :> graph 
---- 
+
+-------------------------------------------------
+2. new repository github
+eksisting direktori di local yg sudah berisi, dan ada direktory di github tapi kosong 
+:> git remote add origin https://github.com/opper-coder/belajar-remote2.git 
+
+?????????? lanjutkan
+
+
 -------------------------------------------------
 GIT REMOTE
 - kita akan bikin repository di github 
@@ -41,7 +52,7 @@ GIT REMOTE
 - kemudian dari local kita modifikasi dan kita remote commit dll ke github 
 - caranya: 
 	---
-	REMOT DULU BARU PROJECT
+	1. REMOT DULU BARU PROJECT
 	- clone
 		- buka akun github anda
 		- bikin repo baru bernama "belajar remote" sampai selesai
@@ -77,7 +88,7 @@ GIT REMOTE
 		- :> git status 				: cek keberhasilan
 		- :> graph 					: apakah sudah singkron 
 	---
-	PROJECT DULU REMOTE BELAKANGAN
+	2. PROJECT DULU REMOTE BELAKANGAN
 	- bikin komit sampai jadi di local dan kita akan menyimpan dan remot di online
 	- sedang kita belum memiliki repo di github sama sekali 
 		- desktop > new terminal
