@@ -1,3 +1,5 @@
+Ringkasan
+-------------------------------------------------
 jika mau menyimpan folder project ke git:
 1. git init 
 2. .gitignore 
