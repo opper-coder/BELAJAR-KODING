@@ -2,17 +2,17 @@ TAILWIND
 ---------------------------------------------------------------------
 
 Daftar Isi: 				
-utility 							-> 
-pseudo class 						-> 
-dark-mode 							-> 
+utility 				-> 
+pseudo class 				-> 
+dark-mode 				-> 
 Transform, transition, animation 	-> 
-Layouting 							-> 
-Responsive 							-> 
-Flexbox Grid 						-> 
-Function n directive 				-> 
- 									-> 
- 									-> 
- 									-> 
+Layouting 				-> 
+Responsive 				-> 
+Flexbox Grid 				-> 
+Function n directive 			-> 
+ 					-> 
+ 					-> 
+ 					-> 
 
 ---------------------------------------------------------------------
 Utility 
@@ -36,19 +36,19 @@ customize spacing:
 	* goto :root/tailwind.config > bisa cari(???)
 
 sizing
-	* w-10, h-10 	// width, height
+	* w-10, h-10 		// width, height
 	* w-1/2 		// percent
 	* w-auto 		// 
-	* w-full        // w 100%
+	* w-full        	// w 100%
 	* w-fit  		// mirip inline, wrap
 	* w-max 		// lebar maxsimal
 	* w-min 		// lebar minimal
-	* w-screen   	// mirip vh, wh
-	* w-[300px] 	// terserah kita
-	* w-full md:w-1/2  // responsive
+	* w-screen   		// mirip vh, wh
+	* w-[300px] 		// terserah kita
+	* w-full md:w-1/2  	// responsive
 	* max-w-0		// max-width: 0px;
 	* min-w-0		// min-width: 0px;
-	* min-w-full	// min-width: 100%;
+	* min-w-full		// min-width: 100%;
 	* min-w-min	   	// min-width: min-content;
 	* min-w-max		// min-width: max-content;
 	* min-w-fit		// min-width: fit-content;
