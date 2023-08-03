@@ -140,14 +140,11 @@ GET PRISMA
 	getProduct(){ 				: bikin function 
 		prisma.product.findMany()	: prisma di gunakan untuk get data pakai findMany (penulisan lengkapnya ada di code)
 	}
-
 	getBrands(){
 		prisma.brands.findMany()
 	}
 
-	- panggil data dalam component product 
-	
-	async function product(){
+	async function product(){ 		: panggil data dalam component product
 		const product = await promise(getProduct);  : panggil data disini
 		console.log(product);
 	}
