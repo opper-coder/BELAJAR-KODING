@@ -218,9 +218,7 @@ import untuk semua data yang diperlukan disini > page.tsx
 import AddProduct from "./addProduct";  				// xx. keterangan ada di add product
 import DeleteProduct from "./deleteProduct"; 				// xx. keterangan ada di delete product
 import UpdateProduct from "./UpdateProduct"; 				// xx. keterangan ada di update product
-
 -----
-
   type Product = { 							// > 6.2. disini deklarasikan bentuk datanya di gunakan di step:6 
     id: number;
     title: string;
