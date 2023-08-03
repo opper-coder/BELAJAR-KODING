@@ -124,13 +124,13 @@ JSON-SERVER
 	- add new file :root/db.json > (di :root) > tempatkan di luar src/app 
 	- lalu buatkan json di dalamnya > gandakan 3 array saja dan ubah namanya
 	{
-		"product":[
-			{
-				"id": 1,
-				"title": "product 1",
-				"price": 899 
-			}
-		]
+	  "product":[
+	     {
+		"id": 1,
+		"title": "product 1",
+		"price": 899 
+	     }
+	  ]
 	}
 
 - jalankan db.json > terminal :> json-server -w db.json -p 5000 (promp, url watch, port); > enter maka >
@@ -138,7 +138,6 @@ JSON-SERVER
 
 CSS, Bulma, Bootstrap
 ------------------------------------------------------
-
 - global.css bisa kita gunekan untuk custom css semua halaman > bikin file globals.css di root app > lalu import di layout umum = import './globals.css'
 	- penggunaan persis css yaitu akses class dg className="hijau"
 - css.modules
@@ -222,7 +221,7 @@ import UpdateProduct from "./UpdateProduct"; 				// xx. keterangan ada di update
 
 -----
 
-type Product = { 							// > 6.2. disini deklarasikan bentuk datanya di gunakan di step:6 
+  type Product = { 							// > 6.2. disini deklarasikan bentuk datanya di gunakan di step:6 
     id: number;
     title: string;
     price: number;
@@ -288,11 +287,8 @@ export default function AddProduct() {  				// 4. export default ya
   
   const router = useRouter(); 						// 8. initialisasi, agar bisa di gunakan untuk melihat perubahan tampilan tabel data tanpa refresh halaman 
   
-  async function handleSubmit(e: SyntheticEvent){ 			// 22. tangkap parameter event: dengan SynteticEvent > di function ini menangani POST, 
-  																									// 		 kondisi tombol Loading, reset state ke kosong, matikan modal, melihat perubahan data
-    
+  async function handleSubmit(e: SyntheticEvent){ 			// 22. tangkap parameter event: dengan SynteticEvent > di function ini menangani POST, kondisi tombol Loading, reset state ke kosong, matikan modal, melihat perubahan data 		 
     setIsMutating(true); 						// 24. state u menagani sebelum fetch() tampilkan tombol loading  
-
     e.preventDefault(); 						// 23. penggunaan SynteticEvent disini. agar tidak reload 
     await fetch('http://localhost:5000/product',{ 			// 26. lakukan fetch() dalam async await
       method: 'POST',
@@ -304,9 +300,7 @@ export default function AddProduct() {  				// 4. export default ya
         price: price,
       })
     });
-
     setIsMutating(false); 						// 25. saat selesai fetch() tampilkan tombol stay
-
     setTitle("");  							// 28. reset state
     setPrice("");
     router.refresh(); 							// 29. lihat perubahan data dengan refresh background
@@ -320,9 +314,7 @@ export default function AddProduct() {  				// 4. export default ya
     <div>
 
       <button className="btn mb-4" onClick={handleChange}>Add new</button> 	// 10. trigger modal, dengan onclick= hide/show modal dengan state 
-
-			// 12. pengontrol modal hanya menggunakan checkbox checked. modal-toggle sudah di tangani oleh daisyui
-
+									// 12. pengontrol modal hanya menggunakan checkbox checked. modal-toggle sudah di tangani oleh daisyui
       <input type="checkbox" checked={modal} onChange={handleChange} id="my-modal" className="modal-toggle" /> 		// 13. coba cek di checked={true} maka modal akan tampil
       <div className="modal">
         <div className="modal-box">
@@ -381,23 +373,17 @@ type Product = { 																								// 3. ini type datanya, karena banyak y
     price: number;
   }
 
-export default function DeleteProduct(product: Product) { 		// 2. export default f delete(argument prop product.ID di oper dari page.tsx) > karena type script maka ada type datanya
-  
+export default function DeleteProduct(product: Product) { 		// 2. export default f delete(argument prop product.ID di oper dari page.tsx) > karena type script maka ada type datany
   const [modal, setModal] = useState(false); 				// 4. keterangan mirip di get product 
   const [isMutating, setIsMutating] = useState(false); 			// 5. state untuk kontrol stay/loading button 
-  
   const router = useRouter(); 																	
   
   async function handleDelete(productId: number){ 			// 6. param di oper dari button delete
-    
     setIsMutating(true);
-
     await fetch(`http://localhost:5000/product/${productId}`,{ 		// 7. fetch() DELETE > menagkap id dari args > fetch() harus dalam async await
-      method: 'DELETE'
-    });
-
+      	method: 'DELETE'
+    	});
     setIsMutating(false);
-
     router.refresh();
     setModal(false);
   }
@@ -460,13 +446,9 @@ export default function UpdateProduct(product: Product) { 			// 1. ubah nama ke 
   const [price, setPrice] = useState(product.price);
   const [modal, setModal] = useState(false);
   const [isMutating, setIsMutating] = useState(false);
-  
   const router = useRouter();
-  
   async function handleSubmit(e: SyntheticEvent){
-    
     setIsMutating(true);
-
     e.preventDefault();
     await fetch(`http://localhost:5000/product/${product.id}`,{
       method: 'PATCH', 																										// 2. ganti dengan PATCH 
@@ -478,9 +460,7 @@ export default function UpdateProduct(product: Product) { 			// 1. ubah nama ke 
         price: price,
       })
     });
-
     setIsMutating(false);
-
     router.refresh();
     setModal(false);
   }
@@ -491,9 +471,7 @@ export default function UpdateProduct(product: Product) { 			// 1. ubah nama ke 
 
   return (
     <div>
-
       <button className="btn btn-info btn-sm mb-4" onClick={handleChange}>Edit</button>
-
       {/* Put this part before </body> tag */}
       <input type="checkbox" checked={modal} onChange={handleChange} id="my-modal" className="modal-toggle" />
       <div className="modal">
