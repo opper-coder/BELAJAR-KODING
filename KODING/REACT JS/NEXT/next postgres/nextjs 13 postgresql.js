@@ -131,28 +131,26 @@ go app/new layout.tsx 					: atur title dan children
 goto app/product/page.tsx
 ---------------------------------------
 GET PRISMA
-	- import prismaClient  				: karena get di "page product" adalah "server component" maka kita tidak harus pakai api melainkan langsung fetch data 
-							  disini pakai prismaClint, kecuali fetch data di client component, harus pakai API axios dan prismaCient (nanti)
-							  di add, update, delete page component
-	
-	- const prisma = new PrismaClient();
+	-  : karena get di "page product" adalah "server component" maka kita tidak harus pakai api melainkan langsung fetch data 
+	     disini pakai prismaClint, kecuali fetch data di client component, harus pakai API axios dan prismaCient (nanti)
+	     di add, update, delete page component 
 
-	- bikin function 
-	
-		getProduct(){
-			prisma.product.findMany()	: prisma di gunakan untuk get data pakai findMany (penulisan lengkapnya ada di code)
-		}
+	import prismaClient 
+	const prisma = new PrismaClient();
+	getProduct(){ 				: bikin function 
+		prisma.product.findMany()	: prisma di gunakan untuk get data pakai findMany (penulisan lengkapnya ada di code)
+	}
 
-		getBrands(){
-			prisma.brands.findMany()
-		}
+	getBrands(){
+		prisma.brands.findMany()
+	}
 
 	- panggil data dalam component product 
 	
-		async function product(){
-			const product = await promise(getProduct);  : panggil data disini
-			console.log(product);
-		}
+	async function product(){
+		const product = await promise(getProduct);  : panggil data disini
+		console.log(product);
+	}
 
 	- setelah di panggil gunakan datanya di sini
 		<div>{product.title}</div> 		: data siap di gunakan
