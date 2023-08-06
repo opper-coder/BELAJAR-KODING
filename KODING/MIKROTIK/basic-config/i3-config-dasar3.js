@@ -50,8 +50,6 @@ Langkah amanya tiap perubahan ping dst
 ---------------------------------------
 loginpage
 -> files > hapus smua kecuali hotspot lalu ambil login page milik anda paste di "dalam" folder /hotspot
-
-
 ------------------------------------------------------
 AGENDA
 --- 
@@ -60,13 +58,20 @@ bikin profile yang baik
 - voucher cepat
 - voucher data
 - voucher bonus
+- PPPoE
 --- 
 - pppoe
 - vlan 
-- speed test
-- netwhatch monitoring AP
 --- 
-
-
-
+integrasi
+- wallet-garden
+- VPN VPS CHR
+- traffic voucher
+- speedtest
+- netwatch monitoring AP
+- monitoring speed enduser average
+---
+- burst
+- script auto down/up ISP
+- 
 
