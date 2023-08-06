@@ -51,3 +51,22 @@ Langkah amanya tiap perubahan ping dst
 loginpage
 -> files > hapus smua kecuali hotspot lalu ambil login page milik anda paste di "dalam" folder /hotspot
 
+
+------------------------------------------------------
+AGENDA
+--- 
+bikin profile yang baik
+- voucher umum
+- voucher cepat
+- voucher data
+- voucher bonus
+--- 
+- pppoe
+- vlan 
+- speed test
+- netwhatch monitoring AP
+--- 
+
+
+
+
