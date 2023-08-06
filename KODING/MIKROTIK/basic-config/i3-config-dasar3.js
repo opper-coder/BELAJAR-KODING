@@ -40,7 +40,13 @@ system > clock
 ---------------------------------------
 SECURITY
 - sistem user > add user > grup full > name: its.net > pass: pasmikro > lalu login ulang dg admin baru > kemudian disable yang bawaan   
-- system identity > ITS.net >  
+- system > identity > ITS.net >  
+- IP > services > ada list > disable dan sisakan 'www, winbox, ssh'
+  - dklik u/ config masing2 > available from isikan ip target (misalnya milik laptop petugas) 
+  - tambahkan IP local kita 192. 168. 1. 0/24 (tentu saja karena kalau tidak di isi kita malah gak bisa remote winbox)
+  - Terus www > edit port 80 kita ubah jadi 8080 > Nanti kalau remote tinggal www.ip:8080 
+- Tips yang ini jangan dilakukan terlalu cepat nanti tidak bisa connect sendiri
+Langkah amanya tiap perubahan ping dst
 ---------------------------------------
 loginpage
 -> files > hapus smua kecuali hotspot lalu ambil login page milik anda paste di "dalam" folder /hotspot
