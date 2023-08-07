@@ -55,40 +55,40 @@ TERMINAL
 adalah salah satu cara menjalankan perintah umum di linux tanpa gui, penggantinya pakai text di terminal
 
 UMUM
-:> ls             : lihat isi file explorer
-:> ll             : lihat isi file explorer (termasuk hidden)
-:> cd Documents   : masuk ke folder Documents
-:> cd Documents/coba : masuk folder
-:> cd ..          : naik satu langkah
-:> cd /           : naik ke root (root teratas)
-:> cd home/aqil   : kembali ke user default
-:> cd /home/aqil  : masuk ke folder mana saja bisa (di mulai dengan /home/aqil/dst)
-:> mkdir coba     : bikin folder "coba"
-:> touch ada.html : bikin file html 
-:> sudo                : super user
-:> code                : vscode tapi setting dulu vscode ?????
-:> code .              : (code spasi titik)
-:> pwd                 : Melihat "url" direktori saat ini.
-:> vim                 : code editor basis terminal
-:> mkdir nama          : bikin folder
-:> rmdir nama          : hapus folder kosong
-:> rm nama.ext	       : hapus folder isi atau file.ext  
-:> mv                  : pindah folder file, 
+:> ls             	: lihat isi file explorer
+:> ll             	: lihat isi file explorer (termasuk hidden)
+:> cd Documents   	: masuk ke folder Documents
+:> cd Documents/coba 	: masuk folder
+:> cd ..          	: naik satu langkah
+:> cd /           	: naik ke root (root teratas)
+:> cd home/aqil   	: kembali ke user default
+:> cd /home/aqil  	: masuk ke folder mana saja bisa (di mulai dengan /home/aqil/dst)
+:> mkdir coba     	: bikin folder "coba"
+:> touch ada.html 	: bikin file html 
+:> sudo			: super user
+:> code                	: vscode tapi setting dulu vscode ?????
+:> code .              	: (code spasi titik)
+:> pwd                 	: Melihat "url" direktori saat ini.
+:> vim                 	: code editor basis terminal
+:> mkdir nama          	: bikin folder
+:> rmdir nama          	: hapus folder kosong
+:> rm nama.ext	       	: hapus folder isi atau file.ext  
+:> mv                  	: pindah folder file, 
 
 UTILITY
-:> exit                   : tutup terminal
-:> clear                  : bersihkan layar terminal
-:> ctrl + c 		  : keluar dari progress terminal running 
-:> cp 						: copy paste
-:> mv 						: move
-:> locate -i nama : cari file global (-i: case insensitive)
-:> find nama			: cari file dalam folder ini\
-:> nautilus 			: buka file comander di ubuntu, elementary, zorin, deepin
-:> locate -i jagoan*hosting			: cari file bernama jagoan dan hosting -i: uncasesensitive
+:> exit			: tutup terminal
+:> clear		: bersihkan layar terminal
+:> ctrl + c		: keluar dari progress terminal running 
+:> cp			: copy paste
+:> mv			: move
+:> locate -i nama 	: cari file global (-i: case insensitive)
+:> find nama		: cari file dalam folder ini\
+:> nautilus		: buka file comander di ubuntu, elementary, zorin, deepin
+:> locate -i jagoan*hosting 	: cari file bernama jagoan dan hosting -i: uncasesensitive
 :> zip, unzip 		: archieve, unzip
-:> df 						: melihat properti kapasitas dalam folder ini
-:> history 				: melihat semua riwayat perintah yang pernah dilakukan 
-:> top 						: melihat system yang berjalan 
+:> df			: melihat properti kapasitas dalam folder ini
+:> history		: melihat semua riwayat perintah yang pernah dilakukan 
+:> top			: melihat system yang berjalan 
 :> alias coba="perintah asli yang panjang" : menambah perintah alias mnggunakan kata alternatif bikinan kita
 
 
