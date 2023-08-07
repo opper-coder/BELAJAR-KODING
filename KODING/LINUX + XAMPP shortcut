@@ -8,7 +8,7 @@ terminal linux     -> perintah dasar terminal linux
 INITRAMS
 ---------------------------------------------------
 mengatasi initrams gagal booting di linux ikuti 2 langkah berikut 
-1. (initramfs) :> blkid                 // cari tahu di mana root system : lihat di situ terlihat partisi seperti swap, ext4, ntfs dll
+1. (initramfs) :> blkid                 // cari tahu di mana root system : lihat di situ terlihat partisi seperti swap, ext4, ntfs, sda7 dll
 2. (initramfs) :> fsck /dev/sda7 -y     // lakukan filesystem check, dan yes2 (biasanya di bootsystem ext4 sda7 dst)
 3. tunggu sampai selesai
 
