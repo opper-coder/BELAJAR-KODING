@@ -65,19 +65,19 @@ UMUM
 :> cd /home/aqil  : masuk ke folder mana saja bisa (di mulai dengan /home/aqil/dst)
 :> mkdir coba     : bikin folder "coba"
 :> touch ada.html : bikin file html 
-:> sudo 			    : super user
-:> code 			    : vscode tapi setting dulu vscode ?????
-:> code . 			  : (code spasi titik)
-:> pwd 			      : Melihat "url" direktori saat ini.
-:> vim 			      : code editor basis terminal
-:> mkdir nama		  : bikin folder
-:> rmdir nama 		: hapus folder kosong
-:> rm nama.ext		: hapus folder isi atau file.ext  
-:> mv 				    : pindah folder file, 
+:> sudo                : super user
+:> code                : vscode tapi setting dulu vscode ?????
+:> code .              : (code spasi titik)
+:> pwd                 : Melihat "url" direktori saat ini.
+:> vim                 : code editor basis terminal
+:> mkdir nama          : bikin folder
+:> rmdir nama          : hapus folder kosong
+:> rm nama.ext	       : hapus folder isi atau file.ext  
+:> mv                  : pindah folder file, 
 
 UTILITY
-:> exit           : tutup terminal
-:> clear          : bersihkan layar terminal
+:> exit                   : tutup terminal
+:> clear                  : bersihkan layar terminal
 :> ctrl + c 		  : keluar dari progress terminal running 
 :> cp 						: copy paste
 :> mv 						: move
