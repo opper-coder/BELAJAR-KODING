@@ -56,6 +56,7 @@ adalah salah satu cara menjalankan perintah umum di linux tanpa gui, penggantiny
 
 UMUM
 :> ls             : lihat isi file explorer
+:> ll             : lihat isi file explorer (termasuk hidden)
 :> cd Documents   : masuk ke folder Documents
 :> cd Documents/coba : masuk folder
 :> cd ..          : naik satu langkah
@@ -89,6 +90,7 @@ UTILITY
 :> history 				: melihat semua riwayat perintah yang pernah dilakukan 
 :> top 						: melihat system yang berjalan 
 :> alias coba="perintah asli yang panjang" : menambah perintah alias mnggunakan kata alternatif bikinan kita
+
 
 
 
