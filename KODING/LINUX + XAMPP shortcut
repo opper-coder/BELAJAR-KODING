@@ -57,6 +57,7 @@ adalah salah satu cara menjalankan perintah umum di linux tanpa gui, penggantiny
 UMUM
 :> ls             	: lihat isi file explorer
 :> ll             	: lihat isi file explorer (termasuk hidden)
+:> pwd                 	: Melihat "url" direktori saat ini.(path work directory)
 :> cd Documents   	: masuk ke folder Documents
 :> cd Documents/coba 	: masuk folder
 :> cd ..          	: naik satu langkah
