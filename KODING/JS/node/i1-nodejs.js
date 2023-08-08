@@ -8,11 +8,22 @@ MODULES
 EXPORT
 IMPORT
 CORE MODULES
+-------------------------------------------------
+install node dan npm di linux
+-----------------------------
+:> sudo apt-get update  				// 1. update linux dulu
+:> sudo apt-get install nodejs  			// 2. langsung install node via terminal tapi biasanya tanpa NPM
+:> sudo apt-get install npm 				// 3. maka install juga npm
+:> node -v 						// 4. cek versi terinstall
+:> npm -v 						// 5. cek npm juga
+(:> sudo npm install -g n  				// 5.1. install version manager praktis (sumber: https://nodejs.org/en/download/package-manager#debian-and-ubuntu-based-linux-distributions))
+:> sudo n lts  						// 6. update node with npm LTS terbaru
+:> node -v 						// 7. coba cek maka versi sudah terbaru (LTS)
+:> npm -v 						// 8. otomatis NPM juga ikut di update
+:> sudo npm install -g npm@9.6.2  // 10. kalau perlu update npmnya saja ke version tertentu
 
 -------------------------------------------------
-INSTALASI
-:> node -v 		: 
-:> npm -v 		: 
+MASUK PROJECT 
 :> mkdir belajar-node 	: add
 :> cd belajar-node 	: masuk
 ----------------
