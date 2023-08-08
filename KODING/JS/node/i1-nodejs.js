@@ -23,7 +23,7 @@ install node dan npm di linux
 -----------------------------
 :> sudo apt-get install -g nodejs@3.3.4 		// 1. mau install node dengan version tertentu(kalau ada reponya)
 :> sudo npm install -g npm@9.6.2  			// 2. kalau perlu update npmnya saja ke version tertentu
-
+ 
 -------------------------------------------------
 MASUK PROJECT 
 :> mkdir belajar-node 	: add
