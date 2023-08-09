@@ -21,6 +21,7 @@ install node dan npm di linux
 :> node -v 						// 7. coba cek maka versi sudah terbaru (LTS)
 :> npm -v 						// 8. otomatis NPM juga ikut di update
 -----------------------------
+- jika tidak version manager cara update berikut:
 :> sudo apt-get install -g nodejs@3.3.4 		// 1. mau install node dengan version tertentu(kalau ada reponya)
 :> sudo npm install -g npm@9.6.2  			// 2. kalau perlu update npmnya saja ke version tertentu
 -------------------------------------------------
@@ -42,11 +43,13 @@ REPL
 INDEX,JS
 :> mkdir belajar-node 	: add
 :> cd belajar-node 	: masuk
-:> code . 		: 
+:> code . 		: buka folder ini di vscode
 -> new index.js > console.log("hello world")
 :> node index.js 	: jalankan file di runtime node atau
-:> node . 		: file index.js ini (ingat tidak bisa manggil index.html)
--> index.html 		: (html biasa itu client) mimiliki script src=coba.js dan coba2.js itu bisa di lakukan tapi bisa di akses secara global dan client
+:> node . 		: file index.js ini (ingat tidak bisa manggil index.html, melainkan index.js)
+-> kasus:
+-> index.html 		: ("file.html biasa" itu client)mis: memiliki script src=coba.js dan coba2.js. 
+	variabel dll itu bisa di lakukan tapi bisa di akses secara bersifat "global" dan bersifat "client"
 ----------------
 SINGLE PAGE APP 
 :> index.js 		: satu file index, akan meng include semua page lainya sedangkan element html akan di generate via js dom 
@@ -54,12 +57,7 @@ SINGLE PAGE APP
 -> require('./coba') 	: sejajar ../ di atasnya ../../ di atasnya dua kali './folder1/coba' dalam folder1 sejajar
 -> module.export=salam; : halaman bisa di include, tapi isinya tidak bisa di pakai kecuali yg di export,
 -> const salam = require('./coba') : pada prakteknya harus di bungkus dalam var, lalu var bisa di gunakan menggunakan "require" atau di npm pakai import 
-   			  (nanti di npm init, package.json "type":"module").
-----------------
-NODEMON
-????????????????? 
-:> npm i nodemon -g
-----------------			  
+   			  (nanti di npm init, package.json "type":"module").		  
 MODULES
 sekumpulan code reusable dengan antarmuka yg terdefinisi, atau
 sebuah fungsi komplex/simpel dalam file javascript, yang di export, dan bisa di gunakan(require) di file.js lain dalam nodejs tersebut 
@@ -132,7 +130,11 @@ NPM MODULES
 -> node_modules/ 	: ada tambahan folder berisi validator, dan node_modules default lainya
 -> npm uninstall validator 	: hapus package
 :> npm install -g nodemon # or using yarn: yarn global add nodemon : salah satu package npm untuk perubahan saat di save, langsung realtime
--------------------------------------------------
+----------------
+NODEMON
+-  
+:> npm i nodemon -g
+----------------	
 cara pakai nya 
 -> app.js 		: edit file berisI:
  	var validator = require('validator'); 			// import gaya lama (untuk sanitasi input)
