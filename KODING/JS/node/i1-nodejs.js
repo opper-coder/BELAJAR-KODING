@@ -123,8 +123,9 @@ NPM MODULES
 :> npm start 		: jalankan node app di npm pada key script:{}, key start, test adalah script standard 
 :> npm run dev 		: kalau bikin sendiri harus pakai "run"
 ----------------
-:> npm install -g nodemon 	: atau yarn global add nodemon : salah satu package npm untuk perubahan saat di save, langsung realtime
-:> npm i nodemon -g 		: atau
+:> npm install -g nodemon 	: atau yarn global add nodemon,:> node app diganti :> di ganti npm start :> nodemon app  
+			  salah satu package npm untuk perubahan saat di save, langsung realtime
+:> nodemon app 		: running app.js
 ----------------
 -> search di npm web 	: instalasi package, sebelum instalasi search package dulu di web npm
 -> validator 		: misalnya "validator", copas import nya ES6/ES
