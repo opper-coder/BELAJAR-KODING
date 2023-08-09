@@ -23,7 +23,6 @@ install node dan npm di linux
 -----------------------------
 :> sudo apt-get install -g nodejs@3.3.4 		// 1. mau install node dengan version tertentu(kalau ada reponya)
 :> sudo npm install -g npm@9.6.2  			// 2. kalau perlu update npmnya saja ke version tertentu
- 
 -------------------------------------------------
 MASUK PROJECT 
 :> mkdir belajar-node 	: add
@@ -56,6 +55,10 @@ SINGLE PAGE APP
 -> module.export=salam; : halaman bisa di include, tapi isinya tidak bisa di pakai kecuali yg di export,
 -> const salam = require('./coba') : pada prakteknya harus di bungkus dalam var, lalu var bisa di gunakan menggunakan "require" atau di npm pakai import 
    			  (nanti di npm init, package.json "type":"module").
+----------------
+NODEMON
+????????????????? 
+:> npm i nodemon -g
 ----------------			  
 MODULES
 sekumpulan code reusable dengan antarmuka yg terdefinisi, atau
@@ -85,7 +88,6 @@ IMPORT
 - const coba= require('./coba')  : file memiliki beberapa(dua) module diexport
 - console.log(coba.nama) 	 : kalau di export dalam objkect kita bisa panggil 
 - import * as fs from 'node:fs'; : node modern sudah bisa import cekidoc 
-
 -------------------------------------------------
 CORE MODULES
 -> go https://nodejs.org/dist/latest-v18.x/docs/api/
@@ -110,7 +112,6 @@ CORE MODULES
 setidaknya kita telah belajar 
 1. create file sekaligus mengisi filenya dengan : fs.writeFileSync()
 2. mengisi existing file dengan string dan json dengan form input terminal : fs.Promises.mkdir() fs.writeFile() dll
-
 -------------------------------------------------
 NPM MODULES
 :> mkdir belajar-node 	: add
@@ -146,6 +147,68 @@ cara pakai nya
 	npm i --save-dev nodemon@1.1.0				: install local
 	-> script{ "start":"nodemon app.js" }			: nodemon app tidak jalan kecuali di simpan dalam script:{}
 	:> npm start
+-------------------------------------------------
+CLI APP nodejs
+- dalam contoh video: bisa bikin aplikasi CLI (aplikasi terminal) yang bisa CRUD di file.json berupa json
+- 
+-------------------------------------------------
+WEB SERVER 
+- nodejs bikinwebserver memanfaatkan node core-modul
+:> npm init -y
+-> add app.js
+	const http = rerquire('http')
+	http
+	.createServer((req,res) => {
+		res.write("hello world");
+		res.end();
+	})
+	.listen(3000, () => {
+		console.log("server is listening on port 3000...")
+	});
+:> node app 
+=> "server is listening on port 3000..." dan terminalnya nyangkut belum tertutup. artinya server jalan 
+-> browser: localhost:3000
+---
+- port : bisa pakai angka 0 - 60.000 an. tapi pakai 3000 saja karena mungkin port lain sudah di huni oleh app lain 
+- menit 10
+- disini ada routing dan response berupa html dan juga fungsi2 
+- hal ini sangatlah sederhana dan sangat manual, bagaimana kalau penggunaan core module server ini kita ganti dengan expressjs 
+- seru sekali 
+-------------------------------------------------
+EXPRESSJS 
+- pengetian pendek 	: fast, unOpinionated, minimalist web framework for nodjs
+	- fast 		: 
+	- unOpinionated : flexibel, tidak baku, struktur app bebas, bongkar pasang Middleware
+	- minimalist web framework for nodjs
+- panjang 		: 
+	- web franmework yg di buat di atas nodejs
+	- menyediakan antar muka minimal untuk website
+	- kelola alrina data dari server ke app
+	- MERN, MEAN, MEVN, Stack(Mongo,Express,[react,angular,vue],node)
+- fitur 		:
+	- Request HTTP 	: routing 		
+	- MVC 		: 
+	- view rendering template	: termasuk react, ada 30 lebih engine 
+	- Middleware 	: 
+	- database 	: support 10 lebih db
+- bentuk dasar:
+	- kelihatanya mirip dengan core-module di atas
+	-> npmjs.com > search: express > go to expressjs.com > doc
+	:> npm i express@4.17.1 --save 	: --save sekarang sudah auto simpan ke dependency local kita
+	:> npm i nodemon -g 
 
+		const express = require('express')
+		const app = express()
+		const port = 3000
 
+		app.get('/', (req, res) => {
+		  res.send('Hello World!')
+		})
+
+		app.listen(port, () => {
+		  console.log(`Example app listening on port ${port}`)
+		})
+
+- buka doc expressjs.com
+- lanjut ke dokumentasi i2-
 -------------------------------------------------
