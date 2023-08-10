@@ -3,7 +3,6 @@ GANTI ELEKTRODA
 - alasan elektrotoda di ganti: adalah counternya sudah habis, tungsten nya sudah rusak, dll
 - buka elektroda lama, siapkan yng baru harga: 800rb - 1,2jt 
 - buka baut > lepaskan led infrared > dan ganti > jangan lupa baut harus hati2 
-
 ----------------------------------------------------
 AKTIFASI ELEKTRODA
 - alasan aktifasi
@@ -12,7 +11,6 @@ AKTIFASI ELEKTRODA
 2. sambungkan bluetooth dengan splicer (pastikan jangan salah perangkat)
 3. activate electroda > serial number (atau scan barcode) elektroda > verification code > 
    > maka remain akan di reset ke 3000
-
 ----------------------------------------------------
 KALIBRASI POWER
 - kalibrasi di perlukan sebaiknya setiap akan melakukan penyambungan  
@@ -41,3 +39,4 @@ KALIBRASI KAMERA
   > siapkan kabel bersihkan dan potong (seperti penyambungan biasa)
   > fiber splicing set(set penyambungan serat) > manual > kalibrasi sumbu x dan z > finish > selesai
   > selesai 
+----------------------------------------------------
