@@ -11,25 +11,25 @@ EXPRESSJS
 	- MERN, MEAN, MEVN, Stack(Mongo,Express,[react,angular,vue],node)
 - fitur 		:
 	- Request HTTP 	: routing 		
-	- MVC 		: 
+	- MVC 		: layouting, distribusi data, halaman
 	- view rendering template	: termasuk react, ada 30 lebih engine 
 	- Middleware 	: pengertian, cara bikin, aturan penggunaan, best practice
 	- database 	: support 10 lebih db
-- bentuk dasar:
+- bentuk dasar expressjs:
 	- kelihatanya mirip dengan core-module di atas
 	-> npmjs.com > search: express > go to expressjs.com > doc
 	:> npm i express@4.17.1 --save 	: --save sekarang sudah auto simpan ke dependency local kita
 	:> npm i nodemon -g 
 
-		const express = require('express')
-		const app = express()
-		const port = 3000
+		const express = require('express') 		// import
+		const app = express() 				// init
+		const port = 3000 				// port
 
-		app.get('/', (req, res) => {
+		app.get('/', (req, res) => { 			// routing
 		  res.send('Hello World!')
 		})
 
-		app.listen(port, () => {
+		app.listen(port, () => { 			// bikin server dan port
 		  console.log(`Example app listening on port ${port}`)
 		})
 
