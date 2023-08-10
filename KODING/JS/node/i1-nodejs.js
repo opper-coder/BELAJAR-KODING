@@ -49,8 +49,8 @@ INDEX,JS
 :> cd belajar-node 	: masuk
 :> code . 		: buka folder ini di vscode
 -> new index.js > console.log("hello world")
-:> node index.js 	: jalankan file di runtime node atau
-:> node . 		: file index.js ini (ingat tidak bisa manggil index.html, melainkan index.js)
+:> node index.js 	: jalankan file di runtime node, kalau kita memiliki file lagi app.js bisa di jalankan node app.js
+:> node . 		: jalankan index.js ini (ingat tidak bisa manggil index.html, app.js(file selain index). melainkan index.js saja)
 -> kasus:
 -> index.html 		: ("file.html biasa" itu client)mis: memiliki script src=coba.js dan coba2.js. 
 	variabel dll itu bisa di lakukan tapi bisa di akses secara bersifat "global" dan bersifat "client"
