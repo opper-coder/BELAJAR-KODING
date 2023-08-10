@@ -13,7 +13,7 @@ EXPRESSJS
 	- Request HTTP 	: routing 		
 	- MVC 		: 
 	- view rendering template	: termasuk react, ada 30 lebih engine 
-	- Middleware 	: 
+	- Middleware 	: pengertian, cara bikin, aturan penggunaan, best practice
 	- database 	: support 10 lebih db
 - bentuk dasar:
 	- kelihatanya mirip dengan core-module di atas
