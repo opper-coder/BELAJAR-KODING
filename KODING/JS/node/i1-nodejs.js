@@ -1,15 +1,19 @@
 Node js
 ------------------------------------------------- 
-INSTALASI
-REPL
-INDEX.JS
-SINGLE PAGE APP
-MODULES
-EXPORT
-IMPORT
-CORE MODULES
+INSTALASI 	: install node dan npm (linux)			
+REPL 		: mirip console, tulis script langsung hasil
+INDEX.JS 	: install node, bikin file, jalankan node index.js(di runtime node), tidak ada node init
+//SINGLE PAGE APP	: 
+MODULES 	: sekumpulan code yang simple/komplex yg di export, dan import saat akan menggunakan, ada 3 jenis modules
+EXPORT 		: terkait jenis module mk dibedakan cara export
+IMPORT 		: juga cara import 
+CORE MODULES 	: contoh penggunaan coremodule, create: folder, file, data
+NPM MODULES 	: modul third party, dan bikin lingkungan penggunaan npm, dg npm init, entrypoint, type:module, nodemon
+CLI APP 	: latihan bikin app CLI menggunakan coremodule, bikin CRUD: folder,file,json melalui terminal 
+WEB SERVER 	: membuat web server (sebagai pengantar express framework)
+EXPRESSJS 	: masuk pelajaran express
 -------------------------------------------------
-install node dan npm di linux
+INSTALASI node dan npm di linux
 -----------------------------
 :> sudo apt-get update  				// 1. update linux dulu
 :> sudo apt-get install nodejs  			// 2. langsung install node via terminal tapi biasanya tanpa NPM
@@ -70,9 +74,9 @@ const fs =require('fs') : tanpa url, maka akan cari di coremodule, jika tdk ada 
 ----------------	  
 EXPORT
 - var, arr, obj, func, class, 	: yg umum di export 
-- module.export=salam; 	: export sebuah function dalam sebuah file.js
-1. module.export.salam=salam : 
-2. module.export.halo=halo : export beberapa(dua) module dalam sebuah file.js. (put dalam object) 
+- module.export=salam; 		: export sebuah function dalam sebuah file.js
+1. module.export.salam=salam 	: 
+2. module.export.halo=halo 	: export beberapa(dua) module dalam sebuah file.js. (put dalam object) 
 atau export langsung dalam bentuk object
 module.export={
 	salam:salam,
