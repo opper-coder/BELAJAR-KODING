@@ -37,6 +37,6 @@ KALIBRASI KAMERA
 4. pasang kabel seperti penyambungan biasa 
 5. koneksi bluetooth
   > siapkan kabel bersihkan dan potong (seperti penyambungan biasa)
-  > fiber splicing set(set penyambungan serat) > manual > kalibrasi sumbu x dan z > finish > selesai
+  > fiber splicing set(set penyambungan serat) > manual adjust(penyesuaian manual) > kalibrasi sumbu x dan z > finish > selesai
   > selesai 
 ----------------------------------------------------
