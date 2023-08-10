@@ -18,7 +18,7 @@ KALIBRASI POWER
 - kalibrasi di perlukan sebaiknya setiap akan melakukan penyambungan  
 - hal ini di perlukan karena perbedaan daya charge, panjang katoda, dan perbedaan suhu indoor outdoor serta cuaca 
 - saat kalibrasi akan ada pembakaran saat over power, pembakaran akan mundur dan membulat, 
-  software akan melakukan kalkulasi dan menentukan power yang cocok 
+  software akan melakukan kalkulasi jarak dan menentukan power yang cocok 
   
 1. download signalfire2 android
 2. sambungkan bluetooth dengan splicer (pastikan jangan salah perangkat)
