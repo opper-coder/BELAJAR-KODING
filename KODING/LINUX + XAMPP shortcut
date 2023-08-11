@@ -122,6 +122,7 @@ file mode: ...
 :> ctrl shift ":" 	: masuk ke vim command 
 :> vi coba.js 		: buka file existing
 :> vi coba.js 		: addnew file jika blm ada file
+:> cat coba.js 		: baca isi file
 :> :q 			: quit atau 
 :> :q! 			: quit juga 
 :> :w 			: save (write) 
