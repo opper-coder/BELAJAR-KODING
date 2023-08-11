@@ -102,12 +102,24 @@ terminal file
 
 file mode: ...
 :> vi 			: buka vim editor => about vim (default ada di terminal linux zorin, kalu belum ada install dulu) 
+:> mkdir/cd/touch 	: buka dulu tempat kerja
 :> ctrl shift ":" 	: masuk ke vim command 
 :> vi coba.js 		: buka file existing
 :> vi coba.js 		: addnew file jika blm ada file
 
+aksi dan masuk insert mode: ...
+:> i 			: insert mode tulis pada cursor, 	dan masuk insert mode
+:> a 			: insert mode tulis di depan cursor, 	dan masuk insert mode
+:> o 			: tambah baris sebagai enter, 		dan masuk insert mode
+:> S  			: hapus sebaris, 			dan masuk insert mode
+
 insert mode: ...
-:> i 			: insert mode 
+:> x 			: hapus maju
+:> X 			: hapus mundur
+:> / 			: cari kata di wahnya //
+:> ? 			: cari kata di atasnya
+
+command mode: ...
 :> ESC 			: command mode
 :> !arrow 		: tidak support arah keyboard
 :> :q 			: quit
