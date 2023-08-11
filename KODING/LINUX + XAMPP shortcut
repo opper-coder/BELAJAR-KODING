@@ -52,7 +52,7 @@ chmod dan chown
 
 TERMINAL
 ---------------------------------------------------
-adalah salah satu cara menjalankan perintah umum di linux tanpa gui, penggantinya pakai text di terminal
+adalah salah satu cara menjalankan perintah umum di linux tanpa GUI, penggant GUI pakai text di terminal
 
 UMUM
 :> ls             	: lihat isi file explorer
@@ -65,15 +65,16 @@ UMUM
 :> cd home/aqil   	: kembali ke user default
 :> cd /home/aqil  	: masuk ke folder mana saja bisa (di mulai dengan /home/aqil/dst)
 :> mkdir coba     	: bikin folder "coba"
-:> touch ada.html 	: bikin file html 
+:> touch ada.js 	: bikin file js, html, doc dll bisa
+:> cat ada.js 		: baca/lihat isi file
 :> sudo			: super user
-:> code                	: vscode tapi setting dulu vscode ?????
-:> code .              	: (code spasi titik)
+:> code                	: vscode tapi setting dulu vscode: 
+:> code .              	: setelah :> cd dir > buka "dir ini" dengan vscode 
 :> pwd                 	: Melihat "url" direktori saat ini.
-:> vim                 	: code editor basis terminal
+:> vim/vi              	: code editor basis terminal cek di bawah
 :> mkdir nama          	: bikin folder
 :> rmdir nama          	: hapus folder kosong
-:> rm nama.ext	       	: hapus folder isi atau file.ext  
+:> rm coba.js	       	: hapus folder isi atau file coba.js
 :> mv                  	: pindah folder file, 
 
 UTILITY
