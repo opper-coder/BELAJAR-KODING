@@ -100,7 +100,19 @@ terminal file:
 :> mk dir  		: bikin folder
 :> touch coba.html 	: bikin file
 :> cd dir/dir2 		: navigasi
-
+-------------------------
+ringkasan:
+:> pwd, ls, ll 		: lihat lokasi kerja
+:> cd dir 		: masuk ke lokasi kerja
+:> vi coba.js 		: buka atau tambah file
+:> i 			: insert mode
+:> ESC 			: command mode
+:> arrow 		: arah cursor command mod
+:> dd 			: hapus maju command mode
+:> X 			: hapus mundur 
+:> :wq 			: keluar dan simpan 
+:> :q! 			: keluar tanpa simpan
+-------------------------
 file mode: ...
 :> vi 			: buka vim editor => about vim (default ada di terminal linux zorin, kalu belum ada install dulu) 
 :> man vi 		: help vi 
