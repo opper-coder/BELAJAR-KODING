@@ -103,7 +103,7 @@ terminal file
 file mode: ...
 :> vi 			: buka vim editor => about vim (default ada di terminal linux zorin, kalu belum ada install dulu) 
 :> mkdir/cd/touch 	: buka dulu tempat kerja
-:> ctrl shift ":" 	: masuk "commond mode"(mendapatkan ":") di awal saat sudah masuk bisa pakai ESC
+:> CTRL SHIFT ":" 	: masuk "commond mode"(mendapatkan ":") di awal saat sudah masuk bisa pakai ESC
 :> vi coba.js 		: buka file existing
 :> vi coba.js 		: addnew file jika blm ada file
 
