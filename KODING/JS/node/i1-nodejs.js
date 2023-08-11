@@ -1,4 +1,4 @@
-Node js
+NODEJS
 ------------------------------------------------- 
 INSTALASI 	: install node dan npm (linux)			
 REPL 		: mirip console, tulis script langsung hasil
@@ -35,14 +35,106 @@ MASUK PROJECT
 ----------------
 REPL
 :> node 		: masuk ke REPL (read, eval, print, loop)
+setelah masuk node silahkan gunakan perintah di bawah ini:
 :> 1+1 atau 1=='1' enter: mirip console pada browser
-:> .load coba.js 	: import file dalam repl
-:> .save coba2.js 	: simpan code repl ke file
-:> .exit / ctrl C, C 	: keluar repl
-:> .break 		: keluar dari code multiline di repl (karena nggak bisa keluar begitu saja nanti kode bisa hilang)
+:> const salam = () => { 	: saat nulis panjang belum di tertutup lalu kita enter akan di kasih "..." artinya lanjutkan sampai ";"
+:> .help 		: di kasih navigasi menu utama 
+:> touch coba.js 	: add coba.js
+:> vi coba.js 		: edit file dengan terminal vim (lihat di bawah vim editor)(atau edit pakai REPL)
+:> .load coba.js 	: import file dalam REPL berisi variabel 
+:> .save coba.js 	: simpan code REPL ke file
+:> .cat coba.js 	: mebaca isi file
+:> rm coba.js 		: hapus file
+:> .exit/ctrl C, C 	: keluar REPL
+:> .break/.clear	: keluar dari code multiline ("..." titik tiga tadi )di REPL (karena nggak bisa keluar begitu saja nanti kode bisa hilang)
 :> .editor 		: nulis multiline, 
-:> ctrl D 		: finis multiline,
-:> ctrl c 		: cancel multiline,
+:> ctrl D 		: finis multiline, dan discard
+:> ctrl c 		: cancel multiline, dan save session
+----------------
+VIM EDITOR
+-------------------------
+ringkasan:
+:> pwd, ls, ll 		: lihat lokasi kerja
+:> cd dir 		: masuk ke lokasi kerja
+:> vi coba.js 		: buka atau tambah file
+:> cat coba.js 		: lihat isi file (fungsi sama dengan vi coba.js existing)
+:> i 			: insert mode
+:> ESC 			: command mode
+:> arrow 		: arah cursor command mod
+:> dd 			: hapus maju command mode
+:> X 			: hapus mundur 
+:> :wq 			: keluar dan simpan 
+:> :q! 			: keluar tanpa simpan
+-------------------------
+
+file mode: ...
+:> vi 			: buka vim editor => about vim (default ada di terminal linux zorin, kalu belum ada install dulu) 
+:> man vi 		: help vi 
+:> mkdir/cd/touch 	: buka dulu tempat kerja
+:> ctrl shift ":" 	: masuk ke vim command 
+:> vi coba.js 		: buka file existing
+:> vi coba.js 		: addnew file jika blm ada file
+:> :q 			: quit atau 
+:> :q! 			: quit juga 
+:> :w 			: save (write) 
+:> :wq 			: save and quit, (simpan dan keluar)
+:> :wq coba.js		: save as quit, (simpan, nama, keluar)    
+
+insert mode: ...
+:> !arrow 		: tidak support arah keyboard
+:> i 			: insert mode tulis pada cursor, 	dan masuk insert mode
+:> a 			: insert mode tulis di depan cursor, 	dan masuk insert mode
+:> o 			: tambah baris sebagai enter, 		dan masuk insert mode
+:> S  			: hapus sebaris, 			dan masuk insert mode
+
+command mode: ...
+:> CTRL shift ":" 	: masuk "commond mode"(mendapatkan ":") di awal saat sudah masuk bisa pakai ESC 
+:> ESC 			: command mode
+:> arrow 			: support arah keyboard 
+:> x 			: hapus maju
+:> X 			: hapus mundur
+:> dd 			: hapus satu baris sekaligus enternya
+:> / aqil		: cari kata aqil => cursor kesana//
+:> / silmi 		: cari kata silmi => dibawah cursor aqil barusan//
+:> ? izza 		: cari kata izza => di atas cursor aqil barusan
+
+command mode tambahan
+
+insert
+i: Menyisipkan teks sebelum lokasi kursor saat ini.
+I: Menyisipkan teks di awal baris saat ini.
+a: Menyisipkan teks setelah lokasi kursor saat ini.
+A: Menyisipkan teks di akhir baris saat ini.
+o: Membuat baris baru untuk entri teks di bawah lokasi kursor.
+O: Membuat baris baru untuk entri teks di atas lokasi kursor.
+r: Mengganti karakter tunggal di bawah kursor dengan karakter berikutnya yang diketik.
+R: Mengganti teks dari kursor ke kanan.
+s: Mengganti satu karakter di bawah kursor dengan sejumlah karakter.
+S: Mengganti seluruh baris.
+
+hapus: 
+X Huruf Besar: Menghapus karakter sebelum lokasi kursor.
+x Huruf kecil: Menghapus karakter di lokasi kursor.
+Dw: Menghapus dari lokasi kursor saat ini ke kata berikutnya.
+d ^: Menghapus dari posisi kursor saat ini ke awal baris.
+d $: Menghapus dari posisi kursor saat ini ke akhir baris.
+Dd: Menghapus garis tempat kursor berada.
+
+Copas
+Yy: Menyalin baris saat ini.
+9yy: Yank baris saat ini dan 9 baris di bawahnya.
+p: Menempatkan teks yang disalin setelah kursor.
+P: Menempatkan teks yang ditarik sebelum kursor.
+
+keluar
+q: quit (Berhenti)
+q!: Keluar tanpa menyimpan perubahan, yaitu membuang perubahan.
+r fileName: Membaca data dari file bernama fileName.
+wq: Menulis dan keluar (simpan dan keluar).
+w fileName: Menulis ke file bernama fileName (simpan sebagai).
+w! fileName: Menimpa file bernama fileName (simpan sebagai paksa).
+!cmd: Menjalankan perintah shell dan kembali ke mode Command.
+
 ----------------
 INDEX,JS
 :> mkdir belajar-node 	: add
@@ -63,8 +155,9 @@ SINGLE PAGE APP
 -> const salam = require('./coba') : pada prakteknya harus di bungkus dalam var, lalu var bisa di gunakan menggunakan "require" atau di npm pakai import 
    			  (nanti di npm init, package.json "type":"module").		  
 MODULES
-sekumpulan code reusable dengan antarmuka yg terdefinisi, atau
-sebuah fungsi komplex/simpel dalam file javascript, yang di export, dan bisa di gunakan(require) di file.js lain dalam nodejs tersebut 
+- sekumpulan code reusable dengan antarmuka yg terdefinisi, atau
+- sebuah fungsi komplex/simpel dalam file javascript, yang di export, dan bisa di gunakan(require) di file.js lain dalam nodejs tersebut 
+- sebuah file berisi module yang diexport juga disebut module
 1 core module 		: packet dalam node tidak terlihat (dalanm library) kita tinggal require
 2 local module 		: module yang kita bikin sendiri "export require"
 3 third party 		: module pihak ketiga atau "modul npm" (kumpulan module yg di koleksi oleh node)
@@ -74,21 +167,21 @@ const fs =require('fs') : tanpa url, maka akan cari di coremodule, jika tdk ada 
 ----------------	  
 EXPORT
 - var, arr, obj, func, class, 	: yg umum di export 
-- module.export=salam; 		: export sebuah function dalam sebuah file.js
-1. module.export.salam=salam 	: 
-2. module.export.halo=halo 	: export beberapa(dua) module dalam sebuah file.js. (put dalam object) 
-atau export langsung dalam bentuk object
-module.export={
-	salam:salam,
-	halo:halo,
-}
-atau short hand karena key value sama 
-module.export={ salam, halo }
+- module.exports=salam; 	: export sebuah function dalam sebuah file.js
+1. module.exports.salam=salam 	: jangan typo
+2. module.exports.halo=halo 	: export beberapa(dua) module dalam sebuah file.js. (put dalam object) 
+- atau export langsung dalam bentuk object
+	module.export={
+		salam:salam,
+		halo:halo,
+	}
+- atau short hand karena key value sama 
+	module.export={ salam, halo }
 ----------------
 IMPORT
-- const salam= require('./coba') : import satu module dalam sebuah file coba.js
+- const salam= require('./coba') : import "module yg di export" dalam sebuah "file coba.js"
 - const coba= require('./coba')  : file memiliki beberapa(dua) module diexport
-- console.log(coba.nama) 	 : kalau di export dalam objkect kita bisa panggil 
+- console.log(coba.nama) 	 : kalau di export dalam object kita bisa panggil 
 - import * as fs from 'node:fs'; : node modern sudah bisa import cekidoc 
 -------------------------------------------------
 CORE MODULES
