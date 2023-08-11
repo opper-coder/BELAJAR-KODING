@@ -68,7 +68,7 @@ UMUM
 :> touch ada.js 	: bikin file js, html, doc dll bisa
 :> cat ada.js 		: baca/lihat isi file
 :> sudo			: super user
-:> code                	: vscode tapi setting dulu vscode: 
+:> code                	: vscode tapi setting dulu vscode: ???????????
 :> code .              	: setelah :> cd dir > buka "dir ini" dengan vscode 
 :> pwd                 	: Melihat "url" direktori saat ini.
 :> vim/vi              	: code editor basis terminal cek di bawah
