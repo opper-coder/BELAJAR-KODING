@@ -92,7 +92,34 @@ UTILITY
 :> top			: melihat system yang berjalan 
 :> alias coba="perintah asli yang panjang" : menambah perintah alias mnggunakan kata alternatif bikinan kita
 
+---------------------------------------------------
+VIM
+adalah text editor dalam terminal biasaanya di gabung kan dengan terminal file folder
+terminal file
+:> mk dir  		: bikin folder
+:> touch coba.html 	: bikin file
+:> cd dir/dir2 		: navigasi
 
+file mode: ...
+:> vi 			: buka vim editor => about vim (default ada di terminal linux zorin, kalu belum ada install dulu) 
+:> ctrl shift ":" 	: masuk ke vim command 
+:> vi coba.js 		: buka file existing
+:> vi coba.js 		: addnew file jika blm ada file
+
+insert mode: ...
+:> i 			: insert mode 
+:> ESC 			: command mode
+:> !arrow 		: tidak support arah keyboard
+:> :q 			: quit
+:> :w 			: save (write) 
+:> :wq 			: save and quit, (simpan dan keluar)
+:> :wq coba.js		: save as quit, (simpan, nama, keluar)    
+
+command mode: ...
+dd 			: hapus satu baris
+x  			: hapus 1 karakter maju
+arrow 			: support arah keyboard 
+man vi 			: help vi 
 
 
 
