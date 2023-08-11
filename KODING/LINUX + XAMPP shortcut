@@ -169,8 +169,8 @@ Create file, Editor file, tulis code javascript, jalankan console, load file dll
 :> .exit/ctrl C, C 	: keluar REPL
 :> .break/.clear	: keluar dari code multiline ("..." titik tiga tadi ) di REPL (karena nggak bisa keluar begitu saja nanti kode bisa hilang)
 :> .editor 		: nulis multiline, 
-:> ctrl D 		: finis multiline,
-:> ctrl C 		: cancel multiline,
+:> ctrl D 		: finis multiline, dan discard
+:> ctrl c 		: cancel multiline, dan save session
 ----------------
 
 
