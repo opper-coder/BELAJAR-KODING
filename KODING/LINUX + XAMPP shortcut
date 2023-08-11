@@ -150,6 +150,41 @@ command mode: ...
 :> / silmi 		: cari kata silmi => dibawah cursor aqil barusan//
 :> ? izza 		: cari kata izza => di atas cursor aqil barusan
 
+command mode tambahan
+insert
+i: Menyisipkan teks sebelum lokasi kursor saat ini.
+I: Menyisipkan teks di awal baris saat ini.
+a: Menyisipkan teks setelah lokasi kursor saat ini.
+A: Menyisipkan teks di akhir baris saat ini.
+o: Membuat baris baru untuk entri teks di bawah lokasi kursor.
+O: Membuat baris baru untuk entri teks di atas lokasi kursor.
+r: Mengganti karakter tunggal di bawah kursor dengan karakter berikutnya yang diketik.
+R: Mengganti teks dari kursor ke kanan.
+s: Mengganti satu karakter di bawah kursor dengan sejumlah karakter.
+S: Mengganti seluruh baris.
+
+hapus: 
+X Huruf Besar: Menghapus karakter sebelum lokasi kursor.
+x Huruf kecil: Menghapus karakter di lokasi kursor.
+Dw: Menghapus dari lokasi kursor saat ini ke kata berikutnya.
+d ^: Menghapus dari posisi kursor saat ini ke awal baris.
+d $: Menghapus dari posisi kursor saat ini ke akhir baris.
+Dd: Menghapus garis tempat kursor berada.
+
+Copas
+Yy: Menyalin baris saat ini.
+9yy: Yank baris saat ini dan 9 baris di bawahnya.
+p: Menempatkan teks yang disalin setelah kursor.
+P: Menempatkan teks yang ditarik sebelum kursor.
+
+keluar
+q: quit (Berhenti)
+q!: Keluar tanpa menyimpan perubahan, yaitu membuang perubahan.
+r fileName: Membaca data dari file bernama fileName.
+wq: Menulis dan keluar (simpan dan keluar).
+w fileName: Menulis ke file bernama fileName (simpan sebagai).
+w! fileName: Menimpa file bernama fileName (simpan sebagai paksa).
+!cmd: Menjalankan perintah shell dan kembali ke mode Command.
 ---------------------------------------------------
 REPL
 jika kita punya nodejs di komputer kita kita bisa gunakan REPL untuk
