@@ -148,5 +148,27 @@ command mode: ...
 :> / silmi 		: cari kata silmi => dibawah cursor aqil barusan//
 :> ? izza 		: cari kata izza => di atas cursor aqil barusan
 
+---------------------------------------------------
+REPL
+jika kita punya nodejs di komputer kita kita bisa gunakan REPL untuk
+Create file, Editor file, tulis code javascript, jalankan console
+
+:> node 		: masuk ke REPL (read, eval, print, loop)
+   setelah masuk node silahkan gunakan perintah di bawah ini:
+:> 1+1 atau 1=='1' enter: mirip console pada browser
+:> const salam = () => { 	: saat nulis panjang belum di tertutup lalu kita enter akan di kasih "..." artinya lanjutkan sampai ";"
+:> .help 		: di kasih navigasi menu utama 
+:> touch coba.js 	: add coba.js
+:> vi coba.js 		: edit file dengan terminal vim (lihat di bawah vim editor)(atau edit pakai REPL)
+:> .load coba.js 	: import file dalam REPL berisi variabel 
+:> .save coba.js 	: simpan code REPL ke file
+:> .cat coba.js 	: mebaca isi file
+:> rm coba.js 		: hapus file
+:> .exit/ctrl C, C 	: keluar REPL
+:> .break/.clear	: keluar dari code multiline ("..." titik tiga tadi )di REPL (karena nggak bisa keluar begitu saja nanti kode bisa hilang)
+:> .editor 		: nulis multiline, 
+:> ctrl D 		: finis multiline,
+:> ctrl c 		: cancel multiline,
+----------------
 
 
