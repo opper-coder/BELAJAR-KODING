@@ -93,7 +93,7 @@ UTILITY
 :> alias coba="perintah asli yang panjang" : menambah perintah alias mnggunakan kata alternatif bikinan kita
 
 ---------------------------------------------------
-VIM
+VIM atau VI
 adalah text editor dalam terminal biasaanya di gabung kan dengan terminal file folder
 terminal file
 :> mk dir  		: bikin folder
