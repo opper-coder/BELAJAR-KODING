@@ -95,43 +95,42 @@ UTILITY
 ---------------------------------------------------
 VIM atau VI
 adalah text editor dalam terminal biasaanya di gabung kan dengan terminal file folder
-terminal file
+
+terminal file:
 :> mk dir  		: bikin folder
 :> touch coba.html 	: bikin file
 :> cd dir/dir2 		: navigasi
 
 file mode: ...
 :> vi 			: buka vim editor => about vim (default ada di terminal linux zorin, kalu belum ada install dulu) 
+:> man vi 		: help vi 
 :> mkdir/cd/touch 	: buka dulu tempat kerja
-:> CTRL SHIFT ":" 	: masuk "commond mode"(mendapatkan ":") di awal saat sudah masuk bisa pakai ESC
+:> ctrl shift ":" 	: masuk ke vim command 
 :> vi coba.js 		: buka file existing
 :> vi coba.js 		: addnew file jika blm ada file
+:> :q 			: quit atau 
+:> :q! 			: quit juga 
+:> :w 			: save (write) 
+:> :wq 			: save and quit, (simpan dan keluar)
+:> :wq coba.js		: save as quit, (simpan, nama, keluar)    
 
-aksi dan masuk insert mode: ...
+insert mode: ...
+:> !arrow 		: tidak support arah keyboard
 :> i 			: insert mode tulis pada cursor, 	dan masuk insert mode
 :> a 			: insert mode tulis di depan cursor, 	dan masuk insert mode
 :> o 			: tambah baris sebagai enter, 		dan masuk insert mode
 :> S  			: hapus sebaris, 			dan masuk insert mode
 
-insert mode: ...
+command mode: ...
+:> CTRL shift ":" 	: masuk "commond mode"(mendapatkan ":") di awal saat sudah masuk bisa pakai ESC 
+:> ESC 			: command mode
+:> arrow 			: support arah keyboard 
 :> x 			: hapus maju
 :> X 			: hapus mundur
-:> / 			: cari kata di bawahnya //
-:> ? 			: cari kata di atasnya
-
-command mode: ...
-:> ESC 			: command mode
-:> !arrow 		: tidak support arah keyboard
-:> :q 			: quit
-:> :w 			: save (write) 
-:> :wq 			: save and quit, (simpan dan keluar)
-:> :wq coba.js		: save as quit, (simpan, nama, keluar)    
-
-command mode: ...
-dd 			: hapus satu baris
-x  			: hapus 1 karakter maju
-arrow 			: support arah keyboard 
-man vi 			: help vi 
+:> dd 			: hapus satu baris sekaligus enternya
+:> / aqil		: cari kata aqil => cursor kesana//
+:> / silmi 		: cari kata silmi => dibawah cursor aqil barusan//
+:> ? izza 		: cari kata izza => di atas cursor aqil barusan
 
 
 
