@@ -100,11 +100,13 @@ terminal file:
 :> mk dir  		: bikin folder
 :> touch coba.html 	: bikin file
 :> cd dir/dir2 		: navigasi
+:> cat coba.html 	: (cat: concatenate) melihat/membaca isi file coba.html
 -------------------------
 ringkasan:
 :> pwd, ls, ll 		: lihat lokasi kerja
 :> cd dir 		: masuk ke lokasi kerja
 :> vi coba.js 		: buka atau tambah file
+:> cat coba.js 		: baca isi file
 :> i 			: insert mode
 :> ESC 			: command mode
 :> arrow 		: arah cursor command mod
