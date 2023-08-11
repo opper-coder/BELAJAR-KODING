@@ -4,6 +4,8 @@ intramfs           -> perbaiki initrmfs
 deepin shortcut    -> shorthand productivity
 XAMPP              -> instalasi via terminal start stop terminal 
 terminal linux     -> perintah dasar terminal linux 
+VIM                -> text editor terminal base 
+REPL               -> text editor ala nodejs, ada console nya jg 
 
 INITRAMS
 ---------------------------------------------------
