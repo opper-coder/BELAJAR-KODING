@@ -1,7 +1,8 @@
 NODEJS
 ------------------------------------------------- 
 INSTALASI 	: install node dan npm (linux)			
-REPL 		: mirip console, tulis script langsung hasil
+REPL 		: text editor terminal base ala nodejs , bisa simpan file, console.log dll
+VIM 		: text editor terminal base
 INDEX.JS 	: install node, bikin file, jalankan node index.js(di runtime node), tidak ada node init
 //SINGLE PAGE APP	: 
 MODULES 	: sekumpulan code yang simple/komplex yg di export, dan import saat akan menggunakan, ada 3 jenis modules
