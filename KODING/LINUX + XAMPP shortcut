@@ -31,12 +31,11 @@ mengatasi initrams gagal booting di linux ikuti 2 langkah berikut
 
 DEEPIN SHORTCUT
 ---------------------------------------------------
-
-super <>          = pindah workspace
-super alt <>      = pindah aplikasi
-super shift <>    = grab ke workspace
-super + E         = filemanager
-ctrl + alt + t    = terminal
+super <>          	= pindah workspace
+super alt <>      	= pindah aplikasi
+super shift <>    	= grab ke workspace
+super + E         	= filemanager
+ctrl + alt + t    	= terminal
 
 XAMPP
 ---------------------------------------------------
