@@ -7,6 +7,21 @@ terminal linux     -> perintah dasar terminal linux
 VIM                -> text editor terminal base 
 REPL               -> text editor ala nodejs, ada console nya jg 
 
+CODE DOKUMENTASI SAYA
+-------------------------------------------------
+:> 			: terminal
+>>   			: go browser/run
+??> 			: cekidoc
+ - 			: item
+ > 			: lanjut
+=> 			: return
+/  			: root
+/nama 		: folder
+*.js 			: file
+-> new  		: create 
+-> /folder/file		: go file
+--> console.log()	: tulis
+
 INITRAMS
 ---------------------------------------------------
 mengatasi initrams gagal booting di linux ikuti 2 langkah berikut 
