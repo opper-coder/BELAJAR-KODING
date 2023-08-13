@@ -16,7 +16,7 @@ CODE DOKUMENTASI SAYA
  > 			: lanjut
 => 			: return
 /  			: root
-/nama 		: folder
+/nama 			: folder
 *.js 			: file
 -> new  		: create 
 -> /folder/file		: go file
