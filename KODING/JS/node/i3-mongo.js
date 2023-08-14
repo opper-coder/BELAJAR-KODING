@@ -5,21 +5,23 @@ instalasi
 	- cara instalasi ada 2:
 		1. local		: mongo local
 		2. cloud 		: mongo cloud
-	- remotenya ada 2
-		1. terminal 		: remote 
-		2. GUI compass 		: remote 
+	- remotenya ada 3
+		1. CLI mongosh 		: remote terminal mongo shell 
+		2. GUI compass 		: remote GUI
+		3. dashboard atlas 	: dashboard GUI cloud
 	- install local ada2 cara (OS win,Mac, linux)
 		1. terminal 		: akan ada auto config 		??> 
 		2. download GUI 	: nanti akan config manual 	??> 
-	??> https://www.mongodb.com/ > tab product > community edition > community server > tentukan parameter download 	: download instal mongo
-	??> https://www.mongodb.com/ > tab product > community edition > tools > shell > mongosh > linux 			: install CLI mongo 
-	??> https://www.mongodb.com/ > tab product > community edition > compass > download installation  			: install Compass
+	??> https://www.mongodb.com/ > tab product > community edition > community server > tentukan parameter download 	: download instal mongodb
+	??> https://www.mongodb.com/ > tab product > community edition > tools > shell > mongosh > linux 			: install remote CLI mongo (mongosh: mongo shell) 
+	??> https://www.mongodb.com/ > tab product > community edition > compass > download installation  			: install remote GUI Compass 
 -------------------------------------------------
 run CLI mongosh
-	- pastikan envi variabel sudah di setting
+	- install mongosh 		: mongo shell, sesuai platform
+	- pastikan environtmen variabel sudah di setting
 	- jika tidak kita harus masuk ke folder root mongo, tinggal jalankan  
 	:> mongo 			=> command help, version, sudah bisa di ketik dimanapun
-	:> commond 			??> instalasi, koneksi, pengunaan  mudah dibaca cekidoc
+	:> commond 			??> instalasi, koneksi, pengunaan CRUD.  mudah dibaca cekidoc
 
 run GUI compass
 	- install sesui platform
@@ -32,7 +34,7 @@ run CLOUD atlas
 	- pilih provider 	: AWS
 	- region 		: asia
 	- build cluster 	: free prosess di buatkan > di arahkan ke dashboaard
-	- craete cluster
+	- create cluster 	: 
 
 contoh command:
 	:> db
