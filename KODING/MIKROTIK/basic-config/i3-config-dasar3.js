@@ -1,5 +1,4 @@
-setting dasar mikrotik
-
+BASIC CONFIG
 ---------------------------------------
 RESET
 - Reset mikrotik 
