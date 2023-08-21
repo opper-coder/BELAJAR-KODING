@@ -1,7 +1,7 @@
 FIREBASE BASIC VIDEO
 -------------------------------------------------
 1. instal Firebase JS SDK dan inisialisasi Firebase.,
-2. Tambahkan JS SDK Firebase Authentication dan lakukan inisialisasi Firebase Authentication:
+2. import JS SDK Firebase Authentication dan lakukan inisialisasi Firebase Authentication:
 
 	import { initializeApp } from "firebase/app"; 					// import SDK 
 	import { getAuth } from "firebase/auth"; 					// import auth
