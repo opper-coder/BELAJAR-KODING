@@ -1,3 +1,9 @@
+
+Erdecode
+Next.js & Firebase Authentication
+
+
+
 aplikasi perlu mengetahui identitas pengguna atau auth
 dg auth aplikasi dapat malkukan CRUD yang aman
 -----
