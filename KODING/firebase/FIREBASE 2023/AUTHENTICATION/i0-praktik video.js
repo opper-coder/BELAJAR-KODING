@@ -15,14 +15,14 @@ FIREBASE BASIC VIDEO
 
 LOGIN
 -------------------------------------------------
-untuk sementara kita buatkan (register) akun email dan pass, di fbase console,
+untuk sementara kita buatkan (register) akun email dan pass, di dbase console,
 selanjutnya nanti buatkan form UI untuk register.
 dan juga buatkan alur email menggunakan verifikasi email supaya email benar2 ada dengan verify
 
 	import { getAuth, signInWithEmailAndPassword } from "firebase/auth"; 		// import login juga
 
 	const auth = getAuth();  							// init auth
-	signInWithEmailAndPassword(auth, email, password) 				// login, teruskan dataform ke signInWithEmailAndPassword()
+	signInWithEmailAndPassword(auth, email, password) 				// login, ambil data param (email,pass) dari input
 	  .then((userCredential) => {
 	    // Signed in
 	    const user = userCredential.user; 						// coba console.log(user)
