@@ -9,15 +9,15 @@ RESET
 ---------------------------------------
 BRIDGE-IP
 - bridge-WAN (port 1)
-- bridge-LAN (semua port kecuali terkhir)
+- bridge-LAN (semua port kecuali terakhir)
 - bridge-speedtest (port terakhir)
-- add ip bridgelan 192.168.50.1/24
+- add ip bridge-LAN 192.168.50.1/24
 - add ip bridge-speedtest 192.168.52.1/24
 ---------------------------------------
 DHCP CLIENT
 - ADD > bound
 - add NAT masquerade
-- add DNS 8888, 8844, allow 
+- add DNS 8888, 8844, allow remote
 - :> ping google.com 
 ---------------------------------------
 HOTSPOT
@@ -42,8 +42,9 @@ SECURITY
 - sistem user > add user > grup full > name: its.net > pass: pasmikro > lalu login ulang dg admin baru > kemudian disable yang bawaan   
 - system > identity > ITS.net >  
 - IP > services > ada list > disable dan sisakan 'www, winbox, ssh'
-  - dklik u/ config masing2 > available from isikan ip target (misalnya milik laptop petugas) 
-  - tambahkan IP local kita 192. 168. 1. 0/24 (tentu saja karena kalau tidak di isi kita malah gak bisa remote winbox)
+  - dklik u/ config ssh > available from isikan ip target 
+	public dari DDNS misalnya,202.11.1.1 -lalu tambahkan IP local kita 192.168.50.0/24 lalu tambahkan  192.168.50.5
+  - dclick winbox > available from isikan   192.168.50.0/24, lalu tambahkan  192.168.50.5 
   - Terus www > edit port 80 kita ubah jadi 8080 > Nanti kalau remote tinggal www.ip:8080 
 - Tips yang ini jangan dilakukan terlalu cepat nanti tidak bisa connect sendiri
 Langkah amanya tiap perubahan ping dst
