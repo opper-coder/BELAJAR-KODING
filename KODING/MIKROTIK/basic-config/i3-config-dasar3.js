@@ -43,19 +43,22 @@ HOTSPOT
 SETUP TAMBAHAN
 ---
 - hospot>server>dblc>
-- addresspool: none, idle timeout:5 menit, keepalive: 6 menit, adrees per mac:1, 
-	tab login: HTTP CHAP,HTTP PAP,MAC COOKIE=true, other:no
----
+- addresspool: none, idle timeout:5 menit, keepalive: 6 menit, adrees per mac:1, tab login: HTTP CHAP,HTTP PAP,MAC COOKIE=true, other:no
 - DHCP server > dblc > lease-time: 10 mnt > add
 ---
 system > clock
 > system zone auto detect: matikan
 > system SNTP client > enable > primary NTP : 202.65.114.202 > secondary NTP : 212.26.18.41 > server dns: "asia.pool.ntp.org"
 > apply maka mode akan berubah beserta parameter lain 
-
 ---------------------------------------
-loginpage
+LOGINPAGE
 -> files > hapus smua kecuali hotspot lalu ambil login page milik anda paste di "dalam" folder /hotspot
+---------------------------------------
+WIRELESS
+- wireless > Tsecurity profile > add > name:"satu" > wpa-wpa2 key:"isikan password sama" 
+- wireless > Tgeneral select > mode: ap-bridge > band:5gb > freq:5725-5825
+- klik advance mode > pilih security profile:"satu" 
+- klik enable
 ------------------------------------------------------
 AGENDA
 --- 
