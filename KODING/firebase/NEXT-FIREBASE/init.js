@@ -80,11 +80,11 @@ apiKey: process.env.NEXT_PUBLIC_API_KEY, (di tambahin process.env di depan) kura
 ---------------------------------- */
 
 import { initializeApp, getApps } from 'firebase/app'
-import { 																// 0. setelah config inisialisasi awal maka kita butuh beberapa library autentication
-  getAuth,  															// 3. getAuth(untuk inisialisasi)
-  createUserWithEmailAndPassword, 										// 4. ini untuk mode authnya 
-  signInWithEmailAndPassword, 											// 5. untuk method signin
-  signOut 																// 6. untuk signout 
+import { 										// 0. setelah config inisialisasi awal maka kita butuh beberapa library autentication
+  getAuth,  										// 3. getAuth(untuk inisialisasi)
+  createUserWithEmailAndPassword, 							// 4. ini untuk mode authnya 
+  signInWithEmailAndPassword, 								// 5. untuk method signin
+  signOut 										// 6. untuk signout 
 } from 'firebase/auth'
 
 const firebaseConfig = {
@@ -96,24 +96,24 @@ const firebaseConfig = {
   appId: process.env.NEXT_PUBLIC_APP_ID
 };
 
-if (!getApps().length) { 												// 2. tapi lebih aman pakai ceking 
-  initializeApp(firebaseConfig) 										// 1. biasanya inisialize langsung ini (auth instance)
+if (!getApps().length) { 								// 2. tapi lebih aman pakai ceking 
+  initializeApp(firebaseConfig) 							// 1. biasanya inisialize langsung ini (auth instance)
 }
 
-export const FirebaseAuth = getAuth() 									// 7. initial auth
+export const FirebaseAuth = getAuth() 							// 7. initial auth
 
-export const SignUp = async (email, password) => { 						// 8. bikin function register, async(karena semua return promise)
-  await createUserWithEmailAndPassword(FirebaseAuth, email, password) 	// 9. register menerima 3 param, 
+export const SignUp = async (email, password) => { 					// 8. bikin function register, async(karena semua return promise)
+  await createUserWithEmailAndPassword(FirebaseAuth, email, password) 			// 9. register menerima 3 param, 
 }
 
 export const SignIn = async (email, password) => {
-  await signInWithEmailAndPassword(FirebaseAuth, email, password) 		// 10. login menerima 3 param jg
+  await signInWithEmailAndPassword(FirebaseAuth, email, password) 			// 10. login menerima 3 param jg
 }
 
 export const SignOut = async () => {
-  await signOut(FirebaseAuth) 											// 11. logout satu params saja
+  await signOut(FirebaseAuth) 								// 11. logout satu params saja
 }
-																		// jangan lupa export semua
+											// jangan lupa export semua
 
 
 /* Hook Form
