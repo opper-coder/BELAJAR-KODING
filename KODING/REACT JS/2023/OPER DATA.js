@@ -15,23 +15,24 @@ OPER DATA CHILD KE PARENT
 
 const Parent = () => {                                // 1. parent 
     const operAlamat = (terimaData) => {              // 3. bikin fungsi penerima data dari child (pada args) 
-        return<> alamat saya{terimaData} </>          // 6. args di terima dari child bisa di gunakan di parent ini 
+        return<>alamat saya{terimaData} </>           // 6. args di terima dari child bisa di gunakan di parent ini 
     }
-    return<> <Child name="aqil" alamat={operAlamat}> </>      // 4. kirim props dari parent ke child berupa fungsi tanpa invoke()
+    return<> <Child name="aqil" alamat={operAlamat}> </>      // 4. saat panggil CHILD, kirim fungsi no(invoke) via props, ke child 
 }
 -----
 const Child = (props) => {                            // 2. child
     return<>Halo nama saya {props.name} dan {props.operAlamat("saiti")}</>      // 5. ambil props dari parent berupa function(sambil kirim arg),                                                                         
 }
+    
 -----------------------------------------------------
 UBAH STATE TUNGGAL
 
 import { useState } from "react";
 export default function App() {
-  const [isNotif, setIsNotif] = useState(false);      // 1. jika kita punya state
-  const notif = () => {
-    setIsNotif(!isNotif);                             // 2. kita bisa ubah dengan fungsi pengubah
-  };
+    const [isNotif, setIsNotif] = useState(false);      // 1. jika kita punya state
+    const notif = () => {
+        setIsNotif(!isNotif);                           // 2. kita bisa ubah dengan fungsi pengubah
+    };
   return <div onClick={notif}>gunakan datanya disini!{isNotif}</div>;
 }
 -----------------------------------------------------
