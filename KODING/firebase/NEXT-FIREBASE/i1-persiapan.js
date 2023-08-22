@@ -13,7 +13,7 @@ DASHBOARD
 - add user secara dashboard > tab user > add user > email: isikan email(boleh:valid), pass: isikan > add user > ok > kita sudah dapatkan satu user valid 
 
 NEXT INSTALLATION  
-------------------------------------------------------
+--------------------------------------------------
 - nodejs "minimal > v16.8" 
 :> mkdir projecku :> cd projecku :> code . > enter - terminal vscode
 :> npx create-next-app@latest fullstack                         : biasa terbaru
