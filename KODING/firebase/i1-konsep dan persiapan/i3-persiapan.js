@@ -7,17 +7,18 @@ disini firebase dasar di web browser ada 4 langkah saja:
 3. new /src/index.js 		// bikin folder dan index. copas connection string dari firebase config dashboard:
 	-------------------------------------------
 	IMPORT PACKAGE
-	import { initializeApp } from 'firebase/app' 						// import initial firebase
-	import { getAuth, onAuthStateChange, connectAuthEmulator } from 'firebase/auth'  	// getAuth(authentikasi),  onAuthStateChange(session), connectAuthEmulator(emulator)
-	import { getFirestore, collection } from 'firebase/firestore' 				// import service getFirestore untuk database
+	import { initializeApp } from 'firebase/app' 						// a. import initial firebase
+	import { getAuth, onAuthStateChange, connectAuthEmulator } from 'firebase/auth'  	//    getAuth(authentikasi),  onAuthStateChange(session), connectAuthEmulator(emulator)
+	import { getFirestore, collection } from 'firebase/firestore' 				//    import service getFirestore untuk database
 	-------------------------------------------
 	MODUL INIT CONNECTION
-	firebaseApp = initializeApp({ 				// 0. connection string copas dari dashboard setting
-		...
-	});
+	const firebaseConfig = { 				// b. variabel config dari dashboard
+	  ...
+	};
+	const app = initializeApp(firebaseConfig); 		// c. init firebase
 	-------------------------------------------
-	INIT SERVICE SESSION AUTH
-	const auth = getAuth(firebaseApp); 			// 1. 	auth (instance string conn)
+	INIT SERVICE SESSION AUTH 
+	const auth = getAuth(app); 				// 1. 	auth (instance string conn)
 	connectAuthEmulator(auth, "http://localhost:9099"); 	// 1.1  jalankan layanan di emulator di port:9099 (import dulu), saat deploy nanti di hapus
 	onAuthStateChange(auth, (user) => {
 		if(user !== null ){
