@@ -19,7 +19,16 @@ NEXT INSTALLATION
 :> npx create-next-app@latest fullstack                         : biasa terbaru
 :> npx create-next-app@latest --experimental-app .              : ada titik pakai experimental
 :> npx create-next-app --experimental-app fullstack             : pakai folder lagi tanpa latest
-  - typeScript: yes, eslint: yes, src/ dir no, lalu @ > enter   : pilih saja
+  
+	✔ What is your project named? … fullstack
+	✔ Would you like to use TypeScript? … No / Yes
+	✔ Would you like to use ESLint? … No / Yes
+	✔ Would you like to use Tailwind CSS? … No / Yes
+	✔ Would you like to use `src/` directory? … No / Yes
+	✔ Would you like to use App Router? (recommended) … No / Yes
+	✔ Would you like to customize the default import alias? … No / Yes
+	✔ What import alias would you like configured? … @/*
+	
 -> package.json 
 :> npm run dev
 -> browser: localhost:3000
