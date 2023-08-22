@@ -29,9 +29,9 @@ UBAH STATE TUNGGAL
 
 import { useState } from "react";
 export default function App() {
-    const [isNotif, setIsNotif] = useState(false);      // 1. jika kita punya state
+    const [isNotif, setIsNotif] = useState(false);    // 1. jika kita punya state
     const notif = () => {
-        setIsNotif(!isNotif);                           // 2. kita bisa ubah dengan fungsi pengubah
+        setIsNotif(!isNotif);                         // 2. kita bisa ubah dengan fungsi pengubah
     };
   return <div onClick={notif}>gunakan datanya disini!{isNotif}</div>;
 }
@@ -109,9 +109,9 @@ sebaiknya pakai callback agar efektif
 import { useState } from "react";
 
 export default function App() {
-  const [isNotif, setIsNotif] = useState(false);      // 1. jika kita punya state
+  const [isNotif, setIsNotif] = useState(false);     // 1. jika kita punya state
   const notif = () => {
-    setIsNotif(!isNotif);                             // 2. kita bisa ubah dengan fungsi pengubah
+    setIsNotif(!isNotif);                            // 2. kita bisa ubah dengan fungsi pengubah
   };
   return <>gunakan datanya disini!</>;
 }
@@ -128,7 +128,7 @@ export default function App() {
     }, 2000);                                             padahal sudah di ubah ppertama, ubahan kedua menganggap ubahan pertama tidak terjadi
     ---
     setTimeout(() => {                              // hal itu terjadi karena ubahan kedua mengambial dari state awal bukan dari state terakhir
-      setIsNotif((state) => !isNotif;    // supaya dapat mengambil dari state terbaru, ubah state dalam params callbac
+      setIsNotif((state) => !isNotif;               // supaya dapat mengambil dari state terbaru, ubah state dalam params callbac
     }, 2000);
   };
 
@@ -141,20 +141,20 @@ export default function App() {
   const [isNotif, setIsNotif] = useState(false);
   // ubahstate tunggal valid
   const notif = () => {
-    setIsNotif(!isNotif);                   // ubah tunggal valid (tidak dalam callback)
+    setIsNotif(!isNotif);                          // ubah tunggal valid (tidak dalam callback)
   };
   // ubahstate pertama valid, kedua tidak valid
   const notif2 = () => {
-    setIsNotif(!isNotif);                  // ubah pertama valid
+    setIsNotif(!isNotif);                          // ubah pertama valid
     setTimeout(() => {
-      setIsNotif(!isNotif);                // ubah kedua tidak valid (tidak dalam callback)
+      setIsNotif(!isNotif);                        // ubah kedua tidak valid (tidak dalam callback)
     }, 2000);
   };
   // ubahstate pertama valid, kedua valid (dalam callback)
   const notif3 = () => {
-    setIsNotif(!isNotif);                 // ubah pertama valid
+    setIsNotif(!isNotif);                         // ubah pertama valid
     setTimeout(() => {
-      setIsNotif((state) => !isNotif);    // ubah kedua valid (dalam callback)
+      setIsNotif((state) => !isNotif);            // ubah kedua valid (dalam callback)
     }, 2000);
   };
 
