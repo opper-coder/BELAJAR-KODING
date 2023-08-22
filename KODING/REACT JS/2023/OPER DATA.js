@@ -1,40 +1,31 @@
 Ringkasan
 --------------------------------------------------------------------------------------------------
-kirim data dari parent ke child
--------------------------------
-const Parent = () => {                           // 1. komponen parent 
-    return<><Child name="aqil"></>             	// 3. panggil komponen (oper props ke child)
+OPER DATA PARENT KE CHILD
+
+const Parent = () => {                                // 1. komponen parent 
+    return<><Child name="aqil"></>                    // 3. saat panggil(oper props)
 }
- -----
-const Child = (props) => {                       // 2. komponen child (tangkap data dengan props)
- return
- <>
-  <div>"Halo nama saya "{props.name}</div>       // 4. gunakan props
- </>
+-----
+const Child = (props) => {                            // 2. komp child (tangkap props)
+    return<>"Halo nama saya "{props.name}</>          // 4. gunakan props
 }
-kirim data dari child ke parent
--------------------------------
- const Parent = () => {                          // 1. parent 
-  const operAlamat = (terimaData) => {           // 3. bikin fungsi penerima data dari child (pada args)
-    return
-      <>
-        "alamat saya" {terimaData}               // 6. args di terima dari child bisa di gunakan di parent ini 
-      </>
+
+-----------------------------------------------------
+OPER DATA CHILD KE PARENT
+
+const Parent = () => {                                // 1. parent 
+    const operAlamat = (terimaData) => {              // 3. bikin fungsi penerima data dari child (pada args) 
+        return<> alamat saya{terimaData} </>          // 6. args di terima dari child bisa di gunakan di parent ini 
     }
-  return
-  <>
-        <Child name="aqil" alamat={operAlamat}>  // 4. kirim props dari parent ke child berupa fungsi tanpa invoke()
-  </>  
- }
- -----
-const Child = (props) => {                       // 2. child
- return
- <>
-  <div>Halo nama saya {props.name} dan {props.operAlamat("saiti")}</div>  // 5. ambil props dari parent berupa function(sambil kirim arg), 
- </>                                                                            
+    return<> <Child name="aqil" alamat={operAlamat}> </>      // 4. kirim props dari parent ke child berupa fungsi tanpa invoke()
 }
-ubah state tunggal
--------------------------------
+-----
+const Child = (props) => {                            // 2. child
+    return<>Halo nama saya {props.name} dan {props.operAlamat("saiti")}</>      // 5. ambil props dari parent berupa function(sambil kirim arg),                                                                         
+}
+-----------------------------------------------------
+UBAH STATE TUNGGAL
+
 import { useState } from "react";
 export default function App() {
   const [isNotif, setIsNotif] = useState(false);      // 1. jika kita punya state
@@ -43,8 +34,9 @@ export default function App() {
   };
   return <div onClick={notif}>gunakan datanya disini!{isNotif}</div>;
 }
-ubah state berkali2
--------------------------------
+-----------------------------------------------------
+UBAH STATE BERKALI KALI
+
 import { useState } from "react"; 
 export default function App() {
   const [isNotif2, setIsNotif2] = useState(false);   // 1. state nilaiawal: false    
