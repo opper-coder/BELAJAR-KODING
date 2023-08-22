@@ -17,7 +17,8 @@ disini firebase dasar di web browser ada 4 langkah saja:
 	});
 	-------------------------------------------
 	INIT SERVICE SESSION AUTH
-	const auth = getAuth(firebaseApp); 			// 1. auth (instance string conn)
+	const auth = getAuth(firebaseApp); 			// 1. 	auth (instance string conn)
+	connectAuthEmulator(auth, "http://localhost:9099"); 	// 1.1  jalankan layanan di emulator di port:9099 (import dulu), saat deploy nanti di hapus
 	onAuthStateChange(auth, (user) => {
 		if(user !== null ){
 			console.log("Logged in!");
