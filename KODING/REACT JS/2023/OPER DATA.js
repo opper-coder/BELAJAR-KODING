@@ -1,5 +1,15 @@
-Ringkasan
+sumber youtube: 
 --------------------------------------------------------------------------------------------------
+1. Semmi Verian > [NGE-React] #17 Mengirimkan data dari child ke parent component
+2. dea afrizal > Code Yang Harus React JS Developer Ketahui
+
+- kirim data parent ke child                     -> dengan props data biasa
+- kirim data dari child ke parent                -> dengan props function argument
+- ubah state tunggal                             -> langsung ubah
+- ubah state berkali2                            -> harus pakai callback
+
+Ringkasan
+-----------------------------------------------------
 OPER DATA PARENT KE CHILD
 
 const Parent = () => {                                // 1. komponen parent 
@@ -50,17 +60,8 @@ export default function App() {
   return <div onClick={notif2}>gunakan datanya disini!{isNotif2}</div>;
 }
 
- 
 --------------------------------------------------------------------------------------------------
 
-sumber youtube: 
-1. Semmi Verian > [NGE-React] #17 Mengirimkan data dari child ke parent component
-2. dea afrizal > Code Yang Harus React JS Developer Ketahui
-
-- kirim data parent ke child                     -> dengan props data biasa
-- kirim data dari child ke parent                -> dengan props function argument
-- ubah state tunggal                             -> langsung ubah
-- ubah state berkali2                            -> harus pakai callback
 
 kirimdata dari parent ke child
 ------------------------------------------
