@@ -66,11 +66,11 @@ TEMPLATE UTK FIREBASE
 bestpractice firebase untuk pengembangan standard pakai ini 
 
 import { initializeApp, getApps } from 'firebase/app'
-import { 										// 0. setelah config inisialisasi awal maka kita butuh beberapa library autentication
-  getAuth,  									// 3. getAuth(untuk inisialisasi)
+import { 							// 0. setelah config inisialisasi awal maka kita butuh beberapa library autentication
+  getAuth,  							// 3. getAuth(untuk inisialisasi)
   createUserWithEmailAndPassword, 				// 4. ini untuk mode authnya 
   signInWithEmailAndPassword, 					// 5. untuk method signin
-  signOut 										// 6. untuk signout 
+  signOut 							// 6. untuk signout 
 } from 'firebase/auth'
 
 const firebaseConfig = {
