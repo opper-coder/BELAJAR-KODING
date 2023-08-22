@@ -3,8 +3,8 @@ FIREBASE BASIC VIDEO
 :> mkdir project 		:  
 :> cd project 			: 
 :> npm init 			: init nodejs folder project 
-:> npm i firebase 		: install packege
--> new /app.js 			: entry point 
+:> npm i firebase 		: install package firebase 
+-> new /app.js 			: entry point >
 
 	import { initializeApp } from "firebase/app"; 					// import SDK 
 	import { getAuth } from "firebase/auth"; 					// import auth
