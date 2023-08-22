@@ -1,7 +1,10 @@
 FIREBASE BASIC VIDEO
 -------------------------------------------------
-1. instal Firebase JS SDK dan inisialisasi Firebase.,
-2. import JS SDK Firebase Authentication dan lakukan inisialisasi Firebase Authentication:
+:> mkdir project 		:  
+:> cd project 			: 
+:> npm init 			: init nodejs folder project 
+:> npm i firebase 		: install packege
+-> new /app.js 			: entry point 
 
 	import { initializeApp } from "firebase/app"; 					// import SDK 
 	import { getAuth } from "firebase/auth"; 					// import auth
@@ -19,11 +22,11 @@ untuk sementara kita buatkan (register) akun email dan pass, di dbase console,
 selanjutnya nanti buatkan form UI untuk register.
 dan juga buatkan alur email menggunakan verifikasi email supaya email benar2 ada dengan verify
 
-	import { getAuth, signInWithEmailAndPassword } from "firebase/auth"; 		// import login juga
+	import { getAuth, signInWithEmailAndPassword } from "firebase/auth"; 		// import login email-password
 
 	const auth = getAuth();  							// init auth
 	signInWithEmailAndPassword(auth, email, password) 				// login, ambil data param (email,pass) dari input
-	  .then((userCredential) => {
+	  .then((userCredential) => { 							// pakai then.catch karena ada error yg di sediakan
 	    // Signed in
 	    const user = userCredential.user; 						// coba console.log(user)
 	    // ...
