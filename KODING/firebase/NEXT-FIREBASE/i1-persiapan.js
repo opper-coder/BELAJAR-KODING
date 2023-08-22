@@ -40,7 +40,7 @@ INITIALISASI FIREBASE to NEXTjs
 -> new "/.env.local" >  yang isinya sesuai yang di berikan oleh firebase > templatenya sbb:
 
 NEXT_PUBLIC_API_KEY= copas dari config yg di kasih firebase tanpa petik, yg tidak di pakai delete saja
-NEXT_PUBLIC_AUTH_DOMAIN= ...
+NEXT_PUBLIC_AUTH_DOMAIN= ... 
 NEXT_PUBLIC_DATABASE_URL=
 NEXT_PUBLIC_PROJECT_ID=
 NEXT_PUBLIC_STORAGE_BUCKET=
