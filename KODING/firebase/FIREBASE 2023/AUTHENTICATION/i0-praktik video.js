@@ -88,16 +88,16 @@ REGISTER
 STATUS/SESSION USER
 -------------------------------------------------
 	import { 
-			getAuth, 
-			signInWithEmailAndPassword, 
-			createUserWithEmailAndPassword, 
-			onAuthStateChanged, 						// 1. import onAuthStateChanged
+		getAuth, 
+		signInWithEmailAndPassword, 
+		createUserWithEmailAndPassword, 
+		onAuthStateChanged, 						// 1. import onAuthStateChanged
 		} from "firebase/auth"; 		
 	const auth = getAuth(); 
 
-	const monitorAuthState = () => { 						// 2. fungsi untuk onAuthStateChanged
-		onAuthStateChanged(auth, user => { 					// 4. onAuthStateChanged(auth, callback)
-			if (user) { 							// 5. dalam callbac ada pengecekan user login atau tidak
+	const monitorAuthState = () => { 					// 2. fungsi untuk onAuthStateChanged
+		onAuthStateChanged(auth, user => { 				// 4. onAuthStateChanged(auth, callback)
+			if (user) { 						// 5. dalam callbac ada pengecekan user login atau tidak
 				console.log(user);
 				showApp();
 				showLoginState(user);
@@ -108,7 +108,7 @@ STATUS/SESSION USER
 			}
 		});
 	}
-	monitorAuthState(); 								// 3. jalankan fungsi
+	monitorAuthState(); 							// 3. jalankan fungsi
 
 LOGOUT
 -------------------------------------------------
@@ -117,14 +117,14 @@ LOGOUT
 		signInWithEmailAndPassword, 
 		createUserWithEmailAndPassword, 
 		onAuthStateChanged, 
-		signOut									// 1. import signOut
+		signOut								// 1. import signOut
 	} from "firebase/auth"; 	
 	const auth = getAuth();
 
-	const logout = async () => { 							// 2. trigger
-		await signOut(auth); 							// 3. panggil disini
+	const logout = async () => { 						// 2. trigger
+		await signOut(auth); 						// 3. panggil disini
 	}
 
-	btnLogout.addEventListener("click", logout); 					// 4. event onclick
+	btnLogout.addEventListener("click", logout); 				// 4. event onclick
 
 saat button logout di tekan maka akan keluar dan UI akan berganti ke form berkat monitorAuthState();
