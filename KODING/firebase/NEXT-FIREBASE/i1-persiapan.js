@@ -21,13 +21,13 @@ NEXT INSTALLATION
 :> npx create-next-app --experimental-app fullstack             : pakai folder lagi tanpa latest
   
 	✔ What is your project named? … fullstack
-	✔ Would you like to use TypeScript? … No / Yes
-	✔ Would you like to use ESLint? … No / Yes
-	✔ Would you like to use Tailwind CSS? … No / Yes
-	✔ Would you like to use `src/` directory? … No / Yes
-	✔ Would you like to use App Router? (recommended) … No / Yes
-	✔ Would you like to customize the default import alias? … No / Yes
-	✔ What import alias would you like configured? … @/*
+	✔ Would you like to use TypeScript? … No / Yes 		: no (pakai typescript atau js)
+	✔ Would you like to use ESLint? … No / Yes 		: yes (???)
+	✔ Would you like to use Tailwind CSS? … No / Yes 	: yes (???)
+	✔ Would you like to use `src/` directory? … No / Yes 	: yes (???)
+	✔ Would you like to use App Router? (recommended) … No / Yes 		: yes (???)
+	✔ Would you like to customize the default import alias? … No / Yes 	: yes (???)
+	✔ What import alias would you like configured? … @/* 	: yes (???)
 	
 -> package.json 
 :> npm run dev
