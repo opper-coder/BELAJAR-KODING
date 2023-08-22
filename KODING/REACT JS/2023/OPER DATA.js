@@ -2,12 +2,9 @@ Ringkasan
 --------------------------------------------------------------------------------------------------
 kirim data dari parent ke child
 -------------------------------
-const Parent = () => {                           // 1. komponen parent
- return
-    <>
-        <Child name="aqil">                      // 3. panggil komponen (oper props ke child)
-    </>  
- }
+const Parent = () => {                           // 1. komponen parent 
+    return<><Child name="aqil"></>             	// 3. panggil komponen (oper props ke child)
+}
  -----
 const Child = (props) => {                       // 2. komponen child (tangkap data dengan props)
  return
