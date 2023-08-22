@@ -62,8 +62,12 @@ const firebaseConfig = {
 };
  
 -------------------------------------------------
-TEMPLATE UTK FIREBASE  
-bestpractice firebase untuk pengembangan standard pakai ini 
+TEMPLATE FIREBASE  
+- template firebase auth dari erdecode untuk di jalankan di nextjs
+- structur folder di nextjs
+	-> new "/service/firebase.js" 		// string connection firebase taruh disini. value ambiol dari .env
+	-> new "/.env.local" 			// variabel env disini. 
+	-> /pages/app.js 			// import firebase.js di index nextjs 
 
 import { initializeApp, getApps } from 'firebase/app'
 import { 							// 0. setelah config inisialisasi awal maka kita butuh beberapa library autentication
@@ -82,13 +86,13 @@ const firebaseConfig = {
   appId: process.env.NEXT_PUBLIC_APP_ID
 };
 
-if (!getApps().length) {                                    // 2. tapi lebih aman pakai ceking 
-    initializeApp(firebaseConfig)                           // 1. biasanya inisialize langsung ini (auth instance)
+if (!getApps().length) {                                    	// 2. tapi lebih aman pakai ceking 
+    initializeApp(firebaseConfig)                           	// 1. biasanya inisialize langsung ini (auth instance)
 }
 
-export const FirebaseAuth = getAuth()                       // 7. initial auth, jangan lupa export semua
+export const FirebaseAuth = getAuth()                      	// 7. initial auth, jangan lupa export semua
 
-export const SignUp = async (email, password) => {          // 8. bikin function register, async(karena semua return promise)
+export const SignUp = async (email, password) => {          	// 8. bikin function register, async(karena semua return promise)
   await createUserWithEmailAndPassword(FirebaseAuth, email, password)   // 9. register menerima 3 param, yang akan menangkap data dari form
 }
 
@@ -97,4 +101,4 @@ export const SignIn = async (email, password) => {
 }
 
 export const SignOut = async () => {
-  await signOut(FirebaseAuth)                               // 11. logout satu params saja
+  await signOut(FirebaseAuth)                               	// 11. logout satu params saja
