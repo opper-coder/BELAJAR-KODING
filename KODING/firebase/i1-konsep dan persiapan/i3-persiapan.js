@@ -27,7 +27,7 @@ disini firebase dasar di web browser ada 4 langkah saja:
 		}
 	});
 	-------------------------------------------
-	PENGGUNAAN FIRESTOER
+	PENGGUNAAN FIRESTORE
 	const db = getFirestore(firebaseApp);			// 2. db connection(instance string conn)
 	-------------------------------------------
 	AMBIL DATA
