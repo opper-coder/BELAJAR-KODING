@@ -72,7 +72,8 @@ CATATAN
         import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.2.0/firebase-app.js'        
         import { getAuth } from 'https://www.gstatic.com/firebasejs/10.2.0/firebase-auth.js'
         import { getFirestore } from 'https://www.gstatic.com/firebasejs/10.2.0/firebase-firestore.js'
-- cara pakai menggunakan index html langsung adalah cara termudah, pada prakteknya kita mesti gunakan framework seperti react atau nexjs
+- cara pakai menggunakan index html langsung adalah cara termudah, tinggal copas doc dan jalankan, 
+  tetapi pada prakteknya kita mesti gunakan framework seperti react atau nexjs
 - tapi kalau terpaksa kita tetap pakai index.html biasa maka di sarankan harus pakai modul bundler seperti webpack agar bisa tree shaking
 - padahal kalau di framework sudah ada tree shaking include 
 -------------------------------------------------
