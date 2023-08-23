@@ -35,20 +35,20 @@ ENTRY POINT index.js
 :> npm init -y -> package.json              : 
 :> npm i firebase                           : finish, anda sudah mendapatkan akses ke firebase 
 +> new src/index.js                         : silahkan initialisasi firebase dan service disini
-        import { initializeApp } from 'firebase/app'            : 1. import inisialisasi
-        import { getAuth } from 'firebase/auth'                 : 2. import service dan subservice auth
-        import { getFirestore } from 'firebase/firestore'       : 3. kalau mau import service lain panggil dg getService from firebase/service 
+        import { initializeApp } from 'firebase/app'         : 1. import inisialisasi
+        import { getAuth } from 'firebase/auth'              : 2. import service dan subservice auth
+        import { getFirestore } from 'firebase/firestore'    : 3. kalau mau import service lain panggil dg getService from firebase/service 
         
-        const firebaseApp = initializeApp({                     : 4. init firebase
+        const firebaseApp = initializeApp({                  : 4. init firebase
                 ...
         })
 
-        const auth = getAuth(firebaseApp);                      : 5. init service auth
-        const firestore = getFirestore(firebaseApp);            : 6. init service lainya boleh diisini
+        const auth = getAuth(firebaseApp);                   : 5. init service auth
+        const firestore = getFirestore(firebaseApp);         : 6. init service lainya boleh diisini
 
         // detect auth state
 
-        onAuthStateChanged(auth, user => {                      : 7. gunakan salah satu subservice di auth sudah bisa di gunakan 
+        onAuthStateChanged(auth, user => {                   : 7. gunakan salah satu subservice di auth sudah bisa di gunakan 
                 if(user !== null){
                    console.log("logged in!");
                 }else{
@@ -67,9 +67,12 @@ UI index.html
 -------------------------------------------------
 CATATAN
 
-karena html biasa tidak mengenali import module maka modulnya pakai import cdn saja : url dari cdn cekidoc, di "memulai firebase" dan kopas
-https://www.gstatic.com/firebasejs/10.2.0/firebase-SERVICE.js                    
+- karena html biasa tidak mengenali import module maka modulnya pakai import cdn saja : url dari cdn cekidoc, di "memulai firebase" dan kopas
+- https://www.gstatic.com/firebasejs/10.2.0/firebase-SERVICE.js                    
         import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.2.0/firebase-app.js'        
         import { getAuth } from 'https://www.gstatic.com/firebasejs/10.2.0/firebase-auth.js'
         import { getFirestore } from 'https://www.gstatic.com/firebasejs/10.2.0/firebase-firestore.js'
+- cara pakai menggunakan index html langsung adalah cara termudah, pada prakteknya kita mesti gunakan framework seperti react atau nexjs
+- tapi kalau terpaksa kita tetap pakai index.html biasa maka di sarankan harus pakai modul bundler seperti webpack agar bisa tree shaking
+- padahal kalau di framework sudah ada tree shaking include 
 -------------------------------------------------
