@@ -30,11 +30,11 @@ PRAKTEK
 -------------------------------------------------
 ENTRY POINT index.js
 
-:> node, npm -v                     : 
-:> mkdir project, cd project        : 
-:> npm init -y -> package.json      : 
-:> npm i firebase                   : finish, anda sudah mendapatkan akses ke firebase 
-+> new src/index.js                 : silahkan initialisasi firebase dan service disini
+:> node, npm -v                             : 
+:> mkdir project, cd project                : 
+:> npm init -y -> package.json              : 
+:> npm i firebase                           : finish, anda sudah mendapatkan akses ke firebase 
++> new src/index.js                         : silahkan initialisasi firebase dan service disini
         import { initializeApp } from 'firebase/app'            : 1. import inisialisasi
         import { getAuth } from 'firebase/auth'                 : 2. import service dan subservice auth
         import { getFirestore } from 'firebase/firestore'       : 3. kalau mau import service lain panggil dg getService from firebase/service 
