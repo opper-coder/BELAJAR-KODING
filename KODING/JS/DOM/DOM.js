@@ -91,7 +91,7 @@ yang baru hampir mirip fungsinya namun masih alpha
 EVENT
 cara mendengarkkan kejadian dalam DOM:
 baik terjadi oleh user atau API
-event ada: click, hover, roler, double click, right click disebut 
+event ada banyak(cari sendiri) di antaranya: click, hover, roler, double click, right click disebut 
 di bawah ini ada 3 cara :
 - Event handler 
 	- attribut HTML 		// on<event> onClick, onHover dll, lihat sub judul bagian eventlist
