@@ -11,6 +11,10 @@ KESIMPULAN
 - dengan mengimport service bersangkutan
 - lalu mengeksekusi subservice bersangkutan
 - jadi silahkan mempelajari semua subservice, nanti cara eksekusinya tinggal di bungkus dengan trigger 
+- "trigger" di kasih nama, async await pada subservice, try catch pada sub service, 
+    const triggerCoba = async (args?) => { try{ await subService() } catch(e){} } 
+- "event" onClick={()=>{triggerCoba(params)}} 
+- atau btnSumbmit.addEventListener( 'click', triggerCoba(params) )
 -------------------------------------------------
 TIPS
 - buatlah UI secara terpisah misalnya nextjs
