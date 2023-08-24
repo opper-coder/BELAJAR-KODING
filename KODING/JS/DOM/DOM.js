@@ -105,7 +105,7 @@ contoh event handler:
  	p2.onclick = ubahwarna;		// di javascript saja: seleksi.onclick = funAksi <tanpa kurung supaya tidak langsung tertrigger sendiri>
  					   sedang funAksi nya buat juga di atas atau di bawahnya terserah
 ----------------------------------------
-- addEventListener()	
+- addEventListener('click', callback)	
 	p4.addEventListener('click', function(){ // select.addEventListener('<event>', callback){aksi dengan menipulation dll};
 					alert(ok);
 				     });
