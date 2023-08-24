@@ -156,7 +156,7 @@ tinggal bikin kan trigger dan jalankan subservice dalam async
           await signOut(auth);
         }
 -------------------------------------------------
-CATATAN
+TEMPLATE
 
 import { initializeApp } from 'firebase/app'                                    
 import {                                                                        
