@@ -232,3 +232,21 @@ UI REACT
 <Button onClick={ ()=>{logout(stringEmail, StingPass)} }
 
 -------------------------------------------------
+SUBSERVICE AUTH
+- subservice auth (bikin nama sqendiri) adalah fungsi yang ada di auth
+- jika kita akan menggunakan kita akan eksekusi dalam trigger
+- jalankan dalam bentuk async await
+- kalau ada error di console.log silahkan tangkap dengan try{}catch(e){}
+- kombinasikan dengan keperluan UI dan subservice lainya silahkan saja
+- tapi kalau kita sudah siapkan UI yang baik tinggal panggil saja trigger selebihnya biar tejadi di desain UI
+
+const triggerBacaMurid = async() => {
+  await subservice();
+  showFormLogin();
+  show1();
+  show2();
+}
+
+        
+-------------------------------------------------
+        
