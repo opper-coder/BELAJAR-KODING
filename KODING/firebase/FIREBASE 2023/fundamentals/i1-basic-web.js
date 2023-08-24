@@ -1,3 +1,16 @@
+kesimpulan
+konsep
+roadmap
+praktek
+    entry point
+    UI index
+catatan
+-------------------------------------------------
+KESIMPULAN
+- saat kita sudah melakukan inisialisasi(integrasi) firebase di projek kita(dg instalasi, dan inisialisasi, di platform masing)
+- maka kita sudah bisa menggunakan semua service yg ada di firebase
+- dengan mengimport service bersangkutan
+- lalu mengeksekusi subservice bersangkutan
 -------------------------------------------------
 KONSEP
 - firebase adalah db tanpa backend
@@ -12,7 +25,6 @@ KONSEP
     - bungkus service yang siap di jalankan dengan function endpoint pada setiap subservice
     - function endpoint siap di gunakan baik langsung atau pakai event trigger dari UI 
 - silahkan bikin ui dan import entrypoint lalu trigger endpoint 
-
 -------------------------------------------------
 ROADMAP
 1. bikin folder project
@@ -24,7 +36,6 @@ ROADMAP
 7. gunakan services
 8. bungkus services yng siap di gunakan dalam function 
 9. function di jalankan baik "langsung" atau "pakai event" trigger dari ui kita 
-
 -------------------------------------------------
 PRAKTEK
 -------------------------------------------------
@@ -55,10 +66,8 @@ ENTRY POINT index.js
                    console.log("no user")
                 }
         })
-
 -------------------------------------------------
-UI index.html  
- 
+UI index.html   
 +> new src/index.html                           : bikin html standard <h1> Get started 
  > <script type="module" src="index.js">        : cara import di html biasa pakai src type module
 :> serve src/                                   : jalankan server("serve src/") ala firebase (cari tahu apakah pakai npm src/index bisa nggak)
@@ -66,7 +75,6 @@ UI index.html
 -> browser console => no user                   : di console sudah bisa dilihat hasilnya no user, artinya sudah tersambung dg server, coba buatkan user dan login
 -------------------------------------------------
 CATATAN
-
 - karena html biasa tidak mengenali import module maka modulnya pakai import cdn saja : url dari cdn cekidoc, di "memulai firebase" dan kopas
 - https://www.gstatic.com/firebasejs/10.2.0/firebase-SERVICE.js                    
         import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.2.0/firebase-app.js'        
