@@ -3,7 +3,7 @@ KESIMPULAN
 - auth adalah aktifitas secara programming meliputi 3 poin  
         1. bikin user, 
         2. login user, 
-        3. status login, 
+        3. status login (session),  
 - melalui 3 poin ini di gunakan untuk 4 poin 
         1. menmpilkan form login dan status user  
         2. menmpilkan form register
