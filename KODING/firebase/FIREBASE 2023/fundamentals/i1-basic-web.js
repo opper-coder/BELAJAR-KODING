@@ -64,6 +64,7 @@ ENTRY POINT index.js
 :> mkdir project, cd project                : 
 :> npm init -y -> package.json              : 
 :> npm i firebase                           : finish, anda sudah mendapatkan akses ke firebase 
+-> CDN                                      : jika kita tidak mau install firebase kita juga bisa lewat CDN,. cek dashboard firebase
 +> new src/index.js                         : silahkan initialisasi firebase dan service disini
         import { initializeApp } from 'firebase/app'         : 1. import inisialisasi
         import { getAuth } from 'firebase/auth'              : 2. import service dan subservice auth
