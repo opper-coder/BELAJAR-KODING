@@ -12,6 +12,7 @@ KONSEP FIREBASE
 wajib baca dulu i0-pemahaman
 -------------------------------------------------
 ROADMAP
+0. bikin project di console dashboard firebase
 1. bikin folder project
 2. bikin entrypoint index.js
 3. install firebase package
