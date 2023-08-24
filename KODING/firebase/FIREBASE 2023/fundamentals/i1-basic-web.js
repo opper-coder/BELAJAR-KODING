@@ -61,7 +61,7 @@ UI index.html
  
 +> new src/index.html                           : bikin html standard <h1> Get started 
  > <script type="module" src="index.js">        : cara import di html biasa pakai src type module
-:> serve src/                                   : jalankan server ala firebase (cari tahu apakah pakai npm src/index bisa nggak)
+:> serve src/                                   : jalankan server("serve src/") ala firebase (cari tahu apakah pakai npm src/index bisa nggak)
 -> browser: localhost:5000                      : coba akses 
 -> browser console => no user                   : di console sudah bisa dilihat hasilnya no user, artinya sudah tersambung dg server, coba buatkan user dan login
 -------------------------------------------------
