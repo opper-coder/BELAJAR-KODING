@@ -1,6 +1,15 @@
 -------------------------------------------------
+DAFTAR ISI
+konsep                         -> 
+roadmap                        ->
+entry point                    -> halaman utama autentikasi
+ui trigger                     -> ui kita abaikan dulu sebab trigger ini tinggal di panggil pakai event UI nantinya
+login dan error handling       -> trigger login dan penanganan jika user tidak ada
+register                       -> daftarkan user
+user profile                   -> redirect saat sudah login
+logout                         -> logout dan redirect ke form saat belum login
+-------------------------------------------------
 KONSEP
-
 pada auth di firebase memastikan bahwa:
 - kita sudah login atau belum
 - jika kita belum punya user register dulu
@@ -14,7 +23,6 @@ ROADMAP
 2. modifikasi entry point index.js
 3. jalankan server
 4. akses di browser console amati status proses, login, register, dan logout
-
 -------------------------------------------------
 PRAKTEK
 -------------------------------------------------
@@ -40,10 +48,8 @@ ENTRY POINT
           const userCredential = await signInWithEmailAndPassword(auth, email, pass);   : 6. jalankan subservice pada await
           console.log(userCredential.user);                                             : 7. setelah di jalankan lihat hasilnya di console (belum di UI)
         }
-
 -------------------------------------------------
 UI TRIGGER
-
 - silahkan panggil dengan event onClick di UI dengan mengirim data "stringEmail", "StingPass".  
 - tapi dalam contoh ini saya akan invoke langsung saja tanpa UI
 
@@ -62,7 +68,8 @@ UI TRIGGER
 
         -> console => email, uid                        : saat login kembali dan refresh maka kita sudah bisa dapatkan emeil dan uid 
 -------------------------------------------------
-ERROR HANDLING
+LOGIN dan ERROR HANDLING
+- buat trigger login dengan try catch setelah initialisasi di atas, jalankan  
 - saat kita mengakses user pass yang belum terdaftar seperti tadi itu kan ada error: user tidak di temukan,
 - firebase sudah menyediakan daftar error nya, yang kita lakukan adalah bagaimana mengkap errornya,
 - yaitu bungkus subservice dalam try catch. lalu gunakan pada catch nya untuk UI, misalnya mengendalikan useState error pada react
@@ -87,6 +94,8 @@ misalnya:
             lblLoginErrorMessage.innerHTML = `error: ${error.message}`
            }
         }
+jalankan dengan langsung invoke disini
+        loginEmailPass("aqil@coba.com", "123");
 -------------------------------------------------
 REGISTER 
 - untuk reguster fungsi nya tinggal copas pada login 
@@ -103,9 +112,9 @@ REGISTER
           }                            
         }
 
-        createUser("aqil@coba.com", "123");     // saat trigger di akses maka kita otomatis login tapi UI belum redirec ke profil UI, 
-                                                // hal ini sangat buruk
-                                                // padahal di console kita sudah login dengan akun baru tersebut, untuk experience itu perlu di tangani di bawah ini
+        createUser("izza@coba2.com", "123");            // saat trigger di akses maka kita otomatis login tapi UI belum redirec ke profil UI, 
+                                                        // hal ini sangat buruk
+                                                        // padahal di console kita sudah login dengan akun baru tersebut, untuk experience itu perlu di tangani di bawah ini
 -------------------------------------------------
 USER PROFILE
 - bikin function monitoring yang langsung di invoke di bawah
@@ -127,7 +136,7 @@ USER PROFILE
           });
         }
 
-monitorAuthState();
+        monitorAuthState();                             // monitor selalu di jalankan saja disini
 -------------------------------------------------
 LOGOUT
 tinggal bikin kan trigger dan jalankan subservice dalam async 
