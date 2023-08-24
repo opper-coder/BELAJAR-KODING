@@ -1,3 +1,5 @@
+kayakntya ini kadaluarsa silahkan cek di fundamental
+
 FIREBASE BASIC VIDEO
 -------------------------------------------------
 :> mkdir project 		:  
