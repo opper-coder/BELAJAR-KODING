@@ -36,3 +36,6 @@ STRUCTUR PROJECT
         :> "serve src/"                                         : jalankan kode 
         -> cek di dashboard database                            : maka data akan bertambah jika belum ada
 
+-------------------------------------------------
+
+lanjutkan kayaknya cukup seru ??????????
