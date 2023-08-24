@@ -2,6 +2,7 @@
 DAFTAR ISI
 kesimpulan
 konsep
+tips
 roadmap
 praktek
     entry point
@@ -9,10 +10,17 @@ praktek
 catatan
 -------------------------------------------------
 KESIMPULAN
+----
+    "trigger" dan "event" bergandengan jika funtion tidak akan di eksekusi UI maka saya tidak menyebutnya sebagai trigger 
+    (melainkan method, callback, dll) 
+    "trigger": adalah serangkaian eksekusi siap pakai di js
+    "event": adalah tombol pengguna yang akan mengeksekusi trigger
+----
 - saat kita sudah melakukan inisialisasi(integrasi) firebase di projek kita(dg instalasi, dan inisialisasi, di platform masing)
-- maka kita sudah bisa menggunakan semua service yg ada di firebase
+- maka kita sudah bisa menggunakan semua service yg ada di firebase dengan membungkusnya ke function trigger 
 - dengan mengimport service bersangkutan
 - lalu mengeksekusi subservice bersangkutan
+- jadi silahkan mempelajari semua subservice, nanti cara eksekusinya tinggal di bungkus dengan trigger 
 -------------------------------------------------
 TIPS
 - buatlah UI secara terpisah misalnya nextjs
