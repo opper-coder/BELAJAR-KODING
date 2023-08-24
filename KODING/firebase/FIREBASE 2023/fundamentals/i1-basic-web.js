@@ -14,18 +14,27 @@ KESIMPULAN
 - dengan mengimport service bersangkutan
 - lalu mengeksekusi subservice bersangkutan
 -------------------------------------------------
-KONSEP
-- firebase adalah db tanpa backend
+TIPS
+- buatlah UI secara terpisah misalnya nextjs
+- buatlah endpoint CRUD tiap halaman berupa "function trigger" pada firebase sebagai controller
+- konfig dan init firebase pada project UI
+- import controller yang di perlukan pada halaman UI
+- lalu akses dengan trigger 
+- oya jangan lupa samakan struktur URi database pada UI selaras dengan DB
+-------------------------------------------------
+KONSEP FIREBASE
+- firebase adalah service tanpa backend berupa database, auth, function, pubsub, eventlistener, dll secara serverless 
 - bisa di gabungkan dengan banyak bahasa, vite, vue, react, nodejs, vanilla
 - kali ini akan kita buat contoh vanilla  
 - alat yang di butuhkan adalah npm dan webpack, tapi jika pakai framework seperti rect dan nextjs tidak perlu webpack
 - praktek kali ini adalah cara: 
-    - koneksi dari nodejs ke firebase 
+    - koneksi dari "nodejs" ke "firebase" 
       (artinya bisa di jalankan di berbagai framework: vue, svelte, react, nexjs, vite vanilla dll)
-    - inisialisasi firebase pada entry point (firebase.js, index.js, app.js, silahkan)
+    - inisialisasi firebase pada entry point (nama boleh: firebase.js, index.js, app.js, silahkan)
     - initialisasi service dan jalankan service 
-    - bungkus service yang siap di jalankan dengan function endpoint pada setiap subservice
-    - function endpoint siap di gunakan baik langsung atau pakai event trigger dari UI 
+    - bungkus service yang siap di jalankan dengan "function trigger" pada setiap subservice
+    - jangan lupa jalankan subservice di async await, jika ada error, pakai try catch
+    - "function Trigger" siap di gunakan baik langsung atau pakai event trigger dari UI 
 - silahkan bikin ui dan import entrypoint lalu trigger endpoint 
 -------------------------------------------------
 ROADMAP
