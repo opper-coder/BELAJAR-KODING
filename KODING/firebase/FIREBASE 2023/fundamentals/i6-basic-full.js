@@ -28,9 +28,9 @@ PROJECT
 :> npx firebase login [--add atau --use]                : tambahkan --add --use supaya bisa banyak aplikasi yang bisa akses di browser
                                                           tanpa login user, pass.
 :> firebase init hosting                                : sudah bisa menggunakan command firebase sebenarnya, tapi saya akan gunakan fitur baru di bawah
-:> npx firebase experiments:enable web frameworks       : 
+:> npx firebase experiments:enable web frameworks       : enable, agar bisa memilih framework
 :> npx firebase init hosting                            : sekarang silahkan init hosting > di sana ada form hosting > silahkan diisi
-        > pilih frameworks, bahasa, server, github. dalam hal ini github: no
+        > pilih frameworks, bahasa, server, github. dalam hal ini github: no dulu
 :> code .                                               : buka di vscode
 :> cd hosting                                           : pindah ke hosting
 :> npm i firebase                                       : install package 
@@ -121,10 +121,10 @@ entry point
         });
 -----
 browser
-???
+??? lanjutkan...
 -------------------------------------------------
 FIRESTORE QUERYS
-???
+??? lanjutkan...
 -------------------------------------------------
 SECURITY RULES
   rules_version = 2;                                    // 
@@ -145,6 +145,7 @@ SECURITY RULES
       }
     }
   }
+??? lanjutkan...
 -------------------------------------------------
 DEPLOY HOSTING 
   karena kita sudah install "firebase-tools" dan sudah "init hosting"
