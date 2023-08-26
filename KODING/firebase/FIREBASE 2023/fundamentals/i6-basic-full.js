@@ -14,10 +14,10 @@ DASHBOARD FIREBASE
 -> firebase console
 -> create project 
 -> pilih area
--> hidupkan analitich: kasih akun
+-> hidupkan analityc: kasih akun
 -> create project
 -> create app: pilih web
--> ambil code config: copas ke project
+-> ambil code config(string connection): copas ke project
 -------------------------------------------------
 PROJECT
 :> node, npm -v                                         : 
