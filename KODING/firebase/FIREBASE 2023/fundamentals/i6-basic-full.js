@@ -1,7 +1,6 @@
 FIREBASE PROJECT UMUM
 -------------------------------------------------
 KONSEP
-
 -------------------------------------------------
 ROADMAP
 creating project 
@@ -10,7 +9,6 @@ auth for user
 firestore 
 securing data 
 deploy 
-
 -------------------------------------------------
 DASHBOARD FIREBASE
 -> firebase console
@@ -20,7 +18,6 @@ DASHBOARD FIREBASE
 -> create project
 -> create app: pilih web
 -> ambil code config: copas ke project
-
 -------------------------------------------------
 PROJECT
 :> node, npm -v                                         : 
@@ -40,10 +37,8 @@ PROJECT
 -> main.js                                              : masuk ke entrypoint dan hapus semua lalu modifikasi sebagai berikut
 -------------------------------------------------
 ENTRY POINT
-
         import { initializeApp } from 'firebase/app';
         const firebaseApp = initializeApp({ /*config*/ });
-
 -------------------------------------------------
 AUTH 
 -----
@@ -126,48 +121,40 @@ entry point
         });
 -----
 browser
-
-
-
-
+???
 -------------------------------------------------
 FIRESTORE QUERYS
-
+???
 -------------------------------------------------
 SECURITY RULES
-
-rules_version = 2;                                    // 
-service cloud.firestore {                             //
-   match /databases /{databases}/documents {          // 
-      match /users/{uid} {                            // 
-         allow read, write: if request.auth != null && request.auth.uid == uid;  // 
+  rules_version = 2;                                    // 
+  service cloud.firestore {                             //
+     match /databases /{databases}/documents {          // 
+        match /users/{uid} {                            // 
+           allow read, write: if request.auth != null && request.auth.uid == uid;  // 
+        }
+     }
+  }
+  ---
+  rules_version = '2';
+  service cloud.firestore {
+    match /databases/{database}/documents {
+      match /{document=**} {
+        allow read, write: if
+            request.time < timestamp.date(2022, 7, 23);
       }
-   }
-}
----
-rules_version = '2';
-service cloud.firestore {
-  match /databases/{database}/documents {
-    match /{document=**} {
-      allow read, write: if
-          request.time < timestamp.date(2022, 7, 23);
     }
   }
-}
-
 -------------------------------------------------
 DEPLOY HOSTING 
-
-karena kita sudah install "firebase-tools" dan sudah "init hosting"
-maka kita sudah bisa hosting aplikasi dengan satu baris perintah
-uniknya firebase sudah bisa mendeteksi framework, run build, tree shaking, 
+  karena kita sudah install "firebase-tools" dan sudah "init hosting"
+  maka kita sudah bisa hosting aplikasi dengan satu baris perintah
+  uniknya firebase sudah bisa mendeteksi framework, run build, tree shaking, 
 
 :> firebase deploy                                   // satu baris, saat selesai maka kita di kasih URL dan bisa di akses
 
 sudah terdeploy ke hosting dan bisa di gunakan
-
 -------------------------------------------------
 FINISHED 
-
-
+???
 -------------------------------------------------
