@@ -1,17 +1,15 @@
 KESIMPULAN
 ----
-    "trigger" dan "event" bergandengan jika funtion tidak akan di eksekusi UI maka saya tidak menyebutnya sebagai trigger 
-    (melainkan method, callback, dll) 
     "trigger": adalah serangkaian eksekusi siap pakai di js
-    "event": adalah tombol pengguna yang akan mengeksekusi trigger
+    "event": adalah komponen(tombol) UI yang akan mengeksekusi trigger
+    "trigger" dan "event" berpasangan, jika funtion tidak berpasangan maka saya tidak menyebutnya sebagai trigger 
+    (melainkan method, callback, dll) 
 ----
 - saat kita sudah melakukan inisialisasi(integrasi) firebase di projek kita
-  (dg instalasi, dan inisialisasi, di platform masing)
+  (dg instalasi, dan inisialisasi, di platform masing) lalu mengimport di javascript kita
 - maka kita sudah bisa menggunakan semua service yg ada di firebase dengan membungkusnya ke function trigger 
-- dengan mengimport service bersangkutan
-- lalu mengeksekusi subservice bersangkutan
-- jadi silahkan mempelajari semua subservice, nanti cara eksekusinya tinggal di bungkus dengan trigger 
-- "trigger" di kasih nama, async await pada subservice, try catch pada sub service, 
+- jadi silahkan mempelajari semua subservice,
+- misal kasih nama "triggerCoba", async await (pada subservice), try catch pada sub service, 
     const triggerCoba = async (args?) => { try{ await subService() } catch(e){} } 
 - "event" onClick={()=>{triggerCoba(params)}} 
 - atau btnSumbmit.addEventListener( 'click', triggerCoba(params) )
@@ -21,7 +19,7 @@ TIPS
 - buatlah endpoint CRUD tiap halaman berupa "function trigger" pada firebase sebagai controller
 - konfig dan init firebase pada project UI
 - import controller yang di perlukan pada halaman UI
-- lalu akses dengan trigger 
+- lalu masukan event untuk mengeksekusi trigger 
 - oya jangan lupa samakan struktur URi database pada UI selaras dengan DB
 -------------------------------------------------
 KONSEP FIREBASE
