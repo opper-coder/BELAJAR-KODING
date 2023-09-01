@@ -63,10 +63,11 @@ WIRELESS
 AGENDA
 --- 
 bikin profile yang baik
-- voucher umum
-- voucher cepat
-- voucher data
-- voucher bonus
+- voucher umum (jam)
+- voucher spesial (jam bandwidth besar)
+- voucher cepat 
+- voucher data (data)
+- voucher bonus 
 - PPPoE
 --- 
 - pppoe
