@@ -101,14 +101,13 @@ setting router ZTE f460
  	-> TAB DHCP Port service	 	
  		- Port DHCP mode: coba uncheck semua
  		- Submit
- 	-> DHCP server 
+	 -> tab routing(IPv4)
+ 		- wan connection: "ITS-conn"
+ 	-> DHCP server (langkah ini harus terakhir)
  		- Enable DHCP Server: False
  		- Assign ispDNS: True
  		- Submit 
- 		- biasanya komputer tidak bisa konek lagi ke server
- 	-> tab routing(IPv4)
- 		- wan connection: "ITS-conn"
-
+ 		- biasanya komputer tidak bisa konek lagi ke server karena DHCP off,
 -------------------------------------------------
 INSTALASI VOUCHERAN
 - Hubungkan router ke microtik Voucher
