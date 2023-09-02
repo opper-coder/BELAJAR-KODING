@@ -2,51 +2,51 @@ ROUTER TANPA MODE BRIDGE
 ------------------------------------------------- 
 - sumber bilhanet: ZTE F609 Tidak Ada Mode Bridge Connection Setting Jadi AP + Switch Hub
 - modem ZTE tidak ada mode bridge untuk AP Voucheran
-- dalam hal ini ZTE f609 "mode route" yang dimatikan "DHCP server" nya
+- dalam hal ini ZTE f609
 ------------------------------------------------- 
 KONEKSI
 - sambungkan router ke laptop
-- pastikan router pada konfigurasi awal > login > user: admin pass: Telkomdso123
+- pastikan router pada konfigurasi awal > login > user: "admin" pass: admin / Telkomdso123
 - setting network PC ke segmen router: 192.168.1.10
 -> Browser > 192.168.1.1
 -------------------------------------------------
 PENGAMANAN
--> Tab administration > user management > administrator: true > ganti user password anda
+-> Tab administration > user management > administrator: true > ganti user: "admin" password: "pasrouter"
 -> Tab administration > user management > user: true > ganti user password anda
--  abaikan submit dulu
--> tab network > 
--> Tab WAN 
-	- conection name: create wan conection 
-	- New conection name: "tambora"
-	- Tipe: Route
-	- Service List: Internet
-	- Link Type: IP
-	- IP Version: IPv4
-	- IP Type: DHCP
-	- Enable NAT: True
-	- Create
-	->Tab port binding
-		- WAN Conection: tambora
-		- centang semua Port LAN dan SSID
-		- submit
-		- Tab WLAN
-->Tab WLAN 
-  	-Tab Basic 
-  		- Wireless RF mode: enable
-  		- mode: B/G/N
-  		- Bandwith 20
-  		- submit
-- sampai disini biasanya restart > login ulang 
+	- submit
+-> tab  network > 
+	-> Tab WAN
+		-> tab WAN connection
+			- conection name: create wan conection 
+			- New conection name: "tambora"
+			- Tipe: Route
+			- Service List: Internet
+			- Link Type: IP
+			- IP Version: IPv4
+			- IP Type: DHCP
+			- Enable NAT: True
+			- Create
+		->Tab port binding
+			- WAN Conection: tambora
+			- centang semua Port LAN dan SSID
+			- submit 
+	->Tab WLAN 
+	  	-Tab Basic 
+	  		- Wireless RF mode: enable
+	  		- mode: B/G/N
+	  		- Bandwith 20
+	  		- submit
+	- sampai disini biasanya restart > login ulang 
 -------------------------------------------------
 CONFIG SETELAH RESTART
 -> Tab WLAN 
  	-> Tab Security
- 	 	- choose SSID: pilih
+ 	 	- chouse SSID: pilih
  	 	- Auth type: Open system
  	 	- WEP: disable
  	 	- submit
  	 -> Tab SSID setting
- 	 	- chouse SSID: pilih (seperti diatas)
+ 	 	- chouse SSID: pilih seperti diatas
  	 	- Enable SSID: True
  	 	- SSID Name: beri nama
  	 	- submit
@@ -58,10 +58,56 @@ CONFIG SETELAH RESTART
  		- Port DHCP mode: default (karena port tadi diatur > rote maka semuua port harus diatur > default)
  		- Submit
  	-> DHCP server 
- 		- Enable DHCP Server: False (intinya ada disini)
+ 		- Enable DHCP Server: False
  		- Assign ispDNS: True
  		- Submit 
  		- biasanya komputer tidak bisa konek lagi ke server
+
+-------------------------------------------------
+INSTALASI VOUCHERAN
+- Hubungkan router ke microtik Voucher
+- Nyalakan dan akses router
+-------------------------------------------------
+====================================================================================================
+-------------------------------------------------
+setting router ZTE f460
+
+-> tab  network > 
+-> Tab WAN 
+	-> tab WAN
+		- conection name: create wan conection 
+		- New conection name: "ITS-conn"
+		- Type: Route
+		- Service List: Internet
+		- Link Type: IP
+		- Create
+->Tab WLAN 
+  	-Tab Basic 
+  		- Wireless RF mode: enable
+  		- mode: B/G/N
+  		- Bandwith 20
+  		- submit
+ 	-> Tab Security
+ 	 	- chouse SSID: pilih
+ 	 	- Auth type: Open system
+ 	 	- WEP: disable
+ 	 	- submit
+ 	 -> Tab SSID setting
+ 	 	- chouse SSID: pilih seperti diatas
+ 	 	- Enable SSID: True
+ 	 	- SSID Name: beri nama
+ 	 	- submit
+ -> Tab LAN
+ 	-> TAB DHCP Port service	 	
+ 		- Port DHCP mode: coba uncheck semua
+ 		- Submit
+ 	-> DHCP server 
+ 		- Enable DHCP Server: False
+ 		- Assign ispDNS: True
+ 		- Submit 
+ 		- biasanya komputer tidak bisa konek lagi ke server
+ 	-> tab routing(IPv4)
+ 		- wan connection: "ITS-conn"
 
 -------------------------------------------------
 INSTALASI VOUCHERAN
