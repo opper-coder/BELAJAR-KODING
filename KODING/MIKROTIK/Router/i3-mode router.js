@@ -4,10 +4,10 @@ secara garis besar kemampuan router adalah:
 1. menangkap intenet
 2. mendistribusikan internet yang di miliki
 secara lengkap memiliki kemampuan:
-	WAN 			: menangkap wifi (internet) dari server melalui kabel di port WAN(tdk semua router ada)
-	WWAN 			: menangkap wifi (internet) dari server melalui wireless 
-	LAN 			: mendistribusikan wifi ke (internet) pengguna melalui port LAN
-	WLAN 			: mendistribusikan wifi ke (internet) pengguna melalui wireless
+	WAN 			: menangkap(internet) dari server via "kabel" di port WAN(tdk semua router ada)
+	WWAN 			: menangkap(internet) dari server via "wireless" 
+	LAN 			: mendistribusikan(internet) pengguna via port LAN
+	WLAN 			: mendistribusikan(internet) pengguna via wireless
 	DHCP Server 		: kemapuan mendistribusikan dengan generate IP, sehingga bisa membaca MAC clientnya di router
 	remote 			: biasanya satu segmen dan harus eneble kan mode remote
 	baca MAC di winbox	: baca perangakat yang terhubung pada client apakah roter atau device 
