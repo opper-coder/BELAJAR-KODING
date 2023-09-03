@@ -15,31 +15,34 @@ PENGAMANAN
 -> Tab administration > user management > user: true > ganti user password anda
 	- submit
 -> tab  network > 
-	-> Tab WAN
-		-> tab WAN connection
-			- conection name: create wan conection 
-			- New conection name: "tambora"
-			- Tipe: Route
-			- Service List: Internet
-			- Link Type: IP
-			- IP Version: IPv4
-			- IP Type: DHCP
-			- Enable NAT: True
-			- Create
-		->Tab port binding
-			- WAN Conection: tambora
-			- centang semua Port LAN dan SSID
-			- submit 
-	->Tab WLAN 
-	  	-Tab Basic 
-	  		- Wireless RF mode: enable
-	  		- mode: B/G/N
-	  		- Bandwith 20
-	  		- submit
-	- sampai disini biasanya restart > login ulang 
 -------------------------------------------------
-CONFIG SETELAH RESTART
+-> Tab WAN
+	-> tab WAN connection
+		- conection name: create wan conection 
+		- New conection name: "tambora"
+		- Type: Route
+		- Service List: Internet
+		- Link Type: IP
+		- IP Version: IPv4
+		- IP Type: DHCP
+		- Enable NAT: True
+		- Create
+	-> Tab port binding
+		- WAN Conection: tambora
+		- centang semua Port LAN dan SSID
+		- submit 
+-------------------------------------------------
+-> tab ROUTING IPv4 (opt, langkah ini dari video lain)
+	- default gateway
+		WAN connection: "tambora"
+-------------------------------------------------
 -> Tab WLAN 
+  	-Tab Basic 
+  		- Wireless RF mode: enable
+  		- mode: B/G/N
+  		- Bandwith 20
+  		- submit
+		- sampai disini biasanya restart > login ulang 
  	-> Tab Security
  	 	- chouse SSID: pilih
  	 	- Auth type: Open system
@@ -53,6 +56,7 @@ CONFIG SETELAH RESTART
  	 - restart > login kembali 
  	 -> WPS
  	 	- WPS mode: Disable > tersimpan otomatis
+-------------------------------------------------
  -> Tab LAN
  	-> TAB DHCP Port service	 	
  		- Port DHCP mode: default (karena port tadi diatur > rote maka semuua port harus diatur > default)
@@ -61,7 +65,7 @@ CONFIG SETELAH RESTART
  		- Enable DHCP Server: False
  		- Assign ispDNS: True
  		- Submit 
- 		- biasanya komputer tidak bisa konek lagi ke server
+ 		- boleh jadi komputer tidak bisa konek lagi ke router ini
 
 -------------------------------------------------
 INSTALASI VOUCHERAN
@@ -93,7 +97,7 @@ setting router ZTE f460
  	 	- WEP: disable
  	 	- submit
  	 -> Tab SSID setting
- 	 	- chouse SSID: pilih seperti diatas
+ 	 	- choose SSID: pilih seperti diatas
  	 	- Enable SSID: True
  	 	- SSID Name: beri nama
  	 	- submit
@@ -101,13 +105,14 @@ setting router ZTE f460
  	-> TAB DHCP Port service	 	
  		- Port DHCP mode: coba uncheck semua
  		- Submit
-	 -> tab routing(IPv4)
- 		- wan connection: "ITS-conn"
- 	-> DHCP server (langkah ini harus terakhir)
+ 	-> DHCP server 
  		- Enable DHCP Server: False
  		- Assign ispDNS: True
  		- Submit 
- 		- biasanya komputer tidak bisa konek lagi ke server karena DHCP off,
+ 		- biasanya komputer tidak bisa konek lagi ke server
+ 	-> tab routing(IPv4)
+ 		- wan connection: "ITS-conn"
+
 -------------------------------------------------
 INSTALASI VOUCHERAN
 - Hubungkan router ke microtik Voucher
