@@ -112,7 +112,11 @@ UTILITY
 ---------------------------------------------------
 VIM atau VI
 adalah text editor dalam terminal biasaanya di gabung kan dengan terminal file folder
+-------------------------
+:> vi    : masuk
+:> :q!   : keluar
 
+-------------------------
 terminal file:
 :> mk dir  		: bikin folder
 :> touch coba.html 	: bikin file
