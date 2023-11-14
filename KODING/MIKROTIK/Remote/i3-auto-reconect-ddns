@@ -1,0 +1,22 @@
+vpn ddns reconnect auto
+------------------------------------------------- 
+- :tools > netwatch > add 
+	tab HOST
+	- host: [IP VPN]
+	- interval: 30-60 detik
+	- timeout: 1000 ms
+	tab UP
+	- <:log warning "sudah up kembali">
+	tab DOWN
+	- </interface disable [nama INTERFACE]>
+	- </interface enable [nama INTERFACE]>
+- selesai
+- tinggal test
+	- interface > pilih ddns nya > disable > 
+	- tunggu 30-60 detik, jika aktif sendiri berarti berhasil
+- cara lihat [IP VPN]
+	- buka dashboard ddns > VPN REMOTE > VPN LIST > https://tunnel.hostddns.us/system/list_vpn 
+		- pilih ddns bersangkutan (ddnsmon)
+		- klik manage > IP VPN (bukan IP server ya)
+- cara melihat [nama INTERFACE]
+	- interface pilih interface ddns yang sering mati > dbl clik > name: ... (disini)
