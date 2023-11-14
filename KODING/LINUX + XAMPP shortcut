@@ -111,7 +111,8 @@ UTILITY
 
 ---------------------------------------------------
 VIM atau VI
-adalah text editor dalam terminal biasaanya di gabung kan dengan terminal file folder
+adalah text editor menggunakan terminal. ada dua interface yaitu untuk editor file, dan untuk command vi
+command vi menulisnya pakai ":"
 -------------------------
 :> vi    : masuk
 :> :q!   : keluar
