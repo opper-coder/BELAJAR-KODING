@@ -1,7 +1,8 @@
 tambahka -> menu extensi -> cari dan install
 
-
-1. ES7/React/Redux/GraphQl/React-Native snippets- by: dsznajder
+------------------------------------------------------
+1. ES7/React/Redux/GraphQl/React-Native snippets- by: dsznajder atau pakai di bawah ini
+   - ES7/react/Redux/GraphQL/RN snippets
    jika belum hafal snippets -> ctrl + shift + p -> es7 -> snippets search -> tampil daftar
 2. ESLint
    - menstandarkan "" / '' outo, titik koma, otomatis ada maka di setting sebelumnya
@@ -27,11 +28,12 @@ angga rizki
 10. live-server dari ritwich dey = html server hot reload
 11. Rest CLIENT = pengganti postman, yaitu request HTTP API bahkan di backend halaman local. 
     contoh penggunaanya ada di 
-
+12. bulma snippet > ada banyak trigger misal hero, nav bar, dll menginspirasi
+13. auto rename tag (jun han) nulis tag dan edit auto penutup nya
+------------------------------------------------------
 1. cara menghapus element
 import yang tidak terpakai
 option + shift + o // o atau nol
-
 
 tambahan:
     - live server
@@ -46,8 +48,8 @@ tambahan:
     
     - theme: mayukai
     bagus bikinan indonesia
-    
-    
+
+------------------------------------------------------    
 shortcut vs code
 tools
    - buka folder project ke vscode via terminal
@@ -56,8 +58,10 @@ tools
    - ctrl+,             : setting vscode, misalnya aktifkan formatter on save
    - ctrl+k+s           : daftar shortcut
 text
-   - ctrl+k             : uppercase
-   -                    : lowercase
+   - ctrl+shift+p       : ketik uppercase
+   - ctrl+shift+p       : ketik lower
+   - ctrl+shift+p       : camel
+   - ctrl+shift+p       : title case
 cursor
    - alt+shift+arrow    : tambah cursor keyboard
    - alt+klik           : tambah cursor mouse
@@ -83,21 +87,12 @@ Navigasi folder
    - ctrl+tab           : pindah tab
 butuh riset lagi dengan vscode> help > keyboard shortcut reference
 
-
 TIPS EMMET
 ----------------------------
-- cara bikin child
-		section>row
-- bikin perkalian
-		section>row*3
-- bikin gruping
-		(section>row*3)*2
+- cara bikin child 	: section>row
+- bikin perkalian	: section>row*3
+- bikin gruping		: (section>row*3)*2
 - bikin table ada: child, kali gruping, sibling
-		table>(thead>tr>th*4)+(tbody>tr>td*4)
-- bikin form 
-		form:post.box>input:text.input*3+button
+			: table>(thead>tr>th*4)+(tbody>tr>td*4)
+- bikin form 		: form:post.box>input:text.input*3+button
 
-extension
-- bulma snippet > ada banyak trigger misal hero, nav bar, dll menginspirasi
-- prettier -> merapikan cepat bisa di matikan
-- ES7/react/Redux/GraphQL/RN snippets
