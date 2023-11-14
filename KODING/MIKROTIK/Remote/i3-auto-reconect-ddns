@@ -1,3 +1,7 @@
+cari di google: freeddns > pilih di bawah ini 
+https://tunnel.hostddns.us/system/list_vpn 
+
+
 vpn ddns reconnect auto
 ------------------------------------------------- 
 - :tools > netwatch > add 
@@ -20,3 +24,23 @@ vpn ddns reconnect auto
 		- klik manage > IP VPN (bukan IP server ya)
 - cara melihat [nama INTERFACE]
 	- interface pilih interface ddns yang sering mati > dbl clik > name: ... (disini)
+-------------------------------------------------
+cara daftar ddns
+- login
+- vpn remote > order vpn > isi parameter seperti nama dll > maka kita akan di kasih vpn
+
+-------------------------------------------------
+cara pasang di mikrotik winbox
+- login
+- vpn remote > list vpn > pilih vpn terdaftar > manage > tab configuration 
+	- copas script > paste di terminal winbox > 
+	- tinggal akses winbox pakai URL Remote beserta port nya
+
+-------------------------------------------------
+lihat interface akan terlihat VPN nya bisa di enable disable atau hapus lalu tambahkan lagi di terminal tadi
+
+-------------------------------------------------
+ddns untuk mikmon dan mikbotam cara daftranya sama saja seperti di atas namun 
+cara menyambungkanya mungkin ada konfigurasinya sesuai dengan aplikasi bersangkutan
+
+
