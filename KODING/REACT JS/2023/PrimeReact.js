@@ -22,7 +22,16 @@ import { Button } from 'primereact/button'; // import komponen di halaman bersan
 ---------------------------------------------------------------------
 CARA INSTALL SAKAI TEMPLATE DI NEXTjs
 go: https://primereact.org/templates/ cari sakai download
-
+---------------------------------------------------------------------
+SEDERHANANYA untuk nextjs:
+- download
+- extact
+- masuk ke folder > buka terminal > :> code . (buka di vscode)
+- buka package.json > buang package yg tidak perlu > oya nextjs harus ada di sana ya (kalau chartjs ganti dengan apex)
+	- prettier nanti dulu manual
+- jalan kan instal di terminal :> npm i
+- lalu buatlah folder komponenmu dan page kamu di app atau pages sesuai ketentuan nextjs
+---------------------------------------------------------------------
 - install nextjs biasa :> npx-nexjs :> masuk kefolder project nextjs > pakai js tidak typescript > coba running index.js > hentikan > next steps 
 - download sakai di https://primereact.org/templates/ > SAKAI > pilih yang js saja
 - compare > buka folder project kita di vscode > buka juga folder SAKAI di vscode jg > letakan berdampingan side by side
