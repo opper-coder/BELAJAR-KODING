@@ -32,6 +32,7 @@ SEDERHANANYA untuk nextjs:
 - jalan kan instal di terminal :> npm i
 - lalu buatlah folder komponenmu dan page kamu di app atau pages sesuai ketentuan nextjs
 ---------------------------------------------------------------------
+PEMAHAMAN SEBELUMNYA:
 - install nextjs biasa :> npx-nexjs :> masuk kefolder project nextjs > pakai js tidak typescript > coba running index.js > hentikan > next steps 
 - download sakai di https://primereact.org/templates/ > SAKAI > pilih yang js saja
 - compare > buka folder project kita di vscode > buka juga folder SAKAI di vscode jg > letakan berdampingan side by side
