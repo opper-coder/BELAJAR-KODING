@@ -11,12 +11,12 @@ looping array adalah metode iterasi sejumlah length dan dapatkan indexnya
 		for(var i = 0; i < mhs.length; i++) { console.log(mhs[i]); } 	// dg for: menyebut length dan juga index
 	/* map " mhs.map( a => a) " */
 		mhs.map( a => console.log(a) ); 				// tanpa menyebut length, tapi menyebut index
-		mhs.map((a,b) => console.log(a + b)); 			// a = value, b = index, (kebalik)
+		mhs.map((a,b) => console.log(a + b)); 				// a = value, b = index, (kebalik)
 	/* foreach " mhs.forEach( m => m )" : mirip map */
 		mhs.forEach( a => console.log(a) );
 		mhs.forEach((a, b) => console.log(a + b)) 
 	/* for of (array)  " for( m of arr ){ m } "  */
-		for(const m of mhs){ console.log(m)} // string tidak bisa di for of pakai for biasa saja
+		for(const m of mhs){ console.log(m)} 		// string tidak bisa di for of pakai for biasa saja
 		for(const [m, i] of mhs.entries()){console.log(`${m} adalah mahasiswa ke ${i}`)}
 	/* for in (object) */
 		const biodata = { nama : "aqil", alamat : "saiti", hobi : "bermain sepeda" }
