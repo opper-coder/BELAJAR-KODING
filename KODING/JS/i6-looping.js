@@ -14,7 +14,7 @@ looping array adalah metode iterasi sejumlah length dan dapatkan indexnya
 		mhs.map((a,b) => console.log(a + b)); 			// a = value, b = index, (kebalik)
 	/* foreach " mhs.forEach( m => m )" : mirip map */
 		mhs.forEach( a => console.log(a) );
-		mhs.forEach((a, b) => console.log(`${a} adalah mahasiswa ke ${b}`)) 
+		mhs.forEach((a, b) => console.log(a + b)) 
 	/* for of (array)  " for( m of arr ){ m } "  */
 		for(const m of mhs){ console.log(m)} // string tidak bisa di for of pakai for biasa saja
 		for(const [m, i] of mhs.entries()){console.log(`${m} adalah mahasiswa ke ${i}`)}
