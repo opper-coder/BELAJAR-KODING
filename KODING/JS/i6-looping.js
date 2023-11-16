@@ -13,8 +13,8 @@ looping array adalah metode iterasi sejumlah length dan dapatkan indexnya
 		mhs.map( a => console.log(a) ); 				// tanpa menyebut length, tapi menyebut index
 		mhs.map((a,b) => console.log(a + b)); 			// a = value, b = index, (kebalik)
 	/* foreach " mhs.forEach( m => m )" : mirip map */
-		mhs.forEach( m => console.log(m) );
-		mhs.forEach((m, i) => console.log(`${m} adalah mahasiswa ke ${i}`)) 
+		mhs.forEach( a => console.log(a) );
+		mhs.forEach((a, b) => console.log(`${a} adalah mahasiswa ke ${b}`)) 
 	/* for of (array)  " for( m of arr ){ m } "  */
 		for(const m of mhs){ console.log(m)} // string tidak bisa di for of pakai for biasa saja
 		for(const [m, i] of mhs.entries()){console.log(`${m} adalah mahasiswa ke ${i}`)}
