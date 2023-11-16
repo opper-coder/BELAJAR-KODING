@@ -10,7 +10,7 @@ looping array adalah metode iterasi sejumlah length dan dapatkan indexnya
 	/* for */
 		for(var i = 0; i < mhs.length; i++) { console.log(mhs[i]); } 	// dg for: menyebut length dan juga index
 	/* map " mhs.map( a => a) " */
-		mhs.map( a => console.log(a) ); 								// tanpa menyebut length, tapi menyebut index
+		mhs.map( a => console.log(a) ); 				// tanpa menyebut length, tapi menyebut index
 	/* foreach " mhs.forEach( m => m )" : mirip map */
 		mhs.forEach( m => console.log(m) );
 		mhs.forEach((m, i) => console.log(`${m} adalah mahasiswa ke ${i}`)) 
