@@ -35,7 +35,7 @@ const Child = (props) => {                                    // 2. (komponen in
 }
 -----------------------------------------------------
 OPER DATA CHILD KE PARENT II (JELAS, PENTING)
-praktek sebenarnya:
+praktek sebenarnya: (baca sesuai urutan)
 
 const Pengguna = () => {                                      // 1. komponen konsumen (parent)
     const [data, setData] = useState("")                      // 6. data siap di gunakan pada state
@@ -44,7 +44,7 @@ const Pengguna = () => {                                      // 1. komponen kon
 }
 -----
 const Individu = (props) => {                                 // 2. komponen individu (child), sediakan prop sbg pintu tukar data
-    return<>{props.operData("aqil")}</>                       // 5. prop fungsi dapat di gunakan kiirim data dari individu                
+    return<>{props.operData("aqil")}</>                       // 5. prop fungsi dapat di gunakan kirim data dari individu                
 }
     
 -----------------------------------------------------
