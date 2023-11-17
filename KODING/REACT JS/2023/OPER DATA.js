@@ -77,7 +77,6 @@ export default function App() {
 
 --------------------------------------------------------------------------------------------------
 
-
 kirimdata dari parent ke child
 ------------------------------------------
  const Parent = () => {                          // 1. komponen parent nya
@@ -177,7 +176,6 @@ export default function App() {
   return <>gunakan datanya dengan even onclick disini!</>;
 }
 
-
 kasus2 yg benar
 -----------------------------------------
 import { useState } from "react"; 
@@ -191,8 +189,5 @@ export default function App() {
   };
   return <>gunakan datanya disini!</>;
 }
-
-
-
 
 
