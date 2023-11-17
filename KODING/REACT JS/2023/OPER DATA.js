@@ -12,11 +12,11 @@ Ringkasan
 -----------------------------------------------------
 OPER DATA PARENT KE CHILD
 
-const Parent = () => {                                // 1. komponen parent 
+const Parent = () => {                                // 1. (komponen pemanggil) komponen parent 
     return<><Child name="aqil"></>                    // 3. saat panggil(oper props)
 }
 -----
-const Child = (props) => {                            // 2. komp child (tangkap props)
+const Child = (props) => {                            // 2. (komponen individu) komp child (tangkap props)
     return<>"Halo nama saya "{props.name}</>          // 4. gunakan props
 }
 
