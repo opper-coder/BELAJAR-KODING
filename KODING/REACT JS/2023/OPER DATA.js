@@ -52,9 +52,9 @@ UBAH STATE TUNGGAL
 
 import { useState } from "react";
 export default function App() {
-    const [isNotif, setIsNotif] = useState(false);    // 1. jika kita punya state
+    const [isNotif, setIsNotif] = useState(false);            // 1. jika kita punya state
     const notif = () => {
-        setIsNotif(!isNotif);                         // 2. kita bisa ubah dengan fungsi pengubah
+        setIsNotif(!isNotif);                                 // 2. kita bisa ubah dengan fungsi pengubah
     };
   return <div onClick={notif}>gunakan datanya disini!{isNotif}</div>;
 }
@@ -63,12 +63,12 @@ UBAH STATE BERKALI KALI
 
 import { useState } from "react"; 
 export default function App() {
-  const [isNotif2, setIsNotif2] = useState(false);   // 1. state nilaiawal: false    
+  const [isNotif2, setIsNotif2] = useState(false);           // 1. state nilaiawal: false    
   const notif2 = () => { 
-    setIsNotif2(!isNotif2);                          // 2. ubah state pertama langsung ke state: true
+    setIsNotif2(!isNotif2);                                  // 2. ubah state pertama langsung ke state: true
     setTimeout(() => {                            
-      setIsNotif2(state => !isNotif2);               // 3. ubah state kedua dalam args callback 
-    }, 2000);                                            hasilnya bisa: false kalau tidak dalam callback hasilnya tetap true
+      setIsNotif2(state => !isNotif2);                       // 3. ubah state kedua dalam args callback 
+    }, 2000);                                                    hasilnya bisa: false kalau tidak dalam callback hasilnya tetap true
   };
   return <div onClick={notif2}>gunakan datanya disini!{isNotif2}</div>;
 }
