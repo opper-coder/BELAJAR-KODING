@@ -23,27 +23,27 @@ const Child = (props) => {                                // 2. (komponen indivi
 -----------------------------------------------------
 OPER DATA CHILD KE PARENT
 
-const Parent = () => {                                    // 1. (komp pemanggil) parent
+const Parent = () => {                                    // 1. (komponen pemanggil) parent
     const operAlamat = (terimaData) => {                  // 3. bikin FUNC PENERIMA data dari child (pada args) 
         return<>alamat saya{terimaData} </>               // 6. args di terima dari child bisa di gunakan di parent ini 
     }
     return<><Child name="aqil" alamat={operAlamat}></>    // 4. saat panggil CHILD, kirim fungsi no(invoke) via props, ke child 
 }
 -----
-const Child = (props) => {                                // 2. (komp individu) child
+const Child = (props) => {                                // 2. (komponen individu) child
     return<>Halo nama saya {props.name} dan {props.operAlamat("saiti")}</>      // 5. ambil props dari parent berupa function(sambil kirim arg),                                                                         
 }
 -----------------------------------------------------
 OPER DATA CHILD KE PARENT II
 praktek sebenarnya:
 
-const Pengguna = () => {                                     // 1. komponen konsumen parent
+const Pengguna = () => {                                     // 1. komponen konsumen (parent)
     const [data, setData] = useState("")                     // 6. data siap di gunakan pada state
     const operData = (terimaData) => setData(terimData)      // 3. buatkan prop penangkap data
     return<> <Individu data={operData}> </>                  // 4. panggil individu dengan props fungsi penerima tanpa invoke
 }
 -----
-const Individu = (props) => {                                // 2. (komp individu) child, sediakan prop sbg pintu tukar data
+const Individu = (props) => {                                // 2. komponen individu (child), sediakan prop sbg pintu tukar data
     return<>{props.operData("aqil")}</>                      // 5. prop fungsi dapat di gunakan kiirim data dari individu                
 }
     
