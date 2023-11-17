@@ -37,13 +37,13 @@ const Child = (props) => {                                    // 2. (komponen in
 OPER DATA CHILD KE PARENT II (JELAS, PENTING)
 praktek sebenarnya: (baca sesuai urutan)
 
-const Pengguna = () => {                                      // 1. komponen konsumen (parent)
+const Pengguna = () => {                                      // 1. komponen "konsumen" (parent)
     const [data, setData] = useState("")                      // 6. data siap di gunakan pada state
     const operData = (terimaData) => setData(terimData)       // 3. buatkan prop penangkap data
     return<> <Individu data={operData}> </>                   // 4. panggil individu dengan props fungsi penerima tanpa invoke
 }
 -----
-const Individu = (props) => {                                 // 2. komponen individu (child), sediakan prop sbg pintu tukar data
+const Individu = (props) => {                                 // 2. komponen "individu" (child), sediakan prop sbg pintu tukar data
     return<>{props.operData("aqil")}</>                       // 5. prop fungsi dapat di gunakan kirim data dari individu                
 }
 -----------------------------------------------------
