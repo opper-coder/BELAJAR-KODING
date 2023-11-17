@@ -46,7 +46,8 @@ const Pengguna = () => {                                      // 1. komponen kon
 const Individu = (props) => {                                 // 2. komponen individu (child), sediakan prop sbg pintu tukar data
     return<>{props.operData("aqil")}</>                       // 5. prop fungsi dapat di gunakan kirim data dari individu                
 }
-    
+KESIMPULAN    - individu: 1. props 2. panggil props 3. dg kirim data
+              - pengguna: 1. func 2. props func 3. save state
 -----------------------------------------------------
 UBAH STATE TUNGGAL
 
