@@ -23,14 +23,14 @@ const Child = (props) => {                            // 2. (komponen individu) 
 -----------------------------------------------------
 OPER DATA CHILD KE PARENT
 
-const Parent = () => {                                // 1. parent 
+const Parent = () => {                                // 1. (komp pemanggil) parent
     const operAlamat = (terimaData) => {              // 3. bikin FUNC PENERIMA data dari child (pada args) 
         return<>alamat saya{terimaData} </>           // 6. args di terima dari child bisa di gunakan di parent ini 
     }
     return<> <Child name="aqil" alamat={operAlamat}> </>      // 4. saat panggil CHILD, kirim fungsi no(invoke) via props, ke child 
 }
 -----
-const Child = (props) => {                            // 2. child
+const Child = (props) => {                            // 2. (komp individu) child
     return<>Halo nama saya {props.name} dan {props.operAlamat("saiti")}</>      // 5. ambil props dari parent berupa function(sambil kirim arg),                                                                         
 }
     
