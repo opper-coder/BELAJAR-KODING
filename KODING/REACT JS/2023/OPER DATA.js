@@ -49,6 +49,8 @@ const Individu = (props) => {                                 // 2. komponen "in
 -----------------------------------------------------
 KESIMPULAN    - individu: 1. props 2. panggil props 3. dg kirim data
               - pengguna: 1. func 2. props func 3. save state
+KESIMPULAN2   - individu kirim data via function 
+              - pengguna kirim data via prop
 -----------------------------------------------------
 UBAH STATE TUNGGAL
 
