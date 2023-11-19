@@ -55,23 +55,23 @@ pola atomic
 
 install node dan npm di linux
 -----------------------------
-:> sudo apt-get update  					// 1. update linux dulu
+:> sudo apt-get update  		// 1. update linux dulu
 :> sudo apt-get install nodejs  	// 2. langsung install node via terminal tapi biasanya tanpa NPM
-:> sudo apt-get install npm 			// 3. maka install juga npm
-:> node -v 												// 4. cek versi terinstall
-:> npm -v 												// 5. cek npm juga
-:> sudo npm install -g n  				// 6. install version manager praktis (sumber: https://nodejs.org/en/download/package-manager#debian-and-ubuntu-based-linux-distributions)
-:> sudo n lts  										// 7. update node with npm LTS terbaru
-:> node -v 												// 8. coba cek maka versi sudah terbaru (LTS)
-:> npm -v 												// 9. otomatis NPM juga ikut di update
-:> sudo npm install -g npm@9.6.2  // 10. kalau perlu update npmnya saja ke version tertentu
+:> sudo apt-get install npm 		// 3. maka install juga npm
+:> node -v 				// 4. cek versi terinstall
+:> npm -v 				// 5. cek npm juga
+:> sudo npm install -g n  		// 6. install version manager praktis (sumber: https://nodejs.org/en/download/package-manager#debian-and-ubuntu-based-linux-distributions)
+:> sudo n lts  				// 7. update node with npm LTS terbaru
+:> node -v 				// 8. coba cek maka versi sudah terbaru (LTS)
+:> npm -v 				// 9. otomatis NPM juga ikut di update
+:> sudo npm install -g npm@9.6.2  	// 10. kalau perlu update npmnya saja ke version tertentu
 
 CARA MEMBUAT FOLDER REACTAPP
 -----------------------------
 	- masuk ke folder root misalnya document
 	- :> npx create-react-app boxits// buatkan folder app boxits, agak lama
-	- :> cd boxits 									// masuk ke app
-	- :> npm start 									// start, akan tampil default, dan localhost:3000
+	- :> cd boxits 			// masuk ke app
+	- :> npm start 			// start, akan tampil default, dan localhost:3000
 syarat:
 	- koneksi internet untuk installasi reactJs
 	- instal dulu nodeJS v10.16 keatas dan npm v 5.6 keatas. cek :> node -v   dan :> npm -v
@@ -82,17 +82,17 @@ STRUKTUR FOLDER
 -----------------------------
 struktur folder bisa di lihat juga pada prawiro hudoro ada di document
 Boxits
-	> node_modules  								// berisi semua module yang membanguan reactJS, yng nanti akan di import sesuai kebutuhan
+	> node_modules  		// berisi semua module yang membanguan reactJS, yng nanti akan di import sesuai kebutuhan
 	> public package					
-		index.html 								// ada banyak file yang terpenting ada index.html dan ada div id="root" inilah gerbang render single page app
+		index.html 		// ada banyak file yang terpenting ada index.html dan ada div id="root" inilah gerbang render single page app
 		favicon 
-		{}manifest readme							// di include ke index
+		{}manifest readme	// di include ke index
 	> src 
-		app.css 								// 
-		App.js 									// root komponen (paling penting)(disini import: logo, app.css)
-											// di dalamnya ada function app(){ return(jsx sintax); }
-		index.css 								// 
-		index.js 								// entri point dari app semua halaman penting di import disini: react, reactDOM, index.css, app.js, dll lalu di oper ke "root"
+		app.css 		// 
+		App.js 			// root komponen (paling penting)(disini import: logo, app.css)
+					// di dalamnya ada function app(){ return(jsx sintax); }
+		index.css 		// 
+		index.js		// entri point dari app semua halaman penting di import disini: react, reactDOM, index.css, app.js, dll lalu di oper ke "root"
 	<> gitIgnore
 	{} package.lock.json
 	{} package json
@@ -102,10 +102,10 @@ PRAKTEK DAN CLEANUP
 -----------------------------
 sebelum di praktekan hapus file default agar bersih dan kosong siap untuk di isi dengan aplikasi kita sendiri
 
-	Boxits 													// biarkan folder dan file lainya kecuali:			
-		> src 												// pada sourch sisakan dua file ini saja			
-			App.js 											// pada sisakan seperti ini saja function app(){ return(<div> <p> haloo coba </p> </div>); } (oya hapus semua import juga di atas app())
-			index.js 										// buka halaman ini hapus juga import2 pada halaman yang tadi di hapus sisakan yang penting
+	Boxits 							// biarkan folder dan file lainya kecuali:			
+		> src 						// pada sourch sisakan dua file ini saja			
+			App.js 					// pada sisakan seperti ini saja function app(){ return(<div> <p> haloo coba </p> </div>); } (oya hapus semua import juga di atas app())
+			index.js 				// buka halaman ini hapus juga import2 pada halaman yang tadi di hapus sisakan yang penting
 
 	function App(){
 		return(
