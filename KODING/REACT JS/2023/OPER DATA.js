@@ -48,10 +48,11 @@ const Individu = (props) => {                                 // 2. komponen "in
     return<>{props.oper.operData("aqil")}</>                  // 5. prop fungsi dapat di gunakan kirim data dari individu                
 }
 -----------------------------------------------------
-KESIMPULAN    - individu: 1. props 2. panggil props 3. dg kirim data
-              - pengguna: 1. func 2. props func 3. save state
-KESIMPULAN2   - individu kirim data via function 
-              - pengguna kirim data via props
+KESIMPULAN     I) individu: 1. props 2. panggil props callback (dg kirim data)
+              II) pengguna: 1. callback 2. props=callback no invoke 3. save state
+-----------------------------------------------------
+KESIMPULAN2    I) individu kirim data via function 
+              II) pengguna kirim data via props
 -----------------------------------------------------
 UBAH STATE TUNGGAL
 
