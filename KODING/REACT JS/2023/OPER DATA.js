@@ -59,8 +59,6 @@ const Individu = (props) => {                                // 2. ambil props
     return<>{props.oper("nama saya aqil")}</>                // 3. props fungsi, kirim argumen (karena fungsi maka bisa kirim arg)
 }
 
-
-
 -----------------------------------------------------
 KESIMPULAN     I) individu: 1. props 2. panggil props callback (dg kirim data)
               II) pengguna: 1. callback 2. props=callback no invoke 3. save state
