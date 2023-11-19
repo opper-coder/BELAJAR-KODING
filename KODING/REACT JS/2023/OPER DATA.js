@@ -35,7 +35,7 @@ const Child = (props) => {                                    // 2. (komponen in
     return<>Halo nama saya {props.name} dan {props.operAlamat("saiti")}</>      // 5. ambil props dari parent berupa function(sambil kirim arg),                                                                         
 }
 -----------------------------------------------------
-OPER DATA CHILD KE PARENT II (JELAS, PENTING)
+OPER DATA CHILD KE PARENT II
 praktek sebenarnya: (baca sesuai urutan)
 
 const Pengguna = () => {                                      // 1. komponen "konsumen" (parent)
@@ -49,7 +49,7 @@ const Individu = (props) => {                                 // 2. komponen "in
 }
 
 -----------------------------------------------------
-OPER DATA CHILD KE PARENT III 
+OPER DATA CHILD KE PARENT III (JELAS, PENTING) 
 const Pengguna = () => {                                       
     const [data, setData] = useState("")                     // 4. hasilnya bisa di gunakan
     return <Individu oper={() => setData(terimaData)} />     // 1. kirim props dg fungsi (biasanya kan pakai variabel)                 
