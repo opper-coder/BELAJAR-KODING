@@ -39,7 +39,7 @@ praktek sebenarnya: (baca sesuai urutan)
 
 const Pengguna = () => {                                      // 1. komponen "konsumen" (parent)
     const [data, setData] = useState("")                      // 6. data siap di gunakan pada state
-    const operData = (terimaData) => setData(terimaData)       // 3. buatkan prop penangkap data
+    const operData = (terimaData) => setData(terimaData)      // 3. buatkan prop penangkap data
     return<> <Individu data={operData}> </>                   // 4. panggil individu dengan props fungsi penerima tanpa invoke
 }
 -----
