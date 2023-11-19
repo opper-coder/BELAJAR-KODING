@@ -47,6 +47,20 @@ const Pengguna = () => {                                      // 1. komponen "ko
 const Individu = (props) => {                                 // 2. komponen "individu" (child), sediakan prop sbg pintu tukar data
     return<>{props.oper.operData("aqil")}</>                  // 5. prop fungsi dapat di gunakan kirim data dari individu                
 }
+
+-----------------------------------------------------
+OPER DATA CHILD KE PARENT III 
+const Pengguna = () => {                                       
+    const [data, setData] = useState("")                     // 4. hasilnya bisa di gunakan
+    return <Individu oper={() => setData(terimaData)} />     // 1. kirim props dg fungsi (biasanya kan pakai variabel)                 
+}
+-----
+const Individu = (props) => {                                // 2. ambil props 
+    return<>{props.oper("nama saya aqil")}</>                // 3. props fungsi, kirim argumen (karena fungsi maka bisa kirim arg)
+}
+
+
+
 -----------------------------------------------------
 KESIMPULAN     I) individu: 1. props 2. panggil props callback (dg kirim data)
               II) pengguna: 1. callback 2. props=callback no invoke 3. save state
