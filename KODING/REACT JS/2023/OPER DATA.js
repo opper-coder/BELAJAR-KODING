@@ -42,7 +42,8 @@ const Pengguna = () => {
 }
 -----
 const Individu = (props) => {                                // 2. ambil props 
-    return<>{props.oper("nama saya aqil")}</>                // 3. props fungsi, kirim argumen (karena fungsi maka bisa kirim arg)
+    props.oper("nama saya aqil")                             // 3. props fungsi, kirim argumen (karena fungsi maka bisa kirim arg)
+    return<>isi HTML</>                
 }
 
 -----------------------------------------------------
