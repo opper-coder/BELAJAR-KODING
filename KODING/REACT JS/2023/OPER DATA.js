@@ -11,6 +11,7 @@ sumber youtube:
 Ringkasan
 -----------------------------------------------------
 OPER DATA PARENT KE CHILD
+- kirim data dengan props= data(variabel)
 
 const Parent = () => {                                        // 1. (komponen pemanggil) komponen parent 
     return<><Child name="aqil"></>                            // 3. saat panggil(oper props)
@@ -22,7 +23,7 @@ const Child = (props) => {                                    // 2. (komponen in
 
 -----------------------------------------------------
 OPER DATA CHILD KE PARENT
-
+- kirim data dengan props= callback no invoke(function(data))
 const Parent = () => {                                        // 1. (komponen pemanggil) parent
     const operAlamat = (terimaData) => {                      // 3. bikin FUNC PENERIMA data dari child (pada args) 
         return<>alamat saya{terimaData} </>                   // 6. args di terima dari child bisa di gunakan di parent ini 
