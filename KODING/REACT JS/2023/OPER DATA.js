@@ -52,7 +52,7 @@ const Individu = (props) => {                                 // 2. komponen "in
 OPER DATA CHILD KE PARENT III (JELAS, PENTING) 
 const Pengguna = () => {                                       
     const [data, setData] = useState("")                     // 4. hasilnya bisa di gunakan
-    return <Individu oper={() => setData(terimaData)} />     // 1. kirim props dg fungsi (biasanya kan pakai variabel)                 
+    return <Individu oper={(data) => setData(data)} />       // 1. kirim props dg fungsi (biasanya kan pakai variabel)                 
 }
 -----
 const Individu = (props) => {                                // 2. ambil props 
