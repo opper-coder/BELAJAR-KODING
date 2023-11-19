@@ -32,7 +32,7 @@ const Parent = () => {                                        // 1. (komponen pe
 }
 -----
 const Child = (props) => {                                    // 2. (komponen individu) child
-    return<>Halo nama saya {props.name} dan {props.operAlamat("saiti")}</>      // 5. ambil props dari parent berupa function(sambil kirim arg),                                                                         
+    return<>Halo nama saya {props.name} dan {props.operAlamat("saiti")}</>      // 5. ambil props dari parent berupa function(sambil kirim arg(data)),                                                                         
 }
 -----------------------------------------------------
 OPER DATA CHILD KE PARENT II (JELAS, PENTING, copas aja) 
