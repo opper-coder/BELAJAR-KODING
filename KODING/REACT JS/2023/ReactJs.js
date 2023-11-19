@@ -84,15 +84,15 @@ struktur folder bisa di lihat juga pada prawiro hudoro ada di document
 Boxits
 	> node_modules  								// berisi semua module yang membanguan reactJS, yng nanti akan di import sesuai kebutuhan
 	> public package					
-		index.html 										// ada banyak file yang terpenting ada index.html dan ada div id="root" inilah gerbang render single page app
+		index.html 								// ada banyak file yang terpenting ada index.html dan ada div id="root" inilah gerbang render single page app
 		favicon 
 		{}manifest readme							// di include ke index
 	> src 
-		app.css 											// 
-		App.js 												// root komponen (paling penting)(disini import: logo, app.css)
-																	// di dalamnya ada function app(){ return(jsx sintax); }
-		index.css 										// 
-		index.js 											// entri point dari app semua halaman penting di import disini: react, reactDOM, index.css, app.js, dll lalu di oper ke "root"
+		app.css 								// 
+		App.js 									// root komponen (paling penting)(disini import: logo, app.css)
+											// di dalamnya ada function app(){ return(jsx sintax); }
+		index.css 								// 
+		index.js 								// entri point dari app semua halaman penting di import disini: react, reactDOM, index.css, app.js, dll lalu di oper ke "root"
 	<> gitIgnore
 	{} package.lock.json
 	{} package json
@@ -129,19 +129,19 @@ maka fokus saja pada functional
 	- di vscode > ketik rafc (reactArrowFuncComp); maka kita di buatkan template yang namanya di samakan dengan nama filenya
 	- return(<div> disini </div>); 				/// harusnya semua dalam div atau hanya bisa return satu saja selebihnya bungkus dalam div 
 
-	const Coba = () => { 									// cara buatnya baik dalam page app atau dalam file yang berbeda sama saja, ini pakai arrow function
+	const Coba = () => { 					// cara buatnya baik dalam page app atau dalam file yang berbeda sama saja, ini pakai arrow function
 		return(
 			<div>
 				<p>Halo aqil</p>
 			</div>
 		);
 	}
-	export default Coba 									// jika akan di gunakan pada halaman lain export dulu
+	export default Coba					// jika akan di gunakan pada halaman lain export dulu
 
 - panggil biasa, panggil import, lakukan export
-	import Coba from "./component/Coba"  	// tidak perlu extension .js Coba akan di akses secara default
-	< Coba />  														// panggil tinggal pakai self close seperti ini 
-																				// (tentu panggilnya dalam komponen lainya, misalnya dalam app(){ return 	< Coba /> }) return pakai (); boleh tidak juga boleh
+	import Coba from "./component/Coba"  			// tidak perlu extension .js Coba akan di akses secara default
+	< Coba />  						// panggil tinggal pakai self close seperti ini 
+								// (tentu panggilnya dalam komponen lainya, misalnya dalam app(){ return 	< Coba /> }) return pakai (); boleh tidak juga boleh
 
 	const app = () => {
 		return(
@@ -165,7 +165,7 @@ DINAMIC VALUE {}
 		const salam = "selamat datang di channel kami" ; 	// variabel
 		return(
 			<div>
-				<p>{ salam }</p> 															/// panggil variabel dalam jsx
+				<p>{ salam }</p> 			/// panggil variabel dalam jsx
 			</div>
 		);
 	}
@@ -173,23 +173,23 @@ DINAMIC VALUE {}
 variabel juga bisa kalkulasi dalam JSX 
 	{ 20 * 2 }
 atribut pada JSX juga bisa pakai variabel (link adalah variabel js silahkan buatkan sendiri )
-	<a href={ link }></a> 															/// href = tanpa ""
+	<a href={ link }></a> 						/// href = tanpa ""
 
 PROP
 -----------------------------
 - kirim parameter untuk komponen biasa
-		const Salam = () => { <p> halo ini aku! </p> } 														// fungsi dasar
-		<Salam /> 			 																													// panggil biasa
-		const Salam = (props) => { <p> halo ini aku! namaku { props.nama } </p> } // fungsi dengan argumen props.key pengirim saat banyak kirim ya sesuaikan key
-		<Salam nama="aqil" /> 																										// panggil dengan kirim parameter props, bisa kirim banyak tinggal tambah k=v
+		const Salam = () => { <p> halo ini aku! </p> } 					// fungsi dasar
+		<Salam /> 			 						// panggil biasa
+		const Salam = (props) => { <p> halo ini aku! namaku { props.nama } </p> } 	// fungsi dengan argumen props.key pengirim saat banyak kirim ya sesuaikan key
+		<Salam nama="aqil" /> 								// panggil dengan kirim parameter props, bisa kirim banyak tinggal tambah k=v
 
 - default props > jika mau boleh pakai default prop mirip alt pada <img> tips di tulis di bwah komponen bersangkutan
-		const Salam = (props) => { <p> halo ini namaku: {props.nama} </p> } 			///
+		const Salam = (props) => { <p> halo ini namaku: {props.nama} </p> } 		///
 		Salam.DefaultProps = {
 			nama: "aqil",
 			umur: 11
 		}
-		<Salam /> 																															 	// panggil function dengan prop default (tanpa oper data)
+		<Salam /> 									// panggil function dengan prop default (tanpa oper data)
 - adalah salah satu cara oper data dari parent ke child komponen
 - dan oper data dari child ke parent menggunakan event(mis: onclick)
 
@@ -198,20 +198,20 @@ CLICK EVENT (onclick)
 - onclick pada JSX memilik behavior yang sama dg attribut HTML hanya saja untuk akses function nya tinggal pakai dinamic value {} tanpa()
 
 	const app = () => {
-		const clickMe = () => { console.log( "Halooo " ); } 											// ini fungsinya 
+		const clickMe = () => { console.log( "Halooo " ); } 				// ini fungsinya 
 		return(
 			<div>
 				<Coba/>
 				<p>ini adalah appku</p>
-				<button onclick={ clickMe }> Klik Saja </button>  										// ini panggil namanya dalam {} tanpa () 
-			</div>   																																///
+				<button onclick={ clickMe }> Klik Saja </button>  		// ini panggil namanya dalam {} tanpa () 
+			</div>   								///
 		)
 	}
 - onclick dengan oper value
 	- saat kita dengan mengirim data {clickMe(aqil)} maka onclick tidak berjalan alias tidak nunggu di klik langsung running 
 	- agar nunggu di klik maka masukkan ke dalam anonimous function { () => { clickMe("aqil") } }
 	- cara nagkapnya ya biasa saja //
-			const clickMe = (name) => { console.log( "Halooo " + name ); } 					// tangkap dengan argument biasa aja
+			const clickMe = (name) => { console.log( "Halooo " + name ); } 		// tangkap dengan argument biasa aja
 
 HOOKS useState
 -----------------------------
@@ -227,30 +227,30 @@ HOOKS useState
 - hook hadir = mudah dan flexibel = ini lebih terkait pengelolaan state dalam functional
 
 contoh1
-	import {useState} from "react"; 															 // 1. import dulu useState
+	import {useState} from "react"; 							// 1. import dulu useState
 	function app(){
-		const [nama, setNama] = useState("aqil");	 									 // 2. variabel yang mau di ubah2(dinamis) masukkan kedalam array useState[nama var, fungsi perubah] = useState (nilai default)
+		const [nama, setNama] = useState("aqil");	 				// 2. variabel yang mau di ubah2(dinamis) masukkan kedalam array useState[nama var, fungsi perubah] = useState (nilai default)
 		const [umur, setUmur] = useState(11);	
-		const ubahData = () => {  																	 // 6. masukan ke dalam trigger
-			setNama("silmi"); 																				 // 5. ini fungsi pengubah yaitu tinggal panggil saja (fungsi sudah di buatkan di react library)
+		const ubahData = () => {  							// 6. masukan ke dalam trigger
+			setNama("silmi"); 							// 5. ini fungsi pengubah yaitu tinggal panggil saja (fungsi sudah di buatkan di react library)
 			setUmur(2);
 		} 
 		return(
 			<div>
-				<p> haloo nama saya { nama } umurku { umur } tahun </p> /// 3. panggil variabel dari useState dengan nilai default 
- 				<button onclick="ubahData"> ubah! </button> 						/// 4. saat onclick panggil fungsi pengubah yang di bungkus oleh trigger
+				<p> haloo nama saya { nama } umurku { umur } tahun </p> 	/// 3. panggil variabel dari useState dengan nilai default 
+ 				<button onclick="ubahData"> ubah! </button> 			/// 4. saat onclick panggil fungsi pengubah yang di bungkus oleh trigger
 			</div>
 		);
-	} 																														///
+	} 											///
 
 contoh2 
-	import {useState} from "react";  															 // 1. import
+	import {useState} from "react";  							// 1. import
 	const app = () => {
-		const [counter, setCounter] = useState(0); 									 // 2. bikin useState
+		const [counter, setCounter] = useState(0); 					// 2. bikin useState
 		return (
 			 <div>
 			     <h1>Functional Component</h1>
-			     <h2>Counter: {counter}</h2> 													 // 3. ambil state 		5. state berubah
+			     <h2>Counter: {counter}</h2> 					// 3. ambil state 		5. state berubah
 			     <button onclick={() => setCounter(counter + 1)}> Click Add </button>  /// 	4. ubah state dengan trigger onclick
 			 </div>
 		);
@@ -268,10 +268,10 @@ HOOKS useEffect
 	const app = () => {
 		const [counter, setCounter] = useState(0);
 
-		// useEffect() 																																					// 0. basic, nanti ada 4 bentuk 
-		// useEffect( () => {} ); 																															// 1. bentuk1, akan di jalankan saat update komponen di backgroundDOM (seperti tanpa useEffect) 
-		// useEffect( () => {}, [] ); 																													// 2. bentuk2, ada array kosong, akan di running sekali saja saat onMount 
-		// useEffect( () => { console.log("jumlah klik :" counter) }, [counter] ); 							// 3. bentuk3, ada array berisi state, akan di running saat onMount, dan saat update state tersebut, (state boleh banyak)
+		// useEffect() 											// 0. basic, nanti ada 4 bentuk 
+		// useEffect( () => {} ); 									// 1. bentuk1, akan di jalankan saat update komponen di backgroundDOM (seperti tanpa useEffect) 
+		// useEffect( () => {}, [] ); 									// 2. bentuk2, ada array kosong, akan di running sekali saja saat onMount 
+		// useEffect( () => { console.log("jumlah klik :" counter) }, [counter] ); 			// 3. bentuk3, ada array berisi state, akan di running saat onMount, dan saat update state tersebut, (state boleh banyak)
 		// useEffect( () => { umur += 1; return (0)=>{console.log('efek selesai')}; }, [counter] ); 	// 4. bentuk4, jika mau close/cleanUp useEffect kita tinggal kasih return state nilai awal pada anonimouse functionya
 
 		return (
@@ -285,7 +285,7 @@ HOOKS useEffect
 
 - contoh2
 	const app = () => {
-		const [counter, setCounter] = useState(0); 																		// useState boleh ganda
+		const [counter, setCounter] = useState(0); 							// useState boleh ganda
 		const [nama, setNama] = useState("aqil");
 
 		useEffect( () => { console.log("jumlah klik :" counter) }, [counter] ); 			// useEffect jg boleh ganda
@@ -295,7 +295,7 @@ HOOKS useEffect
 			 <div>
 			     <h1>Functional Component milik {nama} </h1>
 			     <h2>Counter: {counter}</h2>
-			     <button onclick={() => setCounter(counter + 1)}> Click Add </button>  ///
+			     <button onclick={() => setCounter(counter + 1)}> Click Add </button>  		///
 			     <button onclick={() => setNama("silmi")}> Ubah Nama </button>
 			 </div>
 		);
@@ -309,7 +309,7 @@ LOOPING DATA
 
 	import {useState} from "react"; 									
 	function app(){
-		const [products, setProduct] = useState([  						// simpan object data dalam useState misalnya ini (misalnya di ambil dari DB)
+		const [products, setProduct] = useState([  							\// simpan object data dalam useState misalnya ini (misalnya di ambil dari DB)
 			{id: 1, title: "product 1", price: 1000 },
 			{id: 2, title: "product 2", price: 2000 },
 			{id: 3, title: "product 3", price: 3000 },
@@ -320,10 +320,10 @@ LOOPING DATA
 		return(
 			<div>
 				<ul>
-					{ products.map( (product) => (  												// untuk object products nya kita looping ke dalam <li> dengan map dengan oper argumen
+					{ products.map( (product) => (  					// untuk object products nya kita looping ke dalam <li> dengan map dengan oper argumen
 						<li key={ product.id } > { product.title } - { product.price } </li>  		// atribut key di gunakan untuk index pengurutan. output item data kita ambil dari argumen.key
-					) ) } 																			// oya pada anonimouse function ini tidak menggunakan bracket melainkan () kurung bulat,
-				</ul> 																				// hal ini di maksudkan karena functyion ini akan mereturn JSX tanpa keyword return juga
+					) ) } 									// oya pada anonimouse function ini tidak menggunakan bracket melainkan () kurung bulat,
+				</ul> 										// hal ini di maksudkan karena functyion ini akan mereturn JSX tanpa keyword return juga
 			</div>
 		);
 	} 				///
@@ -337,16 +337,16 @@ namun perbedaanya react merender di client dengan spesifik URL
 - import { BrowserRouter as Router, router, switch } from 'react-router-dom';
 	const app = () => {
 		return(
-			<div> 		 												// di dalam return > div > bungkus semua router seperti ini:  
+			<div> 		 									// di dalam return > div > bungkus semua router seperti ini:  
 				<router>
 					<switch>
-						<route exact path="/">    	// pada route tambah exact juga attribut path sebagai url. jika exact di hapus kita akses dari url akan di tendang
-							<Home/> 									// ini yang di render(url hanya penamaan terserah kita. bukan nama komponen ya)
+						<route exact path="/">    					// pada route tambah exact juga attribut path sebagai url. jika exact di hapus kita akses dari url akan di tendang
+							<Home/> 						// ini yang di render(url hanya penamaan terserah kita. bukan nama komponen ya)
 						</route>
-						<route path="/about">      //" dalam contoh exact hanya dai tulis sekali paling atas bisa jalan(periksa)
+						<route path="/about">      					//" dalam contoh exact hanya dai tulis sekali paling atas bisa jalan(periksa)
 							<AboutWeb/>
 						</route>
-						<route path="/account">    //"
+						<route path="/account">    					//"
 							<Akun/>
 						</route>
 					</switch>
@@ -409,37 +409,37 @@ POST API
 -----------------------------
 - buat halaman berisi komponen add data lalu export DefaultProps
 
-import { useState } from 'react'													// 3. import
+import { useState } from 'react'								// 3. import
 import { useHistory } from 'react-router-dom'							// 20. maka gunakan useHistory
-																													//
-const AddProduct = () => {																// 1. bikin kompononen di sebuah file dan atur routernya dari home ke halaman ini. import di app.js
-	const [title, setTitle] = useState(''); 								// 4. buat state untuk menangkap nilai input 
-	const [price, setPrice] = useState('');									//
-	const history = useHistory();														// 21. inisialisasi histori
+												//
+const AddProduct = () => {									// 1. bikin kompononen di sebuah file dan atur routernya dari home ke halaman ini. import di app.js
+	const [title, setTitle] = useState(''); 						// 4. buat state untuk menangkap nilai input 
+	const [price, setPrice] = useState('');							//
+	const history = useHistory();								// 21. inisialisasi histori
 
-	const saveProduct = async (e) => {											// 9. fun Posting, (ambil event) // 13. sekarang persiapan fetching kasih async, karena fetch adalh asynchronus
-		e.preventDefault																			// 10. saat submit cegah page reload 
-		const product = { title, price } 											// 11. object{ state dari input } 
-		console.log(product); 																// 12. cek produk coba jalankan (jika sudah disable) utk memastikan data yg kita kirim valid. data siap di kirim
-		await fetch('http://localhost:3000/Product',{ 				// 14. disini await > tentu fetch(url, metode fetching) 
-			method: "POST", 																		// 15. method pakai POST untuk kirim data
-			body: JSON.stringify(product),											// 16. data product tidak boleh di kiirim begitu saja karena ini object, konversi dulu ke json
-			headers: {																					// 17. header dikirim sebagai syarat RESTAPI
-				'content-type' : 'application.json'								// 18. parameter wajib di header untuk kirim json
+	const saveProduct = async (e) => {							// 9. fun Posting, (ambil event) // 13. sekarang persiapan fetching kasih async, karena fetch adalh asynchronus
+		e.preventDefault								// 10. saat submit cegah page reload 
+		const product = { title, price } 						// 11. object{ state dari input } 
+		console.log(product); 								// 12. cek produk coba jalankan (jika sudah disable) utk memastikan data yg kita kirim valid. data siap di kirim
+		await fetch('http://localhost:3000/Product',{ 					// 14. disini await > tentu fetch(url, metode fetching) 
+			method: "POST",								// 15. method pakai POST untuk kirim data
+			body: JSON.stringify(product),						// 16. data product tidak boleh di kiirim begitu saja karena ini object, konversi dulu ke json
+			headers: {								// 17. header dikirim sebagai syarat RESTAPI
+				'content-type' : 'application.json'				// 18. parameter wajib di header untuk kirim json
 			}
-		}); 																									// 19. sampai disini data sudah bisa di submit. tapi kita mau saat sudah di submit kita redirect ke halaman home
-		history.push('/') 																		// 22. gunakan history untuk header ke halaman home
+		}); 										// 19. sampai disini data sudah bisa di submit. tapi kita mau saat sudah di submit kita redirect ke halaman home
+		history.push('/') 								// 22. gunakan history untuk header ke halaman home
 	}
 
 	return(
 		<div>
-			<form onSubmit={saveProduct} >     																																			// 8. menggunakan event on submit( running function POSTING saveProduct )
+			<form onSubmit={saveProduct} >     										// 8. menggunakan event on submit( running function POSTING saveProduct )
 				<input type="text" value={title} onchange={(e) => { setTitle(e.target.value) }} placeholder="tittle"> // 2. berisi inputtext // 5. value=state > maka inputtext berisi value > tapi tdk bs di ubah
 				<input type="text" value={price} onchange={(e) => { setPrice(e.target.value) }} placeholder="price"> 	// 6. agar bisa di ubah > onchange={ubah state}
-		 		<button onSubmit={saveProduct} > Posting Data </button>	 																							// 
+		 		<button onSubmit={saveProduct} > Posting Data </button>	 						// 
 			</form> 																																																//
-				<p>{title} - {price}</p> 																																							// 7. lihat hasilnya. saat di ubah lewat inputtext maka state berubah, 
-		</div> 																																																		// selanjutnya data state yang kita dapatkan kita POST ke json server menggunakan form
+				<p>{title} - {price}</p> 										// 7. lihat hasilnya. saat di ubah lewat inputtext maka state berubah, 
+		</div> 															// selanjutnya data state yang kita dapatkan kita POST ke json server menggunakan form
 	);
 }
 
@@ -449,31 +449,31 @@ EDIT API
 -----------------------------
 - buat halaman berisi komponen add data lalu export DefaultProps > copas component post API
 
-import { useState, useEffect } from 'react'								// 6. saya ingin fetch ini di muat sekali saat di render kita pakai useEffect 
-import { useHistory, useParams } from 'react-router-dom'	// 3. untuk nangkap id kita harus import dulu useParams
+import { useState, useEffect } from 'react'							// 6. saya ingin fetch ini di muat sekali saat di render kita pakai useEffect 
+import { useHistory, useParams } from 'react-router-dom'					// 3. untuk nangkap id kita harus import dulu useParams
 																													 
-const EditProduct = () => {																// 1. ganti nama file dan functionya, import di productList.js, import, dan atur routernya di app.js dan tambah id pada url router /edit/:id  
+const EditProduct = () => {									// 1. ganti nama file dan functionya, import di productList.js, import, dan atur routernya di app.js dan tambah id pada url router /edit/:id  
 	const [title, setTitle] = useState(''); 								  
 	const [price, setPrice] = useState('');									
 	const history = useHistory();														
 
 	useEffect( () => { 
-		getProductById(); 																		// 7. akses func dalam useEffect, hanya sekali saat komponen telah di render
+		getProductById(); 								// 7. akses func dalam useEffect, hanya sekali saat komponen telah di render
 	}, []);
 
-	const getProductById = async () => { 										// 4. buatkan fungsi pilih data url
+	const getProductById = async () => { 							// 4. buatkan fungsi pilih data url
 			const response = await fetch(`http://localhost:3000/Product/${id}`); 5. fetch data enpoint
 			const data = await response.json();
 			setTitle(data.title); 
 			setTitle(data.price);  
 	}
 
-	const updateProduct = async (e) => {									  // 11. ganti dengan const saveProduct ke editProduct
+	const updateProduct = async (e) => {							// 11. ganti dengan const saveProduct ke editProduct
 		e.preventDefault																			 
 		const product = { title, price } 											  
 		console.log(product); 																  
-		await fetch(`http://localhost:3000/Product/${id}`,{ 	// 13. tambah id dari params
-			method: "PUT", 																			// 14. ganti dengan POST dengan PUT
+		await fetch(`http://localhost:3000/Product/${id}`,{ 				// 13. tambah id dari params
+			method: "PUT", 								// 14. ganti dengan POST dengan PUT
 			body: JSON.stringify(product),											  
 			headers: {																					  
 				'content-type' : 'application.json'								 
@@ -484,10 +484,10 @@ const EditProduct = () => {																// 1. ganti nama file dan functionya,
 
 	return(
 		<div>
-			<form onSubmit={saveProduct} >     									// 12. ganti dengan updateProduct  
+			<form onSubmit={saveProduct} >     					// 12. ganti dengan updateProduct  
 				<input type="text" value={title} onchange={(e) => { setTitle(e.target.value) }} placeholder="tittle">   
 				<input type="text" value={price} onchange={(e) => { setPrice(e.target.value) }} placeholder="price"> 	  
-		 		<button onSubmit={saveProduct} > Posting Data </button>	 																							// 2. ganti label tombol jadi edit
+		 		<button onSubmit={saveProduct} > Posting Data </button>		// 2. ganti label tombol jadi edit
 			</form> 																																																
 				<p>{title} - {price}</p> 																																							  
 		</div> 																																																		 
@@ -506,7 +506,7 @@ pada halaman App nya kita kasih event
 ///
 
 import {useState, useEffect} from 'react';
-import { link } from "react-router-dom"; 																		// 2. ini import link nya, agar tidak reload page
+import { link } from "react-router-dom"; 							// 2. ini import link nya, agar tidak reload page
 
 const productList = () => {
 	const [products, setProducts] = useState([]);
@@ -518,15 +518,15 @@ const productList = () => {
 		const data = await response.json();
 		setProducts(data);
 	}
-	const deleteProduct = async () => {																			 // 4. bikin method delete		// 5. copas perangkat fetching dari updateProduct > hapus preventDefault dan state product				 															  
+	const deleteProduct = async () => {							// 4. bikin method delete		// 5. copas perangkat fetching dari updateProduct > hapus preventDefault dan state product				 															  
 		await fetch(`http://localhost:3000/Product/${id}`,{ 	
-			method: "PUT", 																			 									// 6. method "PUT" ganti dengan "DELETE"
+			method: "PUT", 								// 6. method "PUT" ganti dengan "DELETE"
 			body: JSON.stringify(product),											  
 			headers: {																					  
 			'content-type' : 'application.json'								 
 			}
 		}); 
-	fetchData(); 																															// saat delete berhasil maka, panggil lagi fetchData(); agar menampilkan data terakhir
+	fetchData(); 										// saat delete berhasil maka, panggil lagi fetchData(); agar menampilkan data terakhir
 	}
 
 	return(
@@ -545,8 +545,8 @@ const productList = () => {
 		 			<td>{product.title}</td>
 		 			<td>{product.price}</td>
 		 			<td>{ 
-		 				<link to={`/edit/${product.id}`} >ubah!</button onclick={()=>{deleteProduct(product.id)}} >			// 1. oya disini hasil perubahan dari <link> tadinya button dari halaman edit
-		 				<button onclick={() = deleteProduct(product.id)}>hapus!</button>}     												// 3. pada tombol hapus tdk di ganti link > tambah event  > method deleteProduct() dg parameter
+		 				<link to={`/edit/${product.id}`} >ubah!</button onclick={()=>{deleteProduct(product.id)}} >	// 1. oya disini hasil perubahan dari <link> tadinya button dari halaman edit
+		 				<button onclick={() = deleteProduct(product.id)}>hapus!</button>}     				// 3. pada tombol hapus tdk di ganti link > tambah event  > method deleteProduct() dg parameter
 		 			</td>
 				</tr>
 		</div>
