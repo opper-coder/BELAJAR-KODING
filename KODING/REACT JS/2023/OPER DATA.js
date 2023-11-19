@@ -49,7 +49,7 @@ const Individu = (props) => {                                 // 2. komponen "in
 }
 
 -----------------------------------------------------
-OPER DATA CHILD KE PARENT III (JELAS, PENTING) 
+OPER DATA CHILD KE PARENT III (JELAS, PENTING, copas aja) 
 const Pengguna = () => {                                       
     const [data, setData] = useState("")                     // 4. hasilnya bisa di gunakan
     return <Individu oper={(data) => setData(data)} />       // 1. kirim props dg fungsi (biasanya kan pakai variabel)                 
