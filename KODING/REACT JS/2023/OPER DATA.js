@@ -38,7 +38,7 @@ const Child = (props) => {                                    // 2. (komponen in
 OPER DATA CHILD KE PARENT II (JELAS, PENTING, copas aja) 
 const Pengguna = () => {                                       
     const [data, setData] = useState("")                     // 4. hasilnya bisa di gunakan
-    return <Individu oper={(data) => setData(data)} />       // 1. kirim props "dg FUNGSI" (biasanya kan pakai "VARIABEL")(callback)                
+    return <Individu oper={(d) => setData(d)} />             // 1. kirim props "dg FUNGSI" (biasanya kan pakai "VARIABEL")(callback)                
 }
 -----
 const Individu = (props) => {                                // 2. ambil props 
