@@ -301,6 +301,15 @@ Pendahuluan
 	- for, while, do while, switch, 
 		break 						// stop putaran pada (looping asli) biasanya di tanam dalam if putaran
 		continue 					// skip / lompati putaran
+	- continue, break tidak bisa di gunakan untuk map()
+- map()
+	- ini belum ada penjelasanya disini cari yaa ?????
+	- sederhanya untuk loopng juga 
+	- tapi biasanya di gunakan untuk mengubah isi array baik pehitungan atau concate
+		arr.map()
+		arr.map(()=>{})
+		arr.map(()=> arr.value + 1)
+		arr.map(()=> arr + "ada")
 - Label ---------------------------------------
 	- penanda untuk operasi break dan continue pada looping bersarang
 	for(){							// loop bersarang biasa
