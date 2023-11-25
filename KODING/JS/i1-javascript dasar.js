@@ -165,6 +165,7 @@ Pendahuluan
 		delete orang[index] 				// Menghapus data di posisi index, namun index tidak bergeser spt mySQL
 - filter array --------------------------------
 	- mungkin di gunakan untuk query
+	- filter((d) => d)
 	const numbers = [10, 20, 30, 40, 50];
 	const filteredNumbers = numbers.filter(number => number > 25);
 	console.log(filteredNumbers); // Output: [30, 40, 50]
