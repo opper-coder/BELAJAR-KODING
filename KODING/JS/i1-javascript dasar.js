@@ -163,11 +163,24 @@ Pendahuluan
 		orang[2] 					// Mendapat data di posisi index
 		orang[3] = "faqih" 				// Mengubah data di posisi index
 		delete orang[index] 				// Menghapus data di posisi index, namun index tidak bergeser spt mySQL
-- filter array
+- filter array --------------------------------
 	- mungkin di gunakan untuk query
 	const numbers = [10, 20, 30, 40, 50];
 	const filteredNumbers = numbers.filter(number => number > 25);
 	console.log(filteredNumbers); // Output: [30, 40, 50]
+	//---
+  	const angka = [
+    	{ nama: "satu", alamat: "saiti", },
+    	{ nama: "dua", alamat: "bella", },
+    	{ nama: "tiga", alamat: "saiti", },
+    	{ nama: "empat", alamat: "bunta", },
+    	{ nama: "lima", alamat: "saiti", },
+    	{ nama: "enam", alamat: "saiti", },
+  	];
+  	// Melakukan filter untuk mendapatkan objek dengan properti alamat bernilai "saiti"
+  	const filteredAngka = angka.filter(d => d.alamat === "saiti");
+  	console.log(filteredAngka);
+
 
 - Tipe Data Object ----------------------------
 	- {}							// bentuk dasar
