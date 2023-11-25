@@ -180,8 +180,6 @@ Pendahuluan
   	// Melakukan filter untuk mendapatkan objek dengan properti alamat bernilai "saiti"
   	const filteredAngka = angka.filter(d => d.alamat === "saiti");
   	console.log(filteredAngka);
-
-
 - Tipe Data Object ----------------------------
 	- {}							// bentuk dasar
 	- let orang = {}					// masuk var
