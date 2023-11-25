@@ -14,6 +14,7 @@ Pendahuluan
 - String Template 			-> pengganti string kombinasi dan concate
 - Konversi String dan Number 		-> ada kemiripan angka dan string maka butuh konversi
 - Tipe Data Array  			-> index
+- filter array 				-> saring mungkin bagus untuk query
 - Tipe Data Object 			-> property
 - If Expression 			-> percabangan dasar
 - Popup 				-> pop up bawaan browser yang membantu debug sebenarnya
@@ -162,6 +163,12 @@ Pendahuluan
 		orang[2] 					// Mendapat data di posisi index
 		orang[3] = "faqih" 				// Mengubah data di posisi index
 		delete orang[index] 				// Menghapus data di posisi index, namun index tidak bergeser spt mySQL
+- filter array
+	- mungkin di gunakan untuk query
+	- const numbers = [10, 20, 30, 40, 50];
+	- const filteredNumbers = numbers.filter(number => number > 25);
+	- console.log(filteredNumbers); // Output: [30, 40, 50]
+
 - Tipe Data Object ----------------------------
 	- {}							// bentuk dasar
 	- let orang = {}					// masuk var
