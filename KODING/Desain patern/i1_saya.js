@@ -4,7 +4,7 @@ Problem Solving:
 3. breakdown kategory:
     - entity (daftar objek):
         - product
-        - service
+        - service (problem solving)
         - pihak
         - jumlah
     - aktifity (daftar peristiwa)
