@@ -5,8 +5,10 @@ Problem Solving:
     - entity (daftar objek):
         - product
         - pihak
+        - service
         - jumlah
     - aktifity (daftar peristiwa)
+        - transaksi
         - aksi
         - reaksi
         - waktu
@@ -29,10 +31,14 @@ Problem Solving:
     - indexing (urutan logic peristiwa)
         - happy flow
         - sad flow
-4. page desain
+4. desain
     - desktop
     - mobile
     - admin
     - customer
     - third party
 5. production
+    - internal
+    - external
+    - freelance
+    - paket
