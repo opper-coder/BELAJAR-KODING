@@ -6,13 +6,13 @@ Problem Solving:
         - product
         - service (problem solving)
         - pihak
-        - jumlah
+        - jumlah(hint)
     - aktifity (daftar peristiwa)
         - aksi
         - reaksi
-        - annualy
+        - annualy(opt)
         - transaksi
-        - waktu
+        - waktu(hint)
     - fungsi (daftar fungsi)
         - eksekusi
             - CRUD
