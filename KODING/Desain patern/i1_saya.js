@@ -43,3 +43,19 @@ Problem Solving:
     - external
     - freelance
     - paket
+
+Contoh
+---------------------------------------------
+problem solving jual beli online
+entity:
+    1. produk
+    2. harga product
+    3. etalase
+    4. penjual
+    5. pembeli
+    6. kurir
+    7. admin
+    8. harga kurir
+    9. waktu
+    10. port (outlet, inlet)
+    
