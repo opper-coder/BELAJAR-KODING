@@ -47,15 +47,15 @@ Problem Solving:
 Contoh
 ---------------------------------------------
 problem solving jual beli online
-entity:
-    1. produk
-    2. harga product
-    3. etalase
-    4. penjual
-    5. pembeli
-    6. kurir
-    7. admin
-    8. harga kurir
-    9. waktu
-    10. port (outlet, inlet)
+entity dan service:
+    1. produk            : lihat, cart, beli, retur, koment
+    2. harga product     : diskon, promo, 
+    3. etalase           : pencarian, fyp, 
+    4. penjual           : daftar, assign, promo, kelola
+    5. pembeli           : daftar, topup, transfer
+    6. kurir             : product dan kelas 
+    7. admin             : call center
+    8. harga kurir       : kelas layanan dan harga
+    9. waktu             : estimasi
+    10. port (outlet, inlet) : di lapangan
     
