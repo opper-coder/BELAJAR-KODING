@@ -49,7 +49,7 @@ Contoh
 problem solving jual beli online
 entity dan service:
     1. produk            : lihat, cart, beli, retur, koment
-    2. harga product     : diskon, promo, 
+    2. harga product     : diskon, promo, hadiah
     3. etalase           : pencarian, fyp, 
     4. penjual           : daftar, assign, promo, kelola
     5. pembeli           : daftar, topup, transfer
