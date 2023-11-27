@@ -10,6 +10,7 @@ Problem Solving:
     - aktifity (daftar peristiwa)
         - aksi
         - reaksi
+        - annualy
         - transaksi
         - waktu
     - fungsi (daftar fungsi)
