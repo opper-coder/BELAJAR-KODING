@@ -4,13 +4,13 @@ Problem Solving:
 3. breakdown kategory:
     - entity (daftar objek):
         - product
-        - pihak
         - service
+        - pihak
         - jumlah
     - aktifity (daftar peristiwa)
-        - transaksi
         - aksi
         - reaksi
+        - transaksi
         - waktu
     - fungsi (daftar fungsi)
         - eksekusi
