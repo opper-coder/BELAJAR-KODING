@@ -30,4 +30,9 @@ Problem Solving:
         - happy flow
         - sad flow
 4. page desain
+    - desktop
+    - mobile
+    - admin
+    - customer
+    - third party
 5. production
