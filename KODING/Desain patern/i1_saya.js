@@ -6,6 +6,6 @@ Problem Solving:
     - aktifity        :
     - fungsi        :
     - koneksi        :
-    - indexing
+    - indexing        :        
 4. page desain
 5. 
