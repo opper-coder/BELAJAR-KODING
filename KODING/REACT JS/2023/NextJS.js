@@ -8,28 +8,28 @@ NEXTJS 13 mei 2023 CODER MEDIA
     }
 
 
-installation 							-> node, npm, next, package, run localhost, vscode, terminal
-cleanUp 									-> bersih bersih untuk project kita
-LAYOUT, METADATA, PAGES 	-> mengenal, 
-Routing 									-> konsep dan cara akses URL component
-useRouter 								->  
-JSON server  							-> bikin fake API, demonstrasi API
-CSS, Bulma, Bootstrap     -> integrasi style
-react-icons 							-> install dan penggunaan
-tailwind & daisyUI       	-> ini yang kita pakai
-CRUD API       						-> best practice CRUD API di mulai dari sini
-SERVER N CLIENT COMPONENTS  -> mengenal 
-SERVER COMPONENT       		-> fetch API dari server 
-CLIENT COMPONENT       		-> fetch API dari client
+installation 				-> node, npm, next, package, run localhost, vscode, terminal
+cleanUp 				-> bersih bersih untuk project kita
+LAYOUT, METADATA, PAGES 		-> mengenal, 
+Routing					-> konsep dan cara akses URL component
+useRouter 				->  
+JSON server  				-> bikin fake API, demonstrasi API
+CSS, Bulma, Bootstrap     		-> integrasi style
+react-icons 				-> install dan penggunaan
+tailwind & daisyUI       		-> ini yang kita pakai
+CRUD API       				-> best practice CRUD API di mulai dari sini
+SERVER N CLIENT COMPONENTS  		-> mengenal 
+SERVER COMPONENT       			-> fetch API dari server 
+CLIENT COMPONENT       			-> fetch API dari client
 DeleteProduct       			-> method DELETE
 UpdateProduct       			-> method PATCH
 
 sumber: Fahrezi Adha 
 
-Link & Navigation 				-> tambahan dari fahrezi tentang routing 
-Loading Skeleton 					-> asynchronous display
-.Error handling 					-> menangani error estimate or unestimete
-fetching data	 						-> disini ada patern fetch sebenarnya: parallel, seri, periodic kayaknya
+Link & Navigation 			-> tambahan dari fahrezi tentang routing 
+Loading Skeleton 			-> asynchronous display
+.Error handling 			-> menangani error estimate or unestimete
+fetching data	 			-> disini ada patern fetch sebenarnya: parallel, seri, periodic kayaknya
 
 
 INSTALLATION 	
@@ -107,9 +107,9 @@ ROUTING
 		export default function PostDetail({params}: { params : {postId: string}}) {   
 		  return (
 		    <div>
-		      Post Detail { params.postId[0] } 		// kalau tidak pakai index maka akan ketangkap tampil semua arraynya (1,2,5) di halaman,  											
-		    </div> 																// coba lihat di teminal
-		  )																				// tapi kalau pakai index nanti yang ketangkap cuma satu sesuai index, meskipun akses post/1/2/5 
+		      Post Detail { params.postId[0] } 			// kalau tidak pakai index maka akan ketangkap tampil semua arraynya (1,2,5) di halaman,  											
+		    </div> 						// coba lihat di teminal
+		  )							// tapi kalau pakai index nanti yang ketangkap cuma satu sesuai index, meskipun akses post/1/2/5 
 		} 																				
 
 JSON-SERVER 
@@ -143,14 +143,14 @@ CSS, Bulma, Bootstrap
 - css.modules
 	- bikin file bernama coba.module.css > dimanapun bisa (root, sub folder, folder styles) > 
 	- penggunaan import styles from './about.module.css' kalau folder sejajar
-	- cara panggil > <h1 className={styles.merah}></h1> ///
+	- cara panggil > <h1 className={styles.merah}></h1> 		///
 
 :> npm install bulma > pergi ke index.js > import {bulma} from 'bulma/css/bulma.css'
 	- di <button className="button" > restart server :> ctrl C :> npm run dev 
 	- setelah font nya berubah maka bulma terinstall 
 
 - external css > CDN Bootstrap > copas link di layout.tsx
-- inline CSS > contoh: <div style={{margin:"12px"}}>halo</div> // pakai kutip di nilai saja
+- inline CSS > contoh: <div style={{margin:"12px"}}>halo</div> 		// pakai kutip di nilai saja
 - css in js > ini kayaknya susah
 - sass > ini juga bisa tapi kita skip dulu
 - bulma, Bootstrap juga OK
@@ -161,7 +161,7 @@ tailwind & daisyUI
   - jika terminal dlm keadaan runing 
   	- hentikan dulu > ctrl C > jalan kan satu-satu 
 	- npm install -D tailwindcss postcss autoprefixer		// installation
-	- npx tailwindcss init -p 													// initialisation
+	- npx tailwindcss init -p 					// initialisation
 	- kopas PATH > pergi ke file "tailwind.config.js" > paste di content:[disini]
 	- copas @tailwind base; @tailwind components; @tailwind utilities; > di global.css > save
 - langkah ini sama persis dengan yang ada di documentasi > lebih disankan melihat langsung aja 
@@ -179,11 +179,11 @@ PrimeReact
 react-icons
 ------------------------------------------------------
 menggunakan impor ES6 yang memungkinkan Anda untuk menyertakan hanya ikon yang digunakan proyek Anda.
-untuk menelusuri nama, bentuk dan sumber icon buka https://react-icons.github.io/react-icons 
+untuk menelusuri nama, bentuk dan sumber icon buka https:	//react-icons.github.io/react-icons 
 
-new terminal :> npm install react-icons --save > 	// 1. cara install
-import { FaBeer } from 'react-icons/fa'; 					// 2. import > import { namaicon } from 'codesumbericon'; > buka https://react-icons.github.io/react-icons 		
-<FaBeer /> 																				// 3. cara pakai
+new terminal :> npm install react-icons --save > 		// 1. cara install
+import { FaBeer } from 'react-icons/fa'; 			// 2. import > import { namaicon } from 'codesumbericon'; > buka https://react-icons.github.io/react-icons 		
+<FaBeer /> 							// 3. cara pakai
 
 SERVER N CLIENT COMPONENTS 
 ------------------------------------------------------
@@ -215,30 +215,30 @@ caranya:
 add new file :app/products/page.tsx > isi dengan code di bawah copas aja bisa > tapi baca cara pakainya sesuai nomor urut
 import untuk semua data yang diperlukan disini > page.tsx
 
-import AddProduct from "./addProduct";  						// xx. keterangan ada di add product
-import DeleteProduct from "./deleteProduct"; 				// xx. keterangan ada di delete product
-import UpdateProduct from "./UpdateProduct"; 				// xx. keterangan ada di update product
+import AddProduct from "./addProduct";  			// xx. keterangan ada di add product
+import DeleteProduct from "./deleteProduct"; 			// xx. keterangan ada di delete product
+import UpdateProduct from "./UpdateProduct"; 			// xx. keterangan ada di update product
 
 -----
 
-type Product = { 																		// > 6.2. disini deklarasikan bentuk datanya di gunakan di step:6 
+type Product = { 						// > 6.2. disini deklarasikan bentuk datanya di gunakan di step:6 
     id: number;
     title: string;
     price: number;
   }
   
-  async function getProduct() { 										// 1. buat function fetching data dari API > dg async > misalnya nama getProduct
+  async function getProduct() { 				// 1. buat function fetching data dari API > dg async > misalnya nama getProduct
     const res = await fetch('http://localhost:5000/product', { 	// 2. await fetch() disini > bungkus dalam variabel 
-        cache: 'no-store' 													// 3. kasih parameter2 ini, berfungsi untuk tidak di simpan di caching 
+        cache: 'no-store' 					// 3. kasih parameter2 ini, berfungsi untuk tidak di simpan di caching 
     })
-    return res.json() 															// 4. data sudah dapat di gunakan berupa json
+    return res.json() 						// 4. data sudah dapat di gunakan berupa json
   }
   
   export default async function ProductList() { 		// 5. buat function penampil data berupa table dan export default > async juga
-    const products: Product[] = await getProduct(); // 6. ambil data dulu > 6.1. karena type script kita harus tentukan type data > bentuk array karena banyak > 6.2
+    const products: Product[] = await getProduct(); 		// 6. ambil data dulu > 6.1. karena type script kita harus tentukan type data > bentuk array karena banyak > 6.2
     return ( 			
       <div className="p-10">
-        <table className="table w-full"> 						// 7. return table > 7.1. oya kita sudah bisa menggunakan daisyUI dan tailwind   
+        <table className="table w-full"> 			// 7. return table > 7.1. oya kita sudah bisa menggunakan daisyUI dan tailwind   
             <thead>
                 <tr>
                     <th>#</th>
@@ -251,9 +251,9 @@ type Product = { 																		// > 6.2. disini deklarasikan bentuk datanya 
             {products.map((product, index) => ( 		// 8. gunakan variabel data disini untuk di map
                 <tr>
                     <td>{index+1}</td>
-                    <td>{product.title}</td> 				// 9. ambil datanya
+                    <td>{product.title}</td> 			// 9. ambil datanya
                     <td>{product.price}</td>
-                    <td className="flex"> 					// 9.3. agar sejajar ganti dengan flex
+                    <td className="flex"> 			// 9.3. agar sejajar ganti dengan flex
                     	<DeleteProduct {...product}/> // 9.1. keterangan ada di bagian delete product
                     	<UpdateProduct {...product}/> // 9.2. keterangan ada di bagian edit product
                     </td>
@@ -267,7 +267,7 @@ type Product = { 																		// > 6.2. disini deklarasikan bentuk datanya 
 
 ----- akses komponen product
 
-- browser > localhost:3000/products  								// 10 silahkan akses
+- browser > localhost:3000/products  				// 10 silahkan akses
 
 CLIENT COMPONENT
 ------------------------------------------------------
@@ -275,47 +275,47 @@ addProduct()
 add new file :app/products/addProduct.tsx > componen di bawah sudah di test
 
 -----
-'use client' 																				// 1. karena menggunakan useState maka client componen, definisikan di sini
-import { SyntheticEvent, useState  } from "react"; 	// 2. SynteticEvent nanti diperlukan (steps: ) untuk agar saat submit tidak reload, useState berguna
-import { useRouter } from "next/navigation" 				// 3. nanti berguna (step:8+ )saat submit tanpa refresh langsung melihat perubahan data tabel yang di submit
+'use client' 							// 1. karena menggunakan useState maka client componen, definisikan di sini
+import { SyntheticEvent, useState  } from "react"; 		// 2. SynteticEvent nanti diperlukan (steps: ) untuk agar saat submit tidak reload, useState berguna
+import { useRouter } from "next/navigation" 			// 3. nanti berguna (step:8+ )saat submit tanpa refresh langsung melihat perubahan data tabel yang di submit
 
-export default function AddProduct() {  						// 4. export default ya
-  const [title, setTitle] = useState(""); 					// 5. state yang akan dikirim untuk POST API, dapat data oleh inputtext (setTitle())
+export default function AddProduct() {  			// 4. export default ya
+  const [title, setTitle] = useState(""); 			// 5. state yang akan dikirim untuk POST API, dapat data oleh inputtext (setTitle())
   const [price, setPrice] = useState("");
-  const [modal, setModal] = useState(false); 				// 6. current state kondisi modal, di ubah oleh tombol hide/show modal, trigger dan close modal 
+  const [modal, setModal] = useState(false); 			// 6. current state kondisi modal, di ubah oleh tombol hide/show modal, trigger dan close modal 
   const [isMutating, setIsMutating] = useState(false); // 7. state untuk kontrol stay/loading button
   
-  const router = useRouter(); 											// 8. initialisasi, agar bisa di gunakan untuk melihat perubahan tampilan tabel data tanpa refresh halaman 
+  const router = useRouter(); 					// 8. initialisasi, agar bisa di gunakan untuk melihat perubahan tampilan tabel data tanpa refresh halaman 
   
-  async function handleSubmit(e: SyntheticEvent){ 	// 22. tangkap parameter event: dengan SynteticEvent > di function ini menangani POST, 
-  																									// 		 kondisi tombol Loading, reset state ke kosong, matikan modal, melihat perubahan data
+  async function handleSubmit(e: SyntheticEvent){ 		// 22. tangkap parameter event: dengan SynteticEvent > di function ini menangani POST, 
+  								// 		 kondisi tombol Loading, reset state ke kosong, matikan modal, melihat perubahan data
     
-    setIsMutating(true); 														// 24. state u menagani sebelum fetch() tampilkan tombol loading  
+    setIsMutating(true); 					// 24. state u menagani sebelum fetch() tampilkan tombol loading  
 
-    e.preventDefault(); 														// 23. penggunaan SynteticEvent disini. agar tidak reload 
-    await fetch('http://localhost:5000/product',{ 	// 26. lakukan fetch() dalam async await
+    e.preventDefault(); 					// 23. penggunaan SynteticEvent disini. agar tidak reload 
+    await fetch('http://localhost:5000/product',{ 		// 26. lakukan fetch() dalam async await
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        title: title, 															// 27. data title: diambil dari state > dari input 
+        title: title, 						// 27. data title: diambil dari state > dari input 
         price: price,
       })
     });
 
-    setIsMutating(false); 													// 25. saat selesai fetch() tampilkan tombol stay
+    setIsMutating(false); 					// 25. saat selesai fetch() tampilkan tombol stay
 
-    setTitle("");  																	// 28. reset state
+    setTitle("");  						// 28. reset state
     setPrice("");
-    router.refresh(); 															// 29. lihat perubahan data dengan refresh background
-    setModal(false); 																// 30. tutup modal
+    router.refresh(); 						// 29. lihat perubahan data dengan refresh background
+    setModal(false); 						// 30. tutup modal
   }
 
-  function handleChange(){ 													// 11. fungsi modal hanya mengubah state toggle saja > 
+  function handleChange(){ 					// 11. fungsi modal hanya mengubah state toggle saja > 
     setModal(!modal);
   }
-  return (     																			// 9. bentuk trigger modal dan modal, menangkap value input  
+  return (     							// 9. bentuk trigger modal dan modal, menangkap value input  
     <div>
 
       <button className="btn mb-4" onClick={handleChange}>Add new</button> 	// 10. trigger modal, dengan onclick= hide/show modal dengan state 
@@ -326,14 +326,14 @@ export default function AddProduct() {  						// 4. export default ya
       <div className="modal">
         <div className="modal-box">
           <h3 className="font-bold text-lg">Add New Product</h3>
-          <form onSubmit={handleSubmit}> 																		// 21. onSubmit disini bukan langsung di tombol nya > trigger ke function POSTING 
+          <form onSubmit={handleSubmit}> 					// 21. onSubmit disini bukan langsung di tombol nya > trigger ke function POSTING 
             <div className="form-control">
               <label className="label font-bold">Title</label>
               <input 
                 type="text" 
-                value={title}  																							// 14. state title ini di ambil untuk di tampilkan di input text > nilai awalnya kosong ""
-                onChange={(e) => setTitle(e.target.value)} 									// 15. state title di ubah disini dengan menangkap value input text > state berubah siap dikirim 
-                className="input w-full input-bordered"  										//     saat ada perubahan state > langsung di tampilkan saja di input text > coba console.log(tittle)
+                value={title}  							// 14. state title ini di ambil untuk di tampilkan di input text > nilai awalnya kosong ""
+                onChange={(e) => setTitle(e.target.value)} 			// 15. state title di ubah disini dengan menangkap value input text > state berubah siap dikirim 
+                className="input w-full input-bordered"  			//     saat ada perubahan state > langsung di tampilkan saja di input text > coba console.log(tittle)
                 placeholder="Product Name"/>
             </div>
             <div className="form-control">
@@ -341,16 +341,16 @@ export default function AddProduct() {  						// 4. export default ya
               <input 
                 type="text" 
                 value={price}
-                onChange={(e) => setPrice(e.target.value)} 									// > 14.1 sama
+                onChange={(e) => setPrice(e.target.value)} 			// > 14.1 sama
                 className="input w-full input-bordered" 
                 placeholder="Price"/>
             </div>
             <div className="modal-action">
               <button type="button" className="btn" onClick={handleChange}>Close</button>  	// 16. sama dengan triger modal ini juga akses pengubah state
-              {!isMutating ? ( 																															// 18. maka dengan ternary state kedua tombol di tampilkan sesuai kondisi
-                <button type="submit" className="btn btn-primary">Save</button> 						// 17. tombol save dan saving akan di tampilkan bergantian pada kondisi tertentu
+              {!isMutating ? ( 									// 18. maka dengan ternary state kedua tombol di tampilkan sesuai kondisi
+                <button type="submit" className="btn btn-primary">Save</button> 		// 17. tombol save dan saving akan di tampilkan bergantian pada kondisi tertentu
               ) : (
-                <button type="submit" className="btn loading">Saving...</button> 						// 19. tombol loading selama berlangsung tidak bisa di click
+                <button type="submit" className="btn loading">Saving...</button> 		// 19. tombol loading selama berlangsung tidak bisa di click
               )}
             </div>
           </form>
@@ -370,11 +370,11 @@ deleteProduct()
 - <DeleteProduct {...product}/> sambil mengirim prop di oper dari map(product) saat looping data table > ada di step:2
 - pakai spread operator karena data yang di ambil berupa array/object
 
-'use client' 																										// 1. masih client sebab pakai useState
+'use client' 									// 1. masih client sebab pakai useState
 import { useState  } from "react"; 
 import { useRouter } from "next/navigation"
 
-type Product = { 																								// 3. ini type datanya, karena banyak yang di terima maka berbentuk object
+type Product = { 								// 3. ini type datanya, karena banyak yang di terima maka berbentuk object
     id: number;
     title: string;
     price: number;
@@ -382,16 +382,16 @@ type Product = { 																								// 3. ini type datanya, karena banyak y
 
 export default function DeleteProduct(product: Product) { 			// 2. export default f delete(argument prop product.ID di oper dari page.tsx) > karena type script maka ada type datanya
   
-  const [modal, setModal] = useState(false); 										// 4. keterangan mirip di get product 
-  const [isMutating, setIsMutating] = useState(false); 					// 5. state untuk kontrol stay/loading button 
+  const [modal, setModal] = useState(false); 					// 4. keterangan mirip di get product 
+  const [isMutating, setIsMutating] = useState(false); 				// 5. state untuk kontrol stay/loading button 
   
   const router = useRouter(); 																	
   
-  async function handleDelete(productId: number){ 							// 6. param di oper dari button delete
+  async function handleDelete(productId: number){ 				// 6. param di oper dari button delete
     
     setIsMutating(true);
 
-    await fetch(`http://localhost:5000/product/${productId}`,{ 	// 7. fetch() DELETE > menagkap id dari args > fetch() harus dalam async await
+    await fetch(`http://localhost:5000/product/${productId}`,{ 			// 7. fetch() DELETE > menagkap id dari args > fetch() harus dalam async await
       method: 'DELETE'
     });
 
@@ -401,26 +401,26 @@ export default function DeleteProduct(product: Product) { 			// 2. export defaul
     setModal(false);
   }
 
-  function handleChange(){  																		// 8. func toggle modal
+  function handleChange(){  							// 8. func toggle modal
     setModal(!modal);
   }
 
   return (
     <div>
       {/* <label htmlFor="my-modal" className="btn mb-4">Add new</label> */}
-      <button className="btn btn-error btn-sm mb-4" onClick={handleChange}>Delete</button> 											// 9. trigger func toggle
+      <button className="btn btn-error btn-sm mb-4" onClick={handleChange}>Delete</button> 			// 9. trigger func toggle
 
       {/* Put this part before </body> tag */}
       <input type="checkbox" checked={modal} onChange={handleChange} id="my-modal" className="modal-toggle" />  // 10. kondisi tergantung toggle > class=toggle(modal) > action CSS dari daisyUI 
       <div className="modal">
         <div className="modal-box">
-          <h3 className="font-bold text-lg">Are you sure to delete {product.title}?</h3>  											// 11. data di oper dari args > args di oper dari tombol delete  
+          <h3 className="font-bold text-lg">Are you sure to delete {product.title}?</h3>  			// 11. data di oper dari args > args di oper dari tombol delete  
 
             <div className="modal-action">
               <button type="button" className="btn" onClick={handleChange}>Close</button>
               {!isMutating ? (
                 <button type="button" className="btn btn-primary" onClick={()=>handleDelete(product.id)}>Delete</button> 	// 12. di oper dari DeleteProduct(props)(step:2) > ke step:6 
-              ) : (   																																													// 13. replace type=button untuk kedua tombol
+              ) : (   												// 13. replace type=button untuk kedua tombol
                 <button type="button" className="btn loading">Deleting...</button>
               )}
             </div>
@@ -454,7 +454,7 @@ type Product = {
     price: number;
   }
 
-export default function UpdateProduct(product: Product) { 								// 1. ubah nama ke UpdateProduct()
+export default function UpdateProduct(product: Product) { 			// 1. ubah nama ke UpdateProduct()
   const [title, setTitle] = useState(product.title);
   const [price, setPrice] = useState(product.price);
   const [modal, setModal] = useState(false);
@@ -468,7 +468,7 @@ export default function UpdateProduct(product: Product) { 								// 1. ubah nam
 
     e.preventDefault();
     await fetch(`http://localhost:5000/product/${product.id}`,{
-      method: 'PATCH', 																										// 2. ganti dengan PATCH 
+      method: 'PATCH', 								// 2. ganti dengan PATCH 
       headers: {
         'Content-Type': 'application/json'
       },
@@ -497,8 +497,8 @@ export default function UpdateProduct(product: Product) { 								// 1. ubah nam
       <input type="checkbox" checked={modal} onChange={handleChange} id="my-modal" className="modal-toggle" />
       <div className="modal">
         <div className="modal-box">
-          <h3 className="font-bold text-lg">Edit {product.title}</h3> 		// 3. ubah keterangan dan ambil data 
-          <form onSubmit={handleSubmit}>  																// 4. onSubmit=handlesubmit
+          <h3 className="font-bold text-lg">Edit {product.title}</h3> 				// 3. ubah keterangan dan ambil data 
+          <form onSubmit={handleSubmit}>  							// 4. onSubmit=handlesubmit
             <div className="form-control">
               <label className="label font-bold">Title</label>
               <input 
@@ -546,8 +546,8 @@ Link & Navigation
 - ada dua cara: 
 	import Link from "next/link";
 	<Link href=/dashboard>Ke About</Link> 	// lebih di sarankan dan ini mirip <a>, jangan lupa import {Link} from 'next/link';
-	router.push(/about); 										// ini pakai function. ini lebih tertujukan ke penggunaan redirect (routing secara trigger aplikasi) 
-																					// bukan dari klik trigger user > seperti contoh pada saat upload selesai langsung redirect
+	router.push(/about); 									// ini pakai function. ini lebih tertujukan ke penggunaan redirect (routing secara trigger aplikasi) 
+												// bukan dari klik trigger user > seperti contoh pada saat upload selesai langsung redirect
 	'use client' 
 	import { useRouter } from "next/navigation";
 	export default function page() {
@@ -579,23 +579,23 @@ Loading Skeleton
 - loading.tsx dan error.tsx ini bisa di buat di masing-masing komponen bersebelahan dengan komponen page.tsx nya jika kita ingin menampilkan error berbeda2
 - coba errorkan sebuah halaman page.tsx > dg cara akses somponent tanpa di import contoh: <BukanComponen /> > lalu akses url di browser menuju halaman error tersebut 
 
-'use client'									// 1. karena pakai useEfect
-import { useEffect } from "react"; 				// 2. useEfect untuk keperluan console.log kalau sudah tidak dipakai, hapus saja
+'use client'										// 1. karena pakai useEfect
+import { useEffect } from "react"; 							// 2. useEfect untuk keperluan console.log kalau sudah tidak dipakai, hapus saja
 
 export default function Error({error, reset}:{ error:Error, reset:() => void; }) { 	// 3. argument ada 2 {error, reset} 
   useEffect(()=>{console.log},[error]) 
   return (
     <div>
-        disini ada error... 					// 4. statik saja
+        disini ada error... 								// 4. statik saja
     </div>
   )
-}  		///
+}  											///
 
 fetching data	
 ------------------------------------------------------
-await fetch(url); 								// karena ini asynchronous harus di panggila dalam function async/await, sekarang masih beta maka masih bisa error
-await fetch(url,{next: {revalidation:10});		// (API akan di perbarui tiap 10 detik tapi tanpa cache) 
-await fetch(url,{next: {cache: 'no-store'}});	// API tidak di simpan sama sekali sehingga perubahan apapun langsung di update tiap request saja
+await fetch(url); 									// karena ini asynchronous harus di panggila dalam function async/await, sekarang masih beta maka masih bisa error
+await fetch(url,{next: {revalidation:10});						// (API akan di perbarui tiap 10 detik tapi tanpa cache) 
+await fetch(url,{next: {cache: 'no-store'}});						// API tidak di simpan sama sekali sehingga perubahan apapun langsung di update tiap request saja
 
 fetching data bisa di lakukan di client maupun server componen, semua bisa pakai fetch(), 
 query data di Server-Component dengan SWR atau third party library dan React-Query di sisi Client-Component
