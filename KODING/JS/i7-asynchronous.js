@@ -37,7 +37,7 @@ assinchronous callback
 /*
 kesimpulan 
 	- jika function di panggil dalam bracket sebuah function maka disebut synchronous (blocking)
-	- jika function di panggil dalam argument tanpa kurung() maka disebut asynchronous (biasanya pakai arrow)(non-blocking)
+	- jika function di panggil dalam argument tanpa invoke() maka disebut asynchronous (biasanya pakai arrow)(non-blocking)
 	- bisa async ditulis tidak dalam callback, pakai gaya synchronouse tapi tandai dengan async, callbacnya pakai await
 Synchronous: 
 	Program dalam JavaScript secara default akan dieksekusi baris per baris
