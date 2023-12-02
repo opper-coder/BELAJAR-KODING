@@ -198,6 +198,34 @@ Pendahuluan
 	- if(){}else{}						// else akan di eksekusi saat false pada if
 	- if(){}else if(){}else{}				// akan di eksekusi "true" pada if "duluan" true "belakangan" tidak di eksekusi
 								// begitulah jika else if bertingkat banyak
+- if dengan kondisi array
+	let kondisi = [
+	  true,
+	  true,
+	  true,
+	];
+	
+	if (kondisi.every((k) => k === true)) {
+	  console.log("Semua kondisi terpenuhi.");
+	} else {
+	  console.log("Minimal satu kondisi tidak terpenuhi.");
+	}
+
+- if dengan kondisi object
+	let kondisi = {
+	  kondisi1: true,
+	  kondisi2: true,
+	  kondisi3: true,
+	};
+	
+	const semuaKondisiTerpenuhi = Object.values(kondisi).every((nilai) => nilai === true);		// Cek apakah semua nilai properti dalam objek kondisi adalah true
+	
+	if (semuaKondisiTerpenuhi) {
+	  console.log("Semua kondisi terpenuhi.");
+	} else {
+	  console.log("Minimal satu kondisi tidak terpenuhi.");
+	}
+
 - Popup ---------------------------------------
 	- alert()							// popup dasar (semua popup ini hanya pengguna browser bukan n)
 	- prompt()							// input (hanya text jika number perlu di parse )dan dapat di bungkus dengan variabel
