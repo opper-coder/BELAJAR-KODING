@@ -14,7 +14,7 @@ ASYNCHRONOUS
 
 Callback
 -----------------------------------------------------
-adalah function yang argumenya berisi function lainya
+adalah function yang argumenya berisi function lainya tanpa invoke
 sbg pengantar memahami asynchronous callback
 assinchronous callback
 - sinchronus adalah exekusi perintah secara terurut linear, 
