@@ -28,11 +28,33 @@ TIPS MEMBUAT APP DASHBOARD
 --------------------------------------------------------
 - bagi semua service ke dalam alur alur nya
 - setiap alur memiliki beberapa page
-- breakdown fungsi page 
+- breakdown fungsi dalam page 
 	- data tunggal
 	- data jamak
 	- action/button
 	- modals
+- back endnya sering menggunakan
+	- getData({filter}, sumberdata) 
+	- getDatas({filter}, sumberdata) 
+	- getLastData({filter}, sumberdata)
+	- getConvertArr(data)
+	- getSumArr(data)
 - lakukan pada masing2 page 
 
 DATA BASE
+--------------------------------------------------------
+- susunan database pada primereact sudah ada silahkan kopi dan modifikasi
+- tinggal atur desain field yang kita punya
+- intinya bentuknya adalah array object : [{}], baik bersarang atau tidak
+- array adalah merepresentasikan baris pada tabel
+- object adalah: desain field pada tabel
+- kalau bersarang biasanya berbentuk array object lagi, atau salah satu dari keduanya juga bisa
+- intinya kalau bisa tiap service memiliki tabelnya sendiri, kalau terlalu dalam bersarang akan menyulitkan pengelolaan pemanggilan
+
+
+
+
+
+
+
+
