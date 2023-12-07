@@ -201,6 +201,18 @@ secara otomatis hasilnya adalah NaN*/
     getSeconds            
     getMilliseconds       
     getTimezoneOffset     
+    const epochTime = Date.now();        // return epochtime sekarang
+    const date = new Date(epochTime);    // convert ke tanggal
+    const year = date.getFullYear();     // ambil tanggal
+    const month = date.getMonth() + 1;   // Ingat bulan dimulai dari 0 (Januari) - tambahkan 1
+    const day = date.getDate();          // ambil hari
+    const hours = date.getHours();       // jam
+    const minutes = date.getMinutes();   // menit
+    const seconds = date.getSeconds();   // detik
+    // Konversi dari tanggal ke epoch time
+    const dateString = '2023-12-31T12:00:00Z';    // Format ISO string (UTC time)
+    const epochTime = Date.parse(dateString);     // Konversi string tanggal ke epoch time
+
  MATH
     max                   
     min                   
