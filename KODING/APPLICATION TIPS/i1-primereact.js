@@ -39,6 +39,11 @@ TIPS MEMBUAT APP DASHBOARD
 	- getLastData({filter}, sumberdata)
 	- getConvertArr(data)
 	- getSumArr(data)
+
+	kalau form 
+	- setData()
+	- setEdit()
+	- setDelete()
 - lakukan pada masing2 page 
 
 DATA BASE
