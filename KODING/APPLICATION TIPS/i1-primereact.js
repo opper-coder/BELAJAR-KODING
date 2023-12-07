@@ -46,7 +46,7 @@ TIPS MEMBUAT APP DASHBOARD
 	- setDelete()
 - lakukan pada masing2 page 
 
-DATA BASE
+DATABASE
 --------------------------------------------------------
 - susunan database pada primereact sudah ada silahkan kopi dan modifikasi
 - tinggal atur desain field yang kita punya
