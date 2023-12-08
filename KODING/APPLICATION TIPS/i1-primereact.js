@@ -7,7 +7,7 @@ TIPS PAKAI PRIMEREACT
 5. siap di gunakan tinggal menguasai sedikit tentang komponen
 LAYOUT
 --------------------------------------------------------
-1. fungsi utama
+1. tulis daftar fungsi utama
 2. layout 
 3. data tungal
 4. data majemuk
