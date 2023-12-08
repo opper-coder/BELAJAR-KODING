@@ -5,6 +5,7 @@ TIPS PAKAI PRIMEREACT
 3. bikin masing2 service mandiri tanpa ada keterikatan dengan lainya sebisa mungkin
 4. gunakan layout dan thema dari sakai
 5. siap di gunakan tinggal menguasai sedikit tentang komponen
+
 LAYOUT
 --------------------------------------------------------
 1. tulis daftar fungsi utama
@@ -13,6 +14,7 @@ LAYOUT
 4. data majemuk
 5. action/button
 6. modals
+
 TABEL
 --------------------------------------------------------
 tabel pada komponen ada dua type
