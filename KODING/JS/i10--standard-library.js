@@ -187,8 +187,10 @@ secara otomatis hasilnya adalah NaN*/
     stringify             
     parse                 
  DATE
-    new Date              
-    new Date(year, month, date)          
+    const tanggal = new Date()         // praktek umumnya, tinggal console.log()
+    new Date()                         // kalau kosong, result sekarang              
+    new Date('2022-12-24')             // result data yang kita tentukan
+    new Date(year, month, date)        // 
     new Date(year, month, date, hour, minute, second, millis)          
     new Date(timestamp)   
     now
