@@ -18,9 +18,35 @@ LAYOUT
 TABEL
 --------------------------------------------------------
 tabel pada komponen ada dua type
-1. tabel yang data nya kita sediakan sorting dan filternya
-2. tabel yang menyediakan sorting dan filter 
-
+1. ada 2 jenis tabel di primereact: sederhana dan advanced  
+	a. sederhana: menampilkan data dari array object: data:[{field:"ada}]
+	b. kompleks: tersedia constrain, filter, global filter, body template  
+2. tips menggunakan langsung yang advance
+	- siapkan halaman yang memuat tabel
+	- copas tabel
+	- import database yang di sediakan
+3. modifikasi:
+	- tampilkan filter global atau tidak(hapus header atau tidak)
+	- sesuaikan body templatenya yang di gunakan atau tidak
+	- susun field sesuai dengan keperluan kita dengan meminjam field yang ada
+	- gunakan objct db yang di sediakan untuk mewadahi db kita
+	- atau bikin db yang di sesuaikan dengan db bawaan lalu arahkan import ke db baru
+	- lalu ubah satu persatu field yang tidak pakai body template
+	- lalu ubah field yang meiliki body template
+4. body template:
+	- biasanya memiliki satu atau lebih body template
+	- telusuri referensi db nya satu persatu
+	- perhatikan cara bangun body template, uji manual satu persatu
+	- curency:
+		- arahkan field ke data angka
+		- ganti en-EN = id-ID, USD = IDR
+		- pada filter constrain masukkan filter currency
+	- date:
+		- arahkan field ke data tanggal, tiru cara nulis format di db 
+		- ganti en-EN = id-ID, USD = IDR
+		- pada filter constrain masukkan filter currency
+		- sesuaikan referensi data sesuai field pada body template
+	- dst yang lainya gampang
 BACKEND
 --------------------------------------------------------
 kita tinggal membuatkan bebrapa fungsi dasar
