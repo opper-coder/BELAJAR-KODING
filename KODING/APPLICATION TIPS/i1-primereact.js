@@ -47,6 +47,8 @@ tabel pada komponen ada dua type
 		- pada filter constrain masukkan filter currency
 		- sesuaikan referensi data sesuai field pada body template
 	- dst yang lainya gampang
+5. tambah fitur lain seperti context, tooltips, event dll
+
 BACKEND
 --------------------------------------------------------
 kita tinggal membuatkan bebrapa fungsi dasar
