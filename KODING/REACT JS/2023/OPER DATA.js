@@ -8,6 +8,16 @@ sumber youtube:
 - ubah state tunggal                             -> langsung ubah
 - ubah state berkali2                            -> harus pakai callback
 
+lebih ringkas
+-----------------------------------------------------
+KIRIM DATA
+    <Komponenku data={nama: "a", alamat: "b"}/>                // "kirim" data via props: nilai, variabel, array object
+MINTA DATA
+    const [ada, setAda] = useState()                           // siap kan wadah data yang diminta
+    <Komponenku data={(d)=>setAda(d)}/>                        // minta data via props callback, tempatkan di wadah
+    ---
+    props.data("kasih data")                                   // di komponen bersangkutan kasih data di jalankan langsung diluar return
+                                                               // atau jalankan di useEffect();
 Ringkasan
 -----------------------------------------------------
 OPER DATA PARENT KE CHILD
