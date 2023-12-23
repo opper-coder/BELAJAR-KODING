@@ -64,6 +64,32 @@ Langkah ini tetap sama seperti yang sudah dijelaskan sebelumnya dalam contoh seb
 Pastikan untuk menyesuaikan alamat IP, nama Simple Queue, dan kebutuhan kecepatan sesuai dengan jaringan Anda. Dengan melakukan ini, aturan kecepatan akan diterapkan pada pengguna hotspot berdasarkan profil yang mereka gunakan.
 
 
+--------------------------------------------------------------
+BIKIN SIMPLE QUEUE KECEPATAN TINGGI 2MBPS
+---  
+/queue simple
+add name=fast-limit target=192.168.50.1/24 max-limit=2M/2M burst-limit=3M/3M burst-threshold=1.5M/1.5M burst-time=10s/10s 
+
+UBAH KECEPATAN KE 1MBPS
+---
+/system script
+add name=change-speed-policy policy=ftp,reboot,read,write,policy,test,winbox,password,sniff,sensitive,api source="/queue simple set [find name=fast-limit] max-limit=1M/1M"
+
+EKSEKUSI DENGAN di 3 menit dari startup
+---
+/system scheduler
+add interval=3m name=change-speed-scheduler on-event=change-speed-policy start-time=startup
+--------------------------------------------------------------
+TEREAPKAN PADA USER PROFILE HOTSPOT
+script diatas tinggal tambahkan ini di profile
+
+/ip hotspot user profile
+set [find name=default] rate-limit=fast-limit
 
 
 
+
+
+
+
+  
