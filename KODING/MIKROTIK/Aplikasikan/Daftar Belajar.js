@@ -47,7 +47,10 @@ KOMBINASI
   - memiliki datasheet informasi lengkap terhadap perangkat bersangkutan
   - 
 - kekurangan:
-  - 
+  - harus pakai komputer
+  - jika VPN terganggu maka akan terlihat seperti putus pada perangkat bersangkutan
+  - membayar hosting
+  - memerlukan beberapa VPN cadangan, baik untuk dedude ataupun untuk VPN perangkat
   - 
 
 
