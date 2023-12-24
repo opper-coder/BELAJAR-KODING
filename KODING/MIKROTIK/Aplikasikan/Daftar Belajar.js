@@ -57,6 +57,8 @@ NETWHATCH
   - selanjutnya di periksa di the dude untuk informasi lebih lanjut
   - 
 --------------------------------------------------
+PRTG
+  ada lagi PRTG aplikasi monitoring mikrotik alternative, cek kalau di perlukan
 
 
 
