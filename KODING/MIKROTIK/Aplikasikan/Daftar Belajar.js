@@ -8,6 +8,7 @@ standard
 5. user profil 1,2,3,4,5 mbps
 6. restart scheduling mikrotik, OLT, aksespoint 3 hari sekali 
 7. hapus sampah voucher berkala 2 bulan terakhir terpakai otomatis dan sudah ada pencairan
+8. the dude
 
 --------------------------------------------------
 monitoring
