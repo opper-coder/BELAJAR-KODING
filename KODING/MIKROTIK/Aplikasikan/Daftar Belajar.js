@@ -21,3 +21,13 @@ monitoring
 - deteksi mati titik (lokasi)
 - deteksi putus kabel (lokasi)
 - 
+--------------------------------------------------
+THE DUDE
+- the dude server CHR
+- monitoring semua mikrotik
+- monitoring semua OLT
+- monitoring grup wilayah pada aksespoint
+- memiliki 2 CHR cadangan sebagai cadangan monitoring jika terjadi gangguan
+- interval mikrotik, OLT  30 detik sekali
+- interval aksespoint 1 menit sekali
+- monitoring kelambatan pada jaringan akses point bukan hanya mati lampu mati jaringan
