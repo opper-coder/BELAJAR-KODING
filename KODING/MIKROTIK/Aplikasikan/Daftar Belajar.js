@@ -54,7 +54,7 @@ NETWHATCH
   - tidak memerlukan vpn
   - langsung dikirim via telegram HP
   - akurat dan direct untuk informasi pertama
-  - selanjutnya di periksa di the dude
+  - selanjutnya di periksa di the dude untuk informasi lebih lanjut
   - 
 --------------------------------------------------
 
