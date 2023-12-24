@@ -31,3 +31,25 @@ THE DUDE
 - interval mikrotik, OLT  30 detik sekali
 - interval aksespoint 1 menit sekali
 - monitoring kelambatan pada jaringan akses point bukan hanya mati lampu mati jaringan
+--------------------------------------------------
+NETWATCH
+- monitoring akses point menggunakan telegram
+- melihat mati atau lambat sebuah akses point lokal
+
+--------------------------------------------------
+KOMBINASI
+- the dude memiliki cara monitoring lebih lengkap dan banyak di server cloud CHR
+- kelebihan:
+  - bisa mementau secara masal dan grup monitoring
+  - bisa di hidupkan saat di gunakan saja
+  - memiliki i8nformasi yang lengkap
+  - semua perangkat yang memiliki IP bisa di monitoring bahkan IoT selain mikrotik
+  - memiliki datasheet informasi lengkap terhadap perangkat bersangkutan
+  - 
+- kekurangan:
+  - 
+  - 
+
+
+
+  
