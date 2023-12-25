@@ -3,7 +3,7 @@ Keperluan Aplikasi
 - alur login (activasi internet)
 - alur refresh
 - alur saldo
-- alur gratis wa chat (tidak, call, VC )
+- alur gratis wa chat (tidak, call, VC)
 ==================================================
 daftar yang harus di pelajari untuk standard RT/RW
 --------------------------------------------------
