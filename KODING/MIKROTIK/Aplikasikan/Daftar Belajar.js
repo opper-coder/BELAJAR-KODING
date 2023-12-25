@@ -1,3 +1,10 @@
+==================================================
+Keperluan Aplikasi 
+- alur login (activasi internet)
+- alur refresh
+- alur saldo
+- alur gratis wa chat (tidak, call, VC )
+==================================================
 daftar yang harus di pelajari untuk standard RT/RW
 --------------------------------------------------
 standard 
@@ -9,7 +16,8 @@ standard
 6. restart scheduling mikrotik, OLT, aksespoint 3 hari sekali 
 7. hapus sampah voucher berkala 2 bulan terakhir terpakai otomatis dan sudah ada pencairan
 8. umur cookie 24 jam dalam user profile (kalau sudah punya sistem login sendiri maka sesuaikan dengan umur voucher aja)
-8. the dude
+9. bikin voucher di boxits. lihat pembatasan umur MAC COOKIE jg bisa di dteksi dari appnya
+10. the dude
 --------------------------------------------------
 monitoring
 - speedtest mikrotik jarak jauh
