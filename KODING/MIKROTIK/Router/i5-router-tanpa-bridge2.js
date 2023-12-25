@@ -1,6 +1,6 @@
-bilhanet etting Router ZTE F660 Menjadi Acces Point Hotspot 
+bilhanet etting Router ZTE F609 Menjadi Acces Point Hotspot di playlist 100
 -------------------------------------------------------
-bilhanet etting Router ZTE F660 Menjadi Acces Point Hotspot 
+bilhanet etting Router ZTE F609 Menjadi Acces Point Hotspot 
 ini hanya prinsip saja
 
 - masuk administrator
