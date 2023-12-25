@@ -14,7 +14,7 @@ ini hanya prinsip saja
 --------------------------------------------------------
 catatan router ada mode type bridge silahkan pilih bridge dan juga port binding sesuaikan dengan connectiuon name yng kita buat ya biasanya otomatis sih 
 	- type: ada mode bridge silahkan  
-	tab port binding silahkan pilih connection name sepeerti yang kita buat barusan
+	tab port binding silahkan pilih connection name sepeerti yang kita buat barusan, dan pilih semua ether dan ssid yg di pakai
 	- untuk urusan WLAN LAN dll bisanya sama saja kayaknya kecuali urusan DHCP server 
 --------------------------------------------------------
 - TAB WLAN
