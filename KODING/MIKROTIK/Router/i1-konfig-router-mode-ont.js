@@ -15,7 +15,7 @@ Pengetahuan dasar:
 daftar isi:
 	- 
 ------------------------------------------------------------------------------------------------------
-cara konfig totolink cp300 akses point voucher
+cara konfig totolink cp300 akses point voucher (bilhanet playlist 66)
 
 operation mode
 	AP next
@@ -31,10 +31,10 @@ wireless
 		band: 2.4 B/G/N 	// agar dapat di akses di semua jenis HP
 		channel width: 20	// 20 agar meminimalisir interferensi
 		channel interval: pilih 1-10 // ada hp yng tidak bisa 11, 12. kalau bisa jangan auto
-		beacon: 200 // kalau jelek performa kembalikan ke 100
-		type : long priamble // sesuai router lama
-		protection: disabled
-		tx beamforming: enable
+		beacon: 200 		// kalau jelek performa kembalikan ke 100 (di keterangan 0-1024, makin besar makin bagus)
+		type : long priamble 	// sesuai router lama
+		protection: disabled 	// sesuai dg pdf datasheetnya
+		tx beamforming: enable 
 		rf output:100%
 	wps setting
 		wps: disable
