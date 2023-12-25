@@ -64,7 +64,16 @@ sniffer
 --------------------------------------------------
 BANDWIDTH TEST
   jangan lupa bisa speedtest di server secara remote
-
+--------------------------------------------------
+SETTING AKSESPOINT
+- belajar mode voucher pada aksespoint dengan topology OLT
+- cari cara agar kita bisa remote AP tersebut
+- monitoring on/off AP
+- monitoring kecepatan AP
+- speed test pada mikrotik
+- bikin monitoring pada AP dengan netwatch dan telegram yang berada di net local
+- bikin monitoring pada AP pada the dude cloud
+- bisa pakai zabbix atau observium atau lainya cari perbedaanya dulu
 
 
 
