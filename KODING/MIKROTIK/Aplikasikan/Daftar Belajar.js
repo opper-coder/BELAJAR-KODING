@@ -71,7 +71,7 @@ SETTING AKSESPOINT
 - monitoring on/off AP
 - monitoring kecepatan AP
 - speed test pada mikrotik
-- bikin monitoring pada AP dengan netwatch dan telegram yang berada di net local
+- bikin monitoring pada AP dengan netwatch, traffic monitor, dll dan telegram yang berada di net local
 - bikin monitoring pada AP pada the dude cloud
 - bisa pakai zabbix atau observium atau lainya cari perbedaanya dulu
 
