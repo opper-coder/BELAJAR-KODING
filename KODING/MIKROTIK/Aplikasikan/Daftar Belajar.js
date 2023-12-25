@@ -61,7 +61,9 @@ PRTG
   ada lagi PRTG aplikasi monitoring mikrotik alternative, cek kalau di perlukan
 sniffer
   ada lagi sniffer monitoring bandwidth silahkan googling
-
+--------------------------------------------------
+BANDWIDTH TEST
+  jangan lupa bisa speedtest di server secara remote
 
 
 
