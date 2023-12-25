@@ -11,6 +11,12 @@ ini hanya prinsip saja
 	- service list: internet
 	- vlan mode: TRANSPARENT
 	- create
+--------------------------------------------------------
+catatan router ada mode type bridge silahkan pilih bridge dan juga port binding sesuaikan dengan connectiuon name yng kita buat ya biasanya otomatis sih 
+	- type: ada mode bridge silahkan  
+	tab port binding silahkan pilih connection name sepeerti yang kita buat barusan
+	- untuk urusan WLAN LAN dll bisanya sama saja kayaknya kecuali urusan DHCP server 
+--------------------------------------------------------
 - TAB WLAN
 	- seperti biasa kita tidak isi
 	- jangan lupa ubah nama dan security openSystem 
