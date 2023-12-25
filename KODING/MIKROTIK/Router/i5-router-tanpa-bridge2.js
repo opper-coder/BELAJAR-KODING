@@ -23,13 +23,14 @@ catatan router ada mode type bridge silahkan pilih bridge dan juga port binding 
 - TAB LAN
 	- LAN IP: ubah satu segmen dengan gateway mikrotik
 	- disconnect: konnect kembali dg atur ip laptop anda 
-	- kalau g bisa restyart router dan login dengan ip baru. kalau https hilangkan s nya
+	- kalau g bisa restart router dan login dengan ip baru. kalau https hilangkan s nya
 	tab DHCP
 	- disable DHCP server (supaya dapat IP dari mikrotik)
 	- assign ispDNS: centang (supaya dapat DNS dari mikrotik)
 	- simpan/save, tapi biasanya tidak mau simpan, cara mengatasinya dibawah ini
 	- atur DHCP start dan end satu segmen dengan LAN IP di atas, meskipun di disable DHCP nya
 	- default gateway isikan sesuai gatewai segmen di mikrotik simpan
+	- setelah diganti ip satu segmen biasanya bisa di simpan
 	tab DHCP portlist
 	- centang semua port
 	tab DHCP mode
