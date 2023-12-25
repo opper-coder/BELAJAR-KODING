@@ -9,7 +9,11 @@ ini hanya prinsip saja
 	- type: DHCP (pilih saja DHCP biar gampang, karena nanti akan di disablekan di LAN nya)
 	- conn name: create WAN conn
 	- service list: internet
-	- vlan mode: TRANSPARENT
+	- link type: IP (jika ada)
+	- type: DHCP (jika ada lagi)
+	- ip : ipv4
+	- natL: tercntang tidak apa2 (jika ada)
+	- vlan mode: TRANSPARENT (jika ada)
 	- create
 --------------------------------------------------------
 catatan router ada mode type bridge silahkan pilih bridge dan juga port binding sesuaikan dengan connectiuon name yng kita buat ya biasanya otomatis sih 
