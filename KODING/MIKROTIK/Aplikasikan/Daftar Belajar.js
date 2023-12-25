@@ -57,7 +57,7 @@ THE DUDE
   - jika VPN terganggu maka akan terlihat seperti putus pada perangkat bersangkutan
   - membayar hosting
   - memerlukan beberapa VPN cadangan, baik untuk dedude ataupun untuk VPN perangkat
-NETWHATCH
+NETHATCH
 - kelebihan
   - langsung bisa di jalankan di mikrotik bersangkutan
   - tidak memerlukan vpn
