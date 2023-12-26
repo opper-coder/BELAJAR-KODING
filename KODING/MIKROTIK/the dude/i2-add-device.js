@@ -18,12 +18,12 @@ Menambah perangkat
 menambah link type simple
 	- klik kanan di worksheet kosong > add link > pilih perangkat1 koneksikan ke parangkat2 (silahkan pilih saja) > finish
 -----------------------------------------------------------
-menambah link info type routerOS
+menambah link type routerOS
 	- pada box dialog di atas tadi kita isi satu persatu
 			device: IP bersangkutan
-			mastering type: simple, snmp, routerOS (pilih routerOS)
+			mastering type: simple, SNMP, routerOS (pilih routerOS)
 				- simple hanya bisa on off saja, 
-				- snmp(simple network management protocol) mode informasi general hampir semua perangkat menyediakan ini
+				- SNMP(simple network management protocol) mode informasi general hampir semua perangkat menyediakan protocol ini
 				- rOS adalah mode monitoring yg di sediakan mikrotik 
 			interface: pilih port yang di monitoring
 			Speed: adalah rentang angka yang kita kasih agar saat ukuran mentok di angka itu maka koneksi berwarna merah
@@ -31,7 +31,7 @@ menambah link info type routerOS
 			type: ini hanya visualisasi line saja 
 	- klik finish > maka terlihat rx tx
 -----------------------------------------------------------
-menambah link info type SNMP
+menambah link type SNMP
 	- sebenarnya hasilnya sama saja tapi informasi SNMP lebih cepat dari routerOS
 	- untuk monitoring mikrotik dengan type snmp maka router yang dimonitoring harus aktifkan dulu snmp nya
 	- winbox mikrotik yang di monitoring > IP > SNMP > enable > apply ok
