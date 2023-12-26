@@ -42,7 +42,7 @@ Installation
 		- sama dengan saat upgrade downgrade ROS yaitu
 		- copas file dude-7.0.4.npk nya di : :/root file manager di winbox router bersangkutan
 		- restart
-		- ada menu tambahan di sidebar: DUDE > icon merah
+		- ada menu tambahan di sidebar: DUDE > icon merah atau system > package > pastikan ada dude dan berwarna kuning
 		- berikutnya install dude client.exe di windows > next2 finish
 		- tips drag n drop file firmware tadi langsung ke jendela kosong winbox, maka kita langsung di arahkan ke file manager winbox
 	- jalankan 
