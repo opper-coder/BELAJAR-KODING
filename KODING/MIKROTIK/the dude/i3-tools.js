@@ -26,7 +26,10 @@ nah pada kesempatan kali ini kita akan memperlakukan pada tiap node lebih advanc
 			- jika di klik dia akan scan snmp nya
 			- jika snmpwalk di pilih dan perangkat belum mengaktifkan maka kotak info kosong
 			- jika di aktifkan maka info snmp berisi tree folder informasi snmp
-			- oya kalau snmp di aktifkan maka pada node informasi resource terlihat    
+			- oya kalau snmp di aktifkan maka pada node informasi resource terlihat  
+			- jika sudah terlihat maka kita dikasih value2 OID yang belum tentu bisa di baca karena masih berupa kode2
+				- jalan keluarnya maka kita harus download MIB dari vendornya
+				- MIB adalah kamus bahasa OID
 	- terminal 
 			(terminal remote lah gitu) tidak jauh berbeda dengan telnet yaitu kita bisa mengakses terminal di perangkat termonitoring
 			dan melakukan konfigurasi apa saja di terminal ini
