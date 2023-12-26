@@ -1,19 +1,18 @@
 -----------------------------------------------------------
 Introduction
-
+-----------------------------------------------------------
 freeware, 
 fungsi monitoring jaringan, 
-	- on/off				: mesin mati atau hidup   
-	- monitoring service 	: ssh, telnet, www, winbox, ssl, dll (ini hidup atau mati semua atau sebagian)
-	- graffic  				: laporan ada historycal sesuai waktu
+	- on/off			: mesin mati atau hidup   
+	- monitoring service 		: ssh, telnet, www, winbox, ssl, dll (ini hidup atau mati semua atau sebagian)
+	- graffic  			: laporan ada historycal sesuai waktu
 	- bandwidth 			: rx tx dari node satu ke node lainya
-	- resource 				: CPU RAM DISK 
+	- resource 			: CPU RAM DISK 
 	- notifikasi 			: beep, sound, voice, popup, email, sms, telegram, warna pada the dude dll banyak
-	- diagram 				: seperti denah skema secara lokasi, dll
+	- diagram 			: seperti denah skema secara lokasi, dll
 software
-	- server 				: di mikrotik router servernya atau CHR, (saftware ini akan melakukan monitoring realtime 24 jam)
-	- client 				: di install di laptop windows atau linux wine (software ini hanya membaca hasilnya disini)
-
+	- server 			: di mikrotik router servernya atau CHR, (saftware ini akan melakukan monitoring realtime 24 jam)
+	- client 			: di install di laptop windows atau linux wine (software ini hanya membaca hasilnya disini)
 -----------------------------------------------------------
 Installation
 	- hardware arsiktur support
@@ -60,3 +59,6 @@ Installation
 			username: sama dg di winbox
 			pass: sama dg di winbox (sesuai dengan user grup di users ROS)
 			klik connect
+		- homepage
+		akan membuka halaman homepage, ada sidebar dan lembar kerja
+-----------------------------------------------------------
