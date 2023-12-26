@@ -59,7 +59,7 @@ Installation
 		- buka the dude client di windows/linux:
 			server: ip mikrotik / atau mungkin ddns
 			mode: secure
-			username: sama dg di winbox mikrotik server ini
+			username: sama dg di winbox "mikrotik dude server" ini
 			pass: sama dg di winbox (sesuai dengan user grup di users ROS)
 			klik connect 
 		- homepage
