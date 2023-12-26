@@ -23,7 +23,8 @@ nah pada kesempatan kali ini kita akan memperlakukan pada tiap node lebih advanc
 			  tidak perlu di winbox melainkan dari the dude saja tracerootnya 
 	- SNMPwalk
 			yaitu apakah snmp sudah aktif atau belum > 
-			- jika snmpalk di pilih dan perqangkat belum mengaktifkan maka kotak info kosong
+			- jika di klik dia akan scan snmp nya
+			- jika snmpwalk di pilih dan perangkat belum mengaktifkan maka kotak info kosong
 			- jika di aktifkan maka info snmp berisi tree folder informasi snmp
 			- oya kalau snmp di aktifkan maka pada node informasi resource terlihat    
 	- terminal 
