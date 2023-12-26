@@ -1,6 +1,7 @@
 -----------------------------------------------------------
 KONDISIONAL INFORMASI
 	pada node yang sudah kita buat kita bisa ubah ubah informasinya
+	seperti warna dan widget CPU MEM jumlah pengguna dll  
 	pilih node > klik kanan > setting >
 		tab general
 			Name: kita ubah menjadi nama orang misalnya
