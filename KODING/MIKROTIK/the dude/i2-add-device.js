@@ -42,7 +42,7 @@ menambah link type SNMP
 menambah sub map
 	- semacam grouping, untuk grup mikrotik, server, lokasi, router, perlengkapan dll 
 	- klik kanan di area kosong add submap > newmap: true > name: nama finish
-		- ada lingkaran dblklk masuk > dblclk lagi keluar > 
+		- ada lingkaran, toggle: dblklk masuk > dblclk lagi keluar > 
 		- di dalamnya bisa kita add device lagi seperti sebelumnya 
 		- jika di hover maka hanya ngintip saja secara live tidak benar2 masuk   
 -----------------------------------------------------------
