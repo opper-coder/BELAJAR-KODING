@@ -60,7 +60,7 @@ Installation
 			server: ip mikrotik / atau mungkin ddns
 			mode: secure
 			username: sama dg di winbox "mikrotik dude server" ini
-			pass: sama dg di winbox (sesuai dengan user grup di users ROS)
+			pass: sama dg di winbox (sesuai dengan user grup previlleges di users ROS)
 			klik connect 
 		- homepage
 		akan membuka halaman homepage, ada sidebar dan lembar kerja
