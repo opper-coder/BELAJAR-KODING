@@ -62,5 +62,6 @@ APPEARANCEs
 					- the dude client
 						klik kanan appearance pada device > klik insert OID > [oid("paste oid disini")] > buang titik paling depan atau isi nol didepanya 
 						terus di depan fungsi tulis field nya seperti ini Jumlah client: [oid("")] > apply ok
+					- OID bisa juga kita dapatkan dengan download MIB dari vendornya > MIB adalah semacam kamus SNMP perangkat tersebut
 -----------------------------------------------------------
 						
