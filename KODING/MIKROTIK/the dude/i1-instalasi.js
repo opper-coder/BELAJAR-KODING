@@ -44,6 +44,7 @@ Installation
 		- restart
 		- ada menu tambahan di sidebar: DUDE > icon merah
 		- berikutnya install dude client.exe di windows > next2 finish
+		- tips drag n drop file firmware tadi langsung ke jendela kosong winbox, maka kita langsung di arahkan ke file manager winbox
 	- jalankan 
 		- di winbox: sidebar DUDE > settings > enable > apply OK 
 		- otoritas:
