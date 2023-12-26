@@ -15,6 +15,8 @@ software
 	- client 			: di install di laptop windows atau linux wine (software ini hanya membaca hasilnya disini)
 -----------------------------------------------------------
 Installation
+	- ceritanya kita akan membuat sebuah perangkat routerOS mikrotik untuk di jadikan server the dude
+	  yang akan di gunakan untuk memonitoring perangkat lain baik routerOS atau non mikrotik 
 	- hardware arsiktur support
 		- TILE
 		- CCR
@@ -57,9 +59,9 @@ Installation
 		- buka the dude client di windows/linux:
 			server: ip mikrotik / atau mungkin ddns
 			mode: secure
-			username: sama dg di winbox
+			username: sama dg di winbox mikrotik server ini
 			pass: sama dg di winbox (sesuai dengan user grup di users ROS)
-			klik connect
+			klik connect 
 		- homepage
 		akan membuka halaman homepage, ada sidebar dan lembar kerja
 -----------------------------------------------------------
