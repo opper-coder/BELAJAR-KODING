@@ -40,4 +40,4 @@ server profile
       HTTP PAP: true
       MAC cookie: false (kalau mau cek mac saat login ya hidupkan tapi kalau pakai mac acak bisa merepotkan)
       cookie: true (ini agar bisa login dengan menyimpan usernamea password saat login)
-      
+-----------------------------------------------------------------      
