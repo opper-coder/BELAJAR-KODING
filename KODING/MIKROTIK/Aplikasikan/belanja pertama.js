@@ -13,5 +13,5 @@
 - voltase meter        : 2 buah 
 - watt meter digital   : 1 buah
 - bluetooth dongle     : 1 bh
-
+- hanger cable fo global: WA 085290908383 
 
