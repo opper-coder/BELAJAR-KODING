@@ -27,9 +27,12 @@ Persiapan
 2. install the dude di CHR
 3. aktifkan the dude
 4. buatkan VPN dari CHR untuk perangkat2 yang di monitoring
+5. sambungkan VPN ke masing2 perangkat
+6. buka dude client 
+7. masukkan perangkat untuk di monitoring
 
 -----------------------------------------------------------
-buatkan koneksi
+buatkan koneksi VPN DI CHR untuk Perangkat 
 	- VPN untuk CCR
 		sidebar winbox > ppp > klik tombol l2tp server > 
 			tab interface
