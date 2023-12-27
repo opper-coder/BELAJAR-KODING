@@ -57,7 +57,7 @@ THE DUDE
   - jika VPN terganggu maka akan terlihat seperti putus pada perangkat bersangkutan
   - membayar hosting
   - memerlukan beberapa VPN cadangan, baik untuk dedude ataupun untuk VPN perangkat
-NETHATCH
+NETWATCH
 - kelebihan
   - langsung bisa di jalankan di mikrotik bersangkutan
   - tidak memerlukan vpn
@@ -83,7 +83,10 @@ SETTING AKSESPOINT
 - bikin monitoring pada AP dengan netwatch, traffic monitor, dll dan telegram yang berada di net local
 - bikin monitoring pada AP pada the dude cloud
 - bisa pakai zabbix atau observium atau lainya cari perbedaanya dulu
-
+--------------------------------------------------
+pertimbangkan 
+USERMAN ON CLOUD
+jadi voucher jadi 1 di CHR bisa akses dimanapun wifi mikrotik anggota
 
 
 
