@@ -4,6 +4,7 @@
 - ODP           : 8 x 150rb
 - kabel         : 6 km x 800
 - router        : 40 x 300rb
+- minipc        : 3jt (untuk monitoring) 
 
 - tangga pendek 4m     : 3jt
 - teleskopik pole 4m 2 bh  : 400rb
@@ -11,4 +12,6 @@
 - OPM                  : 200rb
 - voltase meter        : 2 buah 
 - watt meter digital   : 1 buah
-- 
+- bluetooth dongle     : 
+
+
