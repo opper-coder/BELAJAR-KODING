@@ -12,6 +12,6 @@
 - OPM                  : 200rb
 - voltase meter        : 2 buah 
 - watt meter digital   : 1 buah
-- bluetooth dongle     : 
+- bluetooth dongle     : 1 bh
 
 
