@@ -1,7 +1,5 @@
 -----------------------------------------------------------------
 BIKIN HOTSPOT SERVICE
-
-
 -----------------------------------------------------------------
 user profile
   tab profile > add
@@ -22,7 +20,6 @@ user profile
           1m/2m: u/d
           // 1m/2m 10m/10m 1m/1m 40 : u/d limitAt up/dn time
     adresslist: none (ini di gunakan untuk pengelompokan IP tertentu yang menggunakan, ini terkait dengan filter)
-    
 -----------------------------------------------------------------
 user
   name: 
