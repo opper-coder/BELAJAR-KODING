@@ -32,6 +32,12 @@ user
     uptime: total waktu  (ini batasan utama pada voucher)
     byte: total bandwidth data (ini batasan jika berbnasis data)
 -----------------------------------------------------------------
+user loghin by mac
+  pada server profile > hsprof1 > 
+    login by mac:true
+    mac auth mode: mac as name pass (jika mac itu di samakan dengan name dan password, tapi jika password tetap aktif maka bisa di pilih)
+    untuk pelanggan auto login tanpa 
+-----------------------------------------------------------------
 server profile
   dblclk
     login by:
