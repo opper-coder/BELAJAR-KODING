@@ -1,24 +1,22 @@
-cari di google: freeddns > pilih di bawah ini 
-https://tunnel.hostddns.us/system/list_vpn 
+cari di google: freeddns > akses yang ini: https://tunnel.hostddns.us/system/list_vpn 
 
-
-vpn ddns reconnect auto
+AUTO RECONNECT VPN DDNS
 ------------------------------------------------- 
 - :tools > netwatch > add 
 	tab HOST
 	- host: [IP VPN]
 	- interval: 30-60 detik
 	- timeout: 1000 ms
-	tab UP
-	- <:log warning "sudah up kembali">
-	tab DOWN
-	- </interface disable [nama INTERFACE]>
-	- </interface enable [nama INTERFACE]>
+	tab UP script:
+		:log warning "sudah up kembali"
+	tab DOWN script:
+		/interface disable [nama INTERFACE] (misal:  panda@mytunnel.id)
+		/interface enable [nama INTERFACE] (misal:  panda@mytunnel.id)
 - selesai
 - tinggal test
-	- interface > pilih ddns nya > disable > 
+	- interface > pilih ddns nya > coba disable > 
 	- tunggu 30-60 detik, jika aktif sendiri berarti berhasil
-- cara lihat [IP VPN]
+- cara lihat [IP VPN] di DDNS dashboard
 	- buka dashboard ddns > VPN REMOTE > VPN LIST > https://tunnel.hostddns.us/system/list_vpn 
 		- pilih ddns bersangkutan (ddnsmon)
 		- klik manage > IP VPN (bukan IP server ya)
