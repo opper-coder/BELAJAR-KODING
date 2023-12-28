@@ -35,8 +35,10 @@ user
 user loghin by mac
   pada server profile > hsprof1 > 
     login by mac:true
-    mac auth mode: mac as name pass (jika mac itu di samakan dengan name dan password, tapi jika password tetap aktif maka bisa di pilih)
-    untuk pelanggan auto login tanpa 
+    mac auth mode: mac as name pass 
+      - jika mac itu di samakan dengan name dan password, tapi jika password tetap aktif maka bisa di pilih
+      - untuk pelanggan auto login tanpa 
+      - ini mungkin yang di gunakan untuk login nantinya tanpa username password
 -----------------------------------------------------------------
 server profile
   dblclk
