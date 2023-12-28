@@ -11,7 +11,7 @@ DASHBOARD
 ----------------------------------------------------------------
 NEED
 
-- speedtest ISP terminal (ada silahkan kumpulkan)
+- speedtest ISP terminal (bisa dengan testfile, seperti di tembolo.com, atau speedtest dari CHR ke local)
 - speedtest perangkat (bandwithtest di dude)
 - monitoring client (on/off)
 - ip perangkat diluar hotspot dan di binding
