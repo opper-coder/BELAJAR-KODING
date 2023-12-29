@@ -15,8 +15,15 @@ CHR
 -----------------------------------------------------------------------
 config dude CHR
   
-
-
+=====================
+  CATATAN
+  - konfig dude dan simulasikan 
+  - konfig vpn ke perangkat dan simulasikan
+  - konfig chr dengan mikrotik local
+  - local seakan cloud simulasikan
+  - nanti tinggal instalasi dan beres saat di eksekusi
+  - simulasikan juga login page kalau bisa tapi
+=====================
 -----------------------------------------------------------------------
 config bandwidth test CHR
 
