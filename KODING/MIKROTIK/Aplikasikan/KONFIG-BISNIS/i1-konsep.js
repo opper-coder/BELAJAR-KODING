@@ -10,6 +10,7 @@ LOCAL SERVER
 - bikin lingkungan loginpage 
 - bikin bandwidth test local  
 - bikin netwatch monitoring telegram
+- bikin Hotspot IP binding untuk perangkat termonitoring mas danang di bookmark samping ada
 
 BOXITS:
 - boxits, Db, Rest, Auth, Accounting, Hosting
