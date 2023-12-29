@@ -150,6 +150,8 @@ REMOTE OLT
 			information > Usenamae VPN: disinilah gatewai vpn nya
 	cara remote
 		buka browser: copas url remote dari ddns 
-
-
+---------------------------------------------------------------------------------------------------
+THE DUDE 
+	remote juga bisa pakai the dude
+	untuk penjelasan lebih jelas ada tutorial the dude dibawah
  */
