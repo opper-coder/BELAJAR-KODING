@@ -35,7 +35,7 @@ Persiapan
 -----------------------------------------------------------
 buatkan koneksi VPN DI CHR untuk Perangkat 
 	- VPN untuk CCR
-		sidebar winbox > ppp > klik tombol l2tp server > 
+		PPP > klik tombol L2TP server > 
 			tab interface
 				enable:true
 				use IPsec: yes
@@ -48,7 +48,7 @@ buatkan koneksi VPN DI CHR untuk Perangkat
 				local address: 10.1.1.1
 				remote adress: 10.1.1.2
 				disarankan jangan gunakan segmen yang sudah di gunakan di local, karena ini terowongan 2+ LAN
-	- VPN untuk router di bawah CCR (membuat interface l2tp server binding)
+	- VPN untuk router di bawah CCR (membuat interface L2TP server binding)
 		tab interface > add > [pilih l2tp server binding] 
 			name: ccr-gateway-A
 			user: ccr-gateway
@@ -86,8 +86,8 @@ tambah perangkat
 	tambahkan CCR sbg gateway menuju jaringan local
 		add device
 			address: 10.1.1.2 IP VPN CCR (ip public)
-			user
-			pass
+			user: admin
+			pass: pasmikro
 			routerOS: TRUE
 			next
 				klik discover
@@ -99,16 +99,16 @@ tambah perangkat
 					timeout: 3
 					count: 3
 				kalau di kecilin semua jadi responsif tapi bandwidth nya banyak 
-				appply ok dah tampil
+				apply ok dah tampil
 			kalau mau ubah tampilan silahkan ubah klik kanan appearance 
 	---
 	tambahkan haplite sebagai perangkat local di bawah mikrotik CCR  
 		winbox CCR > bikin route static pada haplite
 			IP > address > 
-				(cek ether dan IP yang di gunakan untuk koneksi perangkat dibawahnya)
+				(cek ether dan IP yang di gunakan untuk koneksi perangkat dibawahnya misal ether7)
 				ether: 7
 				Address: 192.168.50.0/24
-				apa bila kita berikan secara DHCP silqahkan cek IP perangkat ini dengan
+				apa bila kita berikan secara DHCP silahkan cek IP perangkat ini dengan
 					IP > dhcp client > di situ ada IP kita. tapi jika setting pakai static routing maka cek IP nya kayaknya seperti ini
 				cek IP > routes > dblclk IP pada ether pool client > tab general > prev.source: disinilah IP perangkat ini 
 				misal hasilnya: 192.168.50.11
