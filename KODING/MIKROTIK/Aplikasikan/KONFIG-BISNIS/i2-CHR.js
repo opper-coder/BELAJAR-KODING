@@ -23,6 +23,7 @@ config dude CHR
   - local seakan cloud simulasikan
   - nanti tinggal instalasi dan beres saat di eksekusi
   - simulasikan juga login page kalau bisa tapi
+  - coba hosting gratis dulu nanti untuk aplikasi login page
 =====================
 -----------------------------------------------------------------------
 config bandwidth test CHR
