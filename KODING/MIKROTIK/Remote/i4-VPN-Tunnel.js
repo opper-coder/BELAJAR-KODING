@@ -57,25 +57,25 @@ PPTP
 	---
 	serverA
 	- enable
-			ping google.com 													// pastikan tersambung ke internet tidak
+			ping google.com 						// pastikan tersambung ke internet tidak
 			PPP > tab interface > tombol PPTP server
 				enable: true
 				default profile: default encryption 
 				apply ok
 	- bikin akun VPN PPTP untuk client
 			PPP > tab secrets > add
-				name: user1 														// nama/istilah nya "AKUN SECRET"
+				name: user1 						// nama/istilah nya "AKUN SECRET"
 				pass: 1
-				service: pptp 													// default any, boleh pilih manapun sebenarnya
+				service: pptp 						// default any, boleh pilih manapun sebenarnya
 				default profile: default encrypt
-				local address: 1.1.1.1 									// jika PPTP terjalin maka IP VPN "server" ini
-				remot address: 1.1.1.2 									// jika PPTP terjalin maka IP VPN "client" ini
+				local address: 1.1.1.1 					// jika PPTP terjalin maka IP VPN "server" ini
+				remot address: 1.1.1.2 					// jika PPTP terjalin maka IP VPN "client" ini
 	---
 	serverB
-		ping 100.100.100.100 												// sebelum koneksi ping dulu ip public serverA di internet
-		PPP > add > pptp client >  									// dialOut ke serverA
+		ping 100.100.100.100 							// sebelum koneksi ping dulu ip public serverA di internet
+		PPP > add > pptp client >  						// dialOut ke serverA
 			tab dialOut
-				connect to: 100.100.100.100 						// ip public serfverA
+				connect to: 100.100.100.100 				// ip public serfverA
 				user: user1
 				pass: 1
 				profile: default encryption
@@ -98,8 +98,8 @@ PPTP
 				apply ok
 		serverB (caranya sama)
 			IP > routes > add
-				dst address: 10.10.10.0/24 							// jaringan local serverA)
-				gateway: 1.1.1.1 (IP VPN server) 				// atau langsung gateway interface: pilih pptp ) seperti saat di cek di interface
+				dst address: 10.10.10.0/24 				// jaringan local serverA)
+				gateway: 1.1.1.1 (IP VPN server) 			// atau langsung gateway interface: pilih pptp ) seperti saat di cek di interface
 				apply ok
 	komunikasi
 	ping 20.20.20.1 (ping ke gateway local B jika replay berhasil, sebaliknya dari B ping ke A)
@@ -112,7 +112,7 @@ karena enduser biasanya jumlahnya banyak maka kita buatkan dulu range IP pool un
 		name: poolVPN
 		address: 1.1.1.2 - 1.1.1.120
 ---
-	PPP > tab profiles > add 											// bikin profile dulu sebelum bikin akun VPN
+	PPP > tab profiles > add 							// bikin profile dulu sebelum bikin akun VPN
 		general
 			name: ProfileVPN
 			Local Address: 1.1.1.1
@@ -120,17 +120,17 @@ karena enduser biasanya jumlahnya banyak maka kita buatkan dulu range IP pool un
 		protocol
 			use encryp: yes (atau required sama)
 		limit
-			only one: no 															// supaya bisa akses semua pool nya, bukan hanya satu orang
+			only one: no 							// supaya bisa akses semua pool nya, bukan hanya satu orang
 			apply ok
 	bikin akun secret VPN PPTP untuk client mobile 
 	tab secret 
 			PPP > tab secrets > add
 				name: user2-Mobile
 				pass: 1
-				service: pptp 													// default any, boleh pilih manapun sebenarnya
+				service: pptp 						// default any, boleh pilih manapun sebenarnya
 				default profile: pilih profileVPN 
-				local address:  												// kosongkan saja karena sudah di wakili oleh profileVPN tadi
-				remot address:  												// kosongkan
+				local address:  					// kosongkan saja karena sudah di wakili oleh profileVPN tadi
+				remot address:  					// kosongkan
 	// di secret tambahkan komentar remote "side by side" dan "side by mobilePool"
 	---
 	koneksi dari windows laptop
@@ -170,17 +170,17 @@ L2TP
 	---
 	serverA 
 	- enable L2TP
-		ping: google.com 										// pastikan ada internet tidak
+		ping: google.com 							// pastikan ada internet tidak
 		PPP > tombol L2TP
 			enable: true
 			dafault profile: default encryption
-			use IPsec: no 										// biarkan no dulu agar membedakan dengan yg yes nantinya (yg mudah dulu)
+			use IPsec: no 							// biarkan no dulu agar membedakan dengan yg yes nantinya (yg mudah dulu)
 			apply Ok
 	- bikin akun L2TP untuk client
 		PPP > tab secrets > add
 			name: user1
 			pass: 1
-			service: L2TP											// default any, boleh pilih manapun sebenarnya
+			service: L2TP							// default any, boleh pilih manapun sebenarnya
 			default profile: default encrypt
 			local address: 1.1.1.1 						// jika L2TP terjalin maka  IP VPN "server" ini
 			remot address: 1.1.1.2 						// jika L2TP terjalin maka  IP VPN "client" ini
@@ -192,8 +192,8 @@ L2TP
 			general
 				name: L2TP ServerA
 			dialOut
-				connect to: 100.100.100.100 		// ip public serverA
-				username: user1 								// dari akun secret
+				connect to: 100.100.100.100 				// ip public serverA
+				username: user1 					// dari akun secret
 				pass: 1
 				profile: default encryption
 				apply OK
@@ -216,7 +216,7 @@ L2TP
 		serverB (caranya sama)
 			IP > routes > add
 				dst address: 10.10.10.0/24 				// jaringan local serverA)
-				gateway: 1.1.1.1 (IP VPN server) 	// atau langsung gateway interface: pilih pptp ) seperti saat di cek di interface
+				gateway: 1.1.1.1 (IP VPN server) 			// atau langsung gateway interface: pilih pptp ) seperti saat di cek di interface
 				apply ok
 	komunikasi
 	ping 20.20.20.1 (ping ke gateway local B jika replay berhasil, sebaliknya dari B ping ke A)
@@ -226,11 +226,11 @@ L2TP
 		server
 			saat membuat server L2TP di server:
 			use IPsec : yes
-			IPsec Screet: aqil123 							// kayak passwordnya nanti 
+			IPsec Screet: aqil123 						// kayak passwordnya nanti 
 		client
 		saat membuat L2TP client
 			use IPsec: true
-			IPsec Screet: aqil123 							// isi password yang tadi
+			IPsec Screet: aqil123 						// isi password yang tadi
 	---
 	saat di cek di serverA, encripnya sudah ganti jadi <cbc(aes) + hmac(sha1)>
 	------------------------
@@ -244,7 +244,7 @@ L2TP
 			server name: 100.100.100.100 (IP public)
 			VPN type: L2TP (pilih)
 			type sign in: user pass
-			user: user1			// dari akun secret
+			user: user1							// dari akun secret
 			pass: 1
 			save
 		- beralih ke menu: change adapter options
@@ -282,7 +282,7 @@ tapi kita bisa sekenario kan seperti ini
 		bikin IP tunel
 		Interfaces > tab IP Tunnel > add 
 			general 
-				name: tunnelA-B 											// nama interface A
+				name: tunnelA-B 					// nama interface A
 				local address: 100.100.100.100				// ip public serverA
 				remote address: 200.200.200.200 			// ip public serverB (jadi head to head)
 				apply OK
@@ -290,14 +290,14 @@ tapi kita bisa sekenario kan seperti ini
 		---
 		kasih IP pada IPtunnel
 		IP > address > add 
-			address: 10.10.10.1 										// kasih ip tunnel server (sendiri)
-			network: 10.10.10.2 										// kasih ip tunnel client (lawan)
-			interface: tunnelA-B 										// 
+			address: 10.10.10.1 						// kasih ip tunnel server (sendiri)
+			network: 10.10.10.2 						// kasih ip tunnel client (lawan)
+			interface: tunnelA-B 						// 
 	serverB
 		bikin ip tunnel juga
 		Interfaces > tab IP Tunnel > add 
 			general 
-				name: tunnelB-A 											// nama interface B
+				name: tunnelB-A 					// nama interface B
 				local address: 200.200.200.200				// ip public serverB sendiri
 				remote address: 100.100.100.100 			// ip public serverA (jadi dibalik)
 				apply OK
@@ -305,24 +305,24 @@ tapi kita bisa sekenario kan seperti ini
 		---
 		kasih IP pada IPtunnel
 		IP > address > add 
-			address: 10.10.10.2 										// kasih sendiri
-			network: 10.10.10.1 										// kasih lawan
-			interface: tunnelB-A 										// 
+			address: 10.10.10.2 						// kasih sendiri
+			network: 10.10.10.1 						// kasih lawan
+			interface: tunnelB-A 						// 
 ---------------------
 tunnel sudah terjalin tinggal agar bisa komunikasi antar perangkat masing2 LAN, maka buatkan static routing
 	static routing di serverA
 	IP > routes > add
-		Dst address: 22.22.22.1/24								// IP LAN lawan nya serverB 
-		gateway: 10.10.10.2 											// IP tunnel serverB
+		Dst address: 22.22.22.1/24						// IP LAN lawan nya serverB 
+		gateway: 10.10.10.2 							// IP tunnel serverB
 ---
 	static routing di serverB
 	IP > routes > add
-		Dst address: 11.11.11.1/24								// IP LAN lawan nya serverA 
-		gateway: 10.10.10.1 											// IP tunnel serverA
+		Dst address: 11.11.11.1/24						// IP LAN lawan nya serverA 
+		gateway: 10.10.10.1 							// IP tunnel serverA
 ---
 coba komunikasi
 dari serverA ping gateway LAN serverB
 
 ping 22.22.22.1
-tracert 22.22.22.7 														// ke laptop teman, maka akan terlihat tahapan, route
+tracert 22.22.22.7 									// ke laptop teman, maka akan terlihat tahapan, route
 -----------------------------------------------------------
