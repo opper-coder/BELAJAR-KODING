@@ -12,9 +12,6 @@ CHR
   - lumayan terkenal 
   - pembayaran lewat VA
   - uptime 99%
------------------------------------------------------------------------
-config dude CHR
-  
 =====================
   CATATAN
   - konfig dude dan simulasikan 
@@ -25,6 +22,10 @@ config dude CHR
   - simulasikan juga login page kalau bisa tapi
   - coba hosting gratis dulu nanti untuk aplikasi login page
 =====================
+-----------------------------------------------------------------------
+config dude CHR
+  
+
 -----------------------------------------------------------------------
 config bandwidth test CHR
 
