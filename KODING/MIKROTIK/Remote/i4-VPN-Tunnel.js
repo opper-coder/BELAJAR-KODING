@@ -1,3 +1,4 @@
+/*
 -----------------------------------------------------------
 29 desember 2023  
 citraweb VPN
@@ -54,28 +55,29 @@ dengan asumsi sudah di basic config pada ke dua mikrotik tersebut
 
 -----------------------------------------------------------
 PPTP
+*/
 	---
 	serverA
 	- enable
-			ping google.com 						// pastikan tersambung ke internet tidak
-			PPP > tab interface > tombol PPTP server
-				enable: true
-				default profile: default encryption 
-				apply ok
+		ping google.com 						// pastikan tersambung ke internet tidak
+		PPP > tab interface > tombol PPTP server
+			enable: true
+			default profile: default encryption 
+			apply ok
 	- bikin akun VPN PPTP untuk client
-			PPP > tab secrets > add
-				name: user1 						// nama/istilah nya "AKUN SECRET"
-				pass: 1
-				service: pptp 						// default any, boleh pilih manapun sebenarnya
-				default profile: default encrypt
-				local address: 1.1.1.1 					// jika PPTP terjalin maka IP VPN "server" ini
-				remot address: 1.1.1.2 					// jika PPTP terjalin maka IP VPN "client" ini
+		PPP > tab secrets > add
+			name: user1 						// nama/istilah nya "AKUN SECRET"
+			pass: 1
+			service: pptp 						// default any, boleh pilih manapun sebenarnya
+			default profile: default encrypt
+			local address: 1.1.1.1 					// jika PPTP terjalin maka IP VPN "server" ini
+			remot address: 1.1.1.2 					// jika PPTP terjalin maka IP VPN "client" ini
 	---
 	serverB
-		ping 100.100.100.100 							// sebelum koneksi ping dulu ip public serverA di internet
-		PPP > add > pptp client >  						// dialOut ke serverA
+		ping 100.100.100.100 						// sebelum koneksi ping dulu ip public serverA di internet
+		PPP > add > pptp client >  					// dialOut ke serverA
 			tab dialOut
-				connect to: 100.100.100.100 				// ip public serfverA
+				connect to: 100.100.100.100 			// ip public serfverA
 				user: user1
 				pass: 1
 				profile: default encryption
@@ -98,8 +100,8 @@ PPTP
 				apply ok
 		serverB (caranya sama)
 			IP > routes > add
-				dst address: 10.10.10.0/24 				// jaringan local serverA)
-				gateway: 1.1.1.1 (IP VPN server) 			// atau langsung gateway interface: pilih pptp ) seperti saat di cek di interface
+				dst address: 10.10.10.0/24 			// jaringan local serverA)
+				gateway: 1.1.1.1 (IP VPN server) 		// atau langsung gateway interface: pilih pptp ) seperti saat di cek di interface
 				apply ok
 	komunikasi
 	ping 20.20.20.1 (ping ke gateway local B jika replay berhasil, sebaliknya dari B ping ke A)
