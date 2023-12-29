@@ -29,7 +29,7 @@ Persiapan
 4. buatkan VPN dari CHR untuk perangkat2 yang di monitoring
 5. sambungkan VPN ke masing2 perangkat
 6. buka dude client 
-7. masukkan perangkat untuk di monitoring
+7. masukkan perangkat untuk di monitoring di dude client
 
 -----------------------------------------------------------
 buatkan koneksi VPN DI CHR untuk Perangkat 
