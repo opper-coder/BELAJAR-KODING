@@ -3,11 +3,12 @@ THE DUDE CLOUD
 Monitoring Jaringan Dengan DUDE On Cloud - MIKROTIK TUTORIAL palylist 14 the dude
 
 kita akan simulasikan the dude dengan 
-	topology: CHR(monitoring cloud) -> CCR(router gateway local) -> haplite(child device)
+	topology: 
+		CHR(monitoring cloud) -> CCR(router gateway local) -> haplite(child device)
 	bagaimana CHR memonitoring 2 perangkat secara online CCR sebagai gateway sedang haplite sebagai clien local CCR
 
 yang dilakukan:
-	1. buat monitoring dude cloud di vps
+	1. buat monitoring dude cloud di VPS
 	2. sambungkan VPN ke perangkat CCR gateway
 	3. buatkan static routing ke haplite dan kasih VPN juga 
 
