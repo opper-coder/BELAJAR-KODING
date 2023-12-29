@@ -17,4 +17,17 @@ config dude CHR
   
 
 
+-----------------------------------------------------------------------
+config bandwidth test CHR
+
+
+-----------------------------------------------------------------------
+config VPN untuk semua perangkat remote dude
+
+-----------------------------------------------------------------------
+config VPN untuk semua perangkat remote boxits
+
+
+
+
 
