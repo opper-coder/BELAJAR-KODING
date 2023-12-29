@@ -46,7 +46,7 @@ buatkan koneksi VPN DI CHR untuk Perangkat
 				profile: default-encryption
 				local address: 10.1.1.1
 				remote adress: 10.1.1.2
-				disarankan jangan gunakan segmen yang sudah di gunakan di local
+				disarankan jangan gunakan segmen yang sudah di gunakan di local, karena ini terowongan 2+ LAN
 	- VPN untuk router di bawah CCR (membuat interface l2tp server binding)
 		tab interface > add > [pilih l2tp server binding] 
 			name: ccr-gateway-A
