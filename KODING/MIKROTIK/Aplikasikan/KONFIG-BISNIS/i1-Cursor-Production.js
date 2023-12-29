@@ -31,6 +31,7 @@ Catatan
 		- hapus sampah voucher berkala 2 bulan terakhir terpakai otomatis dan sudah ada pencairan
 		- umur cookie 24 jam dalam user profile (kalau sudah punya sistem login sendiri maka sesuaikan dengan umur voucher aja)
 		- bikin voucher di boxits. lihat pembatasan umur MAC COOKIE jg bisa di dteksi dari appnya
+		- pertimbangkan PPPoE dan Hotspot Voucher
 
 		- voucher kencang di 2 menit pertama dengan ganti user profil ke normal
 		- restart mikrotik 2 hari sekali jam 3 malam
