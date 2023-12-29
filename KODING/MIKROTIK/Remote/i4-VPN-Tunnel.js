@@ -64,7 +64,7 @@ dengan asumsi sudah di basic config pada ke dua mikrotik tersebut
 
 -----------------------------------------------------------
 PPTP
-*/
+
 	---
 	serverA
 	- enable
@@ -343,3 +343,4 @@ PPPoE
 	hotspot, static routing, pppoe, dll vlan 
 - confignya mirip juga sebenarnya 
 -----------------------------------------------------------
+*/
