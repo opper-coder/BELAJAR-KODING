@@ -3,7 +3,7 @@
 citraweb VPN
 
 VPN
-vpn adalah jika ada dua jaringan local yang akan akan terhubung
+vpn adalah jika ada dua (atau lebih) "jaringan local" (LAN) yang akan akan terhubung.
 sehingga client2 yang berada pada masing masing server bisa saling terhubung
 biasanya dua server ini terhubung dengan kabel, jika memungkinkan. 
 namun jika berjauhan maka tidak mungkin kabel 
