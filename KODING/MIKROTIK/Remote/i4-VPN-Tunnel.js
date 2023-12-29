@@ -46,7 +46,16 @@ SYARAT
 	- Clien mobile 
 		1. ada yang support VPN 
 		2. ada yang Instalasi client VPN dari pihak ketiga 
-
+-----------------------------------------------------------
+KONSEP KONFIG
+	hampir semua tunnel memiliki konsep yg sama beda nya pada: memperlakukan kunci brangkas
+	bikin koneksi 
+		- konek jalur luar	(public)
+		- bikin jalur dalam (tunnel)
+		- bikin protokol pengamanan KTP (user secret)
+		- pakai kunci brangkas tidak (encrypt, sertificate, dll) 
+	bikin routing
+		- jalur sudah terbentuk, lakukan transaksi, seperti static routing umumnya, (mungkin juga dynamic)
 -----------------------------------------------------------
 SIMULASI TOPOLOGY 
 serverA: IP public: 100.100.100.100 LAN: 10.10.10.0/24 jadikan VPN server
@@ -327,4 +336,10 @@ dari serverA ping gateway LAN serverB
 
 ping 22.22.22.1
 tracert 22.22.22.7 									// ke laptop teman, maka akan terlihat tahapan, route
+-----------------------------------------------------------
+PPPoE
+- adalah tunnel juga tetapi bekerja di layer2 sehingga server dan client harus berada di satu segmen 
+- pppoe sering di gunakan di FTTH, mengingat saat kita konfig internet kita bisa mendistribusikan berbagai cara
+	hotspot, static routing, pppoe, dll vlan 
+- confignya mirip juga sebenarnya 
 -----------------------------------------------------------
