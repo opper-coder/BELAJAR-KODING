@@ -1,19 +1,16 @@
 -----------------------------------------------------------
 THE DUDE CLOUD
 Monitoring Jaringan Dengan DUDE On Cloud - MIKROTIK TUTORIAL palylist 14 the dude
-
+-----------------------------------------------------------
 kita akan simulasikan the dude dengan 
 	topology: 
 		CHR(dude on cloud) -> CCR(router gateway local) -> haplite(device clien CCR)
 	bagaimana CHR memonitoring server CCR secara online, dan bagaimana memantau jaringan LAN nya
 	(haplite sebagai clien local CCR)
-
 kelebihan: kita bisa monitoring perangkat walau tidak satu jaringan (public)
 	syaratnya dude harus bisa menjangkau perangkat local seperti dibuatkan static routing dan di kasih VPN
-
 kelemahanya: 
 	saat koneksi lemah atau terputus antar perangkat maka akan di deteksi sebagai down
-
 solusi: 
 	kita harus buatkan notifikasi tiap server ke telegram sebagai parameter awal deteksi
 
