@@ -39,3 +39,12 @@ TEST TERMINAL
     3. jalankan test <script di bawah> ini di ke empat terminal
     4. lalu amati traffic yang lewat di interface WAN bagian RX  
 --------------------------------------------------
+CLOUD to SERVER
+--------------------------------------------------
+ANTAR PERANGKAT THE DUDE
+--------------------------------------------------
+DUA MIKROTIK DI LAPANGAN
+--------------------------------------------------
+selesai
+
+    
