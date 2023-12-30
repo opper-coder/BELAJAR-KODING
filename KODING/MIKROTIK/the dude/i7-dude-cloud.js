@@ -23,8 +23,9 @@ Persiapan
 1. kita harus punya CHR cloud di VPS (memiliki IP Public)
 2. install the dude di CHR
 3. aktifkan the dude server
-4. buatkan VPN untuk CCR (beserta secret)
-5. buatkan VPN untuk CCR LAN (VPN Binding)
+4. buatkan VPN untuk CCR (beserta secret untuk akses ke CCR)
+5. buatkan VPN interface binding untuk CCR LAN(supaya satu VPN untuk perangkat di LAN)
+6. buatkan static route pada LAN Binding
 7. aktifkan dude clien di CCR 
 8. CCR ke LAN distrib pakai hotspot saja dan skip pool staticnya  
 9. konfig IP LAN clien. secara static dan aktifkan SNMP 
@@ -36,7 +37,7 @@ Persiapan
 enable
 	dude > setting > enable: true > 
 -----------------------------------------------------------
-buatkan di CHR dua: "VPN utama" dan "VPN binding"   
+buatkan di CHR satu "VPN utama" dan lakukan "Interface binding"   
 	- enable VPN
 		PPP > tombol L2TP server > 
 			tab interface
@@ -45,7 +46,7 @@ buatkan di CHR dua: "VPN utama" dan "VPN binding"
 				IPSec Scret: rahasia
 	- VPN untuk CCR 
 		// buatkan secret (tiap secret punya local dan remot IP)
-		// oya secret ini di buat sata da server baru beserta urutan 10.1.1.2 - berapapun angkanya dari sini 
+		// oya secret ini di buat saat ada server baru beserta urutan 10.1.1.1 - berapapun angkanya dari sini 
 			tab secret > add
 				name: ccr-gateway
 				pass: ccr-gateway123
@@ -54,11 +55,11 @@ buatkan di CHR dua: "VPN utama" dan "VPN binding"
 				local address: 10.1.1.1
 				remote adress: 10.1.1.2
 				disarankan jangan gunakan segmen yang sudah di gunakan di local, karena ini terowongan 2+ LAN
-	- VPN CCR LAN(L2TP Server Binding)
+	- static route CCR LAN(L2TP Server Binding)
 		// gunanya saat mau akses di bawahnya tinggal gunakan 1 VPN ini saja meskipun di bawahnya banyak
 			tab interface > add > [pilih l2tp server binding] 
-				name: ccr-gateway-A
-				user: ccr-gateway (samakan dengan secret CCR gateway, )
+				name: ccr-gateway-LAN
+				user: ccr-gateway (samakan dengan secret CCR gateway)
 dial/connect CCR ke CHR
 	- winbox CCR 
 	 	ppp > add > l2tp Client > 
@@ -109,29 +110,28 @@ tambah perangkat
 				apply ok dah tampil
 			kalau mau ubah tampilan silahkan ubah klik kanan appearance 
 -----------------------------------------------------------
-ROUTING KE CCR LAN
-pada CCR pasti memiliki LAN dibawahnya dengan IP segmen 172.10.10.1/24
-agar LAN di CCR juga bisa di monitoring semua, maka bnuatkan routing ke VPN Server Binding tadi 
-ini dilakukan di CHR:
-	tambahkan haplite sebagai perangkat local di LAN CCR  
-		winbox CCR > // cek IP LAN di CCR
-			IP > address > ether: 7(bridge-LAN) Address: 192.168.50.0/23 
-			dan distribusikan dalam bentuk HOTSPOT
-			buat pool 50.108-51.254 = sekitar 400 anggota 
-			untuk static 2-107 = 106 titik > gitu aja  
-		nanti di perangkat router AP buatkan IP static, dan nyalakan snmp kalau ada, atau remote management 
-		jangan lupa management otomatis pembuatan IP static AP di boxits, pada saat add AP
-		winbox CHR
-			IP > routes > add
-				dst: 192.168.50.0/24 
-				gateway: ccr-gateway-A (ini perlunya di atas tadi dibuatkan interface l2tp server binding)
-				apply ok sampai reachable
-		winbox haplite (sekarang kita mau ambil IP haplite untuk di monitoring)
-			IP > dhcp client > 192.168.50.7 (misal kita dapat alokasi ini) 
-			// tapi jika setting pakai static routing maka cek IP nya kayaknya seperti ini
-			IP > routes > dblclk IP pada ether pool client > tab general > prev.source: disinilah IP perangkat ini 
-			// misal hasilnya: 192.168.50.11
-			// gunakan di THE DUDE untuk bisa di monitoring
+STATIC ROUTING KE CCR LAN
+pada CCR pasti memiliki LAN dibawahnya dengan IP segmen 192.168.50.0/23
+agar LAN di CCR juga bisa di monitoring semua, maka buatkan routing ke VPN Server Binding tadi 
+(tambahkan haplite/router/AP dll sebagai perangkat local di LAN CCR 
+	winbox CCR > // cek IP LAN di CCR
+		IP > address > ether: 7(bridge-LAN) Address: 192.168.50.0/23 
+		dan distribusikan dalam bentuk HOTSPOT
+		buat pool 50.108-51.254 = sekitar 400 anggota 
+		untuk static 2-107 = 106 titik > gitu aja  
+	nanti di perangkat router AP buatkan IP static, dan nyalakan snmp kalau ada, atau remote management 
+	jangan lupa management otomatis pembuatan IP static AP di boxits, pada saat add AP
+	winbox CHR
+		IP > routes > add
+			dst: 192.168.50.0/23 
+			gateway: ccr-gateway-LAN (ini perlunya di atas tadi dibuatkan interface l2tp server binding)
+			apply ok sampai reachable
+	winbox haplite (sekarang kita mau ambil IP haplite untuk di monitoring)
+		IP > dhcp client > 192.168.50.7 (misal kita dapat alokasi ini) 
+		// tapi jika setting pakai static routing maka cek IP nya kayaknya seperti ini
+		IP > routes > dblclk IP pada ether pool client > tab general > prev.source: disinilah IP perangkat ini 
+		// misal hasilnya: 192.168.50.11
+		// gunakan di THE DUDE untuk bisa di monitoring
 -----------------------------------------------------------
 dude client 
 	kini haplite sudah punya static routing maka sudah bisa di jangkau oleh THE DUDE
