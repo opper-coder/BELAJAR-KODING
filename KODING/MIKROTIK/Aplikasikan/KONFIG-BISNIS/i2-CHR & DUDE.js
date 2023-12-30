@@ -26,9 +26,10 @@ CHR
 config dude CHR
   jelas sekali di dude on cloud cekidot
 -----------------------------------------------------------------------
-config bandwidth test CHR
-
-
+config bandwidth test
+  - cloud jelas sekali di speedtest 
+  - local jelas sekali di speedtest
+  - dude jelas sekali di dude
 -----------------------------------------------------------------------
 auto reconnect VPN
 
