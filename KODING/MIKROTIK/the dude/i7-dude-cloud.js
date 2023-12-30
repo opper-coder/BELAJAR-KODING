@@ -24,10 +24,9 @@ Persiapan
 2. install the dude di CHR
 3. aktifkan the dude server
 4. buatkan VPN untuk CCR (beserta secret)
-5. buatkan VPN untuk CCR LAN (beserta secret)
-6. routing dari CHR ke 2 VPN
+5. buatkan VPN untuk CCR LAN (VPN Binding)
 7. aktifkan dude clien di CCR 
-8. routing CCR ke LAN 
+8. CCR ke LAN distrib pakai hotspot saja dan skip pool staticnya  
 
 9. buka dude client 
 10. masukkan perangkat untuk di monitoring di dude client
@@ -114,7 +113,7 @@ agar LAN di CCR juga bisa di monitoring semua, maka bnuatkan routing ke VPN Serv
 ini dilakukan di CHR:
 	tambahkan haplite sebagai perangkat local di LAN CCR  
 		winbox CCR > // cek IP LAN di CCR
-			IP > address > ether: 7 Address: 192.168.50.0/24 
+			IP > address > ether: 7 Address: 192.168.50.0/23 
 			dan distribusikan dalam bentuk HOTSPOT
 			buat pool 100-254 = sekitar 254 anggota 
 			untuk 2-49 biarkan jadi static = 50 titik  
