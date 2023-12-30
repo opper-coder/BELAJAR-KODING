@@ -343,4 +343,9 @@ PPPoE
 	hotspot, static routing, pppoe, dll vlan 
 - confignya mirip juga sebenarnya 
 -----------------------------------------------------------
+
+coba perhitungkan port forwarding untuk akses perangkat yang tidak memiliki VPN
+
+PORT FORWARDING DENGAN FITUR NAT - MIKROTIK TUTORIAL 
+
 */
