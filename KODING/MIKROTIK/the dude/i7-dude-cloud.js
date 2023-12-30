@@ -27,16 +27,17 @@ Persiapan
 5. buatkan VPN untuk CCR LAN (VPN Binding)
 7. aktifkan dude clien di CCR 
 8. CCR ke LAN distrib pakai hotspot saja dan skip pool staticnya  
-
-9. buka dude client 
-10. masukkan perangkat untuk di monitoring di dude client
+9. konfig IP LAN clien. secara static dan aktifkan SNMP 
+10. buka dude client 
+11. masukkan perangkat untuk di monitoring di dude client
+12. ubah tampilan monitoring sesuai keinginan
 
 -----------------------------------------------------------
 enable
 	dude > setting > enable: true > 
 -----------------------------------------------------------
 buatkan koneksi VPN DI CHR untuk Perangkat 
-	- VPN untuk CCR
+	- VPN untuk CCR 
 		// enable VPN
 		PPP > tombol L2TP server > 
 			tab interface
@@ -44,6 +45,7 @@ buatkan koneksi VPN DI CHR untuk Perangkat
 				use IPsec: yes
 				IPSec Scret: rahasia
 		// buatkan secret (tiap secret punya local dan remot IP)
+		// oya secret ini di buat sata da server baru beserta urutan 10.1.1.2 - berapapun angkanya dari sini 
 			tab secret > add
 				name: ccr-gateway
 				pass: ccr-gateway123
