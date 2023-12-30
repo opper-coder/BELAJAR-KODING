@@ -116,8 +116,8 @@ ini dilakukan di CHR:
 		winbox CCR > // cek IP LAN di CCR
 			IP > address > ether: 7 Address: 192.168.50.0/24 
 			dan distribusikan dalam bentuk HOTSPOT
-			buat pool 50-254 = sekitar 205 anggota 
-			untuk 2-49 biarkan jadi static = 48 titik  
+			buat pool 100-254 = sekitar 254 anggota 
+			untuk 2-49 biarkan jadi static = 50 titik  
 		nanti di perangkat router AP buatkan IP static, dan nyalakan snmp kalau ada, atau remote management 
 		winbox CHR
 			IP > routes > add
@@ -131,28 +131,28 @@ ini dilakukan di CHR:
 			// misal hasilnya: 192.168.50.11
 			// gunakan di THE DUDE untuk bisa di monitoring
 -----------------------------------------------------------
-	dude client 
-		kini haplite sudah punya static routing maka sudah bisa di jangkau oleh THE DUDE
-		tambahkan haplite sudah bisa seperti biasa. nah pada hap lite cek berapa IP static yang di gunakan koneksi ke CCR-gateway
-			add device
-				address:  192.168.50.11
-				name: admin
-				pass: ""
-				routerOS: true
-				next
-					add probing
-						prob: ping
-						interval: default
-						timeout:default
-						count: default 
-						finish > akan muncul perangkat 
-				tinggal ubah tampilan > klik kanan appearance 
-			add link
-				device : ccr-gateway (ubah dari mana sudut pandangnya)
-				mastering type : routerOS
-				interface: pilih ether3 (sesuai ether untuk jaringan local tadi)
-				type: gigabit ether 
-				finish
+dude client 
+	kini haplite sudah punya static routing maka sudah bisa di jangkau oleh THE DUDE
+	tambahkan haplite sudah bisa seperti biasa. nah pada hap lite cek berapa IP static yang di gunakan koneksi ke CCR-gateway
+		add device
+			address:  192.168.50.11
+			name: admin
+			pass: ""
+			routerOS: true
+			next
+				add probing
+					prob: ping
+					interval: default
+					timeout:default
+					count: default 
+					finish > akan muncul perangkat 
+			tinggal ubah tampilan > klik kanan appearance 
+		add link
+			device : ccr-gateway (ubah dari mana sudut pandangnya)
+			mastering type : routerOS
+			interface: pilih ether3 (sesuai ether untuk jaringan local tadi)
+			type: gigabit ether 
+			finish
 -----------------------------------------------------------
 
 
