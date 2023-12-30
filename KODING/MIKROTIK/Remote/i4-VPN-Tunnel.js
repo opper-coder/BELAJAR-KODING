@@ -115,7 +115,7 @@ PPTP
 	komunikasi
 	ping 20.20.20.1 (ping ke gateway local B jika replay berhasil, sebaliknya dari B ping ke A)
 ------------------------
-koneksi PPTP dari serverA dari mobile (laptop hp windows, buka dari serverB) 
+koneksi PPTP dari serverA ke mobile (laptop hp windows, bukan dari serverB) 
 yang di atas adalah PPTP dari server ke server, sedang ini dari server ke laptop atau HP langsung ke client enduser
 karena enduser biasanya jumlahnya banyak maka kita buatkan dulu range IP pool untuk enduser VPN ini
 ---
