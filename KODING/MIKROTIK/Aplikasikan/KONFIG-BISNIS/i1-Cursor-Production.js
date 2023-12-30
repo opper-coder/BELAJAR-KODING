@@ -62,5 +62,6 @@ Catatan
 		- boxits, Db, Rest, Auth, Accounting, Hosting
 		- boxits mobile 
 		- koneksi, dan kaitanya dengan CHR dan SERVER
+		- saat ada perangkat baru buatkan secreet VPN baru 
 		
 ------------------------------------------------------------------
