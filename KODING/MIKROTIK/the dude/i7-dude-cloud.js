@@ -116,7 +116,7 @@ ini dilakukan di CHR:
 		winbox CCR > // cek IP LAN di CCR
 			IP > address > ether: 7 Address: 192.168.50.0/24 
 			dan distribusikan dalam bentuk HOTSPOT
-			buat pool 100-254 = sekitar 254 anggota 
+			buat pool 50-254 = sekitar 204 anggota 
 			untuk 2-49 biarkan jadi static = 50 titik  
 		nanti di perangkat router AP buatkan IP static, dan nyalakan snmp kalau ada, atau remote management 
 		winbox CHR
