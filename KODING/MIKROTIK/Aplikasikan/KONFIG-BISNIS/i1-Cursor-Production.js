@@ -3,8 +3,8 @@
 Catatan 
 	CHR
 		** bikin lingkungan monitoring dude
-		- bikin VPN untuk serverlocal yang akan terhubung ke DUDE dan BOXITS 
-		- pertimbangkan VPN atau Tunnel (mengingat ini untuk monitoring dan eksekusi aktifkan voucher)
+		** bikin VPN untuk serverlocal yang akan terhubung ke DUDE dan BOXITS 
+		** pertimbangkan VPN atau Tunnel (mengingat ini untuk monitoring dan eksekusi aktifkan voucher)
 		- speedtest CHR - local
 
 	DUDE
