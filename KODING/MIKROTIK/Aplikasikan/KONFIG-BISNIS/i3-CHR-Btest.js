@@ -2,7 +2,28 @@
 test kualitas jaringan 
 
 test di terminal
+test cloud ke server ala mikrotik
+test antar perangkat di jaringan (dengan dude)
 
+--------------------------------------------------
+TUJUAN
+    - Terminal 
+        + ini mandiri, hasil nya asli dan akurat tanpa tool 
+        - hanya bisa di winbox, berarti harus bisa remote IP nya
+        - butuh test file yg tersedia
+    - Cloud to Server
+        + bisa test bertahap 10 - 100 mb (minimal sampai maximal)
+        - masih remote winbox bersangkutan
+    - antar perangkat the dude
+        + tidak perlu winbox
+        + bisa antar perangkat di server, antar perangkat di LAN
+        - mungkin kalau pakai perangkat non snmp tidak bisa cek nanti yaa
+    - dua mikrotik di lapangan 
+        + tanpa internet
+        + test kualitas jaringan 
+        + akurat dan perlu
+        - butuh dua mikrotik server dan client yang akan test jaringan kabel atau wifi yang di hasilkan
+        - butuh turun lapangan
 --------------------------------------------------
 TEST TERMINAL
     ini di perlukan test mandiri tanpa alat 
