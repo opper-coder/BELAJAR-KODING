@@ -113,11 +113,12 @@ agar LAN di CCR juga bisa di monitoring semua, maka bnuatkan routing ke VPN Serv
 ini dilakukan di CHR:
 	tambahkan haplite sebagai perangkat local di LAN CCR  
 		winbox CCR > // cek IP LAN di CCR
-			IP > address > ether: 7 Address: 192.168.50.0/23 
+			IP > address > ether: 7(bridge-LAN) Address: 192.168.50.0/23 
 			dan distribusikan dalam bentuk HOTSPOT
-			buat pool 100-254 = sekitar 254 anggota 
-			untuk 2-49 biarkan jadi static = 50 titik  
+			buat pool 50.108-51.254 = sekitar 400 anggota 
+			untuk static 2-107 = 106 titik > gitu aja  
 		nanti di perangkat router AP buatkan IP static, dan nyalakan snmp kalau ada, atau remote management 
+		jangan lupa management otomatis pembuatan IP static AP di boxits, pada saat add AP
 		winbox CHR
 			IP > routes > add
 				dst: 192.168.50.0/24 
