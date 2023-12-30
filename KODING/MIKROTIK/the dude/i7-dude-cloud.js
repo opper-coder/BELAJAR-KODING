@@ -36,14 +36,14 @@ Persiapan
 enable
 	dude > setting > enable: true > 
 -----------------------------------------------------------
-buatkan koneksi VPN DI CHR untuk Perangkat 
-	- VPN untuk CCR 
-		// enable VPN
+buatkan di CHR dua: "VPN utama" dan "VPN binding"   
+	- enable VPN
 		PPP > tombol L2TP server > 
 			tab interface
 				enable:true
 				use IPsec: yes
 				IPSec Scret: rahasia
+	- VPN untuk CCR 
 		// buatkan secret (tiap secret punya local dan remot IP)
 		// oya secret ini di buat sata da server baru beserta urutan 10.1.1.2 - berapapun angkanya dari sini 
 			tab secret > add
@@ -54,7 +54,7 @@ buatkan koneksi VPN DI CHR untuk Perangkat
 				local address: 10.1.1.1
 				remote adress: 10.1.1.2
 				disarankan jangan gunakan segmen yang sudah di gunakan di local, karena ini terowongan 2+ LAN
-		// VPN CCR LAN(L2TP Server Binding)
+	- VPN CCR LAN(L2TP Server Binding)
 		// gunanya saat mau akses di bawahnya tinggal gunakan 1 VPN ini saja meskipun di bawahnya banyak
 			tab interface > add > [pilih l2tp server binding] 
 				name: ccr-gateway-A
