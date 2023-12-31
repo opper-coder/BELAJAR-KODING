@@ -24,7 +24,7 @@ CHR
 =====================
 -----------------------------------------------------------------------
 config dude CHR
-  jelas sekali di dude on cloud cekidot
+  jelas sekali di "dude on cloud" cekidot
 -----------------------------------------------------------------------
 config bandwidth test
   - cloud jelas sekali di speedtest 
