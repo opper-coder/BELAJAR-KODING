@@ -40,10 +40,23 @@ TEST TERMINAL
     4. lalu amati traffic yang lewat di interface WAN bagian RX  
 --------------------------------------------------
 CLOUD to SERVER
+    - di cloud tinggal aktifkan btest server saat di gunakan dan tutup kembali saat tidak di pakai
+    - lalu lakukan pengetesan
+        tool > bandwidth test
+            lakukan seperti di keterangan bandwidth test
 --------------------------------------------------
 ANTAR PERANGKAT THE DUDE
+    - disini juga bisa dilakukan 
+    - lihat caranya di dude tutorial
 --------------------------------------------------
 DUA MIKROTIK DI LAPANGAN
+    - ini keterangan ada di speedtest tutorial
+    - disana ada 
+    - pengetesan jaringan tanpa internet, yaitu ceking kualitas jaringan local
+    - ada dua test jaringan local (sangat penting untuk test PTP): 
+        1. mikrotik ke mikrotik
+        2. mikrotik ke non mikrotik 
+    
 --------------------------------------------------
 selesai
 
