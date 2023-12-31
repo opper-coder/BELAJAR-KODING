@@ -25,10 +25,15 @@ Catatan
 		** hidupkan saat di butuhkan saja, apakah berada di CHR atau DUDE, (skeduller mikrotik on off) 
 
 	LOCAL MIKROTIK
-		--------------------------------
-		- konfig dasar
+		-------------------------------- >>>>>
 		- optimasi
-		--------------------------------
+			- pisah traffic
+			- pppoe
+			- load balance
+			- login responsif
+			- internet responsif
+		- konfig dasar
+		-------------------------------- >>>>>
 		- keamanan
 		- konfig dasar
 		- user profil 1,2,3,4,5 dalam mbps
