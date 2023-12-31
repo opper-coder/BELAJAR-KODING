@@ -8,21 +8,21 @@ Catatan
 		** speedtest CHR - local
 
 	DUDE
-		- cek mana AP sering idle (bisa di pindah lokasi)
+		** cek mana AP sering idle (bisa di pindah lokasi)
 		- cek AP sesuai target (apakah kecepatan memenuhi syarat)
-		- cek on/off (apakah ada kendala)
-		- speedtest antar AP local (periksa kecepatan jaringan AP terganggu tidak)
-		- restart AP, MIKROTIK, berkala 2 hari sekali jam 3 malam
+		** cek on/off (apakah ada kendala)
+		** speedtest antar AP local (periksa kecepatan jaringan AP terganggu tidak)
+		** restart AP, MIKROTIK, berkala 2 hari sekali jam 3 malam
 		- perhitungan apakah router tersebut memenuhi quota apa tidak sperhitungkan baik baik keperluan dan metodenya
 		
-		- monitoring semua mikrotik
-		- monitoring semua OLT
-		- monitoring grup wilayah pada aksespoint
+		** monitoring semua mikrotik
+		** monitoring semua OLT
+		** monitoring grup wilayah pada aksespoint (pakai sheet, dan circle bulatan)
 		- memiliki 2 CHR cadangan sebagai cadangan monitoring jika terjadi gangguan
 		- interval mikrotik, OLT  30 detik sekali
-		- interval aksespoint 1 menit sekali
+		** interval aksespoint 1 menit sekali
 		- monitoring kelambatan pada jaringan akses point bukan hanya mati lampu mati jaringan
-		- hidupkan saat di butuhkan saja, apakah berada di CHR atau DUDE
+		** hidupkan saat di butuhkan saja, apakah berada di CHR atau DUDE, (skeduller mikrotik on off) 
 
 	LOCAL MIKROTIK
 		--------------------------------
