@@ -4,14 +4,14 @@ AUTO RECONNECT VPN DDNS
 ------------------------------------------------- 
 - :tools > netwatch > add 
 	tab HOST
-	- host: [IP VPN]
+	- host: [IP VPN server IP public]
 	- interval: 30-60 detik
 	- timeout: 1000 ms
 	tab UP script:
 		:log warning "sudah up kembali"
 	tab DOWN script:
-		/interface disable [nama INTERFACE] (misal:  panda@mytunnel.id)
-		/interface enable [nama INTERFACE] (misal:  panda@mytunnel.id)
+		/interface disable [nama INTERFACE] (misal:  panda@mytunnel.id, IP VPN CHR cloud kita)
+		/interface enable [nama INTERFACE] (misal:  panda@mytunnel.id, IP VPN CHR cloud kita)
 - selesai
 - tinggal test
 	- interface > pilih ddns nya > coba disable > 
