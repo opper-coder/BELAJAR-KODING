@@ -5,7 +5,7 @@ Catatan
 		** bikin lingkungan monitoring dude
 		** bikin VPN untuk serverlocal yang akan terhubung ke DUDE dan BOXITS 
 		** pertimbangkan VPN atau Tunnel (mengingat ini untuk monitoring dan eksekusi aktifkan voucher)
-		- speedtest CHR - local
+		** speedtest CHR - local
 
 	DUDE
 		- cek mana AP sering idle (bisa di pindah lokasi)
