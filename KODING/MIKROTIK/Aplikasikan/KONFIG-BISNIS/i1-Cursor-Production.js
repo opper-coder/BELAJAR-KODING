@@ -25,6 +25,10 @@ Catatan
 		- hidupkan saat di butuhkan saja, apakah berada di CHR atau DUDE
 
 	LOCAL MIKROTIK
+		--------------------------------
+		- konfig dasar
+		- optimasi
+		--------------------------------
 		- keamanan
 		- konfig dasar
 		- user profil 1,2,3,4,5 dalam mbps
@@ -63,5 +67,4 @@ Catatan
 		- boxits mobile 
 		- koneksi, dan kaitanya dengan CHR dan SERVER
 		- saat ada perangkat baru buatkan secreet VPN baru 
-		
-------------------------------------------------------------------
+------------------------------------------------------------------,
