@@ -33,6 +33,7 @@ Catatan
 			- login responsif
 			- internet responsif
 		- konfig dasar
+		TARGET HARI KAMIS SELESAI
 		-------------------------------- >>>>>
 		- keamanan
 		- konfig dasar
