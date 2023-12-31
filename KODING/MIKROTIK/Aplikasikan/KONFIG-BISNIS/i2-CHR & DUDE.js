@@ -32,7 +32,7 @@ config bandwidth test
   - dude jelas sekali di dude
 -----------------------------------------------------------------------
 auto reconnect VPN
-
+  jelas auto reconnect VPN di remote/auto-reconnect-ddns
 
 -----------------------------------------------------------------------
 config VPN untuk semua perangkat remote dude
