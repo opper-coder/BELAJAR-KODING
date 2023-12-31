@@ -73,4 +73,7 @@ Catatan
 		- boxits mobile 
 		- koneksi, dan kaitanya dengan CHR dan SERVER
 		- saat ada perangkat baru buatkan secreet VPN baru 
-------------------------------------------------------------------,
+------------------------------------------------------------------
+PERANGKAT
+	router harga 145 belum ZTE F663
+------------------------------------------------------------------
