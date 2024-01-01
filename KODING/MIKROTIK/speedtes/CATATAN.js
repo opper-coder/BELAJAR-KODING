@@ -1,3 +1,14 @@
+--------------------------------------------------
+1. mikrotik to mikrotik 	: test local di lapangan (bisa juga untuk cloud ke server)
+2. mikrotik ke non mikrotik 	: test mikrotik ke perangkat lain
+3. mikrotik target mikrotik 	: test paling kurat kualitas jaringan di lapangan
+4. g tau
+5. test terminal download 	: test ISP ke mikrotik bersangkutan 
+6. 
+
+
+
+--------------------------------------------------
 BANDWIDTH TEST
 --------------------------------------------------
 - untuk testing jaringan du a titik perangkat melalui jaringan
@@ -7,20 +18,20 @@ BANDWIDTH TEST
 - lalu isi IP target dan lakukan test
 - namun jika perangkat sebaliknya yang akan melakukan test bukan perangkat mikrotik
 - maka download dulu tool bandwidthtes dari mikrotik.com
-- tool ini bisa jadi server btest dengan aktifklan server, danjuga bisa di jadikan target test
+- tool ini bisa jadi server btest dengan aktifklan server, dan juga bisa di jadikan target test
 
 MIKROTIK KE MIKROTIK 
 - kedua mikrotik harus aktifkan btest server
 - testing router ke router target
 	tester:
-		test target: ip terget
-		protocol: tcp (silahkantest keduanya nanti)
+		test target: ip gateway router terget
+		protocol: tcp (silahkan test udp nya jg)
 		direction: both
 		local tx: 20M (besaran test target, dari kecil dulu nanti test ke besar)
 		remot tx: 20M 
 		user pass: karena sama2 mikrotik isikan saja credential lawan
 	start
-	lihat hasilnya di grafik
+	lihat hasilnya di grafik (jika tercapai berarti ok, test juga ukuran besarnya)
 
 MIKROTIK KE NON MIKROTIK
 - jika clint yang kita test adalah alat non mikrotik 
