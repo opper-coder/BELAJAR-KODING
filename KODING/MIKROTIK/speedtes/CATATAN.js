@@ -4,9 +4,6 @@
 3. mikrotik target mikrotik 	: test paling kurat kualitas jaringan di lapangan
 4. g tau
 5. test terminal download 	: test ISP ke mikrotik bersangkutan 
-6. 
-
-
 
 --------------------------------------------------
 BANDWIDTH TEST
