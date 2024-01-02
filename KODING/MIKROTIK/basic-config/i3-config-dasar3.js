@@ -31,15 +31,15 @@ BRIDGE-IP
 ---------------------------------------
 DHCP CLIENT
 - ADD > bound
----------------------------------------
-NAT
-ip/firewall/nat
-- add NAT > srcnat:out interface:WAN, tab action:  masquerade
 ---------------------------------------	
 DNS
 ip/dns
 - add DNS 8888, 8844, allow remote
 - :> ping google.com 
+---------------------------------------
+NAT
+ip/firewall/nat
+- add NAT > srcnat:out interface:WAN, tab action:  masquerade
 ---------------------------------------
 DHCP SERVER
 - IP > DHCP Server > tombol DHCP setup > interface : 'pilih BRIDGE-LAN' > next2 > Apply-Ok
