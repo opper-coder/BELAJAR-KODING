@@ -81,7 +81,7 @@ SIMPLE QUEUE
     general
       name: zoom-bandwidth
       target: IP-LAN/24
-      max limit: 5M/5M
+      max limit: 3M/3M
     advance
       packetmark: PAKET-ZOOM(pilih)
       parent: total-bandwidth
