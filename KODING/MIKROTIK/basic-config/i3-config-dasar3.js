@@ -35,6 +35,9 @@ DHCP CLIENT
 - add DNS 8888, 8844, allow remote
 - :> ping google.com 
 ---------------------------------------
+DHCP SERVER
+	
+---------------------------------------
 HOTSPOT
 - hopspot server hotspot-setup > next2
 - dns: halaman login local: ITS.net
