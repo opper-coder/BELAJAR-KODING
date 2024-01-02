@@ -34,7 +34,7 @@ DHCP CLIENT
 ---------------------------------------
 NAT
 ip/firewall/nat
-- add NAT masquerade
+- add NAT > srcnat:out interface:WAN, tab action:  masquerade
 ---------------------------------------	
 DNS
 ip/dns
