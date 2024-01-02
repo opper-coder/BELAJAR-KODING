@@ -1,1 +1,1 @@
-
+cari bagaimana cara mendapatkanya
