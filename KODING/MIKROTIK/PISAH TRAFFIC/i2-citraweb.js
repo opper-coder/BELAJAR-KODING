@@ -94,5 +94,10 @@ SIMPLE QUEUE
     advance
       packetmark: no-mark
       parent: total-bandwidth
--------------------------------------------------- 
+--------------------------------------------------
+Pengujian
+  buka simple queue list
+    - coba akses ke zoom: maka paket kelihatan lewat queueu zoom
+    - coba akses selain zoom :  maka paket kelihatan lewat queueu browsing
+--------------------------------------------------
 selesai
