@@ -27,7 +27,8 @@ Catatan
 	LOCAL MIKROTIK
 		-------------------------------- >>>>>
 		- optimasi
-			- pisah traffic
+			** pisah traffic
+			- port port yang di filter
 			- pppoe
 			- load balance
 			- login responsif
