@@ -1,12 +1,11 @@
 Prioritas Bandwidth Video Conference Zoom - MIKROTIK TUTORIAL [ENG SUB]
 citraweb
---------------------------------------------------
-=================================================
+-------------------------------------------------------------------------------------------------
 kumpulkan 
 	ip, port, protocol
 addresslist
 	tambahkan address list
-	tambahkan rool auto addresslist jika sudah punya port dan ip dasar
+	tambahkan role auto addresslist jika sudah punya port dan ip dasar
 mangle
 	mark konneksion
 	mark packet
@@ -14,7 +13,7 @@ queue
 	buat paket semua
 	buat paket zoom
 	buat paket browsing
---------------------------------------------------
+-------------------------------------------------------------------------------------------------
 ADD IP MANUAL
 kita sudah merangkum ip, port, protocol, zoom
 tulis dalam bentuk sintax sbb:
