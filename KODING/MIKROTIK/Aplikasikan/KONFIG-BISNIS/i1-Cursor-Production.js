@@ -33,6 +33,7 @@ Catatan
 			- load balance
 			- login responsif
 			- internet responsif
+			- blokir share hotspot
 		- konfig dasar
 		TARGET HARI RABU MALAM SELESAI
 		-------------------------------- >>>>>
