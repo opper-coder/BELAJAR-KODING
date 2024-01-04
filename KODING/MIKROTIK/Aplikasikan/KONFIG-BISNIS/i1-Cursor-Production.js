@@ -29,7 +29,7 @@ Catatan
 		- optimasi
 			** pisah traffic
 			- port port yang di filter
-			- pppoe
+			- pppoe dan vlan dan OLT
 			- load balance
 			- login responsif
 			- internet responsif
