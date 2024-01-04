@@ -71,6 +71,7 @@ Catatan
 			- dll 
 
 	APLIKASI
+		- REST HTTP
 		- boxits, Db, Rest, Auth, Accounting, Hosting
 		- boxits mobile 
 		- koneksi, dan kaitanya dengan CHR dan SERVER
