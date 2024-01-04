@@ -105,7 +105,11 @@ CODE BOXITS CUSTOMIZE
    - edit hanya pada halaman login saja untuk redirect dan menerima kredential user 
    - halaman lainya biarkan apa adanya 
    - PRNYA:
-      buat halaman yang memiliki fungsi yang sma denga native tapi di terapkan pada boxits page dg menggunakan variabel   
+      - buat halaman yang memiliki fungsi yang sama dg native tapi di terapkan pada boxits page dg menggunakan variabel yg tersedia
+      - halaman status, di akses saat belum atau sesudah login, misal saat akses status boxits maka redirect ke status hotspot
+         lalu status hotspon menngembalikan dengan membawa data yang diperlukan di tampilkan 
+      - atau lebih baiknya tinggal tampilkan saja status hotspot apa adanya dengan memodifikasi fungsi2 yang ada di boxits 
+         di customisasikan ke halaman native nya 
 -----------------------------------------------------------
 login page
    - copas template loginpage.html di dokumentasi (sudah ada url redirect dan script redirect() invoke)
@@ -134,7 +138,10 @@ PR
       - identity
       - hostname
       - server-address dan dns cari tahu saja lagi lainya (kandidat identity : Banggai23 ada sistem penamaan server)
+
 - 
 ----- >>>>> ----- >>>>> ----- >>>>> ----- >>>>> ----- >>>>> 
 >>>>> -----------------------------------------------------------
 selesai
+
+
