@@ -82,10 +82,12 @@ PERANGKAT
 ------------------------------------------------------------------
 LOGISTIK
 	- memiliki kotak server
-	- punya ODP Board di rumah berisi 8 ODP
+	- punya ODP BOARD di rumah berisi 8 ODP
+	- punya HTB BOARD 
+	- LAN BOARD
+	- WLAN BOARD 
 	- punya splitter rasio lengkap
-	- splitter rasio project
-	-  
+	- splitter rasio project 
 	-----------------------
 	- lemari alat
 		rak perlengkapan, sabuk pengaman, helm, dll
