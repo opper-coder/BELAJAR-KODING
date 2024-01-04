@@ -47,7 +47,7 @@ Catatan
 
 		- voucher kencang di 2 menit pertama dengan ganti user profil ke normal
 		- restart mikrotik 2 hari sekali jam 3 malam
-		- kasih burst yang baik coba perhitungkan baik baik
+		- kasih burst: 1000k/1000k 1250k/1250k 1150k/1150k 8/8
 		- speedtest mode mikrotik local
 		- speedtest mode sendiri local
 		- netwatch telegram (indicator pertama)
