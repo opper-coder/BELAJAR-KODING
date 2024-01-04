@@ -76,7 +76,64 @@ Catatan
 		- boxits mobile 
 		- koneksi, dan kaitanya dengan CHR dan SERVER
 		- saat ada perangkat baru buatkan secreet VPN baru 
-------------------------------------------------------------------
+==================================================================
 PERANGKAT
 	router harga 145 belum ZTE F663
 ------------------------------------------------------------------
+LOGISTIK
+	- memiliki kotak server
+	- punya ODP Board di rumah berisi 8 ODP
+	- punya splitter rasio lengkap
+	- splitter rasio project
+	-  
+	-----------------------
+	- lemari alat
+		rak perlengkapan, sabuk pengaman, helm, dll
+		rak toolkit
+		rak senter, ht, opm, otdr,  
+		rak splicer, pelindung kabel, dll
+	-----------------------
+	- lemari barang
+		rak router baru
+		rak router bekas
+		rak router baru + config
+		rak router rusak
+		rak charge 
+	- mikrotik fresh
+	- mikrotik konfig
+	- olt
+	- odp
+	- rak split rasio
+	- rak HTB new
+	- rak HTB rusak
+	
+==================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
