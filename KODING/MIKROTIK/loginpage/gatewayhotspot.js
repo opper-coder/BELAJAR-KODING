@@ -97,7 +97,6 @@ kemudian menempatkan ke folder custom, dan mengaarahkan penggunaan loginpage cus
    - untuk RB 750 gr3 harus menyertakan folder di root flash tidak thu kenapa, inilah yang di cari oleh ikul
    - ada mikrotik tertentu jika mengganti loginpage tinggal di copas di root hotspot saja sudah jadi
 - itu saja
-
 ----- >>>>> ----- >>>>> ----- >>>>> ----- >>>>> ----- >>>>> 
 CODE BOXITS CUSTOMIZE
    - copas folder hotspot bawaan > paste di root > beri nama berbeda misal: hotspotKu
@@ -128,7 +127,6 @@ redirect
    - pada halaman login dari boxits, isikan unsur redirect template, isikan dengan user dan pass dari db boxits, boxits juga create ke mikrotik bersangkutan 
    - oya modifikasi juga halaman status, dan juga halaman refresh 
    - boxits harus tahu dari server mana login ini di minta
-
 -----------------------------------------------------------
 PR
 - masih belum tahu kaitanya dengan error dan cara penangananya
@@ -138,7 +136,6 @@ PR
       - identity
       - hostname
       - server-address dan dns cari tahu saja lagi lainya (kandidat identity : Banggai23 ada sistem penamaan server)
-
 - 
 ----- >>>>> ----- >>>>> ----- >>>>> ----- >>>>> ----- >>>>> 
 >>>>> -----------------------------------------------------------
