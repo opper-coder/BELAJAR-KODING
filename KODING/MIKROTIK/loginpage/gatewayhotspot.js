@@ -24,7 +24,7 @@ ISI HALALAMAN
 -----------------------------------------------------------
 redirect.html        : mengalihkan pengguna ke url lain (inilah index nya)
 login.html           : halaman form login username pass 
-   usaername         : string
+   username          : string
    kata sandi        : string atau hash MD5 CHAP PAP di centang saja 
    dst               : redirect ke halaman iklan jika berhasil login 
    popup             : apakah akan memunculkan jendela status saat login berhasil
