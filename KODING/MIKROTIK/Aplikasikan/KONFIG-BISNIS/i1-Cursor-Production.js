@@ -77,6 +77,7 @@ Catatan
 		- koneksi, dan kaitanya dengan CHR dan SERVER
 		- saat ada perangkat baru buatkan secreet VPN baru 
 		- auto login refresh
+		- fitur dimana lokasi titik kabel yang selalu ada patroli: terkhusus yang menyebrangi jalan 
 ==================================================================
 PERANGKAT
 	router harga 145 belum ZTE F663
