@@ -18,7 +18,7 @@ user profile
     rate limit: (queue limit bandwith untuk profile ini) 
           1m : berarti nilai upload dan download 
           1m/2m: u/d
-          // 1m/2m 10m/10m 1m/1m 40 : u/d limitAt up/dn time
+          // 1m/2m 10m/10m 1m/1m 40 : u/d burst thresold time
     adresslist: none (ini di gunakan untuk pengelompokan IP tertentu yang menggunakan, ini terkait dengan filter)
 -----------------------------------------------------------------
 user
