@@ -11,7 +11,7 @@ user profile
         kalau "uptime"  di user: total login boleh dicicil sampai besok 
         saran gak ush diisi, kalau di isi samakan saja dengan jumlah uptime atau lebihkan 10 menit lah
       )
-    idle timeout: defdault none (saat gak ada traffic logout, supya nggak menghabiskan uptime)
+    idle timeout: default none (saat gak ada traffic logout, supya nggak menghabiskan uptime)
     keep alive: default none (saat gak terkoneksi maka logout, saat diluar jaringan)
     status auto refresh: 1 menit (itu untuk mengupdate halaman status di status.php halaman login page status)
     shared: 1 (jumlah perangkat yg bisa pakai profile ini)
