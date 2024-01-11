@@ -17,7 +17,7 @@ UPGRADE
 	  download di versi extra packages atau all packages
 	- jika kita download berupa file zip maka extrack telebih dahulu sebelum drag n drop dan reboot
 - cara automatis (kita tinggal memilih stagenya saja, arsitektur dan versi automatic): 
-	- kita akan gunakan router lain yang belum di update (router yng belum di update)
+	- kita akan gunakan router lain yang belum di update (router yg belum di update)
 	- syarat pertama router sudah di konfig dasar artinya harus terhubung ke internet karena saat upgrade
 	  akan terhubung dengan server di mikrotik.com
 	- langkafh pertama: system > package > cek for update. > terlihat versi kita dan versi yg tersedia > beserta changelog
