@@ -78,7 +78,7 @@ Catatan
 		- saat ada perangkat baru buatkan secreet VPN baru 
 		- auto login refresh
 		- fitur dimana lokasi titik kabel yang selalu ada patroli: terkhusus yang menyebrangi jalan 
-		** hosting boxits di DDNS nodejs (silahkan cek disana bagaimana cara ada di documentasi)
+		** hosting boxits di DDNS nodejs (silahkan cek disana bagaimana cara ada di dokumentasi)
 ==================================================================
 PERANGKAT
 	router harga 145 belum ZTE F663
