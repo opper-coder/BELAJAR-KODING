@@ -2,7 +2,8 @@ Prioritas Bandwidth Video Conference Zoom - MIKROTIK TUTORIAL [ENG SUB]
 citraweb
 -------------------------------------------------------------------------------------------------
 kumpulkan 
-  ip, port, protocol
+  adresslist,  ip, port, protocol
+  addresslist bisa di daptkan update di https://midteknologi.com/blog/address-list-mikrotik/
 addresslist
   tambahkan address list
   tambahkan role auto addresslist jika sudah punya port dan ip dasar
