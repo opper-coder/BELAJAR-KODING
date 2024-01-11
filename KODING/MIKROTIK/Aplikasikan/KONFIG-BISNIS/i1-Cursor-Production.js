@@ -13,7 +13,7 @@ Catatan
 		** cek on/off (apakah ada kendala)
 		** speedtest antar AP local (periksa kecepatan jaringan AP terganggu tidak)
 		** restart AP, MIKROTIK, berkala 2 hari sekali jam 3 malam
-		- perhitungan apakah router tersebut memenuhi quota apa tidak sperhitungkan baik baik keperluan dan metodenya
+		- perhitungan apakah router tersebut memenuhi quota apa tidak, perhitungkan baik-baik keperluan dan metodenya
 		
 		** monitoring semua mikrotik
 		** monitoring semua OLT
@@ -28,7 +28,7 @@ Catatan
 		-------------------------------- >>>>>
 		- optimasi
 			** pisah traffic
-			- port port yang di filter
+			- port-port yang di filter
 			- pppoe dan vlan dan OLT
 			- load balance
 			- login responsif
@@ -71,13 +71,14 @@ Catatan
 			- dll 
 
 	APLIKASI
-		- REST HTTP
+		** REST HTTP
 		- boxits, Db, Rest, Auth, Accounting, Hosting
 		- boxits mobile 
 		- koneksi, dan kaitanya dengan CHR dan SERVER
 		- saat ada perangkat baru buatkan secreet VPN baru 
 		- auto login refresh
 		- fitur dimana lokasi titik kabel yang selalu ada patroli: terkhusus yang menyebrangi jalan 
+		** hosting boxits di DDNS nodejs (silahkan cek disana bagaimana cara ada di documentasi)
 ==================================================================
 PERANGKAT
 	router harga 145 belum ZTE F663
