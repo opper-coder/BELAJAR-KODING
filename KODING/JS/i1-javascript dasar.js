@@ -279,6 +279,9 @@ Pendahuluan
 	- bisa di masukan langsung ke variabel beda dengan if dan switch (bisa juga langsung)
 		let hasil = false ? "halo benar!" : "yah salah!";
 		document.write(hasil);
+- ada lagi pakai &&
+	if sederhana tanpa else 
+	true && console.log("oke");
 - Nullish Coalescing Operator -----------------
 	- mirip ternary 
 	- hanya yang di tanya null atau undefined
