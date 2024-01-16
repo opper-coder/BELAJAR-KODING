@@ -31,6 +31,9 @@ angga rizki
     contoh penggunaanya ada di 
 12. bulma snippet > ada banyak trigger misal hero, nav bar, dll menginspirasi
 13. auto rename tag (jun han) nulis tag dan edit auto penutup nya
+14. indent-rainbow
+16. console ninja
+17. codiumAi
 ------------------------------------------------------
 1. cara menghapus element
 import yang tidak terpakai
