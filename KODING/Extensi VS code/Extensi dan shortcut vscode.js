@@ -19,6 +19,12 @@ tambahka -> menu extensi -> cari dan install
       "editor.defaultFormatter": "esbenp.prettier-vscode"
     }
 }
+   --- 
+	- cara simple
+	1. install prettier > enable
+	2. config > settings > search: format
+	3. on save: true, 
+	4. editor:default formatter pilih: prettier - code formatter
   
 4. Bracket Pair Colorizer-
    mewarnai kurawal, kurung kotak, bulat sesuai warna
