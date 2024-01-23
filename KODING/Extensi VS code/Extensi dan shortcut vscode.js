@@ -20,7 +20,7 @@ tambahka -> menu extensi -> cari dan install
     }
 }
    --- 
-	- cara simple
+	- prettier cara simple
 	1. install prettier > enable
 	2. config > settings > search: format
 	3. on save: true, 
