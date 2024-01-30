@@ -22,6 +22,21 @@ CODE DOKUMENTASI SAYA
 -> /folder/file		: go file
 --> console.log()	: tulis
 
+React ES7
+-------------------------------------------------
+rfc    = komponen biasa
+nfn    = arrow function
+usess  = useState
+useffs = useEffect
+clg    = console.log
+fof    = for of
+fin    = for in
+dob    = const {second} = first
+dar    = const [second] = first
+sti    = setInterval(() => { first }, second)
+sto    = setTimeout(() => { first }, second)
+cmmb   = comment block
+
 INITRAMS
 ---------------------------------------------------
 mengatasi initrams gagal booting di linux ikuti 2 langkah berikut 
