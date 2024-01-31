@@ -47,3 +47,42 @@ catatan router ada mode type bridge silahkan pilih bridge dan juga port binding 
 	- ganti user dan password management
 REBOOT
 saja langsung login dan speedtest harus sesuai dengan yang di berikan pada voucher
+
+----------------------------------------------------------------------
+catatan di bawah masih perlu di evaluasi
+
+bilhanet etting Router ZTE F660 Menjadi Acces Point Hotspot 
+ini hanya prinsip saja
+
+- masuk administrator
+- TAB WAN
+	- ip version: ipv4
+	- type: DHCP (pilih saja DHCP biar gampang, karena nanti akan di disablekan di LAN nya)
+	- conn name: create WAN conn
+	- service list: internet
+	- vlan mode: TRANSPARENT
+	- create
+- TAB WLAN
+	- seperti biasa kita tidak isi
+	- jangan lupa ubah nama dan security openSystem 
+- TAB LAN
+	- LAN IP: ubah satu segmen dengan gateway mikrotik
+	- disconnect: konnect kembali dg atur ip laptop anda 
+	- kalau g bisa restyart router dan login dengan ip baru. kalau https hilangkan s nya
+	tab DHCP
+	- disable DHCP server (supaya dapat IP dari mikrotik)
+	- assign ispDNS: centang (supaya dapat DNS dari mikrotik)
+	- simpan/save, tapi biasanya tidak mau simpan, cara mengatasinya dibawah ini
+	- atur DHCP start dan end satu segmen dengan LAN IP di atas, meskipun di disable DHCP nya
+	- default gateway isikan sesuai gatewai segmen di mikrotik simpan
+	tab DHCP portlist
+	- centang semua port
+	tab DHCP mode
+	- semua port ubah ke mode default
+	tab IPv6 DHCP 
+	- matikan dhcp servernya juga
+	tab atas security di atas 
+	- firewall di ganti LOW
+	tab atas aministration
+	- ganti user dan password management
+	- 
