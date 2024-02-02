@@ -1,13 +1,15 @@
 tambahka -> menu extensi -> cari dan install
 ------------------------------------------------------
 ganti font pada vscode:
-- install dulu font yang dipilih > kemudian :
+- install dulu font yang dipilih pd OS > kemudian :
 - vscode > setting > keywd: fons family > copas/replace dibawah ini:
+- (yang di gunakan adalah urutan pada jendela editor urutan terdepan, berikutnya jendela terminal dll)
 
 'Droid Sans Mono', 'monospace', monospace
 'Martian Mono', 'Droid Sans Mono', 'monospace', monospace
 'JetBrains Mono', 'Droid Sans Mono', 'monospace', monospace
 'Liberation Mono', 'Droid Sans Mono', 'monospace', monospace
+'Victor Mono', 'Droid Sans Mono', 'monospace', monospace
 
 ------------------------------------------------------
 1. ES7/React/Redux/GraphQl/React-Native snippets- by: dsznajder atau pakai di bawah ini
