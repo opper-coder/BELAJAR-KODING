@@ -26,8 +26,18 @@ BRIDGE-IP
 - bridge-WAN (port 1)
 - bridge-LAN (semua port kecuali terakhir)
 - bridge-speedtest (port terakhir)
+---------------------------------------
+IP
 - add ip bridge-LAN 192.168.50.1/24
 - add ip bridge-speedtest 192.168.52.1/24
+catatan:
+1. ip bisa di berikan kepada ether langsung
+2. ip bisa di berikan ke bridge (portnya tidak usah)
+3. ip bisa diberikan kepada vlan (port dan bridgenya tidak usah, nanti saat bikin DHCP server, hotspot, PPPoE dll tinggal masukkan ke interface VLAN saja)
+---------------------------------------
+VLAN
+- interface VLAN add name:bebas100; VlanID:100 ;interface: bridge saja langsung ke ether juga bisa sih
+- nanti di clientnya tinggal buat entiti vlan juga dan tag(tandai) vlan id nya (100)
 ---------------------------------------
 DHCP CLIENT
 - ADD > bound
