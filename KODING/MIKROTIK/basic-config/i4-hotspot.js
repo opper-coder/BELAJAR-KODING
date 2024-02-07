@@ -27,7 +27,7 @@ user
   profile:
   tab limit
     uptime: total waktu  (ini batasan utama pada voucher)
-    byte: total bandwidth data (ini batasan jika berbnasis data)
+    byte: total bandwidth data (ini batasan jika berbasis data)
   -------------------
   user loghin by mac
     pada server profile > hsprof1 > 
