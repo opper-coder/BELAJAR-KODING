@@ -20,6 +20,7 @@ Langkah amanya tiap perubahan ping dst
 ---------------------------------------
 WEB FIG
 http://ip:8080
+samakan satu segment pada laptop
 ???
 ---------------------------------------
 BRIDGE-IP
