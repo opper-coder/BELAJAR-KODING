@@ -68,8 +68,21 @@ SETUP TAMBAHAN
 ---
 system > clock
 > system zone auto detect: matikan
-> system SNTP client > enable > primary NTP : 202.65.114.202 > secondary NTP : 212.26.18.41 > server dns: "asia.pool.ntp.org"
+> system SNTP client > enable > 
+	cara1:
+		primary NTP : 202.65.114.202 > 
+		secondary NTP : 212.26.18.41 > 
+		server dns: "asia.pool.ntp.org"
+	cara2:
+	untuk mendapat kan ntp: keyword sntp client: pilih : indonesia_id.pool.ntp.org
+		primary NTP: id.pool.ntp.org 
+		secondary NTP: 1.id.pool.ntp.org 
 > apply maka mode akan berubah beserta parameter lain 
+	atur jam cara2
+		hidupkan zone auto detect:
+			tab manual time zone
+				WITA +8 
+
 ---------------------------------------
 LOGINPAGE
 -> files > hapus smua kecuali hotspot lalu ambil login page milik anda paste di "dalam" folder /hotspot
