@@ -104,4 +104,9 @@ KONFIG ROUTER(Tp link)
 			save
 		WAN > status
 		 	cek WAN IP : jika seudah sesuai berarti connect 
-		
+
+---------------------------------------------------------------------
+ISOLIR PPPOE
+sidebar > PPPoE > ON Aplly
+	- copas secara berurut diterminal 
+	- dampaknya adalah saat pelanggan pppoe habis bulan akan di matikan otomatis
