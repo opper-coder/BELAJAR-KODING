@@ -50,7 +50,7 @@ CONFIG PPPoE RADBOOX
 			username: aisyah-ppoe
 			pass: 123
 			---
-			assign profile: pilih profile sebelumnya dibuat
+			assign profile: PAKET-HEMAT (pilih profile sebelumnya dibuat )(setelah user aktif bisa ubah profile, yaitu dblclk > user terkait > ubah profile > update)
 			Router nas:	Pilih Router(jk pilih all maka user pass akan berlaku di seluruh nas kita)
 			ip adress, service name: kosongkan
 			Lock Mac : cek/uncek (jika di check maka semua HP yang login akan masuk sendiri sesuai MAC nya) 
