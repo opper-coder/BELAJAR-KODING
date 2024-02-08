@@ -1,1 +1,62 @@
-as
+---------------------------------------------------------------------
+OLT gpon vsol global satu PON
+	GE1 : masuk ke mikrotik 
+	GE2 : masuk ke romote konfig laptop
+	PON : keluar ke distribusi 
+
+IP default gpon vsol: https://192.168.8.200
+	samakan satu segment laptop lalau login
+	user: admin
+	pass: Xpon@Olt9417#
+
+	tab informasi: ada version software, hardware, 
+	tab config > 
+		vlan
+		 	vlan: (buatkan endpoint vlan  10, 100, 200 )
+			 	- vlan id 	: 10
+			 	- descript	: vlan-10-mgnm
+			 	- add 		: buatkan hotspot dan pppoe
+		 	vlan port: (tag di sini)
+			 	- vlan-10	: GE1 (sebagai uplink) 
+			 		mode: hybrid 
+			 		pilih 	: tag 
+		 	ip route:
+		 		vlan ip adress: 192.168.26.200 255.255.255.0
+		 		vlan id		: 10 (ini khusus untuk management ya, untuk hostspot dan pppoe nanti di tag di modem) 
+		 		save
+		 		sekarang kita punya ip lan1 dan vlan10 untuk management (bisa di akses keduanya)
+		 profile configuration
+		 	line profile	: 
+		 		add profile : 
+		 			profile id: 1
+		 			profile name: "auto_reg" ( di video lain "Hotspot-PPPoE")
+		 			add 
+		 			jika sudah muncul baris > detile & modify >
+		 				tcon
+		 					tcon name: "1" 
+		 					add
+		 				gemport
+		 					gemport name:"1" (sesuaikan dengan diatas tadi)
+		 					add
+		 				service 
+		 					vlan list: 100, 200 (masukkan vlan hotspot dan pppoe, vlan 10 tidak usah, katanya saat di akses 100 maka otomatis vlan 10 juga sudah masuk) 
+		ONU configuration 
+			onu auth list : disini daftar onu yang terregistrasi
+			pon: informasi output sfp power listrik dll
+			onu auto learn: (agar tancap dan play saja tidak perlu registrasi )
+				plug n play: enable
+				default vlan:1
+
+				PON1: enable
+				line profile: auto_reg (generated) 
+				apply > akan registrasi ulang maka akan restart
+				save (ini penting karena semua konfig tadi disini menyimpanya)
+				lakukan secepatnya karena akan restart (masih belum di ketahui apakah restart dulu atau save dulu)
+		System management
+			ganti password
+			update firmware dll
+			snmp: perlu untuk menyambungkan dengan the dude
+			jam : setting manual ya tidak online 
+			login management : bisa hilangkan capcha 
+
+---------------------------------------------------------------------
