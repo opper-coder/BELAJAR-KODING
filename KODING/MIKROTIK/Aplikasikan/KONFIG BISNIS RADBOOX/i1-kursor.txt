@@ -1,1 +1,91 @@
+TOPOLOGI SAAT INI
+
+agenda: 
+1. topologi
+	a. vlan
+	b. pppoe, hotspot (ada di radboox)
+	c. remote
+2. pemasaran (ada di file i4-marketing)
+	a. penjual
+	b. agency
+3. integrasi RADBOOX
+	ada tutorialnya di file i3-radboox
+4. integrasi monitoring
+	A. THE DUDE
+	B. UI OLT  
+5. ODP ODC Split rasio
+	1. paling sederhana 4 : 4 : 8
+		kelemahan kita harus menggunakan kabel 4 core backbone 
+		kelebihan 110 - 128 client 
+	2. atau 4 : 4 : 2 : 4 . ada penambahan split 50:50
+
+--------------------------------------------------------------------- 
+perangkat:
+silahkan cek di google sheets
+Software:
+	ROS
+	the dude
+	Radboox 
+	WA, telegram, mikhmon  
+
+---------------------------------------------------------------------
+TOPOLOGI
+
+ether1 			: ISP
+ether2 			: OLT 
+---
+bridge1-WAN 	: ether1
+bridge2-LAN 	: vlan10-mgmn, vlan100-Hotspot, vlan200-PPPoE, ether2 dst kalau mau
+	IP VLAN10 	: remote mgnm 	: 192.168.26.1/24
+	IP VLAN100 	: hotspot 		: 192.168.200.1/24
+	IP VLAN200 	: pppoe 		: 70.70.70.1/24
+port 5 			: winbox
+
+--------------------------------------------------------------------- 
+konfig dasar sampai dapat internet 
+- DHCP CLIENT
+- DNS 
+- firewall NAT masquerade untuk ether1-WAN
+
+--------------------------------------------------------------------- 
+VLAN 
+	- interface > tab vlan > add 
+		name: vlan10-mgmn 
+		vlan id: 10
+		interface: bridge2-LAN
+	- ip > tambahkan pada masing masing vlan (port, bridge tidak usah)
+	----
+	atau 
+	- bikin bridge lalu masukkan ether2 dan 3 misalnya (ether 2 di masukkan ke bridge ini)
+	- bikin 3 vlan di atas ke ether2 (semua vlan menuju ether2)
+ 
+--------------------------------------------------------------------- 
+HOTSPOT
+oya pppoe jangan di buat dulu kecuali nanti saat bikin radboox
+	- bikin hotspot seperti biasa > arahkan ke vlan-100
+
+--------------------------------------------------------------------- 
+PPPoE
+oya pppoe jangan di buat dulu kecuali nanti saat bikin radboox
+server
+	PPP > PPPoE server > add
+		name: server-PPPoE
+		interface: vlan200
+		apply OK
+profile
+	tab profile > add
+		name: speed2mb
+		dns server: 8888, 8844
+		tab limit
+			rxtx: 2M / 2M
+			only one: default biar semua orang bisa menggunakan 
+secret > add 
+ 	name: test1
+ 	pass: 123
+ 	service: pppoe
+ 	profile: speed2mb
+ 	localAdress: 70.70.70.1
+ 	remoteAdress:70.70.70.2  
+
+---------------------------------------------------------------------
 
