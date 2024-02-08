@@ -33,3 +33,63 @@ Bikin Radius
 		ubah PPPoE use radius 
 			- PPP > secret > tombol PPP Authenthication > useRadius: true 
 ---------------------------------------------------------------------
+CONFIG PPPoE RADBOOX
+	bikin profile
+	- sidebar PPPoE > Profile 
+		new Profile button
+			name: PAKET-HEMAT
+			price: 150.000
+			ratelimit: rx/tx (bisa hanya di isi ini, atau beserta burst nya)
+			create
+	- di mikrotik:
+		profile tidak lagi di buat di mikrotik 
+	bikin user PPPoE
+	- sidebar PPPoE > User  
+		Add user Button
+			type user : pilih PPPoE 
+			username: aisyah-ppoe
+			pass: 123
+			---
+			assign profile: pilih profile sebelumnya dibuat
+			Router nas:	Pilih Router(jk pilih all maka user pass akan berlaku di seluruh nas kita)
+			ip adress, service name: kosongkan
+			Lock Mac : cek/uncek (jika di check maka semua HP yang login akan masuk sendiri sesuai MAC nya) 
+		add billing : yes (jika mau di masukkan ke dalam penagihan, jika keluarga sendiri tidak usah di cek)
+			fullname: sebagai identifier (penting)
+			KTP: opsional
+			NO. whatsapp: sangat berguna sebagai OTP > login dll
+			Email: opt
+			Adress: agar properties terisi
+		option
+			terkait dengan bayar dimuka/belakang tanggal tetep atau yang penting 30 hari dsb
+		create 
+	Billing
+		sidebar > PPPoE > billing 
+			akan terlihat semua user yang teregistrasi yang aktifkan billing
+			yng tidak aktifkan hanya bisa di lihat pada "user" 
+			jika ada yg telat bayar bisa di isolir > di suruh bayar ke payment gateway
+
+---------------------------------------------------------------------
+SETTING PPPOE DI MIKROTIK
+	
+bikin ip pool 
+	IP > pool > add >
+	 	name: PPPoE
+	 	address: 10.10.10.0/24
+	PPP > PPPoE server > add 
+		name : PPPoE-Server
+		interface: ether2 (atau vlan kalau pakai vlan, ada tutorial juga tentang PPPoE cek juga) 
+		default profile: default(ubah nanti kalau sudah di buat di bawah)
+		OK 
+		- tab scret > pppoe authentication > useradius: yes > (sudah di bahas tadi)
+
+		- tab profile > add  
+			name: PPPoE Saya
+			local addr: 
+			remote addr: pilih PPPoE (tadi)
+			DNS serever: 8888 8844
+		- tab limit :
+			only one: yes
+		- kembali ke PPPOE server ubah profile ke yang kita buat tadi 
+
+
