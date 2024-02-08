@@ -34,8 +34,8 @@ TOPOLOGI
 ether1 			: ISP
 ether2 			: OLT 
 ---
-bridge1-WAN 	: ether1
-bridge2-LAN 	: vlan10-mgmn, vlan100-Hotspot, vlan200-PPPoE, ether2 dst kalau mau
+bridge1-WAN 		: ether1
+bridge2-LAN 		: vlan10-mgmn, vlan100-Hotspot, vlan200-PPPoE, ether2 dst kalau mau
 	IP VLAN10 	: remote mgnm 	: 192.168.26.1/24
 	IP VLAN100 	: hotspot 		: 192.168.200.1/24
 	IP VLAN200 	: pppoe 		: 70.70.70.1/24
