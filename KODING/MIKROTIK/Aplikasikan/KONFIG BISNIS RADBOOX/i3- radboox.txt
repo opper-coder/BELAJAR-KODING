@@ -92,4 +92,16 @@ bikin ip pool
 			only one: yes
 		- kembali ke PPPOE server ubah profile ke yang kita buat tadi 
 
-
+---------------------------------------------------------------------
+KONFIG ROUTER(Tp link) 
+	login
+	tab network 
+		WAN 
+			connection Type: PPPoE 
+			name: aisyah-ppoe (sesuai user yang di buat di radboox )
+			pass: 123
+			auth type: auto_auth
+			save
+		WAN > status
+		 	cek WAN IP : jika seudah sesuai berarti connect 
+		
