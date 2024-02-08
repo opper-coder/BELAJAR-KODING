@@ -1,0 +1,35 @@
+RADBOOX
+---------------------------------------------------------------------
+radboox.com
+
+bikin VPN di radboox
+	login Radboox: sidebar > VPN
+		nama account: PANDAWA 
+		user: aqil
+		pass: aqil123
+		apply:
+	added row:
+		- dapat IP address VPN (ini di copas saat bikin Radius)
+		- kanan ada view properties
+	di Mikrotik:
+		- copas l2tp script (misalnya) di terminal mikrotik bersangkutan (kayaknya g usah di enter)
+		- sebelum copas buka interface > list atau  ppp > interface
+		- kalau kurang jeleas silahkan baca petunjuknya 
+Bikin Radius
+	sidebar > radius
+		- router name: (bebas)
+		- IP adress: IP VPN tadi 
+		- secret: bebas 
+		- time zone: pilih  
+	added row
+		- klik view properties di kanan
+		- baca opetunjuk (kopas script)
+	di Mikrotik
+		- terminal:> paste (kayaknya g usah di enter)
+		sedebar > RADIUS 
+			- added row (artinya berhasil)
+		ubah profile hotspot use radius 
+			- IP > hotspot > server profile > dblclick hsprof1 > RADIUS > use RADIUS: true
+		ubah PPPoE use radius 
+			- PPP > secret > tombol PPP Authenthication > useRadius: true 
+---------------------------------------------------------------------
