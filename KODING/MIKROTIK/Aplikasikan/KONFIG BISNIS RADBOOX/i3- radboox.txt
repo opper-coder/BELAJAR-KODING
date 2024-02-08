@@ -110,3 +110,36 @@ ISOLIR PPPOE
 sidebar > PPPoE > ON Aplly
 	- copas secara berurut diterminal 
 	- dampaknya adalah saat pelanggan pppoe habis bulan akan di matikan otomatis
+
+---------------------------------------------------------------------
+RESELLER 
+untuk hotspot gampang banget maka di tutorial secara komprehensif disini  
+	- jadi ada admin multi role sebagai reseller yang hanya bisa baca dan create terbatas 
+	- sidebar > hotspot > reseller > ini adalah halaman report reseller 
+	- cara buat registrasi reseller
+	- sidebar > admin > add user > silahkan isi > jangan lupa role reseller 
+		coba login 
+		- ada yang penting: reseller memiliki saldo dan juga bisa buat voucher 
+		- voucher: bisa di generate oleh reseller namun profilnye di batasi 
+			- cara membatasi adalah saat bikin profile voucher harga pada reseller di isikan nol  
+			- session : adalah tempat voucher yg sedang login
+			- history : adalah report keuangan 
+			- reseller harus topup dulu: maka punya saldo dan bisa generate voucher 
+			- cara deposit : oleh admin > hotspot > reseller > pilih reseller > isi jumlah deposit > kirim OK  
+			- reseller jika tidak punya saldo maka tidak bisa cetak voucher kecuali kalau kita kasih hutang 
+			- caranya: masuk admin user di maksud klik edit > isi amount limit: 100.000 misalnya > Ok
+			- nanti bisa bikin voucher tapi dalam report ada data baru bernama amount due
+
+---------------------------------------------------------------------
+WHATSAPP
+(gunakan untuk pemberitahuan maintenance)
+	di nav bar > whatsapp > ON Apply > ada qrcode > scan WA kita > 
+	maka kita sudah punya wa ke grup anggota 
+	- fiturnya ada broadcash ke all, all active, suspend member  
+	- message nya bisa di edit silahkan saja
+
+---------------------------------------------------------------------
+RrTG
+	adalah tool monitoring, resource, ether, ppp, vlan, hotspot, grafik, setting
+	cara aktifkannya tinggal copas scrip dari
+	sidebar > radius > snmp > paste di tgerminal.
