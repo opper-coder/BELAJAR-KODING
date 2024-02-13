@@ -1,3 +1,4 @@
+ini adalah font VSCODE > setting > keywd: font family > copas di bawah
 
 'Droid Sans Mono', 'monospace', monospace
 'Martian Mono', 'Droid Sans Mono', 'monospace', monospace
@@ -10,6 +11,9 @@ OVERVIEW
 
 Tutorial NextJs "App Router"
 sumber VIP CODE STUDIO 16 januari 2024
+-----------------------------------------------------------
+Oya file di github ini lebih lengkapnya ada di zip pada "src" nya src disini tidak lengkap
+jika mau praktek silahkan di buat di halaman lalu instal package 
 
 -----------------------------------------------------------
 DAFTAR ISI
