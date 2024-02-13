@@ -1,0 +1,11 @@
+-----------------------------------------------------------
+instalasi dan integrasi 
+UI mobile dan desktop
+struktur folder mobile, desktop, css, layout, error 
+env.local
+auth 
+api 
+cache 
+service firebase 
+middleware (AAA) 
+-----------------------------------------------------------

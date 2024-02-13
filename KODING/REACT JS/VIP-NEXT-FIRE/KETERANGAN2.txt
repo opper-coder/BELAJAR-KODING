@@ -1,0 +1,230 @@
+-----------------------------------------------------------
+FIREBASE CONNECT DB
+---
+config:
+koneksi db dan aplikasi
+    - firebase console > next
+    - add project: "vip-tutorial" > continue
+    - pilih konfig: web > continue
+    - matikn server > add new folder /lib/firebase/init.ts
+    - :> npm install firebase > tunggu selesai
+    - kopas js/npm config ke sini > tambahkan paling bawah: export default app; > continue (credential atur nanti di .env.local)
+    - firebase > sidebar > build > firestore > create db > lokasi server: jakarta > production mode > create
+        - start collection > parent: product > field: 
+            id: auto, 
+            add field:
+                - named: nike dunk low retro (kopas dari REST API kita) 
+                - price: ...
+                - image: ...
+        - tab rules: "true" > publish
+
+service firestore:
+buatkan method ambil data dari library firebase ke firestore 
+    - add new file /lib/firebase/service.ts
+    - ketik ini(akan melakukan 2 import): const firestore = getFirestore(app);
+    - lihat kode di: /lib/firebase/service.ts > disana dibuatkan service: retrieveData(), retrieveDataById()
+
+API service ke firebase:
+dari method firestor di atas diambil data untuk jadi REST HTTP server 
+    - add new /api/productFire/route.ts
+    - buat REST http GET 
+    - berisi retrieveData() retrieveDataById()
+    - cekedoc file: productFire/route.ts dan lib/firebase/service.ts
+    - cek berhasil > jalankan server > localhost:3000/api/productFire > berhasil 
+
+gunakan data API
+Perbaiki koneksi db di halaman:   
+    - gunakan data di product4/page.tsx
+    - dan perbaiki modal nya di @modal dan turunanya
+    exp: product4
+-----------------------------------------------------------
+CRUD FIREBASE 
+
+?????????? -------------- ?????????? -----------------
+
+
+-----------------------------------------------------------
+ATURAN KEAMANAN FIREBASE
+?????????? -------------- ?????????? -----------------
+
+-----------------------------------------------------------
+NEXT AUTH (credential dulu)
+npm --->
+    - :> npm i next-auth@4.24.3
+layout --->
+    - <SessionProvider></SessionProvider> : bungkus dengan session semua yang ada dalam body /layout.tsx utama
+dashboard ---> 
+    - :> npm run dev > masuk ke dashboard di browser
+    - use client
+    - sbg contoh kita akan menggunakan dashboard untuk halaman yang di izinkan masuk dengan login
+    - di halaman yang bersangkutan (dalam hal ini /dashboard/page.tsx), dilakukan pengecekan status session, 
+        - jika session = unauthentication maka redirect ke /login 
+        - (selanjutnya lihat middleware ada tindakan lebih baik untuk pembatasan halaman)
+    - session di dapat nanti di generate dari alur login, tepatnya berada di api/auth di bawah ini
+api/auth ---> 
+    - disini adalah aturan global autentikasi pada nextAuth() 
+    - buat file dengan path seperti ini(wajib): root/app/api/auth/[...next]/route.tsx (boleh pakai grouping seperti pada contoh)  
+    - di dalamnya ada option umum nextAuth() jadi tidak ada code kita mengakses langsung ke file ini, melainkan nextAuth() di background
+navbar ---> 
+    - siapkan nama session.user account, tampilkan di navbar
+    - buatkan LOGIN onClick={() => signIn()} milik nextAuth, nanti di arahkan ke auth UI dari nextAuth
+    - buatkan LOGOUT pada logout() juga di navbar 
+    - sementara pakai login UI dari nextAuth
+    - nanti halaman UI milik kita akan di arahkan pada parameter di API api/auth/[...next]/route.tsx. 
+login --->
+    - di halaman login sesuaikan, cek ketarangan disana  
+
+-----------------------------------------------------------
+NEXT REGISTER FIREBASE
+register/page
+    - onSubmit=handleSubmit()
+    - handleSubmit: dalam mengirim data butuh API POST untuk di ambil datanya dan di gunakan mengirim data ke firebase, cekidot
+api/register
+    - return nya Response: status, messages
+    - di API ini mengakses service register ke firebase, sambil ngirim data ke firebase
+lib/firebase/service
+    - buat function register() untuk menangani register dari API api/register
+    - boleh menambahkan properti data yang dikirim ke db disini, kalau mau silahkan
+    - cekidot
+
+-----------------------------------------------------------
+NEXT LOGIN FIREBASE
+login/page
+    - onSubmit=handleLogin()
+        - jalankan signIn() dari signIn() dari nextAuth 
+        - sambil mengirim credentials, yang diambil nilai dari input user (oleh NextAuth)
+        - try catch
+    - buatkan alur error dan, isloading untuk menangani button itu gampang saja lah
+
+-----------------------------------------------------------
+NEXT LOGIN WITH GOOGLE
+    - siapkan GCP
+        - GCP > console
+        - my-app project (tombol kiri atas) > add new (kalau belum ada) > pilih jika sudah ada 
+        - pilih next-latihan-vip (contoh yang kita punya)
+        - sidebar > api & services > 
+        - sidebar > oauth consent screen
+            - usertype: external > create 
+            - appname : aplikasiku 
+            - email: email login 
+            - developer contact: email pribadi lainya
+            - save 
+            - save lagi
+            - ke dashboard > Publish APP 
+            - 
+        - sidebar > credential > create > OAuth Client ID 
+            - platform: web aplication 
+            - name: web client 1
+            - authorize js : http://localhost:3000 
+            - authorize redirect : http://localhost:3000/api/auth/callback/google 
+            - create
+        - dikasih token ClientId dan ClientSecret 
+            - add new .env.local > tambahkan 
+                GOOGLE_OAUTH_CLIENT_ID=170043199852-fm37lsvqk5vifvqbb0voa0gumaiib7c3.apps.googleusercontent.com
+                GOOGLE_OAUTH_CLIENT_SECRET=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
+    - /api/auth/[...nextauth]/route.ts 
+        - tambahkan provider: google provider 
+        - import secara manual: import GoogleProvider from "next-auth/providers/google"; > cekidoc
+        - juga lakukan callback 
+    - /lib/firebase/service 
+        - buat service function loginWithGoogle() > cekidoc
+    - login page,
+        - tambahkan event dan langsung ke nextAuth() saja
+        - onClick={() =>
+                signIn("google", {
+                  redirect: false,
+                  callbackUrl: "/dashboard_auth",
+                })}
+
+-----------------------------------------------------------
+MIDDLEWARE
+    membatasi akses halaman:
+    - sebelumnya pembatasan halaman seperti "dashboard" tidak bisa di akses kecuali login admin
+    - jika sudah login: halalaman "login" dan "register" tidak bisa di akses lagi 
+    - jika belum login: dashboard dan user profile tidak bisa juga, selain karena ada cek role jg 
+    - di halaman tutorial NEXT AUTH ada pembatasan akses halaman maka kita sempurnakan disini
+
+    - hapus semua aturan tentang pengecekan halaman di tiap halaman bersangkutan lalu gantikan dengan middleware 
+    - middleware: 
+        1. new app/(boxits)/middleware/withAuth.ts : 
+            - cek session login/belum redirect ke /login 
+            - tentukan halaman mana yang boleh di akses oleh admin
+            - cek dengan role redirect ke /home
+        2. jalankan withAuth di /middleware.ts
+            - tentukan halaman mana yang boleh di akses saat login
+        3. pada loginpage redirect harus di sesuaikan juga 
+        4. cekidot 
+-----------------------------------------------------------
+ERROR PAGE 
+    - halaman yang tidak di temukan misal localhost:3000/blablabla
+        tinggal buat halaman di /app/not-found.tsx isinya halaman biasa 
+    - kalau error 
+        - tinggal buat halaman di /app/error.tsx isinya halaman biasa > cekidot
+        - kita sudah pernah buat di /product coba cari lagi
+
+-----------------------------------------------------------
+OPTIMIZE
+    - image: bisa lazyload, resize resolusi, dll
+        - public: folder image bisa di ambil di local yaitu di /public tinggal src=ke sini (tidak perlu di daftarkan sumbernya)
+        - atau ngambil dari internet: yaitu klik kanan gambar > copi image url > lalu daftarkan host pada next config di bawah:
+        product2
+            - ganti img tag menjadi Image import dari next 
+            - kasih attribute width={500} height={500} isi ngawur saja karena di replace oleh css
+            - oya 100 atau 500 itu akan mempengaruhi resolusi, css className="w-10 h-10 rounded-full" (css diperlukan untuk dimensi tampilan)
+            - tambah atribut "priority" maka image akan di prioritaskan sebelum komponen lain
+            - tambah atribut loading="lazy" sebaliknya akan di loading paling akhir
+            - jika sumber gambar dari internet kita perlu mendaftarkan sumbernya:
+            - go /next.config.js > tambahkan sumber gambar, jika ada sumber lain silahkan tambahkan arraynya
+                const nextConfig = {
+                    images: {
+                        remotePatterns: [
+                        {
+                            protocol: "https",
+                            hostname: "static.nike.com",
+                            port: "",
+                            pathname: "/**",
+                        },
+                        ],
+                    },
+                    };
+        - lazyload
+            - ada beberapa cara lazy load dilakukan cekidoc official, misalnya
+                - load saat sudah di butuhkan 
+                - load saat import client component
+                - load saat import server component
+                - load custom menggunakan dynamic
+                - dll 
+            - pada halaman product4 adalah contoh implementasi lazyload dynamic
+    - Link:  a di ganti dengan Link maka akan smooth tidak terjadi reload melainkan dari javascript jadi cepat 
+    - script: digunakan misal untuk keperluan analithic, lazyload, dll, integrasi third party yang berat 
+    - font: font google, atau local fonts
+        - go /layout.tsx disana ada inter dari google fonts, coba ganti dengan poppins dan juga tambahkan weight 
+
+        import { Poppins } from "next/font/google";
+
+        const Poppins = Poppins({ subsets: ["latin"], weight:["100", "200", "300", "400", "500"] });
+        <body className={Poppins.className}>
+        
+-----------------------------------------------------------
+HOSTING VERCEL
+    - login ke github dulu
+    - go vercel.com > login > with github > vercel dashboard 
+        - add new > project > continue with github > install (aplikasi di vercel) > password github > maka ter import semua repo kita 
+        - github > new repo: vip-next-fire > private > create 
+        :> ctrl c 
+        :> git add .
+        :> git commit -m "settuprepo"
+        hubungkan copas dari repo yang baru kita buat tadi
+        :> git remote add origin https://github.com/opper-coder/vip-next-fire.git
+        :> git push -u origin main 
+        :>  
+    - konfig env.local 
+        - revalidate, oauth, dll cekidoc 
+        - masukkan env pada /lib/firebase/init.js
+        - NEXT_PUBLIC_API_URL : semua url localhost:3000 dan ubah menjadi env cari di sidebar gambar lensa: keyword localhost
+            ganti satu persatu: supaya saat di hosting tinggal ganti URL nya 
+    
+
+    menit 22
+
+-----------------------------------------------------------  

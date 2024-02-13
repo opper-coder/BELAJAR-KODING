@@ -1,0 +1,234 @@
+
+'Droid Sans Mono', 'monospace', monospace
+'Martian Mono', 'Droid Sans Mono', 'monospace', monospace
+'JetBrains Mono', 'Droid Sans Mono', 'monospace', monospace
+'Liberation Mono', 'Droid Sans Mono', 'monospace', monospace
+'Victor Mono', 'Droid Sans Mono', 'monospace', monospace
+
+----------------------------------------------------------- 
+OVERVIEW
+
+Tutorial NextJs "App Router"
+sumber VIP CODE STUDIO 16 januari 2024
+
+-----------------------------------------------------------
+DAFTAR ISI
+
+- instalasi dan environtment
+- struktur Folder 
+- pages layout template
+- grouping dan dynamic route
+- link dan navigation 
+- route handler api
+- fetch 
+- cache
+- revalidate 
+
+-----------------------------------------------------------
+INSTALASI 
+    - node -v 20 
+    - npm -v 10 
+    - new folder 
+    :> npx @npx create-next-app@latest (disini @13.4.19)
+
+    What is your project named? my-app
+    Would you like to use TypeScript? / Yes
+    Would you like to use ESLint? / Yes
+    Would you like to use Tailwind CSS? / Yes
+    Would you like to use `src/` directory? / Yes
+    Would you like to use App Router? (recommended) / Yes
+    Would you like to customize the default import alias (@/*)? No /
+    What import alias would you like configured? @/*
+    - tunggu selesai
+
+-----------------------------------------------------------
+VSCODE EXTENSION
+    - auto rename tag : junhan > intall > restart > pakai
+    - console ninja : wallaby > intall > setting > search: console ninja > log viewer > consoleninja > output mode: inView
+    - es7 : dsznajder > intall > restart > pakai
+    - eslint: microsoft > intall > restart > pakai
+    - indent-rainbow : oderwat > intall > restart > pakai
+    - prettier : prettier > setting lihat github
+    - thunder client : thunderclient > > intall > restart > pakai
+
+-----------------------------------------------------------
+FOLDER dan ROUTE
+    - sekarang di src ada folder app > ini tempat code kita  
+    - routing menggunakan folder dalam app ini 
+    - page.js adalah endpoint public yg akan di akses pertama dalam routing
+    - selain page.js (dan beberapa yg lain) berarti hanya bisa di panggil dalam import tidak di dalam routing url
+    - hanya page.js yang bisa jadi routing selainya hanya jadi komponen import
+    - kalau pakai hook wajib pakai "use client"
+    - exp: root/page.tsx, navbar.tsx, layout.tsx
+    - file/halaman sejenis sesuai peruntukanya:
+        page: di tampilkan saat url di akses
+        layout: di tampilkan sekali di semua file dalam folder ini dan turunanya
+        template: di tampilkan berkali (new instance) di folder dan turunanya
+        route: halaman untuk routing API, dan revalidate 
+        loading: halaman di tampilkan saat page.ts loading belum selesai
+        error: halaman di tampilkan saat page.ts ada error
+        not-found: halaman di tampilkan saat page.ts tidak ada 
+        middleware: untuk middleware
+
+-----------------------------------------------------------
+PAGES, LAYOUT DAN TEMPLATE
+    - saat instalasi kita di kasih page dan layout bawaan (tinggal hapus yang tidak di perlukan dlm tampilan)
+    - di global.css, hapus semua sisakan 3 file tailwind yg diperlukan
+    - layout.tsx adalah pengganti _app di pages router 
+    - layout.tsx adalah pertama kali di akses oleh aplikasi sebelum page.tsx
+    - layout.tsx akan selalu di tampilkan di dalam folder tersebut dan folder turunan nya
+    - children adalah "tempat halaman sebenarnya" yang di akses saat routing
+    - template.tsx mirip layout.tsx, tapi saat akses tiap url akan di instance lagi 
+    - terbukti saat pakai useState, kemudian kita routing ke halaman yang berbeda
+        - maka layout.tsx memiliki state yg sama 
+        - sedang template.tsx memiliki state beda 
+        - tinggal pilih bebas, hanya soal state sj
+
+-----------------------------------------------------------
+GRUP DAN DINAMIC ROUTE
+grouping --- 
+    - saat menulis folder pakai kurung maka dia akan di skip pada routing (nama nya gruping)
+    - exp: url: (boxits)/about. maka nulis url /about saja
+    - layout, template juga di support dibuat dalam folder ini
+dinamic route ---
+    - dinamic router adalah url router biasa di sertai url dinamis berupa [slug]
+    - exp: url: product/123 : product adalah folder biasa, 123 adalah slug dinamis
+        - folder slug harus di atur [] dan komponen di dalamnya pakai argument props:{params: {slug: string}}      
+        - contoh folder [slug] 
+        - contoh tangkap argument slug 
+    - kalau parameter banyak dan bersarang folder pakai [...slug]
+    - masih adalagi opsional route ??? 
+??? ??? ??? ??? ??? 
+
+-----------------------------------------------------------
+LINK dan NAVIGATION 
+    - exp: navbar.tsx 
+    - usePathName, import dan gunakan "status route" pengkondisian warna CSS pada navigasi
+    - useRouter, import dan gunakan untuk routing dengan callback
+    - pada layout kita juga memanfaatkan 
+
+-----------------------------------------------------------
+ROUTE HANDLER API
+    - fungsi
+        - untuk memanggil api sama dengan page : /api/product/route.ts cukup dengan /api/product
+        - bisa memiliki dinamic juga : 
+        - support HTTP METHOD
+        - tiap path API hanya memiliki satu function API saja apakah itu GET, PATCH, UPDATE, DELETE (ini kesimpulan sy sendiri)
+    - cara kerja 
+        - route.tsx mirip layout.tsx page.tsx template.tsx 
+        - tapi tidak bisa menghuni jalur route yg sama dengan folder page, layout, template
+        - sehingga menangani nya tinggal buatkan folder khusus /api misalnya
+        - exp: /api/route.ts, /api/product/route.ts
+        - request GET api: dilakukan 2 pengecekan menggunakan "NextRequest", 1. dengan id/tanpa id, ada/tidak data, 
+        - exp: api/auth/route.ts 
+        - di lakukan request POST api: dari halaman /login/page.ts  dengan handleLogin
+        - di /api/login/route.js dengan ambil data post menggunakan next response
+
+-----------------------------------------------------------
+REFACTOR API SERVICES
+        - untuk API service folder di taruh di root src/services/general
+        - url fetch di tangkap sebagai arguments 
+        - exp: /services/product
+        - 
+
+-----------------------------------------------------------
+DATA FETCHING
+    - fetch data adalah inti dari sebuah aplikasi 
+    - bisa di async await route handler, server component, server action,
+    - caching, revalidation, 
+    ---
+    - kita akan feching data dari fakestoreapi.com > exp: /product
+    - juga akan feching data dari localhost kita sendiri > exp: /product2
+    --- 
+    exp: /product dan api/product 
+
+-----------------------------------------------------------
+CACHE dan REVALIDATE 
+    - kalau kita setiap menampilkan data harus feching dulu ke db maka aplikasinya akan berat, solusinya:
+      - next melakukan fetching sekali saja kemudian simpan dalam cache untuk interaktif selanjutnya,
+      - namun ketika ada perubahan di db, maka di cache tidak ikut berubah, solusinya:
+      - lakukan update sinkronisasi antara cache dan db secara berkala, menggunakan revalidate 
+        - revalidate ada dua: 1. berdasar waktu, 2. berdasar request     
+    - bisa tidak melakukan cache dengan menambahkan parameter pada fetch(url, {cache: "no-store"})
+    - exp: /product2 dan /api/product
+---
+cache dan revalidate berdasar waktu
+      fetch(url, {
+        // cache: "no-store" // jika tidak ingin caching 
+        // cache: "force-cache" // default di caching meski tidak di tulis
+        next:{
+          // revalidate: 3600 * 24, // pilih berdasar waktu atau tag (interval 20 detik u latihan )
+          // tags: ["markProduct"], // revalidate berdasar tag 
+        }
+      })
+---
+cache dan revalidate berdasar trigger tag(pada tag API)
+cara kerja:
+1. siapkan data REST API di: /api/product/route.ts: function GET(req){res}
+2. konsumsi data API di di: /product2/[slug]/page.tsx
+    - fetch(url REST, cache) > fetch(url, { next:{ tags: [zzz] } })
+    - lakukan cache 
+    - lakukan revalidate berdasar waktu :hanya mengisikan interval detik 
+    - atau revalidate: dengan membuat tag (penanda)(validate berdasarkan trigger api)
+3. bikin revalidate handler di: /api/revalidate/route.ts > function POST(req){res}
+    - lakukan penanganan trigger tag dan pengaman secret 
+4. panggil API trigger tags dan secret dg postman: (POST: http://localhost:3000/api/revalidate?tag=zzz&secret=1234)
+5. atau panggil trigger tags pada button misalnya exp: admin/dashboard/product2/page.tsx > button onclick=fetch(url)
+6. coba akses halaman /product2/[slug]/page.tsx untuk melihat data yang di tampilkan
+7. coba ubah data REST nya > lalu refresh halaman > data berubah tapi di halaman tidak ada perubahan
+8. lakukan revalidate via postman atau tombol > sekarang barulah data ikut berubah karena sudah update
+9. token secret bisa di simpan dalam /.env.local : REVALIDATE_TOKEN
+10. lalu pada api/product pengecekan if process.env.REVALIDATE_TOKEN
+
+-----------------------------------------------------------
+LOADING DAN ERROR
+- adalah penanganan loading dan error, sebagai pengganti page router harus melakukan pengecekan sendiri 
+- disini app router tinggal membuat halaman loading.tsx berdampingan dengan page.tsx yang akan di kasih loading
+- untuk tampilanya silahkan custom sendiri dengan copas halaman page.tsx atau tidak terserah 
+- coba kasih cache: "no-store" pada fetch api agar terlihat efeknya
+- pada prakteknya kita pake cache, namun loading tetap di buat untuk memperlakukan pada saat revalidate atau build
+exp: product/slug/loading 
+- error juga memiliki cara kerja yang mirip yaitu akan halaman akan di tampilkan saat halaman bersanding error
+    - misalnya error dengan menyalahkan url pada fetchnya tidak ada 
+- di dalam page error ada function menerima parameter error dan reset, silahkan cek penggunaanya
+    - disana tidak ada logic pengecekan error, yg penting bikin halaman ini saja maka jk ada error langsung redirect
+exp: product/slug/error 
+
+-----------------------------------------------------------
+MIDDLEWARE
+- memungkinkan menjalankan code sebelum request selesai 
+- dapat memodifikasi request terhadap response: rewrite, redirect, header, 
+- run sebelum cache dan rute match 
+- file /middleware.ts disimpan di root atau sejajar dengan /app di dalam src
+
+-----------------------------------------------------------
+PARALEL ROUTE
+- memungkinkan kita merender dua+ route kedalam sebuah route
+- contohnya kita punya route /dashboard/...
+- di dalamnya ada: @payments, @analytic, @product2 > sebagai membolehkan di render bersamaan dalam layout dashboard 
+- syaratnya: folder yang di izinkan harus di tambahkan @ di depannya
+- syaratnya2: folder yang di tidak di izinkan menjadi tidak bisa di akses jika ada paralel route, gak tau kenapa
+- lalu pada layout ambil props untuk masing2 halaman 
+- di layout silahkan di susun seperti layaknya children
+- masing2 halaman sepertinya tidak bisa di akses secara mandiri sesuai url 
+- ???????????? coba bandingkan dengan komponen biasa yg di import
+- ????????????????????????????????????????
+
+-----------------------------------------------------------
+INTERCEPTING ROUTE
+- artinya mencegat, kita berada di halaman /dashboard/ mau ke halaman /detail/
+- pada intercept, kita routingnya ke /detail/, tapi tampilan /dashboard/ tetap terlihat, 
+  dan tampilan /detail/ akan di tampilkan di atasnya berupa modals. tanpa harus masuk ke /detail/   
+- /detail/ masih bisa di akses via url 
+
+cara akses route pakai 
+- (.)   sejajar
+- (..) diatas nya
+- (..)(..) di atas duakali dst
+- (...) di root
+
+- belum paham 
+- ????????????????????????????????????????
+
+----- >>>>> lanjut ke KETERANGAN2
+
