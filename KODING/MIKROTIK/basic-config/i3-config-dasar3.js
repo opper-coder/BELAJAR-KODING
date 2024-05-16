@@ -12,10 +12,9 @@ BASIC CONFIG
 9. HOTSPOT (dhcp server)
 --- tambahan
 10. CLOCK 
-11. tambahan lainya
+11. PPPoE
 12. pisah traffic
 13. no share again 
-14. PPPoE
 ==================================================================================
 ---------------------------------------
 RESET
