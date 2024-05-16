@@ -1,4 +1,22 @@
 BASIC CONFIG
+==================================================================================
+1. reset config
+2. security 
+3. Bridge
+4. VLAN
+5. IP
+--- mulai dari sini juga boleh
+6. DHCP client (ISP)
+7. DNS
+8. NAT masquerade
+9. HOTSPOT (dhcp server)
+--- tambahan
+10. CLOCK 
+11. tambahan lainya
+12. pisah traffic
+13. no share again 
+14. PPPoE
+==================================================================================
 ---------------------------------------
 RESET
 - Reset mikrotik 
