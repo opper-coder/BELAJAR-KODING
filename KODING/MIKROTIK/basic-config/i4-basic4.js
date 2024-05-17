@@ -1,4 +1,4 @@
-BASIC CONFIG
+BASIC CONFIG VOUCHER + PPPoE mikrotik, OLT, ONU
 ---------------------------------------
 1. Reset config
 2. Bridge: WAN, LAN
