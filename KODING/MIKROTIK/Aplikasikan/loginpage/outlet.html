@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="pragma" content="no-cache" />
+    <meta http-equiv="expires" content="-1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Internet hotspot - Log in</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <div class="ie-fixMinHeight">
+    <div class="main">
+      <div style="width: 100%; padding: 16px">
+        <a href="login.html" style="text-decoration: none;"><b>Kembali</b></a>
+        <hr>
+      </div>
+      <br>
+      <br>
+      <br>
+<div style="padding: 0px 50px">
+<b style="color: #c8e7ff">LOKASI AGEN VOUCHER</b>
+    <br>
+    <br>
+  
+  <!-- Select -->
+  <select id="mySelect" onchange="generateTable()" 
+    style=
+    "padding: 8px 10px;
+    font-size: 16px;
+    border-radius: 4px;
+    color: #333; 
+    margin-bottom: 16px;
+    width: 100%;" 
+  >
+    <option value="0">Pilih Lokasi:</option>
+  </select>
+
+  <!-- Tabel untuk menampilkan data -->
+  <table id="myTable">
+    <thead>
+      <tr>
+        <td>NAMA</td>
+        <td>KETERANGAN</td>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Data akan dimasukkan secara dinamis menggunakan JavaScript -->
+    </tbody>
+  </table>
+
+</div>
+
+<script>
+
+  // Object data dengan array di dalamnya
+  var objectData = {
+    "Boneaka": [
+      { nama: "John", kota: "Depan SD" },
+      { nama: "Alice", kota: "Toko Amanah" },
+      { nama: "Bob", kota: "Pak Haji" }
+    ],
+    "Lonas": [
+      { nama: "Maria", kota: "Miami" },
+      { nama: "David", kota: "Dallas" },
+      { nama: "Sarah", kota: "Seattle" },
+      { nama: "Sarah", kota: "Seattle" }
+    ],
+    "Pemancar": [
+      { nama: "Michael", kota: "San Francisco" },
+      { nama: "Emma", kota: "Boston" },
+      { nama: "Daniel", kota: "Houston" },
+      { nama: "Daniel", kota: "Houston" },
+      { nama: "Daniel", kota: "Houston" }
+    ]
+  };
+
+  // Mengisi opsi select dari objectData
+  var select = document.getElementById("mySelect");
+  for (var key in objectData) {
+    var option = document.createElement("option");
+    option.value = key;
+    option.text = key;
+    select.appendChild(option);
+  }
+
+  // Fungsi untuk membuat tabel dari data yang dipilih
+  function generateTable() {
+    var selectValue = document.getElementById("mySelect").value;
+    var tableBody = document.getElementById("myTable").getElementsByTagName('tbody')[0];
+    tableBody.innerHTML = ''; // mengosongkan tbody
+    var selectedData = objectData[selectValue];
+    for (var i = 0; i < selectedData.length; i++) {
+      var row = tableBody.insertRow();
+      for (var key in selectedData[i]) {
+        var cell = row.insertCell();
+        cell.innerHTML = selectedData[i][key];
+      }
+    }
+  }
+</script>
+<!-- --------------------------------- -->
+        </div>
+    </div>
+</body>
+</html>
+
+
+
