@@ -1,0 +1,96 @@
+PERSIAPAN UJI COBA
+
+-----------------------------------------------------------
+- bridge hotspot
+- VPN PPPOE
+- Remote OLT
+- bonding WAN
+- TEST VOLTASI
+
+- oya buat dulu profil hotspot dan PPPoE 
+- buat user masing 3 atau 4 user
+- laptop 
+- adapter
+- kabel RJ45
+- ONU hotspot saja 
+- ONU hotspot PPPoE
+-----------------------------------------------------------
+* benahi voucher kita tanpa mikbotam
+* benahi harga pada loginpage 
+* uji usia voucher 1 menit
+* baca arah script dibawah dan menimpa rool yang mana?
+* uji usia voucher panjang tapi login auto
+* hapus prefix
+* ubah daftar nama agency
+- wacanakan FUP (4 menit pertama cepat)
+	- uji satu persatu parameter FUP
+
+ROUTER:
+* Router Bridge biasa
+* Router Bridge biasa dengan vlan tag 60 PPPoE
+* Router vlan40 Hotspot dan vlan tag 60 PPPoE
+- Router Totolink dengan IPTV 
+
+OLT MGNM
+- vlan80 di management
+-----------------------------------------------------------
+
+===========================================================
+-----------------------------------------------------------
+OLT:
+
+1. BRIDGE HOTSPOT BIASA
+	- tanpa konfig
+ 	- test satu-persatu router 
+ 	- catat hasilnya
+2. BRIDGE BIASa + vlan PPPoE
+ 	- konfig dengan tag-60 saja
+ 	- test satu persatu
+ 	- catat hasilnya
+3. VLAN-HOTSPOT + VLAN-PPPoE
+	- konfig dengan tag-40 dan tag-60
+ 	- test satu persatu
+ 	- catat hasilnya
+4. MGNM OLT
+	- konfig IP dan tag-80 REMOTE OLT
+	- satu segmen PC
+	- akses IP 
+	- catat hasilnya
+5. TAG 1010 Modem
+	- konfig vlan tag 1010
+	- akses 1010
+6. IPTV 
+	- 
+7. HOTSPOT ON PPPoE
+	- ini menarik
+/////
+
+buka OLT
+tab vlan
+	1. tanpa vlan
+	2. buat vlan 60 dulu (tag di uplink 2 dan PON2 dulu untuk latihan)
+	3. buat vlan-60 dan vlan-40 (sda)
+
+cara tag vlan di OLT HIOSO
+cara tag vlan MGNM DI HIOSO
+cara remote tag 1010
+cara IPtV
+
+/////
+
+
+-----------------------------------------------------------
+MIKROTIK:
+
+1. BRIDGE HOTSPOT BIASA 
+	bikin hotspot pada 
+	
+2. BRIDGE BIASa + vlan PPPoE
+
+3. VLAN-HOTSPOT + VLAN-PPPoE
+
+4. MGNM OLT
+
+5. TAG 1010 Modem
+
+===========================================================
