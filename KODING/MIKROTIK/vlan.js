@@ -44,8 +44,8 @@ ________________________________________________________________________________
 TERIMA VLAN (mikrotik kedua)
 --------------------------------------------------------------------------------------
 pada vlan kita kenal dengan type port:
-port/intervace VLAN TRUNC  = port yg membawa multi service
-port/intervace VLAN ACCESS = port yg membawa single service 
+port/intervace VLAN TRUNC  = port yg membawa multi service (masuk dg bundle)
+port/intervace VLAN ACCESS = port yg membawa single service (tempat vlan di pecah kembali)
 
 - pada OS versi 6 kebawah tidak suport hardware-offload oleh karena itu gunakan v6 keatas
 - sebelum melakukan pembuatan vlan kita harus tahu dulu apakah RB kita terdapat CHIP switch nya
