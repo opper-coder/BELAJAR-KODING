@@ -4,7 +4,7 @@ kemudian di terima dan di pecah kembali menjadi banyak fisik port
 kita akan config 2 mikrotik
 1 untuk server vlan (mikrotik biasa)
 2 untuk menerima vlan (mikrotik sebagai switch> yaitu yang memiliki chip switch manageable)
-3 bisa juga langsung diterima dengan ONT(support vlan) namun kita harus setting ke vlan accessnya
+3 bisa juga langsung diterima dengan ONT(support vlan) namun kita harus setting dg "tag vlan"
 --------------------------------------------------------------------------------------
 CONFIG DASAR PADA INTERFACE (mikrotik pertama)
 jika config dasar sudah di lakukan maka skip langkah ini
