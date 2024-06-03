@@ -76,4 +76,4 @@ port/intervace VLAN ACCESS = port yg membawa single service (tempat vlan di peca
     - tancapkan laptop di ether 2 atau 3 di mikrotik switch
     - lihat sambungan ether gunakan otomatic dhcp/obtain > maka kita akan dapatkan IP dari server sesuai range yang di berikan
     - coba akses internet
--------------------------
+--------------------------
