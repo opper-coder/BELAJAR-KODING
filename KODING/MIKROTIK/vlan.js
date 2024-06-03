@@ -51,7 +51,7 @@ port/intervace VLAN ACCESS = port yg membawa single service (tempat vlan di peca
 - sebelum melakukan pembuatan vlan kita harus tahu dulu apakah RB kita terdapat CHIP switch nya
     - switch > type dan lihat vlan list. kemampuanya di www.wiki.mikrotik.com. tiap RB chip nya berbeda2, salah satu kemampuanya "table vlan"
     - port > semua port tergabung dalam "switch1" > sehingga bisa di lewatkan access oleh chip ke "switch1" tersebut
-      "switch1" di gunakan untuk setting vlan access dan trunc nantinya
+      "switch1" di gunakan untuk setting vlan trunc dan access nantinya
     - kalau v6 kebawah ada "master port", v6 keatas di gantikan dengan "hardware offload"
     - hal ini menghaaruskan kita bikin bridge yang ada hardware offloadnya agar bridge bisa di bagi ke hardware ether 
 -------------------------
