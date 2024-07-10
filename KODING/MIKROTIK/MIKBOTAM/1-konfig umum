@@ -19,6 +19,8 @@ dapatkan konfig dan data di bawah ini
 VPN DDNS SEKARANG
 suryatam@mytunnel.id = id-2.hostddns.us:10347  8074
 suryatik@mytunnel.id = id-2.hostddns.us:10346  7273
+suryolt1@mytunnel.id = id-41.hostddns.us:9751  1001
+
 =================================
 
 MIKBOTAM M.I.T.H.A
@@ -27,8 +29,8 @@ Daftar Isi:
 - pastikan mikrotik sudah di config dasar hotspot dan PPPoE
 - persiapkan data di notepad/sublime dari 3 sumber:
 	1. milubot 	: caritahu ID telegram (bisa menggunakan cara lain)
-	2. botfather : bikin bot untuk mikbotam
-	3. mikrotik  : data koneksi ke mikbotam
+	2. botfather 	: bikin bot untuk mikbotam
+	3. mikrotik  	: data koneksi ke mikbotam
 - dasboard langganan MIKBOTAM
 	- daftar dan beli layanan
 - DDNS 
@@ -97,7 +99,7 @@ login ke hostddns.us
 			- pass: secret
 			- port: samakan dengan service API mikrotik
 
-		- order dua buah: untuk mikrotik dan mikbotam
+		- order dua buah: untuk mikrotik dan mikbotam (tiga buah jika ada remote untuk OLT)
 		- lalu masuk ke tab list VPN 
 			- ada dua produk pesanan kita tadi klik manage > di kasih scrip masing2
 			- kopas di terminal mikrotik masing2 VPN > enter > amati di interface akan muncul interface baru dari ddns dan flag R 
@@ -124,7 +126,6 @@ Telegram
 - /newbot
 - kirim "namabot bebas satu kata" dan "userbot harus pakai kata bot di belakang"
 - jika berhasil kita di kasih link bot, dan API Tokenbot ini masukkan ke parameter di MIKBOTAM
-
 ----------------------------------	
 KONEKSI MIKBOTAM DASHBOARD
 	- login
@@ -146,10 +147,8 @@ KONEKSI MIKBOTAM DASHBOARD
 	dan langsung menginformasikan data terkait
 - aktifkan bot telegram di mikbotam webhook
 	tab setting webhook > klik set webhook > akan ada tampilan info webhook, berarti tinggal test response telegram
-
 ----------------------------------
 TEST TELEGRAM BOT
-
 - cari username yang diberikan tadi berupa link surya_hotspot_bot di contact telegram
 - ada response 
 	"selamat datang ADMIN"
@@ -157,7 +156,6 @@ TEST TELEGRAM BOT
 - pilih: surya_hotspot_bot
 - /editpic	: gambar contact bot
 - /editcommand : 
-
 	kirim pesan dibawah ini (beserta enter dan bagian kanan huruf kecil semua)
 	
 ================================
