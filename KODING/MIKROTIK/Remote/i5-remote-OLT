@@ -1,0 +1,79 @@
+-----------------------------------------------------------
+Remote OLT Hioso dalam satu segmen
+----------------------------------------------------------- 
+1. Login OLT
+2. Ubah IP MGNM satu segmen dengan IP Hotspot kamu di mikrotik
+3. tancap komputer dan OLT dalam satu segmen
+4. binding mac dan IP di hotspot
+5. akses dalam satu segmen
+----------------------------------------------------------- 
+1. Login OLT
+	- tancap kabel di port MGNM
+	- ubah PC IP ke segment default OLT
+	- buka OLT di browser dengan user pass default
+2. Ubah IP MGNM satu segmen dengan IP Hotspot kamu di mikrotik
+	- ubah IP OLT beserta gateway ke IP HOTSPOT di mikrotik
+	- catat IP dan MAC OLT untuk binding nantinya 
+	- simpan
+3. tancap komputer dan OLT dalam satu segmen
+	- tancapkan OLT dan PC ke mikrotik hotspot
+	- ubah IP PC ke dynamic
+4. binding mac dan IP di hotspot
+	- buka mikrotik hospot > tab ip binding > add
+		- input 
+			MAC: MAC 
+			IP: IP Statik yang di berikan
+			to address: samakan IP
+			server: pilih server yang bisa meremote
+			type: bypassed
+		- apply OK 
+5. akses dalam satu segmen
+	- akses via browser 
+	- lewat HP pun bisa asal satu segmen
+-----------------------------------------------------------
+REMOTE OLT dari luar jaringan
+-----------------------------------------------------------
+1. langganan VPN DDNS
+2. konfig Mikrotik sebagai Client VPN
+3. Routing VPN ke OLT local  
+-----------------------------------------------------------
+1. langganan VPN DDNS
+	login freeddns, topup, beli vpn Remote:
+	name: suryolt1 (1-99, sesuai keperluanku)
+	pass: suryolt1 (samakan aja)
+	port: 1001 (terserah)
+	order: (pastikan ada saldo, success)
+-----------------------------------------------------------
+2. konfig Mikrotik sebagai Client VPN
+	client VPN auto:
+		list VPN di DDNS lalu manage > copas script ke terminal mikrotik   
+	client VPN Manual:
+		PPP > interface > add > ovpn client (didapat dari script di ddns)
+			tab general
+				name: remote-OLT1
+			tab dialout
+				connect to: id-41.hostddns.us(port nya tidak usah di ikutkan) (copas URL REMOTE dari ddns(hijau)) 
+				port: biarkan default mikrotik
+				username: suryolt1@mytunnel.id (kopas dari ddns atasnya url remote)
+				pass: suryolt1 (kopas dari ddns)
+			apply OK
+	cek di:
+		interface: pastikan ada tambahan interface dan flag R
+		PPP tab interface : juga bisa dilihat disini
+-----------------------------------------------------------
+3. Routing VPN ke OLT local  
+	IP > firewall > NAT > add > 
+		chain: dstnat
+		dst address: IP VPN dari DDNS (local) bukan IP SERVER(public) ya
+		protocol: 6(tcp)
+		dst port: 1001 (hijau di ddns, sesuai yang kita buat di ddns)
+	ACTION:
+		action: dstnat
+		to address: 192.168.40.4 (IP MGMN di OLT) 
+		to port: 80 (sesuai http port MGMN OLT)
+		comment: NAT-remote-OLT1(wajibkan)
+
+-----------------------------------------------------------
+Siap di gunakan
+	coba akses melalui data cellular
+-----------------------------------------------------------
