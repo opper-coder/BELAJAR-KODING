@@ -78,6 +78,7 @@ ada dua langkah yang bisa dilakukan yaitu: 1. IP kita buat scara statik 2. kita 
 	gateway: 192.168.100.1%ether1 > apply OK > (disinilah intinya)
 - untuk ether 2 lakukan hal yang sama yaitu 
 	IP > routes > add > dst address:0000/0 > gateway:192.168.100.1%ether2 
+ 	distance: 1 utk ISP1 dan 2 ISP2
 - maka kita sudah memiliki 2 port dan langsung berfungsi jadi failover sederhana
 - kalau mau load balance PCC tinggal lakukan seperti biasa
 
