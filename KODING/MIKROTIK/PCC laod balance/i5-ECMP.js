@@ -3,10 +3,12 @@ loadbalance ECMP
 - equal cost multy path
 - membagi bandwidth secara seimbang di layer 3 (memainkan IP)
 - sederhana mirip basic config
-- jika terjadi perubahan kecepatan jumlah ISP atau terkena FUP maka ubah juga parameter berikut ini
+- jika terjadi perubahan kecepatan jumlah ISP 
 	- route
 	- mangle
 	- failover
+- atau terkena FUP maka ubah juga parameter berikut ini
+	- route ratio, yaitu di route yang ada ISP koma ISP (beberapa ISP dengan Koma)
 -------------------------------------------------
 topologi
 menggunakan rb750 gr3
