@@ -2,7 +2,7 @@
 loadbalance ECMP 
 - equal cost multy path
 - membagi bandwidth secara seimbang di layer 3 (memainkan IP)
-- sederhana 
+- sederhana mirip basic config
 
 -------------------------------------------------
 topologi
