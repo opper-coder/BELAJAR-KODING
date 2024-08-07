@@ -1,0 +1,47 @@
+-----------------------------------------------------------
+DAFTAR ISI REPO:
+-----------------------------------------------------------
+MIKROTIK
+  - basic
+  - hotspot
+      server
+      login
+      loginpage
+      profil harga
+      user admin
+      user reseller
+      end users
+ - Loadbalance
+      topology
+      ECMP
+-----------------------------------------------------------
+MIKBOTAM
+  - register
+  - ddns
+  - autoreconnect ddns
+  - mikbotam
+  - harga
+  - telegram
+  - monitoring
+  - remote 
+-----------------------------------------------------------
+OLT
+  remote
+  monitoring
+-----------------------------------------------------------
+Topologi
+  ODN > ODC > ODP > ONU
+-----------------------------------------------------------
+MODEM
+  config
+  multi hotspot
+  multi user 
+  naming
+-----------------------------------------------------------
+
+
+
+
+
+
+  
