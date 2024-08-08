@@ -4,15 +4,9 @@ DAFTAR ISI REPO:
 MIKROTIK
   - basic
   - hotspot
-      server
-      login
-      loginpage
-      profil harga
-      user admin
-      user reseller
-      end users
- - Loadbalance
-      topology
+TOPOLOGI dan Loadbalance
+      topologi distribusi: ODN > ODC > ODP > ONU
+      topologi ISP: SWITCH, VLAN, MIKROTIK
       ECMP
 -----------------------------------------------------------
 MIKBOTAM
@@ -30,7 +24,7 @@ OLT
   monitoring
 -----------------------------------------------------------
 Topologi
-  ODN > ODC > ODP > ONU
+
 -----------------------------------------------------------
 MODEM
   config
