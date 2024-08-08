@@ -54,6 +54,9 @@ BASIC CONFIG
 		- limit Up:Do = 1:4 sudah pasti aman dari pisah traffic
 		- session, idle, keepalive: disable, sbg gantinya setting pada "servers" (berjamaah)
 		- user ada 3 kategori: adm-mahmud, surya-nur, tokopadang(ISP), end users(vocer)
+	- PERHATIAN:
+		- profil dan user yang di buat NATIVE jangan sampai di EDIT ataui di buka di MIKBOTAM dst. 
+		  bisa ada masalah(logout sendiri dan anomali, ada intervensi dari MIKBOTAM dan sejenisnya)
 -----------------------------------------------------------------------------------
 9. PPPoE server
 	- add server. interface: VLAN tujuan
