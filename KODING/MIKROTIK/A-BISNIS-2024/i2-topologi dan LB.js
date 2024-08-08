@@ -5,8 +5,8 @@ TOPOLOGI dan LOAD BALANCE
       ECMP
 -----------------------------------------------------------
 HOTSPOT
-      - SFP 8db > 5:95 > 10:90 > 50:50 > ODC > ODP > ONT
-      - SFP 9db > 3:97 >  5:95 > 50:50 > ODC > ODP > ONT
+      - SFP 8db > 5:95 > 10:90 > 50:50 > ODC > ODP > ONT     = +8 -> 5:10:50
+      - SFP 9db > 3:97 >  5:95 > 50:50 > ODC > ODP > ONT     = +9 -> 3: 5:50
       - 4 > 4 > 8 
       - 4 > 4 > 2 > 4
       - 4 > 4 > 2 > 8
@@ -27,5 +27,4 @@ TERMINAL ISP pakai VLAN trunch pada SWITCH
       - atau terima pakai vlan pakai switch biasa
 -----------------------------------------------------------
 lalu jadikan load balance ECMP seperti repo PCC load balance LB ECMP
-
 -----------------------------------------------------------
