@@ -26,11 +26,18 @@ BASIC CONFIG
 	- 8.8.8.8, 8.8.4.4, (ip gateway ISP jg boleh) allow remote ok
 7. NAT masquerade
 	- chain: srcnat, out: WAN, act: masquerade
+-----------------------------------------------------------------------------------
 8. HOTSPOT
-	- bridge-HOTSPOT > vlan
+	- IP > HOTSPOT > Interface
+		- interface: konsepnya
+			- tiap SFP satu hotspot segment /24
+			- tiap SFP satu frame ODN > ODC > ODP > ONT
+			- maksimal 100 client sesuai OLT epon 
+			- pool skip start di 100 - 255
+			- static 1-99
+	- name server - HS
 	- link.net
 	- admin, 1001
-
 	- server profile > login 
 		- 3 saja: chap, pap, mac coockie, 
 	- servers
@@ -40,11 +47,13 @@ BASIC CONFIG
 	- profile user: (semua yang di mikbotam setting seperti di bawah,opt) 
 		- name, pool, share, limit 
 		- session, idle, keepalive: kosongkan sbg gantinya setting pada "servers" (berjamaah)
+-----------------------------------------------------------------------------------
 9. PPPoE server
 	- add server. interface: VLAN tujuan
 	- add pppoe profile, limit, only one, local addr(gateway), remote addr(pool) bisa di buat disini jika kita memiliki ip pool xx - xx
 	- add secret: name, pass, IP PPPoE(gateway), IP perangkat(static) jika maunya statik, jika dinamik pakai pool pada profile saja  
 	- bisa di buat di mikbotam aja
+-----------------------------------------------------------------------------------
 10. Security: 
 	- user: administrator1212 grup full
 	- pass: passmikro
