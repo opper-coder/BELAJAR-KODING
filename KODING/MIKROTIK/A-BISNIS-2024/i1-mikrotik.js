@@ -1,5 +1,9 @@
 BASIC CONFIG
 ------------------------------------------------------------------------------
+ - Loadbalance
+      topology
+      ECMP
+------------------------------------------------------------------------------
 1. Reset config
 2. Bridge: 
 	- bridge1-WAN 
@@ -40,13 +44,16 @@ BASIC CONFIG
 	- admin, 1001
 	- server profile > login 
 		- 3 saja: chap, pap, mac coockie, 
+		- loginpage : buatkan folder default, HS1, HS2, HS3 dst
 	- servers
 		- idle dan login timeout: kosongkan
 		- keepalive: 10 detik (berjamaah)
 	- users, profil: di buat nanti di mikbotam
 	- profile user: (semua yang di mikbotam setting seperti di bawah,opt) 
 		- lakukan penyesuaian pada: name, pool, share, limit 
+		- limit Up:Do = 1:4 sudah pasti aman dari pisah traffic
 		- session, idle, keepalive: disable, sbg gantinya setting pada "servers" (berjamaah)
+		- user ada 3 kategori: adm-mahmud, surya-nur, tokopadang(ISP), end users(vocer)
 -----------------------------------------------------------------------------------
 9. PPPoE server
 	- add server. interface: VLAN tujuan
