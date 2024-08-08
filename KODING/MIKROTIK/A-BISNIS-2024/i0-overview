@@ -4,6 +4,7 @@ DAFTAR ISI REPO:
 MIKROTIK
   - basic
   - hotspot
+-----------------------------------------------------------
 TOPOLOGI dan Loadbalance
       topologi distribusi: ODN > ODC > ODP > ONU
       topologi ISP: SWITCH, VLAN, MIKROTIK
@@ -22,9 +23,6 @@ MIKBOTAM
 OLT
   remote
   monitoring
------------------------------------------------------------
-Topologi
-
 -----------------------------------------------------------
 MODEM
   config
