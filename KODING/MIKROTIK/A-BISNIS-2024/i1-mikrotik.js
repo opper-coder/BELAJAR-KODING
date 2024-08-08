@@ -35,8 +35,8 @@ BASIC CONFIG
 			- maksimal 100 client sesuai OLT epon 
 			- pool skip start di 100 - 255
 			- static 1-99
-	- name server - HS
-	- link.net
+	- name server - HS1-komp12, HS2-Bone, HS3-dst
+	- link.net, link2.net
 	- admin, 1001
 	- server profile > login 
 		- 3 saja: chap, pap, mac coockie, 
@@ -45,8 +45,8 @@ BASIC CONFIG
 		- keepalive: 10 detik (berjamaah)
 	- users, profil: di buat nanti di mikbotam
 	- profile user: (semua yang di mikbotam setting seperti di bawah,opt) 
-		- name, pool, share, limit 
-		- session, idle, keepalive: kosongkan sbg gantinya setting pada "servers" (berjamaah)
+		- lakukan penyesuaian pada: name, pool, share, limit 
+		- session, idle, keepalive: disable, sbg gantinya setting pada "servers" (berjamaah)
 -----------------------------------------------------------------------------------
 9. PPPoE server
 	- add server. interface: VLAN tujuan
