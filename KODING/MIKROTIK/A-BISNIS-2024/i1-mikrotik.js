@@ -55,7 +55,7 @@ BASIC CONFIG
 		- session, idle, keepalive: disable, sbg gantinya setting pada "servers" (berjamaah)
 		- user ada 3 kategori: adm-mahmud, surya-nur, tokopadang(ISP), end users(vocer)
 	- PERHATIAN:
-		- profil dan user yang di buat NATIVE jangan sampai di EDIT ataui di buka di MIKBOTAM dst. 
+		- profil dan user yang di buat NATIVE jangan sampai di EDIT atau bahkan sekedar di buka di MIKBOTAM dst. 
 		  bisa ada masalah(logout sendiri dan anomali, ada intervensi dari MIKBOTAM dan sejenisnya)
 -----------------------------------------------------------------------------------
 9. PPPoE server
