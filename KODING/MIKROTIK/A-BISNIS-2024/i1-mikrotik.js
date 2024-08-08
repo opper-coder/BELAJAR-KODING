@@ -51,7 +51,7 @@ BASIC CONFIG
 	- users, profil: di buat nanti di mikbotam
 	- profile user: (semua yang di mikbotam setting seperti di bawah,opt) 
 		- lakukan penyesuaian pada: name, pool, share, limit 
-		- limit Up:Do = 1:4 sudah pasti aman dari pisah traffic
+		- limit Up:Do = 1:4 sudah pasti aman dari pisah traffic (contoh: 360k/1000k )
 		- session, idle, keepalive: disable, sbg gantinya setting pada "servers" (berjamaah)
 		- user ada 3 kategori: adm-mahmud, surya-nur, tokopadang(ISP), end users(vocer)
 	- PERHATIAN:
