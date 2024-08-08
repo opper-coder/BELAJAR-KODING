@@ -41,7 +41,7 @@ BASIC CONFIG
 		- name, pool, share, limit 
 		- session, idle, keepalive: kosongkan sbg gantinya setting pada "servers" (berjamaah)
 9. PPPoE server
-	- add server. interface: vlan60-PPPoE
+	- add server. interface: VLAN tujuan
 	- add pppoe profile, limit, only one, local addr(gateway), remote addr(pool) bisa di buat disini jika kita memiliki ip pool xx - xx
 	- add secret: name, pass, IP PPPoE(gateway), IP perangkat(static) jika maunya statik, jika dinamik pakai pool pada profile saja  
 	- bisa di buat di mikbotam aja
@@ -50,6 +50,7 @@ BASIC CONFIG
 	- pass: passmikro
 	- identity: Surya-Hotspot
 	- services: api:8074, winbox:7273, (bukan default) (ini hanya saya simpan saja siapa tahu ada gunanya port API VPN : 6263)
+	- matikan semua service kecuali: winbox dan api
 11. CLOCK 
 	system > clock
 	> system zone auto detect: matikan
@@ -70,6 +71,7 @@ BASIC CONFIG
 12. pisah traffic
 	- WA
 	- freefire, mobile legend (caritahu dengan monitoring aktifitas)
+	- dengan ratio 1:4 Up:Do sudah tidak perlu lagi pisah traffic
 13. no share again 
 	+ batasi share kembali ke perangkat lain
 	- berdampak pada repeter, HTB estafet, wisp dll (cekidot)
