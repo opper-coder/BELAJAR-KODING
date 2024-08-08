@@ -19,7 +19,7 @@ BASIC CONFIG
 4. IP bridge-WAN (DHCP client-bound, satu ether saja menuju ke Mikrotik LB, atau langsung ISP nanti kalau LB tinggal renew saja)
 5. IP bridge-HOTSPOT > VLAN200-HS 
 	- 192.168.40.1/22 (hotspot. 	interface: bridge-LAN)  pool 100 akan di binding (karena hotspot per sfp pilih /24(256) pas satu segment)
-	- 192.168.60.1/24 (pppoe. 		interface: VLAN60-PPPoE) dibuat saat bikin secret, tidak dibuat pada interface)
+	- 192.168.60.1/24 (pppoe. 	interface: VLAN60-PPPoE) dibuat saat bikin secret, tidak dibuat pada interface)
 	- 192.168.80.1/24 (remote OLT. 	interface: VLAN80-OLT)
 	- pada tutorial di global hotspot juga menggunakan VLAN, jadi tidak langsung di bridge
 6. DNS
