@@ -176,10 +176,9 @@ TEST TELEGRAM BOT
 	kirim pesan dibawah ini (beserta enter dan bagian kanan huruf kecil semua)
 	
 ================================
-	menu - VOUCHER
-	ceksaldo - Saldo saat ini 
-	deposit - TopUp saldo
-	cekvcr - Status vocer
+	menu - 1. VOUCHER
+	ceksaldo - 2. Saldo 
+	cekvcr - 3. Cek Vocer
 	help - Lainya ->
 ================================
 
