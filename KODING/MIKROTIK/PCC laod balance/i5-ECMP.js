@@ -28,6 +28,7 @@ NAT masquerade
 ROUTE
 	- dafault 0000/0
 	- stream ratio
+	- routing mark session
 	- ISP % (jk IP sama)
 -------------------
 MANGLE session ISP
@@ -64,22 +65,24 @@ NAT masquerade
 DEFAULT ROUTE
 ip > routes 
 	default route
-		- pada default route biasanya akan di kasih otomatis saat bound dhcp client
+		- pada default route biasanya akan di kasih otomatis saat bound dhcp client <default route: yes>
 		- usahakan pada ether1 atau ISP1 gunakan ip segmen yang berbeda
-		- nanti baru lakukan default route secara manual pada ISP2 dan3 yang satu segment
+		- nanti baru lakukan default route secara manual <default route: no> pada ISP2 dan3 yang satu segment
+		- add 
 	route ECMP
 		saat sudah ada default route otomatis tambahkan lagi route ISP2, ISP3 dst secara manual untuk keperluan load balance
 		add > general
 		- dst adress: 0.0.0.0/0
 		- (PENTING ECMP) gateway: isi gateway masing2 ISP1(auto), ISP2, ISP3 dst
 		- stream ratio > copy untuk gateway dua, tiga kali sesuai perbandingan
-		-----
 	pada ISP yang memiliki segment IP sama (ISP beda tidak)
 		- biasa nya pada ISP kita di kasih IP satu segment pada indiehome bisa login admin dan ubah segmen pada dhcp servernya, tapi kalau tidak bisa maka lakukan langkah di bawah ini:
 		- pastikan dhcp client > add default route: no
 		- dst adress: 0.0.0.0/0
 		- gateway: di isi ISP1(biasanya sudah auto), ISP2, ISP3 dst
 		- diikuti dengan <%><interface> cont: 192.168.1.1%ether1-ISP1
+	routing mark session
+		- 
 	ECMP Ratio
 		- stream ratio > copy untuk gateway masing masing ISP dua, tiga kali sesuai perbandingan ratio di topologi di atas
 -------------------------------------------------
