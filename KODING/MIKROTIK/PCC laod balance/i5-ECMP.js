@@ -75,10 +75,11 @@ ip > routes
 			distance 	: 1 (1 ISP1, 2 ISP2, 3 ISP3) 
 			apply ok
 	route ECMP satu segment
-		- bikin route gateway manual untuk tiap ISP satu segment, caranya 
+		- namun pada ISP "satu segment", <default route: no> agar bisa di buat routes secara manual dibawah: 
 		- add 
 			dst address	: 0000/0
 			gateway		: 192.168.1.1%bridge2-ISP2  -> <ip><%><interface>
+			distance 	: 1 (1 ISP1, 2 ISP2, 3 ISP3)
 		- tambahkan lagi gateway ISP3 dengan panah bawah 
 		- apply ok
 	ECMP Ratio
