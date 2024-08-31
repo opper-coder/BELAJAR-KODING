@@ -68,9 +68,9 @@ ip > routes
 		- add 
 			dst address	: 0.0.0.0/0
 			gateway		: dengan add "panah bawah" saat menambahkan ISP lagi, tambahkan semua ISP
-				192.168.3.1  			-> uniq segment ISP1 
+				192.168.3.1  			-> uniq segment ISP1 format biasa
 				192.168.1.1%bridge2-ISP2  	-> satu segment ISP2 format: <ip><%><interface>
-				192.168.1.1%bridge3-ISP3  	-> satu segment ISP3
+				192.168.1.1%bridge3-ISP3  	-> satu segment ISP3 format: <ip><%><interface>
 			distance 	: 1
 		- apply ok
 		- maka dibuatkan default routes gateway baru dengan flag AS  
