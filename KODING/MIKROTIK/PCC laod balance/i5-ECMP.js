@@ -62,7 +62,7 @@ ip > routes
 		- saat dhcp client <default route: yes> 
 		- maka dibuatkan default routes gateway otomatis dengan flag DAS, dst address: 0000/0
 	route gateway satu segment
-		- namun jika ISP ada yang memiliki "IP satu segment", 
+		- namun jika ada beberapa ISP yang memiliki "IP satu segment", 
 		- maka masukan masukkan gateway manual satu persatu, caranya: 
 		- ubah dhcp client <default route: no> untuk semua ISP
 		- add 
