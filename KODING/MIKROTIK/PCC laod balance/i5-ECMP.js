@@ -25,14 +25,14 @@ NAT masquerade
 -------------------
 ROUTE (inti ECMP, ratio)
 	- dafault 0000/0
-	- stream ratio
 	- ISP % (jk IP satu segmen)
+	- stream ratio
 	- routing mark session di mangle
 -------------------
 MANGLE session ISP
 -------------------
 FAILOVER
-	- check ping semua ISP
+	- check: ping semua ISP
 =================================================================================
 TOPOLOGI
 menggunakan rb750 gr3
@@ -59,7 +59,7 @@ NAT masquerade
 DEFAULT ROUTE (inti ECMP)
 ip > routes 
 	default route gateway
-		- saat dhcp client <default route: yes> 
+		- saat dhcp client dengan <default route: yes> 
 		- maka dibuatkan default routes gateway otomatis dengan flag DAS, dst address: 0000/0
 	route gateway satu segment
 		- namun jika ada beberapa ISP yang memiliki "IP satu segment", 
@@ -73,7 +73,7 @@ ip > routes
 				192.168.1.1%bridge3-ISP3  	-> satu segment ISP3 format: <ip><%><interface>
 			distance 	: 1
 		- apply ok
-		- maka dibuatkan default routes gateway baru dengan flag AS  
+		- maka akan dibuatkan default routes gateway baru dengan flag AS  
 	ECMP Ratio
 		- ubah role ECMP jika terjadi perubahan ratio misal kena FUP atau tambah ISP, upgrade kecepatan ISP dll
 		- anda tinggal add dengan "panah bawah" gateway-gateway sesuai jumlah ratio. 40: 20: 10 = 4:2:1
