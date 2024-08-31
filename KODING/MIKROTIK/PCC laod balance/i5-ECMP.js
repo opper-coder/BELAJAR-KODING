@@ -110,8 +110,7 @@ sampai disini sudah ecmp, tapi agar setiap aplikasi harus keluar dan masuk pada 
 	copy routes: untuk ISP2, ISP3
 -------------------------------------------------
 FAILOVER
-	pada routelist yang di buat untuk mangle(yang ada routing mark ISP nya)  
-	- check gateway: ping (pilih ping) pada semua role route ISP nya
+	- check gateway: ping -> pada semua route yang di buat untuk mangle session(yang ada routing mark ISP nya)  
 -------------------------------------------------
 TEST
 	- buka interface
