@@ -80,7 +80,7 @@ ip > routes
 	ECMP Ratio
 		- ubah role ECMP jika terjadi perubahan ratio misal kena FUP atau tambah ISP, upgrade kecepatan ISP dll
 		- anda tinggal add dengan "panah bawah" gateway-gateway sesuai jumlah ratio. 40: 20: 10 = 4:2:1
-
+		- contoh 4:2:1
 				192.168.3.1  			-> ISP1 
 				192.168.3.1  			-> ISP1 
 				192.168.3.1  			-> ISP1 
