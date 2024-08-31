@@ -11,9 +11,7 @@ loadbalance ECMP
 	- routelist
 =================================================================================
 TOPOLOGI
-	- ether = bridge
-	- ISP 	= bridge
-	- IP 	= bridge
+	IP, Bridge, port, ratio ISP, DHCP client server
 -------------------
 IP
 	- bound semua ISP
@@ -51,15 +49,12 @@ IP
 	- dhcp client bridge2-ISP2, bound  add default route: no (satu segmen)
 	- dhcp client bridge3-ISP3, bound  add default route: no (satu segmen)
 	- dhcp server bridge5-LAN dengan IP 192.168.100.1/28
-----
-uji IP
-	- terminal:> ping masing2 ip pada topologi di atas, ip yang sama biasanya ping error 
 -------------------------------------------------
 DNS
 	8.8.8.8 dan 8.8.4.4 atau tambahkan ip gateway masing2 ISP juga boleh, allow remote: true
 -------------------------------------------------
 NAT masquerade
-	(PENTING ECMP) pada masing2 out interface WAN: ISP1, ISP2, ISP3 dst
+	(PENTING ECMP) copy/duplikat pada out interface WAN: menuju ISP1, ISP2, ISP3 dst
 -------------------------------------------------
 DEFAULT ROUTE (inti ECMP)
 ip > routes 
@@ -86,6 +81,10 @@ ip > routes
 	ECMP Ratio
 		- ubah role ECMP jika terjadi perubahan ratio misal kena FUP atau tambah ISP, upgrade kecepatan ISP dll
 		- anda tinggal add dengan "panah bawah" gateway-gateway sesuai jumlah ratio. 40: 20: 10 = 4:2:1
+-------------------------------------------------
+Ping
+	jika routes manual dan auto berhasil dibuat maka ping harus berjalan
+	terminal:> ping masing2 ip pada topologi di atas tak terkecuali ini <192.168.1.1%bridge2-ISP2>
 -------------------------------------------------
 MANGLE session ISP
 sampai disini sudah ecmp, tapi agar setiap aplikasi harus keluar dan masuk pada satu ISP yang sama maka perlu di tandai
