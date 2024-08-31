@@ -38,12 +38,13 @@ FAILOVER
 =================================================================================
 TOPOLOGI
 menggunakan rb750 gr3
-- ether1(bridge boleh)	= ISP1 		192.168.3.1 	beda segmen
-- ether2(bridge boleh) 	= ISP2 		192.168.1.1 	satu segmen
-- ether3(bridge boleh) 	= ISP3 		192.168.1.1 	satu segmen
-- ether5(bridge boleh) 	= LAN 		192.168.100.1 	(DHCP server)
-- ratio			= ISP1: 40mb, ISP2: 20mb, ISP3: 10mb
-			= 40: 20: 10 = 4:2:1
+bikin BRIDGE dulu boleh
+- ether1(bridge1-ISP1)		= ISP1 		192.168.3.1 	beda segmen
+- ether2(bridge2-ISP2) 		= ISP2 		192.168.1.1 	satu segmen
+- ether3(bridge3-ISP3) 		= ISP3 		192.168.1.1 	satu segmen
+- ether5(bridge5-LAN boleh) 	= LAN 		192.168.100.1 	(DHCP server)
+- ratio				= ISP1: 40mb, ISP2: 20mb, ISP3: 10mb
+				= 40: 20: 10 = 4:2:1
 -------------------------------------------------
 IP
 	- dhcp client ether1, bound  add default route: yes
