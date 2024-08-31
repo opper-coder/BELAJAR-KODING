@@ -107,7 +107,7 @@ sampai disini sudah ecmp, tapi agar setiap aplikasi harus keluar dan masuk pada 
 		dst adress: 0.0.0.0/0
 		gateway: IP ISP1 (pakai <%> jk satu segment)
 		routing mark: "ISP1" 
-		copy: untuk ISP2, ISP3
+	copy routes: untuk ISP2, ISP3
 -------------------------------------------------
 FAILOVER
 	pada routelist yang di buat untuk mangle(yang ada routing mark ISP nya)  
