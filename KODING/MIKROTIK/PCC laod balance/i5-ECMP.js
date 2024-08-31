@@ -59,12 +59,14 @@ NAT masquerade
 DEFAULT ROUTE (inti ECMP)
 ip > routes 
 	default route gateway
-		- saat dhcp client <default route: yes> maka dibuatkan default routes gateway otomatis dan langsung jadi failover jika ada banyak ISP
+		- saat dhcp client <default route: yes> maka dibuatkan default routes gateway otomatis dan langsung jadi failover jika ada banyak ISP, dengan flag DAS
 	route gateway satu segment
-		- namun pada ISP "satu segment", <default route: no> agar bisa di buat routes secara manual dibawah: 
+		- namun ISP ada yang memiliki "IP satu segment", <default route: no> maka masukan masukkan gateway manual satu persatu: 
 		- add 
 			dst address	: 0000/0
-			gateway		: 192.168.1.1%bridge2-ISP2  -> <ip><%><interface> FORMAT penulisan pakai % untuk menandai ether atau bridge yg dipakai ISP satu segmen
+			gateway		: 192.168.1.1%bridge2-ISP2  -> <ip><%><interface> 
+				FORMAT penulisan pakai % untuk menandai ether atau bridge yg dipakai ISP satu segmen
+				yang segmen uniq maka biarkan seperti penulisan biasa tanpa <%>
 			distance 	: 1 (1 ISP1, 2 ISP2, 3 ISP3)
 			copy ISP2, ISP3 dst
 		- apply ok
