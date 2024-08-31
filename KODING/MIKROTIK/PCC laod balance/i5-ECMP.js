@@ -59,34 +59,32 @@ NAT masquerade
 DEFAULT ROUTE (inti ECMP)
 ip > routes 
 	default route gateway
-		- saat dhcp client <default route: yes> maka dibuatkan default routes gateway otomatis dan langsung jadi failover jika ada banyak ISP, dengan flag DAS
+		- saat dhcp client <default route: yes> 
+		- maka dibuatkan default routes gateway otomatis dengan flag DAS, dst address: 0000/0
 	route gateway satu segment
-		- namun ISP ada yang memiliki "IP satu segment", <default route: no> maka masukan masukkan gateway manual satu persatu: 
+		- namun jika ISP ada yang memiliki "IP satu segment", 
+		- maka masukan masukkan gateway manual satu persatu, caranya: 
+		- ubah dhcp client <default route: no> untuk semua ISP
 		- add 
-			dst address	: 0000/0
-			gateway		: 192.168.1.1%bridge2-ISP2  -> <ip><%><interface> 
-				FORMAT penulisan pakai % untuk menandai ether atau bridge yg dipakai ISP satu segmen
-				yang segmen uniq maka biarkan seperti penulisan biasa tanpa <%>
-			distance 	: 1 (1 ISP1, 2 ISP2, 3 ISP3)
-			copy ISP2, ISP3 dst
+			dst address	: 0.0.0.0/0
+			gateway		: dengan add "panah bawah" saat menambahkan ISP lagi, tambahkan semua ISP
+				192.168.3.1  				-> uniq segment ISP1 
+				192.168.1.1%bridge2-ISP2  	-> satu segment ISP2 format: <ip><%><interface>
+				192.168.1.1%bridge3-ISP3  	-> satu segment ISP3
+			distance 	: 1
 		- apply ok
-		- maka akan ditambahkan role warna biru langit dengan flag S, sedang yang auto flag DS
-	ECMP role
-		sepertinya saat bikin route gateway barusan sudah di buatkan otomatis role gateway load balance failover(yang ada ISP1, ISP2 dst dengan flag AS)
-		namun jika tidak ada maka bikin satu role ini: 
-		- add 
-			dst address	: 0000/0
-			gateway		: 192.168.1.1%bridge2-ISP2  -> <ip><%><interface> format % untuk menandai interface yg dipakai ISP satu segmen
-			distance 	: 1 (default)
-			tambahkan "panah bawah" IP ISP2, ISP3 dst 
-		- apply ok
+		- maka dibuatkan default routes gateway baru dengan flag AS  
 	ECMP Ratio
 		- ubah role ECMP jika terjadi perubahan ratio misal kena FUP atau tambah ISP, upgrade kecepatan ISP dll
 		- anda tinggal add dengan "panah bawah" gateway-gateway sesuai jumlah ratio. 40: 20: 10 = 4:2:1
--------------------------------------------------
-Ping
-	jika routes manual dan auto berhasil dibuat maka ping harus berjalan
-	terminal:> ping masing2 ip pada topologi di atas tak terkecuali ini <192.168.1.1%bridge2-ISP2>
+
+				192.168.3.1  				-> ISP1 
+				192.168.3.1  				-> ISP1 
+				192.168.3.1  				-> ISP1 
+				192.168.3.1  			-> ISP1 
+				192.168.1.1%bridge2-ISP2  	-> ISP2
+				192.168.1.1%bridge2-ISP2  	-> ISP2
+				192.168.1.1%bridge3-ISP3  	-> ISP3
 -------------------------------------------------
 MANGLE session ISP
 sampai disini sudah ecmp, tapi agar setiap aplikasi harus keluar dan masuk pada satu ISP yang sama maka perlu di tandai dengan mark-conn dan mark-routing
