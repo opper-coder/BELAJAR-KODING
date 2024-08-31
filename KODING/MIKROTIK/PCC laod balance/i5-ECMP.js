@@ -84,15 +84,6 @@ ip > routes
 	ECMP Ratio
 		- pada routelist pilih yang ada gateway1, gateway2, gateway3
 		- kopas dengan panah bawah gateway-gateway sesuai jumlah ratio
-	routing mark session
-		- setelah melakukan routing mangle di bawah lalu tambahkan route mangle ini:
-		- add 
-			dst: 0000/0
-			gateway: ISP1 (pakai <%> jk satu segment)
-			distance: 1 (default semua ISP: "1")
-			routing mark: ISP1 (dari mangle)
-			copy: ISP2, ISP3 dst
-			Apply Ok
 -------------------------------------------------
 MANGLE session ISP
 sampai disini sudah ecmp, tapi agar setiap aplikasi harus keluar dan masuk pada satu ISP yang sama maka perlu di tandai
@@ -113,7 +104,7 @@ sampai disini sudah ecmp, tapi agar setiap aplikasi harus keluar dan masuk pada 
 	routes
 		IP > Routes > add  
 		dst adress: 0.0.0.0/0
-		gateway: IP ISP1 (pakai%interface jika sama)
+		gateway: IP ISP1 (pakai <%> jk satu segment)
 		routing mark: "ISP1" 
 		copy: untuk ISP2, ISP3
 -------------------------------------------------
