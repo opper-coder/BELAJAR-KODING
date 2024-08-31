@@ -38,7 +38,7 @@ FAILOVER
 =================================================================================
 TOPOLOGI
 menggunakan rb750 gr3
-bikin BRIDGE dulu boleh
+bikin BRIDGE dan porting dulu boleh
 - ether1(bridge1-ISP1)		= ISP1 		192.168.3.1 	beda segmen
 - ether2(bridge2-ISP2) 		= ISP2 		192.168.1.1 	satu segmen
 - ether3(bridge3-ISP3) 		= ISP3 		192.168.1.1 	satu segmen
@@ -47,10 +47,10 @@ bikin BRIDGE dulu boleh
 				= 40: 20: 10 = 4:2:1
 -------------------------------------------------
 IP
-	- dhcp client ether1, bound  add default route: yes
-	- dhcp client ether2, bound  add default route: no (satu segmen)
-	- dhcp client ether3, bound  add default route: no (satu segmen)
-	- buat LAN IP 192.168.100.1/28 DHCP server
+	- dhcp client bridge1-ISP1, bound  add default route: yes
+	- dhcp client bridge2-ISP2, bound  add default route: no (satu segmen)
+	- dhcp client bridge3-ISP3, bound  add default route: no (satu segmen)
+	- dhcp server bridge5-LAN dengan IP 192.168.100.1/28
 ----
 uji IP
 	- terminal:> ping masing2 ip pada topologi di atas, ip yang sama biasanya ping error 
