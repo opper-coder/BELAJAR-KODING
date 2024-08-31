@@ -17,19 +17,19 @@ TOPOLOGI
 -------------------
 IP
 	- bound semua ISP
-	- jika IP sama pakai % di route nantinya
+	- jika IP sama pakai <%> di route nantinya
 -------------------
 DNS
 	- 8.8.8.8, 8.8.4.4
 -------------------
 NAT masquerade
-	- semua ISP
+	- lakukan ke semua ISP
 -------------------
 ROUTE (inti ECMP, ratio)
 	- dafault 0000/0
 	- stream ratio
-	- routing mark session
 	- ISP % (jk IP satu segmen)
+	- routing mark session di mangle
 -------------------
 MANGLE session ISP
 -------------------
@@ -38,23 +38,21 @@ FAILOVER
 =================================================================================
 TOPOLOGI
 menggunakan rb750 gr3
-- ether1(bridge boleh)	= ISP1 		192.168.3.1 	beda
-- ether2(bridge boleh) 	= ISP2 		192.168.1.1 	sama
-- ether3(bridge boleh) 	= ISP3 		192.168.1.1 	sama
+- ether1(bridge boleh)	= ISP1 		192.168.3.1 	beda segmen
+- ether2(bridge boleh) 	= ISP2 		192.168.1.1 	satu segmen
+- ether3(bridge boleh) 	= ISP3 		192.168.1.1 	satu segmen
 - ether5(bridge boleh) 	= LAN 		192.168.100.1 	(DHCP server)
-- ratio		= ISP1: 40mb, ISP2: 20mb, ISP3: 10mb
+- ratio			= ISP1: 40mb, ISP2: 20mb, ISP3: 10mb
 			= 40: 20: 10 = 4:2:1
 -------------------------------------------------
 IP
-	- dhcp client ether1, bound
-	- dhcp client ether2, bound
-	- dhcp client ether3, bound
-	- jika ip sama maka lakukan routing % dibawah
-	- jika ip sama maka add default route: no (agar bisa modifikasi manual % pada route)
-	- buat LAN IP 192.168.100.1/28 
+	- dhcp client ether1, bound  add default route: yes
+	- dhcp client ether2, bound  add default route: no (satu segmen)
+	- dhcp client ether3, bound  add default route: no (satu segmen)
+	- buat LAN IP 192.168.100.1/28 DHCP server
 ----
 uji IP
-	- terminal:> ping masing2 ip pada topologi di atas, ip yang sama biasanya error
+	- terminal:> ping masing2 ip pada topologi di atas, ip yang sama biasanya ping error 
 -------------------------------------------------
 DNS
 	8.8.8.8 dan 8.8.4.4 atau tambahkan ip gateway masing2 ISP juga boleh, allow remote: true
