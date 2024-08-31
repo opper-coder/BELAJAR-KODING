@@ -54,7 +54,7 @@ DNS
 	8.8.8.8 dan 8.8.4.4 atau tambahkan ip gateway masing2 ISP juga boleh, allow remote: true
 -------------------------------------------------
 NAT masquerade
-	(PENTING ECMP) copy/duplikat pada out interface WAN: menuju ISP1, ISP2, ISP3 dst
+	(PENTING ECMP) copy/duplikat pada masing2 out interface WAN: menuju ISP1, ISP2, ISP3 dst
 -------------------------------------------------
 DEFAULT ROUTE (inti ECMP)
 ip > routes 
