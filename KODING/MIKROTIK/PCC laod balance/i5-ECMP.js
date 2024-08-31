@@ -64,14 +64,15 @@ DEFAULT ROUTE
 ip > routes 
 	default route gateway
 		- saat dhcp client <default route: yes> maka dibuatkan default routes gateway otomatis dan langsung jadi failover pada semua dhcp client ISP
-	route ECMP satu segment
+	route gateway satu segment
 		- namun pada ISP "satu segment", <default route: no> agar bisa di buat routes secara manual dibawah: 
 		- add 
 			dst address	: 0000/0
 			gateway		: 192.168.1.1%bridge2-ISP2  -> <ip><%><interface> format penulisan pakai % untuk menandai ether atau bridge yg dipakai ISP
 			distance 	: 1 (1 ISP1, 2 ISP2, 3 ISP3)
-		- tambahkan lagi gateway ISP3 dengan "panah bawah" 
+			copy ISP2, ISP3 dst
 		- apply ok
+		- maka akan ada role warna biru langit dengan flag S, sedang yang auto flag DS
 	ECMP Ratio
 		- ubah role di bawah jika terjadi perubahan ratio
 		- pada routelist pilih yang ada gateway1, gateway2, gateway3 (yang barusan di buat)
