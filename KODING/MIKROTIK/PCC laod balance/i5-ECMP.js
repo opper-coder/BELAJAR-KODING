@@ -25,7 +25,7 @@ DNS
 NAT masquerade
 	- semua ISP
 -------------------
-ROUTE
+ROUTE (inti ECMP, ratio)
 	- dafault 0000/0
 	- stream ratio
 	- routing mark session
