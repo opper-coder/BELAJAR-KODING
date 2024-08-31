@@ -68,7 +68,7 @@ ip > routes
 		- add 
 			dst address	: 0.0.0.0/0
 			gateway		: dengan add "panah bawah" saat menambahkan ISP lagi, tambahkan semua ISP
-				192.168.3.1  				-> uniq segment ISP1 
+				192.168.3.1  			-> uniq segment ISP1 
 				192.168.1.1%bridge2-ISP2  	-> satu segment ISP2 format: <ip><%><interface>
 				192.168.1.1%bridge3-ISP3  	-> satu segment ISP3
 			distance 	: 1
@@ -78,9 +78,9 @@ ip > routes
 		- ubah role ECMP jika terjadi perubahan ratio misal kena FUP atau tambah ISP, upgrade kecepatan ISP dll
 		- anda tinggal add dengan "panah bawah" gateway-gateway sesuai jumlah ratio. 40: 20: 10 = 4:2:1
 
-				192.168.3.1  				-> ISP1 
-				192.168.3.1  				-> ISP1 
-				192.168.3.1  				-> ISP1 
+				192.168.3.1  			-> ISP1 
+				192.168.3.1  			-> ISP1 
+				192.168.3.1  			-> ISP1 
 				192.168.3.1  			-> ISP1 
 				192.168.1.1%bridge2-ISP2  	-> ISP2
 				192.168.1.1%bridge2-ISP2  	-> ISP2
