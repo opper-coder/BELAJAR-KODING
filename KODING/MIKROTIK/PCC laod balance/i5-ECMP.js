@@ -77,6 +77,7 @@ ip > routes
 		- tambahkan lagi gateway ISP3 dengan panah bawah 
 		- apply ok
 	ECMP Ratio
+		- ubah role di bawah jika terjadi perubahan ratio
 		- pada routelist pilih yang ada gateway1, gateway2, gateway3
 		- kopas dengan panah bawah gateway-gateway sesuai jumlah ratio
 -------------------------------------------------
