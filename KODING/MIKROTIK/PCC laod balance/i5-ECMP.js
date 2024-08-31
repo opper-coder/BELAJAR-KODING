@@ -36,7 +36,8 @@ FAILOVER
 =================================================================================
 TOPOLOGI
 menggunakan rb750 gr3
-bikin BRIDGE dan porting dulu boleh
+bikin BRIDGE dan porting dulu boleh, 
+ISP fix tidak boleh pindah2 port. jika pindah maka ubah pada role routes gateway nya
 - ether1(bridge1-ISP1)		= ISP1 		192.168.3.1 	beda segmen
 - ether2(bridge2-ISP2) 		= ISP2 		192.168.1.1 	satu segmen
 - ether3(bridge3-ISP3) 		= ISP3 		192.168.1.1 	satu segmen
