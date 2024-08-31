@@ -59,16 +59,16 @@ NAT masquerade
 DEFAULT ROUTE (inti ECMP)
 ip > routes 
 	default route gateway
-		- saat dhcp client <default route: yes> maka dibuatkan default routes gateway otomatis dan langsung jadi failover pada semua dhcp client ISP
+		- saat dhcp client <default route: yes> maka dibuatkan default routes gateway otomatis dan langsung jadi failover jika ada banyak ISP
 	route gateway satu segment
 		- namun pada ISP "satu segment", <default route: no> agar bisa di buat routes secara manual dibawah: 
 		- add 
 			dst address	: 0000/0
-			gateway		: 192.168.1.1%bridge2-ISP2  -> <ip><%><interface> format penulisan pakai % untuk menandai ether atau bridge yg dipakai ISP
+			gateway		: 192.168.1.1%bridge2-ISP2  -> <ip><%><interface> FORMAT penulisan pakai % untuk menandai ether atau bridge yg dipakai ISP satu segmen
 			distance 	: 1 (1 ISP1, 2 ISP2, 3 ISP3)
 			copy ISP2, ISP3 dst
 		- apply ok
-		- maka akan ada role warna biru langit dengan flag S, sedang yang auto flag DS
+		- maka akan ditambahkan role warna biru langit dengan flag S, sedang yang auto flag DS
 	ECMP role
 		sepertinya saat bikin route gateway barusan sudah di buatkan otomatis role gateway load balance failover(yang ada ISP1, ISP2 dst dengan flag AS)
 		namun jika tidak ada maka bikin satu role ini: 
@@ -87,7 +87,7 @@ Ping
 	terminal:> ping masing2 ip pada topologi di atas tak terkecuali ini <192.168.1.1%bridge2-ISP2>
 -------------------------------------------------
 MANGLE session ISP
-sampai disini sudah ecmp, tapi agar setiap aplikasi harus keluar dan masuk pada satu ISP yang sama maka perlu di tandai
+sampai disini sudah ecmp, tapi agar setiap aplikasi harus keluar dan masuk pada satu ISP yang sama maka perlu di tandai dengan mark-conn dan mark-routing
 	mangle:
 		chain: input
 		in interface: menuju ISP1
@@ -118,5 +118,4 @@ TEST
 	- torch arahkan ke LAN > start 
 	- buka fast.com > hasilnya akumulasi > jika ingin yg sebenarnya maka config 1 ISP saja MAX: 1 
 -------------------------------------------------
-
 
