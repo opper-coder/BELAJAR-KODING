@@ -104,7 +104,7 @@ sampai disini sudah ecmp, tapi agar setiap aplikasi harus keluar dan masuk pada 
 		copy: untuk ISP2, ISP3
 -------------------------------------------------
 FAILOVER
-	pada route list, pilih IP gateway yang ada routing mark ISP nya(dbl click) lihat di field tabel  
+	pada route list, pilih IP gateway yang ada "routing mark: ISP nya"(dbl click) lihat di field tabel  
 	- check gateway: ping (pilih ping)
 -------------------------------------------------
 TEST
