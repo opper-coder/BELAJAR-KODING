@@ -63,11 +63,11 @@ ip > routes
 		- maka dibuatkan default routes gateway otomatis dengan flag DAS, dst address: 0000/0
 	route gateway satu segment
 		- namun jika ada beberapa ISP yang memiliki "IP satu segment", 
-		- maka masukan masukkan gateway manual satu persatu, caranya: 
+		- maka masukkan gateway manual satu-persatu, caranya: 
 		- ubah dhcp client <default route: no> untuk semua ISP
 		- add 
 			dst address	: 0.0.0.0/0
-			gateway		: dengan add "panah bawah" saat menambahkan ISP lagi, tambahkan semua ISP
+			gateway		: isi ip gateway ISP, tambahkan semua ISP, dengan add "panah bawah" saat menambahkan ISP lagi
 				192.168.3.1  			-> uniq segment ISP1 format biasa
 				192.168.1.1%bridge2-ISP2  	-> satu segment ISP2 format: <ip><%><interface>
 				192.168.1.1%bridge3-ISP3  	-> satu segment ISP3 format: <ip><%><interface>
