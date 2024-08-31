@@ -63,20 +63,18 @@ NAT masquerade
 DEFAULT ROUTE
 ip > routes 
 	default route gateway
-		- pada Load balance ECMP(semua LB) semua ISP harus di DHCP client dahulu 
-		- dan pastikan <default route: yes> maka dibuatkan default routes otomatis pada semua DHCP client
-		  dan langsung jadi failover 
+		- saat dhcp client <default route: yes> maka dibuatkan default routes gateway otomatis dan langsung jadi failover pada semua dhcp client ISP
 	route ECMP satu segment
 		- namun pada ISP "satu segment", <default route: no> agar bisa di buat routes secara manual dibawah: 
 		- add 
 			dst address	: 0000/0
-			gateway		: 192.168.1.1%bridge2-ISP2  -> <ip><%><interface>
+			gateway		: 192.168.1.1%bridge2-ISP2  -> <ip><%><interface> format penulisan pakai % untuk menandai ether atau bridge yg dipakai ISP
 			distance 	: 1 (1 ISP1, 2 ISP2, 3 ISP3)
-		- tambahkan lagi gateway ISP3 dengan panah bawah 
+		- tambahkan lagi gateway ISP3 dengan "panah bawah" 
 		- apply ok
 	ECMP Ratio
 		- ubah role di bawah jika terjadi perubahan ratio
-		- pada routelist pilih yang ada gateway1, gateway2, gateway3
+		- pada routelist pilih yang ada gateway1, gateway2, gateway3 (yang barusan di buat)
 		- kopas dengan panah bawah gateway-gateway sesuai jumlah ratio
 -------------------------------------------------
 MANGLE session ISP
