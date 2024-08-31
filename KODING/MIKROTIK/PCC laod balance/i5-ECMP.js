@@ -29,7 +29,7 @@ ROUTE (inti ECMP, ratio)
 	- dafault 0000/0
 	- stream ratio
 	- routing mark session
-	- ISP % (jk IP sama)
+	- ISP % (jk IP satu segmen)
 -------------------
 MANGLE session ISP
 -------------------
