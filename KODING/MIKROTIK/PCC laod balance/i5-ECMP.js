@@ -60,7 +60,7 @@ DNS
 NAT masquerade
 	(PENTING ECMP) pada masing2 out interface WAN: ISP1, ISP2, ISP3 dst
 -------------------------------------------------
-DEFAULT ROUTE
+DEFAULT ROUTE (inti ECMP)
 ip > routes 
 	default route gateway
 		- saat dhcp client <default route: yes> maka dibuatkan default routes gateway otomatis dan langsung jadi failover pada semua dhcp client ISP
