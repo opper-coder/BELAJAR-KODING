@@ -45,7 +45,7 @@ bikin BRIDGE dan porting dulu boleh
 				= 40: 20: 10 = 4:2:1
 -------------------------------------------------
 IP
-	- dhcp client bridge1-ISP1, bound  add default route: yes (sementara yes, akhirnya no)
+	- dhcp client bridge1-ISP1, bound  add default route: yes (uniq sementara yes, akhirnya no)
 	- dhcp client bridge2-ISP2, bound  add default route: no (satu segmen)
 	- dhcp client bridge3-ISP3, bound  add default route: no (satu segmen)
 	- dhcp server bridge5-LAN dengan IP 192.168.100.1/28
