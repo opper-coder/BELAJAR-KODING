@@ -75,7 +75,8 @@ ip > routes
 				192.168.1.1%bridge3-ISP3  	-> satu segment ISP3 format: <ip><%><interface>
 			distance 	: 1
 		- apply ok
-		- maka akan dibuatkan default routes gateway baru dengan flag AS  
+		- maka akan dibuatkan default routes gateway baru dengan flag AS 
+		- tips: beri komentar "default route ECMP"
 	ECMP Ratio
 		- ubah role ECMP jika terjadi perubahan ratio misal kena FUP atau tambah ISP, upgrade kecepatan ISP dll
 		- anda tinggal add dengan "panah bawah" gateway-gateway sesuai jumlah ratio. 40: 20: 10 = 4:2:1
@@ -118,5 +119,21 @@ TEST
 	- buka interface
 	- torch arahkan ke LAN > start 
 	- buka fast.com > hasilnya akumulasi > jika ingin yg sebenarnya maka config 1 ISP saja MAX: 1 
--------------------------------------------------
 
+============================================================
+TIPS
+Untuk melakukan  load balance pada ether berikutnya 3 dan 4
+
+maka buka jendela
+	1. Interface
+	2. DHCP client
+	3. mangle
+	4. routes
+
+aktifkan semua role terkait dengan ether bersangkutan secara berurutan diatas
+-----------------------------------------------------------
+Untuk mengatur kecepatan ratio
+	1. speedtest pada masing2 ISP secara mandiri
+	2. temukan ratio 
+	3. buka routes > tambahkan ratio pada default routes
+-----------------------------------------------------------
