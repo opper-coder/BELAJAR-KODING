@@ -34,7 +34,7 @@ ROUTE (inti ECMP, ratio)
 MANGLE session ISP
 -------------------
 FAILOVER
-	- ping semua ISP
+	- check ping semua ISP
 =================================================================================
 TOPOLOGI
 menggunakan rb750 gr3
