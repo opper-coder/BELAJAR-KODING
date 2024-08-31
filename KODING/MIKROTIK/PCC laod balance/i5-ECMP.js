@@ -64,27 +64,35 @@ NAT masquerade
 -------------------------------------------------
 DEFAULT ROUTE
 ip > routes 
-	default route
-		- pada default route biasanya akan di kasih otomatis saat bound dhcp client <default route: yes>
-		- usahakan pada ether1 atau ISP1 gunakan ip segmen yang berbeda
-		- nanti baru lakukan default route secara manual <default route: no> pada ISP2 dan3 yang satu segment
+	default route gateway
+		- pada Load balance ECMP(semua LB) semua ISP harus di DHCP client dahulu 
+		- dan pastikan <default route: yes> maka dibuatkan default routes otomatis pada semua DHCP client
+		  dan langsung jadi failover 
+		- namun pada ISP "satu segment", <default route: no> agar bisa di buat routes secara manual dibawah: 
+		- add
+			dst address	: 0000/0
+			gateway		: 192.168.1.1%bridge2-ISP2  -> <ip><%><interface>
+			distance 	: 1 (1 ISP1, 2 ISP2, 3 ISP3) 
+			apply ok
+	route ECMP satu segment
+		- bikin route gateway manual untuk tiap ISP satu segment, caranya 
 		- add 
-	route ECMP
-		saat sudah ada default route otomatis tambahkan lagi route ISP2, ISP3 dst secara manual untuk keperluan load balance
-		add > general
-		- dst adress: 0.0.0.0/0
-		- (PENTING ECMP) gateway: isi gateway masing2 ISP1(auto), ISP2, ISP3 dst
-		- stream ratio > copy untuk gateway dua, tiga kali sesuai perbandingan
-	pada ISP yang memiliki segment IP sama (ISP beda tidak)
-		- biasa nya pada ISP kita di kasih IP satu segment pada indiehome bisa login admin dan ubah segmen pada dhcp servernya, tapi kalau tidak bisa maka lakukan langkah di bawah ini:
-		- pastikan dhcp client > add default route: no
-		- dst adress: 0.0.0.0/0
-		- gateway: di isi ISP1(biasanya sudah auto), ISP2, ISP3 dst
-		- diikuti dengan <%><interface> cont: 192.168.1.1%ether1-ISP1
-	routing mark session
-		- 
+			dst address	: 0000/0
+			gateway		: 192.168.1.1%bridge2-ISP2  -> <ip><%><interface>
+		- tambahkan lagi gateway ISP3 dengan panah bawah 
+		- apply ok
 	ECMP Ratio
-		- stream ratio > copy untuk gateway masing masing ISP dua, tiga kali sesuai perbandingan ratio di topologi di atas
+		- pada routelist pilih yang ada gateway1, gateway2, gateway3
+		- kopas dengan panah bawah gateway-gateway sesuai jumlah ratio
+	routing mark session
+		- setelah melakukan routing mangle di bawah lalu tambahkan route mangle ini:
+		- add 
+			dst: 0000/0
+			gateway: ISP1 (pakai <%> jk satu segment)
+			distance: 1 (default semua ISP: "1")
+			routing mark: ISP1 (dari mangle)
+			copy: ISP2, ISP3 dst
+			Apply Ok
 -------------------------------------------------
 MANGLE session ISP
 sampai disini sudah ecmp, tapi agar setiap aplikasi harus keluar dan masuk pada satu ISP yang sama maka perlu di tandai
