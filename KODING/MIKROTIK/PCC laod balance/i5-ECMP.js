@@ -74,7 +74,8 @@ ip > routes
 		- apply ok
 		- maka akan ada role warna biru langit dengan flag S, sedang yang auto flag DS
 	ECMP role
-		sepertinya saat bikin route gateway barusan sudah di buatkan otomatis role load balance failover(yang ada ISP1, ISP2 dst), namun jika tidak ada maka bikin role ini: 
+		sepertinya saat bikin route gateway barusan sudah di buatkan otomatis role gateway load balance failover(yang ada ISP1, ISP2 dst dengan flag AS)
+		namun jika tidak ada maka bikin satu role ini: 
 		- add 
 			dst address	: 0000/0
 			gateway		: 192.168.1.1%bridge2-ISP2  -> <ip><%><interface> format % untuk menandai interface yg dipakai ISP satu segmen
@@ -82,9 +83,8 @@ ip > routes
 			tambahkan "panah bawah" IP ISP2, ISP3 dst 
 		- apply ok
 	ECMP Ratio
-		- ubah role di bawah jika terjadi perubahan ratio 
-		- pada routelist pilih yang ada gateway1, gateway2, gateway3 (ECMP role)
-		- add dengan "panah bawah" gateway-gateway sesuai jumlah ratio. 40: 20: 10 = 4:2:1
+		- ubah role ECMP jika terjadi perubahan ratio misal kena FUP atau tambah ISP, upgrade kecepatan ISP dll
+		- anda tinggal add dengan "panah bawah" gateway-gateway sesuai jumlah ratio. 40: 20: 10 = 4:2:1
 -------------------------------------------------
 MANGLE session ISP
 sampai disini sudah ecmp, tapi agar setiap aplikasi harus keluar dan masuk pada satu ISP yang sama maka perlu di tandai
@@ -110,8 +110,8 @@ sampai disini sudah ecmp, tapi agar setiap aplikasi harus keluar dan masuk pada 
 		copy: untuk ISP2, ISP3
 -------------------------------------------------
 FAILOVER
-	pada route list, pilih IP gateway yang ada "routing mark: ISP nya"(dbl click) lihat di field tabel  
-	- check gateway: ping (pilih ping)
+	pada routelist yang di buat untuk mangle(yang ada routing mark ISP nya)  
+	- check gateway: ping (pilih ping) pada semua role route ISP nya
 -------------------------------------------------
 TEST
 	- buka interface
