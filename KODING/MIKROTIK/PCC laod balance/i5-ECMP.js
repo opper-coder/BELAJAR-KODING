@@ -68,12 +68,6 @@ ip > routes
 		- pada Load balance ECMP(semua LB) semua ISP harus di DHCP client dahulu 
 		- dan pastikan <default route: yes> maka dibuatkan default routes otomatis pada semua DHCP client
 		  dan langsung jadi failover 
-		- namun pada ISP "satu segment", <default route: no> agar bisa di buat routes secara manual dibawah: 
-		- add
-			dst address	: 0000/0
-			gateway		: 192.168.1.1%bridge2-ISP2  -> <ip><%><interface>
-			distance 	: 1 (1 ISP1, 2 ISP2, 3 ISP3) 
-			apply ok
 	route ECMP satu segment
 		- namun pada ISP "satu segment", <default route: no> agar bisa di buat routes secara manual dibawah: 
 		- add 
