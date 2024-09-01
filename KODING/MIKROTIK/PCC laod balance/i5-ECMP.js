@@ -59,6 +59,11 @@ NAT masquerade
 	(PENTING ECMP) copy/duplikat pada masing2 out interface WAN: menuju ISP1, ISP2, ISP3 dst
 -------------------------------------------------
 DEFAULT ROUTE (inti ECMP)
+ringkasnya ECMP itu mirip basic config: yaitu 
+	- dhcp client, dhcp server
+	- dns, nat masquerade masing2
+	- bedanya pada ECMP default route satu, dengan gateway lebih dari satu
+	- tambahan bisa ratio dan mangle session
 ip > routes 
 	default route gateway
 		- saat dhcp client dengan <default route: yes> 
