@@ -14,8 +14,8 @@ TOPOLOGI
 	IP, Bridge, port, ratio ISP, DHCP client server
 -------------------
 IP
-	- bound semua ISP
-	- jika IP sama pakai <%> di route nantinya
+	- dhcp client semua ISP, default route:no
+	- dhcp server /28
 -------------------
 DNS
 	- 8.8.8.8, 8.8.4.4
@@ -24,15 +24,15 @@ NAT masquerade
 	- lakukan ke semua ISP
 -------------------
 ROUTE (inti ECMP, ratio)
-	- dafault 0000/0
+	- satu dafault route 0000/0, lebih satu gateway dalam role default route ini
+	- stream ratio, atur jumlah gateway
 	- ISP % (jk IP satu segmen)
-	- stream ratio
-	- routing mark session di mangle
 -------------------
 MANGLE session ISP
+	- routing mark session di mangle
 -------------------
 FAILOVER
-	- check: ping semua ISP
+	- check: ping semua route mark-con ISP
 =================================================================================
 TOPOLOGI
 menggunakan rb750 gr3
@@ -47,7 +47,7 @@ kecuali jika gateway satu segment semua, maka tinggal ubah pada ratio saja
 				= 40: 20: 10 = 4:2:1
 -------------------------------------------------
 IP
-	- dhcp client bridge1-ISP1, bound  add default route: yes (uniq sementara yes, akhirnya no)
+	- dhcp client bridge1-ISP1, bound  add default route: no (uniq biasanya yes)
 	- dhcp client bridge2-ISP2, bound  add default route: no (satu segmen)
 	- dhcp client bridge3-ISP3, bound  add default route: no (satu segmen)
 	- dhcp server bridge5-LAN dengan IP 192.168.100.1/28
