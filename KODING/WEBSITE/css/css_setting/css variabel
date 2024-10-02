@@ -10,9 +10,9 @@ Caranya:
 
 :root {
   --blue: #1e90ff;                                // deklarasikan variabel :root{disini}
-  --white: #ffffff;                               // perhatikan cara nulisnya
+  --white: #ffffff;                               // perhatikan cara nulisnya MIRIP OBJECT
 }
 
-body { background-color: var(--blue); }           // call function var(--)
+body { background-color: var(--blue); }           // call MIRIP FUNCTION var(--)
 h2 { border-bottom: 2px solid var(--blue); }
 -----------------------------------------------------------------------------------
