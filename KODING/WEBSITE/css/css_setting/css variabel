@@ -6,11 +6,12 @@ mengubah variabel dengan JavaScript, dan mengubah variabel berdasarkan kueri med
 best practice variabel CSS biasanya dalam hal warna
 -----------------------------------------------------------------------------------
 Caranya:
+
 :root {
-  --blue: #1e90ff;                                // bikin warna deklarasikan di :root ini
+  --blue: #1e90ff;                                // deklarasikan variabel :root{disini}
   --white: #ffffff;                               // perhatikan cara nulisnya
 }
 
-body { background-color: var(--blue); }           // lalu akses nama nya
+body { background-color: var(--blue); }           // call function var(--)
 h2 { border-bottom: 2px solid var(--blue); }
 -----------------------------------------------------------------------------------
