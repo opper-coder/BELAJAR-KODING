@@ -4,6 +4,7 @@ Variabel CSS memiliki akses ke DOM,
 yang berarti Anda dapat membuat variabel dengan cakupan lokal atau global, 
 mengubah variabel dengan JavaScript, dan mengubah variabel berdasarkan kueri media.
 best practice variabel CSS biasanya dalam hal warna
+sebut saja: OBJECT FUNCTION 
 -----------------------------------------------------------------------------------
 Caranya:
 
