@@ -35,3 +35,5 @@
 		<a href="#" onclick="document.getElementById('modal').style.display='none'">Cancel</a>
  	</div>
 </div>
+<a href="#" onclick="document.getElementById('modal').style.display='block'">Klik Modal</a>
+
