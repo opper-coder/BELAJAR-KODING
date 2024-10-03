@@ -24,7 +24,7 @@
 		border-radius: 50%;
 	}
 </style>
-<!--  modal sederhana -->
+<!--  modal sederhana catatan letakan modal paling atas setelah body -->
 <div id="modal" style="">
  	<div class="modalCont">
 		<a href="#" class="x" onclick="document.getElementById('modal').style.display='none'">x</a>
