@@ -1,4 +1,4 @@
-	<style>
+<style>
 	#modal{
 		display:none; 
 		background-color: #00000070; 
