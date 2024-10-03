@@ -1,0 +1,37 @@
+	<style>
+	#modal{
+		display:none; 
+		background-color: #00000070; 
+		position: fixed;
+		width: 100%;
+		height: 100%;
+	}
+	.modalCont{ 
+		background-color: white; 
+		width: 280px;
+		margin: 16vh auto 0;
+		position: relative;
+	}
+	.x{
+		position: absolute;
+		right: 0;
+		background-color: red;
+		width: 18px;
+		height: 18px;
+		text-align: center;
+		text-decoration: none;
+		color: white;
+		border-radius: 50%;
+	}
+</style>
+<!--  modal sederhana -->
+<div id="modal" style="">
+ 	<div class="modalCont">
+		<a href="#" class="x" onclick="document.getElementById('modal').style.display='none'">x</a>
+ 		<div class="isiModal">
+ 			Lorem ipsum dolor sit amet, consectetur, adipisicing elit. Ex rem ipsam necessitatibus earum ipsum dolore sapiente impedit eveniet ut. Eaque minus aut nemo natus harum dignissimos dicta veniam odit pariatur.	
+ 		</div>
+		<a href="#">Ok</a>
+		<a href="#" onclick="document.getElementById('modal').style.display='none'">Cancel</a>
+ 	</div>
+</div>
