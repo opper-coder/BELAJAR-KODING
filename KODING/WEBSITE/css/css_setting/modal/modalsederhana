@@ -1,0 +1,8 @@
+
+
+  <div id="modal" style="display:none; background-color: yellow">
+		ISI MODAL
+		<a href="#" onclick="document.getElementById('modal').style.display='none'">Close</a>
+	</div>
+
+	<a href="#" onclick="document.getElementById('modal').style.display='block'">Klik Modal</a>
