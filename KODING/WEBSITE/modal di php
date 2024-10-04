@@ -1,0 +1,23 @@
+<?php 
+	function toggle(){
+		if(!isset($_GET["modal"]) || $_GET["modal"] == "none" ){
+			return "none";
+		}else{
+			return "block";
+		}
+	}
+?>
+<style>
+	.warna{
+		background-color: #eaeaea;
+		border:1px solid black;
+		padding: 10px
+	}
+</style>
+
+<div class="warna" style="display: <?= toggle(); ?>">
+	<b>isi modal</b><br>
+	<a href="">Simpan | </a>
+	<a href="?modal=none">Tutup</a>
+</div>
+<a href="?modal=block">klik modal</a>
