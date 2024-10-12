@@ -250,22 +250,10 @@ $arrayku2	= [ "kolom1"=>"satu","kolom2"=>"dua","kolom3"=>"tiga"];
  
 // membuang huruf tertentu (string x)
 preg_replace(["/\D/"],"","11112222333344445555x");
-
-
-
-
-
-
-
-
-
-
-
  ?>
 
 
 <?php  
-
 // =================penting di ketahui======================
 
 // ini dari hilman nampilin isi database mysql dg While
@@ -297,8 +285,6 @@ foreach ($periode as $per) {
 <?php 
 
 					// METODE FUNCTION QUERY
-
-
 $conn = mysqli_connect ("localhost", "root", "", "desa_banggai") or DIE ( mysqli_error() );
  
  //-----------------------
@@ -319,8 +305,6 @@ echo "<br>";
 
 
 					// PERULANGAN FOREACH DASAR DAN BERSARANG
-
-
 $periode = [[1,2,3],[4,5,6],[7,8,9,10]];
 
 foreach ($periode as $per) {
@@ -328,8 +312,6 @@ foreach ($periode as $per) {
 	echo $p;
 		}
 	}
-
-	
 					// PERULANGAN WHILE tampilkan row ber ulang
 
 
@@ -341,7 +323,6 @@ $cellkelembagaan2 = mysqli_query($conn, $query2);
 // while($row = mysqli_fetch_assoc($cellkelembagaan2) ){
 //         echo $row["nama"] ."<br>"; 
 //     }
-
 
 					// PERULANGAN FOREACH tampilkan 'isi' row ber ulang
 
@@ -357,8 +338,6 @@ foreach ($data as $kel) {
 
 
 					// AGREGASI MY SQL PHP
-
-
 $query10 = "SELECT min(periode) as jumlah FROM kelembagaan";
 $query11 = "SELECT max(periode) as jumlah FROM kelembagaan";
 $query12 = "SELECT sum(periode) as jumlah FROM kelembagaan";
@@ -372,8 +351,6 @@ echo $data["jumlah"];
 
 
 					// FUNGSI DISTINCT 
-
-
 // yaitu adalah mencegah duplikasi (tampil lebih dari satu kali) jika ada duplikasi
 // misalnya ada data yang di sortir berdasarkan kota "jakarta" di dbase ada 10 orang yang
 // berasal dari kota tersebut maka jakarta hanya di tampilkan sekali saja untuk keperluan pengulangan 
@@ -387,7 +364,6 @@ $data = mysqli_fetch_assoc($result15);
 
 
 					// FUNGSI TANGGAL
-
 // $t = "2018-01-23";
 // $sekarang = time();
 
