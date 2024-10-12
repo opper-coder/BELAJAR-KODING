@@ -388,22 +388,27 @@ $data = mysqli_fetch_assoc($result15);
 
 					// FUNGSI TANGGAL
 
-echo date('d');
-echo date('D');
+// $t = "2018-01-23";
+// $sekarang = time();
 
-echo date('m');
-echo date('M');
+// echo date('dmy');
+// echo date('DMY');
+// echo date('D, d M Y');
+// echo date('d-m-y');
+// echo date('y'); 
+// echo date('Y'); 
+// echo date('d');
+// echo date('D');
+// echo date('m');
+// echo date('M');
 
-echo date('y'); 
-echo date('Y'); 
+$tgl1 = "2018-01-23";
+$tgl2 = date('d-m-Y', strtotime('+7 days', strtotime($tgl1)));
+$tgl2 = date('d-m-Y', strtotime('+7 month', strtotime($tgl1)));
+$tgl2 = date('d-m-Y', strtotime('+7 year', strtotime($tgl1)));
+$tgl2 = date('d-m-Y', strtotime('-7 year', strtotime($tgl1)));
 
-echo date('d-m-y');
-echo date('d/m/y');
-
-echo date('D-M-Y');
-
-					// BACA TANGGAL DARI MY SQL
-
+// SYNTAX TANGGAL DARI MY SQL
 tuliskan "SELECT YEAR(kolomtgl) FROM tabel"
 
 year($data["tanggal"]); 	// mnampikan tahum
