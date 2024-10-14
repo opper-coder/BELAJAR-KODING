@@ -1,0 +1,54 @@
+*{
+  margin: 0px;
+  padding: 0px;
+  font-family: sans-serif;
+}
+header{
+  margin-bottom: 20px;
+  border-bottom: 1px solid grey;
+  padding: 5px;
+}
+footer{
+  margin-top: 20px;
+  border-top: 1px solid grey;
+  padding: 5px;
+}
+
+/*sementara containar latihan ganti jika sudah*/
+.cssSementara{
+  margin: 10%;
+  padding: 16px;
+  border:1px solid grey;
+}
+.cssTblsementara{
+  padding: 0 6px ;
+  border:1px solid grey;
+}
+.textSalmon{
+  color: salmon;
+}
+/* modal */
+/*.modalXstyle{
+  background-color: #00000070; 
+  position: fixed;
+  width: 100%;
+  height: 100%;
+}
+.modalCont{ 
+  background-color: white; 
+  width: 60vw;
+  margin: 16vh auto 0;
+  position: relative;
+}*/
+.x{
+  position: absolute;
+  right: 0;
+  background-color: red;
+  width: 18px;
+  height: 18px;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  border-radius: 50%;
+}
+
