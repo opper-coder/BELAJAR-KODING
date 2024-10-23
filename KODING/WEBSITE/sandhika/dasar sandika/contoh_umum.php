@@ -374,6 +374,12 @@ $tgl8 = date('d-m-Y H:i:s', strtotime('+7 second', strtotime($tgl1))); 	// jam y
 $tgl9 = date('d-m-Y H:i:s', strtotime('+7 minute', strtotime($tgl1)));
 $tgl10 = date('d-m-Y h:i:s a', strtotime('-7 hour', strtotime($tgl1)));
 var_dump($tgl10);
+
+// atau lihat ini
+$tanggal = '2002-04-21';
+$timestamp = strtotime($tanggal);
+$bulan = date('d', $timestamp);
+var_dump($bulan);
 	
 // dari tanggal di ats kita bisa melihat sebagianya saja dengan berbagai format 
 date('dmy');
