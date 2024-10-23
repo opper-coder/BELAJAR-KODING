@@ -363,10 +363,23 @@ $result15 = mysqli_query($con1n, $query15);
 $data = mysqli_fetch_assoc($result15);
 
 
-					// FUNGSI TANGGAL
+// FUNGSI TANGGAL
+$tgl1 = "2020-01-23 1:30:30";
+$tgl2 = date("dmy"); 				// tanggal "hari ini"
+$tgl3 = date("dmy", strtotime(2002-04-21)); 	// tanggal "yg di Tuju"
+$tgl4 = date('d-m-Y', strtotime('+7 days', strtotime($tgl1)));
+$tgl5 = date('d-m-Y', strtotime('+7 month', strtotime($tgl1)));
+$tgl6 = date('d-m-Y', strtotime('+7 year', strtotime($tgl1)));
+$tgl7 = date('d-m-Y', strtotime('-7 year', strtotime($tgl1)));
+$tgl8 = date('d-m-Y H:i:s', strtotime('+7 second', strtotime($tgl1)));
+$tgl9 = date('d-m-Y H:i:s', strtotime('+7 minute', strtotime($tgl1)));
+$tgl10 = date('d-m-Y h:i:s a', strtotime('-7 hour', strtotime($tgl1)));
+
+var_dump($tgl10);
+
+
 // $t = "2018-01-23";
 // $sekarang = time();
-
 // echo date('dmy');
 // echo date('DMY');
 // echo date('D, d M Y');
@@ -377,12 +390,6 @@ $data = mysqli_fetch_assoc($result15);
 // echo date('D');
 // echo date('m');
 // echo date('M');
-
-$tgl1 = "2018-01-23";
-$tgl2 = date('d-m-Y', strtotime('+7 days', strtotime($tgl1)));
-$tgl2 = date('d-m-Y', strtotime('+7 month', strtotime($tgl1)));
-$tgl2 = date('d-m-Y', strtotime('+7 year', strtotime($tgl1)));
-$tgl2 = date('d-m-Y', strtotime('-7 year', strtotime($tgl1)));
 
 // SYNTAX TANGGAL DARI MY SQL
 tuliskan "SELECT YEAR(kolomtgl) FROM tabel"
