@@ -362,7 +362,6 @@ $query15 = "SELECT DISTINCT periode FROM kelembagaan";
 $result15 = mysqli_query($con1n, $query15);
 $data = mysqli_fetch_assoc($result15);
 
-
 // FUNGSI TANGGAL
 $tgl1 = "2020-01-23 1:30:30";
 $tgl2 = date("dmy"); 				// tanggal "hari ini"
@@ -374,22 +373,19 @@ $tgl7 = date('d-m-Y', strtotime('-7 year', strtotime($tgl1)));
 $tgl8 = date('d-m-Y H:i:s', strtotime('+7 second', strtotime($tgl1)));
 $tgl9 = date('d-m-Y H:i:s', strtotime('+7 minute', strtotime($tgl1)));
 $tgl10 = date('d-m-Y h:i:s a', strtotime('-7 hour', strtotime($tgl1)));
-
 var_dump($tgl10);
 
-
-// $t = "2018-01-23";
-// $sekarang = time();
-// echo date('dmy');
-// echo date('DMY');
-// echo date('D, d M Y');
-// echo date('d-m-y');
-// echo date('y'); 
-// echo date('Y'); 
-// echo date('d');
-// echo date('D');
-// echo date('m');
-// echo date('M');
+date('dmy');
+date('DMY');
+date('D, d M Y');
+date('d-m-y');
+date('y'); 
+date('Y'); 
+date('d');
+date('D');
+date('m');
+date('M');
+time();
 
 // SYNTAX TANGGAL DARI MY SQL
 tuliskan "SELECT YEAR(kolomtgl) FROM tabel"
