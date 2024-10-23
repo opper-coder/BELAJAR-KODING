@@ -366,11 +366,11 @@ $data = mysqli_fetch_assoc($result15);
 $tgl1 = "2020-01-23 1:30:30";
 $tgl2 = date("dmy"); 				// tanggal "hari ini"
 $tgl3 = date("dmy", strtotime(2002-04-21)); 	// tanggal "yg di Tuju"
-$tgl4 = date('d-m-Y', strtotime('+7 days', strtotime($tgl1)));	// tanggal yang di tambahkan dengan integer
+$tgl4 = date('d-m-Y', strtotime('+7 days', strtotime($tgl1)));		// tanggal yang di tambahkan dengan integer
 $tgl5 = date('d-m-Y', strtotime('+7 month', strtotime($tgl1)));
 $tgl6 = date('d-m-Y', strtotime('+7 year', strtotime($tgl1)));
 $tgl7 = date('d-m-Y', strtotime('-7 year', strtotime($tgl1)));
-$tgl8 = date('d-m-Y H:i:s', strtotime('+7 second', strtotime($tgl1))); // jam yang di tambahkan dengan integer
+$tgl8 = date('d-m-Y H:i:s', strtotime('+7 second', strtotime($tgl1))); 	// jam yang di tambahkan dengan integer
 $tgl9 = date('d-m-Y H:i:s', strtotime('+7 minute', strtotime($tgl1)));
 $tgl10 = date('d-m-Y h:i:s a', strtotime('-7 hour', strtotime($tgl1)));
 var_dump($tgl10);
@@ -391,17 +391,17 @@ time();
 // SYNTAX TANGGAL DARI MY SQL
 tuliskan "SELECT YEAR(kolomtgl) FROM tabel"
 
-year($data["tanggal"]); 	// mnampikan tahum
-month();					// mnampikan bulan 1 -12
+year($data["tanggal"]); 		// mnampikan tahum
+month();				// mnampikan bulan 1 -12
 monthname();				// mnampikan nama bulan jan feb
 dayofmonth();				// mnampikan tanggal 1 - 31
-dayname();					// mnampikan hari sen sel
+dayname();				// mnampikan hari sen sel
 dayofweek();				// mnampikan hari 1 - 7
 weekofday();				// mnampikan nilai hari 0 - 6
 dayofyear();				// mnampikan hari 1- 365
-hour();						// mnampikan jam 1 - 23
-minute();					// mnampikan menit 0 - 59
-second();					// mnampikan detik 0 - 59
+hour();					// mnampikan jam 1 - 23
+minute();				// mnampikan menit 0 - 59
+second();				// mnampikan detik 0 - 59
 
 					// FUNGSI PENJUMLAHAN TANGGAL
 // menggunakan 
