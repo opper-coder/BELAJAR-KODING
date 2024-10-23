@@ -366,15 +366,16 @@ $data = mysqli_fetch_assoc($result15);
 $tgl1 = "2020-01-23 1:30:30";
 $tgl2 = date("dmy"); 				// tanggal "hari ini"
 $tgl3 = date("dmy", strtotime(2002-04-21)); 	// tanggal "yg di Tuju"
-$tgl4 = date('d-m-Y', strtotime('+7 days', strtotime($tgl1)));
+$tgl4 = date('d-m-Y', strtotime('+7 days', strtotime($tgl1)));	// tanggal yang di tambahkan dengan integer
 $tgl5 = date('d-m-Y', strtotime('+7 month', strtotime($tgl1)));
 $tgl6 = date('d-m-Y', strtotime('+7 year', strtotime($tgl1)));
 $tgl7 = date('d-m-Y', strtotime('-7 year', strtotime($tgl1)));
-$tgl8 = date('d-m-Y H:i:s', strtotime('+7 second', strtotime($tgl1)));
+$tgl8 = date('d-m-Y H:i:s', strtotime('+7 second', strtotime($tgl1))); // jam yang di tambahkan dengan integer
 $tgl9 = date('d-m-Y H:i:s', strtotime('+7 minute', strtotime($tgl1)));
 $tgl10 = date('d-m-Y h:i:s a', strtotime('-7 hour', strtotime($tgl1)));
 var_dump($tgl10);
-
+	
+// dari tanggal di ats kita bisa melihat sebagianya saja dengan berbagai format 
 date('dmy');
 date('DMY');
 date('D, d M Y');
