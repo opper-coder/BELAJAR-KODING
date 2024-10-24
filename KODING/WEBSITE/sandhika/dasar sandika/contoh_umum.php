@@ -363,7 +363,7 @@ $result15 = mysqli_query($con1n, $query15);
 $data = mysqli_fetch_assoc($result15);
 
 // FUNGSI TANGGAL
-$tgl1 = "2020-01-23 1:30:30";
+$tgl1 = "2020-01-23 1:30:30"; 			// format mysql readable
 $tgl2 = date("dmy"); 				// tanggal "hari ini"
 $tgl3 = date("dmy", strtotime(2002-04-21)); 	// tanggal "yg di Tuju"
 $tgl4 = date('d-m-Y', strtotime('+7 days', strtotime($tgl1)));		// tanggal yang di tambahkan dengan integer
