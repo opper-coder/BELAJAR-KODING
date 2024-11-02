@@ -108,7 +108,20 @@ BASIC CONFIG
 	/system scheduler
 	add name=restart-scheduler interval=30d start-time=02:00:00 on-event=restart-router
 
-15. DHCP ROGUE
+15. AUTO RECONNECT VPN DDNS
+------------------------------------------------------------------------------------------------------ 
+- :tools > netwatch > add 
+	tab HOST
+	- host: [IP VPN server IP public]
+	- interval: 30-60 detik
+	- timeout: 1000 ms
+	tab UP script:
+		:log warning "sudah up kembali"
+	tab DOWN script:
+		/interface disable [nama INTERFACE] (misal:  panda@mytunnel.id, IP VPN CHR cloud kita)
+		/interface enable [nama INTERFACE] (misal:  panda@mytunnel.id, IP VPN CHR cloud kita)
+
+16. DHCP ROGUE
 -------------------
 adalah ada DHCP tandingan pd jaringan local kita 
 hal ini bisa membuat Connect tidak dapat internet, 
