@@ -107,3 +107,33 @@ BASIC CONFIG
 
 	/system scheduler
 	add name=restart-scheduler interval=30d start-time=02:00:00 on-event=restart-router
+
+15. DHCP ROGUE
+-------------------
+adalah ada DHCP tandingan pd jaringan local kita 
+hal ini bisa membuat Connect tidak dapat internet, 
+atau bahkan susah login tapi tidak dapat loginpage, 
+cara atasi DHCP ROUGE dg filter Bridge, atau mengatifkan DHCP snooping 
+atau ini cara filter bridge caranya:
+
+1. setelah bikin bridge dan porting, maka bikin role filter bridge
+2. tab filter:
+// bikin jalur sah atau original
+add new
+	- chain: forward
+	- in interface: ether1 (WAN)
+	- mac. protocol num: 800(ip) atau ip saja
+	- src port: 67
+	- protocol: 17(udp) atau udp saja
+	- tab action: accept
+	apply OK
+// Blokir jalur tidak sah rogue (mirip beda in interface, dan action)
+add new
+	- chain: forward
+
+	- mac. protocol num: 800(ip) atau ip saja
+	- src port: 67
+	- protocol: 17(udp) atau udp saja
+	- tab action: drop
+	apply OK
+
