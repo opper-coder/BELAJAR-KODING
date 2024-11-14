@@ -5,14 +5,14 @@ TOPOLOGI dan LOAD BALANCE
       ECMP
 -----------------------------------------------------------
 IP ADDRESS DESIGN
-bridge1-WAN				= auto
+bridge1-WAN			= auto
 	vlan40-HS0-LOC		= 192.168.40.1/24       : hotspot vlan
 	vlan60-PP0-LOC		= 192.168.60.1/24       : pppoe vlan 
 bridge2-HOTSPOT			= 192.168.80.1/24       : hotspot bridge
 bridge3-PPPOE			= 192.168.100.1/24      : pppoe bridge
 vlan500-ISPBalang 		= 192.168.222.1/24 	: vlan500+ (ISP dimulai dari 500)
-bridge4-RUMAH			= 192.168.5.1/28		: 0-15/1-14
-bridge5-LB				= 222.222.222.1/30 	: loadbalance
+bridge4-RUMAH			= 192.168.5.1/28	: 0-15/1-14
+bridge5-LB			= 222.222.222.1/30 	: loadbalance
 
 -----------------------------------------------------------
 HOTSPOT
