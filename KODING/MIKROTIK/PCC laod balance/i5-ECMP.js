@@ -15,7 +15,8 @@ TOPOLOGI
 -------------------
 IP
 	- dhcp client semua ISP, default route:no
-	- dhcp server /28
+	- dhcp server /28 (15org) pemilik rumah 
+	- dhcp server /29 (7org) pemilik loadb
 -------------------
 DNS
 	- 8.8.8.8, 8.8.4.4
