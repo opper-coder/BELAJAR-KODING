@@ -75,14 +75,14 @@ BASIC CONFIG
 	> system zone auto detect: matikan
 	> system SNTP client > enable > 
 		cara1: (berhasil)
-		untuk mendapat kan ntp: keyword sntp client: pilih : indonesia_id.pool.ntp.org
+			untuk mendapat kan ntp: keyword sntp client: pilih : indonesia_id.pool.ntp.org
 			primary NTP: id.pool.ntp.org 
 			secondary NTP: 1.id.pool.ntp.org 
 		cara2:
 			primary NTP : 202.65.114.202 > 
 			secondary NTP : 212.26.18.41 > 
 			server dns: "asia.pool.ntp.org"
-		cara3:
+		cara3: (berhasil terbaru)
 			go https://www.ntppool.org/zone/id
 			dapatkan server NTP:  server 0.id.pool.ntp.org, server 1.id.pool.ntp.org, server 2, 3 dst 
 			ambil IP server >: ping 0.id.pool.ntp.org dan  ping 1.id.pool.ntp.org
