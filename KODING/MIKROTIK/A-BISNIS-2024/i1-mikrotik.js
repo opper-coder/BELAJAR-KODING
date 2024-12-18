@@ -82,6 +82,13 @@ BASIC CONFIG
 			primary NTP : 202.65.114.202 > 
 			secondary NTP : 212.26.18.41 > 
 			server dns: "asia.pool.ntp.org"
+		cara3:
+			go https://www.ntppool.org/zone/id
+			dapatkan server NTP:  server 0.id.pool.ntp.org, server 1.id.pool.ntp.org, server 2, 3 dst 
+			ambil IP server >: ping 0.id.pool.ntp.org dan  ping 1.id.pool.ntp.org
+			primary NTP : IP yg anda dapatkan 
+			secondary NTP : sda
+				
 	> apply maka mode akan berubah beserta parameter lain 
 		atur jam cara2
 			hidupkan zone auto detect:
