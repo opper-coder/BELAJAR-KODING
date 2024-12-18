@@ -101,12 +101,17 @@ BASIC CONFIG
 		new TTL: 1 (boolean)
 		passtrhrough: false (citraweb), true (channel lain)
 		Apply
-14. Restart 30 hari sekali 
+14. Restart 30 hari sekali terminal
 	/system script
 	add name=restart-router policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive source="/system reboot"
 
 	/system scheduler
-	add name=restart-scheduler interval=30d start-time=02:00:00 on-event=restart-router
+	add name=restart-scheduler interval=30d start-time=04:00:00 on-event=restart-router
+
+	-- atau ini saja
+	/system scheduler
+	add name=restart_router start-time=04:00:00 interval=1d on-event="/system reboot"
+
 
 15. AUTO RECONNECT VPN DDNS
 ------------------------------------------------------------------------------------------------------ 
