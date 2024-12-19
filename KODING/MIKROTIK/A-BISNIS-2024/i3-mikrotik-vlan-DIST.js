@@ -45,6 +45,8 @@ BASIC CONFIG
 	untuk ISP1 keluar sebagi ISP1
 	untuk ISP2 keluar sebagi ISP2 dst
 -----------------------------------------------------------------------------------
-
-
+11. queue
+	- buat simple queue untuk bridgeHOTSPOT 2M/5M priority 3, pindah urutan teratas
+-----------------------------------------------------------------------------------
 	
+-----------------------------------------------------------------------------------	
