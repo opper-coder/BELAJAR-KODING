@@ -6,8 +6,8 @@ BASIC CONFIG
 	c. system service
 	d. IP address
 		vlan1-kayatri 	192.168.168.10/29
-		vlan2-balang 	192.168.168.11/29
-		vlan3-msroji1 	192.168.168.12/29
+		vlan2-balang 	192.168.168.20/29
+		vlan3-msroji1 	192.168.168.30/29
 		brige4-RMH 	192.168.5.1/28
 	e. tool RoMON: pasmikromon
 	f. loginpage: pada script input diatas password=username, matikan kolom password UI 
