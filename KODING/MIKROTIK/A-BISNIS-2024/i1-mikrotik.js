@@ -83,7 +83,7 @@ BASIC CONFIG
 			secondary NTP : 212.26.18.41 > 
 			server dns: "asia.pool.ntp.org"
 		cara3: (berhasil terbaru)
-			go https://www.ntppool.org/zone/id
+			go www.ntppool.org > cari lokasi server indonesia 
 			dapatkan server NTP:  server 0.id.pool.ntp.org, server 1.id.pool.ntp.org, server 2, 3 dst 
 			ambil IP server >: ping 0.id.pool.ntp.org dan  ping 1.id.pool.ntp.org
 			primary NTP : IP yg anda dapatkan 
