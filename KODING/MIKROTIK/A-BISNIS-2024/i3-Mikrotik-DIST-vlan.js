@@ -27,8 +27,10 @@ BASIC CONFIG
 	- (semua bridge-ISP)
 -----------------------------------------------------------------------------------
 6. VLAN
-	- vlan1 - 3. di atas
-	- menuju bridge5-DIST distribusi 
+	/interface vlan
+	add name=vlan1 interface=bridge5-DIST vlan-id=10
+	add name=vlan2 interface=bridge5-DIST vlan-id=20
+	add name=vlan3 interface=bridge5-DIST vlan-id=30
 -----------------------------------------------------------------------------------
 7. mangle
 	/ip firewall mangle add chain=prerouting in-interface=VLAN1 action=mark-routing new-routing-mark=to-isp1
