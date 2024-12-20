@@ -1,5 +1,19 @@
 BASIC CONFIG
 -----------------------------------------------------------------------------------
+topologi
+MikroTik A:
+    ISP1, ISP2, ISP3
+    vlan1 (10), vlan2 (20), vlan3 (30)
+
+MikroTik B:
+    ISP4, ISP5
+    vlan4 (40), vlan5 (50)
+
+MikroTik C:
+    ISP6, ISP7
+    Load balancing 7 ISP dengan ECMP
+    Distribusi ke lokal (192.168.100.0/24) melalui ether10
+-----------------------------------------------------------------------------------
 1. Reset config
 	a. system user grup full
 	b. system identity
@@ -23,7 +37,7 @@ BASIC CONFIG
 4. DNS
 	- 8.8.8.8, 8.8.4.4, (ip gateway ISP jg boleh) allow remote ok
 5. NAT masquerade 
-	- chain: srcnat, out: WAN, act: masquerade
+	- chain=srcnat out-interface=WAN action=masquerade
 	- (semua bridge-ISP)
 -----------------------------------------------------------------------------------
 6. VLAN
@@ -33,17 +47,14 @@ BASIC CONFIG
 	add name=vlan3 interface=bridge5-DIST vlan-id=30
 -----------------------------------------------------------------------------------
 7. mangle
-	/ip firewall mangle add chain=prerouting in-interface=VLAN1 action=mark-routing new-routing-mark=to-isp1
-	/ip firewall mangle add chain=prerouting in-interface=VLAN2 action=mark-routing new-routing-mark=to-isp2
-	dst
+	/ip firewall mangle add chain=prerouting in-interface=vlan1 action=mark-routing new-routing-mark=to-isp1
+	/ip firewall mangle add chain=prerouting in-interface=vlan2 action=mark-routing new-routing-mark=to-isp2
+	/ip firewall mangle add chain=prerouting in-interface=vlan3 action=mark-routing new-routing-mark=to-isp3
 -----------------------------------------------------------------------------------
 8. routes
-	/ip route add dst-address=0.0.0.0/0 gateway=<gateway-isp1> distance=1
-	/ip route add dst-address=0.0.0.0/0 gateway=<gateway-isp2> distance=1
-	/ip route add dst-address=0.0.0.0/0 gateway=<gateway-isp3> distance=1
-	/ip route add dst-address=0.0.0.0/0 gateway=<gateway-isp1> routing-mark=to-isp1
-	/ip route add dst-address=0.0.0.0/0 gateway=<gateway-isp2> routing-mark=to-isp2
-	/ip route add dst-address=0.0.0.0/0 gateway=<gateway-isp3> routing-mark=to-isp3
+	/ip route add dst-address=0.0.0.0/0 gateway=<gateway-isp1> distance=1 routing-mark=to-isp1 
+	/ip route add dst-address=0.0.0.0/0 gateway=<gateway-isp2> distance=1 routing-mark=to-isp2
+	/ip route add dst-address=0.0.0.0/0 gateway=<gateway-isp3> distance=1 routing-mark=to-isp3
 	pakai (%) jika sama
 -----------------------------------------------------------------------------------	
 9. queue
