@@ -57,10 +57,10 @@ MikroTik C:
 	/ip route add dst-address=0.0.0.0/0 gateway=<gateway-isp3> distance=1 routing-mark=to-isp3
 	pakai (%) jika sama
 -----------------------------------------------------------------------------------
-10. DHCP server
+9. DHCP server
 	- masing masing vlan
 -----------------------------------------------------------------------------------
-11. HOTSPOT
+10. HOTSPOT
 	- Bridge4-RMH
 	- link.net
 	- profil 1000k/2500k keepalive dll matikan
@@ -69,7 +69,7 @@ MikroTik C:
 	- keepalive 10 detik
 	- user: Permen
 -----------------------------------------------------------------------------------	
-9. queue
+11. queue
 	- buat simple queue untuk bridgeHOTSPOT 2M/5M priority 3, pindah urutan teratas
 -----------------------------------------------------------------------------------
 
