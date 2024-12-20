@@ -41,7 +41,7 @@ BASIC CONFIG
 	/ip route add dst-address=0.0.0.0/0 gateway=<gateway-isp3> distance=1
 	/ip route add dst-address=0.0.0.0/0 gateway=<gateway-isp1> routing-mark=to-isp1
 	/ip route add dst-address=0.0.0.0/0 gateway=<gateway-isp2> routing-mark=to-isp2
-	/ip route add dst-address=0.0.0.0/0 gateway=<gateway-isp2> routing-mark=to-isp3
+	/ip route add dst-address=0.0.0.0/0 gateway=<gateway-isp3> routing-mark=to-isp3
 	pakai (%) jika sama
 -----------------------------------------------------------------------------------	
 9. queue
