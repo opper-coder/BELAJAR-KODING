@@ -56,9 +56,6 @@ MikroTik C:
 	/ip route add dst-address=0.0.0.0/0 gateway=<gateway-isp2> distance=1 routing-mark=to-isp2
 	/ip route add dst-address=0.0.0.0/0 gateway=<gateway-isp3> distance=1 routing-mark=to-isp3
 	pakai (%) jika sama
------------------------------------------------------------------------------------	
-9. queue
-	- buat simple queue untuk bridgeHOTSPOT 2M/5M priority 3, pindah urutan teratas
 -----------------------------------------------------------------------------------
 10. DHCP server
 	- masing masing vlan
@@ -71,3 +68,13 @@ MikroTik C:
 	- server hotspot
 	- keepalive 10 detik
 	- user: Permen
+-----------------------------------------------------------------------------------	
+9. queue
+	- buat simple queue untuk bridgeHOTSPOT 2M/5M priority 3, pindah urutan teratas
+-----------------------------------------------------------------------------------
+
+
+
+
+
+	
