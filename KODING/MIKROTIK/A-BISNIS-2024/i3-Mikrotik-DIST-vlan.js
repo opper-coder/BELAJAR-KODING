@@ -4,11 +4,9 @@ topologi
 MikroTik A:
     ISP1, ISP2, ISP3
     vlan1 (10), vlan2 (20), vlan3 (30)
-
 MikroTik B:
     ISP4, ISP5
     vlan4 (40), vlan5 (50)
-
 MikroTik C:
     ISP6, ISP7
     Load balancing 7 ISP dengan ECMP
