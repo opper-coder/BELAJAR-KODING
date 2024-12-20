@@ -30,10 +30,27 @@ BASIC CONFIG
 	- vlan1 - 3. di atas
 	- menuju bridge5-DIST distribusi 
 -----------------------------------------------------------------------------------
-7. DHCP server
+7. mangle
+	/ip firewall mangle add chain=prerouting in-interface=VLAN1 action=mark-routing new-routing-mark=to-isp1
+	/ip firewall mangle add chain=prerouting in-interface=VLAN2 action=mark-routing new-routing-mark=to-isp2
+	dst
+-----------------------------------------------------------------------------------
+8. routes
+	/ip route add dst-address=0.0.0.0/0 gateway=<gateway-isp1> distance=1
+	/ip route add dst-address=0.0.0.0/0 gateway=<gateway-isp2> distance=1
+	/ip route add dst-address=0.0.0.0/0 gateway=<gateway-isp3> distance=1
+	/ip route add dst-address=0.0.0.0/0 gateway=<gateway-isp1> routing-mark=to-isp1
+	/ip route add dst-address=0.0.0.0/0 gateway=<gateway-isp2> routing-mark=to-isp2
+	/ip route add dst-address=0.0.0.0/0 gateway=<gateway-isp2> routing-mark=to-isp2
+	pakai (%) jika sama
+-----------------------------------------------------------------------------------	
+9. queue
+	- buat simple queue untuk bridgeHOTSPOT 2M/5M priority 3, pindah urutan teratas
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+10. DHCP server
 	- masing masing vlan
 -----------------------------------------------------------------------------------
-8. HOTSPOT
+11. HOTSPOT
 	- Bridge4-RMH
 	- link.net
 	- profil 1000k/2500k keepalive dll matikan
@@ -41,17 +58,3 @@ BASIC CONFIG
 	- server hotspot
 	- keepalive 10 detik
 	- user: Permen
------------------------------------------------------------------------------------
-10. mangle
-	/ip firewall mangle add chain=prerouting in-interface=VLAN1 action=mark-routing new-routing-mark=to-isp1
-	/ip firewall mangle add chain=prerouting in-interface=VLAN2 action=mark-routing new-routing-mark=to-isp2
-	dst
------------------------------------------------------------------------------------
-12. routes
-	/ip route add dst-address=0.0.0.0/0 gateway=<gateway-isp1> routing-mark=to-isp1
-	/ip route add dst-address=0.0.0.0/0 gateway=<gateway-isp2> routing-mark=to-isp2
-	pakai (%) jika sama
------------------------------------------------------------------------------------	
-11. queue
-	- buat simple queue untuk bridgeHOTSPOT 2M/5M priority 3, pindah urutan teratas
------------------------------------------------------------------------------------
