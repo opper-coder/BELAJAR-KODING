@@ -6,12 +6,12 @@ BASIC CONFIG
 	c. system service
 	d. IP address
 		untuk vlan silahkan lihat standard di file 
-		vlan1-kayatri 	192.168.168.10/29 : (langsung kasih comment nama vlan perlu)
+		vlan1-kayatri 	192.168.168.10/29 : (PENTING: langsung kasih comment nama vlan)
 		vlan2-balang 	192.168.168.20/29
 		vlan3-msroji1 	192.168.168.30/29
 		brige4-RMH 	192.168.5.1/28
 	e. tool RoMON: pasmikromon
-	f. loginpage: pada script input diatas password=username, matikan kolom password UI 
+	f. loginpage: edit HTML pada script input diatas password=username, matikan kolom password UI 
 2. Bridge: 
 	- bridge1-ISP1 port: ether1
 	- bridge2-ISP2 port: ether2
@@ -19,16 +19,16 @@ BASIC CONFIG
 	- bridge4-RMH  port: ether4
 	- bridge5-DISP port: ether5
 3. DHCP Client
-	- semua bridge-ISP
+	- semua bridge-ISP > bound
 4. DNS
 	- 8.8.8.8, 8.8.4.4, (ip gateway ISP jg boleh) allow remote ok
 5. NAT masquerade 
 	- chain: srcnat, out: WAN, act: masquerade
-	- semua bridge-ISP
+	- (semua bridge-ISP)
 ------------------------------------------------------------------------------
 6. VLAN
 	- vlan1 - 3. di atas
-	- bridge5-DISP 
+	- menuju bridge5-DISP 
 -----------------------------------------------------------------------------------
 7. DHCP server
 	- masing masing vlan
@@ -45,9 +45,11 @@ BASIC CONFIG
 10. mangle
 	untuk ISP1 keluar sebagi ISP1
 	untuk ISP2 keluar sebagi ISP2 dst
+
 -----------------------------------------------------------------------------------
+12. routes
+	- 
+-----------------------------------------------------------------------------------	
 11. queue
 	- buat simple queue untuk bridgeHOTSPOT 2M/5M priority 3, pindah urutan teratas
 -----------------------------------------------------------------------------------
-	
------------------------------------------------------------------------------------	
