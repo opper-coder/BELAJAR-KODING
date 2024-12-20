@@ -45,7 +45,6 @@ BASIC CONFIG
 10. mangle
 	untuk ISP1 keluar sebagi ISP1
 	untuk ISP2 keluar sebagi ISP2 dst
-
 -----------------------------------------------------------------------------------
 12. routes
 	- 
