@@ -5,7 +5,8 @@ BASIC CONFIG
 	b. system identity
 	c. system service
 	d. IP address
-		vlan1-kayatri 	192.168.168.10/29
+		untuk vlan silahkan lihat standard di file 
+		vlan1-kayatri 	192.168.168.10/29 : (langsung kasih comment nama vlan perlu)
 		vlan2-balang 	192.168.168.20/29
 		vlan3-msroji1 	192.168.168.30/29
 		brige4-RMH 	192.168.5.1/28
