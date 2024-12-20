@@ -28,7 +28,7 @@ BASIC CONFIG
 ------------------------------------------------------------------------------
 6. VLAN
 	- vlan1 - 3. di atas
-	- menuju bridge5-DISP 
+	- menuju bridge5-DIST distribusi 
 -----------------------------------------------------------------------------------
 7. DHCP server
 	- masing masing vlan
@@ -43,11 +43,14 @@ BASIC CONFIG
 	- user: Permen
 -----------------------------------------------------------------------------------
 10. mangle
-	untuk ISP1 keluar sebagi ISP1
-	untuk ISP2 keluar sebagi ISP2 dst
+	/ip firewall mangle add chain=prerouting in-interface=VLAN1 action=mark-routing new-routing-mark=to-isp1
+	/ip firewall mangle add chain=prerouting in-interface=VLAN2 action=mark-routing new-routing-mark=to-isp2
+	dst
 -----------------------------------------------------------------------------------
 12. routes
-	- 
+	/ip route add dst-address=0.0.0.0/0 gateway=<gateway-isp1> routing-mark=to-isp1
+	/ip route add dst-address=0.0.0.0/0 gateway=<gateway-isp2> routing-mark=to-isp2
+	pakai (%) jika sama
 -----------------------------------------------------------------------------------	
 11. queue
 	- buat simple queue untuk bridgeHOTSPOT 2M/5M priority 3, pindah urutan teratas
