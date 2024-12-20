@@ -12,7 +12,7 @@ MikroTik C:
     Load balancing 7 ISP dengan ECMP
     Distribusi ke lokal (192.168.100.0/24) melalui ether10
 -----------------------------------------------------------------------------------
-1. Reset config
+1. Reset config MikroTik A, B :
 	a. system user grup full
 	b. system identity
 	c. system service
