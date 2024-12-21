@@ -1,5 +1,6 @@
 BASIC CONFIG
 -----------------------------------------------------------------------------------
+MIKROTIK-A
 topologi
 MikroTik A:
     ISP1, ISP2, ISP3
@@ -71,7 +72,45 @@ MikroTik C:
 	- buat simple queue untuk bridgeHOTSPOT 2M/5M priority 3, pindah urutan teratas
 -----------------------------------------------------------------------------------
 
+MIKROTIK-B
 
+VLAN TRUNK
+	- buat vlan yang sama dengan TAG pada ETHER1(TRUNC/UNTAG) 
+		vlan1, vlan2, vlan3 di ether1
+	- bikin bridge untuk masing2 vlan
+		bridge1, bridge2, bridge3, porting masing masing bridge
+		vlan1, vlan2, vlan3 
+	- bridge lalu porting ether mana yang mau di jadikan tag 
+-----------------------------------------------------------------------------------
+VLAN UNTAG
+	- tag 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
 
 
 
