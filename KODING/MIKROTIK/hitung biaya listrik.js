@@ -1,3 +1,4 @@
+---------------------------------------------------
 1. whatt(v * a) x jam(24 jam) x harg per kwh x hari      = menghasilkan rupiah
 2. 12volt x 2amp x jam x hari (30hari) x hrga per kwh    = menghasilkan rupiah
 
@@ -26,3 +27,4 @@ kutub kiri
 	--
 	biru 		: (+) 
 	coklat 		: (-)
+---------------------------------------------------
