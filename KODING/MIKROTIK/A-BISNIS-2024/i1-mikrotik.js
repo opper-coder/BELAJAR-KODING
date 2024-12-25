@@ -1,10 +1,6 @@
 BASIC CONFIG
 ------------------------------------------------------------------------------
- - Loadbalance
-      topology
-      ECMP
-------------------------------------------------------------------------------
-1. Reset config
+1. Reset config:
 	a. system user grup=full
 	b. system identity
 	c. ip service
@@ -14,18 +10,13 @@ BASIC CONFIG
 	- bridge1-WAN 
 	- bridge2-LAN
 	- bridge3-Remote
-3. VLAN
-	- hotspot, pppoe, remote
-4. porting
-	- ether, vlan
-5. IP	
-	- lihat topology
-6. DNS
-	- 8.8.8.8, 8.8.4.4, 1.1.1.1 (ip gateway ISP jg boleh) allow remote=y
-7. NAT masquerade
-	- chain: srcnat, out: WAN, act: masquerade
+3. vlan: - hotspots, pppoes, remotes
+4. porting: - ether, vlan
+5. DNS:  - 8.8.8.8, 8.8.4.4, 1.1.1.1 (ip gateway ISP jg boleh) allow remote=y
+6. NAT: - chain: srcnat, out: WAN, act: masquerade
+7. IP:	- lihat topology
 -----------------------------------------------------------------------------------
-8. IP bridge-WAN (DHCP client-bound, satu ether saja menuju ke Mikrotik LB, atau langsung ISP nanti kalau LB tinggal renew saja)
+8. IP bridge-WAN (DHCP client-bound, release, renew saja)
 -----------------------------------------------------------------------------------
 9. HOTSPOT
 	- IP > HOTSPOT > Interface
