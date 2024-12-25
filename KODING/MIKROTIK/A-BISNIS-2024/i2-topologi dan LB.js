@@ -1,8 +1,9 @@
 -----------------------------------------------------------
 TOPOLOGI dan LOAD BALANCE
-      topologi distribusi: ODN > ODC > ODP > ONT
-      topologi ISP: SWITCH, VLAN, MIKROTIK
-      ECMP
+       	topologi distribusi: ODN > ODC > ODP > ONT
+	topologi hotspot: server > OLT > ONT > OLT > ONT vlan
+      	topologi ISP: Rumah, 2ISP, TERMINAL, LB, MIKROTIK
+      	topologi mesin: (2 ISP)rb951ui-2nd, rb951ui-2hnd, (6 ISP) rb750gr3, (12 ISP+ECMP) rb450gx4 
 -----------------------------------------------------------
 IP ADDRESS DESIGN
 bridge1-WAN			= auto
