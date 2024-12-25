@@ -18,17 +18,14 @@ BASIC CONFIG
 -----------------------------------------------------------------------------------
 8. IP bridge-WAN (DHCP client-bound, release, renew saja)
 -----------------------------------------------------------------------------------
-9. HOTSPOT
+-----------------------------------------------------------------------------------
+9. DHCP server
+	distribusi paling sederhana hanya queue saja ini atau pemilik rumah pribadi saja pengganti pppoe (kalau mau sih)
+10. HOTSPOT
 	- IP > HOTSPOT > Interface
-		- interface: konsepnya
-			- tiap SFP satu hotspot segment /24
-			- tiap SFP satu frame ODN > ODC > ODP > ONT
-			- maksimal 100 client sesuai OLT epon 
-			- pool skip start di 100 - 255
-			- static 1-99
 	- name server - HS1-komp12, HS2-Bone, HS3-dst
 	- link.net, link2.net
-	- admin, 1001
+	- admin10x, admin10x
 	- server profile > login 
 		- 3 saja: chap, pap, mac coockie, 
 		- loginpage : buatkan folder default, HS1, HS2, HS3 dst
@@ -39,11 +36,10 @@ BASIC CONFIG
 	- profile user: (semua yang di mikbotam setting seperti di bawah,opt) 
 		- lakukan penyesuaian pada: name, pool, share, limit 
 		- limit Up:Do = 1:4 sudah pasti aman dari pisah traffic (contoh: 360k/1000k )
-		- session, idle, keepalive: disable, sbg gantinya setting pada "servers" (berjamaah)
+		- session, idle, keepalive: disable, sdh ada pada "servers" (berjamaah)
 		- user ada 3 kategori: adm-mahmud, surya-nur, tokopadang(ISP), end users(vocer)
 	- PERHATIAN:
-		- profil dan user yang di buat NATIVE jangan sampai di EDIT atau bahkan sekedar di buka di MIKBOTAM dst. 
-		  bisa ada masalah(logout sendiri dan anomali, ada intervensi dari MIKBOTAM dan sejenisnya)
+		- profil dan user yang di buat NATIVE jangan sampai di EDIT atau bahkan sekedar di buka di MIKBOTAM dst. bisa kena script 
 -----------------------------------------------------------------------------------
 10. PPPoE server
 	- add server. interface: VLAN tujuan
@@ -95,7 +91,6 @@ BASIC CONFIG
 	----- atau ini saja
 	/system scheduler
 	add name=restart_router start-time=04:00:00 interval=1d on-event="/system reboot"
-
 14. AUTO RECONNECT VPN DDNS
 ------------------------------------------------------------------------------------------------------ 
 - :tools > netwatch > add 
@@ -108,7 +103,6 @@ BASIC CONFIG
 	tab DOWN script:
 		/interface disable [nama INTERFACE] (misal:  panda@mytunnel.id, IP VPN CHR cloud kita)
 		/interface enable [nama INTERFACE] (misal:  panda@mytunnel.id, IP VPN CHR cloud kita)
-
 15. DHCP ROGUE
 -------------------
 adalah ada DHCP tandingan pd jaringan local kita 
