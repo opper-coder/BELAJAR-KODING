@@ -46,23 +46,6 @@ vlanPPPoE
 hotspot rumah:         	
 			: 192.168.100.1/28  (15)
 ------------------------------------------------------------------------------------------------------------------------------------------
-????????????????????????????
-hotspot VCR            	 : 192.168.40.1/24	 : ????? pertimbangan 
-	vlan40-HS0-LOC	 : 192.168.40.1/24       : hotspot vlan
-	vlan60-PP0-LOC	 : 192.168.60.1/24       : pppoe vlan 
-  distribusi             : 192.168.168.1/29      : lihat tabel di bawah
-  bridge5-LB 		 : 222.222.222.1/30 	 : loadbalance
-
-
-	vlan40-HS0-LOC		= 192.168.40.1/24       : hotspot vlan
-	vlan60-PP0-LOC		= 192.168.60.1/24       : pppoe vlan 
-bridge2-HOTSPOT			= 192.168.80.1/24       : hotspot bridge
-bridge3-PPPOE			= 192.168.100.1/24      : pppoe bridge
-vlan500-ISPBalang 		= 192.168.222.1/24 	: vlan500+ (ISP dimulai dari 500)
-bridge4-RUMAH			= 192.168.5.1/28	: 0-15/1-14
-bridge5-LB			= 222.222.222.1/30 	: loadbalance
-????????????????????????????
-	
 DAFTAR NAMA
 slash/29 (1-7 user) 
 ___________________________________________________________________________________________________________________________________________________
