@@ -5,15 +5,6 @@ TOPOLOGI dan LOAD BALANCE
       	topologi ISP: Rumah, 2ISP, TERMINAL, LB, MIKROTIK
       	topologi mesin: (2 ISP)rb951ui-2nd, rb951ui-2hnd, (6 ISP) rb750gr3, (12 ISP+ECMP) rb450gx4 
 -----------------------------------------------------------
-IP ADDRESS DESIGN
-bridge1-WAN			= auto
-	vlan40-HS0-LOC		= 192.168.40.1/24       : hotspot vlan
-	vlan60-PP0-LOC		= 192.168.60.1/24       : pppoe vlan 
-bridge2-HOTSPOT			= 192.168.80.1/24       : hotspot bridge
-bridge3-PPPOE			= 192.168.100.1/24      : pppoe bridge
-vlan500-ISPBalang 		= 192.168.222.1/24 	: vlan500+ (ISP dimulai dari 500)
-bridge4-RUMAH			= 192.168.5.1/28	: 0-15/1-14
-bridge5-LB			= 222.222.222.1/30 	: loadbalance
 
 -----------------------------------------------------------
 HOTSPOT
@@ -49,13 +40,39 @@ DAFTAR NAMA
 slash/29 (1-7 user) 
 
 ------------------------------------------------------------------------------------------------------------------------------------------
-STANDARD IP
+STANDARD IP DESIGN
+bridge1-WAN		: auto
+vlanOUTER		: 10 
+	IP 		: 10.10.10.1/29
+	vlanISP 	: 100
+	vlanISP		: 101
+vlanHS
+	IP 		: 20.20.20.1/24 
+	vlanHS200 	: 200
+	vlanHS201 	: 201
+vlanPP
+	IP 		: 30.30.30.1/24
+	vlanPP300 	: 300
+	vlanPP301 	: 301
+
+
   hotspot rumah:         : 192.168.5.1/28  (15)
   hotspot VCR            : 192.168.40.1/24	 : ????? pertimbangan 
 	vlan40-HS0-LOC	 : 192.168.40.1/24       : hotspot vlan
 	vlan60-PP0-LOC	 : 192.168.60.1/24       : pppoe vlan 
   distribusi             : 192.168.168.1/29      : lihat tabel di bawah
   bridge5-LB 		 : 222.222.222.1/30 	 : loadbalance
+
+
+	vlan40-HS0-LOC		= 192.168.40.1/24       : hotspot vlan
+	vlan60-PP0-LOC		= 192.168.60.1/24       : pppoe vlan 
+bridge2-HOTSPOT			= 192.168.80.1/24       : hotspot bridge
+bridge3-PPPOE			= 192.168.100.1/24      : pppoe bridge
+vlan500-ISPBalang 		= 192.168.222.1/24 	: vlan500+ (ISP dimulai dari 500)
+bridge4-RUMAH			= 192.168.5.1/28	: 0-15/1-14
+bridge5-LB			= 222.222.222.1/30 	: loadbalance
+
+
 ___________________________________________________________________________________________________________________________________________________
 NAMA              : HP           | TELKOM       | BIAYA 	| INTERFACE IP         sgmt1 |sgmt2|sgmt3|sgmt4|sgmt5| (users) PASS      | AKSES POINT    |
 ---------------------------------------------------------------------------------------------------------------------------------------------------
