@@ -31,7 +31,7 @@ lalu jadikan load balance ECMP seperti repo PCC load balance LB ECMP
 ------------------------------------------------------------------------------------------------------------------------------------------
 STANDARD IP DESIGN
 bridge1-WAN		: auto
-vlan-QinQ		: 10 
+vlan-QinQ		: 1000, 1100, 1200 
 	IP ISP 		: 10.10.10.1/29 atau 192.168.1.1 - 192.168.10.1
 	vlanISP 	: 100
 	vlanISP		: 101
