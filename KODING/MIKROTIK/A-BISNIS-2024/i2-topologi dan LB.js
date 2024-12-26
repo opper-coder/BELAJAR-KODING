@@ -1,11 +1,9 @@
 -----------------------------------------------------------
 TOPOLOGI dan LOAD BALANCE
-       	topologi distribusi: ODN > ODC > ODP > ONT
-	topologi hotspot: server > OLT > ONT > OLT > ONT vlan
-      	topologi ISP: Rumah, 2ISP, TERMINAL, LB, MIKROTIK
-      	topologi mesin: (2 ISP)rb951ui-2nd, rb951ui-2hnd, (6 ISP) rb750gr3, (12 ISP+ECMP) rb450gx4 
------------------------------------------------------------
-
+       	topologi distribusi	: ODN > ODC > ODP > ONT
+	topologi hotspot	: server > OLT > ONT > OLT > ONT vlan
+      	topologi ISP		: Rumah, 2ISP, TERMINAL, LB, MIKROTIK
+      	topologi mesin		: (2 ISP)rb951ui-2nd, rb951ui-2hnd, (6 ISP) rb750gr3, (12 ISP+ECMP) rb450gx4 
 -----------------------------------------------------------
 HOTSPOT
       - SFP 8db > 5:95 > 10:90 > 50:50 > ODC > ODP > ONT     = +8 -> 5:10:50
@@ -30,34 +28,25 @@ TERMINAL ISP pakai VLAN trunch pada SWITCH
       - atau terima pakai vlan pakai switch biasa
 -----------------------------------------------------------
 lalu jadikan load balance ECMP seperti repo PCC load balance LB ECMP
------------------------------------------------------------
-
-
-
-
-	
-DAFTAR NAMA
-slash/29 (1-7 user) 
-
 ------------------------------------------------------------------------------------------------------------------------------------------
 STANDARD IP DESIGN
 bridge1-WAN		: auto
 vlanOUTER		: 10 
-	IP 		: 10.10.10.1/29
+	IP ISP 		: 10.10.10.1/29 atau 192.168.1.1 - 192.168.10.1
 	vlanISP 	: 100
 	vlanISP		: 101
-vlanHS
+vlanHotSpot
 	IP 		: 20.20.20.1/24 
 	vlanHS200 	: 200
 	vlanHS201 	: 201
-vlanPP
+vlanPPPoE
 	IP 		: 30.30.30.1/24
 	vlanPP300 	: 300
 	vlanPP301 	: 301
-
-
-  hotspot rumah:         : 192.168.5.1/28  (15)
-  hotspot VCR            : 192.168.40.1/24	 : ????? pertimbangan 
+hotspot rumah:         	: 192.168.5.1/28  (15)
+------------------------------------------------------------------------------------------------------------------------------------------
+????????????????????????????
+hotspot VCR            	 : 192.168.40.1/24	 : ????? pertimbangan 
 	vlan40-HS0-LOC	 : 192.168.40.1/24       : hotspot vlan
 	vlan60-PP0-LOC	 : 192.168.60.1/24       : pppoe vlan 
   distribusi             : 192.168.168.1/29      : lihat tabel di bawah
@@ -71,8 +60,10 @@ bridge3-PPPOE			= 192.168.100.1/24      : pppoe bridge
 vlan500-ISPBalang 		= 192.168.222.1/24 	: vlan500+ (ISP dimulai dari 500)
 bridge4-RUMAH			= 192.168.5.1/28	: 0-15/1-14
 bridge5-LB			= 222.222.222.1/30 	: loadbalance
-
-
+????????????????????????????
+	
+DAFTAR NAMA
+slash/29 (1-7 user) 
 ___________________________________________________________________________________________________________________________________________________
 NAMA              : HP           | TELKOM       | BIAYA 	| INTERFACE IP         sgmt1 |sgmt2|sgmt3|sgmt4|sgmt5| (users) PASS      | AKSES POINT    |
 ---------------------------------------------------------------------------------------------------------------------------------------------------
