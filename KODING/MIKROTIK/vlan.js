@@ -116,7 +116,7 @@ VLAN STACKING(Q-in-Q) adalah vlan dalam vlan CITRAWEB
                 vlan100(inner)(DHCPserver)(vlan slave)
                 vlan200(inner)(DHCPserver)(vlan slave)
                 vlan300(inner)(DHCPserver)(vlan slave)
-    MIKROTIK-B (sebaiknya CRS atau yang punya chipset switch support vlan)
+    MIKROTIK-B (jembatan ke C, sebaiknya CRS atau yang punya chipset switch support vlan)
         Bridge
             BRIDGE: bridge1 > vlan filtering=y
             PORT:   ether1(in), ether2(out) 
