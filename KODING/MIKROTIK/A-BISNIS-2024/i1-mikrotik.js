@@ -1,27 +1,23 @@
 BASIC CONFIG
 ------------------------------------------------------------------------------
-1. Reset config:
+1. RESET config:
 	a. system user grup=full
 	b. system identity
 	c. ip service
 	d. tool RoMON: pasmikromon
 	e. loginpage: edit HTML pada script input diatas password=username, matikan kolom password UI 
-2. Bridge: 
+2. BRIDGE: 
 	- bridge1-WAN 
 	- bridge2-LAN
 	- bridge3-Remote
-3. vlan: - hotspots, pppoes, remotes
-4. porting: - ether, vlan
-5. DNS:  - 8.8.8.8, 8.8.4.4, 1.1.1.1 (ip gateway ISP jg boleh) allow remote=y
-6. NAT: - chain: srcnat, out: WAN, act: masquerade
-7. IP:	- lihat topology
+3. VLAN $ IP: - hotspots, pppoes, remotes
+4. PORTING: 
+5. DHCP client: bound, release, renew
+	server: distribusi paling sederhana hanya queue saja ini atau pemilik rumah pribadi saja pengganti pppoe (kalau mau sih)
+6. DNS: 8.8.8.8, 8.8.4.4, 1.1.1.1 (ip gateway ISP jg boleh) allow remote=y
+7. NAT: chain: srcnat, out: WAN, act: masquerade
 -----------------------------------------------------------------------------------
-8. IP bridge-WAN (DHCP client-bound, release, renew saja)
------------------------------------------------------------------------------------
------------------------------------------------------------------------------------
-9. DHCP server
-	distribusi paling sederhana hanya queue saja ini atau pemilik rumah pribadi saja pengganti pppoe (kalau mau sih)
-10. HOTSPOT
+8. HOTSPOT
 	- IP > HOTSPOT > Interface
 	- name server - HS1-komp12, HS2-Bone, HS3-dst
 	- link.net, link2.net
@@ -81,7 +77,7 @@ BASIC CONFIG
 		new TTL: 1 (boolean)
 		passtrhrough: false (citraweb), true (channel lain)
 		Apply
-13. Restart 30 hari sekali terminal
+13. Restart 1 hari sekali terminal
 	/system script
 	add name=restart-router policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive source="/system reboot"
 
