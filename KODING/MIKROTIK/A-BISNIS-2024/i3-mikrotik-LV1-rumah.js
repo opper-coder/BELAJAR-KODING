@@ -38,7 +38,7 @@ d. VLAN & IP:
 		vlanIs13:13	 10.10.13.1/29
 		vlanIs14:14 	 10.10.14.1/29
 		vlanIs15:15	 10.10.15.1/29
-		brige4-RMH 	192.168.5.1/28
+	brige4-RMH 		192.168.5.1/28
 3. DHCP: 
 	- Client semua bridge-ISP > bound 
 	- Server semua vlan
