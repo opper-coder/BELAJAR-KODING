@@ -21,7 +21,7 @@ konsep topologi ISP
 		LB ECMP > 
 ===================================================================================
 BASIC
-1. Reset config MikroTik-13 :
+1. RESET config:
 	a. system user grup full
 	b. system identity
 	c. system service
@@ -33,31 +33,31 @@ BASIC
 	- bridge3-kayatri port: ether3
 	- bridge4-RMH  	  port: ether4, wlan1
 	- bridge5-DIST    port: ether5
-d. VLAN dan IP address
+d. VLAN & IP:
 	vlanQinQ:1000 > bridge1-DIST (semua mikrotik pengirim QinQ pakai ID=1000)
 		vlanIs13:13	 10.10.13.1/29
 		vlanIs14:14 	 10.10.14.1/29
 		vlanIs15:15	 10.10.15.1/29
 		brige4-RMH 	192.168.5.1/28
-3. DHCP 
+3. DHCP: 
 	- Client semua bridge-ISP > bound 
 	- Server semua vlan
-4. DNS
+4. DNS:
 	- 8.8.8.8, 8.8.4.4, (ip gateway ISP jg boleh) allow remote ok
-5. NAT masquerade 
+5. NAT masquerade: 
 	- chain=srcnat out-interface=WAN action=masquerade
 	- (copy semua bridge-ISP)
-6. PING 
+6. PING:
 	- masing-masing gateway 
 -----------------------
-7. HOTSPOT rumah
+7. HOTSPOT rumah:
 	- hotspot set di=bridge4-RMH
 	- selebihnya lihat basic config hotspot
 	+queue1-Rumah limit=1M/5M priority=1
 	+profile1-Rumah limit=1M/2M parent=+queue1-Rumah
 	+user="nama terserah" profil=profile1-Rumah
 -----------------------
-8. POLICY BASED ROUTE 
+8. POLICY BASED ROUTE: 
 	/ip route rule 
 		+src-address=<gatewayvlanIs13> action=lookup table="to-ISP13"
 		+src-address=<gatewayvlanIs14> action=lookup table="to-ISP14"
