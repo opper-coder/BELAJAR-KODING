@@ -66,14 +66,14 @@ d. VLAN & IP:
 		+dst=0.0.0.0/0 gateway=<ISP1%bridge1> mark-conn="to-ISP14"
 		+dst=0.0.0.0/0 gateway=<ISP1%bridge1> mark-conn="to-ISP15"
 ===================================================================================
-MIKROTIK-QINQ Terminal
+MIKROTIK-QINQ Terminal (hanya meneruskan vlan1000 dari 4 ether ISP)
 	1. Reset config 
     	2. Bridge
         	BRIDGE 	: bridge1 > vlan-filtering=y
-       		PORT 	: ether1(in) 
-        		  ether2(in) 
-        		  ether3(in) 
-        		  ether4(in) 
+       		PORT 	: ether1(in)(vlan1000) 
+        		  ether2(in)(vlan1000) 
+        		  ether3(in)(vlan1000) 
+        		  ether4(in)(vlan1000) 
         		  ether5(out) tab vlan PVID=1000 tag-stacking=y 
         	VLANs 	: bridge1 vlan-ID=1000 tagged=ether1,2,3,4 untagged=ether5 
 ===================================================================================
