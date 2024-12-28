@@ -55,7 +55,7 @@ d. VLAN & IP:
 	+profile1-Rumah limit=1M/2M parent=+queue1-Rumah
 	+user="nama terserah" profil=profile1-Rumah
 -----------------------
-8. POLICY BASED ROUTE: 
+8. POLICY BASED ROUTE: (skenario menentukan jalurISP menuju interface tertentu, untuk LB nantinya)
 	/ip route rule 
 		+src-address=<gatewayvlanIs13> action=lookup table="to-ISP13"
 		+src-address=<gatewayvlanIs14> action=lookup table="to-ISP14"
