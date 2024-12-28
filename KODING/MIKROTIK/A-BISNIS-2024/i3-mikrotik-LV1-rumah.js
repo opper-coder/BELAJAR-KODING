@@ -91,7 +91,7 @@ MIKROTIK-QINQ Rumah
         		  ether2(in) 
         		  ether3(in) 
         		  vlanQinQ:1000(in)(new create)
-        	  	  vlanIs16:16 ip: 10.10.16.1/29  
+        	  	  	vlanIs16:16 ip: 10.10.16.1/29  
         		  ether5(out) tab vlan PVID=1000 tag-stacking=y 
         	VLANs 	: bridge1 vlan-ID=1000 
         		  tagged=ether1 
