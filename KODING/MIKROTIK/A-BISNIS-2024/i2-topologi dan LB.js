@@ -34,15 +34,19 @@ bridge1-WAN		: auto
 vlan-QinQ level		: 1000 only (nomor urut ada di segmen puluhan ke2 dari blkg)
 	vlanIsp10 	: 10.10.10.1/29
 	vlanIsp11	: 10.10.11.1/29
+	vlanIsp255	: 10.10.255.1/29 end
 vlanHotSpot
 	vlanHs20 	: 20.20.21.1/24
 	vlanHs21 	: 20.20.22.1/24
+	vlanHs255 	: 20.20.255.1/24 end
 vlanPPPoE
 	vlanPp30 	: 30.30.30.1/24
 	vlanPp31 	: 30.30.31.1/24
+	vlanPp255 	: 30.30.255.1/24
 hotspot rumah:         	
 			: 192.168.5.1/28  (15)
 VLAN OTHER 		: gunakan di angka 40+ dan hindari 100-199,200-299,300-399,1000 itu aja  
+IP segment 		: lihat di atas tetap 10,20,30 - 255
 ------------------------------------------------------------------------------------------------------------------------------------------
 DAFTAR NAMA
 slash/29 (1-7 user) 
