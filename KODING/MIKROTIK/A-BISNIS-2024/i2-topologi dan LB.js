@@ -31,20 +31,17 @@ lalu jadikan load balance ECMP seperti repo PCC load balance LB ECMP
 ------------------------------------------------------------------------------------------------------------------------------------------
 STANDARD IP DESIGN
 bridge1-WAN		: auto
-vlan-QinQ level		: 1000, 1100, 1200 
-	IP ISP 		: 10.10.10.1/29 atau 192.168.1.1 - 192.168.10.1
-	vlanISP 	: 100
-	vlanISP		: 101
+vlan-QinQ level		: 1000 only (nomor urut ada di segmen puluhan ke2 dari blkg)
+	vlanIsp10 	: 10.10.10.1/29
+	vlanIsp11	: 10.10.11.1/29
 vlanHotSpot
-	IP 		: 20.20.20.1/24 
-	vlanHS200 	: 200
-	vlanHS201 	: 201
+	vlanHs20 	: 20.20.21.1/24
+	vlanHs21 	: 20.20.22.1/24
 vlanPPPoE
-	IP 		: 30.30.30.1/24
-	vlanPP300 	: 300
-	vlanPP301 	: 301
+	vlanPp30 	: 30.30.30.1/24
+	vlanPp31 	: 30.30.31.1/24
 hotspot rumah:         	
-			: 192.168.100.1/28  (15)
+			: 192.168.5.1/28  (15)
 ------------------------------------------------------------------------------------------------------------------------------------------
 DAFTAR NAMA
 slash/29 (1-7 user) 
