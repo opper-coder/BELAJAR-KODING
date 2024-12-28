@@ -43,7 +43,7 @@ d. VLAN & IP:
 	- Client semua bridge-ISP > bound 
 	- Server semua vlan
 4. DNS:
-	- 8.8.8.8, 8.8.4.4, (ip gateway ISP jg boleh) allow remote ok
+	- 8.8.8.8, 8.8.4.4, 1.1.1.1, 192.168.1.1 allow remote ok
 5. NAT masquerade: 
 	- chain=srcnat out-interface=WAN action=masquerade
 	- (copy semua bridge-ISP)
@@ -51,8 +51,7 @@ d. VLAN & IP:
 	- masing-masing gateway 
 -----------------------
 7. HOTSPOT rumah:
-	- hotspot set di=bridge4-RMH
-	- selebihnya lihat basic config hotspot
+	- hotspot set di=bridge4-RMH selebihnya lihat basic config hotspot
 	+queue1-Rumah limit=1M/5M priority=1
 	+profile1-Rumah limit=1M/2M parent=+queue1-Rumah
 	+user="nama terserah" profil=profile1-Rumah
