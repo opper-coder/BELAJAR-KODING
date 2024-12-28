@@ -42,7 +42,7 @@ vlanHotSpot
 vlanPPPoE
 	vlanPp30 	: 30.30.30.1/24
 	vlanPp31 	: 30.30.31.1/24
-	vlanPp255 	: 30.30.255.1/24
+	vlanPp255 	: 30.30.255.1/24 end
 hotspot rumah:         	
 			: 192.168.5.1/28  (15)
 VLAN OTHER 		: gunakan di angka 40+ dan hindari 100-199,200-299,300-399,1000 itu aja  
