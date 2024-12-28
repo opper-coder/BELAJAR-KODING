@@ -45,10 +45,9 @@ d. VLAN & IP:
 4. DNS:
 	- 8.8.8.8, 8.8.4.4, 1.1.1.1, 192.168.1.1 allow remote ok
 5. NAT masquerade: 
-	- chain=srcnat out-interface=WAN action=masquerade
-	- (copy semua bridge-ISP)
+	- chain=srcnat out-interface=bridge-ISP action=masquerade (copy semua bridge-ISP)
 6. PING:
-	- masing-masing gateway 
+	- masing-masing gateway ISP
 -----------------------
 7. HOTSPOT rumah:
 	- hotspot set di=bridge4-RMH selebihnya lihat basic config hotspot
@@ -69,14 +68,14 @@ d. VLAN & IP:
 ===================================================================================
 MIKROTIK-QINQ Terminal
 	1. Reset config 
-    2. Bridge
-        BRIDGE 	: bridge1 > vlan-filtering=y
-        PORT 	: ether1(in) 
+    	2. Bridge
+        	BRIDGE 	: bridge1 > vlan-filtering=y
+       		PORT 	: ether1(in) 
         		  ether2(in) 
         		  ether3(in) 
         		  ether4(in) 
         		  ether5(out) tab vlan PVID=1000 tag-stacking=y 
-        VLANs 	: bridge1 vlan-ID=1000 tagged=ether1,2,3,4 untagged=ether5 
+        	VLANs 	: bridge1 vlan-ID=1000 tagged=ether1,2,3,4 untagged=ether5 
 ===================================================================================
 MIKROTIK-QINQ Rumah
 	1. Reset config, topologi:
@@ -86,29 +85,29 @@ MIKROTIK-QINQ Rumah
 		ether4 	: ISP-rumah 
 		wlan1 	: HOTSPOT-rumah 
 		ether5 	: DIST-qinq 
-    2. Bridge 
-        BRIDGE 	: bridge1-QinQ > vlan-filtering=y 
-        PORT 	: ether1(in) 
+    	2. Bridge 
+       		BRIDGE 	: bridge1-QinQ > vlan-filtering=y 
+        	PORT 	: ether1(in) 
         		  ether2(in) 
         		  ether3(in) 
         		  vlanQinQ:1000(in)(new create)
-        		  	vlanIs16:16 ip: 10.10.16.1/29  
+        	  	  vlanIs16:16 ip: 10.10.16.1/29  
         		  ether5(out) tab vlan PVID=1000 tag-stacking=y 
-        VLANs 	: bridge1 vlan-ID=1000 
+        	VLANs 	: bridge1 vlan-ID=1000 
         		  tagged=ether1 
         		  tagged=ether2 
         		  tagged=ether3 
         		  tagged=vlanQinQ 
         		  vlan untagged=ether5 
-    ----------------------- 
-    3. bridge-RMH port=wlan1 Ip: 192.168.5.1/28 
-    ----------------------- 
-    DHCP 
-    	client=ether4-IspRumah default-route=yes 
-    	server=vlanIs16 
-    	DNS=8.8.8.8 
-    	NAT=masquerade 
-    -----------------------
+    	----------------------- 
+    	3. bridge-RMH port=wlan1 Ip: 192.168.5.1/28 
+    	----------------------- 
+    	DHCP 
+	    	client=ether4-IspRumah default-route=yes 
+	    	server=vlanIs16 
+	    	DNS=8.8.8.8 
+	    	NAT=masquerade 
+    	-----------------------
 	HOTSPOT 
 		- to bridge-RMH 
 		- +profile1-Rumah limit=1M/2M parent="queue1-Rumah" 
@@ -123,10 +122,10 @@ ECMP
 		- DHCP: dhcp client semua ISP, default route:NO (ingat ECMP)
 		- DNS: 8888, 8844
 ---------------------------
-    2. Bridge
+    	2. Bridge
 		vlanIs13 - vlanIs20
-        BRIDGE: bridge1 > vlan-filtering=y
-        PORT:   ether1(in) 
+        	BRIDGE: bridge1 > vlan-filtering=y
+        	PORT:   ether1(in) 
         		vlanIs13(out)
         		vlanIs14(out)
         		vlanIs15(out)
@@ -166,12 +165,4 @@ MANGLE SESSION ISP (agar tidak mudah logout)
 FAILOVER
 	- check gateway: ping -> yang ada routing-mark: to-ISP nya)  
 -------------------------------------------------
-
-
-
-
-
-
-
-
 
