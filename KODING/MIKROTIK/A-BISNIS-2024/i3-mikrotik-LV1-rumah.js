@@ -3,20 +3,20 @@ DISTRIBUSI VLAN
 BASIC CONFIG
 konsep topologi ISP
 	1. ISP (di mikrotik ini, awal pengumpulan ISP dan encapsulasi QinQ)
-		Mikrotik-A
+		Mikrotik-A (vlan1000)
 			ISP13 DHCPserver vlan1000 vlan13
 			ISP14 DHCPserver vlan1000 vlan14
 			ISP15 DHCPserver vlan1000 vlan15
-		Mikrotik-B
+		Mikrotik-B (vlan1000)
 			ISP16 DHCPserver vlan1000 vlan16
 			ISP17 DHCPserver vlan1000 vlan17
 			ISP18 DHCPserver vlan1000 vlan18
-		Mikrotik-C
+		Mikrotik-C (vlan1000)
 			ISP19 DHCPserver vlan1000 vlan19
 			ISP20 DHCPserver vlan1000 vlan20
-	2. MIKROTIK-QINQ
+	2. MIKROTIK-QINQ (vlan1000)
 		vlan1000 (hanya jembatan ke bawah) 
-	3. mikroBA(menerima QinQ dan memecahnya lalu di loadbalance)
+	3. mikroBA (menerima QinQ1000 dan memecahnya lalu di loadbalance)
 		vlan13 - 20 terima
 		LB ECMP > 
 ===================================================================================
@@ -25,20 +25,20 @@ BASIC
 	a. system user grup full
 	b. system identity
 	c. system service
-	d. Vlan dan IP address
-			vlanQinQ:1000 > bridge1-DIST (semua mikrotik pengirim QinQ pakai ID=1000)
-				vlanIs13:13	  	10.10.13.1/29
-				vlanIs14:14 	10.10.14.1/29
-				vlanIs15:15		10.10.15.1/29
-			brige4-RMH 	  		192.168.5.1/28
-	e. tool RoMON: pasmikromon
-	f. loginpage: edit HTML pada script input diatas password=username, matikan kolom password UI 
+	d. tool RoMON: pasmikromon
+	e. loginpage: edit HTML pada script input diatas password=username, matikan kolom password UI 
 2. BRIDGE: 
 	- bridge1-balang  port: ether1
 	- bridge2-msroji1 port: ether2
 	- bridge3-kayatri port: ether3
 	- bridge4-RMH  	  port: ether4, wlan1
 	- bridge5-DIST    port: ether5
+d. VLAN dan IP address
+	vlanQinQ:1000 > bridge1-DIST (semua mikrotik pengirim QinQ pakai ID=1000)
+		vlanIs13:13	 10.10.13.1/29
+		vlanIs14:14 	 10.10.14.1/29
+		vlanIs15:15	 10.10.15.1/29
+		brige4-RMH 	192.168.5.1/28
 3. DHCP 
 	- Client semua bridge-ISP > bound 
 	- Server semua vlan
