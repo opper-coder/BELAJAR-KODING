@@ -2,7 +2,7 @@ DISTRIBUSI VLAN
 -----------------------------------------------------------------------------------
 BASIC CONFIG
 konsep topologi ISP
-	1. ISP
+	1. ISP (di mikrotik ini, awal pengumpulan ISP dan encapsulasi QinQ)
 		Mikrotik-A
 			ISP13 DHCPserver vlan1000 vlan13
 			ISP14 DHCPserver vlan1000 vlan14
@@ -16,7 +16,7 @@ konsep topologi ISP
 			ISP20 DHCPserver vlan1000 vlan20
 	2. MIKROTIK-QINQ
 		vlan1000 (hanya jembatan ke bawah) 
-	3. mikroBA
+	3. mikroBA(menerima QinQ dan memecahnya lalu di loadbalance)
 		vlan13 - 20 terima
 		LB ECMP > 
 ===================================================================================
