@@ -10,7 +10,7 @@ BASIC CONFIG
 	- bridge1-WAN 
 	- bridge2-LAN
 	- bridge3-Remote
-3. VLAN $ IP: - hotspots, pppoes, remotes
+3. VLAN & IP: - hotspots, pppoes, remotes
 4. PORTING: 
 5. DHCP client: bound, release, renew
 	server: distribusi paling sederhana hanya queue saja ini atau pemilik rumah pribadi saja pengganti pppoe (kalau mau sih)
