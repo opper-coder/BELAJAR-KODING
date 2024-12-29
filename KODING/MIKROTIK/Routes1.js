@@ -1,6 +1,6 @@
   
 POLICY BASED ROUTE DENGAN ROUTE RULES
-routing ISP ke ETHER tertentu
+routing beberapa ISP ke ETHER yang di tentukan
 
 
 - topologi
