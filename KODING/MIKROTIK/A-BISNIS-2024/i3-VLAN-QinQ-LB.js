@@ -150,7 +150,7 @@ ECMP
 	 		+gateway=<ip%ether1 jika IP sama>, 
 			distance: 1
 -------------------------------------------------
-MANGLE SESSION ISP (agar tidak mudah logout)
+MANGLE SESSION ISP (agar tidak mudah session logout)
 	mangle mark connection
 		- chain=input in-interface=vlanIs13 action=mark-connection new-mark="ISP1-Conn" pastrhough=true
 		- copy semua vlanISP
