@@ -1,0 +1,85 @@
+PPPoE auto-downgrade, auto-isolir, halaman ISOLIR
+-------------------------------------------------- 
+Syarat:
+0. ROS v6.49.18 anda sudah memiliki pppoe server di dalam vlan100-PPPoE, 
+	 lalu bikin profile paket2 penjuan anda dan sudah memiliki user secara manual. 
+	 lalu terapkan fitur ini. ini tidak membutuhkan telegram atau mikbotam
+1. masing-masing server pppoe memiliki ip segmen dan pool sendiri. jika banyak.
+2. masing-masing server pppoe memiliki 3 profile ini sesuai gateway: 
+		DOWNGRADE, 
+		ISOLIR, 
+		dan paket-paket penjualan, 
+3. tambahkan /system script nama: 
+		auto-tagih 
+		auto-downgrade 
+		auto-isolir 
+	 dan pastekan resource script masing-masing di bawah.
+4. penggantian comment LUNAS dan PROFIL-PAKET dapat dilakukan setelah tanggal 20 dan setelah 	
+		pembayaran. LUNAS hanya secara manual. 
+5. nama user ppp harus mencantumkan paket profil untuk memudahkan
+5. tambahkan /system scheduler dengan nama AUTO-ISOLIR dengan on event di script di bawah ke4
+	  ini berlaku untuk semua server
+6. halaman isolir di bawah
+
+------------------------------------------------- 
+auto-tagih 
+
+:local day [:pick [/system clock get date] 4 6]
+:if ($day = "20") do={
+/ppp secret set comment="BELUM-BAYAR" [find comment=LUNAS];
+}
+------------------------------------------------- 
+auto-downgrade 
+
+:local day [:pick [/system clock get date] 4 6]
+:if ($day = "22") do={
+    :local userppp
+    :foreach v in=[/ppp secret find comment="BELUM-BAYAR"] do={
+        :set userppp [/ppp secret get $v name]
+        /ppp secret set profile="DOWNGRADE" [find name=$userppp]
+        /ppp active remove [find name=$userppp]
+    }
+}
+------------------------------------------------- 
+auto-isolir 
+
+:local day [:pick [/system clock get date] 4 6]
+:if ($day = "1") do={
+    :local userppp
+    :foreach v in=[/ppp secret find comment="BELUM-BAYAR"] do={
+        :set userppp [/ppp secret get $v name]
+        /ppp secret set profile="ISOLIR" [find name=$userppp]
+        /ppp active remove [find name=$userppp]
+    }
+}
+------------------------------------------------- 
+sekeduler
+
+/system script run auto-tagih
+/system script run auto-downgrade
+/system script run auto-isolir
+------------------------------------------------- 
+halaman ISOLIR konfig manual
+
+/ip pool pool-isolir silahkan bikin segmen
+/ppp profile name=ISOLIR local=gateway remote=pool-isolir address-list=isolir-list
+/ppp user name=test password=test123 service=ppp profile=ISOLIR
+
+/ip web proxy
+enable=yes port=8080 (ubah boleh)
+access btn add src. adrs=segmenpoolisolir/24 dst.sdrs=!segmenpoolisolir/24 action=deny redirect-to=gateway pool-isolir:8080 comment:PPPOE-ISOLIR
+
+/firewall nat
+chain=dstnat  src adress list=isolir-list(sesuai di profil. ini di tab general) protocol=6(tcp) action=redirect to port=8080(sesuai web proxy) comment=NOTIF REDIRECT ISOLIR
+
+/firewall filter rules
+chain=forward src adress list=isolir-list(sesuai di profil. ini di tab general) action=drop comment=blokir isolir pppoe
+
+/ip web proxy
+reset-html Btn saat di klik akan generate folder dan file isolir. silahkan replace error.html dengan milik anda dan tetap di dalam folder dalam /files
+
+
+
+
+================ 
+
