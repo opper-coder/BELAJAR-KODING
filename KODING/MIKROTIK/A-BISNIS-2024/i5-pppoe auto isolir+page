@@ -4,8 +4,16 @@ Syarat:
 0. ROS v6.49.18 anda sudah memiliki pppoe server di dalam vlan100-PPPoE, 
 	 lalu bikin profile paket2 penjuan anda dan sudah memiliki user secara manual. 
 	 lalu terapkan fitur ini. ini tidak membutuhkan telegram atau mikbotam
-1. masing-masing server pppoe memiliki ip segmen dan pool sendiri. jika banyak.
-2. masing-masing server pppoe memiliki 3 profile ini sesuai gateway: 
+
+--------------------------------------------------
+- ip address /24 di vlan-pppoe
+- pppoe server di vlan-pppoe
+- profil di local dan remote ip di vlan-pppoe onlyone=yes limit=sesuaikan paket 
+- secret Ok
+--------------------------------------------------
+1. buat pool
+	- masing-masing server pppoe memiliki ip segmen dan pool sendiri. jika banyak.
+	- masing-masing server pppoe memiliki 3 pool profile ini sesuai gateway: 
 		DOWNGRADE, 
 		ISOLIR, 
 		dan paket-paket penjualan, 
