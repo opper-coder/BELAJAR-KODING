@@ -83,3 +83,108 @@ reset-html Btn saat di klik akan generate folder dan file isolir. silahkan repla
 
 ================ 
 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Jatuh Tempo</title>
+	<style>
+		body{background-color: #9ebfcc; font-family: sans-serif; color: #2e2e3c;}
+		.kotak1{
+			background-color: yellow;
+			padding: 32px 32px;
+			border-radius: 30px 30px 0px 0px;
+			font-size: 18px;
+			/*text-align:center;*/
+			border-bottom: 4px solid #eaeaea;
+		}
+		.kotak2{
+			background-color: #e5f8ff;
+			padding: 20px 32px;
+			border-radius: 0px 0px 30px 30px ;
+		}
+		.flex div{
+			background-color: white;
+			padding: 7px 10px;
+			border-radius: 4px;
+			display: flex;
+			align-items: center;
+			flex: 1;
+			justify-content: center;
+		}
+		.flex div img{
+			height: 30px;
+		}
+		.tiga{
+			font-weight: bolder;
+			color: #346dc6;
+			font-size: 24px;
+		}
+		.hijau{color: #2e92b9}
+		.lock{
+			background-color: #894646;
+			padding: 10px;
+			border-radius: 25px;
+			border: 6px solid #ff5f5f;
+			font-size: 35px;
+			text-align: center;
+		}
+	</style>
+
+</head>
+<body>
+
+	<section class="kotak1">
+		<h2 >Pelanggan yang terhormat!</h2>
+		<div style="text-align: center; padding: 40px;">
+			<span class="lock">&#128274;</span>
+		</div>
+		Periode langganan Internet anda bulan ini telah
+		<strong> Berakhir. </strong> 
+		<br>Lakukan pelunasan paling lambat tanggal 20. Penundaan pembayaran melebihi tanggal 22 kecepatan internet akan di turunkan dan akan mati otomatis tgl 1 bulan depan.
+		<br>Terimakasih. 
+		<span>&#x2665;&#xfe0f;</span>
+		<br>
+		<br>
+	</section>
+	<section class="kotak2">
+		<strong>Cara Pembayaran!</strong><br>
+		Transfer ke salah satu di bawah ini:
+		<ul>
+			<li><strong>BRImo / BRILink / ATM</strong></li>
+			<strong class="hijau">5161 0104 6567 532</strong>
+			<br>A.n. SONI HARSONO
+			<li><strong>DANA</strong></li>
+			<strong class="hijau">085133090730</strong>
+			<br>A.n. Muh Shony H Sholahuddin
+			<li><strong>Penagihan</strong></li>
+			Opsi Penjemputan ke rumah di lakukan terjadwal, lebih memudahkan Pelanggan. dikenakan Biaya <strong>Rp 3.000.</strong>
+			<li><strong>Verifikasi</strong></li>
+			Internet akan aktif kembali setelah di verifikasi pelunasan oleh admin. Atau chat admin langsung ke WA <b class="hijau">085133090730</b> dan Jangan Lupa, Kirimkan bukti Transfer.
+			<li><strong>Kenyamanan</strong></li>
+			Pembayaran dan penagihan dapat dilakukan mulai tanggal 25 sebelum masuk awal bulan. Pembayaran setelah tanggal 1 akan merugikan pelanggan karena sistem akan berhenti berfungsi tanggal 30 (akhir bulan).
+		</ul>
+		<hr>
+		<span class="hijau">Catatan:</span>
+		<ul class="hijau">
+			<li>
+				Keterlambatan Pembayaran 3 bulan akan dilakukan Evaluasi Pemutusan Rampung atau membayar biaya Reaktivasi Rp 50.000
+			</li>
+			<li>
+				Penggunaan disarankan tidak melebihi batas standar kapasitas.Hal ini bisa mengakibatkan koneksi terasa lambat dan membuat Pelanggan menjadi kecewa.
+		 	</li>
+		 	<li>
+		 		Jika kecepatan melambat pertimbangkan daftar Paket Yang lebih tinggi.  
+		 	</li>
+		 	<li>
+		 		Jaga kerahasiaan password anda.
+		 	</li>
+		</ul>
+		<hr>
+		<span>&copy;</span>Surya-Hotspot 2025
+	</section>
+</body>
+</html>
+
