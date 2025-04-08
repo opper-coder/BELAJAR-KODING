@@ -1,0 +1,11 @@
+/tool email 
+server=smtp.gmail.com  port=587 start-TLS=yes from=<MIKROTIK-ROUTER> user=opperofficial@gmail.com pass=<pmgshwwcofvcpsfo>
+password di dapat di email config account > aktifkan verifikasi 2 langkah > keamanan > search: sandi aplikasi > create name=MIKROTIK-SURYA > dapatkan sandi  
+
+coba klik send email lalu isi parameter yang mirip di atas lalu kirimkan email jika tidak adfa error maka langkah selanjutnya > 
+
+/system scheduller tentukan nama=AUTO-BACKUP dan parameter lainya 
+on even:
+
+export file=backupSurya 
+/tool e-mail send to="opperofficial@gmail.com" subject="$[/system identity get name] export" \ body=" configuration file $[/system clock get date]" file=backupSurya.rsc
