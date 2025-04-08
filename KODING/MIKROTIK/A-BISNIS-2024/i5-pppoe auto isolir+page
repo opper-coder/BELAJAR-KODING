@@ -75,10 +75,10 @@ halaman ISOLIR konfig manual
 
 /ip web proxy
 enable=yes port=8080 (ubah boleh)
-access btn add src. adrs=segmenpoolisolir/24 dst.sdrs=!segmenpoolisolir/24 action=deny redirect-to=gateway pool-isolir:8080 comment:PPPOE-ISOLIR
+access btn add src. adrs=pool-isolir(.0 awal banget)/24 dst.sdrs=!gateway-pool-isolir action=deny redirect-to=gateway-pool-isolir:8080 comment:PPPOE-ISOLIR
 
 /firewall nat
-chain=dstnat  src adress list=isolir-list(sesuai di profil. ini di tab general) protocol=6(tcp) action=redirect to port=8080(sesuai web proxy) comment=NOTIF REDIRECT ISOLIR
+chain=dstnat  src-adress-list=isolir-list(sesuai di profil. ini di tab general) protocol=6(tcp) action=redirect to port=8080(sesuai web proxy) comment=NOTIF REDIRECT ISOLIR
 
 /firewall filter rules
 chain=forward src adress list=isolir-list(sesuai di profil. ini di tab general) action=drop comment=blokir isolir pppoe
