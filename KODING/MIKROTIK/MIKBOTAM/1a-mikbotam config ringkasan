@@ -3,7 +3,7 @@ MIKBOTAM M.I.T.H.A
 Daftar Isi:
 - pastikan mikrotik sudah di config dasar, hotspot dan PPPoE
 - persiapkan data di notepad/sublime dari 3 sumber:
-	1. milubot 		: caritahu ID telegram (bisa menggunakan cara lain)
+	1. milubot 	: caritahu ID telegram (bisa menggunakan cara lain)
 	2. botfather 	: bikin bot untuk mikbotam
 	3. mikrotik  	: data koneksi ke mikbotam
 - MIKBOTAM DASHBOARD
@@ -27,16 +27,16 @@ buka telegram dan cari name di bawah ini
 	---
 	ID TELEGRAM ANDA 	: 829979995  (data dipakai)
 	CHAT ID INI 		: 829979995 (abaikan)
-	NAMA ANDA 			: Sony Harsono (abaikan)
+	NAMA ANDA 		: Sony Harsono (abaikan)
 	USERNAME ANDA 		: aqilizza (data dipakai)
 2. lalu buat bot di botfather dan dapatkan token dan data bot
 	/start
 	/newbot
-		nama 			: suryabot
-		username 		: surya_hotspot_bot
-		token 			: 7029769985:AAFFChV4NHXus98vF8h9OTu6AXuYPj3K5P8
+		nama 		: suryabot
+		username 	: surya_hotspot_bot
+		token 		: 7029769985:AAFFChV4NHXus98vF8h9OTu6AXuYPj3K5P8
 3. data mikrotik
-	identity 			: Surya-Hotspot
+	identity 		: Surya-Hotspot
 	dns hotspot 		: link.net (untuk qrcode)
 	mikrotik user 		: administrator1212
 	mikrotik pass 		: passmikro
