@@ -1,0 +1,19 @@
+SETUP AWAL MIKBOTAM
+  - standard
+  - dua server hotspot
+
+------------------------------------------------------- 
+STANDARD 
+  1. masuk ke mikbotam
+  2. koneksi kan mikrotik di setting > bot and mikrotik  
+  3. koneksikan telegram > 
+  -----
+  4. bikin profil di mikbotam: 
+    - nama+code+server 
+    - harga
+    - limiter
+    - dll
+    - profil di mikbotam itu tidak sama dengan yng di mikrotik sehingga jangan lakukan edit di mikrotik, begitu juga sebaliknya
+  5. improove profile hotspot di : setting voucher 
+    - bisa ubah server hotspot dan juga grup reseller nya jika multi server profile hotspot
+  -----
