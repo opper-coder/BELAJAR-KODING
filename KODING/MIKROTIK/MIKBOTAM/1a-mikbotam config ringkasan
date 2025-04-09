@@ -92,27 +92,22 @@ Telegram
 	- start
 	- /newbot
 	- kirim "namabot bebas satu kata" dan "userbot harus pakai kata bot di belakang"
-	- jika berhasil kita di kasih link bot, dan API Tokenbot ini masukkan ke parameter di MIKBOTAM
+	- jika berhasil kita di kasih link bot, dan API Tokenbot ini masukkan ke parameter di MIKBOTAM di bawah
 ----------------------------------	
-KONEKSI MIKBOTAM DASHBOARD
+KONEKSI MIKBOTAM-MIKROTIK
 	- login
 	- isi parameter berikut
-		ip mikrotik 	: ddns mikrotik
-		port 		: ddns port sebelahnya
-		user 		: administrator1212
-		pass 		: pasmikro
-
-		test koneksi jika sudah benar maka CONNECTED
-		---
+		ip mikrotik 	: ddns mikrotik(dari DDNS)
+		port 		: ddns port (sebelahnya)
+		user mikrotik 	: administrator1212
+		pass mikrotik 	: pasmikro
+	- klik test koneksi jika sudah benar maka CONNECTED
+	- isikan data tambahan
 		dns hotspot 	: link.net
-		routername 	: identity
-		---
-		data telegram dari botfather (dibawah nanti) inputkan juga
-		maka konfig koneksi telegram akan terbentuk > nanti kita enablekan service telegram dengan webhook di bawah 
-
-- jika sudah dinputkan semua data yang sudah di siapkan maka DASHBOARD sudah dapat dibuka dan langsung menginformasikan data terkait.
+		routername 	: sesuai system identity
+- jika sudah dinputkan semua data yang sudah di siapkan maka DASHBOARD sudah dapat dibuka secara penuh.
 ----------------------------------
-AKTIFKAN BOT TELEGRAM DI MIKBOTAM WEBHOOK
+KONEKSI MIKBOTAM-TELEGRAM
 	tab setting webhook > klik set webhook > akan ada tampilan info webhook, berarti tinggal test response telegram
 	----------------------------------
 	TEST TELEGRAM BOT
@@ -120,9 +115,9 @@ AKTIFKAN BOT TELEGRAM DI MIKBOTAM WEBHOOK
 	- ada response 
 		"selamat datang ADMIN"
 	- /my bot
-	- pilih: surya_hotspot_bot
+	- pilih 	: surya_hotspot_bot
 	- /editpic	: gambar contact bot
-	- /editcommand : 
+	- /editcommand 	: 
 		kirim pesan dibawah ini (beserta enter dan bagian kanan huruf kecil semua)
 	================================
 		menu - 1. VOUCHER
@@ -136,7 +131,7 @@ SELANJUTNYA
 	- start
 	- /daftar (yang pertamakali daftar adalah admin)
 	- /daftar (yang daftar berikutnya menunggu verifikasi dari admin, dan menjadi reseller)
-	- /deposit (isi saldo dulu sebagai admin, reseller akan butuh verifikasi admin) 
+	- /deposit 1000000 (isi saldo dulu sebagai admin, reseller akan butuh verifikasi admin) 
 	- /menu (saat kita sudah membuat profil voucher dan template voucher di tab setting maka daftar harga akan terlihat di telegram)
 	- pilih paket akan muncul voucher
 ------------------------------------------------------------------------------ 
