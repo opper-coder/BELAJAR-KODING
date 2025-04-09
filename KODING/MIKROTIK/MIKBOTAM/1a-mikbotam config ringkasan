@@ -98,14 +98,14 @@ KONEKSI MIKBOTAM DASHBOARD
 	- login
 	- isi parameter berikut
 		ip mikrotik 	: ddns mikrotik
-		port 			: ddns port sebelahnya
-		user 			: administrator1212
-		pass 			: pasmikro
+		port 		: ddns port sebelahnya
+		user 		: administrator1212
+		pass 		: pasmikro
 
 		test koneksi jika sudah benar maka CONNECTED
 		---
 		dns hotspot 	: link.net
-		routername 		: identity
+		routername 	: identity
 		---
 		data telegram dari botfather (dibawah nanti) inputkan juga
 		maka konfig koneksi telegram akan terbentuk > nanti kita enablekan service telegram dengan webhook di bawah 
