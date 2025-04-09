@@ -102,15 +102,21 @@ KONEKSI MIKBOTAM-MIKROTIK
 		user mikrotik 	: administrator1212
 		pass mikrotik 	: pasmikro
 	- klik test koneksi jika sudah benar maka CONNECTED
-	- isikan data tambahan
+	- isikan data 
 		dns hotspot 	: link.net
 		routername 	: sesuai system identity
+	- isikan data user telegram
+		name profil telegram : (wajib di set name di telegram profil)
+		id telegram  	: (dari milubot)
+	- isikan data bot telegram
+		token  		: xxx
+		username-bot 	: saat new-bot dapat name 
 - jika sudah dinputkan semua data yang sudah di siapkan maka DASHBOARD sudah dapat dibuka secara penuh.
 ----------------------------------
 KONEKSI MIKBOTAM-TELEGRAM
 	tab setting webhook > klik set webhook > akan ada tampilan info webhook, berarti tinggal test response telegram
-	----------------------------------
-	TEST TELEGRAM BOT
+----------------------------------
+TEST TELEGRAM BOT
 	- cari username yang diberikan tadi berupa link surya_hotspot_bot di contact telegram
 	- ada response 
 		"selamat datang ADMIN"
