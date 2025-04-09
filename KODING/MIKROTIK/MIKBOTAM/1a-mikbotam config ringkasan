@@ -42,18 +42,18 @@ buka telegram dan cari name di bawah ini
 	mikrotik pass 		: passmikro
 ----------------------------------
 login ke rumahmitha.com, lalu input data di dashboard LANGGANAN
-	name 				: soni harsono
-	user 				: sony
-	pass 				: 
+	name 			: soni harsono
+	user 			: sony
+	pass 			: 
 		admin8888, 
 		admin9999,
 	- top up pakai dana
 	- beli product mikbotam
 	- tunggu hingga proses selesai
 	kita di kasih link DASHBOARD MIKBOTAM 
-		login 			:
-		user 			: mitha
-		pass 			: admin8888 
+		login 		:
+		user 		: mitha
+		pass 		: admin8888 
 ----------------------------------
 login ke hostddns.us 
 	first: sony 
@@ -66,9 +66,9 @@ login ke hostddns.us
 	buat vpn remote
 	tab VPN remote
 		- order VPN (bukan order DDNS)
-			- user 		: secret 
-			- pass 		: secret
-			- port 		: samakan dengan service API mikrotik
+			- user 	: secret 
+			- pass 	: secret
+			- port 	: samakan dengan service API mikrotik
 		- order dua buah: untuk mikrotik dan mikbotam (tiga buah jika ada remote untuk OLT)
 		- lalu masuk ke tab list VPN 
 			- ada dua produk pesanan kita tadi klik manage > di kasih scrip masing2
@@ -77,9 +77,9 @@ login ke hostddns.us
 Auto reconnect DDNS
 		- tools > netwatch > add 
 		tab HOST
-		- host 			: [IP VPN server IP public]
-		- interval 		: 30-60 detik
-		- timeout 		: 1000 ms
+		- host 		: [IP VPN server IP public]
+		- interval 	: 30-60 detik
+		- timeout 	: 1000 ms
 		tab UP script:
 			:log warning "sudah up kembali"
 		tab DOWN script:
