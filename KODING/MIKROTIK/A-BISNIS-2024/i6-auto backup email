@@ -1,3 +1,5 @@
+syarat: saya berhasil jika di lakukan di winbox lama
+
 /tool email 
 server=smtp.gmail.com  port=587 start-TLS=yes from=<MIKROTIK-ROUTER> user=opperofficial@gmail.com pass=<pmgshwwcofvcpsfo>
 password di dapat di email config account > aktifkan verifikasi 2 langkah > keamanan > search: sandi aplikasi > create name=MIKROTIK-SURYA > dapatkan sandi  
