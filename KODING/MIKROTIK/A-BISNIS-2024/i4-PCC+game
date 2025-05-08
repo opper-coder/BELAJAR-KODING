@@ -1,39 +1,37 @@
-# mar/23/2025 08:59:42 by RouterOS 6.49.18
+# may/08/2025 22:20:08 by RouterOS 6.49.18
 # software id = J5SQ-AKDL
 #
 # model = RB750Gr3
 # serial number = CC210F6F85C1
-/interface wireless security-profiles
-set [ find default=yes ] supplicant-identity=MikroTik
 /ip pool
-add name=dhcp_pool0 ranges=200.200.200.2-200.200.200.6
+add name=pool0-LAN ranges=200.200.200.2-200.200.200.6
 /ip dhcp-server
-add address-pool=dhcp_pool0 disabled=no interface=ether5 name=dhcp1
+add address-pool=pool0-LAN disabled=no interface=ether5 name=dhcp1
 /queue simple
 add name=TOTAL-SPEED queue=default/default target=200.200.200.0/29
 add max-limit=30M/30M name=GAME packet-marks=Paket-Game parent=TOTAL-SPEED \
     priority=1/1 queue=pcq-upload-default/pcq-download-default target=\
     200.200.200.0/29
+add max-limit=5M/15M name=WhatsApp packet-marks=Paket-WhatsApp parent=\
+    TOTAL-SPEED priority=2/2 queue=pcq-upload-default/pcq-download-default \
+    target=200.200.200.0/29
 /ip address
 add address=200.200.200.1/29 interface=ether5 network=200.200.200.0
 /ip dhcp-client
-add add-default-route=no disabled=no interface=ether1
-add add-default-route=no disabled=no interface=ether2
-add add-default-route=no disabled=no interface=ether3
-add add-default-route=no disabled=no interface=ether4 use-peer-dns=no
+add add-default-route=no comment=Starlink-1 disabled=no interface=ether1
+add add-default-route=no comment=Indibiz-Sony disabled=no interface=ether2
+add add-default-route=no comment=Indihome-Ikul disabled=no interface=ether3
+add add-default-route=no comment=Indiehome-Balang disabled=no interface=\
+    ether4 use-peer-dns=no
 /ip dhcp-server network
-add address=200.200.200.0/29 dns-server=8.8.8.8,8.8.4.4,192.168.1.1 gateway=\
-    200.200.200.1
+add address=200.200.200.0/29 dns-server=8.8.8.8,8.8.4.4 gateway=200.200.200.1
 /ip dns
 set allow-remote-requests=yes servers=8.8.8.8,8.8.4.4
 /ip firewall address-list
-add address=10.0.0.0/8 list=LOCAL
-add address=172.16.0.0/12 list=LOCAL
-add address=192.168.0.0/16 list=LOCAL
 add address=200.200.200.0/29 list=LOCAL
 /ip firewall mangle
-add action=accept chain=prerouting comment="Accept All LOCAL IP - BILHANET" \
-    dst-address-list=LOCAL src-address-list=LOCAL
+add action=accept chain=prerouting dst-address-list=LOCAL src-address-list=\
+    LOCAL
 add action=accept chain=postrouting dst-address-list=LOCAL src-address-list=\
     LOCAL
 add action=accept chain=forward dst-address-list=LOCAL src-address-list=LOCAL
@@ -42,34 +40,36 @@ add action=accept chain=output dst-address-list=LOCAL src-address-list=LOCAL
 add action=mark-connection chain=prerouting comment="Koneksi Game" \
     dst-address-list=Game-List new-connection-mark=Koneksi-Game passthrough=\
     yes src-address-list=LOCAL
-add action=mark-routing chain=prerouting connection-mark=Koneksi-Game \
-    new-routing-mark=Route-Game passthrough=yes src-address-list=LOCAL
-add action=mark-packet chain=forward connection-mark=Koneksi-Game \
-    new-packet-mark=Paket-Game passthrough=no
-add action=mark-connection chain=input comment="Load Balance PCC - BILHANET" \
-    in-interface=ether1 new-connection-mark=via-ether1 passthrough=yes
-add action=mark-connection chain=input in-interface=ether2 \
-    new-connection-mark=via-ether2 passthrough=yes
-add action=mark-connection chain=input in-interface=ether3 \
-    new-connection-mark=via-ether3 passthrough=yes
-add action=mark-routing chain=output connection-mark=via-ether1 \
-    new-routing-mark=via-ISP1 passthrough=yes
-add action=mark-routing chain=output connection-mark=via-ether2 \
-    new-routing-mark=via-ISP2 passthrough=yes
-add action=mark-routing chain=output connection-mark=via-ether3 \
-    new-routing-mark=via-ISP3 passthrough=yes
-add action=mark-connection chain=prerouting dst-address-list=!LOCAL \
-    dst-address-type=!local new-connection-mark=via-ether1 passthrough=yes \
-    per-connection-classifier=both-addresses-and-ports:35/0 src-address-list=\
-    LOCAL
-add action=mark-connection chain=prerouting dst-address-list=!LOCAL \
-    dst-address-type=!local new-connection-mark=via-ether2 passthrough=yes \
-    per-connection-classifier=both-addresses-and-ports:35/20 \
+add action=mark-connection chain=prerouting comment="Koneksi WhatsApp" \
+    dst-address-list=WhatsApp-List new-connection-mark=Koneksi-WhatsApp \
+    passthrough=yes src-address-list=LOCAL
+add action=mark-routing chain=prerouting comment="Route Game via ISP4/ISP3" \
+    connection-mark=Koneksi-Game new-routing-mark=Route-Game passthrough=yes \
     src-address-list=LOCAL
-add action=mark-connection chain=prerouting dst-address-list=!LOCAL \
-    dst-address-type=!local new-connection-mark=via-ether3 passthrough=yes \
-    per-connection-classifier=both-addresses-and-ports:35/30 \
-    src-address-list=LOCAL
+add action=mark-packet chain=forward comment="Paket Game" connection-mark=\
+    Koneksi-Game new-packet-mark=Paket-Game passthrough=no
+add action=mark-packet chain=forward comment="Paket WA" connection-mark=\
+    Koneksi-WhatsApp new-packet-mark=Paket-WhatsApp passthrough=no
+add action=mark-connection chain=prerouting comment="PCC ISP1" \
+    dst-address-list=!LOCAL dst-address-type=!local new-connection-mark=\
+    via-ether1 passthrough=yes per-connection-classifier=\
+    both-addresses-and-ports:7/0 src-address-list=LOCAL
+add action=mark-connection chain=prerouting comment="PCC ISP1" \
+    dst-address-list=!LOCAL dst-address-type=!local new-connection-mark=\
+    via-ether1 passthrough=yes per-connection-classifier=\
+    both-addresses-and-ports:7/1 src-address-list=LOCAL
+add action=mark-connection chain=prerouting comment="PCC ISP2" \
+    dst-address-list=!LOCAL dst-address-type=!local new-connection-mark=\
+    via-ether2 passthrough=yes per-connection-classifier=\
+    both-addresses-and-ports:7/5 src-address-list=LOCAL
+add action=mark-connection chain=prerouting comment="PCC ISP2" \
+    dst-address-list=!LOCAL dst-address-type=!local new-connection-mark=\
+    via-ether2 passthrough=yes per-connection-classifier=\
+    both-addresses-and-ports:7/4 src-address-list=LOCAL
+add action=mark-connection chain=prerouting comment="PCC ISP3" \
+    dst-address-list=!LOCAL dst-address-type=!local new-connection-mark=\
+    via-ether3 passthrough=yes per-connection-classifier=\
+    both-addresses-and-ports:7/6 src-address-list=LOCAL
 add action=mark-routing chain=prerouting connection-mark=via-ether1 \
     dst-address-list=!LOCAL new-routing-mark=via-ISP1 passthrough=yes \
     src-address-list=LOCAL
@@ -79,61 +79,96 @@ add action=mark-routing chain=prerouting connection-mark=via-ether2 \
 add action=mark-routing chain=prerouting connection-mark=via-ether3 \
     dst-address-list=!LOCAL new-routing-mark=via-ISP3 passthrough=yes \
     src-address-list=LOCAL
+add action=mark-connection chain=prerouting comment="PCC ISP1" \
+    dst-address-list=!LOCAL dst-address-type=!local new-connection-mark=\
+    via-ether1 passthrough=yes per-connection-classifier=\
+    both-addresses-and-ports:7/2 src-address-list=LOCAL
+add action=mark-connection chain=prerouting comment="PCC ISP1" \
+    dst-address-list=!LOCAL dst-address-type=!local new-connection-mark=\
+    via-ether1 passthrough=yes per-connection-classifier=\
+    both-addresses-and-ports:7/3 src-address-list=LOCAL
 /ip firewall nat
 add action=masquerade chain=srcnat comment="Global NAT Masquerade - BILHANET"
 /ip firewall raw
 add action=add-dst-to-address-list address-list=Game-List \
-    address-list-timeout=4h chain=prerouting comment=FF dst-address-list=\
-    !LOCAL dst-port=\
+    address-list-timeout=4h chain=prerouting comment="Game TCP - FF1" \
+    dst-address-list=!LOCAL dst-port=\
     6006,6008,6674,7000-7999,8001-8012,9006,9137,10000-10015,11000-11019 log=\
     yes protocol=tcp src-address-list=LOCAL
 add action=add-dst-to-address-list address-list=Game-List \
-    address-list-timeout=4h chain=prerouting dst-address-list=!LOCAL \
-    dst-port=12006,12008,13006,15006,20561,39003,39006,39698,39779,39800 log=\
-    yes protocol=tcp src-address-list=LOCAL
-add action=add-dst-to-address-list address-list=Game-List \
-    address-list-timeout=4h chain=prerouting dst-address-list=!LOCAL \
-    dst-port=6006,6008,6674,7000-7999,8008,8001-8012,8130,8443,9008,9120 log=\
-    yes protocol=udp src-address-list=LOCAL
-add action=add-dst-to-address-list address-list=Game-List \
-    address-list-timeout=4h chain=prerouting dst-address-list=!LOCAL \
-    dst-port=10000-10015,10100,11000-11019,12008,13008 log=yes protocol=udp \
-    src-address-list=LOCAL
-add action=add-dst-to-address-list address-list=Game-List \
-    address-list-timeout=4h chain=prerouting comment=ML dst-address-list=\
-    !LOCAL dst-port="5000-5221,5224-5227,5229-5241,5243-5287,5289-5352,5354-55\
-    09,5517,5520-5529" log=yes protocol=tcp src-address-list=LOCAL
-add action=add-dst-to-address-list address-list=Game-List \
-    address-list-timeout=4h chain=prerouting dst-address-list=!LOCAL \
-    dst-port=5551-5569,5601-5700,9000-9010,9443,10003,30000-30900 log=yes \
+    address-list-timeout=4h chain=prerouting comment="Game TCP - FF2" \
+    dst-address-list=!LOCAL dst-port=\
+    12006,12008,13006,15006,20561,39003,39006,39698,39779,39800 log=yes \
     protocol=tcp src-address-list=LOCAL
 add action=add-dst-to-address-list address-list=Game-List \
-    address-list-timeout=4h chain=prerouting dst-address-list=!LOCAL \
-    dst-port=\
+    address-list-timeout=4h chain=prerouting comment=\
+    "Game TCP - Mobile Legends" dst-address-list=!LOCAL dst-port="5000-5221,52\
+    24-5227,5229-5241,5243-5287,5289-5352,5354-5509,5517,5520-5529" log=yes \
+    protocol=tcp src-address-list=LOCAL
+add action=add-dst-to-address-list address-list=Game-List \
+    address-list-timeout=4h chain=prerouting comment=\
+    "Game TCP - Mobile Legends2" dst-address-list=!LOCAL dst-port=\
+    5551-5569,5601-5700,9000-9010,9443,10003,30000-30900 log=yes protocol=tcp \
+    src-address-list=LOCAL
+add action=add-dst-to-address-list address-list=Game-List \
+    address-list-timeout=4h chain=prerouting comment="Game UDP - FF1" \
+    dst-address-list=!LOCAL dst-port=\
+    6006,6008,6674,7000-7999,8001-8012,8008,8130,8443,9008,9120 log=yes \
+    protocol=udp src-address-list=LOCAL
+add action=add-dst-to-address-list address-list=Game-List \
+    address-list-timeout=4h chain=prerouting comment="Game UDP - FF2" \
+    dst-address-list=!LOCAL dst-port=\
+    10000-10015,10100,11000-11019,12008,13008 log=yes protocol=udp \
+    src-address-list=LOCAL
+add action=add-dst-to-address-list address-list=Game-List \
+    address-list-timeout=4h chain=prerouting comment=\
+    "Game UDP - Mobile Legends1" dst-address-list=!LOCAL dst-port=\
     2702,3702,4001-4009,5000-5221,5224-5241,5243-5287,5289-5352,5354-5509 \
     log=yes protocol=udp src-address-list=LOCAL
 add action=add-dst-to-address-list address-list=Game-List \
-    address-list-timeout=4h chain=prerouting dst-address-list=!LOCAL \
-    dst-port=5507,5517-5529,5551-5569,5601-5700,8001,8130 log=yes protocol=\
-    udp src-address-list=LOCAL
-add action=add-dst-to-address-list address-list=Game-List \
-    address-list-timeout=4h chain=prerouting dst-address-list=!LOCAL \
-    dst-port=9000-9010,9120,9992,10003,30000-30900 log=yes protocol=udp \
+    address-list-timeout=4h chain=prerouting comment=\
+    "Game UDP - Mobile Legends2" dst-address-list=!LOCAL dst-port=\
+    5507,5517-5529,5551-5569,5601-5700,8001,8130 log=yes protocol=udp \
     src-address-list=LOCAL
+add action=add-dst-to-address-list address-list=Game-List \
+    address-list-timeout=4h chain=prerouting comment=\
+    "Game UDP - Mobile Legends3" dst-address-list=!LOCAL dst-port=\
+    9000-9010,9120,9992,10003,30000-30900 log=yes protocol=udp \
+    src-address-list=LOCAL
+add action=add-dst-to-address-list address-list=WhatsApp-List \
+    address-list-timeout=1h chain=prerouting comment="WhatsApp TCP Ports" \
+    dst-address-list=!LOCAL dst-port=\
+    3478,4244,5222,5223,5228,5288,5242,5349,34784,45395,50318,59234 log=yes \
+    protocol=tcp src-address-list=LOCAL
+add action=add-dst-to-address-list address-list=WhatsApp-List \
+    address-list-timeout=1h chain=prerouting comment="WhatsApp UDP Ports" \
+    dst-address-list=!LOCAL dst-port=\
+    3478,4244,5222,5223,5228,5288,5242,5349,34784,45395,50318,59234 log=yes \
+    protocol=udp src-address-list=LOCAL
+add action=add-dst-to-address-list address-list=WhatsApp-List \
+    address-list-timeout=1h chain=prerouting comment=\
+    "WA Content - .whatsapp.com" content=.whatsapp.com dst-address-list=\
+    !LOCAL log=yes src-address-list=LOCAL
+add action=add-dst-to-address-list address-list=WhatsApp-List \
+    address-list-timeout=1h chain=prerouting comment=\
+    "WA Content - .whatsapp.net" content=.whatsapp.net dst-address-list=\
+    !LOCAL log=yes src-address-list=LOCAL
+add action=add-dst-to-address-list address-list=WhatsApp-List \
+    address-list-timeout=1h chain=prerouting comment="WA Content - wa.me" \
+    content=wa.me dst-address-list=!LOCAL log=yes src-address-list=LOCAL
 /ip route
+add check-gateway=ping comment="Game via ISP4" distance=1 gateway=\
+    192.168.168.1 routing-mark=Route-Game
+add check-gateway=ping comment="Backup Game via ISP3" distance=2 gateway=\
+    192.168.3.1 routing-mark=Route-Game
 add check-gateway=ping distance=1 gateway=192.168.1.1%ether1 routing-mark=\
     via-ISP1
 add check-gateway=ping distance=1 gateway=192.168.1.1%ether2 routing-mark=\
     via-ISP2
-add check-gateway=ping distance=1 gateway=192.168.1.1%ether3 routing-mark=\
-    via-ISP3
-add check-gateway=ping comment="Game Ke ISP2" distance=1 gateway=192.168.3.1 \
-    routing-mark=Route-Game
-add check-gateway=ping comment="BackUp game Ke ISP1" distance=2 gateway=\
-    192.168.1.1%ether3 routing-mark=Route-Game
+add check-gateway=ping distance=1 gateway=192.168.3.1 routing-mark=via-ISP3
 add check-gateway=ping distance=1 gateway=192.168.1.1%ether1
 add check-gateway=ping distance=2 gateway=192.168.1.1%ether2
-add check-gateway=ping distance=3 gateway=192.168.1.1%ether3
+add check-gateway=ping distance=3 gateway=192.168.168.1
 /ip service
 set telnet disabled=yes
 set ftp disabled=yes
