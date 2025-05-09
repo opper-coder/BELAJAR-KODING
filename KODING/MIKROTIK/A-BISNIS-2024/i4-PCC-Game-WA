@@ -266,9 +266,26 @@ add action=add-dst-to-address-list address-list=WhatsApp-List address-list-timeo
 add action=add-dst-to-address-list address-list=WhatsApp-List address-list-timeout=1h chain=prerouting comment="WA Content - .whatsapp.net" content=.whatsapp.net dst-address-list=!LOCAL log=yes src-address-list=LOCAL
 add action=add-dst-to-address-list address-list=WhatsApp-List address-list-timeout=1h chain=prerouting comment="WA Content - wa.me" content=wa.me dst-address-list=!LOCAL log=yes src-address-list=LOCAL
 /ip route
-add check-gateway=ping comment="Game To-ISP4-Balang" distance=1 gateway=192.168.168.1 routing-mark=Route-Game
-add check-gateway=ping comment="Game To-ISP3-Backup" distance=2 gateway=192.168.3.1 routing-mark=Route-Game
-add check-gateway=ping comment="Starlink-1" distance=1 gateway=192.168.1.1%ether1 routing-mark=via-ISP1
-add check-gateway=ping comment="Indibiz-Sony" distance=1 gateway=192.168.1.1%ether2 routing-mark=via-ISP2
-add check-gateway=ping comment="IndiHome-Ikul" distance=1 gateway=192.168.3.1 routing-mark=via-ISP3
-add check-gateway=ping distance
+add check-gateway=ping comment="Game via ISP4-Balang" distance=1 gateway=192.168.168.1 routing-mark=Route-Game
+add check-gateway=ping comment="Backup Game via ISP3" distance=2 gateway=192.168.3.1 routing-mark=Route-Game
+add check-gateway=ping comment=Starlink-1 distance=1 gateway=192.168.1.1%ether1 routing-mark=via-ISP1
+add check-gateway=ping comment=Indibiz-Sony distance=1 gateway=192.168.1.1%ether2 routing-mark=via-ISP2
+add check-gateway=ping comment=IndiHome-Ikul distance=1 gateway=192.168.3.1 routing-mark=via-ISP3
+add check-gateway=ping distance=1 gateway=192.168.1.1%ether1
+add check-gateway=ping distance=2 gateway=192.168.1.1%ether2
+add check-gateway=ping distance=3 gateway=192.168.168.1
+/ip service
+set telnet disabled=yes
+set ftp disabled=yes
+set www disabled=yes
+set ssh disabled=yes
+set api disabled=yes
+set api-ssl disabled=yes
+/system clock
+set time-zone-name=Asia/Jakarta
+/system identity
+set name=MikroBa
+/tool romon
+set enabled=yes secrets=pasmikromon
+
+================================================= 
