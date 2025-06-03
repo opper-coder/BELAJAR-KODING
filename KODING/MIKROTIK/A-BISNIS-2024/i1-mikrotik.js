@@ -128,3 +128,126 @@ add new
 	- tab action: drop
 	apply OK
 
+
+========================================================================================================
+
+# ---------------------------------
+# 1. KONFIGURASI INTERFACE & BRIDGE
+
+/interface bridge
+add name=bridge-WAN comment="Bridge ke ISP"
+add name=bridge-LAN comment="Bridge ke LAN"
+
+/interface bridge port
+add bridge=bridge-WAN interface=ether1
+add bridge=bridge-LAN interface=ether2
+add bridge=bridge-LAN interface=ether3
+add bridge=bridge-LAN interface=ether4
+add bridge=bridge-LAN interface=ether5
+add bridge=bridge-LAN interface=ether6
+add bridge=bridge-LAN interface=ether7
+add bridge=bridge-LAN interface=ether8
+
+# --------------------------------- 
+# VLAN DI ATAS bridge-LAN
+/interface vlan
+add name=vlan100-Banggai vlan-id=100 interface=bridge-LAN comment="pppoe-Banggai"
+/interface vlan
+add name=vlan200-Kendek vlan-id=200 interface=bridge-LAN comment="pppoe-Kendek"
+/interface vlan
+add name=vlan300-Lambako vlan-id=300 interface=bridge-LAN comment="pppoe-Lambako"
+/interface vlan
+add name=vlan400-Tinakin vlan-id=400 interface=bridge-LAN comment="pppoe-Tinakin"
+/interface vlan
+add name=vlan500-SMA2 vlan-id=500 interface=bridge-LAN comment="pppoe-SMA2"
+/interface vlan
+add name=vlan600-Adean vlan-id=600 interface=bridge-LAN comment="pppoe-Adean"
+
+# --------------------------------- 
+/ip dhcp-client
+add interface=bridge-WAN use-peer-dns=no use-peer-ntp=no add-default-route=yes comment="DHCP Client for ISP"
+
+/ip dns
+set servers=8.8.8.8,1.1.1.1 allow-remote-requests=yes
+
+/ip firewall nat
+add chain=srcnat out-interface=bridge-WAN action=masquerade comment="NAT keluar ke ISP"
+
+# --------------------------------- 
+# Ganti identity
+/system identity set name=Mikrotik-Server1
+
+# --------------------------------- 
+# Tambahkan user administrator
+/user add name=administrator1212 group=full password=pasmikro
+
+# --------------------------------- 
+# Aktifkan RoMON
+/tool romon set enabled=yes secrets=pasmikromon
+
+# --------------------------------- 
+# Aktifkan SNTP Client
+# /system ntp client set enabled=yes
+# /system ntp client set server-dns-names=time.windows.com
+# atau 
+
+ping 0.id.pool.ntp.org
+ping 1.id.pool.ntp.org
+/system ntp client set enabled=yes
+/system ntp client set primary-ntp=103.105.49.219
+/system ntp client set secondary-ntp=103.105.49.220
+
+# ---------------------------------  
+# Batasi TTL (mencegah sharing internet ke perangkat lain)
+/ip firewall mangle add chain=prerouting action=change-ttl new-ttl=set:1 passthrough=yes
+
+# --------------------------------- 
+# DHCP Rogue Detection & Blocking
+# Terima DHCP server sah dari interface ether1 (misalnya WAN)
+/ip firewall filter add chain=forward in-interface=bridge-WAN protocol=udp dst-port=67 action=accept
+
+# --------------------------------- 
+# Blok DHCP server dari interface lain (rogue)
+/ip firewall filter add chain=forward protocol=udp dst-port=67 action=drop
+
+# --------------------------------- 
+# reboot tiap jam 4, 4 hari sekali
+/system scheduler
+add name=restart_router start-time=04:00:00 interval=4d on-event="/system reboot"
+
+# --------------------------------- 
+# matikan semua service
+/ip service
+set telnet disabled=yes
+set ftp disabled=yes
+set www disabled=yes
+set ssh disabled=yes
+set www-ssl disabled=yes
+set api-ssl disabled=yes
+set winbox disabled=no
+set api disabled=no
+
+# ---------------------------------
+# pembatasan akses dari ISP ke Winbox/SSH
+
+/ip firewall filter
+# 1. Drop akses Winbox dari ISP (kecuali IP admin)
+add chain=input in-interface=ether1 protocol=tcp dst-port=8291 action=drop comment="Blok Winbox dari luar"
+# 2. Drop akses SSH dari ISP
+add chain=input in-interface=ether1 protocol=tcp dst-port=22 action=drop comment="Blok SSH dari luar"
+# 3. Drop koneksi invalid
+add chain=input connection-state=invalid action=drop comment="Drop invalid connections"
+# 4. Allow koneksi yang sudah established/related
+add chain=input connection-state=established,related action=accept comment="Allow established connections"
+# 5. Allow dari jaringan lokal
+add chain=input src-address=192.168.0.0/16 action=accept comment="Allow LAN access"
+# 6. Drop semua sisanya (default deny)
+add chain=input action=drop comment="Drop all other traffic"
+
+# ---------------------------------
+/ip firewall filter
+# blok API dan APISSL dari luar
+add chain=input in-interface=ether1 protocol=tcp dst-port=8728 action=drop comment="Blok API dari luar"
+add chain=input in-interface=ether1 protocol=tcp dst-port=8729 action=drop comment="Blok API-SSL dari luar"
+
+
