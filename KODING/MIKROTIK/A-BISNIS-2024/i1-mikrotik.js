@@ -185,18 +185,6 @@ add chain=srcnat out-interface=bridge-WAN action=masquerade comment="NAT keluar 
 # Aktifkan RoMON
 /tool romon set enabled=yes secrets=pasmikromon
 
-# --------------------------------- 
-# Aktifkan SNTP Client
-# /system ntp client set enabled=yes
-# /system ntp client set server-dns-names=time.windows.com
-# atau 
-
-ping 0.id.pool.ntp.org
-ping 1.id.pool.ntp.org
-/system ntp client set enabled=yes
-/system ntp client set primary-ntp=103.105.49.219
-/system ntp client set secondary-ntp=103.105.49.220
-
 # ---------------------------------  
 # Batasi TTL (mencegah sharing internet ke perangkat lain)
 /ip firewall mangle add chain=prerouting action=change-ttl new-ttl=set:1 passthrough=yes
@@ -232,9 +220,9 @@ set api disabled=no
 
 /ip firewall filter
 # 1. Drop akses Winbox dari ISP (kecuali IP admin)
-add chain=input in-interface=ether1 protocol=tcp dst-port=8291 action=drop comment="Blok Winbox dari luar"
+add chain=input in-interface=bridge-WAN protocol=tcp dst-port=8291 action=drop comment="Blok Winbox dari luar"
 # 2. Drop akses SSH dari ISP
-add chain=input in-interface=ether1 protocol=tcp dst-port=22 action=drop comment="Blok SSH dari luar"
+add chain=input in-interface=bridge-WAN protocol=tcp dst-port=22 action=drop comment="Blok SSH dari luar"
 # 3. Drop koneksi invalid
 add chain=input connection-state=invalid action=drop comment="Drop invalid connections"
 # 4. Allow koneksi yang sudah established/related
@@ -247,7 +235,24 @@ add chain=input action=drop comment="Drop all other traffic"
 # ---------------------------------
 /ip firewall filter
 # blok API dan APISSL dari luar
-add chain=input in-interface=ether1 protocol=tcp dst-port=8728 action=drop comment="Blok API dari luar"
-add chain=input in-interface=ether1 protocol=tcp dst-port=8729 action=drop comment="Blok API-SSL dari luar"
+add chain=input in-interface=bridge-WAN protocol=tcp dst-port=8728 action=drop comment="Blok API dari luar"
+add chain=input in-interface=bridge-WAN protocol=tcp dst-port=8729 action=drop comment="Blok API-SSL dari luar"
+
+# --------------------------------- 
+# Aktifkan SNTP Client di versi 7 (jalan)
+# matikan dulu system clock time zone autodetect, 
+# dapatkan dulu ip pool watu di: www.ntppool.org > cari lokasi server indonesia   
+# ping 0.id.pool.ntp.org
+# ping 1.id.pool.ntp.org
+
+/system ntp client 
+set enabled=yes
+servers add address=103.105.49.219
+servers add address=103.105.49.220
+servers add address=pool.ntp.org
+
+# test 
+/system clock print
+/system ntp client print
 
 
