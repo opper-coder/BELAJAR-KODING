@@ -131,6 +131,12 @@ add new
 
 ========================================================================================================
 
+DI ROS 7 sudah test jalan tetapi ada yang harus di cek manual
+1. matikan sytem clock timezone auto detect (auto reboot)
+2. cek sebaiknya yang mengarah ke bridge-WAN replace (ganti) dengan ether1 saja (hardware lebih optimal)
+3. selebihnya sudah jalan kayaknya 
+4. jika perlu penyesuaian tinggal copas di text editor dan sesuaikan paling hanya interface dan dan ROS6 dan 7 saja tapi kayaknya tidak ada masalah   
+
 # ---------------------------------
 # 1. KONFIGURASI INTERFACE & BRIDGE
 
