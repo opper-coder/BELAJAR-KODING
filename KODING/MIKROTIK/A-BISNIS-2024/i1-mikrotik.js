@@ -244,7 +244,8 @@ add chain=input action=drop comment="Drop all other traffic"
 add chain=input in-interface=bridge-WAN protocol=tcp dst-port=8728 action=drop comment="Blok API dari luar"
 add chain=input in-interface=bridge-WAN protocol=tcp dst-port=8729 action=drop comment="Blok API-SSL dari luar"
 
-# --------------------------------- 
+# ================================= 
+# jalan kan sendiri atau manual saja
 # Aktifkan SNTP Client di versi 7 (jalan)
 # matikan dulu system clock time zone autodetect, 
 # dapatkan dulu ip pool watu di: www.ntppool.org > cari lokasi server indonesia   
