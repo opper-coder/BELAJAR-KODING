@@ -1,0 +1,73 @@
+# ---------------------------------
+# IP ADDRESS & HOTSPOT SETUP
+
+/ip address
+add address=192.168.10.1/24 interface=bridge-LAN comment="Hotspot Gateway"
+
+/ip pool
+add name=pool-profile1 ranges=192.168.10.10-192.168.10.50
+add name=pool-profile2 ranges=192.168.20.10-192.168.20.50
+add name=pool-profile3 ranges=192.168.30.10-192.168.30.50
+
+/ip hotspot profile
+add name=hs_profile interface=bridge-LAN hotspot-address=192.168.10.1 \
+dns-name=link.net html-directory=hotspot \
+login-by=http-chap,http-pap,mac-cookie
+
+/ip hotspot
+add name=hotspot1 interface=bridge-LAN address-pool=pool-profile1 profile=hs_profile \
+keepalive-timeout=00:00:10
+
+/ip hotspot user profile
+add name=profile1 address-pool=pool-profile1 session-timeout=0s idle-timeout=0s keepalive-timeout=0s
+add name=profile2 address-pool=pool-profile2 session-timeout=0s idle-timeout=0s keepalive-timeout=0s
+add name=profile3 address-pool=pool-profile3 session-timeout=0s idle-timeout=0s keepalive-timeout=0s
+
+/ip hotspot user
+add name=user1 password=user1 profile=profile1
+add name=user2 password=user2 profile=profile2
+add name=user3 password=user3 profile=profile3
+
+# ---------------------------------
+# QUEUE TYPES
+
+/queue type
+add name=pcq-download-1M kind=pcq pcq-rate=1M pcq-classifier=dst-address
+add name=pcq-upload-1M kind=pcq pcq-rate=1M pcq-classifier=src-address
+add name=pcq-download-2M kind=pcq pcq-rate=2M pcq-classifier=dst-address
+add name=pcq-upload-2M kind=pcq pcq-rate=2M pcq-classifier=src-address
+add name=pcq-download-3M kind=pcq pcq-rate=3M pcq-classifier=dst-address
+add name=pcq-upload-3M kind=pcq pcq-rate=3M pcq-classifier=src-address
+
+# ---------------------------------
+# FIREWALL MANGLE (MARKING)
+
+/ip firewall mangle
+# Profile 1 (192.168.10.x)
+add chain=prerouting src-address=192.168.10.10-192.168.10.50 action=mark-packet new-packet-mark=profile1_download passthrough=no
+add chain=postrouting dst-address=192.168.10.10-192.168.10.50 action=mark-packet new-packet-mark=profile1_upload passthrough=no
+
+# Profile 2 (192.168.20.x)
+add chain=prerouting src-address=192.168.20.10-192.168.20.50 action=mark-packet new-packet-mark=profile2_download passthrough=no
+add chain=postrouting dst-address=192.168.20.10-192.168.20.50 action=mark-packet new-packet-mark=profile2_upload passthrough=no
+
+# Profile 3 (192.168.30.x)
+add chain=prerouting src-address=192.168.30.10-192.168.30.50 action=mark-packet new-packet-mark=profile3_download passthrough=no
+add chain=postrouting dst-address=192.168.30.10-192.168.30.50 action=mark-packet new-packet-mark=profile3_upload passthrough=no
+
+# ---------------------------------
+# QUEUE TREE
+
+/queue tree
+# Upload via ether1 (ISP) (bukan bridge-WAN untuk alasan lebih stabil dan presisi)
+/queue tree
+add name="upload-1M" parent=ether1 packet-mark=profile1_upload queue=pcq-upload-1M
+add name="upload-2M" parent=ether1 packet-mark=profile2_upload queue=pcq-upload-2M
+add name="upload-3M" parent=ether1 packet-mark=profile3_upload queue=pcq-upload-3M
+
+# Download via global-in (client-facing)(bukan bridge-LAN untuk alasan lebih stabil dan presisi)
+/queue tree
+add name="download-1M" parent=global-in packet-mark=profile1_download queue=pcq-download-1M
+add name="download-2M" parent=global-in packet-mark=profile2_download queue=pcq-download-2M
+add name="download-3M" parent=global-in packet-mark=profile3_download queue=pcq-download-3M
+
