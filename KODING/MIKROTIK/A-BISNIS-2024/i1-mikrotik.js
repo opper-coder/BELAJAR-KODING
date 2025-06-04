@@ -169,6 +169,17 @@ add name=vlan500-SMA2 vlan-id=500 interface=bridge-LAN comment="pppoe-SMA2"
 /interface vlan
 add name=vlan600-Adean vlan-id=600 interface=bridge-LAN comment="pppoe-Adean"
 
+/ip address
+add address=192.168.10.1/24 interface=bridge-LAN comment="Hotspot Gateway"
+
+/ip pool
+add name=pool-HSprof1 ranges=192.168.10.10-192.168.11.255
+add name=pool-HSprof2 ranges=192.168.20.10-192.168.21.255
+add name=pool-HSprof3 ranges=192.168.30.10-192.168.31.255
+add name=pool-PPPprof1 ranges=192.168.110.10-192.168.111.255
+add name=pool-PPPprof2 ranges=192.168.120.10-192.168.121.255
+add name=pool-PPPprof3 ranges=192.168.130.10-192.168.131.255
+
 # --------------------------------- 
 /ip dhcp-client
 add interface=bridge-WAN use-peer-dns=no use-peer-ntp=no add-default-route=yes comment="DHCP Client for ISP"
@@ -244,22 +255,16 @@ add chain=input action=drop comment="Drop all other traffic"
 add chain=input in-interface=bridge-WAN protocol=tcp dst-port=8728 action=drop comment="Blok API dari luar"
 add chain=input in-interface=bridge-WAN protocol=tcp dst-port=8729 action=drop comment="Blok API-SSL dari luar"
 
-# ================================= 
-# jalan kan sendiri atau manual saja
+# --------------------------------- 
 # Aktifkan SNTP Client di versi 7 (jalan)
-# matikan dulu system clock time zone autodetect, 
-# dapatkan dulu ip pool watu di: www.ntppool.org > cari lokasi server indonesia   
-# ping 0.id.pool.ntp.org
-# ping 1.id.pool.ntp.org
+# matikan dulu system clock time zone autodetect
 
 /system ntp client 
 set enabled=yes
-servers add address=103.105.49.219
-servers add address=103.105.49.220
-servers add address=pool.ntp.org
+# servers add address=pool.ntp.org
+servers add address=0.id.pool.ntp.org
+servers add address=1.id.pool.ntp.org
 
 # test 
 /system clock print
 /system ntp client print
-
-
