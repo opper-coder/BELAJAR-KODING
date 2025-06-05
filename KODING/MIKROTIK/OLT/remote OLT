@@ -61,7 +61,7 @@ REMOTE OLT dari luar jaringan
 		interface: pastikan ada tambahan interface dan flag R
 		PPP tab interface : juga bisa dilihat disini
 -----------------------------------------------------------
-3. Routing VPN ke OLT local  
+3. Routing forward VPN (Teruskan) ke OLT local  
 	IP > firewall > NAT > add > 
 		chain: dstnat
 		dst address: IP VPN dari DDNS (local) bukan IP SERVER(public) ya
