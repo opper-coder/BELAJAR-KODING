@@ -33,9 +33,9 @@ Remote OLT Hioso 2PON dalam satu segmen
 -----------------------------------------------------------
 REMOTE OLT dari luar jaringan
 -----------------------------------------------------------
-1. langganan VPN DDNS
-2. konfig Mikrotik sebagai Client VPN
-3. Routing VPN ke OLT local  
+1. Langganan VPN DDNS
+2. Konfig Mikrotik sebagai Client VPN
+3. Forward Routing VPN ke OLT local  
 -----------------------------------------------------------
 1. langganan VPN DDNS
 	login freeddns, topup, beli vpn Remote:
@@ -46,7 +46,7 @@ REMOTE OLT dari luar jaringan
 -----------------------------------------------------------
 2. konfig Mikrotik sebagai Client VPN
 	client VPN auto:
-		list VPN di DDNS lalu manage > copas script ke terminal mikrotik   
+		list VPN di DDNS lalu manage > tinggal copas script ke terminal mikrotik   
 	client VPN Manual:
 		PPP > interface > add > ovpn client (didapat dari script di ddns)
 			tab general
