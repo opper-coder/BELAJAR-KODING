@@ -1,0 +1,246 @@
+REST API MIKROTIK
+=====================================
+1. IP harus PUBLIK baik static atau dinamic
+2. Aktifkan service www ssl
+3. client REST seperti cURL atau guzzle di php
+
+menggunakan ssl ini ada 4 keunggulan di banding sewa freeDDNS
+1. url aman 
+2. url bisa untuk login winbox
+3. url bisa untuk REST API
+4. kemungkinan bisa port forwarding ke OLT dll lihat remote OLT
+
+di freeDDNS bisa melakukan 3 hal juga
+1. murah hanya 2000
+2. ada remote winbox
+3. ada DDNS gratis untuk REST API
+4. kekurangan kalau mau remote OLT harus beli satu VPN forwarding lagi sih 
+
+=====================================
+Cara dapatkan IP Public
+	- Dapatkan IP public Mikrotik
+	- Dapatkan DNS IP public
+	- enable Sertificate SSL let's encrypt
+0. basic config mikrotik, dan DHCP client ISP (disini ISP memberi kita IP public baik statik atau dynamic) 
+	- yang static minta sama ISP misal telkom mungkin berbayar (secret dan password pppoe/vpn kita)
+	- atau dapat yang dinamic berubah ubah, jika di namic maka kita butuh DDNS, baik yang menyewa atau bikin sendiri
+--------------------------------------
+Bikin IP Public sendiri
+1. Cara mendapatkan Domain gratis dari IP public mikrotik kita
+	cek IP PUBLIK di mikrotik kita
+	terminal >_ 
+	/tool fetch url="https://api.ipify.org" output=user
+
+	atau cek di juga boleh
+	https://www.whatismyip.com/
+
+	maka kita akan melihat IP kita yang diberikan ISP (jika berubah ubah sepertinya dynamic sih)
+
+2. pointing DNS(domain acak) ke mikrotik kita
+	ip > cloud > ddns-enable=yes update-time=yes apply (di ROS v6)
+	ip > cloud > ddns-enable=yes update-time=yes apply (di ROS v7 mirip)
+	tunggu beberapa saat > dan kita di kasih domain gratis > 
+	cek domain keabsahan nya: 
+	cek pertama: www.dnschecker.org > paste domain > jika centang hijau berarti valid 
+	cek kedua: akses winbox dengan url tadi jika winbox terbuka berarti berhasil, cepat matikan kembali cloud
+	tetapi ini belum aman (pernah mati dan tidak bisa konek) kecuali nanti aktifkan dulu let's encrypt nya di bawah.
+
+3. Aktifkan ssl let's encrypt
+	>_ certificate/enable-ssl-certificate dns-name=<DOMAIN CLOUD BARUSAN> 
+
+	tunggu pengecekan sampai [success], 
+	cek pertama: 
+	/sistem certificate 
+	akan ada certificate baru dari let's encrypt dan berlaku 90 hari
+	cek kedua:
+	/ip service > klik www ssl 443 ada ssl baru yang terpilih
+	untuk cek ssl di : cari di google ssl checker(ssl shopper)
+
+	untuk memperbarui (renew) masa berlaku, ulangi saja langkah di atas tadi (boleh pakai scheduler)
+
+--------------------------------------
+Bikin IP PUBLIC dan DOMAIN gratis di freeDDNS
+- sambungkan mikrotik ke ISP yang memiliki IP PUBLIC 
+	cek IP PUBLIK di mikrotik kita
+	terminal >_ 
+	/tool fetch url="https://api.ipify.org" output=user
+- login freeDDNS dengan ISP tersebut
+- create DDNS di tab DDNS (berbeda dengan VPN ya, kalau VPN hanya untuk remote winbox, kalau DDNS bisa REST API) 
+	- input nama domain, pilih extensi dns .net.dnskita dst, klik create. 
+	  jika gagal silahkan ganti extensi domain satu persatu saat success
+	- cek di list DDNS dan klik info pada panel kita dapat kan URL 
+	- buka dokumentasi > cara sambungkan > copas script > ubah URL > paste terminal di mikrotik yang di remote REST 
+	/system scheduler add interval=10s name=schedule1 on-event=\ "/tool fetch url=https://tunnel.hostddns.us/ddns/8a49c3a76346b36fcddcf006b9446631  mode=http" \ policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive
+
+--------------------------------------
+REST CLIENT
+- bisa pakai postman
+- bisa pakai guzzle PHP
+
+--------------------------------------
+POSTMAN
+	- bisa saja buka
+	- bikin workspace baru
+	- auth isikan basic dan isikan user nya
+	- coba GET di url dan SEND 
+
+--------------------------------------
+GUZZLE
+- instal xampp v7.4
+- composer getcomposer/download install next finish
+- guzzle >_ composer require guzzlehttp/guzzle:^7.0
+
+1. setelah composer sudah terinstall
+	- buat folder aplikasi dimanapun anda mau (tidak harus htdoc kalau di komposer)
+	- buka folder di terminal lalu install guzzle di folder tersebut. terminal >_ composer require guzzlehttp/guzzle:^7.0 
+		(buka dokumentasi guzzle (command itu di dapat dari guzzle doc))
+	- buka folder di vscode/sublime, new file.php
+	- cantumkan ini paling atas (setelah ini siap di gunakan):
+	 	require 'vendor/autoload.php';
+	- petunjuk penggunaan buka guzzle doc/quick start, 
+2. initialisasi creating client:
+---
+use GuzzleHttp\Client;
+
+$client = new Client([
+    // Base URI is used with relative requests
+    'base_uri' => 'http://httpbin.org',
+    // You can set any number of default request options.
+    'timeout'  => 2.0,
+]);
+---
+uri nya ganti dengan url cloud DDNS mengandung ssl kita di mikrotik, atau dari freeDDNS silahkan 
+ubah bash_uri (ganti dengan url di ttk-ttk https:// ... /rest) jadinya seperti ini
+    'base_uri' => 'https://hj40a7n8xnz.sn.mynetname.net/rest', 
+
+3. request http dasar:
+	untuk auth adalah di ambil dari mikrotik/system user tambahkan baru khusus api jangan yang default ya supaya dedicated
+	
+	$response = $client->request('GET', 'system/resource/', ['auth'=>['user-API', 'pasmikroapi']])
+ 	$body =  $response->getBody()->getContents();
+ 	var_dump($response);
+run di terminal
+	teminal\aplikasi_saya > php .\index.php
+run di browser
+	ip/url folder kita/index.php
+	hanya saja hasilnya adalah json oleh karena itu kita conversi ke array assoc dengan menjalankan:
+	$output = json_decode(body, true);
+ 	var_dump($output);
+
+--------------------------------------
+GET User VPN/pppoe
+
+simpan di: 
+get_user.php
+
+<?php 
+use GuzzleHttp\Client;
+
+$client = new Client([
+    'base_uri' => 'http://httpbin.org',
+    'timeout'  => 2.0,
+]);
+
+$response = $client->request('GET', 'ppp/secret/', ['auth'=>['user-API', 'pasmikroapi']])
+$body =  $response->getBody()->getContents();
+
+$output = json_decode(body, true);
+var_dump($output);
+
+foreach ($output as $user ) {
+	echo $user["name"];
+	echo "<br>";
+}
+
+// biasanya looping row tabel, tapi sederhananya ini saja dulu
+ ?>
+
+-------------------------------------- 
+PUT User VPN/pppoe
+- sebelum mengirim kan data PUT sebaiknya GET dulu supaya kita dapatkan key/field arraynya/ 
+- sebelumnya isi data pppoe manualnya 3 orang dulu nanti di hapus
+- lalu ganti jadi PUT hanya beda sedikit simpan di sebuah file tambah_user.php 
+- jika  file ini di running maka langsung tertrigger, pada prakteknya nanti harus di panggil dari 
+	halaman lain dan di trigger dengan form_input.php yang di action mengarah ke halaman ini sambil kirim 
+	data form via GET atau POST lalu ambil data $_GET["name"], $_GET["password"] langsung di body
+- simpan di tambah_user.php
+
+<?php 
+use GuzzleHttp\Client;
+
+$client = new Client([
+    'base_uri' => 'http://httpbin.org',
+    'timeout'  => 2.0,
+]);
+
+$response = $client->request('PUT', 'ppp/secret/', [
+	'auth' => ['user-API', 'pasmikroapi'],
+	'body' => jason_encode(array(
+		'name' => 'Rustam',
+		'password' => 'Paisubit'
+	))
+])
+
+$body =  $response->getBody()->getContents();
+$output = json_decode(body, true);
+
+// lakukan redirect ke form kembali atau kemana terserah lah
+ ?>
+
+-------------------------------------- 
+PATCH 
+edit data mirip dengan PUT, beda dikit juga hanya pada path ada id nya
+jika ini di jalankan secara manual sudah bisa mengubahnya sesuai id manual (.id di mikrotik id pakai dot)
+best practice simpan file: 
+patch_user.php di bawah ini 
+
+<?php 
+use GuzzleHttp\Client;
+
+$client = new Client([
+    'base_uri' => 'http://httpbin.org',
+    'timeout'  => 2.0,
+]);
+
+$response = $client->request('PATCH', 'ppp/secret/'. $_GET['.id'], [
+	'auth' => ['user-API', 'pasmikroapi'],
+	'body' => jason_encode(array(
+		'name' => 'PakRustam150',
+		'password' => 'Paisubit'
+		'comment' => 'berubah'
+	))
+])
+
+$body =  $response->getBody()->getContents();
+$output = json_decode(body, true);
+
+// lakukan redirect ke form kembali atau kemana terserah lah
+ ?>
+- biasanya kita sudah $_GET data di sebuah halaman berupa tabel action EDIT | DELETE
+- di setiap barisnya ambil id nya lalu gunakan untuk membuka action=/form_edit.php method $_GET 
+- pada form edit dapatkan data id, name dst, untuk mengisi form yang ada, untuk di ubah nantinya 
+- dan kirimkan id dalam input type=hidden 
+
+-------------------------------------- 
+DELETE
+buat file baru delete_user.php
+cuma sederhana saja seperti di bawah
+
+<?php 
+use GuzzleHttp\Client;
+
+$client = new Client([
+    'base_uri' => 'http://httpbin.org',
+    'timeout'  => 2.0,
+]);
+
+$response = $client->request('DELETE', 'ppp/secret/'. $_GET[".id"], ['auth'=>['user-API', 'pasmikroapi']])
+
+// tambahkan redirect ke halaman tabel tadi sekaligus tambahkan refreh halaman di bawah ini 
+<meta http-equiv="refesh" content="0;URL='get_user.php'" />
+
+ ?>
+
+???????????????????? 
+M-34 
+ cara membuat user random di php mysql
