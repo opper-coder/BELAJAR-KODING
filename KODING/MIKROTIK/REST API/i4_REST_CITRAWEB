@@ -100,6 +100,7 @@ GUZZLE
 	- petunjuk penggunaan buka guzzle doc/quick start, 
 2. initialisasi creating client:
 ---
+<?php 
 use GuzzleHttp\Client;
 
 $client = new Client([
@@ -108,6 +109,10 @@ $client = new Client([
     // You can set any number of default request options.
     'timeout'  => 2.0,
 ]);
+
+// di ubah jadi begini:
+    'base_uri' => 'https://hj40a7n8xnz.sn.mynetname.net/rest', 
+ ?>
 ---
 uri nya ganti dengan url cloud DDNS mengandung ssl kita di mikrotik, atau dari freeDDNS silahkan 
 ubah bash_uri (ganti dengan url di ttk-ttk https:// ... /rest) jadinya seperti ini
@@ -144,7 +149,7 @@ $client = new Client([
 $response = $client->request('GET', 'ppp/secret/', ['auth'=>['user-API', 'pasmikroapi']])
 $body =  $response->getBody()->getContents();
 
-$output = json_decode(body, true);
+$output = json_decode($body, true);
 var_dump($output);
 
 foreach ($output as $user ) {
@@ -175,14 +180,14 @@ $client = new Client([
 
 $response = $client->request('PUT', 'ppp/secret/', [
 	'auth' => ['user-API', 'pasmikroapi'],
-	'body' => jason_encode(array(
+	'body' => json_encode(array(
 		'name' => 'Rustam',
 		'password' => 'Paisubit'
 	))
 ])
 
 $body =  $response->getBody()->getContents();
-$output = json_decode(body, true);
+$output = json_decode($body, true);
 
 // lakukan redirect ke form kembali atau kemana terserah lah
  ?>
@@ -204,7 +209,7 @@ $client = new Client([
 
 $response = $client->request('PATCH', 'ppp/secret/'. $_GET['.id'], [
 	'auth' => ['user-API', 'pasmikroapi'],
-	'body' => jason_encode(array(
+	'body' => json_encode(array(
 		'name' => 'PakRustam150',
 		'password' => 'Paisubit'
 		'comment' => 'berubah'
@@ -212,7 +217,7 @@ $response = $client->request('PATCH', 'ppp/secret/'. $_GET['.id'], [
 ])
 
 $body =  $response->getBody()->getContents();
-$output = json_decode(body, true);
+$output = json_decode($body, true);
 
 // lakukan redirect ke form kembali atau kemana terserah lah
  ?>
@@ -241,6 +246,57 @@ $response = $client->request('DELETE', 'ppp/secret/'. $_GET[".id"], ['auth'=>['u
 
  ?>
 
-???????????????????? 
-M-34 
- cara membuat user random di php mysql
+
+=========================================================
+Perintah Hapus batch 3 buah array
+
+<?php
+use GuzzleHttp\Client;
+
+$client = new Client([
+    'base_uri' => 'http://<ip-mikrotik-anda>/rest/',
+    'timeout'  => 10.0,
+]);
+
+// Script Mikrotik dengan delay 30 detik antar penghapusan user 
+$mikrotikScript = <<<SCRIPT
+:log info "Start remove user a";
+/ppp secret Remove [find name="a"];
+:delay 1;
+
+:log info "Remove user b";
+/ppp secret remove [find name="b"];
+:delay 1;
+
+:log info "Remove user c";
+/ppp secret remove [find name="c"];
+SCRIPT;
+
+// 1. Tambah script bernama 'remove_user'
+$response = $client->request('PUT', 'system/script/remove_user', [
+    'auth' => ['user-API', 'pasmikroapi'],
+    'json' => [
+        'name' => 'remove_user',
+        'source' => $mikrotikScript
+    ]
+]);
+
+// 2. Jalankan script 'remove_user'
+$response = $client->request('POST', 'system/script/run', [
+    'auth' => ['user-API', 'pasmikroapi'],
+    'json' => [
+        'number' => 'remove_user'
+    ]
+]);
+
+// 3. Tunggu 95 detik agar script selesai (30 + 30 + 30 + buffer 5)
+sleep(30);
+
+// 4. Hapus script 'remove_user'
+$response = $client->request('DELETE', 'system/script/remove_user', [
+    'auth' => ['user-API', 'pasmikroapi']
+]);
+
+echo "Script remove_user telah dijalankan dan dihapus.";
+
+?>
