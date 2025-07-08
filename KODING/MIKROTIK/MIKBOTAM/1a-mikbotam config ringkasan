@@ -144,6 +144,22 @@ SELANJUTNYA
 	- /menu (saat kita sudah membuat profil voucher dan template voucher di tab setting maka daftar harga akan terlihat di telegram)
 	- pilih paket akan muncul voucher
 ------------------------------------------------------------------------------ 
+GANTI TOKEN (JIKA KENA HACK)
+sederhananya 
+1. ganti password akun mikbotam 
+2. perbarui token bot telegram
+	Milubot
+		di perlukan seperti langkah di atas (sama saja)
+	telegram (/revoke)
+		- buka botfather ada badge biru
+		- disitu akun bot mu berada 
+		- ketik /revoke (untuk dapatkan token baru) kemudian lakukan koneksi ulang seperti biasa di atas
+	dashboard mikbotam
+		Username Owner: (dari username bot telegram anda (buka di surya_hotspot_bot))
+		ID Telegram Owner: (dari milubot)
+		Token Bot: 
+		Username Bot: 
+------------------------------------------------------------------------------ 
 BIKIN PROFIL DAN TEMPLAT-VOUCHER
 - /hotspot/profil
 	jelaskan nanti
