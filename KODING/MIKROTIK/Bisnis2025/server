@@ -2,30 +2,67 @@
 ClientVPS
 opperofficial@gmail.com
 kataindah1212
-
+===================================
 Tuan/Nyonya yang terhormat,
 Server Anda sudah siap!
 Akses SSH:
 IP: 5.223.62.223
 Nama Pengguna: root
-Kata Sandi: AkFFtpcsXbaL4PMrJagF
+Kata Sandi: AkFFtpcsXbaL4PMrJagF <-> izzaA11!
 
 Jika kami dapat membantu Anda dengan hal lain, beri tahu kami.
 Jenis salam,
 Tomrid Aliyev - Insinyur Teknis
-
-===================================
-VOLET (PALING TAPI)
-
-opperofficial@gmail.com
-9YN0M@y20g-aqilizza
-
 ===================================
 PAYEER
-
 Login: P1133204699
 Password: w7W2vJn3
 E-mail: opperofficial@gmail.com
 Secret code: 96666654
 Master key: 059
+===================================
+VOLET (PALING TAPI)
+opperofficial@gmail.com
+9YN0M@y20g-aqilizza
+===================================
+langkah-langkah instalasi CHR dengan putty (awanserver.com)
+
+1 login VPS via putty
+2 update dan download CHR [edit versi]
+	apt update && apt install wget -y && wget https://download.mikrotik.com/routeros/7.19.4/chr-7.19.4.img.zip -O chr.img.zip
+3 extract
+	gunzip -c chr.img.zip > chr.img && rm -f chr.img.zip 
+4 mount  [sesuaikan offset dengan manjalankan fdisk -l chr.img]
+	mount -o loop,offset=33571840 chr.img /mnt
+5 cek mount
+		cd /mnt 
+		ls
+	pastikan ada folder dan filenya termount maka sudah berhasil mount
+6. if config install
+	apt install net-tools -y
+	ifconfig
+	jika ada verify enter-enter saja sampai finish
+7. tampilkan interface
+	setelah selesai ipconfig akan ada interface seperti eth0 dst
+8. ambil data IP dan Gateway, sesuai kan interface nya ya (eth0, jika sudah enter saja)
+	ADDRESS=$(ip addr show eth0 | grep global | cut -d' ' -f 6 | head -n 1)
+	GATEWAY=$(ip route list | grep default | cut -d' ' -f 3)
+	memastikan 
+	echo $ADDRESS
+	echo $GATEWAY
+9. Kemudian masukkan alamat ip dan gateway yang sudah diambil ke dalam script autostart di direktori mount CHR (/mnt)
+	echo "/ip address add address=$ADDRESS interface=[/interface ethernet find where name=ether1]
+	/ip route add gateway=$GATEWAY
+	" > /mnt/rw/autorun.scr
+10. unmount 
+		umount /mnt
+11. cek unmount
+		echo u > /proc/sysrq-trigger
+12. cek disk VPS
+		lsblk
+13. deploy (sepertinya sda kita punya ini)
+		dd if=chr.img bs=1024 of=/dev/sda
+14. reboot
+15. harusnya sudah masuk ke terminal CHR
+===================================
 
