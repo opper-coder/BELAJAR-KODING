@@ -43,7 +43,7 @@ langkah-langkah instalasi CHR dengan putty (awanserver.com)
 	ifconfig
 	jika ada verify enter-enter saja sampai finish
 7. tampilkan interface
-	setelah selesai ipconfig akan ada interface seperti eth0 dst
+	setelah selesai ipconfig akan ada interface seperti eth0 (interface hasilnya ini berbeda 2. maka anda harus mencatatnya)
 8. ambil data IP dan Gateway, sesuai kan interface nya ya (eth0, jika sudah enter saja)
 	ADDRESS=$(ip addr show eth0 | grep global | cut -d' ' -f 6 | head -n 1)
 	GATEWAY=$(ip route list | grep default | cut -d' ' -f 3)
@@ -60,7 +60,8 @@ langkah-langkah instalasi CHR dengan putty (awanserver.com)
 		echo u > /proc/sysrq-trigger
 12. cek disk VPS
 		lsblk
-13. deploy (sepertinya sda kita punya ini)
+	(Hasilnya kita bisa tahu type disk kita, sda atau vda dst)
+13. deploy [edit sda atau vda dll, tunggu sampai selesai]
 		dd if=chr.img bs=1024 of=/dev/sda
 14. reboot
 15. harusnya sudah masuk ke terminal CHR
