@@ -25,6 +25,29 @@ VOLET (PALING TAPI)
 opperofficial@gmail.com
 9YN0M@y20g-aqilizza
 ===================================
+
+
+
+PEMBELIAN 
+=================================== 
+login ke clientVPS 
+	pilih paket offshore VPS 
+	pilih lokasi
+	pilih cara pembayaran -> payeer 
+	login payeer dulu setelah login akan di arahkan metode pembayaran -> pilih USDT -> di kasih surat tagihan 
+PEMBAYARAN
+===================================
+login ke tokocrypto
+	topup lewat shopeepay
+	beli USDT ada harga beli dan harga jual 
+	lalu cairkan / withdraw ke key dompet payeer yang dituju 
+	sesuaikan jumlah sesuai yang diminta (ingat ada potongan yang harus di bayar 1 USDT)
+	kirim maka status tagihan akan paid 
+	maka cek service di client area nanti service akan di aktifkan setelah 12 jam
+	jika tidak cepat di tangani maka ajukan ticket untuk segera di tangani
+	aka di kasih host IP Public dan password VPS
+setelah berhasil di aktifkan maka langkah konfigurasi	
+===================================
 langkah-langkah instalasi CHR dengan putty (awanserver.com)
 
 1 login VPS via putty
