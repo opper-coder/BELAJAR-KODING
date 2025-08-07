@@ -55,7 +55,7 @@ langkah-langkah instalasi CHR dengan putty (awanserver.com)
 	apt update && apt install wget -y && wget https://download.mikrotik.com/routeros/7.19.4/chr-7.19.4.img.zip -O chr.img.zip
 3 extract
 	gunzip -c chr.img.zip > chr.img && rm -f chr.img.zip 
-4 mount  [sesuaikan offset dengan manjalankan fdisk -l chr.img]
+4 mount  [PENTING: sesuaikan offset dengan manjalankan fdisk -l chr.img]
 	mount -o loop,offset=33571840 chr.img /mnt
 5 cek mount
 		cd /mnt 
@@ -67,7 +67,7 @@ langkah-langkah instalasi CHR dengan putty (awanserver.com)
 	jika ada verify enter-enter saja sampai finish
 7. tampilkan interface
 	setelah selesai ipconfig akan ada interface seperti eth0 (interface hasilnya ini berbeda 2. maka anda harus mencatatnya)
-8. ambil data IP dan Gateway, sesuai kan interface nya ya (eth0, jika sudah enter saja)
+8. ambil data IP dan Gateway, sesuai kan interface nya ya ([PENTING: edit eth0 atau ether, port dll, jika sudah enter saja])
 	ADDRESS=$(ip addr show eth0 | grep global | cut -d' ' -f 6 | head -n 1)
 	GATEWAY=$(ip route list | grep default | cut -d' ' -f 3)
 	memastikan 
@@ -84,9 +84,11 @@ langkah-langkah instalasi CHR dengan putty (awanserver.com)
 12. cek disk VPS
 		lsblk
 	(Hasilnya kita bisa tahu type disk kita, sda atau vda dst)
-13. deploy [edit sda atau vda dll, tunggu sampai selesai]
+13. deploy [PENTING: edit sda atau vda dll, tunggu sampai selesai]
 		dd if=chr.img bs=1024 of=/dev/sda
 14. reboot
-15. harusnya sudah masuk ke terminal CHR
+15. tunggu sekitar 2 - 5 menit selama reboot.
+16. buka winbox > masukkan IP PUBLIC kita > user=admin, pass="". 
+	di awal login winbox belum stabil dia akan connect disconnect beberapa waktu mungkin mempersiapkan kelengkapan sampai 1 jam barulah sekarang stabil
 ===================================
 
