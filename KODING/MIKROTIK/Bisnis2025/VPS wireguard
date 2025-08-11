@@ -1,0 +1,79 @@
+mid technologi
+---
+
+WIREGUARD ISP
+CHR
+
+- setting DNS dan NAT dulu sebelumnya
+- wireguard add
+  name = wireguard1
+  ip= 172.16.10.1/24
+- peers add
+  public key: client
+  endpoint: 172.16.10.2
+  endpoint port: ""
+  allowed address: 172.16.10.2/32
+  keepalive: 00:00:05
+
+---
+
+MIKROTIK-CLIENT
+
+- setting DNS dan NAT dulu sebelumnya
+- wireguard
+  add= wireguard1
+  ip= 172.16.10.2/24
+- peers add
+  public key: server
+  endpoint: IP public server (boleh berupa domain)
+  endpoint port: listen port dari wireguard server
+  allowed address: 0.0.0.0/0 (menuju internet)
+  keepalive: 00:00:05
+  Apply ok : flag R kedua sisi client server jika sudah terkonek
+
+---
+
+PING
+tool > ping isi ip publik dari client
+
+---
+
+MANGEL DI CLIENT
+
+/routing table add
+name=r-wireguard
+FIB=true
+
+/ip fireweall mangle add
+chain=prerouting
+src address=192.168.40.0/24 (LAN)
+dst address=[!]192.168.40.0/24 (LAN)
+action=mark routing
+new routing mark=r-wireguard
+pass trought=false
+
+NAT DI CLIENT
+
+/ip fireweall NAT add
+chain=srcnat
+out interface=wireguard1
+action=masquerade
+
+ROUTES DI CLIENT
+
+/ip routes add
+dst address=0000/0
+gateway= 172.16.10.1 (ip wireguard server, bukan ip public nya)
+routing table= r-wireguard
+apply ok
+
+MANGLE TAMBAHAN UNTUK AKSES BANK
+sumber: https://forum.mikrotik.com/viewtopic.php?t=150377
+
+/ip fireweall mangle add 
+    chain=forward 
+    protocol=tcp 
+    tcp-flags=syn 
+    action=change-mss 
+    new-mss=clamp-to-pmtu 
+    passtrought=yes 
