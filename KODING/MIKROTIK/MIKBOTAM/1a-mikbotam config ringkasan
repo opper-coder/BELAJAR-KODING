@@ -1,7 +1,13 @@
 ------------------------------------------------------------------------------
 LOGIN MIKROTIK
-user: loginserver
-pass: serverpaisupuso
+
+SURYA = loginserver; serverpaisupuso;
+MikroBa = administrator1212; pasmikro;
+
+rumahmitha = sony; admin9999;
+mikbotam = mikbotam; adminpaisupuso;
+DDNS = sony; admin9999;
+
 ------------------------------------------------------------------------------
 MIKBOTAM M.I.T.H.A
 ------------------------------------------------------------------------------
