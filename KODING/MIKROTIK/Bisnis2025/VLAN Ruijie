@@ -1,0 +1,38 @@
+RUIJIE VLAN
+------------------------------------------------------------------ 
+IP RUIJIE: 
+10.44.77.200
+user: admin
+pass: admin
+
+ganti password saat akan mengkonfig dengan misalnya: pasmikro 
+
+membuat vlan 
+vlan settings > vlan members
+	membuat vlan access > switch=on add= 20,30,40,50,70,80
+	membuat vlan trunc > secara default kita di kasih vlan trunc=1
+
+mengkonfig vlan ke ether 
+vlan settings > vlan settings
+	Config ether1 = vlan TRUNC
+		port=eth1	
+		vlanType=TRUNC	
+		access VLAN=default 	
+		Native VLAN=VLAN1 	
+		permit vlan=select All (pilih semua (atau pilih vlan yang lewat di VLAN1))
+	
+	Config ether2 = vlan ACCESS
+		port=eth2	(bisa di isi beberapa eth sekaligus)
+		vlanType=TRUNC	(tetap trunc)
+		access VLAN=default (tidak bisa di ubah)
+		Native VLAN=VLAN 20 (vlan access)
+		permit vlan=VLAN1 dan VLAN20 (vlan trunc dan access)
+------------------------------------------------------------------
+DI MIKROTIK 
+	Interface > ADD > VLAN > 
+	name= vlan20
+	interface= ether4 (misalnya)		
+
+tambahkan semua VLAN di ruijie 20,30,40,50,70,80 ke mikrotik kecuali trunc tidak perlu di tambahkan karena mikrotik hanya receive  VLAN saja
+
+------------------------------------------------------------------
