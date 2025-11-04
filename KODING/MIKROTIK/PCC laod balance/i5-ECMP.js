@@ -1,6 +1,77 @@
 ECMP
 -------------------------------------------------
 DEFINISI
+loadbalance ECMP (Equal Cost Multy Path)
+- membagi bandwidth secara seimbang di layer 3 (memainkan IP)
+- sederhana mirip basic config
+- bedanya hanya:
+	- DHCP client masing-masing ISP
+	- NAT masquerade masing-masing ISP 
+	- Pengaturan Routes Untuk pembagian dan ratio
+-------------------------------------------------
+Untuk memulai maka buka jendela berikut
+	1. Interface
+	2. DHCP client
+	3. mangle
+	4. routes
+-------------------------------------------------
+1. Namakan ether sesuai ISP langsung di interface tanpa Bridge di Eth2 dst (ether1-SERVER untuk LAN)
+2. DHCP Client pada masing masing ISP (Default route=no, akan di buatkan di routes)
+3. DNS 8.8.8.8, 1.1.1., allow remote request=yes
+4. NAT masquerade pada masing-masing DHCP Client (ISP)
+-------------------------------------------------
+ROUTE (inti ECMP, ratio) v6
+    dst-address=0.0.0.0/0 gateway=<gateway-ISP>  distance=1 (add-arrow-down-gateway=<ISP2 - 3 dst>) comment="default route ECMP" 
+-------------------------------------------------
+ROUTE (inti ECMP, ratio) v7
+    dst-address=0.0.0.0/0 gateway=<gateway-ISP1>  distance=1 comment="default route ECMP" 
+    dst-address=0.0.0.0/0 gateway=<gateway-ISP2>  distance=1 comment="default route ECMP" 
+    dst-address=0.0.0.0/0 gateway=<gateway-ISP3 dst>  distance=1 comment="default route ECMP" 
+-------------------------------------------------
+ECMP  
+    pada V6
+    - anda tinggal add dengan "panah bawah" gateway-gateway sesuai jumlah ratio. 40: 20: 10 = 4:2:1
+    - contoh 4:2:1
+        192.168.3.1  			    -> ISP1 
+        192.168.3.1                 -> ISP1 
+        192.168.3.1  			    -> ISP1 
+        192.168.3.1  			    -> ISP1 
+        192.168.1.1%bridge2-ISP2  	-> ISP2
+        192.168.1.1%bridge2-ISP2  	-> ISP2
+        192.168.1.1%bridge3-ISP3  	-> ISP3
+    - pada V7 
+        Tambahkan jumlah default-route dengan jumlah stream-ratio 
+-------------------------------------------------
+SESSION ISP
+    sampai disini sudah ECMP, 
+    tapi agar setiap aplikasi harus keluar dan masuk pada satu ISP yang sama, 
+    maka perlu di buatkan routing-mangle menghindari session breaking,
+
+	mangle (mangle chain input output untuk tiap per ISP)
+		chain=input in-interface=dari-ISP1 action=mark-connection new-mark="ISP1-Conn" pastrhough=true (tips: copy per ISP)
+		chain=output connection-Mark=ISP1-Conn action=mark-routing new-mark="ISP1-routing" pastrhough=false (tips: copy per ISP)
+	routes (buat per ISP)
+		dst-adress=0.0.0.0/0 gateway=<IP-ISP1 (boleh pakai%)> routing-mark=ISP1-routing (tips: copy per ISP)
+-------------------------------------------------
+FAILOVER
+    pada semua route yang di buat untuk "mangle session"(role route yang ada routing mark: ISP-routing nya)  
+	check-gateway=ping 
+-------------------------------------------------
+TEST
+	- buka interface
+	- torch arahkan ke LAN > start 
+	- buka fast.com > hasilnya akumulasi > jika ingin yg sebenarnya maka config 1 ISP saja MAX: 1 
+-------------------------------------------------
+DHCP Server 
+Ether1 dengan IP 200.200.200.1/29 (7 Client)
+=================================================================================
+
+
+
+
+ECMP
+-------------------------------------------------
+DEFINISI
 loadbalance ECMP 
 - equal cost multy path
 - membagi bandwidth secara seimbang di layer 3 (memainkan IP)
