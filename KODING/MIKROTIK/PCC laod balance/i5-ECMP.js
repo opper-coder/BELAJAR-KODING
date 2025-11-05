@@ -65,9 +65,71 @@ TEST
 DHCP Server 
 Ether1 dengan IP 200.200.200.1/29 (7 Client)
 =================================================================================
+1. ECMP chat GPT 
+=================================================================================
 
+Penamaan Interface
+ether1 = LAN (ke switch / client)
+ether2 = ISP1
+ether3 = ISP2
+ether4 = ISP3
 
+2. DHCP Client untuk Tiap ISP
+/ip dhcp-client
+add interface=ether2 use-peer-dns=no add-default-route=no
+add interface=ether3 use-peer-dns=no add-default-route=no
+add interface=ether4 use-peer-dns=no add-default-route=no
 
+3. DNS
+/ip dns
+set servers=8.8.8.8,1.1.1.1 allow-remote-requests=yes
+
+4. NAT Masquerade 
+/ip firewall nat
+add chain=srcnat out-interface=ether2 action=masquerade comment="NAT ISP1"
+add chain=srcnat out-interface=ether3 action=masquerade comment="NAT ISP2"
+add chain=srcnat out-interface=ether4 action=masquerade comment="NAT ISP3"
+
+5. ECMP Route (RouterOS v7) Total 7 route, menggambarkan rasio 4:2:1.
+/ip route
+add dst-address=0.0.0.0/0 gateway=192.168.10.1 distance=1 comment="ISP1"
+add dst-address=0.0.0.0/0 gateway=192.168.10.1 distance=1 comment="ISP1"
+add dst-address=0.0.0.0/0 gateway=192.168.10.1 distance=1 comment="ISP1"
+add dst-address=0.0.0.0/0 gateway=192.168.10.1 distance=1 comment="ISP1"
+add dst-address=0.0.0.0/0 gateway=192.168.20.1 distance=1 comment="ISP2"
+add dst-address=0.0.0.0/0 gateway=192.168.20.1 distance=1 comment="ISP2"
+add dst-address=0.0.0.0/0 gateway=192.168.30.1 distance=1 comment="ISP3"
+
+pada V6
+    - anda tinggal add dengan "panah bawah" gateway-gateway sesuai jumlah ratio. 40: 20: 10 = 4:2:1
+
+6. Agar koneksi tidak “lompat-lompat ISP” (Anti Session Breaking) 
+
+/ip firewall mangle
+add chain=input in-interface=ether2 action=mark-connection new-connection-mark=ISP1-conn passthrough=yes
+add chain=input in-interface=ether3 action=mark-connection new-connection-mark=ISP2-conn passthrough=yes
+add chain=input in-interface=ether4 action=mark-connection new-connection-mark=ISP3-conn passthrough=yes
+
+add chain=output connection-mark=ISP1-conn action=mark-routing new-routing-mark=ISP1-route passthrough=no
+add chain=output connection-mark=ISP2-conn action=mark-routing new-routing-mark=ISP2-route passthrough=no
+add chain=output connection-mark=ISP3-conn action=mark-routing new-routing-mark=ISP3-route passthrough=no
+
+Kemudian buat route khusus untuk routing-mark. 
+Dan juga bila salah satu ISP mati maka route itu nonaktif sementara (Failover). pakai cek gateway
+
+/ip route
+add dst-address=0.0.0.0/0 gateway=192.168.10.1 routing-mark=ISP1-route check-gateway=ping
+add dst-address=0.0.0.0/0 gateway=192.168.20.1 routing-mark=ISP2-route check-gateway=ping
+add dst-address=0.0.0.0/0 gateway=192.168.30.1 routing-mark=ISP3-route check-gateway=ping
+
+7. DHCP Server untuk LAN
+buat di Ether1 dengan IP 200.200.200.1/29 (7 Client)
+
+/ip address add address=200.200.200.1/29 interface=ether1
+/ip pool add name=LAN-Pool ranges=200.200.200.2-200.200.200.7
+/ip dhcp-server add interface=ether1 address-pool=LAN-Pool name=LAN-DHCP
+/ip dhcp-server network add address=200.200.200.0/29 gateway=200.200.200.1 dns-server=8.8.8.8,1.1.1.1
+=================================================================================
 
 ECMP
 -------------------------------------------------
@@ -80,7 +142,7 @@ loadbalance ECMP
 - jika terjadi perubahan kecepatan, jumlah ISP, FUP, 
   kita hanya memainkan rasio pada satu role route di: 
 	- routelist
-=================================================================================
+-------------------
 TOPOLOGI
 	IP, Bridge, port, ratio ISP, DHCP client server
 -------------------
