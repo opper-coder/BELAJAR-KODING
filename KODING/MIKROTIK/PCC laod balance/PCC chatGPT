@@ -1,0 +1,124 @@
+# ==========================================================
+#  RouterOS v7 BASIC PCC Load Balance + Failover + Routing Table
+#  Dua ISP DHCP: ether2 (ISP1), ether3 (ISP2)
+#  LAN di ether1
+#  by ChatGPT (GPT-5)
+# ==========================================================
+
+# -------------------------------
+# 1. DHCP CLIENT untuk kedua ISP
+# -------------------------------
+/ip dhcp-client
+add interface=ether2 use-peer-dns=no use-peer-ntp=no add-default-route=no comment="DHCP ISP1"
+/ip dhcp-client
+add interface=ether3 use-peer-dns=no use-peer-ntp=no add-default-route=no comment="DHCP ISP2"
+/ip dhcp-client
+add interface=ether4 use-peer-dns=no use-peer-ntp=no add-default-route=no comment="DHCP ISP3"
+/ip dhcp-client
+add interface=ether5 use-peer-dns=no use-peer-ntp=no add-default-route=no comment="DHCP ISP4"
+/ip dhcp-client
+add interface=ether6 use-peer-dns=no use-peer-ntp=no add-default-route=no comment="DHCP ISP5"
+/ip dhcp-client
+add interface=ether7 use-peer-dns=no use-peer-ntp=no add-default-route=no comment="DHCP ISP6"
+/ip dhcp-client
+add interface=ether8 use-peer-dns=no use-peer-ntp=no add-default-route=no comment="DHCP ISP7"
+
+# Catatan:
+# - Gateway akan otomatis diperoleh dari DHCP masing-masing.
+# - Karena add-default-route=no, kita akan buat route manual (lebih aman).
+
+# -------------------------------
+# 2. Routing Table (RouterOS v7 Style)
+# -------------------------------
+/routing table
+add name=to_ISP1 fib
+add name=to_ISP2 fib
+add name=to_ISP3 fib
+add name=to_ISP4 fib
+add name=to_ISP5 fib
+add name=to_ISP6 fib
+add name=to_ISP7 fib
+
+# -------------------------------
+# 3. Route Utama untuk masing-masing ISP
+# -------------------------------
+# Catatan:
+# - Ganti gateway di bawah dengan gateway aktual (cek via /ip dhcp-client print detail)
+# - Gunakan format %interface agar tetap stabil meski IP gateway sama
+
+/ip route
+add dst-address=0.0.0.0/0 gateway=192.168.1.1%ether2 routing-table=to_ISP1 check-gateway=ping comment="ISP1 Route"
+add dst-address=0.0.0.0/0 gateway=192.168.1.1%ether3 routing-table=to_ISP2 check-gateway=ping comment="ISP2 Route"
+add dst-address=0.0.0.0/0 gateway=192.168.1.1%ether4 routing-table=to_ISP3 check-gateway=ping comment="ISP3 Route"
+add dst-address=0.0.0.0/0 gateway=192.168.1.1%ether5 routing-table=to_ISP4 check-gateway=ping comment="ISP4 Route"
+add dst-address=0.0.0.0/0 gateway=192.168.1.1%ether6 routing-table=to_ISP5 check-gateway=ping comment="ISP5 Route"
+add dst-address=0.0.0.0/0 gateway=192.168.1.1%ether7 routing-table=to_ISP6 check-gateway=ping comment="ISP6 Route"
+
+# -------------------------------
+# 4. Load Balance PCC (Per-Connection Classifier)
+# -------------------------------
+/ip firewall mangle
+# Langkah 1: Tandai koneksi berdasarkan alamat sumber (2 ISP berarti 2 bucket)
+/ip firewall mangle
+add chain=prerouting in-interface=ether1 connection-mark=no-mark \
+    per-connection-classifier=both-addresses-and-ports:4/0 \
+    action=mark-connection new-connection-mark=ISP1_conn passthrough=yes comment="PCC ke ISP1"
+/ip firewall mangle
+add chain=prerouting in-interface=ether1 connection-mark=no-mark \
+    per-connection-classifier=both-addresses-and-ports:4/1 \
+    action=mark-connection new-connection-mark=ISP2_conn passthrough=yes comment="PCC ke ISP2"
+/ip firewall mangle
+add chain=prerouting in-interface=ether1 connection-mark=no-mark \
+    per-connection-classifier=both-addresses-and-ports:4/2 \
+    action=mark-connection new-connection-mark=ISP3_conn passthrough=yes comment="PCC ke ISP3"
+/ip firewall mangle
+add chain=prerouting in-interface=ether1 connection-mark=no-mark \
+    per-connection-classifier=both-addresses-and-ports:4/3 \
+    action=mark-connection new-connection-mark=ISP4_conn passthrough=yes comment="PCC ke ISP4"
+
+# Langkah 2: Tandai routing berdasarkan koneksi yang sudah ditandai
+/ip firewall mangle
+add chain=prerouting connection-mark=ISP1_conn in-interface=ether1 \
+    action=mark-routing new-routing-mark=to_ISP1 passthrough=no comment="Route ke ISP1"
+add chain=prerouting connection-mark=ISP2_conn in-interface=ether1 \
+    action=mark-routing new-routing-mark=to_ISP2 passthrough=no comment="Route ke ISP2"
+add chain=prerouting connection-mark=ISP3_conn in-interface=ether1 \
+    action=mark-routing new-routing-mark=to_ISP3 passthrough=no comment="Route ke ISP3"
+add chain=prerouting connection-mark=ISP4_conn in-interface=ether1 \
+    action=mark-routing new-routing-mark=to_ISP4 passthrough=no comment="Route ke ISP4"
+
+# -------------------------------
+# 5. Default Route untuk koneksi keluar (global)
+# -------------------------------
+# Mikrotik akan pilih route aktif (yang gateway-nya hidup)
+/ip route
+add dst-address=0.0.0.0/0 gateway=192.168.1.1%ether2 distance=1 check-gateway=ping comment="Default ISP1"
+add dst-address=0.0.0.0/0 gateway=192.168.1.1%ether3 distance=2 check-gateway=ping comment="Default ISP2 (Failover)"
+add dst-address=0.0.0.0/0 gateway=192.168.1.1%ether4 distance=3 check-gateway=ping comment="Default ISP3 (Failover)"
+add dst-address=0.0.0.0/0 gateway=192.168.1.1%ether5 distance=4 check-gateway=ping comment="Default ISP4 (Failover)"
+
+# -------------------------------
+# 6. NAT (Masquerade)
+# -------------------------------
+/ip firewall nat
+add chain=srcnat out-interface=ether2 action=masquerade comment="NAT ISP1"
+add chain=srcnat out-interface=ether3 action=masquerade comment="NAT ISP2"
+add chain=srcnat out-interface=ether4 action=masquerade comment="NAT ISP3"
+add chain=srcnat out-interface=ether5 action=masquerade comment="NAT ISP4"
+
+# -------------------------------
+# 7. DNS Configuration
+# -------------------------------
+/ip dns set servers=8.8.8.8,1.1.1.1 allow-remote-requests=yes
+
+# -------------------------------
+# 8. DHCP Server untuk LAN (ether1)
+# -------------------------------
+IP di ether1 200.200.200.1/29
+
+# -------------------------------
+# 9. Logging
+# -------------------------------
+:log warning "✅ Basic PCC Load Balance + Failover (RouterOS v7) aktif!"
+:log info "Periksa /ip dhcp-client print untuk lihat gateway ISP"
+:log info "Gunakan /ip route print untuk lihat status route aktif"
