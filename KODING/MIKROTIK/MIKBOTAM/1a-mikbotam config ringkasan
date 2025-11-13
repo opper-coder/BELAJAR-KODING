@@ -25,8 +25,9 @@ Daftar Isi:
 	- Instalasi scrip connection dari ddns ke mikrotik 
 	- Config reconnect DDNS
 - Koneksi mikbotam-mikrotik-telegram
-	- Koneksi mikbotam-mikrotik
-	- Koneksi mikbotam-telegram
+	- Koneksi mikbotam-mikrotik via VPN
+	- Koneksi mikbotam-telegram via VPN
+	- di mikrotik instal 2 VPN lalu ISI parameter untuk mikrotik dan telegram di dashboard
 ------------------------------------------------------------------------------
 PERSIAPAN DATA
 ------------------------------------------------------------------------------
