@@ -9,6 +9,27 @@ mikbotam 	= mikbotam; adminpaisupuso;
 DDNS 		= sony; admin9999;
 
 ------------------------------------------------------------------------------
+OVERVIEW
+------------------------------------------------------------------------------
+pada dasarnya proses koneksi ini terjadi di 3 titik: 1. telegram dan bot 2. mikbotam 3. mikrotik. khusus mikbotam:
+---
+IP MikroTik: dari ddns yang sudah di install 
+Port: router
+User: router
+Pass: router
+---
+DNS Hotspot: Hotspot
+Router Name: identity router
+--- 
+owner: dari milubot
+ID TELEGRAM: dari milubot
+--- 
+token: dari bot father
+username bot: dari milubot atau dari username telegram kita (test keduanya)
+
+
+
+------------------------------------------------------------------------------
 MIKBOTAM M.I.T.H.A
 ------------------------------------------------------------------------------
 Daftar Isi:
