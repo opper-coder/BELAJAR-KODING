@@ -39,36 +39,36 @@ buka telegram dan cari name di bawah ini
 	---
 	ID TELEGRAM ANDA 	: 829979995  (data dipakai)
 	CHAT ID INI 		: 829979995 (abaikan)
-	NAMA ANDA 		: Sony Harsono (abaikan)
+	NAMA ANDA 			: Sony Harsono (abaikan)
 	USERNAME ANDA 		: aqilizza (data dipakai)
 2. lalu buat bot di botfather dan dapatkan token dan data bot
 	/start
 	/newbot
-		nama 		: suryabot
-		username 	: surya_hotspot_bot
-		token 		: 7029769985:AAFFChV4NHXus98vF8h9OTu6AXuYPj3K5P8
+		nama 			: suryabot
+		username 		: surya_hotspot_bot
+		token 			: 7029769985:AAFFChV4NHXus98vF8h9OTu6AXuYPj3K5P8
 3. data mikrotik
-	identity 		: Surya-Hotspot
+	identity 			: Surya-Hotspot
 	dns hotspot 		: link.net (untuk qrcode)
 	mikrotik user 		: administrator1212
 	mikrotik pass 		: passmikro
 ----------------------------------
 login ke rumahmitha.com, lalu input data di dashboard LANGGANAN
-	name 			: soni harsono
-	user 			: sony
-	pass 			: 
+	name 				: soni harsono
+	user 				: sony
+	pass 				: 
 		admin8888, 
 		admin9999,
 	- top up pakai dana
 	- beli product mikbotam
 	- tunggu hingga proses selesai
 	kita di kasih link DASHBOARD MIKBOTAM 
-		login 		:
-		user 		: mitha
-		pass 		: admin8888 
+		login 			:
+		user 			: mitha
+		pass 			: admin8888 
 	UPDATE PASSWORD BARU
-		user 		: mikbotam
-		pass 		: adminMikbotam9999
+		user 			: mikbotam
+		pass 			: adminMikbotam9999
 ----------------------------------
 login ke hostddns.us 
 	first: sony 
@@ -81,9 +81,9 @@ login ke hostddns.us
 	buat vpn remote
 	tab VPN remote
 		- order VPN (bukan order DDNS)
-			- user 	: secret 
-			- pass 	: secret
-			- port 	: samakan dengan service API mikrotik
+			- user 		: secret (bebas)
+			- pass 		: secret (samakan saja dg user)
+			- port 		: samakan dengan service API mikrotik
 		- order dua buah: untuk mikrotik dan mikbotam (tiga buah jika ada remote untuk OLT)
 		- lalu masuk ke tab list VPN 
 			- ada dua produk pesanan kita tadi klik manage > di kasih scrip masing2
@@ -92,12 +92,12 @@ login ke hostddns.us
 Auto reconnect DDNS
 		- tools > netwatch > add 
 		tab HOST
-		- host 		: [IP VPN server IP public]
-		- interval 	: 30-60 detik
-		- timeout 	: 1000 ms
+		- host 			: [IP VPN server IP public]
+		- interval 		: 30-60 detik
+		- timeout 		: 1000 ms
 		tab UP script:
 			:log warning "sudah up kembali"
-		tab DOWN script:
+		tab DOWN script	:
 			/interface disable [nama INTERFACE] (misal:  panda@mytunnel.id, IP VPN CHR cloud kita)
 			/interface enable [nama INTERFACE] (misal:  panda@mytunnel.id, IP VPN CHR cloud kita)
 		cek di github ku: mikrotik/remote
@@ -113,18 +113,18 @@ KONEKSI MIKBOTAM-MIKROTIK
 	- login
 	- isi parameter berikut
 		ip mikrotik 	: ddns mikrotik(dari DDNS)
-		port 		: ddns port (sebelahnya)
+		port 			: ddns port (sebelahnya)
 		user mikrotik 	: administrator1212
 		pass mikrotik 	: pasmikro
 	- klik test koneksi jika sudah benar maka CONNECTED
 	- isikan data 
 		dns hotspot 	: link.net
-		routername 	: sesuai system identity
+		routername 		: sesuai system identity
 	- isikan data user telegram
 		name profil telegram : (wajib di set name di telegram profil)
 		id telegram  	: (dari milubot)
 	- isikan data bot telegram
-		token  		: xxx
+		token  			: xxx
 		username-bot 	: saat new-bot dapat name 
 - jika sudah dinputkan semua data yang sudah di siapkan maka DASHBOARD sudah dapat dibuka secara penuh.
 ----------------------------------
@@ -136,9 +136,9 @@ TEST TELEGRAM BOT
 	- ada response 
 		"selamat datang ADMIN"
 	- /my bot
-	- pilih 	: surya_hotspot_bot
-	- /editpic	: gambar contact bot
-	- /editcommand 	: 
+	- pilih 			: surya_hotspot_bot
+	- /editpic			: gambar contact bot
+	- /editcommand 		: 
 		kirim pesan dibawah ini (beserta enter dan bagian kanan huruf kecil semua)
 	================================
 		menu - 1. VOUCHER
@@ -167,10 +167,10 @@ sederhananya
 		- disitu akun bot mu berada 
 		- ketik /revoke (untuk dapatkan token baru) kemudian lakukan koneksi ulang seperti biasa di atas
 	dashboard mikbotam
-		Username Owner: (dari username bot telegram anda (buka di surya_hotspot_bot))
-		ID Telegram Owner: (dari milubot)
-		Token Bot: 
-		Username Bot: 
+		Username Owner		: (dari username bot telegram anda (buka di surya_hotspot_bot))
+		ID Telegram Owner	: (dari milubot)
+		Token Bot			: 
+		Username Bot		: 
 ------------------------------------------------------------------------------ 
 BIKIN PROFIL DAN TEMPLAT-VOUCHER
 - /hotspot/profil
