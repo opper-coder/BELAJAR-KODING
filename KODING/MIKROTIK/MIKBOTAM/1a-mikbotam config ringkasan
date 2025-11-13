@@ -1,20 +1,20 @@
 ------------------------------------------------------------------------------
 LOGIN MIKROTIK
 
-SURYA = loginserver; serverpaisupuso;
-MikroBa = administrator1212; pasmikro;
+SURYA 		= loginserver; serverpaisupuso;
+MikroBa 	= administrator1212; pasmikro;
 
-rumahmitha = sony; admin9999;
-mikbotam = mikbotam; adminpaisupuso;
-DDNS = sony; admin9999;
+rumahmitha 	= sony; admin9999;
+mikbotam 	= mikbotam; adminpaisupuso;
+DDNS 		= sony; admin9999;
 
 ------------------------------------------------------------------------------
 MIKBOTAM M.I.T.H.A
 ------------------------------------------------------------------------------
 Daftar Isi:
-- pastikan mikrotik sudah di config dasar, hotspot dan PPPoE
+- Mikrotik sudah di config dasar, hotspot dan PPPoE
 - persiapkan data di notepad/sublime dari 3 sumber:
-	1. milubot 	: caritahu ID telegram (bisa menggunakan cara lain)
+	1. milubot 		: caritahu ID telegram (bisa menggunakan cara lain)
 	2. botfather 	: bikin bot untuk mikbotam
 	3. mikrotik  	: data koneksi ke mikbotam
 - MIKBOTAM DASHBOARD
