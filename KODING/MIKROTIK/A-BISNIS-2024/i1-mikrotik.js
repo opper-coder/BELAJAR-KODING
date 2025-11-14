@@ -103,13 +103,17 @@ BASIC CONFIG
 		/interface enable [nama INTERFACE] (misal:  panda@mytunnel.id, IP VPN CHR cloud kita)
 15. DHCP ROGUE
 -------------------
-	ROGUE FILTER Terbaru dari chatGPT
+ROGUE FILTER Terbaru dari chatGPT
+Tujuan agar semua Ether- ke CLIENT hanya akan mengirim DHCP tapi boleh tidak menerima
+cukup 5 langkah saja:
 
-
-
-
-??????????????????????
-
+1. Buat Bridge-Client
+2. masukkan port2 client dengan mematikan HW Offload ke bridge
+3. /interface list add List name=LIST-CLIENT. 
+4. masukkan semua ether-ether yg menuju ke CLIENT ke LIST-CLIENT barusan
+5. buat dua konfig berikut:
+	/bridge filters add chain=forward in-interface-list=LIST-CLIENT mac-protocol-num=800(ip) atau ip saja src-port=67 protocol=17(udp) atau udp saja tab action=drop apply OK
+ 	/bridge filters add chain=forward in-interface-list=LIST-CLIENT mac-protocol-num=800(ip) atau ip saja src-port=67 dst-port=68 protocol=17(udp) atau udp saja tab action=drop apply OK
 
 -------------------
 adalah ada DHCP tandingan pd jaringan local kita 
