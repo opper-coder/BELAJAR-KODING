@@ -103,6 +103,15 @@ BASIC CONFIG
 		/interface enable [nama INTERFACE] (misal:  panda@mytunnel.id, IP VPN CHR cloud kita)
 15. DHCP ROGUE
 -------------------
+	ROGUE FILTER Terbaru dari chatGPT
+
+
+
+
+??????????????????????
+
+
+-------------------
 adalah ada DHCP tandingan pd jaringan local kita 
 hal ini bisa membuat Connect tidak dapat internet, 
 atau bahkan susah login tapi tidak dapat loginpage, 
