@@ -44,6 +44,7 @@ BASIC CONFIG
 	- bisa di buat di mikbotam aja
 -----------------------------------------------------------------------------------
 11. CLOCK 
+	sebelum itu matiakn dulu watchdog di /system watchdog
 	system > clock
 	> system zone auto detect: matikan
 	> system SNTP client > enable > 
