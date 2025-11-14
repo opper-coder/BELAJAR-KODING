@@ -44,7 +44,8 @@ BASIC CONFIG
 	- bisa di buat di mikbotam aja
 -----------------------------------------------------------------------------------
 11. CLOCK 
-	sebelum itu matiakn dulu watchdog di /system watchdog
+	sebelum itu matikan dulu watchdog di /system watchdog dan automatoc supout
+	agar tidak mudah restart sendiri. by bilhanet: Konfigurasi Dasar Mikrotik ROS V7 untuk PPPoE dan Hotspot Voucher
 	system > clock
 	> system zone auto detect: matikan
 	> system SNTP client > enable > 
