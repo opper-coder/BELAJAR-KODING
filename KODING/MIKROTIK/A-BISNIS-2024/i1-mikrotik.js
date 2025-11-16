@@ -1,5 +1,8 @@
 BASIC CONFIG
 ------------------------------------------------------------------------------
+cara backup salah satu tabel role dan menghasilkan semua data dalam tabel tersebut dan di simpan dalam .rsc dan dapat di jalankan di terminal 
+	/ppp profile export file=pppoe-profile-backup
+------------------------------------------------------------------------------
 1. RESET config:
 	a. system user grup=full
 	b. system identity
