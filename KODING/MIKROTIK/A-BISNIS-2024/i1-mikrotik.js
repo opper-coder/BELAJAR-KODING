@@ -72,13 +72,14 @@ BASIC CONFIG
 12. no share again 
 	+ batasi share kembali ke perangkat lain
 	- berdampak pada repeter, HTB estafet, wisp dll (cekidot)
-	ip > firewall > mangle 
-		chain: postrouting
-		out interface: bridge-LAN (jalur distribusi)
-		action > change TTL
-		new TTL: 1 (boolean)
-		passtrhrough: false (citraweb), true (channel lain)
-		Apply
+
+	/ip firewall mangle
+	add chain=forward ttl=63(equal) action=mark-connection new-connection-mark=tethering passthrough=yes
+	
+	/ip firewall filter
+	add chain=forward connection-mark=tethering action=drop
+
+
 13. Restart 1 hari sekali terminal
 	/system script
 	add name=restart-router policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive source="/system reboot"
