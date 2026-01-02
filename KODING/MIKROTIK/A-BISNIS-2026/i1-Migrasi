@@ -1,0 +1,81 @@
+wifi
+------------------------------------------------- 
+1. Topologi Migrasi 
+2. Badar
+3. loadbalance
+4. migrasi ke 5009
+5. mahavikri
+------------------------------------------------- 
+VLAN 
+	100 = Distribusi PPPoE
+	200 = Distribusi Hotspot
+	600 = ISP dari luar rumah
+	800 = ISP dalam rumah 
+
+=================================================
+MIGRASI 
+    Mikrotik 1100 LB
+        Ether1      = Ke Mikrotik Utama
+        Ether2      = ISP1
+        Ether3      = ISP2
+        Ether4      = ISP3
+        Ether5      = ISP4
+        Ether6      = ISP5
+        Ether7      = ISP6
+        Ether8      = ISP7
+        Ether9      = ISP8
+        Ether10     = ISP9
+        Ether11     = ISP10
+        Ether12     = ISP11 / PC Remote
+        Ether13     = ISPx Trunc from Switch-A (Tag antara 600, 800)
+    Mikrotik 5009
+        Ether       = ISP from LB 
+        Ether       = 2 - 8 Hotspot dan PPPoE (ada vlan-100)
+    Switch-A
+        Transparent = Ether1 (Fr 5009 Srv)  : 100, hotspot (distribusi ke Switch ini)
+        Transparent = Ether2 (To Badar)     : 100, 600, 601 hotspot (Distribusi ke HTB=ISP + SERVER)
+        Transparent = Ether3 (To 1100 LB)   : 600, 601 | 800, 801, 802, 803 (Di Konsumsi 1100)
+        Transparent = Ether4 (To Tinakin)   : 650 - 699 (ISP lagi persiapan) 
+        Access      = Ether5 (ISP12)        : tag-800
+        Access      = Ether6 (ISP13)        : tag-801
+        Access      = Ether7 (ISP14)        : tag-802
+        Access      = Ether8 (ISP15)        : tag-803 (asli)
+        Access      = Ether8 (ISP15)        : tag-600 (sementara set 600, jika selesai ubah ke 803)
+    Switch-B
+        Transparent = Ether1 (To Padang )   : 100, 600, 601, hotspot (Di Kirim Ke HTB Padang)
+        Transparent = Ether2 (To UPLINK1)   : 100, hotspot 
+        Transparent = Ether3 (To UPLINK2)   : 100, hotspot 
+        Access      = Ether4 (ISP16)        : tag-600 
+        Access      = Ether5 (ISP17)        : tag-601 
+=================================================
+TES BADAR
+    - mikrotik 5009 latihan -> hotspot | pppoe-100
+    - switch-A -> Setting sesuai di atas
+    - switch-B -> Setting sesuai di atas
+    - hubungkan LAN ISP-indibiz-100 -> ke ether4 Switch-B
+    - hubungkan LAN switch-A Ether2 <> switch-B Ether1   
+    - hubungkan LAN modem surya-A hotspot | PPPoE <> switch-B Ether2
+    - hubungkan LAN PC <> Switch-A Ether8 (setting latihan 600)
+    - jika fix kembalikan setting 803 switch-A di ether8 jadi 803 
+-------------------------------------------------
+MIKROTIK 5009 (Clone system migrasi) 
+    - basic config (lengkapi lagi ) 
+    - hotspot, hotspot-200, pppoe-100 
+    - ttl 
+    - queue-type=cake 
+    - VPN=remote, mikbotam, reconnect 
+    - backup email 
+    - isolir pppoe 
+    - login page 
+    - hotspot=backup-restore 
+    - pppoe=backup-restore 
+    - kemanan=usar pass, grup winbox, services, tidak tampil dalam neighbor lain 
+    - RoMon 
+    - lengkapi lagi 
+    - ganti voucher 
+-------------------------------------------------
+MIKROTIK 1100 
+    - konfig jadi PCC 
+    - kalau perlu gabungkan dengan ECMP
+=================================================
+
