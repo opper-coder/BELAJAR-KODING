@@ -79,3 +79,15 @@ MIKROTIK 1100
     - kalau perlu gabungkan dengan ECMP
 =================================================
 
+SEKARANG UNTUK KONSEP ARSITEKTUR NYA LUMAYAN UNIQ
+
+masquerade hanya di 1100
+management user di 5009
+profile mengguanakan cake
+koneksi PTP/30
+silahkan cek scrip nya selanjutnya
+
+
+
+
+
