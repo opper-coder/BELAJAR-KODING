@@ -1,28 +1,30 @@
+Access RB5009
+
 # =================================================
-# RB5009UG+S+IN – ACCESS ROUTER
-# Hotspot (UNTAGGED) + PPPoE (VLAN 100) + CAKE
+# RB5009 – ACCESS ROUTER
+# HOTSPOT + PPPoE VLAN 100 + CAKE
 # =================================================
 
-############################
+## ----------------------------------- ##
 # IDENTITY
-############################
+## ----------------------------------- ##
 /system identity
 set name=RB5009-ACCESS
 
-############################
-# LINK KE CORE (RB1100)
-############################
+## ----------------------------------- ##
+# LINK KE CORE
+## ----------------------------------- ##
 /ip address
-add address=10.10.10.2/30 interface=ether1 comment="Link ke RB1100"
+add address=10.10.10.2/30 interface=ether1
 
 /ip route
 add dst-address=0.0.0.0/0 gateway=10.10.10.1 check-gateway=ping
 
-############################
-# BRIDGE (ALL TRUNK)
-############################
+## ----------------------------------- ##
+# BRIDGE TRUNK
+## ----------------------------------- ##
 /interface bridge
-add name=bridge-LAN protocol-mode=rstp fast-forward=yes comment="Bridge User"
+add name=bridge-LAN protocol-mode=rstp
 
 /interface bridge port
 add bridge=bridge-LAN interface=ether2
@@ -33,11 +35,11 @@ add bridge=bridge-LAN interface=ether6
 add bridge=bridge-LAN interface=ether7
 add bridge=bridge-LAN interface=ether8
 
-############################
+## ----------------------------------- ##
 # HOTSPOT (UNTAGGED)
-############################
+## ----------------------------------- ##
 /ip address
-add address=100.1.1.1/22 interface=bridge-LAN comment="Hotspot Gateway"
+add address=100.1.1.1/22 interface=bridge-LAN
 
 /ip pool
 add name=pool-hotspot ranges=100.1.1.10-100.1.3.250
@@ -48,110 +50,75 @@ add name=dhcp-hotspot interface=bridge-LAN address-pool=pool-hotspot lease-time=
 /ip dhcp-server network
 add address=100.1.1.0/22 gateway=100.1.1.1 dns-server=10.10.10.1
 
-############################
+## ----------------------------------- ##
 # VLAN PPPoE 100
-############################
+## ----------------------------------- ##
 /interface vlan
-add name=vlan-pppoe vlan-id=100 interface=bridge-LAN comment="PPPoE VLAN"
+add name=vlan-pppoe vlan-id=100 interface=bridge-LAN
 
 /ip address
-add address=200.1.1.1/23 interface=vlan-pppoe comment="PPPoE Gateway"
+add address=200.1.1.1/23 interface=vlan-pppoe
 
-############################
-# VLAN FILTERING (ALL PORT TRUNK)
-############################
 /interface bridge
 set bridge-LAN vlan-filtering=yes
 
 /interface bridge vlan
-add bridge=bridge-LAN vlan-ids=100 \
-    tagged=bridge-LAN,ether2,ether3,ether4,ether5,ether6,ether7,ether8
+add bridge=bridge-LAN vlan-ids=100 tagged=bridge-LAN,ether2,ether3,ether4,ether5,ether6,ether7,ether8
 
-############################
-# DNS (FORWARD KE CORE)
-############################
+## ----------------------------------- ##
+# DNS
+## ----------------------------------- ##
 /ip dns
 set servers=10.10.10.1 allow-remote-requests=yes
 
-############################
-# CAKE – HOTSPOT
-############################
+## ----------------------------------- ##
+# CAKE QUEUE
+## ----------------------------------- ##
 /queue type
-add name=cake-hotspot kind=cake \
-    cake-diffserv=diffserv4 \
-    cake-nat=yes \
-    cake-flow-mode=dual-srchost \
-    cake-ack-filter=filter
+add name=cake-hotspot kind=cake cake-diffserv=diffserv4 cake-nat=yes cake-flow-mode=dual-srchost cake-ack-filter=filter
+add name=cake-pppoe   kind=cake cake-diffserv=diffserv4 cake-nat=no  cake-flow-mode=dual-srchost cake-ack-filter=filter
 
+## ----------------------------------- ##
+# HOTSPOT
+## ----------------------------------- ##
 /ip hotspot profile
-add name=hs-prof \
-    hotspot-address=100.1.1.1 \
-    dns-name=login.hotspot \
-    html-directory=hotspot
+add name=hs-prof hotspot-address=100.1.1.1 dns-name=login.hotspot html-directory=hotspot
 
 /ip hotspot
-add name=hotspot1 \
-    interface=bridge-LAN \
-    address-pool=pool-hotspot \
-    profile=hs-prof
+add name=hotspot1 interface=bridge-LAN address-pool=pool-hotspot profile=hs-prof
 
 /ip hotspot user profile
-add name=HOTSPOT-1M \
-    shared-users=1 \
-    rate-limit=1M/1M \
-    queue-type=cake-hotspot/cake-hotspot
+add name=HOTSPOT-1M shared-users=1 rate-limit=1M/1M queue-type=cake-hotspot/cake-hotspot
 
-############################
-# CAKE – PPPoE
-############################
-/queue type
-add name=cake-pppoe kind=cake \
-    cake-diffserv=diffserv4 \
-    cake-nat=no \
-    cake-flow-mode=dual-srchost \
-    cake-ack-filter=filter
-
+## ----------------------------------- ##
+# PPPoE SERVER
+## ----------------------------------- ##
 /ip pool
 add name=pool-pppoe ranges=200.1.1.10-200.1.2.250
 
 /ppp profile
-add name=PPPOE-3M-CAKE \
-    local-address=200.1.1.1 \
-    remote-address=pool-pppoe \
-    dns-server=10.10.10.1 \
-    rate-limit=1M/3M \
-    queue-type=cake-pppoe/cake-pppoe \
-    only-one=yes
+add name=PPPOE-3M-CAKE local-address=200.1.1.1 remote-address=pool-pppoe \
+    dns-server=10.10.10.1 rate-limit=1M/3M \
+    queue-type=cake-pppoe/cake-pppoe only-one=yes
 
 /interface pppoe-server server
-add service-name=pppoe-vlan100 \
-    interface=vlan-pppoe \
-    default-profile=PPPOE-10M-CAKE \
-    one-session-per-host=yes
+add service-name=pppoe-vlan100 interface=vlan-pppoe \
+    default-profile=PPPOE-3M-CAKE one-session-per-host=yes
 
-############################
-# FIREWALL – ANTI PPPoE BOCOR
-############################
+## ----------------------------------- ##
+# ANTI PPPoE BOCOR
+## ----------------------------------- ##
 /ip firewall filter
-add chain=forward in-interface=bridge-LAN protocol=pppoe-discovery action=drop \
-    comment="ANTI BOCOR: PPPoE Discovery UNTAGGED"
+add chain=forward in-interface=bridge-LAN protocol=pppoe-discovery action=drop
+add chain=forward in-interface=bridge-LAN protocol=pppoe-session action=drop
 
-add chain=forward in-interface=bridge-LAN protocol=pppoe-session action=drop \
-    comment="ANTI BOCOR: PPPoE Session UNTAGGED"
-
-############################
-# FIREWALL DASAR
-############################
+## ----------------------------------- ##
+# FIREWALL INPUT
+## ----------------------------------- ##
 add chain=input connection-state=established,related action=accept
 add chain=input connection-state=invalid action=drop
-add chain=input in-interface=bridge-LAN protocol=icmp action=accept
+add chain=input protocol=icmp action=accept
 add chain=input in-interface=bridge-LAN action=accept
 add chain=input action=drop
 
-############################
-# CATATAN
-# - NAT DI CORE (RB1100)
-# - SEMUA ETHER2–8 = TRUNK
-# - OLT / SWITCH / ONT AMAN
-############################
-
+# ===================================================================
