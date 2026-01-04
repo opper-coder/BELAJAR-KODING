@@ -1,55 +1,98 @@
-# -------------------------------------------
-# RB1100AHx4 – CORE + PCC + NAT (ROS v6)
-# -------------------------------------------
+Core RB1100
+Topology terbaru januari 2016 
 
-## IDENTITY
+[ ISP1 | ISP2 | ISP3 ]
+          ↓
+     RB1100AHx4 (CORE)
+   - PCC
+   - NAT
+   - Proteksi PPS
+   - Conntrack
+          ↓
+     RB5009UG+S+IN (ACCESS)
+   - Bridge Trunk
+   - Hotspot (untagged)
+   - PPPoE (VLAN 100)
+   - CAKE per user
+
+
+# =================================================
+# RB1100AHx4 – CORE ROUTER
+# PCC 3 ISP (2:2:1) + NAT + PPS PROTECTION
+# =================================================
+
+# -------------------------------------- #
+# IDENTITY
+# -------------------------------------- #
 /system identity
-set name=RB1100-MikroBa
+set name=RB1100-CORE
 
-# IP LINK KE RB5009
+# -------------------------------------- #
+# LINK KE RB5009 PtP
+# -------------------------------------- #
 /ip address
-add address=10.10.10.1/30 interface=ether1 comment="Link ke RB5009"
+add address=10.10.10.1/30 interface=ether1 comment="Link to RB5009"
 
-# ROUTE BALIK KE RB5009 (tambahkan semua segmen LAN dari 5009 via gateway tujuan)
+# -------------------------------------- #
+# ROUTE LAN DARI RB5009
+# route balik dari RB1100 ke client RB5009. agar tidak kacau
+# -------------------------------------- #
 /ip route
-add dst-address=100.1.1.0/22 gateway=10.10.10.2 comment="Route Hotspot via RB5009"
-add dst-address=200.1.1.0/23 gateway=10.10.10.2 comment="Route PPPoE via RB5009"
+add dst-address=100.1.1.0/22 gateway=10.10.10.2 comment="Hotspot via RB5009"
+add dst-address=200.1.1.0/23 gateway=10.10.10.2 comment="PPPoE via RB5009"
 
-# DHCP CLIENT ISP
+# -------------------------------------- #
+# DHCP CLIENT ISP (default route no)
+# -------------------------------------- #
 /ip dhcp-client
-add interface=ether2 add-default-route=no use-peer-dns=no use-peer-ntp=no comment="ISP1"
-add interface=ether3 add-default-route=no use-peer-dns=no use-peer-ntp=no comment="ISP2"
-add interface=ether4 add-default-route=no use-peer-dns=no use-peer-ntp=no comment="ISP3"
+add interface=ether2 add-default-route=no use-peer-dns=no comment="ISP1"
+add interface=ether3 add-default-route=no use-peer-dns=no comment="ISP2"
+add interface=ether4 add-default-route=no use-peer-dns=no comment="ISP3"
 
-# MANGLE – BYPASS (tambahkan semua segmen LAN dari 5009, paling atas sebelum PCC, agar bebas PCC, PCC hanya ISP)
+# -------------------------------------- #
+# FIREWALL RAW (drop pps awal kemanan dns dari internet)
+# -------------------------------------- #
+/ip firewall raw
+add chain=prerouting connection-state=invalid action=drop
+add chain=prerouting protocol=udp dst-port=53 in-interface=ether2 action=drop
+add chain=prerouting protocol=udp dst-port=53 in-interface=ether3 action=drop
+add chain=prerouting protocol=udp dst-port=53 in-interface=ether4 action=drop
+
+# -------------------------------------- #
+# MANGLE – BYPASS INTERNAL (komunikasi antar local tidak perlu ikut masuk PCC, letakkan sebelum PCC)
+# -------------------------------------- #
 /ip firewall mangle
-add chain=prerouting dst-address-type=local action=accept passthrough=no comment="Bypass local router"
-add chain=prerouting dst-address=10.10.10.0/30 action=accept passthrough=no comment="Bypass RB5009 link"
-add chain=prerouting dst-address=100.1.1.0/22 action=accept passthrough=no comment="Bypass Hotspot users"
-add chain=prerouting dst-address=200.1.1.0/23 action=accept  passthrough=no comment="Bypass PPPoE users"
+add chain=prerouting dst-address-type=local action=accept passthrough=no
+add chain=prerouting dst-address=10.10.10.0/30 action=accept passthrough=no
+add chain=prerouting dst-address=100.1.1.0/22 action=accept passthrough=no
+add chain=prerouting dst-address=200.1.1.0/23 action=accept passthrough=no
 
-# PCC CONNECTION MARK, Rasio ISP1:ISP2:ISP3 = 2:2:1 (5 bucket)
-add chain=prerouting in-interface=ether1 connection-state=new \
-    dst-address-type=!local per-connection-classifier=both-addresses-and-ports:5/0 \
+# -------------------------------------- #
+# PCC CONNECTION MARK (2:2:1)
+# -------------------------------------- #
+add chain=prerouting in-interface=ether1 connection-state=new dst-address-type=!local \
+    per-connection-classifier=both-addresses-and-ports:5/0 \
     action=mark-connection new-connection-mark=ISP1_conn passthrough=yes
 
-add chain=prerouting in-interface=ether1 connection-state=new \
-    dst-address-type=!local per-connection-classifier=both-addresses-and-ports:5/1 \
+add chain=prerouting in-interface=ether1 connection-state=new dst-address-type=!local \
+    per-connection-classifier=both-addresses-and-ports:5/1 \
     action=mark-connection new-connection-mark=ISP1_conn passthrough=yes
 
-add chain=prerouting in-interface=ether1 connection-state=new \
-    dst-address-type=!local per-connection-classifier=both-addresses-and-ports:5/2 \
+add chain=prerouting in-interface=ether1 connection-state=new dst-address-type=!local \
+    per-connection-classifier=both-addresses-and-ports:5/2 \
     action=mark-connection new-connection-mark=ISP2_conn passthrough=yes
 
-add chain=prerouting in-interface=ether1 connection-state=new \
-    dst-address-type=!local per-connection-classifier=both-addresses-and-ports:5/3 \
+add chain=prerouting in-interface=ether1 connection-state=new dst-address-type=!local \
+    per-connection-classifier=both-addresses-and-ports:5/3 \
     action=mark-connection new-connection-mark=ISP2_conn passthrough=yes
 
-add chain=prerouting in-interface=ether1 connection-state=new \
-    dst-address-type=!local per-connection-classifier=both-addresses-and-ports:5/4 \
+add chain=prerouting in-interface=ether1 connection-state=new dst-address-type=!local \
+    per-connection-classifier=both-addresses-and-ports:5/4 \
     action=mark-connection new-connection-mark=ISP3_conn passthrough=yes
 
-# ROUTING MARK
+# -------------------------------------- #
+# PCC ROUTING MARK
+# -------------------------------------- #
 add chain=prerouting in-interface=ether1 connection-mark=ISP1_conn \
     action=mark-routing new-routing-mark=to_ISP1 passthrough=no
 
@@ -59,54 +102,33 @@ add chain=prerouting in-interface=ether1 connection-mark=ISP2_conn \
 add chain=prerouting in-interface=ether1 connection-mark=ISP3_conn \
     action=mark-routing new-routing-mark=to_ISP3 passthrough=no
 
-# ROUTE PCC 
+# -------------------------------------- #
+# PCC ROUTE
+# -------------------------------------- #
 /ip route
-add gateway=192.168.1.1%ether2 routing-mark=to_ISP1 check-gateway=ping comment="PCC ISP1"
-add gateway=192.168.1.1%ether3 routing-mark=to_ISP2 check-gateway=ping comment="PCC ISP2"
-add gateway=192.168.1.1%ether4 routing-mark=to_ISP3 check-gateway=ping comment="PCC ISP3"
+add gateway=192.168.1.1%ether2 routing-mark=to_ISP1 check-gateway=ping
+add gateway=192.168.1.1%ether3 routing-mark=to_ISP2 check-gateway=ping
+add gateway=192.168.1.1%ether4 routing-mark=to_ISP3 check-gateway=ping
 
+# -------------------------------------- #
 # DEFAULT ROUTE FAILOVER
-add gateway=192.168.1.1%ether2 distance=1 check-gateway=ping comment="ISP1 Primary"
-add gateway=192.168.1.1%ether3 distance=2 check-gateway=ping comment="ISP2 Backup"
-add gateway=192.168.1.1%ether4 distance=3 check-gateway=ping comment="ISP3 Backup"
+# -------------------------------------- #
+add gateway=192.168.1.1%ether2 distance=1 check-gateway=ping
+add gateway=192.168.1.1%ether3 distance=2 check-gateway=ping
+add gateway=192.168.1.1%ether4 distance=3 check-gateway=ping
 
-# NAT – PER SUBNET (semua segmen LAN dari 5009, tempatkan teratas jika ada nat lain)
+# -------------------------------------- #
+# NAT (bukan global pakai out interface, tambahkan dimasing2 segmen local. dilakukan hanya di RB1100)
+# -------------------------------------- #
 /ip firewall nat
-add chain=srcnat src-address=100.1.1.0/22 action=masquerade comment="NAT Hotspot"
-add chain=srcnat src-address=200.1.1.0/23 action=masquerade comment="NAT PPPoE"
+add chain=srcnat src-address=100.1.1.0/22 action=masquerade comment="Hotspot NAT"
+add chain=srcnat src-address=200.1.1.0/23 action=masquerade comment="PPPoE NAT"
 
-# DNS
-/ip dns
-set allow-remote-requests=yes servers=8.8.8.8,1.1.1.1
-
-# (Optional) batasi DNS Hanya dari RB5009
-/ip firewall filter
-add chain=input src-address=10.10.10.2 protocol=udp dst-port=53 action=accept
-add chain=input src-address=10.10.10.2 protocol=tcp dst-port=53 action=accept
-
-# OPTIMASI --------------------------------------------> 
-
-# BASIC FIREWALL PROTECTION
-/ip firewall filter
-add chain=input in-interface=ether2 protocol=udp dst-port=53 action=drop comment="Block DNS UDP ISP1"
-add chain=input in-interface=ether3 protocol=udp dst-port=53 action=drop comment="Block DNS UDP ISP2"
-add chain=input in-interface=ether4 protocol=udp dst-port=53 action=drop comment="Block DNS UDP ISP3"
-
-add chain=input in-interface=ether2 protocol=tcp dst-port=53 action=drop comment="Block DNS TCP ISP1"
-add chain=input in-interface=ether3 protocol=tcp dst-port=53 action=drop comment="Block DNS TCP ISP2"
-add chain=input in-interface=ether4 protocol=tcp dst-port=53 action=drop comment="Block DNS TCP ISP3"
-
-# (Wajib) Mengurangi PPS sebelum conntrack. Ini menyelamatkan CPU saat spike.
-/ip firewall raw
-add chain=prerouting connection-state=invalid action=drop
-add chain=prerouting protocol=udp dst-port=53 in-interface=ether2 action=drop
-add chain=prerouting protocol=udp dst-port=53 in-interface=ether3 action=drop
-add chain=prerouting protocol=udp dst-port=53 in-interface=ether4 action=drop
-
-# (Opsioanal) Optimasi Conntrack (saran 250k max 300k)
+# -------------------------------------- #
+# CONNTRACK TUNING (agar efisien dan cepat untuk latency)
+# -------------------------------------- #
 /ip firewall connection tracking
-set enabled=yes \
-    max-entries=300000 \
+set enabled=yes max-entries=250000 \
     tcp-established-timeout=30m \
     tcp-close-timeout=10s \
     tcp-fin-wait-timeout=10s \
@@ -115,15 +137,11 @@ set enabled=yes \
     udp-stream-timeout=1m \
     icmp-timeout=10s
 
-# Limit koneksi per user (SANGAT PENTING) 
+# -------------------------------------- #
+# LIMIT TCP PER USER
+# -------------------------------------- #
 /ip firewall filter
-add chain=forward protocol=tcp connection-limit=250,32  action=drop \
-comment="Limit TCP per IP User"
+add chain=forward protocol=tcp connection-limit=200,32 \
+    action=reject reject-with=tcp-reset comment="Limit TCP per IP"
 
-# -------------------------------------------
-# END OF CONFIG
-# -------------------------------------------
-
-
-
-
+# ===================================================================
