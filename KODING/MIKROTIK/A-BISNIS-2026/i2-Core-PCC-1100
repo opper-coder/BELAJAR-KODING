@@ -28,11 +28,16 @@ TERMINAL untuk monitoring
 ----- 
 🔚 KESIMPULAN TEGAS
 Dengan script FINAL Anda saat ini:
-
 ✅ 2.000 user aktif = SANGAT AMAN
 ⚠️ 2.500 user aktif = BATAS MAKS
 ❌ 3.000+ = kualitas turun
-meskipun terdaftar 5000 user pun tidak masalah yang penting 2500 yg aktif
+🔴 RB1100 (CORE) adalah bottleneck pertama
+🟢 RB5009 masih santai saat CORE sudah ngos-ngosan
+
+Dengan konfigurasi Anda:
+- CORE limit di ±2.500 user aktif
+- ACCESS masih kuat >4.000 user aktif
+- meskipun terdaftar 5000 user pun tidak masalah yang penting 2500 yg aktif
 
 
 # =================================================
