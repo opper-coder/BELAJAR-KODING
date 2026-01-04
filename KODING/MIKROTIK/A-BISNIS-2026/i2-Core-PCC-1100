@@ -15,6 +15,24 @@ Topology terbaru januari 2016
    - PPPoE (VLAN 100)
    - CAKE per user
 
+TERMINAL untuk monitoring
+
+# Conntrack
+/ip firewall connection tracking print stats
+
+# PPS
+/interface monitor-traffic ether2
+
+# CPU 
+/system resource monitor
+----- 
+🔚 KESIMPULAN TEGAS
+Dengan script FINAL Anda saat ini:
+
+✅ 2.000 user aktif = SANGAT AMAN
+⚠️ 2.500 user aktif = BATAS MAKS
+❌ 3.000+ = kualitas turun
+
 
 # =================================================
 # RB1100AHx4 – CORE ROUTER
