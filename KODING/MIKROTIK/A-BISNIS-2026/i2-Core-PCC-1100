@@ -17,13 +17,13 @@ Topology terbaru januari 2016
 
 TERMINAL untuk monitoring
 
-# Conntrack
+# Conntrack jangan sampai >80%
 /ip firewall connection tracking print stats
 
 # PPS
 /interface monitor-traffic ether2
 
-# CPU 
+# CPU jangan sampai >80%
 /system resource monitor
 ----- 
 🔚 KESIMPULAN TEGAS
