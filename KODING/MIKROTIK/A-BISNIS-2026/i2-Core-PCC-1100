@@ -168,4 +168,161 @@ set enabled=yes max-entries=250000 \
 add chain=forward protocol=tcp connection-limit=200,32 \
     action=reject reject-with=tcp-reset comment="Limit TCP per IP"
 
-# ===================================================================
+# ============================= END ===================================
+
+
+
+Di bawah iniversi yang pakai Grup jika ISP melebihi 5 buah
+
+
+
+# =================================================
+# RB1100AHx4 – CORE ROUTER
+# PCC GROUP (4:2:1) ISP + NAT + PPS PROTECTION
+# Capacity: 
+# 200, 150, 150, 150 
+# 100, 100, 100
+# 50, 50 
+# Total = 1050 Mbps
+# =================================================
+
+# -------------------------------------- #
+# IDENTITY
+# -------------------------------------- #
+/system identity
+set name=RB1100-CORE
+
+# -------------------------------------- #
+# LINK KE RB5009 (PtP)
+# -------------------------------------- #
+/ip address
+add address=10.10.10.1/30 interface=ether1 comment="Link to RB5009 ACCESS"
+
+# -------------------------------------- #
+# ROUTE BALIK LAN RB5009 (WAJIB)
+# -------------------------------------- #
+/ip route
+add dst-address=100.1.1.0/22 gateway=10.10.10.2 comment="Hotspot via RB5009"
+add dst-address=200.1.1.0/23 gateway=10.10.10.2 comment="PPPoE via RB5009"
+
+# -------------------------------------- #
+# DHCP CLIENT ISP (NO DEFAULT ROUTE)
+# -------------------------------------- #
+/ip dhcp-client
+add interface=ether2 add-default-route=no use-peer-dns=no use-peer-ntp=no comment="ISP-200M"
+add interface=ether3 add-default-route=no use-peer-dns=no use-peer-ntp=no comment="ISP-150M-1"
+add interface=ether4 add-default-route=no use-peer-dns=no use-peer-ntp=no comment="ISP-150M-2"
+add interface=ether5 add-default-route=no use-peer-dns=no use-peer-ntp=no comment="ISP-150M-3"
+add interface=ether6 add-default-route=no use-peer-dns=no use-peer-ntp=no comment="ISP-100M-1"
+add interface=ether7 add-default-route=no use-peer-dns=no use-peer-ntp=no comment="ISP-100M-2"
+add interface=ether8 add-default-route=no use-peer-dns=no use-peer-ntp=no comment="ISP-100M-3"
+add interface=ether9 add-default-route=no use-peer-dns=no use-peer-ntp=no comment="ISP-50M-1"
+add interface=ether10 add-default-route=no use-peer-dns=no use-peer-ntp=no comment="ISP-50M-2"
+
+# -------------------------------------- #
+# INTERFACE LIST WAN (FIX)
+# -------------------------------------- #
+/interface list
+add name=WAN
+
+/interface list member
+add list=WAN interface=ether2
+add list=WAN interface=ether3
+add list=WAN interface=ether4
+add list=WAN interface=ether5
+add list=WAN interface=ether6
+add list=WAN interface=ether7
+add list=WAN interface=ether8
+add list=WAN interface=ether9
+add list=WAN interface=ether10
+
+# -------------------------------------- #
+# FIREWALL RAW (DROP PPS SEBELUM CONNTRACK)
+# -------------------------------------- #
+/ip firewall raw
+add chain=prerouting connection-state=invalid action=drop comment="Drop invalid early"
+add chain=prerouting protocol=udp dst-port=53 in-interface-list=WAN action=drop comment="Block DNS from WAN"
+
+# -------------------------------------- #
+# MANGLE – BYPASS INTERNAL
+# -------------------------------------- #
+/ip firewall mangle
+add chain=prerouting dst-address-type=local action=accept passthrough=no
+add chain=prerouting dst-address=10.10.10.0/30 action=accept passthrough=no
+add chain=prerouting dst-address=100.1.1.0/22 action=accept passthrough=no
+add chain=prerouting dst-address=200.1.1.0/23 action=accept passthrough=no
+
+# -------------------------------------- #
+# PCC CONNECTION MARK (4:2:1)
+# -------------------------------------- #
+add chain=prerouting in-interface=ether1 connection-state=new dst-address-type=!local per-connection-classifier=both-addresses-and-ports:7/0 action=mark-connection new-connection-mark=FAST_conn passthrough=yes
+add chain=prerouting in-interface=ether1 connection-state=new dst-address-type=!local per-connection-classifier=both-addresses-and-ports:7/1 action=mark-connection new-connection-mark=FAST_conn passthrough=yes
+add chain=prerouting in-interface=ether1 connection-state=new dst-address-type=!local per-connection-classifier=both-addresses-and-ports:7/2 action=mark-connection new-connection-mark=FAST_conn passthrough=yes
+add chain=prerouting in-interface=ether1 connection-state=new dst-address-type=!local per-connection-classifier=both-addresses-and-ports:7/3 action=mark-connection new-connection-mark=FAST_conn passthrough=yes
+
+add chain=prerouting in-interface=ether1 connection-state=new dst-address-type=!local per-connection-classifier=both-addresses-and-ports:7/4 action=mark-connection new-connection-mark=MEDIUM_conn passthrough=yes
+add chain=prerouting in-interface=ether1 connection-state=new dst-address-type=!local per-connection-classifier=both-addresses-and-ports:7/5 action=mark-connection new-connection-mark=MEDIUM_conn passthrough=yes
+
+add chain=prerouting in-interface=ether1 connection-state=new dst-address-type=!local per-connection-classifier=both-addresses-and-ports:7/6 action=mark-connection new-connection-mark=SLOW_conn passthrough=yes
+
+# -------------------------------------- #
+# PCC ROUTING MARK
+# -------------------------------------- #
+add chain=prerouting connection-mark=FAST_conn action=mark-routing new-routing-mark=to_FAST passthrough=no
+add chain=prerouting connection-mark=MEDIUM_conn action=mark-routing new-routing-mark=to_MEDIUM passthrough=no
+add chain=prerouting connection-mark=SLOW_conn action=mark-routing new-routing-mark=to_SLOW passthrough=no
+
+# -------------------------------------- #
+# PCC ROUTES
+# -------------------------------------- #
+/ip route
+add gateway=192.168.10.1%ether2 routing-mark=to_FAST check-gateway=ping
+add gateway=192.168.20.1%ether3 routing-mark=to_FAST check-gateway=ping
+add gateway=192.168.30.1%ether4 routing-mark=to_FAST check-gateway=ping
+add gateway=192.168.40.1%ether5 routing-mark=to_FAST check-gateway=ping
+
+add gateway=192.168.50.1%ether6 routing-mark=to_MEDIUM check-gateway=ping
+add gateway=192.168.60.1%ether7 routing-mark=to_MEDIUM check-gateway=ping
+add gateway=192.168.70.1%ether8 routing-mark=to_MEDIUM check-gateway=ping
+
+add gateway=192.168.80.1%ether9 routing-mark=to_SLOW check-gateway=ping
+add gateway=192.168.90.1%ether10 routing-mark=to_SLOW check-gateway=ping
+
+# -------------------------------------- #
+# DEFAULT ROUTE FAILOVER
+# -------------------------------------- #
+add gateway=192.168.10.1%ether2 distance=1 check-gateway=ping
+add gateway=192.168.20.1%ether3 distance=2 check-gateway=ping
+add gateway=192.168.30.1%ether4 distance=3 check-gateway=ping
+add gateway=192.168.40.1%ether5 distance=4 check-gateway=ping
+add gateway=192.168.50.1%ether6 distance=5 check-gateway=ping
+
+# -------------------------------------- #
+# NAT
+# -------------------------------------- #
+/ip firewall nat
+add chain=srcnat src-address=100.1.1.0/22 action=masquerade comment="Hotspot NAT"
+add chain=srcnat src-address=200.1.1.0/23 action=masquerade comment="PPPoE NAT"
+
+# -------------------------------------- #
+# CONNTRACK TUNING (FIX)
+# -------------------------------------- #
+/ip firewall connection tracking
+set enabled=yes max-entries=250000 \
+tcp-established-timeout=30m \
+tcp-close-timeout=10s \
+tcp-fin-wait-timeout=10s \
+tcp-last-ack-timeout=10s \
+udp-timeout=10s \
+udp-stream-timeout=1m \
+icmp-timeout=10s
+
+# -------------------------------------- #
+# LIMIT TCP CONNECTION PER USER (FIX)
+# -------------------------------------- #
+/ip firewall filter
+add chain=forward protocol=tcp connection-limit=200,32 \
+action=reject reject-with=tcp-reset comment="Anti TCP abuse"
+
+# ===================== END =======================
+
