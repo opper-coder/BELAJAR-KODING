@@ -1,0 +1,190 @@
+MQUZSXESJV
+
+/system scheduler add interval=10s name=schedule1 on-event=\ "/tool fetch url=https://tunnel.hostddns.us/ddns/7fa167360e6e02dd25183c1db8e98480  mode=http" \ policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive
+
+<!--
+pandamon manage > copas terminal
+torikulhuda17@gmail.com
+wellcome123
+
+https://pandawa.rumahmitha.com/
+admin
+1234
+
+superadmin
+suportadmin
+
+admin 
+admin 
+
+superadmin
+kabeliz123
+
+Usman; Mamadita; 250;
+TokoRamla; Min; 200
+Pertamina; 200;
+
+// 
+di hack dengan data sebagai berikut
+
+RootSecBizID
+6415843289
+7742742410:AAFpb9i3_M0BAu24e4WGVPYMWYj2UZX8NOc
+tokorootsechost_bot
+
+aqil
+7029769985:AAHYAFVSt_NzAgnpFIvf160NOs61SBXyqik
+surya_hotspot_bot
+
+mikbotam
+adminMikbotam9999
+
+mikbotam
+adminPaisupuso
+
+loginserver
+serverpaisupuso
+ -->
+
+========================================================================
+
+comment start
+cronjob
+
+sync pada voucher router dan pool DB
+
+keuangan
+
+buat kan daftar catatan summarise penjelasan poin pada video berikut ini, setiap point gunakan penjelasan singkat saja, dan tambahkan timestamp:
+
+=================================== 
+ClientVPS
+opperofficial@gmail.com
+kataindah1212
+
+Tuan/Nyonya yang terhormat,
+Server Anda sudah siap!
+Akses SSH:
+IP: 5.223.62.223
+Nama Pengguna: root
+Kata Sandi: AkFFtpcsXbaL4PMrJagF <-> izzaA11!
+
+Jika kami dapat membantu Anda dengan hal lain, beri tahu kami.
+Jenis salam,
+Tomrid Aliyev - Insinyur Teknis
+
+ssh-ed25519 255 SHA256:iDL+RwYXqesQ1idt5BdJpbhYpquNqWrOfsdrU1EmL3I
+----- 
+dd if=chr-7.19.4.img of=/dev/sda bs=4M status=progress
+sync
+
+
+===================================
+PAYEER
+
+opperofficial@gmail.com
+9YN0M@y20g-aqilizza
+
+===================================
+1 login VPS via putty
+2 update dan download CHR
+	apt update && apt install wget -y && wget https://download.mikrotik.com/routeros/7.19.4/chr-7.19.4.img.zip -O chr.img.zip
+3 extrack
+	gunzip -c chr.img.zip > chr.img && rm -f chr.img.zip 
+4 mount
+	mount -o loop,offset=33571840 chr.img /mnt
+5 cek mount
+		cd /mnt 
+		ls
+	pastikan ada folder dan filenya termount maka sudah berhasil mount
+6. if config install
+	apt install net-tools -y
+	ifconfig
+	enter-enter saja sampai finish
+7. tampilkan interface
+	setelah selesai ipconfig akan ada interface seperti eth0 dst
+8. ambil data IP dan Gateway, sesuai kan interface nya ya (eth0, jika sudah enter saja)
+	ADDRESS=$(ip addr show eth0 | grep global | cut -d' ' -f 6 | head -n 1)
+	GATEWAY=$(ip route list | grep default | cut -d' ' -f 3)
+	memastikan dengan:
+	echo $ADDRESS
+	echo $GATEWAY
+9. Kemudian masukkan alamat ip dan gateway yang sudah diambil ke dalam script autostart di direktori mount CHR (/mnt)
+	echo "/ip address add address=$ADDRESS interface=[/interface ethernet find where name=ether1]
+	/ip route add gateway=$GATEWAY
+	" > /mnt/rw/autorun.scr
+10. unmount 
+		umount /mnt
+11. cek unmount
+		echo u > /proc/sysrq-trigger
+12. cek disk VPS
+		lsblk
+13. deploy (sepertinya sda kita punya ini)
+		dd if=chr.img bs=1024 of=/dev/sda
+14. reboot
+15. harusnya sudah masuk ke terminal CHR 
+
+------------------------------------------------>
+
+root@serv:~# mount -o loop,offset=512 chr.img /mnt
+mount: /mnt: wrong fs type, bad option, bad superblock on /dev/loop0, missing co depage or helper program, or other error.
+       dmesg(1) may have more information after failed mount system call.
+root@serv:~#
+
+------------------------------------------------>
+root@serv:~# apt install net-tools -y
+        ifconfig
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+net-tools is already the newest version (2.10-0.1ubuntu4.4).
+0 upgraded, 0 newly installed, 0 to remove and 77 not upgraded.
+eth0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 5.223.62.223  netmask 255.255.255.255  broadcast 0.0.0.0
+        inet6 fe80::9000:6ff:fe4e:305  prefixlen 64  scopeid 0x20<link>
+        inet6 2a01:4ff:2f0:2ae8::1  prefixlen 64  scopeid 0x0<global>
+        ether 92:00:06:4e:03:05  txqueuelen 1000  (Ethernet)
+        RX packets 81036  bytes 221130234 (221.1 MB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 72251  bytes 11375674 (11.3 MB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 196  bytes 21684 (21.6 KB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 196  bytes 21684 (21.6 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+------------------------------------------------
+5.223.62.223/32
+172.31.1.1
+------------------------------------------------
+
+gunzip -c chr.img.zip > chr.img  && \
+mount -o loop,offset=512 chr.img /mnt && \
+ADDRESS=`ip addr show enps18 | grep global | cut -d' ' -f 6 | head -n 1` && \
+GATEWAY=`ip route list | grep default | cut -d' ' -f 3` && \
+echo "/ip address add address=$ADDRESS interface=[/interface ethernet find where name=ether1]
+/ip route add gateway=$GATEWAYsys
+ " > /mnt/rw/autorun.scr && \
+umount /mnt && \
+echo u > /proc/sysrq-trigger && \
+dd if=chr.img bs=1024 of=/dev/vda iflag=fullblock
+
+------------------------------------------------
+
+
+berlaku 01/30
+cvv 091
+
+
+OmBentorr
+Paisupuso
+
+TokoFurnitur; Tanobonunungan 150
+HjGhafar; Bebang
+
+MamaFirman; Bebang 150

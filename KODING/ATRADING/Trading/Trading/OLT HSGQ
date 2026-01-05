@@ -1,0 +1,54 @@
+
+segmen ip 192.168.99.1
+---
+vlan 
+---
+topologi masukkan semua vlan yang akan di lewatkan
+
+tab VLAN    
+    - default bisa pakai vlan transparent, tapi pada contoh ini kita akan tag untag
+      (padahal akhirnya transparent juga sih, mungkin akan memasang profile 
+      agar semua ONT tanpa Register dulu sudah bisa)
+    - tab shortcut save-config
+    - create new > VLANID: 10,20,30 
+    - tagged: tag all > kalau mau ubah nama silahkan setting > ubah name
+---
+VLAN REMOTE OLT
+    - tab advanced > system > network interface > add inbound interface > 192.168.30.5 > 255.255.255.1 > vlan: 30 
+        default-route: 192.168.30.1 
+    - save-config 
+    - cek di winbox > IP ARP > apakah sudah ada IP masuk dari OLT (192.168.30.5)
+    - test ping 192.168.30.1 > harusnya repply > siap di remote 
+
+--- 
+bikin profil
+    profile ini di buat agar semua ONT memiliki/di beri template mengenai VPN dll, yang terhubung di PON ONT ini
+    - line-profile > add > 
+        Name=Template1(bebas)
+        profilId=1
+        type=gpon
+        mapping=VLAN
+        tr069=disable
+        tr069 IP=0
+        T-CON=add > pilih default > apply 
+        GEM=add > gemportId=1 mapping-id=kosongkan mode=vlan vlan-id=transparent  
+---
+terapkan template 
+    - tab advanced > pon management > pon setting > pilih di tabel > auth type > setting >
+    - type=auto line-profile-name=Template1 (yg kita buat) 
+    - jika pon2 juga sama silahkan 
+
+--- 
+koneksikan router seperti biasa
+
+
+
+
+
+
+--- 
+
+
+
+
+
