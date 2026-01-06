@@ -1,73 +1,59 @@
-<?php
-require_once 'routeros_api.class.php';
-
-$API = new RouterosAPI();
-$API->debug = false;
-
-if (!$API->connect('192.168.88.1', 'apiuser', 'apipassword')) {
-    die('Gagal konek ke router');
-}
-
-$profileName = 'HS-EXPIRE-2DEV';
-
-$API->write('/ip/hotspot/user/profile/print', false);
-$API->write('?name=' . $profileName);
-$profiles = $API->read();
-
-if (count($profiles) == 0) {
-    $API->write('/ip/hotspot/user/profile/add', false);
-    $API->write('=name=' . $profileName, false);
-
-    $API->write('=on-login=<ON_LOGIN_SCRIPT>', false);
-    $API->write('=on-logout=<ON_LOGOUT_SCRIPT>', false);
-
-    $API->write('=rate-limit=1000k/2000k', false);
-    $API->write('=shared-users=1', false);
-    $API->write('=keepalive-timeout=00:00:10', false);
-    $API->write('=status-autorefresh=1m', false);
-
-    $API->read();
-}
-
-$API->disconnect();
-
-echo "Profile hotspot berhasil dibuat / sudah ada";
-
------------------------------------------------------------------
-Dibawah ini tinggal copas di halaman PHP 
+Simpan file ini berisi fungsi membuat profile dengan nama: 
+hotspot_profile_lib.php
 
 <?php
 require_once 'routeros_api.class.php';
 
-$API = new RouterosAPI();
-$API->debug = false;
+/**
+ * Create Hotspot Profile with on-login & on-logout script
+ */
+function createHotspotProfile(array $cfg)
+{
+    $API = new RouterosAPI();
+    $API->debug = false;
 
-// ================================
-// KONEKSI KE ROUTER
-// ================================
-if (!$API->connect('192.168.88.1', 'apiuser', 'apipassword')) {
-    die('Gagal konek ke router');
-}
+    // ================================
+    // VALIDASI CONFIG
+    // ================================
+    $required = ['router', 'auth', 'profile'];
+    foreach ($required as $k) {
+        if (!isset($cfg[$k])) {
+            throw new Exception("Config missing: {$k}");
+        }
+    }
 
-// ================================
-// PARAMETER PROFILE
-// ================================
-$profileName = 'box-1mb-2jm';
-$speed       = '1000k/2000k';   // rate-limit
-$maxDev      = 2;               // max device
-$plan        = '1d 00:00:00';   // format: <days>d HH:MM:SS
+    $profileName = $cfg['profile']['name'];
+    $speed       = $cfg['profile']['speed'];
+    $maxDev      = (int)$cfg['profile']['maxDev'];
+    $plan        = $cfg['profile']['plan'];
 
-// ================================
-// CEK PROFILE SUDAH ADA ATAU BELUM
-// ================================
-$API->write('/ip/hotspot/user/profile/print', false);
-$API->write('?name=' . $profileName);
-$profiles = $API->read();
+    // ================================
+    // CONNECT
+    // ================================
+    if (!$API->connect(
+        $cfg['router']['host'],
+        $cfg['auth']['user'],
+        $cfg['auth']['pass']
+    )) {
+        throw new Exception('Gagal konek ke router');
+    }
 
-// ================================
-// SCRIPT ON-LOGIN
-// ================================
-$onLogin = <<<RSC
+    // ================================
+    // CEK PROFILE
+    // ================================
+    $API->write('/ip/hotspot/user/profile/print', false);
+    $API->write('?name=' . $profileName);
+    $profiles = $API->read();
+
+    if (count($profiles) > 0) {
+        $API->disconnect();
+        return false; // profile sudah ada
+    }
+
+    // ================================
+    // ON-LOGIN SCRIPT
+    // ================================
+    $onLogin = <<<RSC
 :local user \$user
 :local ip \$address
 :local nowEpoch [:totime ([/system clock get date]." ".[/system clock get time])]
@@ -80,12 +66,9 @@ $onLogin = <<<RSC
 :local plan "{$plan}"
 :local maxDev {$maxDev}
 
-# ===============================
-# PARSE PLAN → SECONDS
-# format: <days>d HH:MM:SS
-# ===============================
+# PARSE PLAN <Xd HH:MM:SS>
 :local dPos [:find \$plan "d"]
-:if (\$dPos = -1) do={ :error "invalid-plan-format" }
+:if (\$dPos = -1) do={ :error "invalid-plan" }
 
 :local days [:tonum [:pick \$plan 0 \$dPos]]
 :local timePart [:pick \$plan (\$dPos + 2) [:len \$plan]]
@@ -94,7 +77,7 @@ $onLogin = <<<RSC
 :local m [:tonum [:pick \$timePart 3 5]]
 :local s [:tonum [:pick \$timePart 6 8]]
 
-:if (\$h > 23 || \$m > 59 || \$s > 59) do={ :error "invalid-time-value" }
+:if (\$h > 23 || \$m > 59 || \$s > 59) do={ :error "invalid-time" }
 
 :local duration (
     (\$days * 86400) +
@@ -105,18 +88,14 @@ $onLogin = <<<RSC
 
 :if (\$duration <= 0) do={ :error "invalid-duration" }
 
-# ===============================
-# SET EXP JIKA BELUM ADA
-# ===============================
+# SET EXP
 :if ([:find \$comment "exp="] = -1) do={
     :local expEpoch (\$nowEpoch + \$duration)
     /ip hotspot user set \$uID comment=("exp=".\$expEpoch." | ".\$comment)
     :set comment [/ip hotspot user get \$uID comment]
 }
 
-# ===============================
 # PARSE EXP
-# ===============================
 :local pExp [:find \$comment "exp="]
 :if (\$pExp = -1) do={ :error "exp-not-found" }
 
@@ -125,15 +104,11 @@ $onLogin = <<<RSC
 
 :if (\$remaining <= 0) do={ :error "voucher-expired" }
 
-# ===============================
-# CEK JUMLAH DEVICE
-# ===============================
+# DEVICE LIMIT
 :local devCount [:len [/ip firewall address-list find list=hs-expire comment=\$user]]
 :if (\$devCount >= \$maxDev) do={ :error "already-logged-in" }
 
-# ===============================
-# DAFTARKAN DEVICE
-# ===============================
+# REGISTER DEVICE
 /ip firewall address-list add \
     list=hs-expire \
     address=\$ip \
@@ -141,38 +116,54 @@ $onLogin = <<<RSC
     comment=\$user
 RSC;
 
-// ================================
-// SCRIPT ON-LOGOUT
-// ================================
-$onLogout = <<<RSC
+    // ================================
+    // ON-LOGOUT SCRIPT
+    // ================================
+    $onLogout = <<<RSC
 :local user \$user
 :local ip \$address
 /ip firewall address-list remove [find list=hs-expire address=\$ip comment=\$user]
 RSC;
 
-// ================================
-// CREATE PROFILE JIKA BELUM ADA
-// ================================
-if (count($profiles) == 0) {
-
+    // ================================
+    // CREATE PROFILE
+    // ================================
     $API->write('/ip/hotspot/user/profile/add', false);
     $API->write('=name=' . $profileName, false);
-
     $API->write('=on-login=' . $onLogin, false);
     $API->write('=on-logout=' . $onLogout, false);
-
     $API->write('=rate-limit=' . $speed, false);
     $API->write('=shared-users=1', false);
     $API->write('=keepalive-timeout=00:00:10', false);
     $API->write('=status-autorefresh=1m', false);
-
     $API->read();
+
+    $API->disconnect();
+    return true;
 }
 
-// ================================
-// DISCONNECT
-// ================================
-$API->disconnect();
+---------------------------------------------------------------- 
+Cara pakai
 
-echo "Profile hotspot '{$profileName}' siap digunakan";
+<?php
+require 'hotspot_profile_lib.php';
 
+$result = createHotspotProfile([
+    'router' => [
+        'host' => '192.168.88.1',
+    ],
+    'auth' => [
+        'user' => 'apiuser',
+        'pass' => 'apipassword',
+    ],
+    'profile' => [
+        'name'   => 'box-1mb-2jm',
+        'speed'  => '1000k/2000k',
+        'maxDev' => 2,
+        'plan'   => '1d 00:00:00',
+    ]
+]);
+
+echo $result
+    ? 'Profile berhasil dibuat'
+    : 'Profile sudah ada';
