@@ -1,1 +1,182 @@
+name | admin | price | prefix
 
+/lib/
+ ├─ routeros_api.class.php
+ ├─ voucher_lib.php
+ └─ db.php
+
+<?php
+function db()
+{
+    static $pdo;
+
+    if (!$pdo) {
+        $pdo = new PDO(
+            "mysql:host=localhost;dbname=boxits;charset=utf8mb4",
+            "root",
+            "",
+            [
+                PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
+            ]
+        );
+    }
+    return $pdo;
+}
+
+-----
+simpan file dengan nama:
+voucher_lib.php
+
+<?php
+require_once 'routeros_api.class.php';
+require_once 'db.php';
+
+/**
+ * Generate username by prefix mode
+ */
+function generateUsername(int $length, string $prefix): string
+{
+    $map = [
+        'abc'         => 'abcdefghijklmnopqrstuvwxyz',
+        'ABC'         => 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
+        'abcABC'      => 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ',
+        '123'         => '0123456789',
+        'abc123'      => 'abcdefghijklmnopqrstuvwxyz0123456789',
+        'ABC123'      => 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789',
+        'abcABC123'   => 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789',
+    ];
+
+    if (!isset($map[$prefix])) {
+        throw new Exception("Invalid prefix mode");
+    }
+
+    $chars = $map[$prefix];
+    $out   = '';
+
+    for ($i = 0; $i < $length; $i++) {
+        $out .= $chars[random_int(0, strlen($chars) - 1)];
+    }
+
+    return $out;
+}
+
+/**
+ * Bulk voucher generator
+ */
+function generateBulkVoucher(array $cfg): array
+{
+    $API = new RouterosAPI();
+    $API->debug = false;
+
+    if (!$API->connect(
+        $cfg['router']['host'],
+        $cfg['auth']['user'],
+        $cfg['auth']['pass']
+    )) {
+        throw new Exception('Gagal konek router');
+    }
+
+    $pdo = db();
+    $pdo->beginTransaction();
+
+    $result = [];
+
+    for ($i = 0; $i < $cfg['bulk']; $i++) {
+
+        // ================================
+        // USERNAME
+        // ================================
+        do {
+            $username = generateUsername(
+                $cfg['username']['length'],
+                $cfg['username']['prefix']
+            );
+
+            $API->write('/ip/hotspot/user/print', false);
+            $API->write('?name=' . $username);
+            $exists = $API->read();
+
+        } while (!empty($exists));
+
+        $password = $username;
+
+        // ================================
+        // COMMENT METADATA (NO exp)
+        // ================================
+        $comment = "| {$cfg['meta']['admin']} | {$cfg['meta']['price']}";
+
+        // ================================
+        // CREATE USER DI MIKROTIK
+        // ================================
+        $API->write('/ip/hotspot/user/add', false);
+        $API->write('=name=' . $username, false);
+        $API->write('=password=' . $password, false);
+        $API->write('=profile=' . $cfg['profile'], false);
+        $API->write('=comment=' . $comment, false);
+        $API->read();
+
+        // ================================
+        // SIMPAN KE DB
+        // ================================
+        $stmt = $pdo->prepare(
+            "INSERT INTO vouchers (name, admin, price, prefix)
+             VALUES (?, ?, ?, ?)"
+        );
+        $stmt->execute([
+            $username,
+            $cfg['meta']['admin'],
+            $cfg['meta']['price'],
+            $cfg['username']['prefix']
+        ]);
+
+        $result[] = $username;
+    }
+
+    $pdo->commit();
+    $API->disconnect();
+
+    return $result;
+}
+
+----- 
+
+contoh pemakaian 
+
+<?php
+require 'voucher_lib.php';
+
+$vouchers = generateBulkVoucher([
+    'router' => [
+        'host' => '192.168.88.1'
+    ],
+    'auth' => [
+        'user' => 'apiuser',
+        'pass' => 'apipassword'
+    ],
+    'profile' => 'box-1mb-2jm',
+
+    'meta' => [
+        'admin' => 'alwan',
+        'price' => 2000
+    ],
+
+    'username' => [
+        'length' => 6,
+        'prefix' => 'abcABC123'
+    ],
+
+    'bulk' => 100
+]);
+
+echo "Voucher dibuat: " . count($vouchers);
+
+-----
+DI MIKROTIK 
+name     : aB9cD1
+password : aB9cD1
+comment  : | alwan | 2000
+profile  : box-1mb-2jm
+
+DI DB
+name     | admin | price | prefix
+aB9cD1   | alwan | 2000  | abcABC123
