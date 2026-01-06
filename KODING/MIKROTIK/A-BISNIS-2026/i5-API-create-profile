@@ -1,1 +1,58 @@
+Tinggal edit saja mana yang diperlukan
+
+
+<?php
+require_once 'routeros_api.class.php';
+
+$API = new RouterosAPI();
+$API->debug = false;
+
+// ================================
+// KONEKSI KE ROUTER
+// ================================
+if (!$API->connect('192.168.88.1', 'apiuser', 'apipassword')) {
+    die('Gagal konek ke router');
+}
+
+// ================================
+// PARAMETER PROFILE
+// ================================
+$profileName = 'HS-EXPIRE-2DEV';
+
+// ================================
+// CEK PROFILE SUDAH ADA ATAU BELUM
+// ================================
+$API->write('/ip/hotspot/user/profile/print', false);
+$API->write('?name=' . $profileName);
+$profiles = $API->read();
+
+if (count($profiles) == 0) {
+
+    // ================================
+    // CREATE HOTSPOT PROFILE
+    // ================================
+    $API->write('/ip/hotspot/user/profile/add', false);
+    $API->write('=name=' . $profileName, false);
+
+    // SCRIPT (ISI MANUAL)
+    $API->write('=on-login=<ON_LOGIN_SCRIPT>', false);
+    $API->write('=on-logout=<ON_LOGOUT_SCRIPT>', false);
+
+    // ================================
+    // PROFILE PARAMETER
+    // ================================
+    $API->write('=rate-limit=1000k/2000k', false);
+    $API->write('=shared-users=1', false);
+    $API->write('=keepalive-timeout=00:00:10', false);
+    $API->write('=status-autorefresh=1m', false);
+
+    $API->read();
+}
+
+// ================================
+// DISCONNECT
+// ================================
+$API->disconnect();
+
+echo "Profile hotspot berhasil dibuat / sudah ada";
 
