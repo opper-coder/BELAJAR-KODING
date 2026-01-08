@@ -5,6 +5,8 @@ Access RB5009
 # HOTSPOT + PPPoE VLAN 100 + CAKE
 # =================================================
 
+system time wajib pakai NTP yang sama dengan 1100 kerjakan terlebih dahulu
+
 ## ----------------------------------- ##
 # IDENTITY
 ## ----------------------------------- ##
