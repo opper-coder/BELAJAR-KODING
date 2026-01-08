@@ -1,5 +1,6 @@
 Core RB1100
-Topology terbaru januari 2016 
+Topology terbaru januari 2026 
+OH iya wajib: (system waktu wajib pakai NTP yang sama di antara kedua mikrotik sebab system epoch di gunakan untuk EXPIRED voucher)
 
 [ ISP1 | ISP2 | ISP3 ]
           ↓
