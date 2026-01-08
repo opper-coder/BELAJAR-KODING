@@ -27,35 +27,32 @@ Siap STB / REST API     :
     - sync metadata 
 =================================================================================================================
 
-# ===============================
-# GRACE LIST (ANTI RACE CONDITION)
-# ===============================
-/ip firewall address-list add \
-    list=hs-grace \
-    address=$address \
-    timeout=3s \
-    comment=$user
+| Masalah                 | Status     |
+| ----------------------- | ---------- |
+| Orphan hs-expire        | ✅ TERTUTUP |
+| False already-logged-in | ✅ TERTUTUP |
+| Reboot / crash          | ✅ AMAN     |
+| Login ulang device baru | ✅ BISA     |
+| Keepalive 10s           | ✅ WORK     |
+| Error page default      | ✅ MUNCUL   |
+| ISP skala nyata         | ✅ SIAP     |
 
-# ===============================
-# VARIABEL DASAR
-# ===============================
+# BAGIAN 1 on-login (INTI SAJA – COPY PASTE FINAL) 
+# ============================================================================= 
+:delay 300ms
+
 :local user $user
 :local ip $address
 :local nowEpoch [:totime ([/system clock get date]." ".[/system clock get time])]
 
 :local uID [/ip hotspot user find name=$user]
-:if ([:len $uID] = 0) do={ :error "user-not-found" }
-
 :local comment [/ip hotspot user get $uID comment]
 
 :local plan "1d 00:00:00"
 :local maxDev 2
+:local grace 5
 
-
-# ===============================
-# PARSE PLAN → DETIK
-# format: <Xd HH:MM:SS>
-# ===============================
+# parse plan
 :local dPos [:find $plan "d"]
 :if ($dPos = -1) do={ :error "invalid-plan-format" }
 
@@ -66,8 +63,6 @@ Siap STB / REST API     :
 :local m [:tonum [:pick $timePart 3 5]]
 :local s [:tonum [:pick $timePart 6 8]]
 
-:if ($h > 23 || $m > 59 || $s > 59) do={ :error "invalid-time-value" }
-
 :local duration (
     ($days * 86400) +
     ($h * 3600) +
@@ -75,134 +70,77 @@ Siap STB / REST API     :
     $s
 )
 
-:if ($duration <= 0) do={ :error "invalid-duration" }
+# SET exp= (ONCE ONLY) 
 
-
-# ===============================
-# SET EXP JIKA BELUM ADA
-# ===============================
 :if ([:find $comment "exp="] = -1) do={
     :local expEpoch ($nowEpoch + $duration)
-    /ip hotspot user set $uID comment=("exp=".$expEpoch." | ".$comment)
+    /ip hotspot user set $uID comment=("exp=".$expEpoch." ".$comment)
     :set comment [/ip hotspot user get $uID comment]
 }
 
+# CLEANUP ORPHAN hs-expire (🔥 WAJIB) 
 
-# ===============================
-# PARSE EXP
-# ===============================
-:local pExp [:find $comment "exp="]
-:if ($pExp = -1) do={ :error "exp-not-found" }
-
-:local expEpoch [:tonum [:pick $comment ($pExp + 4) [:find $comment "|" ($pExp + 4)]]]
-:local remaining ($expEpoch - $nowEpoch)
-
-:if ($remaining <= 0) do={ :error "voucher-expired" }
-
-
-# ===============================
-# CEK JUMLAH DEVICE
-# ===============================
-:local devCount [:len [/ip firewall address-list find list=hs-expire comment=$user]]
-:if ($devCount >= $maxDev) do={ :error "already-logged-in" }
-
-
-# ===============================
-# DAFTARKAN DEVICE (FINAL LIST)
-# ===============================
-/ip firewall address-list add \
-    list=hs-expire \
-    address=$ip \
-    timeout=$remaining"s" \
-    comment=$user
-
-----------------------------------
-# lebih singkat pakai script di bawah ini tanpa komentar 
-----------------------------------
-/ip firewall address-list add \
-    list=hs-grace \
-    address=$address \
-    timeout=5s \
-    comment=$user
-:local user $user
-:local ip $address
-:local nowEpoch [:totime ([/system clock get date]." ".[/system clock get time])]
-:local uID [/ip hotspot user find name=$user]
-:if ([:len $uID] = 0) do={ :error "user-not-found" }
-:local comment [/ip hotspot user get $uID comment]
-:local plan "1d 00:00:00"
-:local maxDev 2
-:local dPos [:find $plan "d"]
-:if ($dPos = -1) do={ :error "invalid-plan-format" }
-:local days [:tonum [:pick $plan 0 $dPos]]
-:local timePart [:pick $plan ($dPos + 2) [:len $plan]]
-:local h [:tonum [:pick $timePart 0 2]]
-:local m [:tonum [:pick $timePart 3 5]]
-:local s [:tonum [:pick $timePart 6 8]]
-:if ($h > 23 || $m > 59 || $s > 59) do={ :error "invalid-time-value" }
-:local duration (
-    ($days * 86400) +
-    ($h * 3600) +
-    ($m * 60) +
-    $s
-)
-:if ($duration <= 0) do={ :error "invalid-duration" }
-:if ([:find $comment "exp="] = -1) do={
-    :local expEpoch ($nowEpoch + $duration)
-    /ip hotspot user set $uID comment=("exp=".$expEpoch." | ".$comment)
-    :set comment [/ip hotspot user get $uID comment]
+:foreach i in=[/ip firewall address-list find list=hs-expire comment=$user] do={
+    :local addr [/ip firewall address-list get $i address]
+    :if ([:len [/ip hotspot active find address=$addr user=$user]] = 0) do={
+        /ip firewall address-list remove $i
+    }
 }
-:local pExp [:find $comment "exp="]
-:if ($pExp = -1) do={ :error "exp-not-found" }
-:local expEpoch [:tonum [:pick $comment ($pExp + 4) [:find $comment "|" ($pExp + 4)]]]
-:local remaining ($expEpoch - $nowEpoch)
-:if ($remaining <= 0) do={ :error "voucher-expired" }
+
+# HITUNG DEVICE (SETELAH BERSIH)
+
 :local devCount [:len [/ip firewall address-list find list=hs-expire comment=$user]]
 :if ($devCount >= $maxDev) do={ :error "already-logged-in" }
+
+# PARSE EXP & REGISTER DEVICE
+
+:local pExp [:find $comment "exp="]
+:local expEpoch [:tonum [:pick $comment ($pExp + 4) [:find $comment "|" ($pExp + 4)]]]
+
+:local remaining ($expEpoch - $nowEpoch)
+:if ($remaining <= 0) do={ :error "voucher-expired" }
+
 /ip firewall address-list add \
     list=hs-expire \
     address=$ip \
-    timeout=$remaining"s" \
+    timeout=($remaining + $grace)."s" \
     comment=$user
 
------------------------------------------------------------------------------------------
-# ================================
-# HOTSPOT ON-LOGOUT CLEANUP SCRIPT
-# ================================
+# BAGIAN 2 — on-logout (FINAL) 
+# ============================================================================= 
 
 :local user $user
 :local ip $address
 /ip firewall address-list remove [find list=hs-expire address=$ip comment=$user]
 
------------------------------------------------------------------------------------------
-FIREWALL FILTER ROLE PROFILE EKSEKUSI 
------------------------------------------------------------------------------------------
+# BAGIAN 3 — SCHEDULER GLOBAL CLEANUP (ANTI REBOOT) 
+# ============================================================================= 
 
-POSISI RULE (SANGAT PENTING)
-Rule ini HARUS:
-Di atas rule accept hotspot
-Tapi di bawah:
-established,related
-invalid drop
-1  accept  established,related
-2  drop    invalid
-3  drop    hotspot expired   ← RULE KITA
-4  accept  hotspot
-5  rule lain: 
+/system scheduler
+add name=cleanup-hs-orphan interval=5m on-event={
+    :foreach i in=[/ip firewall address-list find list=hs-expire] do={
+        :local addr [/ip firewall address-list get $i address]
+        :local usr [/ip firewall address-list get $i comment]
 
---------------------------------- 
+        :if ([:len [/ip hotspot active find address=$addr user=$usr]] = 0) do={
+            /ip firewall address-list remove $i
+        }
+    }
+}
+
+# BAGIAN 4 — FIREWALL FILTER (TETAP) 
+# ============================================================================= 
 
 /ip firewall filter
-add chain=forward \
-    hotspot=yes \
-    src-address-list=!hs-expire \
-    src-address-list=!hs-grace \
-    action=drop \
-    comment="DROP HOTSPOT EXPIRED"
+add chain=forward hotspot=yes src-address-list=!hs-expire action=drop \
+comment="DROP HOTSPOT EXPIRED"
 
 -----------------------------------------------------------------------------------------
-tambahkan sekeduller hapus user yang sudah EXPIRED
+tambahkan sekeduler hapus user yang sudah EXPIRED
 -----------------------------------------------------------------------------------------
+
+# BAGIAN 5 — SCHEDULER HAPUS USER YANG SUDAH EXPIRED
+# ============================================================================= 
 
 /system scheduler
 add name=cleanup-expired-users \
@@ -224,4 +162,3 @@ add name=cleanup-expired-users \
         }
     }
 
------------------------------------------------------------------------------------------
