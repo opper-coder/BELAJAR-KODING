@@ -1,10 +1,10 @@
-SKRIP PROFIL HOTSPOT 
-System User Expired 
-cara pakai: 
-1. copas script on-login di profil
-2. copas script on-logout di profil
-3. copas firewall filter 
-4. copas sekeduller
+SKRIP PROFIL HOTSPOT (System User Expired)
+cara pakai jika manual tanpa backend, di bawah ini. Tetapi jika pakai backend silahkan lihat di halaman i5
+1. masukan scrip on-login, on-logout pada profil (step 1, 2) 
+2. buat SCHEDULER CLEANUP ORPHAN (step 3)
+3. buat FIREWALL FILTER (ENFORCEMENT) (step 4)
+4. buat SCHEDULER HAPUS USER EXPIRED (step 5)
+5. selesai
 
 - ini sebenarnya sudah bekerja mandiri di mikrotik jika user di buat dari profil ini maka langsung jalan
 - tanpa ketergantungan dengan STB atau server PHP, sehingga di buat melalui manual pun sama tetap berjalan 
