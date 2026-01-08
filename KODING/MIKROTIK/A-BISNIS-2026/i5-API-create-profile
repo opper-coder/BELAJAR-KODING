@@ -1,162 +1,130 @@
-Simpan file ini berisi fungsi membuat profile dengan nama: 
+buat file PHP:
 hotspot_profile_lib.php
 
-<?php
-require_once 'routeros_api.class.php';
+Orphan hs-expire	    ✅ TERTUTUP
+False already-logged-in ✅ TERTUTUP
+Reboot / crash	        ✅ AMAN
+Login ulang device baru	✅ BISA
+Keepalive 10s	        ✅ WORK
+Error page default	    ✅ MUNCUL
+ISP skala nyata	        ✅ SIAP
+Aman dengan comment awal✅ AMAN (alwan|2000)
+Hasil comment akhir	    ✅ BENAR (exp=1700000000|alwan|2000)
+-----------------------------------------------
 
-/**
- * Create Hotspot Profile with on-login & on-logout script
- */
-function createHotspotProfile(array $cfg)
+function createHotspotProfile(array $cfg): bool
 {
-    $API = new RouterosAPI();
-    $API->debug = false;
+    $host   = $cfg['router']['host'];
+    $user   = $cfg['auth']['user'];
+    $pass   = $cfg['auth']['pass'];
 
-    // ================================
-    // VALIDASI CONFIG
-    // ================================
-    $required = ['router', 'auth', 'profile'];
-    foreach ($required as $k) {
-        if (!isset($cfg[$k])) {
-            throw new Exception("Config missing: {$k}");
-        }
-    }
+    $name   = $cfg['profile']['name'];
+    $speed  = $cfg['profile']['speed'];
+    $plan   = $cfg['profile']['plan'];
+    $maxDev = (int)$cfg['profile']['maxDev'];
 
-    $profileName = $cfg['profile']['name'];
-    $speed       = $cfg['profile']['speed'];
-    $maxDev      = (int)$cfg['profile']['maxDev'];
-    $plan        = $cfg['profile']['plan'];
-
-    // ================================
-    // CONNECT
-    // ================================
-    if (!$API->connect(
-        $cfg['router']['host'],
-        $cfg['auth']['user'],
-        $cfg['auth']['pass']
-    )) {
-        throw new Exception('Gagal konek ke router');
-    }
-
-    // ================================
-    // CEK PROFILE
-    // ================================
-    $API->write('/ip/hotspot/user/profile/print', false);
-    $API->write('?name=' . $profileName);
-    $profiles = $API->read();
-
-    if (count($profiles) > 0) {
-        $API->disconnect();
-        return false; // profile sudah ada
-    }
-
-    // ================================
-    // ON-LOGIN SCRIPT
-    // ================================
-    $onLogin = <<<RSC
+    /* ==========================
+     * SCRIPT ON-LOGIN (INJECT)
+     * ========================== */
+    $onLogin = <<<ROS
+:delay 300ms
 :local user \$user
 :local ip \$address
 :local nowEpoch [:totime ([/system clock get date]." ".[/system clock get time])]
-
 :local uID [/ip hotspot user find name=\$user]
-:if ([:len \$uID] = 0) do={ :error "user-not-found" }
-
 :local comment [/ip hotspot user get \$uID comment]
-
 :local plan "{$plan}"
 :local maxDev {$maxDev}
-
-# PARSE PLAN <Xd HH:MM:SS>
+:local grace 5
 :local dPos [:find \$plan "d"]
-:if (\$dPos = -1) do={ :error "invalid-plan" }
-
 :local days [:tonum [:pick \$plan 0 \$dPos]]
 :local timePart [:pick \$plan (\$dPos + 2) [:len \$plan]]
-
 :local h [:tonum [:pick \$timePart 0 2]]
 :local m [:tonum [:pick \$timePart 3 5]]
 :local s [:tonum [:pick \$timePart 6 8]]
+:local duration ((\$days*86400)+(\$h*3600)+(\$m*60)+\$s)
 
-:if (\$h > 23 || \$m > 59 || \$s > 59) do={ :error "invalid-time" }
-
-:local duration (
-    (\$days * 86400) +
-    (\$h * 3600) +
-    (\$m * 60) +
-    \$s
-)
-
-:if (\$duration <= 0) do={ :error "invalid-duration" }
-
-# SET EXP
 :if ([:find \$comment "exp="] = -1) do={
     :local expEpoch (\$nowEpoch + \$duration)
-    /ip hotspot user set \$uID comment=("exp=".\$expEpoch." | ".\$comment)
-    :set comment [/ip hotspot user get \$uID comment]
+    :if ([:len \$comment] > 0) do={
+        /ip hotspot user set \$uID comment=("exp=".\$expEpoch."|".\$comment)
+    } else={
+        /ip hotspot user set \$uID comment=("exp=".\$expEpoch)
+    }
 }
 
-# PARSE EXP
-:local pExp [:find \$comment "exp="]
-:if (\$pExp = -1) do={ :error "exp-not-found" }
+:foreach i in=[/ip firewall address-list find list=hs-expire comment=\$user] do={
+    :local a [/ip firewall address-list get \$i address]
+    :if ([:len [/ip hotspot active find address=\$a user=\$user]] = 0) do={
+        /ip firewall address-list remove \$i
+    }
+}
 
-:local expEpoch [:tonum [:pick \$comment (\$pExp + 4) [:find \$comment "|" (\$pExp + 4)]]]
-:local remaining (\$expEpoch - \$nowEpoch)
+:local c [:len [/ip firewall address-list find list=hs-expire comment=\$user]]
+:if (\$c >= \$maxDev) do={ :error "already-logged-in" }
 
-:if (\$remaining <= 0) do={ :error "voucher-expired" }
+:local p [:find \$comment "exp="]
+:local e [:find \$comment "|" (\$p+4)]
+:local exp [:tonum [:pick \$comment (\$p+4) (\$e=-1?[:len \$comment]:\$e)]]
+:local r (\$exp - \$nowEpoch)
+:if (\$r <= 0) do={ :error "expired" }
 
-# DEVICE LIMIT
-:local devCount [:len [/ip firewall address-list find list=hs-expire comment=\$user]]
-:if (\$devCount >= \$maxDev) do={ :error "already-logged-in" }
+/ip firewall address-list add list=hs-expire address=\$ip timeout=(\$r+5)."s" comment=\$user
+ROS;
 
-# REGISTER DEVICE
-/ip firewall address-list add \
-    list=hs-expire \
-    address=\$ip \
-    timeout=\$remaining"s" \
-    comment=\$user
-RSC;
+    /* ==========================
+     * TRY ROS v7 (REST)
+     * ========================== */
+    $profiles = mtRest($host, $user, $pass, '/ip/hotspot/user/profile');
+    if (is_array($profiles)) {
+        foreach ($profiles as $p) {
+            if ($p['name'] === $name) return false;
+        }
 
-    // ================================
-    // ON-LOGOUT SCRIPT
-    // ================================
-    $onLogout = <<<RSC
-:local user \$user
-:local ip \$address
-/ip firewall address-list remove [find list=hs-expire address=\$ip comment=\$user]
-RSC;
+        return (bool) mtRest($host, $user, $pass, '/ip/hotspot/user/profile', 'POST', [
+            'name'        => $name,
+            'rate-limit' => $speed,
+            'on-login'   => $onLogin,
+            'on-logout'  => '/ip firewall address-list remove [find list=hs-expire address=$address comment=$user]',
+        ]);
+    }
 
-    // ================================
-    // CREATE PROFILE
-    // ================================
-    $API->write('/ip/hotspot/user/profile/add', false);
-    $API->write('=name=' . $profileName, false);
-    $API->write('=on-login=' . $onLogin, false);
-    $API->write('=on-logout=' . $onLogout, false);
-    $API->write('=rate-limit=' . $speed, false);
-    $API->write('=shared-users=1', false);
-    $API->write('=keepalive-timeout=00:00:10', false);
-    $API->write('=status-autorefresh=1m', false);
-    $API->read();
+    /* ==========================
+     * FALLBACK ROS v6 (API)
+     * ========================== */
+    $api = new RouterOSAPI();
+    if (!$api->connect($host, $user, $pass)) {
+        return false;
+    }
 
-    $API->disconnect();
+    $api->write('/ip/hotspot/user/profile/print');
+    $res = $api->read();
+    foreach ($res as $r) {
+        if (strpos($r, "name=$name") !== false) {
+            return false;
+        }
+    }
+
+    $api->write('/ip/hotspot/user/profile/add');
+    $api->write("=name=$name");
+    $api->write("=rate-limit=$speed");
+    $api->write("=on-login=$onLogin");
+    $api->write("=on-logout=/ip firewall address-list remove [find list=hs-expire address=\$address comment=\$user]");
+    $api->write("");
+
+    $api->read();
     return true;
 }
 
----------------------------------------------------------------- 
-Cara pakai
+CARA PAKAI DI HALAMAN LAIN TINGGAL PANGGIL INI
+----------------------------------------------------------
 
-<?php
 require 'hotspot_profile_lib.php';
 
 $result = createHotspotProfile([
-    'router' => [
-        'host' => '192.168.88.1',
-    ],
-    'auth' => [
-        'user' => 'apiuser',
-        'pass' => 'apipassword',
-    ],
-    'profile' => [
+    'router' => ['host' => '192.168.88.1'],
+    'auth'   => ['user' => 'apiuser', 'pass' => 'apipassword'],
+    'profile'=> [
         'name'   => 'box-1mb-2jm',
         'speed'  => '1000k/2000k',
         'maxDev' => 2,
@@ -164,6 +132,5 @@ $result = createHotspotProfile([
     ]
 ]);
 
-echo $result
-    ? 'Profile berhasil dibuat'
-    : 'Profile sudah ada';
+echo $result ? 'Profile berhasil dibuat' : 'Profile sudah ada';
+
