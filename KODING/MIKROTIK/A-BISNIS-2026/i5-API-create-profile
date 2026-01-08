@@ -1,6 +1,8 @@
 buat file PHP:
 hotspot_profile_lib.php
 
+cara pakainya tinggal lakukan di mikrotik dengan setting step 3, 4, 5 di halaman dokumentasi i4
+
 Orphan hs-expire	    ✅ TERTUTUP
 False already-logged-in ✅ TERTUTUP
 Reboot / crash	        ✅ AMAN
