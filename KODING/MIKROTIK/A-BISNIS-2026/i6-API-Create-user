@@ -5,142 +5,201 @@ name | admin | price | prefix
  ├─ voucher_lib.php
  └─ db.php
 
+Create Voucher dengan profil sebelumnya
+
+| Masalah                       | Solusi                       |
+| ----------------------------- | ---------------------------- |
+| 1️⃣ Nama DB harus uniq        | UNIQUE KEY + retry generator |
+| 2️⃣ DB dulu baru MikroTik     | INSERT DB → baru API         |
+| 3️⃣ mysqli                    | Ya                           |
+| 4️⃣ Gagal satu rollback semua | DB transaction               |
+| 5️⃣ Multi router              | router_id di DB              |
+| 6️⃣ API timeout               | try/catch + mark status      |
+| 7️⃣ Router reboot             | status `PENDING`             |
+| 8️⃣ Bulk sebagian sukses      | return hasil per-user        |
+| 9️⃣ DB & router tidak sinkron | reconciliation ready         |
+
+MINIMAL STRUKTUR TABEL (WAJIB)
+
+CREATE TABLE vouchers (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    router_host VARCHAR(50),
+    username VARCHAR(64) UNIQUE,
+    password VARCHAR(64),
+    profile VARCHAR(64),
+    comment VARCHAR(255),
+    status ENUM('PENDING','ACTIVE','FAILED') DEFAULT 'PENDING',
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+--------------------------------------------------------------
+namafile : voucher_lib.php
+
 <?php
-function db()
-{
-    static $pdo;
-
-    if (!$pdo) {
-        $pdo = new PDO(
-            "mysql:host=localhost;dbname=boxits;charset=utf8mb4",
-            "root",
-            "",
-            [
-                PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
-            ]
-        );
-    }
-    return $pdo;
-}
-
------
-simpan file dengan nama:
-voucher_lib.php
-
-<?php
-require_once 'routeros_api.class.php';
-require_once 'db.php';
 
 /**
- * Generate username by prefix mode
+ * Generate bulk hotspot voucher (DB first, RouterOS API second)
+ * DB = source of truth
  */
-function generateUsername(int $length, string $prefix): string
-{
-    $map = [
-        'abc'         => 'abcdefghijklmnopqrstuvwxyz',
-        'ABC'         => 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
-        'abcABC'      => 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ',
-        '123'         => '0123456789',
-        'abc123'      => 'abcdefghijklmnopqrstuvwxyz0123456789',
-        'ABC123'      => 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789',
-        'abcABC123'   => 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789',
-    ];
 
-    if (!isset($map[$prefix])) {
-        throw new Exception("Invalid prefix mode");
+function generateBulkVoucher(array $cfg): array
+{
+    /* ===========================
+     * DB CONNECT
+     * =========================== */
+    $db = new mysqli('localhost', 'dbuser', 'dbpass', 'dbname');
+    if ($db->connect_error) {
+        throw new Exception('DB connect failed');
     }
 
-    $chars = $map[$prefix];
-    $out   = '';
+    $db->begin_transaction();
 
-    for ($i = 0; $i < $length; $i++) {
-        $out .= $chars[random_int(0, strlen($chars) - 1)];
+    $host    = $cfg['router']['host'];
+    $apiUser = $cfg['auth']['user'];
+    $apiPass = $cfg['auth']['pass'];
+    $profile = $cfg['profile'];
+    $bulk    = (int)$cfg['bulk'];
+
+    $admin   = $cfg['meta']['admin'];
+    $price   = $cfg['meta']['price'];
+
+    $result  = [];
+
+    try {
+        for ($i = 0; $i < $bulk; $i++) {
+
+            /* ===========================
+             * GENERATE UNIQUE USERNAME
+             * =========================== */
+            do {
+                $username = generateUsername(
+                    $cfg['username']['length'],
+                    $cfg['username']['prefix']
+                );
+
+                $chk = $db->prepare("SELECT id FROM vouchers WHERE username=?");
+                $chk->bind_param('s', $username);
+                $chk->execute();
+                $chk->store_result();
+                $exists = $chk->num_rows > 0;
+                $chk->close();
+
+            } while ($exists);
+
+            $password = $username;
+            $comment  = $admin . '|' . $price;
+
+            /* ===========================
+             * INSERT DB FIRST
+             * =========================== */
+            $stmt = $db->prepare("
+                INSERT INTO vouchers
+                (router_host, username, password, profile, comment, status)
+                VALUES (?,?,?,?,?,'PENDING')
+            ");
+            $stmt->bind_param(
+                'sssss',
+                $host,
+                $username,
+                $password,
+                $profile,
+                $comment
+            );
+
+            if (!$stmt->execute()) {
+                throw new Exception('DB insert failed');
+            }
+            $stmt->close();
+
+            /* ===========================
+             * CREATE USER IN MIKROTIK
+             * =========================== */
+            try {
+                $api = new RouterOSAPI();
+                $api->timeout = 5;
+                $api->debug   = false;
+
+                if (!$api->connect($host, $apiUser, $apiPass)) {
+                    throw new Exception('API connect failed');
+                }
+
+                $api->write('/ip/hotspot/user/add', false);
+                $api->write('=name=' . $username, false);
+                $api->write('=password=' . $password, false);
+                $api->write('=profile=' . $profile, false);
+                $api->write('=comment=' . $comment);
+                $api->read();
+
+                $api->disconnect();
+
+                $db->query(
+                    "UPDATE vouchers SET status='ACTIVE' WHERE username='" .
+                    $db->real_escape_string($username) . "'"
+                );
+
+                $result[] = $username;
+
+            } catch (Throwable $e) {
+
+                if (isset($api) && $api->connected) {
+                    $api->disconnect();
+                }
+
+                // Router gagal → DB tetap konsisten
+                $db->query(
+                    "UPDATE vouchers SET status='FAILED' WHERE username='" .
+                    $db->real_escape_string($username) . "'"
+                );
+            }
+        }
+
+        /* ===========================
+         * COMMIT SEMUA PERUBAHAN DB
+         * =========================== */
+        $db->commit();
+
+    } catch (Throwable $e) {
+        /* ===========================
+         * TOTAL FAILURE (DB LEVEL)
+         * =========================== */
+        $db->rollback();
+        throw $e;
+    }
+
+    return $result;
+}
+
+/* ===========================
+ * USERNAME GENERATOR (FINAL)
+ * =========================== */
+function generateUsername(int $len, string $format): string
+{
+    $maps = [
+        'abc'        => 'abcdefghijklmnopqrstuvwxyz',
+        'ABC'        => 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
+        'abcABC'     => 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ',
+        '123'        => '0123456789',
+        'abc123'     => 'abcdefghijklmnopqrstuvwxyz0123456789',
+        'ABC123'     => 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789',
+        'abcABC123'  => 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789',
+    ];
+
+    if (!isset($maps[$format])) {
+        throw new InvalidArgumentException("Format username tidak valid: $format");
+    }
+
+    $pool = $maps[$format];
+    $max  = strlen($pool) - 1;
+
+    $out = '';
+    for ($i = 0; $i < $len; $i++) {
+        $out .= $pool[random_int(0, $max)];
     }
 
     return $out;
 }
 
-/**
- * Bulk voucher generator
- */
-function generateBulkVoucher(array $cfg): array
-{
-    $API = new RouterosAPI();
-    $API->debug = false;
-
-    if (!$API->connect(
-        $cfg['router']['host'],
-        $cfg['auth']['user'],
-        $cfg['auth']['pass']
-    )) {
-        throw new Exception('Gagal konek router');
-    }
-
-    $pdo = db();
-    $pdo->beginTransaction();
-
-    $result = [];
-
-    for ($i = 0; $i < $cfg['bulk']; $i++) {
-
-        // ================================
-        // USERNAME
-        // ================================
-        do {
-            $username = generateUsername(
-                $cfg['username']['length'],
-                $cfg['username']['prefix']
-            );
-
-            $API->write('/ip/hotspot/user/print', false);
-            $API->write('?name=' . $username);
-            $exists = $API->read();
-
-        } while (!empty($exists));
-
-        $password = $username;
-
-        // ================================
-        // COMMENT METADATA (NO exp)
-        // ================================
-
-        $comment = "{$cfg['meta']['admin']}|{$cfg['meta']['price']}";
-
-        // ================================
-        // CREATE USER DI MIKROTIK
-        // ================================
-        $API->write('/ip/hotspot/user/add', false);
-        $API->write('=name=' . $username, false);
-        $API->write('=password=' . $password, false);
-        $API->write('=profile=' . $cfg['profile'], false);
-        $API->write('=comment=' . $comment, false);
-        $API->read();
-
-        // ================================
-        // SIMPAN KE DB
-        // ================================
-        $stmt = $pdo->prepare(
-            "INSERT INTO vouchers (name, admin, price, prefix)
-             VALUES (?, ?, ?, ?)"
-        );
-        $stmt->execute([
-            $username,
-            $cfg['meta']['admin'],
-            $cfg['meta']['price'],
-            $cfg['username']['prefix']
-        ]);
-
-        $result[] = $username;
-    }
-
-    $pdo->commit();
-    $API->disconnect();
-
-    return $result;
-}
-
------ 
-
+=================================================================== 
 contoh pemakaian 
 
 <?php
@@ -181,3 +240,5 @@ profile  : box-1mb-2jm
 DI DB
 name     | admin | price | prefix
 aB9cD1   | alwan | 2000  | abcABC123
+
+----------------------------------------------------------------------- 
