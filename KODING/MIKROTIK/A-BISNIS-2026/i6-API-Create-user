@@ -103,7 +103,8 @@ function generateBulkVoucher(array $cfg): array
         // ================================
         // COMMENT METADATA (NO exp)
         // ================================
-        $comment = "| {$cfg['meta']['admin']} | {$cfg['meta']['price']}";
+
+        $comment = "{$cfg['meta']['admin']}|{$cfg['meta']['price']}";
 
         // ================================
         // CREATE USER DI MIKROTIK
