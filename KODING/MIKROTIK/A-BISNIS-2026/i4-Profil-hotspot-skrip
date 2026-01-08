@@ -27,8 +27,8 @@ Siap STB / REST API     :
     - sync metadata 
 =================================================================================================================
 
-| Masalah                 | Status     |
-| ----------------------- | ---------- |
+| Masalah                 | Status      |
+| ----------------------- | ----------  |
 | Orphan hs-expire        | ✅ TERTUTUP |
 | False already-logged-in | ✅ TERTUTUP |
 | Reboot / crash          | ✅ AMAN     |
@@ -36,9 +36,13 @@ Siap STB / REST API     :
 | Keepalive 10s           | ✅ WORK     |
 | Error page default      | ✅ MUNCUL   |
 | ISP skala nyata         | ✅ SIAP     |
+| Aman dengan comment awal| alwan|2000
+| hasil komen akhir       | exp=1700000000|alwan|2000
 
-# BAGIAN 1 on-login (INTI SAJA – COPY PASTE FINAL) 
-# ============================================================================= 
+# =============================================================================
+# BAGIAN 1 HOTSPOT ON-LOGIN (FINAL – exp=epoch|meta)
+# =============================================================================
+
 :delay 300ms
 
 :local user $user
@@ -46,13 +50,18 @@ Siap STB / REST API     :
 :local nowEpoch [:totime ([/system clock get date]." ".[/system clock get time])]
 
 :local uID [/ip hotspot user find name=$user]
+:if ([:len $uID] = 0) do={ :error "user-not-found" }
+
 :local comment [/ip hotspot user get $uID comment]
 
+# PARAMETER (DI-INJECT DARI PHP)
+# -----------------------------
 :local plan "1d 00:00:00"
 :local maxDev 2
 :local grace 5
 
-# parse plan
+# PARSE PLAN → DETIK
+# -----------------------------
 :local dPos [:find $plan "d"]
 :if ($dPos = -1) do={ :error "invalid-plan-format" }
 
@@ -70,16 +79,23 @@ Siap STB / REST API     :
     $s
 )
 
-# SET exp= (ONCE ONLY) 
-
+# SET exp=epoch|meta (ONCE)
+# -----------------------------
 :if ([:find $comment "exp="] = -1) do={
     :local expEpoch ($nowEpoch + $duration)
-    /ip hotspot user set $uID comment=("exp=".$expEpoch." ".$comment)
+
+    # JAGA META YANG SUDAH ADA
+    :if ([:len $comment] > 0) do={
+        /ip hotspot user set $uID comment=("exp=".$expEpoch."|".$comment)
+    } else={
+        /ip hotspot user set $uID comment=("exp=".$expEpoch)
+    }
+
     :set comment [/ip hotspot user get $uID comment]
 }
 
-# CLEANUP ORPHAN hs-expire (🔥 WAJIB) 
-
+# CLEANUP ORPHAN DEVICE
+# -----------------------------
 :foreach i in=[/ip firewall address-list find list=hs-expire comment=$user] do={
     :local addr [/ip firewall address-list get $i address]
     :if ([:len [/ip hotspot active find address=$addr user=$user]] = 0) do={
@@ -87,40 +103,50 @@ Siap STB / REST API     :
     }
 }
 
-# HITUNG DEVICE (SETELAH BERSIH)
-
+# HITUNG DEVICE AKTIF
+# -----------------------------
 :local devCount [:len [/ip firewall address-list find list=hs-expire comment=$user]]
 :if ($devCount >= $maxDev) do={ :error "already-logged-in" }
 
-# PARSE EXP & REGISTER DEVICE
-
+# PARSE exp=epoch (AMAN DENGAN META)
+# -----------------------------
 :local pExp [:find $comment "exp="]
-:local expEpoch [:tonum [:pick $comment ($pExp + 4) [:find $comment "|" ($pExp + 4)]]]
+:if ($pExp = -1) do={ :error "exp-not-found" }
+
+:local pEnd [:find $comment "|" ($pExp + 4)]
+:if ($pEnd = -1) do={
+    :local expEpoch [:tonum [:pick $comment ($pExp + 4) [:len $comment]]]
+} else={
+    :local expEpoch [:tonum [:pick $comment ($pExp + 4) $pEnd]]
+}
 
 :local remaining ($expEpoch - $nowEpoch)
 :if ($remaining <= 0) do={ :error "voucher-expired" }
 
+# REGISTER DEVICE
+# -----------------------------
 /ip firewall address-list add \
     list=hs-expire \
     address=$ip \
     timeout=($remaining + $grace)."s" \
     comment=$user
 
-# BAGIAN 2 — on-logout (FINAL) 
+# BAGIAN 2 — ON-LOGOUT
 # ============================================================================= 
 
 :local user $user
 :local ip $address
+
 /ip firewall address-list remove [find list=hs-expire address=$ip comment=$user]
 
-# BAGIAN 3 — SCHEDULER GLOBAL CLEANUP (ANTI REBOOT) 
+# BAGIAN 3 — SCHEDULER GLOBAL CLEANUP ORPHAN hs-expire (ANTI REBOOT) 
 # ============================================================================= 
 
 /system scheduler
 add name=cleanup-hs-orphan interval=5m on-event={
     :foreach i in=[/ip firewall address-list find list=hs-expire] do={
         :local addr [/ip firewall address-list get $i address]
-        :local usr [/ip firewall address-list get $i comment]
+        :local usr  [/ip firewall address-list get $i comment]
 
         :if ([:len [/ip hotspot active find address=$addr user=$usr]] = 0) do={
             /ip firewall address-list remove $i
@@ -128,18 +154,14 @@ add name=cleanup-hs-orphan interval=5m on-event={
     }
 }
 
-# BAGIAN 4 — FIREWALL FILTER (TETAP) 
+# BAGIAN 4 — FIREWALL FILTER (ENFORCEMENT) 
 # ============================================================================= 
 
 /ip firewall filter
 add chain=forward hotspot=yes src-address-list=!hs-expire action=drop \
 comment="DROP HOTSPOT EXPIRED"
 
------------------------------------------------------------------------------------------
-tambahkan sekeduler hapus user yang sudah EXPIRED
------------------------------------------------------------------------------------------
-
-# BAGIAN 5 — SCHEDULER HAPUS USER YANG SUDAH EXPIRED
+# BAGIAN 5 — SCHEDULER HAPUS USER EXPIRED
 # ============================================================================= 
 
 /system scheduler
@@ -154,7 +176,13 @@ add name=cleanup-expired-users \
             :local c [/ip hotspot user get $u comment]
             :local p [:find $c "exp="]
             :if ($p != -1) do={
-                :local exp [:tonum [:pick $c ($p + 4) [:len $c]]]
+                :local e [:find $c "|" ($p + 4)]
+                :if ($e = -1) do={
+                    :local exp [:tonum [:pick $c ($p + 4) [:len $c]]]
+                } else={
+                    :local exp [:tonum [:pick $c ($p + 4) $e]]
+                }
+
                 :if (($nowEpoch - $exp) > $grace) do={
                     /ip hotspot user remove $u
                 }
