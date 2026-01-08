@@ -11,60 +11,104 @@ cara pakai:
 
 kemampuan:
 
+Voucher logic	        : OK
 Multi-device control    : set share user via script, ini lebih efisien  
 Error login native      : tidak mengganggu login page (tetap default)
 Expiry akurat           : kini menggunakan address-list + timeout 
 Firewall enforcement    : eksekusi address-list di gunakan untuk expired 
 Siap ribuan user        : pada script on-login ada penanganan jumlah-shared, voucher-expired, already-logged-in
+Race condition	        : FIXED
+Firewall enforcement	: expired jika 1. tidak terdaftar di hs-expire 2. jika tidak terdaftar di hs-grace 
+
 Siap STB / REST API     : 
     - generate profile 
     - generate user
     - CRUD profile 
     - sync metadata 
+=================================================================================================================
 
 # ===============================
-# ON-LOGIN
+# GRACE LIST (ANTI RACE CONDITION)
 # ===============================
+/ip firewall address-list add \
+    list=hs-grace \
+    address=$address \
+    timeout=3s \
+    comment=$user
 
+# ===============================
+# VARIABEL DASAR
+# ===============================
 :local user $user
 :local ip $address
 :local nowEpoch [:totime ([/system clock get date]." ".[/system clock get time])]
-:local maxDev 2
-:local duration (1440 * 60)
 
 :local uID [/ip hotspot user find name=$user]
+:if ([:len $uID] = 0) do={ :error "user-not-found" }
+
 :local comment [/ip hotspot user get $uID comment]
 
+:local plan "1d 00:00:00"
+:local maxDev 2
+
+
 # ===============================
-# SET EXPIRY JIKA BELUM ADA
+# PARSE PLAN → DETIK
+# format: <Xd HH:MM:SS>
+# ===============================
+:local dPos [:find $plan "d"]
+:if ($dPos = -1) do={ :error "invalid-plan-format" }
+
+:local days [:tonum [:pick $plan 0 $dPos]]
+:local timePart [:pick $plan ($dPos + 2) [:len $plan]]
+
+:local h [:tonum [:pick $timePart 0 2]]
+:local m [:tonum [:pick $timePart 3 5]]
+:local s [:tonum [:pick $timePart 6 8]]
+
+:if ($h > 23 || $m > 59 || $s > 59) do={ :error "invalid-time-value" }
+
+:local duration (
+    ($days * 86400) +
+    ($h * 3600) +
+    ($m * 60) +
+    $s
+)
+
+:if ($duration <= 0) do={ :error "invalid-duration" }
+
+
+# ===============================
+# SET EXP JIKA BELUM ADA
 # ===============================
 :if ([:find $comment "exp="] = -1) do={
     :local expEpoch ($nowEpoch + $duration)
-    /ip hotspot user set $uID comment=($comment." exp=".$expEpoch)
+    /ip hotspot user set $uID comment=("exp=".$expEpoch." | ".$comment)
     :set comment [/ip hotspot user get $uID comment]
 }
 
+
 # ===============================
-# PARSE EXPIRY
+# PARSE EXP
 # ===============================
-:local expEpoch [:tonum [:pick $comment ([:find $comment "exp="] + 4) [:len $comment]]]
+:local pExp [:find $comment "exp="]
+:if ($pExp = -1) do={ :error "exp-not-found" }
+
+:local expEpoch [:tonum [:pick $comment ($pExp + 4) [:find $comment "|" ($pExp + 4)]]]
 :local remaining ($expEpoch - $nowEpoch)
 
-:if ($remaining <= 0) do={
-    :error "voucher-expired"
-}
+:if ($remaining <= 0) do={ :error "voucher-expired" }
+
 
 # ===============================
-# CEK JUMLAH DEVICE (SEBELUM ADD)
+# CEK JUMLAH DEVICE
 # ===============================
 :local devCount [:len [/ip firewall address-list find list=hs-expire comment=$user]]
+:if ($devCount >= $maxDev) do={ :error "already-logged-in" }
 
-:if ($devCount >= $maxDev) do={
-    :error "already-logged-in"
-}
 
 # ===============================
-# DAFTARKAN DEVICE
+# DAFTARKAN DEVICE (FINAL LIST)
 # ===============================
 /ip firewall address-list add \
     list=hs-expire \
@@ -75,28 +119,46 @@ Siap STB / REST API     :
 ----------------------------------
 # lebih singkat pakai script di bawah ini tanpa komentar 
 ----------------------------------
+/ip firewall address-list add \
+    list=hs-grace \
+    address=$address \
+    timeout=5s \
+    comment=$user
 :local user $user
 :local ip $address
 :local nowEpoch [:totime ([/system clock get date]." ".[/system clock get time])]
-:local maxDev 2
-:local duration (1440 * 60)
 :local uID [/ip hotspot user find name=$user]
+:if ([:len $uID] = 0) do={ :error "user-not-found" }
 :local comment [/ip hotspot user get $uID comment]
+:local plan "1d 00:00:00"
+:local maxDev 2
+:local dPos [:find $plan "d"]
+:if ($dPos = -1) do={ :error "invalid-plan-format" }
+:local days [:tonum [:pick $plan 0 $dPos]]
+:local timePart [:pick $plan ($dPos + 2) [:len $plan]]
+:local h [:tonum [:pick $timePart 0 2]]
+:local m [:tonum [:pick $timePart 3 5]]
+:local s [:tonum [:pick $timePart 6 8]]
+:if ($h > 23 || $m > 59 || $s > 59) do={ :error "invalid-time-value" }
+:local duration (
+    ($days * 86400) +
+    ($h * 3600) +
+    ($m * 60) +
+    $s
+)
+:if ($duration <= 0) do={ :error "invalid-duration" }
 :if ([:find $comment "exp="] = -1) do={
     :local expEpoch ($nowEpoch + $duration)
-    /ip hotspot user set $uID comment=($comment." exp=".$expEpoch)
+    /ip hotspot user set $uID comment=("exp=".$expEpoch." | ".$comment)
     :set comment [/ip hotspot user get $uID comment]
 }
-:local expEpoch [:tonum [:pick $comment ([:find $comment "exp="] + 4) [:len $comment]]]
+:local pExp [:find $comment "exp="]
+:if ($pExp = -1) do={ :error "exp-not-found" }
+:local expEpoch [:tonum [:pick $comment ($pExp + 4) [:find $comment "|" ($pExp + 4)]]]
 :local remaining ($expEpoch - $nowEpoch)
-:if ($remaining <= 0) do={
-    :error "voucher-expired"
-}
+:if ($remaining <= 0) do={ :error "voucher-expired" }
 :local devCount [:len [/ip firewall address-list find list=hs-expire comment=$user]]
-:if ($devCount >= $maxDev) do={
-    :error "already-logged-in"
-}
-
+:if ($devCount >= $maxDev) do={ :error "already-logged-in" }
 /ip firewall address-list add \
     list=hs-expire \
     address=$ip \
@@ -113,7 +175,7 @@ Siap STB / REST API     :
 /ip firewall address-list remove [find list=hs-expire address=$ip comment=$user]
 
 -----------------------------------------------------------------------------------------
-ROLE EKSEKUSI DI FIREWALL FILTER 
+FIREWALL FILTER ROLE PROFILE EKSEKUSI 
 -----------------------------------------------------------------------------------------
 
 POSISI RULE (SANGAT PENTING)
@@ -129,10 +191,12 @@ invalid drop
 5  rule lain: 
 
 --------------------------------- 
+
 /ip firewall filter
 add chain=forward \
     hotspot=yes \
     src-address-list=!hs-expire \
+    src-address-list=!hs-grace \
     action=drop \
     comment="DROP HOTSPOT EXPIRED"
 
