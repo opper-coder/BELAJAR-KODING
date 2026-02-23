@@ -1,0 +1,214 @@
+Integrasi Codex dengan Project PHP XAMPP (Professional Setup)
+
+📑 DAFTAR ISI
+
+1. Persiapan Awal Project
+2. Install Git di Windows
+3. Inisialisasi Git pada Project XAMPP
+4. Commit Awal (Checkpoint Aman)
+5. Push ke GitHub
+6. Setup VS Code Profesional
+7. Install Codex di VS Code
+8. Menghubungkan Repository ke Codex
+9. Mode Kerja Profesional dengan Codex
+10. Standar Keamanan & Workflow Harian
+11. Prompt Pertama yang Aman untuk Project Kompleks
+
+1️⃣ Persiapan Awal Project
+--------------------------------------- 
+Kondisi Awal:
+XAMPP terinstall
+Apache & MySQL berjalan
+Project berada di:
+
+C:\xampp\htdocs\nama-project
+
+Database menggunakan MySQL bawaan XAMPP Project sudah berjalan di:
+
+http://localhost/nama-project
+
+⚠ Backup manual sebelum mulai Git:
+Copy folder project → rename:
+
+nama-project-backup-before-git
+
+2️⃣ Install Git di Windows
+--------------------------------------- 
+Download:
+https://git-scm.com/download/win
+
+Install default → Next → Finish
+
+Cek versi:
+git --version
+
+3️⃣ Inisialisasi Git pada Project XAMPP
+--------------------------------------- 
+Masuk ke root project:
+C:\xampp\htdocs\nama-project
+
+Klik kanan → Open in Terminal
+Jalankan:
+
+git init
+
+Cek status:
+
+git status
+
+4️⃣ Buat File .gitignore (WAJIB)
+--------------------------------------- 
+Buat file di root project:
+
+.gitignore
+
+Isi minimal:
+
+/vendor/
+/node_modules/
+/logs/
+/cache/
+*.log
+.env
+
+Kalau ada folder upload user:
+
+/uploads/
+
+5️⃣ Commit Awal (Checkpoint Aman)
+--------------------------------------- 
+Set identitas Git (sekali saja):
+
+git config --global user.name "Nama Kamu"
+git config --global user.email "emailkamu@example.com"
+
+Commit pertama:
+
+git add .
+git commit -m "Initial commit - stable version"
+
+Sekarang project punya snapshot aman.
+
+6️⃣ Push ke GitHub
+--------------------------------------- 
+Buat repository kosong di GitHub.
+
+Lalu jalankan:
+
+git remote add origin https://github.com/USERNAME/NAMA-REPO.git
+git branch -M main
+git push -u origin main
+
+Pastikan semua folder muncul di GitHub.
+
+7️⃣ Setup VS Code Profesional
+--------------------------------------- 
+
+Buka VS Code → Open Folder → pilih root project.
+Install Extensions:
+
+PHP Intelephense
+GitLens
+Error Lens
+Codex – OpenAI’s coding agent
+
+Restart VS Code.
+Pastikan Source Control aktif.
+
+8️⃣ Install & Hubungkan Codex
+--------------------------------------- 
+Di VS Code:
+Install Codex extension
+Login ChatGPT/OpenAI
+
+Hubungkan ke GitHub
+Pilih repository project
+
+Izinkan indexing
+Tunggu sampai Codex selesai membaca folder.
+
+9️⃣ Mode Kerja Profesional dengan Codex
+--------------------------------------- 
+⚠ Jangan langsung refactor.
+
+Prompt pertama yang aman:
+Analyze this PHP project in read-only mode.
+
+Do not modify files.
+Do not refactor.
+Do not create new files.
+
+Provide structured summary of:
+- Entry point
+- Authentication flow
+- Authorization system
+- Database interaction pattern
+- External API or router interaction
+- Cron/job logic
+- Folder structure
+- Modularity level
+- Potential architectural risks
+
+Tujuan:
+Codex menjadi auditor dulu.
+
+🔟 Workflow Harian Profesional
+--------------------------------------- 
+Sebelum buat fitur besar:
+
+git checkout -b feature-nama-fitur
+
+Kerjakan perubahan.
+Cek perubahan:
+git diff
+
+Commit:
+
+git add .
+git commit -m "Add fitur X"
+
+Kalau ingin batalkan semua perubahan:
+git reset --hard
+
+Kembali ke branch utama:
+
+git checkout main
+1️⃣1️⃣ Standar Aman Saat Menggunakan Codex
+--------------------------------------- 
+
+Selalu gunakan pola ini:
+Analyze
+Plan
+Small Change
+Review Diff
+
+Commit
+
+Test di XAMPP
+
+Jangan pernah:
+Refactor besar tanpa branch
+Edit langsung di main
+Terima perubahan tanpa baca diff
+
+🎯 Arsitektur Akhir Kamu Sekarang
+XAMPP → Run Project
+VS Code → Edit Code
+Git → Version Control
+GitHub → Backup & Sync
+Codex → AI Agent (Repo Level)
+
+Tanpa:
+Node.js
+Composer
+Perubahan struktur
+Gangguan sistem existing
+
+🚀 Status Kamu Sekarang
+
+Kamu sudah:
+Dari PHP manual developer
+Menjadi AI-assisted professional developer
+Dengan full repo awareness
+Dengan rollback safety
+Dengan agent-level code analysis
