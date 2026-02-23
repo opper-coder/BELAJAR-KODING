@@ -1,0 +1,172 @@
+📘 Cara Membuat Codex Memahami Flow APP kamu Secara Presisi
+
+📑 DAFTAR ISI
+
+Tujuan Dokumentasi 
+1. Konsep Dasar: Kenapa Codex Harus Diberi Konteks 
+2. Persiapan Struktur Project 
+3. Membuat File Dokumentasi Arsitektur 
+4. Membuat Flow Login Terdokumentasi 
+5. Membuat Flow Authorization Terdokumentasi 
+6. Dokumentasi Interaksi Database 
+7. Dokumentasi Interaksi API / Router 
+8. Prompt Standar Agar Codex Membaca Secara Presisi 
+9. Mode Kerja Aman (Read-Only → Plan → Edit) 
+10. Checklist Validasi Akhir
+
+1️⃣ Tujuan Dokumentasi
+Agar:
+Codex tidak salah asumsi
+Tidak refactor sembarangan
+Tidak menghapus logic penting
+Tidak merusak sistem login
+Bisa membantu scaling & modularisasi
+Codex bekerja optimal jika:
+Struktur + Flow + Tujuan sistem jelas.
+
+2️⃣ Konsep Dasar
+Codex tidak "mengerti niat kamu".
+Ia hanya membaca:
+Struktur folder
+Nama file
+Relasi fungsi
+Query database
+Pola coding
+Jika flow tidak eksplisit → Codex bisa salah tafsir.
+
+Solusi:
+👉 Buat file dokumentasi internal khusus untuk agent.
+
+3️⃣ Struktur Project Ideal (Contoh)
+/project-root
+│
+├── index.php
+├── login.php
+├── logout.php
+│
+├── /includes
+│   ├── config.php
+│   ├── db.php
+│   ├── auth.php
+│   ├── authorize.php
+│   └── router_api.php
+│
+├── /cron
+│   ├── disable_expired.php
+│   └── job_worker.php
+│
+├── /docs
+│   └── architecture.md
+│
+
+
+└── /assets
+
+4️⃣ Buat File: /docs/architecture.md
+
+Isi awal:
+# System Architecture Overview
+
+## Entry Point
+- index.php
+- login.php
+
+## Authentication Flow
+1. User submits login form.
+2. login.php validates credentials.
+3. Password checked using password_verify().
+4. Session created.
+5. Redirect to dashboard.
+
+## Authorization Model
+- Users stored in table: users
+- Authorization stored in table: authorize
+- One user can have multiple authorize records
+- authorize table maps user to location/router pool
+
+## Database Layer
+- db.php handles PDO connection
+- All queries must use prepared statements
+
+## Router Interaction
+- router_api.php handles MikroTik REST API
+- No router logic inside controller files
+
+## Cron System
+- /cron folder handles:
+  - disable expired users
+  - job queue processing
+
+## Design Principle
+- Authentication = identity validation
+- Authorization = access control based on authorize table
+
+
+5️⃣ Dokumentasi Flow Login (Detail Teknis)
+
+## Detailed Login Flow
+login.php:
+- POST username
+- POST password
+
+Process:
+1. Fetch user by username.
+2. If not found → reject.
+3. Verify password via password_verify().
+4. If success:
+    - $_SESSION['user_id']
+    - $_SESSION['role']
+5. Redirect to dashboard.php
+
+Security:
+- Password hashed using password_hash()
+- No plain text storage
+- Session regenerate after login
+
+6️⃣ Dokumentasi Flow Authorization
+
+Tambahkan:
+
+## Authorization Flow
+
+After login:
+- System checks authorize table.
+- If user has no authorize record → blocked.
+- If user has authorize:
+    - Can transact.
+    - Can access router assigned.
+
+Authorization Table:
+- id
+- user_id
+- router_id
+- pool_name
+- status
+
+Logic:
+- One user can have multiple routers.
+- Data filtering always based on authorize.user_id.
+
+6️⃣ Dokumentasi Flow Authorization
+
+Tambahkan:
+
+## Authorization Flow
+
+After login:
+- System checks authorize table.
+- If user has no authorize record → blocked.
+- If user has authorize:
+    - Can transact.
+    - Can access router assigned.
+
+Authorization Table:
+- id
+- user_id
+- router_id
+- pool_name
+- status
+
+Logic:
+- One user can have multiple routers.
+- Data filtering always based on authorize.user_id.
