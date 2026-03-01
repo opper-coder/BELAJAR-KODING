@@ -460,4 +460,85 @@ icmp-timeout=10s
 
 
 
+# ====================================================== #
+# RB1100-CORE FINAL CUSTOM WEIGHT (RATIO 2:3:1:1...)    #
+# ====================================================== #
+
+/system identity set name=RB1100-CORE
+
+# 1. INTERFACE LIST WAN
+/interface list add name=WAN
+:for i from=2 to=10 do={ /interface list member add list=WAN interface=("ether" . $i) }
+
+# 2. DHCP CLIENT (ADD DEFAULT ROUTE NO)
+/ip dhcp-client
+add interface=ether2 add-default-route=no use-peer-dns=no comment="ISP1-200M"
+add interface=ether3 add-default-route=no use-peer-dns=no comment="ISP2-300M"
+:for i from=4 to=10 do={ add interface=("ether" . $i) add-default-route=no use-peer-dns=no comment=("ISP-STD-" . $i) }
+
+# 3. ROUTE BALIK & PtP
+/ip address add address=10.10.10.1/30 interface=ether1 comment="Link to RB5009"
+/ip route
+add dst-address=100.1.1.0/22 gateway=10.10.10.2 comment="Route to Hotspot"
+add dst-address=200.1.1.0/23 gateway=10.10.10.2 comment="Route to PPPoE"
+
+# 4. FIREWALL RAW & FILTER (SECURITY)
+/ip firewall raw
+add chain=prerouting connection-state=invalid action=drop
+add chain=prerouting protocol=udp dst-port=53 in-interface-list=WAN action=drop comment="Block DNS WAN All"
+
+/ip firewall filter
+add chain=forward protocol=tcp tcp-flags=syn connection-limit=200,32 action=reject reject-with=tcp-reset comment="Anti Abuse"
+add chain=forward action=fasttrack-connection connection-state=established,related connection-mark=no-mark
+add chain=forward connection-state=established,related action=accept
+
+# 5. MANGLE PCC (TOTAL PEMBAGI 12)
+/ip firewall mangle
+add chain=prerouting dst-address-type=local action=accept
+add chain=prerouting dst-address=10.10.10.0/30 action=accept
+add chain=prerouting dst-address=100.1.1.0/22 action=accept
+add chain=prerouting dst-address=200.1.1.0/23 action=accept
+
+# --- ISP 1 (ether2) - Bobot 2x (0, 1) ---
+add chain=prerouting in-interface=ether1 connection-state=new per-connection-classifier=both-addresses-and-ports:12/0 action=mark-connection new-connection-mark=ISP1_conn passthrough=yes
+add chain=prerouting in-interface=ether1 connection-state=new per-connection-classifier=both-addresses-and-ports:12/1 action=mark-connection new-connection-mark=ISP1_conn passthrough=yes
+
+# --- ISP 2 (ether3) - Bobot 3x (2, 3, 4) ---
+add chain=prerouting in-interface=ether1 connection-state=new per-connection-classifier=both-addresses-and-ports:12/2 action=mark-connection new-connection-mark=ISP2_conn passthrough=yes
+add chain=prerouting in-interface=ether1 connection-state=new per-connection-classifier=both-addresses-and-ports:12/3 action=mark-connection new-connection-mark=ISP2_conn passthrough=yes
+add chain=prerouting in-interface=ether1 connection-state=new per-connection-classifier=both-addresses-and-ports:12/4 action=mark-connection new-connection-mark=ISP2_conn passthrough=yes
+
+# --- ISP 3 - ISP 9 (ether4-10) - Bobot 1x (5 s/d 11) ---
+add chain=prerouting in-interface=ether1 connection-state=new per-connection-classifier=both-addresses-and-ports:12/5 action=mark-connection new-connection-mark=ISP3_conn passthrough=yes
+add chain=prerouting in-interface=ether1 connection-state=new per-connection-classifier=both-addresses-and-ports:12/6 action=mark-connection new-connection-mark=ISP4_conn passthrough=yes
+add chain=prerouting in-interface=ether1 connection-state=new per-connection-classifier=both-addresses-and-ports:12/7 action=mark-connection new-connection-mark=ISP5_conn passthrough=yes
+add chain=prerouting in-interface=ether1 connection-state=new per-connection-classifier=both-addresses-and-ports:12/8 action=mark-connection new-connection-mark=ISP6_conn passthrough=yes
+add chain=prerouting in-interface=ether1 connection-state=new per-connection-classifier=both-addresses-and-ports:12/9 action=mark-connection new-connection-mark=ISP7_conn passthrough=yes
+add chain=prerouting in-interface=ether1 connection-state=new per-connection-classifier=both-addresses-and-ports:12/10 action=mark-connection new-connection-mark=ISP8_conn passthrough=yes
+add chain=prerouting in-interface=ether1 connection-state=new per-connection-classifier=both-addresses-and-ports:12/11 action=mark-connection new-connection-mark=ISP9_conn passthrough=yes
+
+# Mark Routing (Unik per jalur)
+:for i from=1 to=9 do={
+  /ip firewall mangle add chain=prerouting in-interface=ether1 connection-mark=("ISP" . $i . "_conn") action=mark-routing new-routing-mark=("to_ISP" . $i) passthrough=no
+}
+
+# 6. IP ROUTE (INTERFACE SCOPING % GATEWAY 192.168.1.1)
+/ip route
+:for i from=1 to=9 do={
+  add gateway=("192.168.1.1%ether" . ($i+1)) routing-mark=("to_ISP" . $i) check-gateway=ping
+  add gateway=("192.168.1.1%ether" . ($i+1)) distance=$i check-gateway=ping
+}
+
+# 7. NAT & TUNING
+/ip firewall nat
+add chain=srcnat out-interface-list=WAN action=masquerade comment="NAT All WAN"
+
+/ip firewall connection tracking
+set enabled=yes max-entries=250000 tcp-established-timeout=30m tcp-close-timeout=10s tcp-fin-wait-timeout=10s tcp-last-ack-timeout=10s udp-timeout=10s udp-stream-timeout=1m icmp-timeout=10s
+
+/ip firewall mangle
+add chain=forward protocol=tcp tcp-flags=syn action=change-mss new-mss=clamp-to-pmtu comment="Fix MTU Issues"
+
+
+
 
