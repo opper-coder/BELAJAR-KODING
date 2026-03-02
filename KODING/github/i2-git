@@ -40,7 +40,7 @@ work space
 di git mengenal 3 area: 
 	1. working tree 	: folder tempat bekerja (yang kita buat tadi dan dilakukan init di dalamnya)
 	2. Stagging area 	: folder perubahan
-	3. History 		: folder yang sudah di commit 
+	3. History 			: folder yang sudah di commit 
 folder stagging area dan history akan di tempatkan di folder .git yang di generate scr hidden oleh git init yg berisi perangkat git
 implementasinya seperti ini:
 	- saat masuk folder working area maka git akan memonitoring ada perubahan tidak 
@@ -52,13 +52,13 @@ PRAKTEK
 setelah melakukan install di linux > buka terminal (saat latihan) atau pakai terminal vscode (disarankan saat kerja)
 - :> git pwd 			: melihat git sedang aktif di folder mana, tetntu setelah instalasi dan init 
 - :> git --version 		: cek instalasi dan version
-- :> ls 			: melihat folder yang ada
+- :> ls 				: melihat folder yang ada
 - :> cd Document 		: pindah ke folder document
-- :> mkdir latihanGit 		: bikin folder
+- :> mkdir latihanGit 	: bikin folder
 - :> cd latihanGit > git init 	: masuk dan inisialisasi > maka repo akan berubah jadi : initialize ... (master)  
 	untuk mengoperasikan git nantinya tinggal masuk ke folder git yg sudah di init di terminal > siap jalankan Git
 - :> touch index.html 		: create file index.html di terminal linux
-- :> git status 		: hasilnya akan di beritahukan bahwa sudah ada file baru yang belum bisa di tracking, 
+- :> git status 			: hasilnya akan di beritahukan bahwa sudah ada file baru yang belum bisa di tracking, 
 	(perlu di add dan commit atau tidak supaya masuk ke stage git nya)
 - :> git add index.html		: kalau mau banyak file sekaligus tinggal spasi namafile. 
 	file yang sudah di add akan masuk ke stagging, dan siap di commit, tapi jika mau menghapus dari stagging (bukan di file):
@@ -70,12 +70,12 @@ setelah melakukan install di linux > buka terminal (saat latihan) atau pakai ter
 - :> git commit -m "halo ini commit pertama" : -m artinya message. semua file yag ada di stagging akan di commit > 
 	dan akan di arahkan ke vim atau code oditor default yang sudah di setting sebelumnya (cara settingnya cari tutorial sendiri) 
 - :> git commit (tanpa -m) 	: maka akan di buatkan ke message default > dan di redirect ke vim atau nano > jika iya tinggal save dan exit > lanjutkan
-- :> git status 		: setelah commit lihat status hasilnya: stagging kosong
-- :> git add style.css 	: saat kita menambah file baru style.css dan di link ke html, saat lakukan "git status" maka ada terlihat perubahan
-- :> git add . 			: (add spasi titik) kita akan add semua file sekaligus atau
-- :> git style.css 		: add satu persatu (lihat nama file satu persatu di git status)
+- :> git status 			: setelah commit lihat status hasilnya: stagging kosong
+- :> git add style.css 		: saat kita menambah file baru style.css dan di link ke html, saat lakukan "git status" maka ada terlihat perubahan
+- :> git add . 				: (add spasi titik) kita akan add semua file sekaligus atau
+- :> git style.css 			: add satu persatu (lihat nama file satu persatu di git status)
 	- sama saat terjadi perubahan file, hapus file, dan tambah file baru, kita cek via git status, lalu git add, lalu git commit 
-- :> git log 			: memperlihatkan history log apa yang sudah pernah commit apa saja yg kita lakukan
+- :> git log 				: memperlihatkan history log apa yang sudah pernah commit apa saja yg kita lakukan
 - :> git log -3 			: history 3 commit baris terakhir. karena commit itu bisa banyak sekali 
 - :> git log -- style.css 	: lihat log khusus satu file (style.css)
 - :> git checkout 7667b -- style.css : saat kita sudah pernah menghapus style.css dan hendak ingin mengembalikan file tersebut 
@@ -87,9 +87,9 @@ setelah melakukan install di linux > buka terminal (saat latihan) atau pakai ter
 -------------------------------------------------
 GIT BRANCH
 operasi dasar buka folder kerja kita di vscode 
-- :> mkdir latihanGitBranch 	: bikin folder
+- :> mkdir latihanGitBranch : bikin folder
 - :> cd latihanGitBranch 	: masuk
-- :> git init 			: initialisasi
+- :> git init 				: initialisasi
 - :> touch index.html 		: new file index.html > buka di vscode > isi html standard template 
 - ctrl ` 			: ctrl spasi backtick buka terminal terminal vscode di folder ini 
 	di sidefolder vscode otomatis terlihat folder project kita dan terdapat file dengan flag tertentu berwarna warni itu artinya:
