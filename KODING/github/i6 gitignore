@@ -9,8 +9,8 @@ GIT IGNORE
 	---------------------------------------------
 	keterangan.txt 			: file
 	keterangan2.txt 		: file2
-	*.exe				: extensi
-	folder1/			: folder dan isinya
+	*.exe					: extensi
+	folder1/				: folder dan isinya
 	---------------------------------------------
 	- :> git add . 			: artinya kirim semua file kecuali di gitignore
 	- :> git status 		: cek di status pengiriman
