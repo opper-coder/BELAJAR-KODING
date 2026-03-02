@@ -2,23 +2,23 @@ ringkasan:
 ---
 dasar:
 install dulu
-:> git --version 		: cek install
+:> git --version 			: cek install
 :> cd folderproject 		: 
-:> git init 			: init
+:> git init 				: init
 :> git config name --global user.name "opper-coder" 
 :> git config name --global user.email "opperofficial@gmail.com" 
-:> git status 			: status work, stage, commit
+:> git status 				: status work, stage, commit
 :> git add index.html 		: file
-:> git add .			: stage semua file
+:> git add .				: stage semua file
 :> git rm  --cache namafile.html : hapus stage
 :> git commit -m "..." 		: save
 :> git commit -am "..." 	: stage, save
-:> git log -3 			: status commit lihat commit
+:> git log -3 				: status commit lihat commit
 :> alias graph="git log --all --decorate --oneline --graph"
-:> graph 			: status commit pakai grafik
+:> graph 					: status commit pakai grafik
 ---
 branch:
-:> git branch 			: status ada branch
+:> git branch 				: status ada branch
 :> git branch cobaEdit 		: create branch
 :> git checkout cobaEdit 	: pindah ke branch
 :> git checkout -b editHalaman 	: pindah dan create
@@ -30,8 +30,8 @@ branch:
 :> q 				: quit
 :> q! 				: quit
 :> :wq! 			: quit
-fast forward 			: 
-tree-way merge 			: 
+fast forward 				: 
+tree-way merge 				: 
 
 -------------------------------------------------
 GIT
