@@ -1,12 +1,12 @@
 // DAFTAR ISI
 ------------------------------------------------------------------------------------------------
-start						-> download dan readyfunction
+start					-> download dan readyfunction
 syntax					-> bentuk dasar, pilih dan aksi
-event						-> click, dblclick dll
+event					-> click, dblclick dll
 Effects					-> hide, toggle, animation
-html						-> CRUD konten dan element, class, toggleClass, CSS, dimension: width(), height()
-transversing		-> seleksi relatif dengan element
-ajax						-> load data dan page
+html					-> CRUD konten dan element, class, toggleClass, CSS, dimension: width(), height()
+transversing			-> seleksi relatif dengan element
+ajax					-> load data dan page
 
 // PENDAHULUAN
 ------------------------------------------------------------------------------------------------
