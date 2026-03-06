@@ -1,80 +1,80 @@
 Pendahuluan
 1 oktober 2022
-- Pengenalan JavaScript 		-> bahasa scripting bukan compiler untuk frontend, backend, json API, web, android, ios, IoT
-- Program Hello World 			-> konsol dan halaman
-- Komentar 				-> keterangan bahasa manusia tidak di compile
+- Pengenalan JavaScript 	-> bahasa scripting bukan compiler untuk frontend, backend, json API, web, android, ios, IoT
+- Program Hello World 		-> konsol dan halaman
+- Komentar 					-> keterangan bahasa manusia tidak di compile
 - Tipe Data Number 			-> bisa juga hexa, octal, binary 
-- Tipe Data Boolean 			-> saklar on off
+- Tipe Data Boolean 		-> saklar on off
 - Tipe Data String 			-> "8" juga string bisa di conversi parseint()
-- Variable 				-> wadah tunggal, bisa utk: array, object, if ternary, operator math, funct anonimous, trigger function (lihat function dalam var ---> )
-- Operator Matematika 			-> + - * / % **
-- Operator Perbandingan 		-> < > <= >= == === != !==
+- Variable 					-> wadah tunggal, bisa utk: array, object, if ternary, operator math, funct anonimous, trigger function (lihat function dalam var ---> )
+- Operator Matematika 		-> + - * / % **
+- Operator Perbandingan 	-> < > <= >= == === != !==
 - Operator Logika 			-> && || ! = boolean return bool jg. bisa di if, variabel, for, while, do while
-- Console 				-> display konsol : console.log, info, warn, error, table 
+- Console 					-> display konsol : console.log, info, warn, error, table 
 - String Template 			-> pengganti string kombinasi dan concate
-- Konversi String dan Number 		-> ada kemiripan angka dan string maka butuh konversi
+- Konversi String dan Number -> ada kemiripan angka dan string maka butuh konversi
 - Tipe Data Array  			-> index
 - filter array 				-> saring mungkin bagus untuk query
 - Tipe Data Object 			-> property
 - If Expression 			-> percabangan dasar
-- Popup 				-> pop up bawaan browser yang membantu debug sebenarnya
+- Popup 					-> pop up bawaan browser yang membantu debug sebenarnya
 - Undefined 				-> belum ada wadah dan nilai tapi sudah di hoisting
-- Null 					-> sudah ada wadah dan nilai hanya saja nilai null
-- Switch Expression  			-> pengganti if pada kondisi perbandingan == saja
+- Null 						-> sudah ada wadah dan nilai hanya saja nilai null
+- Switch Expression  		-> pengganti if pada kondisi perbandingan == saja
 - Operator typeof 			-> type datanya apa ya?
 - Operator in 				-> adakah property/field/index? (bukan value)
 - Ternary Operator 			-> if sederhana, bisa masuk variabel jg
-- Nullish Coalescing Operator 		-> mirip ternary,bedanya menanyakan apakah null, undefined atau tidak
-- Optional Chaining 			-> mau akses "parameter" di object ada tidak? (null, undefined) atau tidak
+- Nullish Coalescing Operator -> mirip ternary,bedanya menanyakan apakah null, undefined atau tidak
+- Optional Chaining 		-> mau akses "parameter" di object ada tidak? (null, undefined) atau tidak
 - Falsy dan Truthy 			-> untuk kondisi bagus (if, looping, dll)
-- Operator Logika di Non Boolean	-> if tanpa if statemen
-- For Loop 				-> looping dasar(initial di dalam bisa)
+- Operator Logika di Non Boolean-> if tanpa if statemen
+- For Loop 					-> looping dasar(initial di dalam bisa)
 - While Loop 				-> looping. dg init di luar
 - Do While Loop 			-> minimal, lakukan dulu sekali (pada looping)
-- Break dan Continue 			-> skip dan stop loop, (switch, for, while, recursive, iterasi)
-- Label 				-> skip stop looping bersarang.(kursor looping)
-- For In 				-> looping "properti" object
-- For Of  				-> looping "value" array
+- Break dan Continue 		-> skip dan stop loop, (switch, for, while, recursive, iterasi)
+- Label 					-> skip stop looping bersarang.(kursor looping)
+- For In 					-> looping "properti" object
+- For Of  					-> looping "value" array
 - With Statement 			-> cursor pada hierarchi object (error kayaknya sudah tidak berlaku)
-- Function 				-> pembungkus semua fungsi, hanya jalan saat di panggil, 
-- Function di Variabel 			-> variabel bisa jadi function
-- Function Parameter 			-> umpan dalam block
-- Function Return Value 		-> hasil kalkulasi
-- Optional Parameter 			-> argument tidak wajib di isi. parameter tapi bisa boomerang lo
-- Default Parameter 			-> jika tidak di oper masih punya default nilai jadi tidak sama sekali kosong gitu
+- Function 					-> pembungkus semua fungsi, hanya jalan saat di panggil, 
+- Function di Variabel 		-> variabel bisa jadi function
+- Function Parameter 		-> umpan dalam block
+- Function Return Value 	-> hasil kalkulasi
+- Optional Parameter 		-> argument tidak wajib di isi. parameter tapi bisa boomerang lo
+- Default Parameter 		-> jika tidak di oper masih punya default nilai jadi tidak sama sekali kosong gitu
 - Rest Parameter 			-> argument untuk tangkap parameter yg banyak tapi bukan array, akan di konvert ke array 
 - spread syntax 			-> oper "parameter array" gak boleh meski di tangkap oleh rest parameter, solusi: spread syntax
 - arguments object 			-> dulunnya ada "arguments object"(sudah tidak disarankan) sekarang di ganti rest parameter
-- callback				-> argument dalam bentuk function
-- Function Sebagai Value 		-> function dalam variabel (sebagai value variabel)
-- Anonymous Function 			-> function tanpa nama, harus bungkus variabel
-- Function dalam Function 		-> bisa
-- Recursive Function 			-> kayak looping (factorial)
-- Function Generator 			-> data array lazy [* yield] 
+- callback					-> argument dalam bentuk function
+- Function Sebagai Value 	-> function dalam variabel (sebagai value variabel)
+- Anonymous Function 		-> function tanpa nama, harus bungkus variabel
+- Function dalam Function 	-> bisa
+- Recursive Function 		-> kayak looping (factorial)
+- Function Generator 		-> data array lazy [* yield] 
 - Arrow Function 			-> =>
-- Scope 				-> global dan local di semua block {}							    
-- hoisting 				-> upaya keluar dari scoop local 
-- Closure 				-> cara keluar dari scoop local ke global
+- Scope 					-> global dan local di semua block {}							    
+- hoisting 					-> upaya keluar dari scoop local 
+- Closure 					-> cara keluar dari scoop local ke global
 - Object Method 			-> kumpulan data mengandung property dan method
-- this 					-> (   ...   belum selesai ) object yang merujuk object root pemilik scoop (biasanya dalam window, object, new instance)(fun jadi obj,kec arrow)
-- Arrow Function di Object 		-> (   ...   belum selesai ) method
-- Getter dan Setter 			-> (   ...   belum selesai ) dua func yg di tanam ke obj dan di conversi jadi properti: berfungsi ubah dan ambil
-- Masalah Variable var 			-> tidak punya scoop (rawan jngn gunakan)
+- this 						-> (   ...   belum selesai ) object yang merujuk object root pemilik scoop (biasanya dalam window, object, new instance)(fun jadi obj,kec arrow)
+- Arrow Function di Object 	-> (   ...   belum selesai ) method
+- Getter dan Setter 		-> (   ...   belum selesai ) dua func yg di tanam ke obj dan di conversi jadi properti: berfungsi ubah dan ambil
+- Masalah Variable var 		-> tidak punya scoop (rawan jngn gunakan)
 - Destructuring 			-> (   ...   belum selesai ) konversi array ke variabel (explode)
 - Strict Mode 				-> (   ...   belum selesai ) mode debug agar error terdisplay
-- Debugger 				-> (   ...   belum selesai ) debugger browser support
+- Debugger 					-> (   ...   belum selesai ) debugger browser support
 ----------------------------------------------------------------------------------------------------------------
 
-- sandika				-> ringkas disini
-- class					-> 
+- sandika					-> ringkas disini
+- class						-> 
 	
 ----------------------------------------------------------------------------------------------------------------	
 - Materi Selanjutnya 			-> es6 -> async -> OOP -> nodejs -> express
 	- JavaScript Object Oriented Programming	-> OOP
-	- JavaScript Modules				-> Modular
-	- JavaScript Document Object Model		-> DOM
-	- JavaScript Async 				-> ajax
-	- JavaScript Web API 				-> express, indexdb, file system, canvas API 
+	- JavaScript Modules		-> Modular
+	- JavaScript Document Object Model	-> DOM
+	- JavaScript Async 			-> ajax
+	- JavaScript Web API 		-> express, indexdb, file system, canvas API 
 ----------------------------------------------------------------------------------------------------------------
 
 - PENDAHULUAN ---------------------------------
