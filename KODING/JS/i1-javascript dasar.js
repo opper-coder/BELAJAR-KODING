@@ -47,7 +47,7 @@ Pendahuluan
 - arguments object 			-> dulunnya ada "arguments object"(sudah tidak disarankan) sekarang di ganti rest parameter
 - callback					-> argument dalam bentuk function
 - Function Sebagai Value 	-> function dalam variabel (sebagai value variabel)
-- Anonymous Function 		-> function tanpa nama, harus bungkus variabel
+- Anonymous Function 		-> function tanpa nama, harus di bungkus variabel
 - Function dalam Function 	-> bisa
 - Recursive Function 		-> kayak looping (factorial)
 - Function Generator 		-> data array lazy [* yield] 
