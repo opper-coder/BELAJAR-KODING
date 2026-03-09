@@ -3,11 +3,11 @@ PR
 /*
 SYNC AWAIT KONSEP
 daftar isi:
-	- pengertian			-> konsep asyncronous dan beberapa cara eksekusinya
-	- promise 			-> salah satu method async yng ada dlm js
+	- pengertian				-> konsep asyncronous dan beberapa cara eksekusinya
+	- promise 					-> salah satu method async yng ada dlm js
 	- langkah async dg promise	-> urutan cara async dengan methode promise beserta error handling nya dngan .then().catch()
 	- langkah async dg async await 	-> cara baru dengan async await dengan error handling try{}catch(){}
-	- error handling 		-> perbedaan method dan syntax
+	- error handling 			-> perbedaan method dan syntax
 
 // pengertiann async await:
 adalah cara penulisan asynchronus alternative selain promise dan fetch, 
