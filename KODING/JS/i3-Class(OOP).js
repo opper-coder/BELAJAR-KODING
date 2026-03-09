@@ -216,10 +216,10 @@ Materi Video :
 		- #nama; #alamat; yaitu tambahkan pagar pada property di luar constructor tadi, itu aja
  */ 
  	class Orang{
-		#nama;								// private
+		#nama;									// private
 		#alamat;
 		#umur=12;
-		construct(){}						// jadi benar kalau bikin public tetap di constructor aja kalau saya. yg diluar cukup yg private
+		construct(){}							// jadi benar kalau bikin public tetap di constructor aja kalau saya. yg diluar cukup yg private
 		halo(){}
 	}
 	const aqil = new Orang()
@@ -270,8 +270,8 @@ Materi Video :
 		static halo(){ console.log("halo static"); } // static method
 	}
 	const config = new Configuration();
-	console.log(config.halo());					// error: tidak bisa di akses sebab memang tidak ikut dalam instance
-	console.log(Configuration.halo());			// cara akses langsung ke class.static method
+	console.log(config.halo());						// error: tidak bisa di akses sebab memang tidak ikut dalam instance
+	console.log(Configuration.halo());				// cara akses langsung ke class.static method
 
 /* - Error ----------------------------------------------
 		- ada banyak class error di JavaScript, yg semuanya Extends dr "class Error{}", artinya dia superclass semua class error di js
@@ -326,9 +326,9 @@ try{ 												// 5. ada try catch
 } 
 catch (error){
 	console.error(`terjadi error: ${error.message}`); 		// 8. dan akhirnya aplikasi lewat catch ini. error.message adalah properti bawaan JS
-}									// yang menangkap dari instance class error di aplikasi throw di atas
+}															// yang menangkap dari instance class error di aplikasi throw di atas
 console.log("kode program tidak akan berhenti");			// 9. sehingga aplikasi nyampai kesini melewati "catch"									
-									// 10. tapi jika langkah 7 tidak error perjalanan tembus ke 9. ini melalui "try"									
+															// 10. tapi jika langkah 7 tidak error perjalanan tembus ke 9. ini melalui "try"									
 /* - finally --------------------------------
 		finally adalah seperti aplikasi diluar try catch finally. yaitu error atau tidak silahkan finally tetap di eksekusi
  		istilahnya "gerbang keluar dari try catch"
