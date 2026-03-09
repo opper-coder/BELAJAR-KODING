@@ -10,18 +10,18 @@ daftar isi
 
 1. 		
 ---------------------------------------------------------------------
-fetch();									// basic
+fetch();										// basic
 fetch(url); 									// args method GET
 fetch(url,{});									// args methode LAINYA
 
 2. 
 ---------------------------------------------------------------------
 fetch().then()  								// hanya menghasilkan readable stream, parameter status request
-fetch().then().then()	 							// .then(pertama, conversi json masih promise:reject,resolve) .then(kedua, ambil data json)
+fetch().then().then()	 						// .then(pertama, conversi json masih promise:reject,resolve) .then(kedua, ambil data json)
 
 3. 
 ---------------------------------------------------------------------
-fetch().then(()=>{ bool ? ok : else }) 						// handle error memanfaatkan promise, dengan then catch
+fetch().then(()=>{ bool ? ok : else }) 			// handle error memanfaatkan promise, dengan then catch
 
 4. 
 ---------------------------------------------------------------------
@@ -33,30 +33,30 @@ konsep untuk menjalankan fetch kita harus jalankan di server oleh karena itu:
 ---------------------------------------------------------------------
 let url = 'http://reqres.in/api/users'; 						
 fetch(url + '/1'); 								// basic1
-fetch('http://reqres.in/api/users/1'); 						// basic2
+fetch('http://reqres.in/api/users/1'); 			// basic2
 
 fetch().then()  								// basic promise
 fetch('http://reqres.in/api/users/1')
-	.then((response) => console.log(response)); 				// then untuk ambil response > tapi masih berupa object parameter request (status, ok, url dll) (nama arg bebas)
+	.then((response) => console.log(response)); // then untuk ambil response > tapi masih berupa object parameter request (status, ok, url dll) (nama arg bebas)
 
-fetch().then().then() 								// basic data object
-fetch('http://reqres.in/api/users/1') 						// best practice
-	.then((response) => response.json()); 					// body berbentuk readable stream konversi ke object, konversi ada .json(), .blob(), .text(). tapi masih dlm bentuk promise
-	.then((data) => console.log(data)); 					// kalau mau ambil data nya .then() lagi. nama argument bebas
-										// fetch().then(konversi dan promise).then(data bukan promise) 
-										// sampai sini sudah jalan
-	.catch((err) => console.log(err)) 					// .catch langsung tangkap error jg boleh -> tapi best practice error handling ada di bawah
+fetch().then().then() 							// basic data object
+fetch('http://reqres.in/api/users/1') 			// best practice
+	.then((response) => response.json()); 		// body berbentuk readable stream konversi ke object, konversi ada .json(), .blob(), .text(). tapi masih dlm bentuk promise
+	.then((data) => console.log(data)); 		// kalau mau ambil data nya .then() lagi. nama argument bebas
+												// fetch().then(konversi dan promise).then(data bukan promise) 
+												// sampai sini sudah jalan
+	.catch((err) => console.log(err)) 			// .catch langsung tangkap error jg boleh -> tapi best practice error handling ada di bawah
 
-fetch().then().then().catch() 							// basic error
-fetch('http://reqres.in/api/users/1') 						// best practice2
+fetch().then().then().catch() 					// basic error
+fetch('http://reqres.in/api/users/1') 			// best practice2
 	.then((response) => response.json()); 					
 	.then((data) => console.log(data)); 					
-	.catch((err) => console.log(err)) 					// langsung chain tangkap error promise:reject
+	.catch((err) => console.log(err)) 			// langsung chain tangkap error promise:reject
 
 6. Handle Error 404 atau promise: reject
 ---------------------------------------------------------------------
-fetch('http://reqres.in/api/users/1') 						// .then() pertama bisa mengembalikan response ok:true, selain resolve, reject
-	.then((response) => {  							// cek bool
+fetch('http://reqres.in/api/users/1') 			// .then() pertama bisa mengembalikan response ok:true, selain resolve, reject
+	.then((response) => {  						// cek bool
 		if(response.ok){
 			console.log("ada data");
 		}else{
@@ -83,13 +83,13 @@ fetch('http://reqres.in/api/users/1')
 			return response.json();
 		}else{
 			return Promise.reject({
-				status: response.status 			// di else kita ambil status
+				status: response.status 		// di else kita ambil status
 			}); 
 		}
 	});
-	.then((data) => console.log(data)); 					// .then() kedua. ambil data
+	.then((data) => console.log(data)); 		// .then() kedua. ambil data
 	.catch((err) => {  							// .catch() adalah pengambil peran saat reject
-		if( err.status == 404 ){ 		 			// kondisi status			
+		if( err.status == 404 ){ 		 		// kondisi status			
 			console.log("Data tidak di temukan") 
 		}
 	});
@@ -129,9 +129,9 @@ AXIOS
 ---------------------------------------------------------------------
 let url = 'http://reqres.in/api/users';
 axios.get(url +'/1') 
-	.then((data) => console.log(data.data)) 				// langsung berupa data object
+	.then((data) => console.log(data.data)) 			// langsung berupa data object
 	.catch((err) => console.log(err)) 					// saat di errorkan misal url dg id=x maka ada tampil error, beda dg fetch tidak tampil error meski detile nya ada 
-axios.post(url,{ nama: "aqil", alamat: "saiti" }) 				// untuk post sangat mudah cukup berbeda dg post pada fetch()
+axios.post(url,{ nama: "aqil", alamat: "saiti" }) 		// untuk post sangat mudah cukup berbeda dg post pada fetch()
 	.then((data) => console.log(data.data))
 
 
