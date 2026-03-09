@@ -86,7 +86,7 @@ Pendahuluan
 	document.write();
 	hasilparentdom.innerHTML = "<p>hello world</p>"; 
 	window.alert("Hello World!");	// atau tanpa window boleh
-	console.log("hello world");	// di console
+	console.log("hello world");		// di console
 	console.info("hello world");	// pengganti log
 	console.warn("hello world");	// berwarna kuning
 	console.error("hello world");	// merah
@@ -137,7 +137,7 @@ Pendahuluan
 - Operator Logika -----------------------------
 	Operator logika adalah operator untuk dua buah data boolean
 	Hasil dari operator logika adalah boolean lagi
-	&& || ! // let hasil = true && false => hasilnya false 
+	&& || ! // let hasil = true && false  // hasilnya false 
 - Console -------------------------------------
 	console.info() .warn() .error() .table() 
 	console.table("array") bagus untuk array dan object
@@ -148,21 +148,21 @@ Pendahuluan
 - Konversi String dan Number ------------------
 	parseInt("1")			// integer conversi dari str ke numb
 	parseFloat("2")			// pecahan str ke numb
-	Number("3")			// str ke numb
+	Number("3")				// str ke numb
 	number.toString(5)		// numb ke str
 - Tipe Data Array -----------------------------
-	- []							// bentuk dasar
+	- []								// bentuk dasar
 	- let orang = []					// masuk var
 	- orang[1] = "aqil";					// isi ke index tujuan
-	- let orang = ["aqil","iza","silmi"];			// isi manual
+	- let orang = ["aqil","iza","silmi"];	// isi manual
 	- orang.push("andi");					// isi di index paling belakang
-	- orang.push("liva","andien");				// push banyak
+	- orang.push("liva","andien");			// push banyak
 	- operasi array:
 	 	orang.push() 					// Menambah data ke Array
 		orang.length 					// Untuk mendapatkan panjang Array -> console.info(orang.length);
-		orang[2] 					// Mendapat data di posisi index
+		orang[2] 						// Mendapat data di posisi index
 		orang[3] = "faqih" 				// Mengubah data di posisi index
-		delete orang[index] 				// Menghapus data di posisi index, namun index tidak bergeser spt mySQL
+		delete orang[index] 			// Menghapus data di posisi index, namun index tidak bergeser spt mySQL
 - filter array --------------------------------
 	- mungkin di gunakan untuk query
 	- filter((d) => d)
@@ -183,21 +183,21 @@ Pendahuluan
   	console.log(filteredAngka);
 - Tipe Data Object ----------------------------
 	- {}							// bentuk dasar
-	- let orang = {}					// masuk var
-	- orang["nama"] = "aqil";				// tambah / ubah ke key dimaksud
-	- let orang = {						// isi manual
+	- let orang = {}				// masuk var
+	- orang["nama"] = "aqil";		// tambah / ubah ke key dimaksud
+	- let orang = {					// isi manual
 		nama : "aqil",
 		alamat : "saiti",
 		umur : 12 					// properti / attribut
-		halo = function(){}				// method /
+		halo = function(){}			// method /
 		}
-	- console.table(orang);					// akses object
-	- console.table(orang.nama);				// akses properti
+	- console.table(orang);			// akses object
+	- console.table(orang.nama);	// akses properti
 - If Expression -------------------------------
 	- if(){}						// if akan di eksekusi saat true jika false tidak (tanpa else)
-	- if(){}else{}						// else akan di eksekusi saat false pada if
-	- if(){}else if(){}else{}				// akan di eksekusi "true" pada if "duluan" true "belakangan" tidak di eksekusi
-								// begitulah jika else if bertingkat banyak
+	- if(){}else{}					// else akan di eksekusi saat false pada if
+	- if(){}else if(){}else{}		// akan di eksekusi "true" pada if "duluan" true "belakangan" tidak di eksekusi
+									// begitulah jika else if bertingkat banyak
 - if dengan kondisi array
 	let kondisi = [
 	  true,
@@ -230,7 +230,7 @@ Pendahuluan
 	- alert()							// popup dasar (semua popup ini hanya pengguna browser bukan n)
 	- prompt()							// input (hanya text jika number perlu di parse )dan dapat di bungkus dengan variabel
 	    const nama = prompt("masukkan nama: "); // cont: prompt
-	    alert(nama);						// cont: alert
+	    alert(nama);					// cont: alert
 	- confirm()							// mirip alert tapi ada kondisi. coba script di bawah:
 		const masuk = confirm("selamat datang mau daftar?");
 	    if(masuk){
@@ -245,8 +245,8 @@ Pendahuluan
 	- keduanya adalah type data (beda tapi serupa)
 	    let name;
     	document.writeln(name);					// hasil: undefined
-    	document.writeln(name === undefined);			// hasil: true
-    	document.writeln(name === null);			// hasil: false
+    	document.writeln(name === undefined);	// hasil: true
+    	document.writeln(name === null);		// hasil: false
 - Null ----------------------------------------
 	- null merupakan representasi data kosong
 	- null berbeda dengan undefined, null berarti variable sudah ditambahkan value nya, hanya saja value nya null
@@ -254,11 +254,11 @@ Pendahuluan
 - Switch Expression ---------------------------
 	- Switch adalah statement percabangan yang sama dengan if, namun  lebih sederhana
 	- Kondisi di switch statement hanya untuk perbandingan ==
-	switch(){}						// bentuk dasar
-	let nilai = prompt("masukkan huruf:");			// bikin nilai dari alert
-	switch(nilai){						// pasang di switch contact
+	switch(){}									// bentuk dasar
+	let nilai = prompt("masukkan huruf:");		// bikin nilai dari alert
+	switch(nilai){								// pasang di switch contact
 		case "a": alert("ada"); break;			// break di pasang supaya berhenti (kayak if else);
-		case "b": alert("bata"); 			// tanpa break:maka kayak loop tereksekusi semua dari true kebawah tanpa kecuali (termasuk default)
+		case "b": alert("bata"); 				// tanpa break:maka kayak loop tereksekusi semua dari true kebawah tanpa kecuali (termasuk default)
 		case "c": alert("cadas"); break;
 		default : alert("wookee");
 	}
@@ -272,7 +272,7 @@ Pendahuluan
  	- nilai undefined atau null, tetap dianggap ada jika field nya memang ada
  		let nama= ["aqil","iza","silmi"];
 		document.write(9 in nama);			// adakah index 9?, hasil: true
-		document.write("alamat" in nama);		// adakah property "alamat"?, hasil: bool
+		document.write("alamat" in nama);	// adakah property "alamat"?, hasil: bool
 - Ternary Operator ----------------------------
 	- adalah operator sederhana dari if statement:
 	- jika block aksi hanya melakukan 1 aksi 
@@ -286,15 +286,15 @@ Pendahuluan
 	- mirip ternary 
 	- hanya yang di tanya null atau undefined
 		let hasil = null ?? "nilai default";		// apakah kondisi "null atau undefined" 
-		document.write(hasil);				// hasil: nilai default.
+		document.write(hasil);						// hasil: nilai default.
 		// let hasil = "aqil" ?? "nilai default";	// jika kondisi berisi "string aqil" maka tampilkan string tersebut(aqil) (else otomatis)
 - Optional Chaining ---------------------------
-	let orang = {};						// ada object kosong
-	alert(orang.nama1.alamat);				// kalau akses propertinya ini error (terlihat di console)(karena null atau undefined)
-								// (baris di bawahnya tidak jalan pastinya)
-								// supaya gak error harus masukkan dalam if biasa tapi ini melelahkan 
-	alert(orang?.nama1?.alamat);				// solusi: optional chaining -> properti null/undefined atau tidak? 
-								// maka tidak error lagi 
+	let orang = {};					// ada object kosong
+	alert(orang.nama1.alamat);		// kalau akses propertinya ini error (terlihat di console)(karena null atau undefined)
+									// (baris di bawahnya tidak jalan pastinya)
+									// supaya gak error harus masukkan dalam if biasa tapi ini melelahkan 
+	alert(orang?.nama1?.alamat);	// solusi: optional chaining -> properti null/undefined atau tidak? 
+									// maka tidak error lagi 
 - Falsy dan Truthy ----------------------------
  	false  		= false
 	0, -0  		= false
@@ -314,7 +314,7 @@ Pendahuluan
 	document.writeln( 0 || "NOL" );				// hasil: NOL	-> 
 	document.writeln( null || "NULL" );			// hasil: NULL	-> 
 	document.writeln( undefined || "UNDEFINED" );		// hasil: UNDEFINED	-> 
-	document.writeln( undefined || null );			// hasil: null	-> diambil falsy paling belakang
+	document.writeln( undefined || null );		// hasil: null	-> diambil falsy paling belakang
 	- Operator logika AND (&&), membaca dari kiri ke kanan. (sama)
 	- Operator ini akan mengambil nilai pertama yang falsy. (kebalikan)
 	- Jika tidak ada satupun yang bernilai falsy, maka yang terakhir yang akan diambil (sama falsy)
@@ -324,13 +324,13 @@ Pendahuluan
 	document.writeln( 0 && "NOL" );				// hasil: 0  -> 
 	document.writeln( null && "NULL" );			// hasil: null -> 
 	document.writeln( undefined && "UNDEFINED" );		// hasil: undefined	 -> 
-	document.writeln( undefined && null );			// hasil: null	 -> 
+	document.writeln( undefined && null );		// hasil: null	 -> 
 - For Loop ------------------------------------
 	for(;;){ }
 	for(;;){ alert("looping infinite")}
 	for(i=0;i<10;i++){ alert("looping ke:" + i)}
 	for(i=0;i<10;i++){ 
-		if(i>4){break}					// break: hentikan putaran tanpa pedauli kondisi looping
+		if(i>4){break}						// break: hentikan putaran tanpa pedauli kondisi looping
 		alert("looping ke:" + i);
 	}
 	for(i=0;i<10;i++){ 
@@ -338,19 +338,19 @@ Pendahuluan
 		alert("looping ke:" + i);
 	}
 - While Loop ----------------------------------
-	while(){}						// bentuk dasar
+	while(){}							// bentuk dasar
 	let counter=0;						// couter awal di luar
 	while( counter<10 ){ console.log("ke : "+counter); counter++ } // tetap ada "pengecekan", tetap ada "increment" 
 	while(){}
 - Do While Loop -------------------------------
-	do{}while()						// braket di depan kondiisi dibelakang
+	do{}while()							// braket di depan kondiisi dibelakang
 	let counter=0;
 	do{console.log("ke : "+counter); counter++ }while( counter<10 ) // minimal di eksekusi sekali lalu ceking loop
 - Break dan Continue --------------------------
 	- pengganggu putaran pada looping apapun seperti
 	- for, while, do while, switch, 
-		break 						// stop putaran pada (looping asli) biasanya di tanam dalam if putaran
-		continue 					// skip / lompati putaran
+		break 							// stop putaran pada (looping asli) biasanya di tanam dalam if putaran
+		continue 						// skip / lompati putaran
 	- continue, break tidak bisa di gunakan untuk map()
 - map()
 	- ini belum ada penjelasanya disini cari yaa ?????
@@ -376,8 +376,8 @@ Pendahuluan
 	for(){
 		loopj:										
 		for(){
-			if(){break loopj}			// hentikan (break,continue) looping pada label yang di pilih(loopi / loopj)
-		}						// lakukan dalam if pada blok looping "terdalam/terakhir"
+			if(){break loopj}		// hentikan (break,continue) looping pada label yang di pilih(loopi / loopj)
+		}							// lakukan dalam if pada blok looping "terdalam/terakhir"
 	}
 	-------							// coba running code di bawah:
 	loopi:
@@ -391,7 +391,7 @@ Pendahuluan
 - For In --------------------------------------
 	- looping "properti" object (bisa juga array tp tidak di sarankan untuk array "for of")("bukan value ya");
 		for(p in prop){}				// dasar
-		------						// running code:
+		------							// running code:
 		let orang = {					// ada object
 			nama: "aqil",
 			alamat: "saiti",
@@ -402,21 +402,21 @@ Pendahuluan
 	- For in untuk looping properti atau index, pada for of looping pada value
 	- tapi tidak bisa melakukan iterasi data di object, karena object bukanlah iterable.
 		for(p of prop){}				// bentuk dasar
-		let siswa=["aqil","iza","silmi"];		// array
+		let siswa=["aqil","iza","silmi"];// array
 		for(s of siswa){ document.writeln( "halo>" + s ) } // iterasi value array (pake let s jg bisa)
 - With Statement ------------------------------
 	- menurunkan scoop properti
 	- katanya tidak di sarankan karena ambigu
 	- saya test error kayaknya sudah di hapus fungsi ini
-		let orang={					// ada object
+		let orang={						// ada object
 			nama: "aqil",
 			alamat: "saiti",
 			umur: 12
 		}
-		With(){}					// bentuk dasar
+		With(){}						// bentuk dasar
 		With(orang){
 			console.log(alamat)			// tidak ada chaining
-		}						// asal di lakukan dalam block maka tidak ambigu, mungkin lbh gampang chaining
+		}								// asal di lakukan dalam block maka tidak ambigu, mungkin lbh gampang chaining
 
 ===============================================
 FUNCTION
@@ -429,7 +429,7 @@ FUNCTION
 - function di variabel ------------------------
 		function sapa(){}				// ada function
 		let ada = sapa;					// masukan variabel "tanpa" kurung()
-		console.warn(ada());				// variabel bisa jadi function dengan pemicu
+		console.warn(ada());			// variabel bisa jadi function dengan pemicu
 		-----
 		let ada = sapa();				// masukan variabel "dg" kurung()
 		console.warn(ada);				// saat di panggil function terpicu 
@@ -455,12 +455,12 @@ FUNCTION
 - Rest Parameter/rest argument ----------------
 	- adalah: tempat menangkap umpan banyak (yg bukan array) dalam satu wadah dan di konversi ke array 
 	- hanya boleh ada satu, dan posisi di akhir index parameter
-		function jumlahkan(nama, ...data){					// function dengan rest yang akan menangkap data banyak
-			let total = 0;							// init hasil
-			for(d of data){ total += d; }					// karena di tangkap dan jadi array maka bisa di loop of
-			console.log(`jumlah ${nama} adalah: ${total}`)			// hasil
+		function jumlahkan(nama, ...data){				// function dengan rest yang akan menangkap data banyak
+			let total = 0;								// init hasil
+			for(d of data){ total += d; }				// karena di tangkap dan jadi array maka bisa di loop of
+			console.log(`jumlah ${nama} adalah: ${total}`)	// hasil
 		}
-		jumlahkan("jeruk", 10,11,14,5,7);					// panggil dengan oper banyak parameter sesuai(di bedakan dg) typedata
+		jumlahkan("jeruk", 10,11,14,5,7);				// panggil dengan oper banyak parameter sesuai(di bedakan dg) typedata
 - Spread syntax ----------------------
 	- kalau kita oper parameter menggunakan array itu tidak bisa dia akan salah tafsir maka gunakan 
 		let arr = [10,20,30,40];						// kita punya array akan kita oper ke function
@@ -469,8 +469,8 @@ FUNCTION
 - arguments parameter ----------------------
 		function jumlahkan(){							// kita tanpa argumen
 			let total = 0;
-			for(d of arguments){ total += d; }				// kita tetap bisa tangkap parameter di "arguments global"
-			console.log(`jumlah adalah: ${total}`)				// cons: kita tidak bisa menentukan argumen keberapa type data apa bisa tapi harus pilah2 manual
+			for(d of arguments){ total += d; }			// kita tetap bisa tangkap parameter di "arguments global"
+			console.log(`jumlah adalah: ${total}`)		// cons: kita tidak bisa menentukan argumen keberapa type data apa bisa tapi harus pilah2 manual
 		}
 		jumlahkan(10,10,10,10);
 - Function Sebagai Value ----------------------
@@ -478,13 +478,13 @@ FUNCTION
 			console.info(`selamat datang ${nama}!`);
 		}
 		let varhalo = hallo;							// juga bikin variabel dengan nilai funtion tanpa kurung
-		hallo("aqil");								// kita bisa call function
-		varhalo("silmi");							// jg bisa call variabel dengan kurung
+		hallo("aqil");									// kita bisa call function
+		varhalo("silmi");								// jg bisa call variabel dengan kurung
 - callback --------------------------
 		function hallo(nama){							// bikin fungsi1 untuk di masukan sbg "nilai" variabel
 			console.info(`selamat datang ${nama}!`);
 		}
-		function hallocallback(callback){					// bikin fungsi2 yang akan dapat umpan dari fungsi diatas
+		function hallocallback(callback){				// bikin fungsi2 yang akan dapat umpan dari fungsi diatas
 			callback("iza");
 		}
 		let callbackku = hallo;
@@ -542,31 +542,31 @@ FUNCTION
 	- contoh1 dasar function generator assign ke yield 1 per 1
 		function* nama(){ yield }		// bentuk dasar, ada tambahan [*, yield]
 		function* generatorku(){		// * -> penanda ini adalah generator jika tidak ada * js di kasih yield error
-			yield "aqil";			// yield -> sbg "return" masing2 nilai yg bersifat lazy
+			yield "aqil";				// yield -> sbg "return" masing2 nilai yg bersifat lazy
 			yield "iza";
 			yield "silmi";
 		}
 		let hasil = generatorku()		// mirip array, tapi tidak bisa di akses pake index hasil[2]
-		for(h of hasil){			// tapi bisa di loop (for of pada array)
+		for(h of hasil){				// tapi bisa di loop (for of pada array)
 			console.log(h)
 		}
 	- contoh2 yield pakai loop	
 		// ----------- contoh lazy pada generato	// GENERATOR LAZY:
-		function* ganjil(value){			// function*
-			for (let i = 1; i <= value; i++) {	// for value input
-				if (i % 2 === 1) { 		// if ganjil
-					console.log(`yield ke: ${i}`); // * lihat perbedaan lazy disini
-					yield i;		// return yield (generate data yield lazy)
+		function* ganjil(value){					// function*
+			for (let i = 1; i <= value; i++) {		// for value input
+				if (i % 2 === 1) { 					// if ganjil
+					console.log(`yield ke: ${i}`); 	// * lihat perbedaan lazy disini
+					yield i;						// return yield (generate data yield lazy)
 				 }
 			}
 		}
 								// AKSES:
-		let buatGanjil = ganjil(20);			// * var() saat generator di call, "tidak langsung" looping block nya
+		let buatGanjil = ganjil(20);		// * var() saat generator di call, "tidak langsung" looping block nya
 		for (bg of buatGanjil){				// * for var() saat data di looping yield juga di kasih
-			console.log(bg);			// display
+			console.log(bg);				// display
 		}
 		// ------------ contoh eiger pada array biasa
-		function ganjilArray(value){			// BUKTIKAN EIGER ARRAY
+		function ganjilArray(value){	// BUKTIKAN EIGER ARRAY
 			let result = [];			// generate array biasa
 			for (let i = 1; i <= value; i++) {
 				if (i % 2 === 1) { 
@@ -577,7 +577,7 @@ FUNCTION
 			return result;
 		}
 		let buatGanjilArray = ganjilArray(20);		// ** var() saat fungsi di call, "langsung" looping block nya
-		for (bg of buatGanjilArray){ 			// ** for var() saat data di looping data sudah terlooping sebelumnya
+		for (bg of buatGanjilArray){ 				// ** for var() saat data di looping data sudah terlooping sebelumnya
 			console.log(bg);
 		}
 		// ** keterangan lazy vs eager
@@ -597,12 +597,12 @@ FUNCTION
 	tidak bisa mengakses this (yang nanti akan dibahas di function di object)
 	tidak bisa mengakses super (yang nanti akan dibahas di JavaScript Object Oriented Programming)
 		const halo = () => {}				// dasar
-		const halo = () => 				// tanpa block -> juga tanpa return (jika hanya satu action dan tanpa block boleh tanpa return)
-		const halo =  => 				// tanpa parameter -> (kalau lebh satu maka pakai kurung pisahkan koma, jika hny satu mk tnpa kurung)
+		const halo = () => 					// tanpa block -> juga tanpa return (jika hanya satu action dan tanpa block boleh tanpa return)
+		const halo =  => 					// tanpa parameter -> (kalau lebh satu maka pakai kurung pisahkan koma, jika hny satu mk tnpa kurung)
 		const halo(()=>{}); 				// function arraw dalam argumen function
 
 		const halo = (nama) => {console.log("halo " + nama)}
-		halo("aqil");					// panggil
+		halo("aqil");						// panggil
 
 				
 DARI METHODE KEBAWAH INI MASUK KE PEMBAHASAN KE 2 YA SILAHKAN DI BUKA
