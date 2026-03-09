@@ -1,13 +1,13 @@
 /*
 ASYNCHRONOUS
 - callback 					-> function sebagai arguments
-- synchronus vs asynchronous			-> serial vs pararalel
-- promise() 					-> 1. states( fullfilled , rejected , pending ). masuk ke proses async
-	- resolve() 				-> 2. ajax terpenuhi akan keluar lewat then lagi
+- synchronus vs asynchronous	-> serial vs pararalel
+- promise() 				-> 1. states( fullfilled , rejected , pending ). masuk ke proses async
+	- resolve() 			-> 2. ajax terpenuhi akan keluar lewat then lagi
 	- reject() 				-> ?  ajax batal akan keluar lewat catch
 	- then()				-> 3. then 
 	- catch() 				-> ?  catch 
-	- finally() 				-> 4. gerbang keluar dari block asynchronous
+	- finally() 			-> 4. gerbang keluar dari block asynchronous
 - all()						-> memanggil banyak async sekaligus
 - AJAX 						-> pemanggilan data json/AAPI secara asynchronous
 - fetch() 					-> cara baru ajax
