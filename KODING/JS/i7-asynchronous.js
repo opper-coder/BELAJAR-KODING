@@ -28,7 +28,7 @@ assinchronous callback
 	---------------- */
 		function pesan(callback){ const nama = prompt("masukkan nama :"); callback(nama); }	// 3. function pesan menerima args callback, aksi , "callback dijalankan dari args" bukan dari luar
 		function halo(nama){ alert(`halo nama saya ${nama}`); }					// 2. function biasa yang dijadikan params (jadi callback)
-		pesan(halo); 										// 1. pesan di panggil dengan params callback halo
+		pesan(halo); 															// 1. pesan di panggil dengan params callback halo
 
 	/* atau lebih singkat */
 		function pesan(callback){ const nama = prompt("masukkan nama :"); callback(nama); } 	// 2. fungsi pemroses callback di proses, termasuk mengisi parameter	
@@ -81,7 +81,7 @@ function dafault asynchronous:
 	------------------ */
 		function halo(){ console.log("halo async") }
 		function jalankan(){
-			setTimeout( halo, 2000 );		// jalankan di v8 (synchronus)(2 detik kemudian meski pada urutan atas)
+			setTimeout( halo, 2000 );			// jalankan di v8 (synchronus)(2 detik kemudian meski pada urutan atas)
 			console.log("program di jalankan") 	// ga ada yang di tunggu jalankan juga (asynchronous)
 		}
 		jalankan()
@@ -117,14 +117,14 @@ promise():
 		.finally
 -------------------------------------------------- */
 
-	new Promise(resolve, reject); 				// basic
-	new Promise((resolve, reject)); 			// penulisan praktek pakai kurung
+	new Promise(resolve, reject); 					// basic
+	new Promise((resolve, reject)); 				// penulisan praktek pakai kurung
 	new Promise((resolve, reject) => resolve('selesai')); 	// promise paling sederhana
 	new Promise(resolve => resolve(selesai)); 		// boleh tidak memanggil reject
-	new promise( (resolve, reject) => if(true){ resolve() } else { reject() } ); 			// versi lengkap
+	new promise( (resolve, reject) => if(true){ resolve() } else { reject() } ); 				// versi lengkap
 	/* create dan call */
 	const film = new promise( (resolve, reject) => if(true){ resolve() } else { reject() } );	// assign
-	film.then().catch().finally()				// versi pemanggilan
+	film.then().catch().finally()					// versi pemanggilan
 
 	/* 
 	1. promise dibuat, masuklah ke v8 engine 
@@ -141,7 +141,7 @@ promise():
 	janji
 	.then(response => console.log( 'ok!, ' + response )); 		// 3. then
 	.catch( response => console.log('not!, ' + response ));
-	.finally( console.log("janji selesai")); 			// 4. keluar dari v8 engine
+	.finally( console.log("janji selesai")); 					// 4. keluar dari v8 engine
 	
 	/* 
 	scrip diatas coba simulasikan dengan setTimeout() dan lakukan sync dan async */
@@ -152,12 +152,12 @@ promise():
 			setTimeout(() => { resolve('ditepati 1 detik') }, 1500) }	// disini simulasi ajax dilakukan (di dlm async promise)
 		else { setTimeout( () => { reject('di ingkari 1 detik') }, 1500) }
 		});
-	console.log('mulai');								// sync 'mulai'
-	janji										// async 'janji'
+	console.log('mulai');												// sync 'mulai'
+	janji																// async 'janji'
 		.then( response => console.log('ok!, ' + response )) 			// response (akan di tempati json kalau untuk ajax)
 		.catch( response => console.log('no!, ' + response))			// bisa di gunakan notif error
 		.finally( () => console.log('final!') )
-	console.log('selesai'); 							// sync 'mulai'
+	console.log('selesai'); 											// sync 'mulai'
 	console.log('----->>> '); 
 
 /*
