@@ -203,10 +203,10 @@ Materi Video :
 			- private:  aturan untuk private ada di bawah
  */ 
  	class Orang{
-		nama;								// buatlah diluar constructor, tanpa let, dengan atau tanpa value
+		nama;									// buatlah diluar constructor, tanpa let, dengan atau tanpa value
 		alamat;
 		umur=12;
-		construct(){}						// urusan properti public di constructor boleh ngambil dari atas(nggak apa2 bikin 2 kalau mau)
+		construct(){}							// urusan properti public di constructor boleh ngambil dari atas(nggak apa2 bikin 2 kalau mau)
 		halo(){}
 	}
 	const aqil = new Orang()
