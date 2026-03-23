@@ -65,6 +65,15 @@ add address=10.10.10.1/30 interface=ether1 comment="Link to RB5009"
 add dst-address=100.1.1.0/22 gateway=10.10.10.2 comment="Hotspot via RB5009"
 add dst-address=200.1.1.0/23 gateway=10.10.10.2 comment="PPPoE via RB5009"
 
+## ----------------------------------- ##
+# LINK KE CORE INI DI MIKROTIK CLIENT
+## ----------------------------------- ##
+/ip address
+add address=10.10.10.2/30 interface=ether1
+
+/ip route
+add dst-address=0.0.0.0/0 gateway=10.10.10.1 check-gateway=ping
+
 # -------------------------------------- #
 # DHCP CLIENT ISP (default route no)
 # -------------------------------------- #
