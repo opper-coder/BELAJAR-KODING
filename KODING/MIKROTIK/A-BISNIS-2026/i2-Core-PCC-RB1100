@@ -67,7 +67,7 @@ add dst-address=200.1.1.0/23 gateway=10.10.10.2 comment="PPPoE via RB5009"
 
 ## ----- >>>>> ----- >>>>> ----- >>>>>  ##
 # LINK KE CORE INI DI MIKROTIK CLIENT (Bukan skrip disini)
-## ----- >>>>> ----- >>>>> ----- >>>>>  ##
+## -----------------------------------  ##
 /ip address
 add address=10.10.10.2/30 interface=ether1 comment="Link to ISP Load Balance"
 
