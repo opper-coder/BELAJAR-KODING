@@ -58,21 +58,21 @@ set name=RB1100-CORE
 
 # IP KE CLIENT (gateway tujuan 10.10.10.2/30)
 /ip address
-add address=10.10.10.1/30 interface=ether1 comment="Link to Client"
+add address=200.200.200.1/30 interface=ether1 comment="Link to Client"
 
-# ROUTE LAN DARI RB5009, route balik dari RB1100 ke client RB5009. agar tidak kacau
+# ROUTE BALIK. route dari LB ke client. agar tidak kacau. tambahkan jika ada gateway baru
 /ip route
-add dst-address=100.1.1.0/22 gateway=10.10.10.2 comment="Hotspot via RB5009"
-add dst-address=200.1.1.0/23 gateway=10.10.10.2 comment="PPPoE via RB5009"
+add dst-address=100.1.1.0/22 gateway=200.200.200.2 comment="Hotspot via RB5009"
+add dst-address=200.1.1.0/23 gateway=200.200.200.2 comment="PPPoE via RB5009"
 
-## ----- >>>>> ----- >>>>> ----- >>>>>  ##
+## ----- <<<<< ----- <<<>>> ----- >>>>>  ##
 # LINK KE CORE INI DI MIKROTIK CLIENT (Bukan skrip disini)
-## -----------------------------------  ##
+## ------------------------------------  ##
 /ip address
-add address=10.10.10.2/30 interface=ether1 comment="Link to ISP Load Balance"
+add address=200.200.200.2/30 interface=ether1 comment="Link to ISP Load Balance"
 
 /ip route
-add dst-address=0.0.0.0/0 gateway=10.10.10.1 check-gateway=ping
+add dst-address=0.0.0.0/0 gateway=200.200.200.1 check-gateway=ping comment="To Internet LB gateway"
 
 # -------------------------------------- #
 # DHCP CLIENT ISP (default route no)
