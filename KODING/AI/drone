@@ -1,0 +1,74 @@
+DRONE FPV
+--------------------------------------------------
+alat 
+- obeng hexa ukuran 1,5 mm
+- pinset
+- solder baterai
+- mata solder tumpul dan lancip 
+- timah solder paragon 
+- pasta flux solder 
+- lakban, double tape
+--------------------------------------------------
+bahan
+- [950rb] FC(Fligh Controller): speedyBee f405 mini BLS 35A v3 (bluetooth). Bundling dengan ESC (Electronic Speed Controller)
+- [500rb] frame: flywoo explorer lr 4inch (FC 20x20 mm), biasanya termasuk antenna video transmitter, 
+  	meskipun beli video juga ada antenna juga terserah pilih mana
+- [2-3jt] video transmitter: walksnail hd v2 (fpv digital). nanti goggles juga harus walksnail (ada juga antenna: HD nano, HD v2, dual antenna,)
+- [6+jt] goggles: walksnail avatar hd goggles X fpv digital for drone 
+- [950rb] remote: RadioMaster pocket hall sensor gimbals radio transmitter ELRS CC2500 ELRS transparan (2,4ghz. atau 915ghz. Baterai 18650. termasuk antenne)
+- [200rb] receiver: tipe, wajib sama dengan remot nya: 2.4ghz tipe ELRS termasuk antenna (RadioMaster bandit BR1 ELRS 915mhz)
+- [200rb 4x] motor: flywoo NIN 1404 v2 ultralight 2750 KV (ukuran KV menunjukan kapasitas baterai, karakteristik, juga tuningan. lihat di flywoo.com)
+- [40rb 4b] propeler: gemfan hurricane 4024 4in 2-blade 1.5mm shaft propeller for FPV Drones-1.5mm clearblue cw,ccw (clockwise,counter clockwise)
+- [200rb] baterai: kalau dihitung kv 2750 maka pakai 3s atau 4s: tattu R-line 850 mAH 14.8v(100 gram). 
+  	berat tidak boleh lebih 250 gram (XT 30, tanya sama seller), 600 - 1500 mah
+	1.lipo:
+		kelebihan
+		- tahan terhadap gas atau punch
+		- awet 
+		kekurangan
+		- kapasitas kecil untuk bobot yang sama
+	2.li Ion
+		kelebihan
+		- gas harus santai
+		- kapasitas besar dg bobot ringan
+		- terkadang kapasitas turun saat di gas. nanti saat santai bisa kembali naik voltasi nya 
+		kekurangan 
+- [] konektor baretai:xt30 termasuk yang di board (female) jangan yang xt60
+- [300rb] GPS: GPS rescue dan failsafe:Flywoo GOKU GM10,ukuran ada3: nano mini micro, mini v3 (18x18mm)
+--------------------------------------------------
+yang bisa di ganti
+
+- lost : hapus video transmitter, goggles, frame tanpa antena
+- [750-] goggles : analog 
+- [300] usb adapter: colok ke HP, laptop, tv
+- [150] receiver remote: pilih yang paling murah nano 
+- kamera: analog 
+
+--------------------------------------------------
+TIPS
+drone 5 inci paling ideal = 2207 1950 KV
+22 angka diameter motor
+07 angka tebal motor
+
+diamater makin besar 	= makin besar power nya. bagus untuk putaran bawah (gigi rendah), cocok free style
+tebal besar 		= makin kecepatan nya. bagus di putaran 50-100% (gigi atas), cocok untuk racing 
+KV 			= makin tinggi RPM nya. menunjukan power baterai dan juga power gigi rendah
+
+untuk ke stabilan di lingkaran kecil lebih baik jika terbang pelan 
+misal terbang rendah 1 meter tidak goyah jika lingkaran kecil 
+
+
+- 2207 1950 KV: topspeed lebih di utamakan(ibarat motor yamaha r15 150)
+- 2306 1700 KV: torsi lebih mengutamakan (ibarat motor klx 150)
+
+drone 5 inci paling ideal = 2207 1950 KV 
+- lingkaran tidak terlalu besar = stabil di terbang pelan 
+- ketebalan agak tebal 		= masih cukup bertenaga untuk take off 
+
+atau lebih detilenya dron 5 inci:
+long range : 2306 1400 KV, atau 2306 1700 KV, 2207 1950 KV(paling worth it, tapi mirip mirip saja)
+freestyle  : 2306 1950 KV, atau lebih galak silahkan di atasnya lagi
+
+
+
+
