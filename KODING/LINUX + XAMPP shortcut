@@ -89,6 +89,28 @@ CARA UBAH HAK AKSES DI LINUX
 ---------------------------------------------------
 chmod dan chown
 
+XAMPP ERROR
+---------------------------------------------------
+XAMPP error biasanya terjadi karena file log database yang korup atau konflik port. 
+Berikut adalah langkah-langkah perbaikan yang paling ampuh tanpa menghapus database Anda: 
+
+Solusi Utama: Memulihkan Folder Data (Paling Efektif) 
+---------------------------------------
+Gunakan metode ini untuk memperbaiki file sistem MySQL yang rusak sambil tetap mempertahankan database buatan Anda. 
+1. Matikan XAMPP        : Pastikan service Apache dan MySQL sudah dalam kondisi Stop.
+2. Buka Folder MySQL    : Masuk ke direktori instalasi XAMPP Anda (biasanya di C:\xampp\mysql).
+3. Rename data          : Rename folder bernama "data" menjadi "data_old".
+4. Buat Folder Baru     : Buat folder kosong baru dan beri nama "data".
+5. Folder backup        : Buka folder backup (ada di dalam folder mysql), copy paste semua isinya, ke folder data yang baru Anda buat.
+6. Pindahkan Database Anda: 
+        Buka kembali folder data_old. Salin semua (Hanya) folder database yang pernah Anda buat (misal: folder nama proyek Anda).
+        Penting         : Jangan salin folder mysql, performance_schema, dan phpmyadmin karena ini adalah folder sistem.
+        Tempel (paste) folder-folder tersebut ke dalam folder data yang baru.
+7. File ibdata1         : Cari file bernama ibdata1 di dalam folder data_old. timpa/replace file yang sudah ada. di new data 
+8. Jalankan MySQL       : Buka XAMPP Control Panel dan klik Start pada MySQL. 
+
+
+
 TERMINAL
 ---------------------------------------------------
 adalah salah satu cara menjalankan perintah umum di linux tanpa GUI, penggant GUI pakai text di terminal
