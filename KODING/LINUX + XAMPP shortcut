@@ -1,10 +1,10 @@
 6 level berfikir taksonomi bloom
-	1. hafalan: hafal rumus
-	2. memahami: tau carakerja 
-	3. menerapkan: bisa operasikan
-	4. analisa: kombinasikan dengan kebutuhan
-	5. evaluasi: ditambah dikurang dikali dibagi 
-	6. create: membuat
+	1. hafalan		: hafal rumus
+	2. memahami		: tau carakerja 
+	3. menerapkan	: bisa operasikan
+	4. analisa		: kombinasikan dengan kebutuhan
+	5. evaluasi		: ditambah dikurang dikali dibagi 
+	6. create		: membuat
 
 DAFTAR ISI:
 ---------------------------------------------------
@@ -17,13 +17,13 @@ REPL               	-> text editor ala nodejs, ada console nya jg
 
 CODE DOKUMENTASI SAYA
 -------------------------------------------------
-:> 			: terminal
+:> 				: terminal
 >>   			: go browser/run
 ??> 			: cekidoc
- - 			: item
- > 			: lanjut
-=> 			: return
-/  			: root
+ - 				: item
+ > 				: lanjut
+=> 				: return
+/  				: root
 /nama 			: folder
 *.js 			: file
 -> new  		: create 
@@ -42,7 +42,7 @@ fin    = for in
 dob    = const {second} = first
 dar    = const [second] = first
 sti    = setInterval(() => { first }, second)
-sto    = setTimeout(() => { first }, second)
+sto    = setTimeout(() 	=> { first }, second)
 cmmb   = comment block
 
 INITRAMS
@@ -94,19 +94,19 @@ TERMINAL
 adalah salah satu cara menjalankan perintah umum di linux tanpa GUI, penggant GUI pakai text di terminal
 
 UMUM
-:> ls             	: lihat isi file explorer
-:> ll             	: lihat isi file explorer (termasuk hidden)
+:> ls             		: lihat isi file explorer
+:> ll             		: lihat isi file explorer (termasuk hidden)
 :> pwd                 	: Melihat "url" direktori saat ini.(path work directory)
-:> cd Documents   	: masuk ke folder Documents
+:> cd Documents   		: masuk ke folder Documents
 :> cd Documents/coba 	: masuk folder
-:> cd ..          	: naik satu langkah
-:> cd /           	: naik ke root (root teratas)
-:> cd home/aqil   	: kembali ke user default
-:> cd /home/aqil  	: masuk ke folder mana saja bisa (di mulai dengan /home/aqil/dst)
-:> mkdir coba     	: bikin folder "coba"
-:> touch ada.js 	: bikin file js, html, doc dll bisa
-:> cat ada.js 		: baca/lihat isi file
-:> sudo			: super user
+:> cd ..          		: naik satu langkah
+:> cd /           		: naik ke root (root teratas)
+:> cd home/aqil   		: kembali ke user default
+:> cd /home/aqil  		: masuk ke folder mana saja bisa (di mulai dengan /home/aqil/dst)
+:> mkdir coba     		: bikin folder "coba"
+:> touch ada.js 		: bikin file js, html, doc dll bisa
+:> cat ada.js 			: baca/lihat isi file
+:> sudo					: super user
 :> code                	: agar vscode bisa di akses di terminal tapi setting dulu vscode: ???????????
 :> code .              	: setelah :> cd dir > buka "dir ini" dengan vscode 
 :> pwd                 	: Melihat "url" direktori saat ini.
@@ -117,19 +117,19 @@ UMUM
 :> mv                  	: pindah folder file, 
 
 UTILITY
-:> exit			: tutup terminal
-:> clear		: bersihkan layar terminal
-:> ctrl + c		: keluar dari progress terminal running 
-:> cp			: copy paste
-:> mv			: move
-:> locate -i nama 	: cari file global (-i: case insensitive)
-:> find nama		: cari file dalam folder ini\
-:> nautilus		: buka file comander di ubuntu, elementary, zorin, deepin
+:> exit					: tutup terminal
+:> clear				: bersihkan layar terminal
+:> ctrl + c				: keluar dari progress terminal running 
+:> cp					: copy paste
+:> mv					: move
+:> locate -i nama 		: cari file global (-i: case insensitive)
+:> find nama			: cari file dalam folder ini\
+:> nautilus				: buka file comander di ubuntu, elementary, zorin, deepin
 :> locate -i jagoan*hosting 	: cari file bernama jagoan dan hosting -i: uncasesensitive
-:> zip, unzip 		: archieve, unzip
-:> df			: melihat properti kapasitas dalam folder ini
-:> history		: melihat semua riwayat perintah yang pernah dilakukan 
-:> top			: melihat system yang berjalan 
+:> zip, unzip 			: archieve, unzip
+:> df					: melihat properti kapasitas dalam folder ini
+:> history				: melihat semua riwayat perintah yang pernah dilakukan 
+:> top					: melihat system yang berjalan 
 :> alias coba="perintah asli yang panjang" : menambah perintah alias mnggunakan kata alternatif bikinan kita
 
 ---------------------------------------------------
@@ -142,55 +142,55 @@ command vi menulisnya pakai ":", editor mode perintah "i"
 
 -------------------------
 terminal file:
-:> mk dir  		: bikin folder
+:> mk dir  			: bikin folder
 :> touch coba.html 	: bikin file
 :> cd dir/dir2 		: navigasi
 :> cat coba.html 	: (cat: concatenate) melihat/membaca isi file coba.html
 -------------------------
 ringkasan:
 :> pwd, ls, ll 		: lihat lokasi kerja
-:> cd dir 		: masuk ke lokasi kerja
+:> cd dir 			: masuk ke lokasi kerja
 :> vi coba.js 		: buka atau tambah file
 :> cat coba.js 		: baca isi file
-:> i 			: insert mode
-:> ESC 			: command mode
-:> arrow 		: arah cursor command mod
-:> dd 			: hapus maju command mode
-:> X 			: hapus mundur 
-:> :wq 			: keluar dan simpan 
-:> :q! 			: keluar tanpa simpan
+:> i 				: insert mode
+:> ESC 				: command mode
+:> arrow 			: arah cursor command mod
+:> dd 				: hapus maju command mode
+:> X 				: hapus mundur 
+:> :wq 				: keluar dan simpan 
+:> :q! 				: keluar tanpa simpan
 -------------------------
 file mode: ...
-:> vi 			: buka vim editor => about vim (default ada di terminal linux zorin, kalu belum ada install dulu) 
-:> man vi 		: help vi 
+:> vi 				: buka vim editor => about vim (default ada di terminal linux zorin, kalu belum ada install dulu) 
+:> man vi 			: help vi 
 :> mkdir/cd/touch 	: buka dulu tempat kerja
 :> ctrl shift ":" 	: masuk ke vim command 
 :> vi coba.js 		: buka file existing
 :> vi coba.js 		: addnew file jika blm ada file
 :> cat coba.js 		: baca isi file (fungsi sama dengan vi coba.js lihat file existing)
-:> :q 			: quit atau 
-:> :q! 			: quit juga 
-:> :w 			: save (write) 
-:> :wq 			: save and quit, (simpan dan keluar)
+:> :q 				: quit atau 
+:> :q! 				: quit juga 
+:> :w 				: save (write) 
+:> :wq 				: save and quit, (simpan dan keluar)
 :> :wq coba.js		: save as quit, (simpan, nama, keluar)    
 
 insert mode: ...
-:> !arrow 		: tidak support arah keyboard
-:> i 			: insert mode tulis pada cursor, 	dan masuk insert mode
-:> a 			: insert mode tulis di depan cursor, 	dan masuk insert mode
-:> o 			: tambah baris sebagai enter, 		dan masuk insert mode
-:> S  			: hapus sebaris, 			dan masuk insert mode
+:> !arrow 			: tidak support arah keyboard
+:> i 				: insert mode tulis pada cursor, 	dan masuk insert mode
+:> a 				: insert mode tulis di depan cursor, 	dan masuk insert mode
+:> o 				: tambah baris sebagai enter, 		dan masuk insert mode
+:> S  				: hapus sebaris, 			dan masuk insert mode
 
 command mode: ...
 :> CTRL shift ":" 	: masuk "commond mode"(mendapatkan ":") di awal saat sudah masuk bisa pakai ESC 
-:> ESC 			: command mode
+:> ESC 				: command mode
 :> arrow 			: support arah keyboard 
-:> x 			: hapus maju
-:> X 			: hapus mundur
-:> dd 			: hapus satu baris sekaligus enternya
-:> / aqil		: cari kata aqil => cursor kesana//
-:> / silmi 		: cari kata silmi => dibawah cursor aqil barusan//
-:> ? izza 		: cari kata izza => di atas cursor aqil barusan
+:> x 				: hapus maju
+:> X 				: hapus mundur
+:> dd 				: hapus satu baris sekaligus enternya
+:> / aqil			: cari kata aqil => cursor kesana//
+:> / silmi 			: cari kata silmi => dibawah cursor aqil barusan//
+:> ? izza 			: cari kata izza => di atas cursor aqil barusan
 
 command mode tambahan
 insert
@@ -232,11 +232,11 @@ REPL
 jika kita punya nodejs di komputer kita kita bisa gunakan REPL untuk
 Create file, Editor file, tulis code javascript, jalankan console, load file dll
 
-:> node 		: masuk ke REPL (read, eval, print, loop)
+:> node 			: masuk ke REPL (read, eval, print, loop)
    setelah masuk node silahkan gunakan perintah di bawah ini:
 :> 1+1 atau 1=='1' enter: mirip console pada browser
 :> const salam = () => { 	: saat nulis panjang belum di tertutup lalu kita enter akan di kasih "..." artinya lanjutkan sampai ";"
-:> .help 		: di kasih navigasi menu utama 
+:> .help 			: di kasih navigasi menu utama 
 :> touch coba.js 	: add coba.js
 :> vi coba.js 		: edit file dengan terminal vim (lihat di bawah vim editor)(atau edit pakai REPL)
 :> .load coba.js 	: import file dalam REPL berisi variabel 
@@ -245,9 +245,9 @@ Create file, Editor file, tulis code javascript, jalankan console, load file dll
 :> rm coba.js 		: hapus file
 :> .exit/ctrl C, C 	: keluar REPL
 :> .break/.clear	: keluar dari code multiline ("..." titik tiga tadi ) di REPL (karena nggak bisa keluar begitu saja nanti kode bisa hilang)
-:> .editor 		: nulis multiline, 
-:> ctrl D 		: finis multiline, dan discard
-:> ctrl c 		: cancel multiline, dan save session
+:> .editor 			: nulis multiline, 
+:> ctrl D 			: finis multiline, dan discard
+:> ctrl c 			: cancel multiline, dan save session
 ----------------
 
 
