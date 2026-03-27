@@ -109,8 +109,6 @@ Gunakan metode ini untuk memperbaiki file sistem MySQL yang rusak sambil tetap m
 7. File ibdata1         : Cari file bernama ibdata1 di dalam folder data_old. timpa/replace file yang sudah ada. di new data 
 8. Jalankan MySQL       : Buka XAMPP Control Panel dan klik Start pada MySQL. 
 
-
-
 TERMINAL
 ---------------------------------------------------
 adalah salah satu cara menjalankan perintah umum di linux tanpa GUI, penggant GUI pakai text di terminal
