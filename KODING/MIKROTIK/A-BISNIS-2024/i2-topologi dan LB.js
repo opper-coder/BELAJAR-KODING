@@ -1,7 +1,7 @@
 -----------------------------------------------------------
 TOPOLOGI dan LOAD BALANCE
        	topologi distribusi	: ODN > ODC > ODP > ONT
-	topologi hotspot	: server > OLT > ONT > OLT > ONT vlan
+	topologi hotspot		: server > OLT > ONT > OLT > ONT vlan
       	topologi ISP		: Rumah, 2ISP, TERMINAL, LB, MIKROTIK
       	topologi mesin		: (2 ISP)rb951ui-2nd, rb951ui-2hnd, (6 ISP) rb750gr3, (12 ISP+ECMP) rb450gx4 
 -----------------------------------------------------------
@@ -31,7 +31,7 @@ lalu jadikan load balance ECMP seperti repo PCC load balance LB ECMP
 ------------------------------------------------------------------------------------------------------------------------------------------
 STANDARD IP DESIGN
 bridge1-WAN		: auto
-vlan-QinQ level		: 1000 only (nomor urut ada di segmen puluhan ke2 dari blkg)
+vlan-QinQ level	: 1000 only (nomor urut ada di segmen puluhan ke2 dari blkg)
 	vlanIsp10 	: 10.10.10.1/29
 	vlanIsp11	: 10.10.11.1/29
 	vlanIsp255	: 10.10.255.1/29 end
@@ -44,21 +44,21 @@ vlanPPPoE
 	vlanPp31 	: 30.30.31.1/24
 	vlanPp255 	: 30.30.255.1/24 end
 hotspot rumah:         	
-			: 192.168.5.1/28  (15)
+				: 192.168.5.1/28  (15)
 VLAN OTHER 		: gunakan di angka 40+ dan hindari 100-199,200-299,300-399,1000 itu aja  
 IP segment 		: lihat di atas tetap 10,20,30 - 255
 --------------------------------------------------------------------------------------------------------------------------------
 DAFTAR NAMA 
 slash/29 (1-7 user) 
 ________________________________________________________________________________________________________________________________
-NAMA              : 
+NAMA     		: 
 --------------------------------------------------------------------------------------------------------------------------------
-SURYA-A 	  : K12 	: hotspot1 
-MENTARI 	  : jl baru 	: hotspot2 
-PANDAWA 	  : boneaka 	: hotspot3 
-AMEL 		  : buton 	: hotspot4 
-BEBANGGAI 	  : bebang 	: hotspot5 
-PASARR 		  : pasar tua 	: hotspot6 
+SURYA-A 	  	: K12 			: hotspot1 
+MENTARI 	  	: jl baru 		: hotspot2 
+PANDAWA 	  	: boneaka 		: hotspot3 
+AMEL 		  	: buton 		: hotspot4 
+BEBANGGAI 	  	: bebang 		: hotspot5 
+PASARR 		  	: pasar tua 	: hotspot6 
 __________________________________________________________________________________________________________________________
 NAMA              : HP           | TELKOM       | BIAYA 	| INTERFACE IP        	  | (users) PASS      | AKSES POINT    |
 --------------------------------------------------------------------------------------------------------------------------------
