@@ -66,8 +66,8 @@ NAMA              : HP           | TELKOM       | BIAYA 	| INTERFACE IP        	
 2. soni harsono   : 081334797878 | 172723804062 | Rp 655rb  	| vlanIs11 10.10.11.1/29  | (5) tokopadang2   |                |
 3. armed          : 081xxxxxxxxx | 172723801366 | Rp 429.570	| vlanIs12 10.10.12.1/29  | (5)               |                |
 4. nur afiyah     : 081xxxxxxxxx | 172723803710 | Rp 358.200	| vlanIs13 10.10.13.1/29  | (5) Kopiko        | vovo y12       |
-5. saeroji1       : 081xxxxxxxxx | 17272380xxxx | 		| vlanIs14 10.10.14.1/29  | (5)               |                |
-6. kayatri        : 081xxxxxxxxx | 17272380xxxx | 		| vlanIs15 10.10.15.1/29  | (7) Relaxa        | oppo a3        |
-7. kayatri2       : 081xxxxxxxxx | 17272380xxxx | 		| vlanIs16 10.10.16.1/29  | (6)               |                |
+5. saeroji1       : 081xxxxxxxxx | 17272380xxxx | 				| vlanIs14 10.10.14.1/29  | (5)               |                |
+6. kayatri        : 081xxxxxxxxx | 17272380xxxx | 				| vlanIs15 10.10.15.1/29  | (7) Relaxa        | oppo a3        |
+7. kayatri2       : 081xxxxxxxxx | 17272380xxxx | 				| vlanIs16 10.10.16.1/29  | (6)               |                |
 8. regita cahyani : 081xxxxxxxxx | 172723803529 | Rp 477.300	| vlanIs17 10.10.17.1/29  | (6)               |                |
 ================================================================================================================================
