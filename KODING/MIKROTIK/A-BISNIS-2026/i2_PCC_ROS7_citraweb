@@ -1,0 +1,172 @@
+#-------------------------------------------------------------------------------
+# SCRIPT LOAD BALANCE PCC MIKROTIK ROUTER OS V7 (RASIO 2:1)
+# Berdasarkan Tutorial Citraweb: https://youtu.be/X0Fl7JZ02tM
+# 
+# 1. DHCP client all ISP default route=yes (di ROS7 nanti auto ECMP failover)
+# 2. DHCP server local
+# 3. DNS 8.8.8.8,1.1.1.1 allowremote=yes
+#-------------------------------------------------------------------------------
+
+# 1. Membuat Tabel Routing (Wajib di v7 agar FIB aktif) [All ISP]
+/routing table
+add fib name=to-ISP1
+add fib name=to-ISP2
+add fib name=to-ISP3
+add fib name=to-ISP4
+add fib name=to-ISP5
+add fib name=to-ISP6
+add fib name=to-ISP7
+add fib name=to-ISP8
+
+# 2. Konfigurasi IP Firewall NAT
+/ip firewall nat
+add action=masquerade chain=srcnat out-interface=ether1 comment="NAT ISP 1"
+add action=masquerade chain=srcnat out-interface=ether2 comment="NAT ISP 2"
+add action=masquerade chain=srcnat out-interface=ether3 comment="NAT ISP 3"
+add action=masquerade chain=srcnat out-interface=ether4 comment="NAT ISP 4"
+add action=masquerade chain=srcnat out-interface=ether5 comment="NAT ISP 5"
+add action=masquerade chain=srcnat out-interface=ether6 comment="NAT ISP 6"
+add action=masquerade chain=srcnat out-interface=ether7 comment="NAT ISP 7"
+add action=masquerade chain=srcnat out-interface=ether8 comment="NAT ISP 8"
+
+# 3. Konfigurasi Mangle (citraweb)
+# /ip firewall mangle
+# A. Bypass Traffic Lokal (Agar akses ke router/lokal tidak kena Load Balance)[All Interface]
+# add action=accept chain=prerouting dst-address=10.10.20.0/24 comment="Bypass ISP1"
+# add action=accept chain=prerouting dst-address=10.10.30.0/24 comment="Bypass ISP2"
+# add action=accept chain=prerouting dst-address=200.200.200.0/29 comment="Bypass Lokal"
+
+# ----------------------------------- 
+# PERBAIKAN BYPASS dengan IP sama 
+# Hapus bypass manual IP ISP, ganti dengan ini:
+/ip firewall mangle
+add action=accept chain=prerouting dst-address-type=local comment="Bypass Traffic ke Router"
+add action=accept chain=prerouting dst-address=200.200.200.0/29 comment="Bypass Network Lokal" 
+# ----------------------------------- 
+
+# B. Mark Connection dari Luar (Input) agar balik lewat jalur yang sama [All ISP]
+add action=mark-connection chain=prerouting in-interface=ether1 connection-mark=no-mark new-connection-mark=ISP1_conn passthrough=yes
+add action=mark-connection chain=prerouting in-interface=ether2 connection-mark=no-mark new-connection-mark=ISP2_conn passthrough=yes
+add action=mark-connection chain=prerouting in-interface=ether3 connection-mark=no-mark new-connection-mark=ISP3_conn passthrough=yes
+add action=mark-connection chain=prerouting in-interface=ether4 connection-mark=no-mark new-connection-mark=ISP4_conn passthrough=yes
+add action=mark-connection chain=prerouting in-interface=ether5 connection-mark=no-mark new-connection-mark=ISP5_conn passthrough=yes
+add action=mark-connection chain=prerouting in-interface=ether6 connection-mark=no-mark new-connection-mark=ISP6_conn passthrough=yes
+add action=mark-connection chain=prerouting in-interface=ether7 connection-mark=no-mark new-connection-mark=ISP7_conn passthrough=yes
+add action=mark-connection chain=prerouting in-interface=ether8 connection-mark=no-mark new-connection-mark=ISP8_conn passthrough=yes
+
+# C. PCC (Rasio 2:1 - Total Denominator 3)
+# ISP 1 mendapatkan 2 bagian (3/0 dan 3/1), ISP 2 mendapatkan 1 bagian (3/2)  [All ISP*Stream] - PERBAIKAN: Gunakan connection-mark=no-mark
+# add chain=prerouting in-interface=ether3 connection-mark=ISP1_conn per-connection-classifier=both-addresses:3/0 \ # (citraweb)
+add chain=prerouting in-interface=ether8 connection-mark=no-mark per-connection-classifier=both-addresses:7/0 \
+    dst-address-type=!local action=mark-connection new-connection-mark=ISP1_conn passthrough=yes comment="Stream-1"  
+add chain=prerouting in-interface=ether8 connection-mark=no-mark per-connection-classifier=both-addresses:7/1 \
+    dst-address-type=!local action=mark-connection new-connection-mark=ISP1_conn passthrough=yes comment="Stream-2"  
+add chain=prerouting in-interface=ether8 connection-mark=no-mark per-connection-classifier=both-addresses:7/2 \
+    dst-address-type=!local action=mark-connection new-connection-mark=ISP2_conn passthrough=yes comment="Stream-3"  
+add chain=prerouting in-interface=ether8 connection-mark=no-mark per-connection-classifier=both-addresses:7/3 \
+    dst-address-type=!local action=mark-connection new-connection-mark=ISP2_conn passthrough=yes comment="Stream-4"  
+add chain=prerouting in-interface=ether8 connection-mark=no-mark per-connection-classifier=both-addresses:7/4 \
+    dst-address-type=!local action=mark-connection new-connection-mark=ISP2_conn passthrough=yes comment="Stream-5"  
+add chain=prerouting in-interface=ether8 connection-mark=no-mark per-connection-classifier=both-addresses:7/5 \
+    dst-address-type=!local action=mark-connection new-connection-mark=ISP2_conn passthrough=yes comment="Stream-6"  
+add chain=prerouting in-interface=ether8 connection-mark=no-mark per-connection-classifier=both-addresses:7/6 \
+    dst-address-type=!local action=mark-connection new-connection-mark=ISP2_conn passthrough=yes comment="Stream-7"  
+add chain=prerouting in-interface=ether8 connection-mark=no-mark per-connection-classifier=both-addresses:7/7 \
+    dst-address-type=!local action=mark-connection new-connection-mark=ISP2_conn passthrough=yes comment="Stream-8"  
+
+# D. Mark Routing (Mengarahkan traffic ke tabel routing yang dibuat di langkah 1) [All ISP]
+add chain=prerouting in-interface=ether8 connection-mark=ISP1_conn \
+    action=mark-routing new-routing-mark=to-ISP1 passthrough=no 
+add chain=prerouting in-interface=ether8 connection-mark=ISP2_conn \
+    action=mark-routing new-routing-mark=to-ISP2 passthrough=no 
+add chain=prerouting in-interface=ether8 connection-mark=ISP3_conn \
+    action=mark-routing new-routing-mark=to-ISP3 passthrough=no 
+add chain=prerouting in-interface=ether8 connection-mark=ISP4_conn \
+    action=mark-routing new-routing-mark=to-ISP4 passthrough=no 
+add chain=prerouting in-interface=ether8 connection-mark=ISP5_conn \
+    action=mark-routing new-routing-mark=to-ISP5 passthrough=no 
+add chain=prerouting in-interface=ether8 connection-mark=ISP6_conn \
+    action=mark-routing new-routing-mark=to-ISP6 passthrough=no 
+add chain=prerouting in-interface=ether8 connection-mark=ISP7_conn \
+    action=mark-routing new-routing-mark=to-ISP7 passthrough=no 
+add chain=prerouting in-interface=ether8 connection-mark=ISP8_conn \
+    action=mark-routing new-routing-mark=to-ISP8 passthrough=no 
+
+# E. Mark Routing Output (Untuk traffic dari router itu sendiri) [All ISP]
+add chain=output connection-mark=ISP1_conn action=mark-routing new-routing-mark=to-ISP1 passthrough=no
+add chain=output connection-mark=ISP2_conn action=mark-routing new-routing-mark=to-ISP2 passthrough=no
+add chain=output connection-mark=ISP3_conn action=mark-routing new-routing-mark=to-ISP3 passthrough=no
+add chain=output connection-mark=ISP4_conn action=mark-routing new-routing-mark=to-ISP4 passthrough=no
+add chain=output connection-mark=ISP5_conn action=mark-routing new-routing-mark=to-ISP5 passthrough=no
+add chain=output connection-mark=ISP6_conn action=mark-routing new-routing-mark=to-ISP6 passthrough=no
+add chain=output connection-mark=ISP7_conn action=mark-routing new-routing-mark=to-ISP7 passthrough=no
+add chain=output connection-mark=ISP8_conn action=mark-routing new-routing-mark=to-ISP8 passthrough=no
+
+# 4. Konfigurasi Jalur Gateway (Routing)
+# Pastikan Gateway (10.10.20.1 dan 10.10.30.1) sesuai dengan IP Gateway ISP Anda [All ISP]
+/ip route
+add dst-address=0.0.0.0/0 gateway=192.168.1.1%ether1 routing-table=to-ISP1 check-gateway=ping
+add dst-address=0.0.0.0/0 gateway=192.168.1.1%ether2 routing-table=to-ISP2 check-gateway=ping
+add dst-address=0.0.0.0/0 gateway=192.168.1.1%ether3 routing-table=to-ISP3 check-gateway=ping
+add dst-address=0.0.0.0/0 gateway=192.168.1.1%ether4 routing-table=to-ISP4 check-gateway=ping
+add dst-address=0.0.0.0/0 gateway=192.168.1.1%ether5 routing-table=to-ISP5 check-gateway=ping
+add dst-address=0.0.0.0/0 gateway=192.168.1.1%ether6 routing-table=to-ISP6 check-gateway=ping
+add dst-address=0.0.0.0/0 gateway=192.168.1.1%ether7 routing-table=to-ISP7 check-gateway=ping
+add dst-address=0.0.0.0/0 gateway=192.168.1.1%ether8 routing-table=to-ISP8 check-gateway=ping
+
+# SELESAI 
+# ----------------------------------------------------------------------------------
+# Tambahan
+# supaya koneksi angsung dan lebih cepat kita tidak perlu membuat DHCP server seperti sebelumnya 
+# tetapi harus di config di kedua sisi yaitu LB dan Client 
+## Diperkenalkan fitur device mode sejak ROS 7  
+# Device-mode=basic, home, advanced
+# saat di print kita bisa lihat daftar 
+/system/device-mode print
+/system/device-mode update romon=yes
+/system/device-mode update mode=advanced
+/system/device-mode update mode=advanced romon=yes
+
+## IDENTITAS
+/system identity set name=5009-CORE-BanggaiLaut
+
+# -------------------------------------- #
+# NTP
+/system ntp client 
+set enabled=yes
+# servers add address=pool.ntp.org
+servers add address=0.id.pool.ntp.org
+servers add address=1.id.pool.ntp.org
+
+# test 
+/system clock print
+/system ntp client print
+
+# -------------------------------------- #
+## LINK KE ACCESS (RB5009)
+/ip address
+add address=200.200.200.1/29 interface=ether1 comment="PtP sementara /29 ke RB5009 ACCESS"
+# add address=200.200.200.1/30 interface=sfp-sfpplus1 comment="PtP ke RB5009 (direct SFP+, aktifkan saat ready)"
+
+## ROUTE BALIK KE LAN (WAJIB, AGAR ASIMETRI TIDAK TERJADI)(sesuaikan total Servis ***)
+/ip route
+add dst-address=100.1.1.0/22 gateway=200.200.200.2 comment="Hotspot via RB5009"
+add dst-address=200.1.1.0/23 gateway=200.200.200.2 comment="PPPoE via RB5009"
+
+# ----------------------------------------------------------------------------------
+## CONNTRACK TUNING (kecepatan & efisiensi)
+/ip firewall connection tracking
+set enabled=yes \
+    tcp-established-timeout=15m \
+    tcp-close-timeout=10s \
+    tcp-fin-wait-timeout=10s \
+    tcp-last-ack-timeout=10s \
+    udp-timeout=10s \
+    udp-stream-timeout=1m \
+    icmp-timeout=10s
+
+## FIREWALL RAW (drop sebelum conntrack)
+/ip firewall raw
+add chain=prerouting protocol=udp dst-port=53 in-interface-list=WAN action=drop comment="Block external DNS flood"
+# ----------------------------------------------------------------------------------
+
