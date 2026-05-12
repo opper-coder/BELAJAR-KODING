@@ -98,7 +98,8 @@ Solusi Utama: Memulihkan Folder Data (Paling Efektif)
 ---------------------------------------
 Gunakan metode ini untuk memperbaiki file sistem MySQL yang rusak sambil tetap mempertahankan database buatan Anda. 
 =======================================
-RINGKASAN
+RINGKASAN perbaikan XAMPP
+0. matikan xampp dulu
 1. ubah nama folder data = "data_old"
 2. new folder = "data" (bikin lagi folder kosong)
 3. semua dari "backup" copas ke "data"
