@@ -97,6 +97,15 @@ Berikut adalah langkah-langkah perbaikan yang paling ampuh tanpa menghapus datab
 Solusi Utama: Memulihkan Folder Data (Paling Efektif) 
 ---------------------------------------
 Gunakan metode ini untuk memperbaiki file sistem MySQL yang rusak sambil tetap mempertahankan database buatan Anda. 
+=======================================
+RINGKASAN
+1. ubah nama folder data = "data_old"
+2. new folder = "data" (bikin lagi folder kosong)
+3. semua dari "backup" copas ke "data"
+4. ambil dari "data_old" 2 macam di bawah ini ke "data"
+	- semua folder project anda (yg punya nama dari anda)
+	- file = ibdata1 (replace jika sudah ada)
+----------------------------------------
 1. Matikan XAMPP        : Pastikan service Apache dan MySQL sudah dalam kondisi Stop.
 2. Buka Folder MySQL    : Masuk ke direktori instalasi XAMPP Anda (biasanya di C:\xampp\mysql). atau explore button di xampp UI
 3. Rename data          : Rename folder bernama "data" menjadi "data_old".
