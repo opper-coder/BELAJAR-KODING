@@ -100,7 +100,7 @@ Gunakan metode ini untuk memperbaiki file sistem MySQL yang rusak sambil tetap m
 =======================================
 RINGKASAN perbaikan XAMPP
 0. matikan xampp dulu
-1. ubah nama folder C:\xampp\mysql\data = "data_old"
+1. ubah nama folder data C:\xampp\mysql\"data" = "data_old"
 2. new folder = "data" (bikin lagi folder kosong)
 3. semua dari "backup" copas ke "data"
 4. ambil dari "data_old" 2 macam di bawah ini ke "data"
