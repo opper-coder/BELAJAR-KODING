@@ -1,17 +1,17 @@
 /* DAFTAR ISI
 ---------------------------------------------------------------------------------------------------
-- konsep 		-> konfig dasar (kombinasi paket mark dan HTB)
+- konsep 			-> konfig dasar (kombinasi paket mark dan HTB)
 - packet mark 		-> disinilah paket di buat
 - HTB queue tree 	-> implementasi
-- HTB 			-> hirarki prioritas (HTB inilah yang jadi perhatian dalam queue tree)
+- HTB 				-> hirarki prioritas (HTB inilah yang jadi perhatian dalam queue tree)
 
 QUEUE TREE DAN HTB
 ---------------------------------------------------------------------------------------------------
 queue tree adalah methode manajemen bandwidth dengan pola hirarchi HTB. issyu umum 
 	- queue independen 	: setiap queue bisa di config secara mandiri
-	- priority 		: jika di kombinasikan akan ada prioritas
+	- priority 			: jika di kombinasikan akan ada prioritas
 	- parent child		: basic hirarki
-	- HTB 			: pola susunan otoritas
+	- HTB 				: pola susunan otoritas
 	simple queue ataupun qtree adalah implementasi HTB 
 	HTB = hirarkikal token bucket adalah limitasi hirarkikal tumpukan
 	- berguna 'hirarkikal' untuk divisi2 di kantor dsb jadi bukan hanya limitasi per user tapi juga per grup
