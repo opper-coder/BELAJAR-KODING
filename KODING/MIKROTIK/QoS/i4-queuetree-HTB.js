@@ -9,8 +9,8 @@ QUEUE TREE DAN HTB
 ---------------------------------------------------------------------------------------------------
 queue tree adalah methode manajemen bandwidth dengan pola hirarchi HTB. isyu umum 
 	- queue independen 	: setiap queue bisa di config secara mandiri
-	- priority 			: jika di kombinasikan akan ada prioritas
-	- parent child		: basic hirarki
+	- priority 			: jika di kombinasikan akan ada prioritas 1 - 8
+	- parent child		: basic hirarki 
 	- HTB 				: pola susunan otoritas dan prioritas
 	simple queue ataupun qtree adalah implementasi HTB 
 	HTB = hirarkikal token bucket adalah limitasi hirarkikal tumpukan
@@ -38,19 +38,19 @@ misalnya aplikasi tertentu, ip, dll
 
 HTB adlah implementasi hirarki orang tua, anak, cucu dst untuk mengatur priority
 
-1. cara bikin paket mark:
+1. mark-conn dulu:
 	firewall > mangle > add > 
 		tab general > chain=prerouting src-address=IP client, protocol, interface, port, tcp, dll (disinilah setting untuk prioritas game dll)
 		tab action > action=mark-connection new-connection-mark="conn-client1" passthrought=true
 
-2. cara tangkap mark connection di atas
+2. lalu gunakan untuk mark-packet
 	firewall > mangle > add > 
-		tab general > chain=prerouting connection-mark=Pilih conn-client1
+		tab general > chain=prerouting connection-mark=Pilih tadi "conn-client1"
 		tab action > action=mark-packet new-connection-mark=(beri nama2) "packet-client1" passthrought=false
 
 3. saat di apply maka akan ada trafficnya di field bytes nya
 
-4. bikin queue tree untuk upload (jadi child nantinya)
+4. queue tree upload (karena kalau queue tree harus di buat di upload dan downloadnya) 
 	queue > tab queue tree > add 
 		tab general >
 			name: queue1-upload 		// nama(terserah) 
