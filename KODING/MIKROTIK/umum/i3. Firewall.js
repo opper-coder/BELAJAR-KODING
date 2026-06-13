@@ -152,7 +152,9 @@ FASTTRACK
 
 TAMBAHAN
 -------------------------------------------------
-ada paket yang tisak bisa di NAT 
+ada paket yang tisak bisa di NAT misalnya VOIP karena harus End To End pakilah NAT helper
+jump untuk mengumpulkan rule agar efisien 
+
 
 
 
