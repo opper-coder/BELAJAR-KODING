@@ -5,10 +5,12 @@ Interface
 
 Interface List
     "WINBOX Khusus"
-    Masukkan interface ke "WINBOX Khusus" (ether 2-5, atau Bridge-LAN)
+    Masukkan interface ke "WINBOX Khusus" (ether 2-5, Bridge, VPN silahkan)
     hanya interface winbox pilih beberapa saja
     VPN juga masukkan boleh
-    kecuali WAN (internet) dan LAN (client) 
+    kecuali WAN (internet) dan LAN (client)
+    
+IP > Neighboors > WINBOX Khusus > apply
 
 Wireless
     Mode=station Band=B/G/N width= SSID=AAFIBER (wifi WAN) installation=any security=default (kecuali jika ada password, berarti pakai scurity profile)
