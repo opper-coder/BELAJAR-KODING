@@ -1,8 +1,10 @@
 kalau dalam sebuah jaringan atau scanning winbox akan terlihat di neighboors.
 dalam suatu kondisi kita tidak mau hal ini terjadi saya hanya mau winbox hanya TERLIHAT bisa di akses melalui interce-list saja
 HIDDEN bukan berarti DISABLE ya tetap bisa di akses sebenarnya hanya saja tidak terlihat
+
 -----------------
 Masuk ke INTERFACE > interface-list > list (sidebar) > bikin Grup list dengan nama=bebas
-add new interface ke NEW-GRUP-TADI
+add new interface ke NEW-GRUP-TADI > pilih interface yang di izinkan saja Ether13 dan VPN saja cukup 
 
+-----------------
 IP > Neighboors > discovery-settings > masukkan NEW-GRUP-TADI > Apply 
