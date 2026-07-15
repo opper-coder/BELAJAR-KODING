@@ -1,0 +1,37 @@
+Mikrotik VOUCHER 
+
+Interface 
+    bridgeLAN
+
+Interface List
+    "WINBOX Khusus"
+    Masukkan interface ke "WINBOX Khusus" (ether 2-5, atau Bridge-LAN)
+    hanya interface winbox pilih beberapa saja
+    VPN juga masukkan boleh
+    kecuali WAN (internet) dan LAN (client) 
+
+Wireless
+    Mode=station Band=B/G/N width= SSID=AAFIBER (wifi WAN) installation=any security=default (kecuali jika ada password, berarti pakai scurity profile)
+    tunggu status=connected
+
+IP 
+    21.21.21.1/24 di Bridge-LAN
+
+DHCP client
+    ambil-dari=wlan1 
+
+DHCP Server
+    DHCP setup > bridgeLAN
+
+NAT
+    mangle > chain-prerouting action=change-TTL New TTL=65 (atau 64) (Menghapus TTL=1 saat ada terusan malah di anggap 0 cmiew)
+    NAT > Masquerade 
+
+QUEUE
+    queue type 
+    Client-DL=pcq rate=0
+    Client-UPL=pcq rate=0
+
+    Simple queue
+    target=IP LAN max-limit=5M/5M queue-type=Client-DL/Client-UPL
+
